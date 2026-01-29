@@ -239,16 +239,6 @@ def create_recipient_sankey_pdf(output_path, figsize=(18, 11)):
         patch = PathPatch(path, facecolor=color, edgecolor='none', alpha=0.3)
         ax.add_patch(patch)
 
-    # Houston Metro callout box
-    houston_total = 1035382736.84 + 709103718.29
-    ax.add_patch(mpatches.FancyBboxPatch(
-        (recipient_x - 2, l1_positions[1]['y_bottom'] - 2), 22, l1_positions[1]['y_top'] - l1_positions[2]['y_bottom'] + 4,
-        boxstyle="round,pad=0.3", facecolor='none', edgecolor='#c53030', linewidth=2, linestyle='--'
-    ))
-    ax.text(recipient_x + 8, l1_positions[2]['y_bottom'] - 5,
-            f"Houston Metro Area: {format_currency(houston_total)} (39%)",
-            ha='center', va='top', fontsize=10, fontweight='bold', color='#c53030')
-
     # Footer
     ax.text(50, 4, "City of Houston and Harris County manage their own projects; GLO Direct administers projects in 62 other counties",
             ha='center', va='bottom', fontsize=9, style='italic', color='#666')
