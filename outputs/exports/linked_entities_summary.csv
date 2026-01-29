@@ -1,0 +1,39 @@
+entity_type,entity_text,grantee,disaster_type,program_type,total_obligated,total_disbursed,total_expended,ratio_expended_obligated,link_type,confidence,mention_count
+DISASTER,Hurricane Ike,Texas - GLO,2008 Hurricane Ike and Other Events,Housing,1574377508.47,1525914743.08,1520661144.96,0.965880887385007,disaster_name,0.9,47866
+DISASTER,Hurricane Ike,Texas - GLO,2008 Hurricane Ike and Other Events,Infrastructure,1246638346.66,1233584539.99,1234111886.0299995,0.989951808667236,disaster_name,0.9,47866
+DISASTER,Hurricane Harvey,Texas - GLO,"2017 Hurricanes Harvey, Irma and Maria",Housing,3672847375.48,3429649012.06,3434018383.94,0.9349744307007072,disaster_name,0.9,26426
+DISASTER,Hurricane Harvey,Texas - GLO,"2017 Hurricanes Harvey, Irma and Maria",Infrastructure,959341868.83,430574194.73,419896925.4,0.4376926922955009,disaster_name,0.9,26426
+DISASTER,Ike,Texas - GLO,2008 Hurricane Ike and Other Events,Housing,1574377508.47,1525914743.08,1520661144.96,0.965880887385007,disaster_name,0.9,7264
+DISASTER,Ike,Texas - GLO,2008 Hurricane Ike and Other Events,Infrastructure,1246638346.66,1233584539.99,1234111886.0299995,0.989951808667236,disaster_name,0.9,7264
+DISASTER,Hurricane Dolly,Texas - GLO,2008 Hurricane Ike and Other Events,Housing,1574377508.47,1525914743.08,1520661144.96,0.965880887385007,disaster_name,0.9,3431
+DISASTER,Hurricane Dolly,Texas - GLO,2008 Hurricane Ike and Other Events,Infrastructure,1246638346.66,1233584539.99,1234111886.0299995,0.989951808667236,disaster_name,0.9,3431
+DISASTER,Tropical Storm Imelda,Texas - GLO,2019 Disasters,Housing,141338336.7,106348484.58,105552357.11,0.7468062775780495,disaster_name,0.9,1300
+DISASTER,Tropical Storm Imelda,Texas - GLO,2019 Disasters,Infrastructure,44725805.59,4025056.97,3203073.52,0.0716157814878164,disaster_name,0.9,1300
+DISASTER,Harvey,Texas - GLO,"2017 Hurricanes Harvey, Irma and Maria",Housing,3672847375.48,3429649012.06,3434018383.94,0.9349744307007072,disaster_name,0.9,394
+DISASTER,Harvey,Texas - GLO,"2017 Hurricanes Harvey, Irma and Maria",Infrastructure,959341868.83,430574194.73,419896925.4,0.4376926922955009,disaster_name,0.9,394
+DISASTER,Imelda,Texas - GLO,2019 Disasters,Housing,141338336.7,106348484.58,105552357.11,0.7468062775780495,disaster_name,0.9,268
+DISASTER,Imelda,Texas - GLO,2019 Disasters,Infrastructure,44725805.59,4025056.97,3203073.52,0.0716157814878164,disaster_name,0.9,268
+DISASTER,hurricane Ike,Texas - GLO,2008 Hurricane Ike and Other Events,Housing,1574377508.47,1525914743.08,1520661144.96,0.965880887385007,disaster_name,0.9,210
+DISASTER,hurricane Ike,Texas - GLO,2008 Hurricane Ike and Other Events,Infrastructure,1246638346.66,1233584539.99,1234111886.0299995,0.989951808667236,disaster_name,0.9,210
+FEMA_DECLARATION,FEMA-4332,Texas - GLO,"2017 Hurricanes Harvey, Irma and Maria",Housing,3672847375.48,3429649012.06,3434018383.94,0.9349744307007072,fema_declaration,1.0,72
+FEMA_DECLARATION,FEMA-4332,Texas - GLO,"2017 Hurricanes Harvey, Irma and Maria",Infrastructure,959341868.83,430574194.73,419896925.4,0.4376926922955009,fema_declaration,1.0,72
+FEMA_DECLARATION,DR-4245,Texas - GLO,2015 Hurricane Joaquin and Patricia and Other Events,Housing,16112738.24,14928806.240000002,14928806.240000002,0.9265219863709524,fema_declaration,1.0,66
+FEMA_DECLARATION,DR-4245,Texas - GLO,2015 Hurricane Joaquin and Patricia and Other Events,Infrastructure,45285532.08,44011572.4,43686647.56999999,0.964693259931771,fema_declaration,1.0,66
+FEMA_DECLARATION,FEMA-1791,Texas - GLO,2008 Hurricane Ike and Other Events,Housing,1574377508.47,1525914743.08,1520661144.96,0.965880887385007,fema_declaration,1.0,53
+FEMA_DECLARATION,FEMA-1791,Texas - GLO,2008 Hurricane Ike and Other Events,Infrastructure,1246638346.66,1233584539.99,1234111886.0299995,0.989951808667236,fema_declaration,1.0,53
+FEMA_DECLARATION,FEMA-4245,Texas - GLO,2015 Hurricane Joaquin and Patricia and Other Events,Housing,16112738.24,14928806.240000002,14928806.240000002,0.9265219863709524,fema_declaration,1.0,48
+FEMA_DECLARATION,FEMA-4245,Texas - GLO,2015 Hurricane Joaquin and Patricia and Other Events,Infrastructure,45285532.08,44011572.4,43686647.56999999,0.964693259931771,fema_declaration,1.0,48
+FEMA_DECLARATION,DR-4466,Texas - GLO,2019 Disasters,Housing,141338336.7,106348484.58,105552357.11,0.7468062775780495,fema_declaration,1.0,43
+FEMA_DECLARATION,DR-4466,Texas - GLO,2019 Disasters,Infrastructure,44725805.59,4025056.97,3203073.52,0.0716157814878164,fema_declaration,1.0,43
+DISASTER,IKE,Texas - GLO,2008 Hurricane Ike and Other Events,Housing,1574377508.47,1525914743.08,1520661144.96,0.965880887385007,disaster_name,0.9,41
+DISASTER,IKE,Texas - GLO,2008 Hurricane Ike and Other Events,Infrastructure,1246638346.66,1233584539.99,1234111886.0299995,0.989951808667236,disaster_name,0.9,41
+DISASTER,ike,Texas - GLO,2008 Hurricane Ike and Other Events,Housing,1574377508.47,1525914743.08,1520661144.96,0.965880887385007,disaster_name,0.9,32
+DISASTER,ike,Texas - GLO,2008 Hurricane Ike and Other Events,Infrastructure,1246638346.66,1233584539.99,1234111886.0299995,0.989951808667236,disaster_name,0.9,32
+FEMA_DECLARATION,DR-4332,Texas - GLO,"2017 Hurricanes Harvey, Irma and Maria",Housing,3672847375.48,3429649012.06,3434018383.94,0.9349744307007072,fema_declaration,1.0,32
+FEMA_DECLARATION,DR-4332,Texas - GLO,"2017 Hurricanes Harvey, Irma and Maria",Infrastructure,959341868.83,430574194.73,419896925.4,0.4376926922955009,fema_declaration,1.0,32
+FEMA_DECLARATION,FEMA-1780,Texas - GLO,2008 Hurricane Ike and Other Events,Housing,1574377508.47,1525914743.08,1520661144.96,0.965880887385007,fema_declaration,1.0,12
+FEMA_DECLARATION,FEMA-1780,Texas - GLO,2008 Hurricane Ike and Other Events,Infrastructure,1246638346.66,1233584539.99,1234111886.0299995,0.989951808667236,fema_declaration,1.0,12
+DISASTER,HARVEY,Texas - GLO,"2017 Hurricanes Harvey, Irma and Maria",Housing,3672847375.48,3429649012.06,3434018383.94,0.9349744307007072,disaster_name,0.9,2
+DISASTER,HARVEY,Texas - GLO,"2017 Hurricanes Harvey, Irma and Maria",Infrastructure,959341868.83,430574194.73,419896925.4,0.4376926922955009,disaster_name,0.9,2
+DISASTER,Hurricane Imelda,Texas - GLO,2019 Disasters,Housing,141338336.7,106348484.58,105552357.11,0.7468062775780495,disaster_name,0.9,2
+DISASTER,Hurricane Imelda,Texas - GLO,2019 Disasters,Infrastructure,44725805.59,4025056.97,3203073.52,0.0716157814878164,disaster_name,0.9,2

@@ -1,0 +1,38 @@
+# Texas GLO Action Plan NLP Project
+# Phase 1: PDF Processing and Foundation
+
+# PDF Processing
+PyMuPDF>=1.24.0          # Fast PDF text extraction (import as fitz)
+pdfplumber>=0.11.0       # Table extraction from PDFs
+pytesseract>=0.3.10      # OCR fallback (requires Tesseract system install)
+
+# NLP - Traditional (Phase 2)
+spacy>=3.7.0             # NLP pipeline
+# Download model separately: python -m spacy download en_core_web_trf
+
+# NLP - Topic Modeling (Phase 2+)
+# bertopic>=0.16.0       # Uncomment when needed
+sentence-transformers>=2.5.0  # Embeddings for similarity/search
+
+# LLM Integration (Phase 4)
+anthropic>=0.39.0        # Claude API
+chromadb>=0.5.0          # Vector store for RAG
+
+# Data Processing
+pandas>=2.2.0
+numpy>=1.26.0
+sqlite-utils>=3.36       # SQLite helpers
+
+# Jupyter and Visualization
+jupyter>=1.0.0
+notebook>=7.0.0
+matplotlib>=3.8.0
+seaborn>=0.13.0
+plotly>=5.18.0
+
+# Dashboard (Phase 5)
+streamlit>=1.32.0
+
+# Utilities
+tqdm>=4.66.0             # Progress bars
+python-dotenv>=1.0.0     # Environment variables

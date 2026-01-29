@@ -1,0 +1,19 @@
+Disaster_Type,Disaster_Year,Census_Year,Is_Program,FEMA_Numbers
+2001 World Trade Center,2001.0,2000,False,1391
+"2005 Hurricanes Katrina, Rita, Wilma",2005.0,2000,False,"1602,1603,1604,1606,1607"
+2008 Midwest Floods,2008.0,2000,False,"1763,1771,1773"
+2008 Hurricane Ike and Other Events,2008.0,2000,False,"1780,1791,1794"
+2010 Severe Storms and Flooding,2010.0,2010,False,"1935,1924,1927"
+2011 Multiple Disasters,2011.0,2010,False,"1991,1994,4012,4024"
+2011-2013 Hurricane Sandy and Other Events,2012.0,2010,False,"4085,4086,4087"
+2013 National Disaster Resilience,2013.0,2010,True,
+2015 Hurricane Joaquin and Patricia and Other Events,2015.0,2010,False,"4241,4245"
+2016 Louisiana Floods and Other Events,2016.0,2010,False,"4277,4280"
+"2017 Hurricanes Harvey, Irma and Maria",2017.0,2010,False,"4332,4336,4339"
+Electrical Power Systems in Puerto Rico and the U.S. Virgin Islands,2017.0,2010,False,4339
+2015-2018 Mitigation,2016.0,2010,True,
+2019 Disasters,2019.0,2010,False,"4420,4466,4485,4473"
+"2020 Hurricanes Laura, Delta and Zeta (LDZ)/2021 Hurricane Ida and Wildfires (IDF)",,2020,False,
+2018 Disasters,2018.0,2010,False,"4393,4396,4399,4407"
+"Storms, Flooding, and Other Disasters in California, Alabama, and Georgia",2023.0,2020,False,"4699,4683"
+2022 Disasters including Hurricanes Fiona and Ian,2022.0,2020,False,"4671,4673,4675"
