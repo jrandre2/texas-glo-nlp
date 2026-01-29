@@ -183,11 +183,21 @@ Our activity-level tracking captures **96.6%** of the nationally reported obliga
 
 ---
 
-## 8. Sankey Diagram Data
+## 8. Sankey Diagram Visualizations
 
-### Flow Visualization
+### Harvey 5B Infrastructure Grant ($4.42B)
 
-The exported Sankey data (`harvey_sankey_data.json`) enables visualization of funding flows:
+![Harvey 5B Infrastructure Grant Funding Flow](../outputs/visualizations/harvey_sankey_5b.png)
+
+This diagram shows the Q4 2025 budget allocations for the Harvey Infrastructure grant flowing from Texas GLO to 13 program categories.
+
+### Harvey 57M Housing Grant ($57.8M)
+
+![Harvey 57M Housing Grant Funding Flow](../outputs/visualizations/harvey_sankey_57m.png)
+
+The smaller 57M Housing grant focuses on Affordable Rental and Local Buyout/Acquisition programs.
+
+### Flow Structure
 
 ```
 Level 0: HUD (Source)
@@ -257,10 +267,22 @@ Level 0: HUD (Source)
 | File | Format | Size | Description |
 |------|--------|------|-------------|
 | harvey_sankey_data.json | JSON | 2KB | D3.js Sankey visualization data |
+| harvey_sankey_infrastructure.json | JSON | 3KB | Infrastructure grant Sankey data |
+| harvey_sankey_housing.json | JSON | 1KB | Housing grant Sankey data |
 | harvey_quarterly_trends.json | JSON | 15KB | Time series data |
 | harvey_funding_hierarchy.json | JSON | 8KB | Hierarchical structure |
 | harvey_org_allocations.csv | CSV | 20KB | Organization-level data |
 | harvey_county_allocations.csv | CSV | 50KB | County-level data |
+
+### Visualization Files
+
+| File | Format | Description |
+|------|--------|-------------|
+| harvey_sankey_5b.pdf | PDF | Infrastructure grant Sankey (print quality) |
+| harvey_sankey_5b.png | PNG | Infrastructure grant Sankey (web display) |
+| harvey_sankey_57m.pdf | PDF | Housing grant Sankey (print quality) |
+| harvey_sankey_57m.png | PNG | Housing grant Sankey (web display) |
+| generate_sankey_matplotlib.py | Python | Sankey generator using matplotlib |
 
 ---
 

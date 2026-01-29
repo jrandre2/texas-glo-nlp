@@ -1,0 +1,159 @@
+{
+  "quarter": "Q4 2025",
+  "program_type": "Infrastructure",
+  "nodes": [
+    {
+      "id": "HUD",
+      "name": "HUD",
+      "level": 0
+    },
+    {
+      "id": "Texas GLO",
+      "name": "Texas GLO",
+      "level": 1
+    },
+    {
+      "id": "Homeowner Assistance Program",
+      "name": "Homeowner Assistance Program",
+      "level": 2
+    },
+    {
+      "id": "Affordable Rental",
+      "name": "Affordable Rental",
+      "level": 2
+    },
+    {
+      "id": "Local Buyout/Acquisition",
+      "name": "Local Buyout/Acquisition",
+      "level": 2
+    },
+    {
+      "id": "Infrastructure Projects",
+      "name": "Infrastructure Projects",
+      "level": 2
+    },
+    {
+      "id": "Administration",
+      "name": "Administration",
+      "level": 2
+    },
+    {
+      "id": "Homeowner Reimbursement",
+      "name": "Homeowner Reimbursement",
+      "level": 2
+    },
+    {
+      "id": "Economic Revitalization",
+      "name": "Economic Revitalization",
+      "level": 2
+    },
+    {
+      "id": "Planning",
+      "name": "Planning",
+      "level": 2
+    },
+    {
+      "id": "Other",
+      "name": "Other",
+      "level": 2
+    },
+    {
+      "id": "Single Family Housing",
+      "name": "Single Family Housing",
+      "level": 2
+    },
+    {
+      "id": "Homebuyer Assistance",
+      "name": "Homebuyer Assistance",
+      "level": 2
+    },
+    {
+      "id": "PREPS Program",
+      "name": "PREPS Program",
+      "level": 2
+    },
+    {
+      "id": "Public Services",
+      "name": "Public Services",
+      "level": 2
+    }
+  ],
+  "links": [
+    {
+      "source": "HUD",
+      "target": "Texas GLO",
+      "value": 4416746991.0199995
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Homeowner Assistance Program",
+      "value": 1927075533.54
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Affordable Rental",
+      "value": 1085028956.94
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Local Buyout/Acquisition",
+      "value": 291808101.61
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Infrastructure Projects",
+      "value": 288615515.25
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Administration",
+      "value": 205042529.76
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Homeowner Reimbursement",
+      "value": 151190392.88
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Economic Revitalization",
+      "value": 129030552.47
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Planning",
+      "value": 104638289.77000001
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Other",
+      "value": 97767916.07000001
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Single Family Housing",
+      "value": 56024482.95999999
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Homebuyer Assistance",
+      "value": 37122163.68
+    },
+    {
+      "source": "Texas GLO",
+      "target": "PREPS Program",
+      "value": 22443328.2
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Public Services",
+      "value": 20959227.89
+    }
+  ],
+  "summary": {
+    "total_budget": 4416746991.0199995,
+    "programs": 1,
+    "organizations": 3,
+    "counties": 62
+  }
+}

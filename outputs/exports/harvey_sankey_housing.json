@@ -1,0 +1,69 @@
+{
+  "quarter": "Q4 2025",
+  "program_type": "Housing",
+  "nodes": [
+    {
+      "id": "HUD",
+      "name": "HUD",
+      "level": 0
+    },
+    {
+      "id": "Texas GLO",
+      "name": "Texas GLO",
+      "level": 1
+    },
+    {
+      "id": "Affordable Rental",
+      "name": "Affordable Rental",
+      "level": 2
+    },
+    {
+      "id": "Local Buyout/Acquisition",
+      "name": "Local Buyout/Acquisition",
+      "level": 2
+    },
+    {
+      "id": "Administration",
+      "name": "Administration",
+      "level": 2
+    },
+    {
+      "id": "Planning",
+      "name": "Planning",
+      "level": 2
+    }
+  ],
+  "links": [
+    {
+      "source": "HUD",
+      "target": "Texas GLO",
+      "value": 57800000.0
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Affordable Rental",
+      "value": 27552978.05
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Local Buyout/Acquisition",
+      "value": 27279021.95
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Administration",
+      "value": 2890000.0
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Planning",
+      "value": 78000.0
+    }
+  ],
+  "summary": {
+    "total_budget": 57800000.0,
+    "programs": 1,
+    "organizations": 3,
+    "counties": 62
+  }
+}
