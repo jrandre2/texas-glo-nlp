@@ -1,0 +1,285 @@
+{
+  "quarter": "Q4 2025",
+  "hud": {
+    "name": "HUD",
+    "total": 4474546991.0199995
+  },
+  "glo": {
+    "name": "Texas GLO",
+    "total": 4474546991.0199995
+  },
+  "programs": {
+    "Housing": {
+      "total": 57800000.0,
+      "count": 30
+    },
+    "Infrastructure": {
+      "total": 4416746991.0199995,
+      "count": 586
+    }
+  },
+  "organizations": {
+    "City of Houston": {
+      "total": 1035382736.84,
+      "count": 17
+    },
+    "Harris County": {
+      "total": 709103718.29,
+      "count": 51
+    },
+    "Texas General Land Office": {
+      "total": 2968000.0,
+      "count": 10
+    }
+  },
+  "counties": {
+    "Aransas County": {
+      "total": 28797241.849999998,
+      "count": 3
+    },
+    "Austin": {
+      "total": 0,
+      "count": 5
+    },
+    "Austin County": {
+      "total": 0,
+      "count": 3
+    },
+    "Bastrop": {
+      "total": 0,
+      "count": 2
+    },
+    "Bastrop County": {
+      "total": 0,
+      "count": 4
+    },
+    "Bee County": {
+      "total": 0,
+      "count": 2
+    },
+    "Brazoria": {
+      "total": 10917829.0,
+      "count": 1
+    },
+    "Brazoria County": {
+      "total": 533393.0,
+      "count": 3
+    },
+    "Caldwell": {
+      "total": 0,
+      "count": 3
+    },
+    "Calhoun County": {
+      "total": 3644596.74,
+      "count": 2
+    },
+    "Chambers": {
+      "total": 2703753.0,
+      "count": 1
+    },
+    "Colorado": {
+      "total": 221125.0,
+      "count": 2
+    },
+    "Fayette": {
+      "total": 3868969.77,
+      "count": 4
+    },
+    "Fayette County": {
+      "total": 455123.56,
+      "count": 3
+    },
+    "FortBend": {
+      "total": 2675575.0,
+      "count": 1
+    },
+    "FortBend County": {
+      "total": 480000.0,
+      "count": 3
+    },
+    "Galveston": {
+      "total": 3293091.27,
+      "count": 1
+    },
+    "Galveston County": {
+      "total": 4235621.0,
+      "count": 6
+    },
+    "Goliad": {
+      "total": 0,
+      "count": 2
+    },
+    "Goliad County": {
+      "total": 0,
+      "count": 6
+    },
+    "Gonzales": {
+      "total": 0,
+      "count": 3
+    },
+    "Gonzales County": {
+      "total": 0,
+      "count": 1
+    },
+    "Grimes": {
+      "total": 0,
+      "count": 2
+    },
+    "Grimes County": {
+      "total": 0,
+      "count": 3
+    },
+    "Hardin": {
+      "total": 2129370.0,
+      "count": 2
+    },
+    "Hardin County": {
+      "total": 7826814.66,
+      "count": 4
+    },
+    "Jackson": {
+      "total": 0,
+      "count": 2
+    },
+    "Jackson County": {
+      "total": 0,
+      "count": 1
+    },
+    "Jasper": {
+      "total": 3437811.54,
+      "count": 5
+    },
+    "Jasper County": {
+      "total": 20000.0,
+      "count": 2
+    },
+    "Jefferson": {
+      "total": 2475607.0,
+      "count": 3
+    },
+    "Jefferson County": {
+      "total": 404178.8,
+      "count": 4
+    },
+    "Karnes": {
+      "total": 0,
+      "count": 4
+    },
+    "Karnes County": {
+      "total": 0,
+      "count": 1
+    },
+    "Lee": {
+      "total": 0,
+      "count": 2
+    },
+    "Liberty": {
+      "total": 11155242.11,
+      "count": 5
+    },
+    "Liberty County": {
+      "total": 526060.89,
+      "count": 2
+    },
+    "Matagorda County": {
+      "total": 977132.39,
+      "count": 5
+    },
+    "Milam": {
+      "total": 0,
+      "count": 4
+    },
+    "Milam County": {
+      "total": 0,
+      "count": 2
+    },
+    "Montgomery": {
+      "total": 7175792.78,
+      "count": 3
+    },
+    "Montgomery County": {
+      "total": 2061000.0,
+      "count": 7
+    },
+    "Newton": {
+      "total": 6171945.58,
+      "count": 3
+    },
+    "Nueces County": {
+      "total": 4645555.59,
+      "count": 2
+    },
+    "Orange": {
+      "total": 1432031.03,
+      "count": 2
+    },
+    "Orange County": {
+      "total": 170331.38,
+      "count": 5
+    },
+    "Polk": {
+      "total": 3640646.0,
+      "count": 4
+    },
+    "Polk County": {
+      "total": 100000.0,
+      "count": 2
+    },
+    "Refugio County": {
+      "total": 11727057.24,
+      "count": 6
+    },
+    "Sabine": {
+      "total": 0,
+      "count": 1
+    },
+    "SanJacinto": {
+      "total": 9195613.82,
+      "count": 4
+    },
+    "SanJacinto County": {
+      "total": 1920000.0,
+      "count": 3
+    },
+    "SanPatricio": {
+      "total": 2041280.0,
+      "count": 1
+    },
+    "Tyler": {
+      "total": 0,
+      "count": 3
+    },
+    "Tyler County": {
+      "total": 768397.0,
+      "count": 6
+    },
+    "Victoria": {
+      "total": 50760.439999999995,
+      "count": 3
+    },
+    "Victoria County": {
+      "total": 1918223.13,
+      "count": 2
+    },
+    "Walker": {
+      "total": 0,
+      "count": 2
+    },
+    "Waller": {
+      "total": 2199081.8,
+      "count": 4
+    },
+    "Waller County": {
+      "total": 0,
+      "count": 2
+    },
+    "Wharton": {
+      "total": 1843903.3399999999,
+      "count": 3
+    },
+    "Wharton County": {
+      "total": 491147.0,
+      "count": 5
+    }
+  }
+}

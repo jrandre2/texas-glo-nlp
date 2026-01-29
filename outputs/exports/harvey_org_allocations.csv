@@ -1,0 +1,165 @@
+Quarter,Organization,Program Type,Allocated,Activity Count
+Q1 2020,Unknown,Infrastructure,1457384057.1299999,427
+Q1 2020,City of Houston,Infrastructure,1165114924.0,18
+Q1 2020,Harris County,Infrastructure,846784223.83,17
+Q1 2021,Unknown,Infrastructure,2500483583.45,519
+Q1 2021,City of Houston,Infrastructure,828659065.0,24
+Q1 2021,Harris County,Infrastructure,804179933.09,31
+Q1 2021,Harris County,Housing,44334912.0,19
+Q1 2021,Texas General Land Office,Housing,13465088.0,6
+Q1 2021,Texas General Land Office,Infrastructure,5000000.0,37
+Q1 2021,Unknown,Housing,0.0,1
+Q1 2022,Unknown,Infrastructure,2483731893.57,453
+Q1 2022,City of Houston,Infrastructure,912659065.0,16
+Q1 2022,Harris County,Infrastructure,782048460.28,26
+Q1 2022,Harris County,Housing,43595013.93,14
+Q1 2022,Texas General Land Office,Housing,14204986.07,3
+Q1 2022,Texas General Land Office,Infrastructure,5000000.0,4
+Q1 2023,Unknown,Infrastructure,2518979123.85,474
+Q1 2023,City of Houston,Infrastructure,921659065.0,15
+Q1 2023,Harris County,Infrastructure,748893187.76,25
+Q1 2023,Harris County,Housing,43465600.0,15
+Q1 2023,Unknown,Housing,10966400.0,1
+Q1 2023,Texas General Land Office,Housing,2968000.0,2
+Q1 2023,Texas General Land Office,Infrastructure,0.0,21
+Q1 2024,Unknown,Infrastructure,2517465587.98,484
+Q1 2024,City of Houston,Infrastructure,1038371833.27,15
+Q1 2024,Harris County,Infrastructure,648328146.76,28
+Q1 2024,Harris County,Housing,43882263.11,13
+Q1 2024,Unknown,Housing,10949736.89,1
+Q1 2024,Texas General Land Office,Infrastructure,3693881.5799999996,6
+Q1 2024,Texas General Land Office,Housing,2968000.0,2
+Q1 2025,Unknown,Infrastructure,2676602252.48,510
+Q1 2025,City of Houston,Infrastructure,1052845505.29,17
+Q1 2025,Harris County,Infrastructure,660181272.55,29
+Q1 2025,Harris County,Housing,43879068.11,22
+Q1 2025,Unknown,Housing,10952931.89,2
+Q1 2025,Texas General Land Office,Infrastructure,3676197.05,6
+Q1 2025,Texas General Land Office,Housing,2968000.0,6
+Q2 2020,Unknown,Infrastructure,1614130555.94,509
+Q2 2020,City of Houston,Infrastructure,1165114924.0,18
+Q2 2020,Harris County,Infrastructure,853808506.81,17
+Q2 2020,Unknown,Housing,11444400.0,4
+Q2 2020,Texas General Land Office,Housing,2020688.0,4
+Q2 2020,Harris County,Housing,869312.0,3
+Q2 2021,Unknown,Infrastructure,2482664607.45,519
+Q2 2021,City of Houston,Infrastructure,912659065.0,25
+Q2 2021,Harris County,Infrastructure,706379933.09,31
+Q2 2021,Harris County,Housing,44334912.0,19
+Q2 2021,Texas General Land Office,Housing,13465088.0,6
+Q2 2021,Texas General Land Office,Infrastructure,5000000.0,37
+Q2 2021,Unknown,Housing,0.0,1
+Q2 2022,Unknown,Infrastructure,2482468206.4,452
+Q2 2022,City of Houston,Infrastructure,921659065.0,16
+Q2 2022,Harris County,Infrastructure,755976888.46,25
+Q2 2022,Harris County,Housing,43465600.0,13
+Q2 2022,Texas General Land Office,Housing,14334400.0,3
+Q2 2022,Texas General Land Office,Infrastructure,1000000.0,24
+Q2 2023,Unknown,Infrastructure,2532070031.48,476
+Q2 2023,City of Houston,Infrastructure,921659065.0,15
+Q2 2023,Harris County,Infrastructure,748893187.76,25
+Q2 2023,Harris County,Housing,43465600.0,13
+Q2 2023,Unknown,Housing,10966400.0,1
+Q2 2023,Texas General Land Office,Housing,2968000.0,2
+Q2 2023,Texas General Land Office,Infrastructure,0.0,21
+Q2 2024,Unknown,Infrastructure,2512983239.75,481
+Q2 2024,City of Houston,Infrastructure,1038371833.27,15
+Q2 2024,Harris County,Infrastructure,650228146.76,29
+Q2 2024,Harris County,Housing,43882263.11,13
+Q2 2024,Unknown,Housing,10949736.89,1
+Q2 2024,Texas General Land Office,Infrastructure,3676197.05,5
+Q2 2024,Texas General Land Office,Housing,2968000.0,2
+Q2 2025,Unknown,Infrastructure,2652659054.49,535
+Q2 2025,City of Houston,Infrastructure,1033247596.96,17
+Q2 2025,Harris County,Infrastructure,663849478.5500001,29
+Q2 2025,Harris County,Housing,43879068.11,22
+Q2 2025,Unknown,Housing,10952931.89,2
+Q2 2025,Texas General Land Office,Housing,2968000.0,6
+Q2 2025,Texas General Land Office,Infrastructure,0.0,5
+Q3 2020,Unknown,Infrastructure,1648225609.11,538
+Q3 2020,City of Houston,Infrastructure,1165114924.0,18
+Q3 2020,Harris County,Infrastructure,930168005.81,17
+Q3 2020,Unknown,Housing,11444400.0,3
+Q3 2020,Texas General Land Office,Housing,2020688.0,4
+Q3 2020,Harris County,Housing,869312.0,4
+Q3 2021,Unknown,Infrastructure,2486654332.38,533
+Q3 2021,City of Houston,Infrastructure,912659065.0,20
+Q3 2021,Harris County,Infrastructure,782903947.6,25
+Q3 2021,Harris County,Housing,43595013.93,19
+Q3 2021,Texas General Land Office,Housing,14204986.07,7
+Q3 2021,Texas General Land Office,Infrastructure,5000000.0,37
+Q3 2021,Unknown,Housing,0.0,1
+Q3 2022,Unknown,Infrastructure,2476464802.67,457
+Q3 2022,City of Houston,Infrastructure,829923532.0,15
+Q3 2022,Harris County,Infrastructure,755976888.46,25
+Q3 2022,Harris County,Housing,43465600.0,13
+Q3 2022,Unknown,Housing,11366400.0,1
+Q3 2022,Texas General Land Office,Housing,2968000.0,2
+Q3 2022,Texas General Land Office,Infrastructure,0.0,21
+Q3 2023,Unknown,Infrastructure,2517446374.13,470
+Q3 2023,City of Houston,Infrastructure,935140698.0,15
+Q3 2023,Harris County,Infrastructure,648034865.76,25
+Q3 2023,Harris County,Housing,43465600.0,13
+Q3 2023,Unknown,Housing,10966400.0,1
+Q3 2023,Texas General Land Office,Housing,2968000.0,2
+Q3 2023,Texas General Land Office,Infrastructure,0.0,1
+Q3 2024,Unknown,Infrastructure,5352165393.18,952
+Q3 2024,City of Houston,Infrastructure,2086962860.8600001,30
+Q3 2024,Harris County,Infrastructure,1305011940.6200001,58
+Q3 2024,Harris County,Housing,87758136.22,26
+Q3 2024,Unknown,Housing,21905863.78,2
+Q3 2024,Texas General Land Office,Infrastructure,7352394.1,10
+Q3 2024,Texas General Land Office,Housing,5936000.0,4
+Q3 2025,Unknown,Infrastructure,2678390768.42,530
+Q3 2025,City of Houston,Infrastructure,1034999759.83,17
+Q3 2025,Harris County,Infrastructure,665213570.81,29
+Q3 2025,Harris County,Housing,43879068.11,22
+Q3 2025,Unknown,Housing,10952931.89,2
+Q3 2025,Texas General Land Office,Housing,2968000.0,6
+Q3 2025,Texas General Land Office,Infrastructure,0.0,5
+Q4 2019,Harris County,Housing,27817984.0,8
+Q4 2019,Unknown,Housing,22888800.0,6
+Q4 2019,Texas General Land Office,Housing,4041376.0,8
+Q4 2020,Unknown,Housing,2054162939.49,505
+Q4 2020,Unknown,Infrastructure,2054162939.49,505
+Q4 2020,City of Houston,Housing,1185514924.0,24
+Q4 2020,City of Houston,Infrastructure,1185514924.0,24
+Q4 2020,Harris County,Housing,1010344529.67,29
+Q4 2020,Harris County,Infrastructure,1010344529.67,29
+Q4 2020,Texas General Land Office,Housing,5000000.0,35
+Q4 2020,Texas General Land Office,Infrastructure,5000000.0,35
+Q4 2021,Unknown,Infrastructure,2483688702.38,536
+Q4 2021,City of Houston,Infrastructure,912659065.0,20
+Q4 2021,Harris County,Infrastructure,782048460.28,27
+Q4 2021,Harris County,Housing,43595013.93,19
+Q4 2021,Texas General Land Office,Housing,14204986.07,7
+Q4 2021,Texas General Land Office,Infrastructure,5000000.0,35
+Q4 2021,Unknown,Housing,0.0,1
+Q4 2022,Unknown,Infrastructure,2458888281.39,470
+Q4 2022,City of Houston,Infrastructure,829923532.0,15
+Q4 2022,Harris County,Infrastructure,755976888.46,25
+Q4 2022,Harris County,Housing,43465600.0,14
+Q4 2022,Unknown,Housing,10966400.0,1
+Q4 2022,Texas General Land Office,Housing,2968000.0,2
+Q4 2022,Texas General Land Office,Infrastructure,0.0,21
+Q4 2023,Unknown,Infrastructure,2522277052.22,468
+Q4 2023,City of Houston,Infrastructure,977833611.0,15
+Q4 2023,Harris County,Infrastructure,647779865.76,26
+Q4 2023,Harris County,Housing,43876122.230000004,13
+Q4 2023,Unknown,Housing,10955877.77,1
+Q4 2023,Texas General Land Office,Infrastructure,3693881.5799999996,6
+Q4 2023,Texas General Land Office,Housing,2968000.0,2
+Q4 2024,Unknown,Infrastructure,2684784378.83,493
+Q4 2024,City of Houston,Infrastructure,1050971338.37,15
+Q4 2024,Harris County,Infrastructure,660181272.55,29
+Q4 2024,Harris County,Housing,43879068.11,22
+Q4 2024,Unknown,Housing,10952931.89,2
+Q4 2024,Texas General Land Office,Infrastructure,3676197.05,5
+Q4 2024,Texas General Land Office,Housing,2968000.0,6
+Q4 2025,Unknown,Infrastructure,2716139604.0,536
+Q4 2025,City of Houston,Infrastructure,1035382736.84,17
+Q4 2025,Harris County,Infrastructure,665224650.18,29
+Q4 2025,Harris County,Housing,43879068.11,22
+Q4 2025,Unknown,Housing,10952931.89,2
+Q4 2025,Texas General Land Office,Housing,2968000.0,6
+Q4 2025,Texas General Land Office,Infrastructure,0.0,4

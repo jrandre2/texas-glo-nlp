@@ -1,0 +1,482 @@
+[
+  {
+    "quarter": "Q4 2019",
+    "year": 2019,
+    "quarter_num": 4,
+    "program_type": "Housing",
+    "total_budget": 54748160.0,
+    "activity_count": 22,
+    "completed": 0,
+    "in_progress": 10
+  },
+  {
+    "quarter": "Q1 2020",
+    "year": 2020,
+    "quarter_num": 1,
+    "program_type": "Infrastructure",
+    "total_budget": 3469283204.96,
+    "activity_count": 462,
+    "completed": 0,
+    "in_progress": 365
+  },
+  {
+    "quarter": "Q2 2020",
+    "year": 2020,
+    "quarter_num": 2,
+    "program_type": "Housing",
+    "total_budget": 14334400.0,
+    "activity_count": 11,
+    "completed": 0,
+    "in_progress": 4
+  },
+  {
+    "quarter": "Q2 2020",
+    "year": 2020,
+    "quarter_num": 2,
+    "program_type": "Infrastructure",
+    "total_budget": 3633053986.75,
+    "activity_count": 544,
+    "completed": 0,
+    "in_progress": 447
+  },
+  {
+    "quarter": "Q3 2020",
+    "year": 2020,
+    "quarter_num": 3,
+    "program_type": "Housing",
+    "total_budget": 14334400.0,
+    "activity_count": 11,
+    "completed": 0,
+    "in_progress": 4
+  },
+  {
+    "quarter": "Q3 2020",
+    "year": 2020,
+    "quarter_num": 3,
+    "program_type": "Infrastructure",
+    "total_budget": 3743508538.92,
+    "activity_count": 573,
+    "completed": 0,
+    "in_progress": 476
+  },
+  {
+    "quarter": "Q4 2020",
+    "year": 2020,
+    "quarter_num": 4,
+    "program_type": "Housing",
+    "total_budget": 4255022393.16,
+    "activity_count": 593,
+    "completed": 2,
+    "in_progress": 496
+  },
+  {
+    "quarter": "Q4 2020",
+    "year": 2020,
+    "quarter_num": 4,
+    "program_type": "Infrastructure",
+    "total_budget": 4255022393.16,
+    "activity_count": 593,
+    "completed": 2,
+    "in_progress": 496
+  },
+  {
+    "quarter": "Q1 2021",
+    "year": 2021,
+    "quarter_num": 1,
+    "program_type": "Housing",
+    "total_budget": 57800000.0,
+    "activity_count": 26,
+    "completed": 0,
+    "in_progress": 19
+  },
+  {
+    "quarter": "Q1 2021",
+    "year": 2021,
+    "quarter_num": 1,
+    "program_type": "Infrastructure",
+    "total_budget": 4138322581.54,
+    "activity_count": 611,
+    "completed": 2,
+    "in_progress": 512
+  },
+  {
+    "quarter": "Q2 2021",
+    "year": 2021,
+    "quarter_num": 2,
+    "program_type": "Housing",
+    "total_budget": 57800000.0,
+    "activity_count": 26,
+    "completed": 0,
+    "in_progress": 19
+  },
+  {
+    "quarter": "Q2 2021",
+    "year": 2021,
+    "quarter_num": 2,
+    "program_type": "Infrastructure",
+    "total_budget": 4106703605.54,
+    "activity_count": 612,
+    "completed": 2,
+    "in_progress": 503
+  },
+  {
+    "quarter": "Q3 2021",
+    "year": 2021,
+    "quarter_num": 3,
+    "program_type": "Housing",
+    "total_budget": 57800000.0,
+    "activity_count": 27,
+    "completed": 0,
+    "in_progress": 17
+  },
+  {
+    "quarter": "Q3 2021",
+    "year": 2021,
+    "quarter_num": 3,
+    "program_type": "Infrastructure",
+    "total_budget": 4187217344.98,
+    "activity_count": 615,
+    "completed": 2,
+    "in_progress": 496
+  },
+  {
+    "quarter": "Q4 2021",
+    "year": 2021,
+    "quarter_num": 4,
+    "program_type": "Housing",
+    "total_budget": 57800000.0,
+    "activity_count": 27,
+    "completed": 0,
+    "in_progress": 17
+  },
+  {
+    "quarter": "Q4 2021",
+    "year": 2021,
+    "quarter_num": 4,
+    "program_type": "Infrastructure",
+    "total_budget": 4183396227.66,
+    "activity_count": 618,
+    "completed": 2,
+    "in_progress": 498
+  },
+  {
+    "quarter": "Q1 2022",
+    "year": 2022,
+    "quarter_num": 1,
+    "program_type": "Housing",
+    "total_budget": 57800000.0,
+    "activity_count": 17,
+    "completed": 0,
+    "in_progress": 17
+  },
+  {
+    "quarter": "Q1 2022",
+    "year": 2022,
+    "quarter_num": 1,
+    "program_type": "Infrastructure",
+    "total_budget": 4183439418.85,
+    "activity_count": 499,
+    "completed": 2,
+    "in_progress": 497
+  },
+  {
+    "quarter": "Q2 2022",
+    "year": 2022,
+    "quarter_num": 2,
+    "program_type": "Housing",
+    "total_budget": 57800000.0,
+    "activity_count": 16,
+    "completed": 0,
+    "in_progress": 16
+  },
+  {
+    "quarter": "Q2 2022",
+    "year": 2022,
+    "quarter_num": 2,
+    "program_type": "Infrastructure",
+    "total_budget": 4161104159.86,
+    "activity_count": 517,
+    "completed": 2,
+    "in_progress": 515
+  },
+  {
+    "quarter": "Q3 2022",
+    "year": 2022,
+    "quarter_num": 3,
+    "program_type": "Housing",
+    "total_budget": 57800000.0,
+    "activity_count": 16,
+    "completed": 0,
+    "in_progress": 16
+  },
+  {
+    "quarter": "Q3 2022",
+    "year": 2022,
+    "quarter_num": 3,
+    "program_type": "Infrastructure",
+    "total_budget": 4062365223.13,
+    "activity_count": 518,
+    "completed": 2,
+    "in_progress": 516
+  },
+  {
+    "quarter": "Q4 2022",
+    "year": 2022,
+    "quarter_num": 4,
+    "program_type": "Housing",
+    "total_budget": 57400000.0,
+    "activity_count": 17,
+    "completed": 0,
+    "in_progress": 17
+  },
+  {
+    "quarter": "Q4 2022",
+    "year": 2022,
+    "quarter_num": 4,
+    "program_type": "Infrastructure",
+    "total_budget": 4044788701.85,
+    "activity_count": 531,
+    "completed": 2,
+    "in_progress": 529
+  },
+  {
+    "quarter": "Q1 2023",
+    "year": 2023,
+    "quarter_num": 1,
+    "program_type": "Housing",
+    "total_budget": 57400000.0,
+    "activity_count": 18,
+    "completed": 0,
+    "in_progress": 17
+  },
+  {
+    "quarter": "Q1 2023",
+    "year": 2023,
+    "quarter_num": 1,
+    "program_type": "Infrastructure",
+    "total_budget": 4189531376.61,
+    "activity_count": 535,
+    "completed": 5,
+    "in_progress": 530
+  },
+  {
+    "quarter": "Q2 2023",
+    "year": 2023,
+    "quarter_num": 2,
+    "program_type": "Housing",
+    "total_budget": 57400000.0,
+    "activity_count": 16,
+    "completed": 0,
+    "in_progress": 16
+  },
+  {
+    "quarter": "Q2 2023",
+    "year": 2023,
+    "quarter_num": 2,
+    "program_type": "Infrastructure",
+    "total_budget": 4202622284.24,
+    "activity_count": 537,
+    "completed": 6,
+    "in_progress": 531
+  },
+  {
+    "quarter": "Q3 2023",
+    "year": 2023,
+    "quarter_num": 3,
+    "program_type": "Housing",
+    "total_budget": 57400000.0,
+    "activity_count": 16,
+    "completed": 0,
+    "in_progress": 16
+  },
+  {
+    "quarter": "Q3 2023",
+    "year": 2023,
+    "quarter_num": 3,
+    "program_type": "Infrastructure",
+    "total_budget": 4100621937.89,
+    "activity_count": 511,
+    "completed": 14,
+    "in_progress": 497
+  },
+  {
+    "quarter": "Q4 2023",
+    "year": 2023,
+    "quarter_num": 4,
+    "program_type": "Housing",
+    "total_budget": 57800000.0,
+    "activity_count": 16,
+    "completed": 0,
+    "in_progress": 16
+  },
+  {
+    "quarter": "Q4 2023",
+    "year": 2023,
+    "quarter_num": 4,
+    "program_type": "Infrastructure",
+    "total_budget": 4151584410.56,
+    "activity_count": 515,
+    "completed": 14,
+    "in_progress": 501
+  },
+  {
+    "quarter": "Q1 2024",
+    "year": 2024,
+    "quarter_num": 1,
+    "program_type": "Housing",
+    "total_budget": 57800000.0,
+    "activity_count": 16,
+    "completed": 0,
+    "in_progress": 16
+  },
+  {
+    "quarter": "Q1 2024",
+    "year": 2024,
+    "quarter_num": 1,
+    "program_type": "Infrastructure",
+    "total_budget": 4207859449.59,
+    "activity_count": 533,
+    "completed": 25,
+    "in_progress": 508
+  },
+  {
+    "quarter": "Q2 2024",
+    "year": 2024,
+    "quarter_num": 2,
+    "program_type": "Housing",
+    "total_budget": 57800000.0,
+    "activity_count": 16,
+    "completed": 0,
+    "in_progress": 16
+  },
+  {
+    "quarter": "Q2 2024",
+    "year": 2024,
+    "quarter_num": 2,
+    "program_type": "Infrastructure",
+    "total_budget": 4205259416.83,
+    "activity_count": 530,
+    "completed": 33,
+    "in_progress": 497
+  },
+  {
+    "quarter": "Q3 2024",
+    "year": 2024,
+    "quarter_num": 3,
+    "program_type": "Housing",
+    "total_budget": 115600000.0,
+    "activity_count": 32,
+    "completed": 0,
+    "in_progress": 32
+  },
+  {
+    "quarter": "Q3 2024",
+    "year": 2024,
+    "quarter_num": 3,
+    "program_type": "Infrastructure",
+    "total_budget": 8751492588.76,
+    "activity_count": 1050,
+    "completed": 74,
+    "in_progress": 976
+  },
+  {
+    "quarter": "Q4 2024",
+    "year": 2024,
+    "quarter_num": 4,
+    "program_type": "Housing",
+    "total_budget": 57800000.0,
+    "activity_count": 30,
+    "completed": 0,
+    "in_progress": 16
+  },
+  {
+    "quarter": "Q4 2024",
+    "year": 2024,
+    "quarter_num": 4,
+    "program_type": "Infrastructure",
+    "total_budget": 4399613186.8,
+    "activity_count": 542,
+    "completed": 41,
+    "in_progress": 484
+  },
+  {
+    "quarter": "Q1 2025",
+    "year": 2025,
+    "quarter_num": 1,
+    "program_type": "Housing",
+    "total_budget": 57800000.0,
+    "activity_count": 30,
+    "completed": 0,
+    "in_progress": 16
+  },
+  {
+    "quarter": "Q1 2025",
+    "year": 2025,
+    "quarter_num": 1,
+    "program_type": "Infrastructure",
+    "total_budget": 4393305227.37,
+    "activity_count": 562,
+    "completed": 45,
+    "in_progress": 483
+  },
+  {
+    "quarter": "Q2 2025",
+    "year": 2025,
+    "quarter_num": 2,
+    "program_type": "Housing",
+    "total_budget": 57800000.0,
+    "activity_count": 30,
+    "completed": 0,
+    "in_progress": 16
+  },
+  {
+    "quarter": "Q2 2025",
+    "year": 2025,
+    "quarter_num": 2,
+    "program_type": "Infrastructure",
+    "total_budget": 4349756130.0,
+    "activity_count": 586,
+    "completed": 45,
+    "in_progress": 504
+  },
+  {
+    "quarter": "Q3 2025",
+    "year": 2025,
+    "quarter_num": 3,
+    "program_type": "Housing",
+    "total_budget": 57800000.0,
+    "activity_count": 30,
+    "completed": 0,
+    "in_progress": 16
+  },
+  {
+    "quarter": "Q3 2025",
+    "year": 2025,
+    "quarter_num": 3,
+    "program_type": "Infrastructure",
+    "total_budget": 4378604099.06,
+    "activity_count": 581,
+    "completed": 77,
+    "in_progress": 445
+  },
+  {
+    "quarter": "Q4 2025",
+    "year": 2025,
+    "quarter_num": 4,
+    "program_type": "Housing",
+    "total_budget": 57800000.0,
+    "activity_count": 30,
+    "completed": 0,
+    "in_progress": 16
+  },
+  {
+    "quarter": "Q4 2025",
+    "year": 2025,
+    "quarter_num": 4,
+    "program_type": "Infrastructure",
+    "total_budget": 4416746991.0199995,
+    "activity_count": 586,
+    "completed": 73,
+    "in_progress": 453
+  }
+]

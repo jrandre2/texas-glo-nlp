@@ -1,0 +1,1563 @@
+Quarter,County,Program Type,Allocated,Activity Count
+Q1 2020,Statewide,Infrastructure,3362979103.26,338
+Q1 2020,FortBend,Infrastructure,17787575.0,3
+Q1 2020,SanJacinto,Infrastructure,13963288.0,4
+Q1 2020,Montgomery,Infrastructure,12392489.0,3
+Q1 2020,Liberty,Infrastructure,11124857.0,5
+Q1 2020,Fayette,Infrastructure,9549388.75,4
+Q1 2020,Newton,Infrastructure,7745843.0,3
+Q1 2020,Nueces County,Infrastructure,4644430.59,2
+Q1 2020,Galveston,Infrastructure,3399435.0,1
+Q1 2020,FortBend County,Infrastructure,3368000.0,5
+Q1 2020,Hardin,Infrastructure,2938238.56,2
+Q1 2020,Chambers,Infrastructure,2701783.0,1
+Q1 2020,Victoria,Infrastructure,2413521.0,3
+Q1 2020,Wharton,Infrastructure,2173864.0,3
+Q1 2020,SanPatricio,Infrastructure,2037215.0,1
+Q1 2020,Jefferson,Infrastructure,1885562.0,3
+Q1 2020,Newton County,Infrastructure,1869100.0,4
+Q1 2020,Victoria County,Infrastructure,1324296.0,2
+Q1 2020,Jasper,Infrastructure,1298067.0,2
+Q1 2020,Jefferson County,Infrastructure,765746.8,5
+Q1 2020,Jackson,Infrastructure,588206.0,2
+Q1 2020,Liberty County,Infrastructure,539711.0,1
+Q1 2020,Montgomery County,Infrastructure,504000.0,1
+Q1 2020,Hardin County,Infrastructure,450000.0,2
+Q1 2020,Fayette County,Infrastructure,293250.0,1
+Q1 2020,Tyler County,Infrastructure,249302.0,4
+Q1 2020,Colorado,Infrastructure,227232.0,2
+Q1 2020,Wharton County,Infrastructure,69701.0,1
+Q1 2020,Austin,Infrastructure,0.0,5
+Q1 2020,Austin County,Infrastructure,0.0,1
+Q1 2020,Bastrop,Infrastructure,0.0,3
+Q1 2020,Bastrop County,Infrastructure,0.0,1
+Q1 2020,Bee County,Infrastructure,0.0,2
+Q1 2020,Caldwell,Infrastructure,0.0,3
+Q1 2020,Calhoun County,Infrastructure,0.0,2
+Q1 2020,Goliad,Infrastructure,0.0,2
+Q1 2020,Goliad County,Infrastructure,0.0,5
+Q1 2020,Gonzales,Infrastructure,0.0,3
+Q1 2020,Gonzales County,Infrastructure,0.0,1
+Q1 2020,Grimes,Infrastructure,0.0,2
+Q1 2020,Grimes County,Infrastructure,0.0,2
+Q1 2020,Karnes,Infrastructure,0.0,4
+Q1 2020,Karnes County,Infrastructure,0.0,1
+Q1 2020,Lee,Infrastructure,0.0,1
+Q1 2020,Lee County,Infrastructure,0.0,1
+Q1 2020,Milam,Infrastructure,0.0,3
+Q1 2020,Milam County,Infrastructure,0.0,1
+Q1 2020,Polk,Infrastructure,0.0,3
+Q1 2020,Sabine,Infrastructure,0.0,1
+Q1 2020,Tyler,Infrastructure,0.0,2
+Q1 2020,Waller,Infrastructure,0.0,4
+Q1 2020,Waller County,Infrastructure,0.0,1
+Q1 2021,Statewide,Infrastructure,3938848876.08,436
+Q1 2021,Statewide,Housing,57800000.0,26
+Q1 2021,Aransas County,Infrastructure,33812910.0,3
+Q1 2021,FortBend,Infrastructure,17881491.0,4
+Q1 2021,SanJacinto,Infrastructure,13963288.0,4
+Q1 2021,Montgomery,Infrastructure,12392489.0,3
+Q1 2021,Liberty,Infrastructure,11124857.0,5
+Q1 2021,Brazoria,Infrastructure,10916934.0,1
+Q1 2021,Refugio County,Infrastructure,10294295.0,5
+Q1 2021,Fayette,Infrastructure,9549388.75,4
+Q1 2021,Jasper,Infrastructure,7806652.0,5
+Q1 2021,Newton,Infrastructure,7745843.0,3
+Q1 2021,FortBend County,Infrastructure,7630381.0,6
+Q1 2021,Montgomery County,Infrastructure,7411888.5,8
+Q1 2021,Hardin County,Infrastructure,5701204.59,5
+Q1 2021,Nueces County,Infrastructure,4644430.59,2
+Q1 2021,Galveston,Infrastructure,3399435.0,1
+Q1 2021,Orange,Infrastructure,3362406.17,2
+Q1 2021,Hardin,Infrastructure,2938238.56,2
+Q1 2021,Galveston County,Infrastructure,2838296.0,2
+Q1 2021,Chambers,Infrastructure,2701783.0,1
+Q1 2021,Victoria,Infrastructure,2413521.0,3
+Q1 2021,Wharton,Infrastructure,2173864.0,3
+Q1 2021,Calhoun County,Infrastructure,2138266.5,2
+Q1 2021,SanPatricio,Infrastructure,2037215.0,1
+Q1 2021,Jefferson,Infrastructure,1885562.0,3
+Q1 2021,Newton County,Infrastructure,1869100.0,4
+Q1 2021,Waller,Infrastructure,1828698.0,4
+Q1 2021,Matagorda County,Infrastructure,1373481.0,5
+Q1 2021,Victoria County,Infrastructure,1324296.0,2
+Q1 2021,Walker,Infrastructure,1102398.0,2
+Q1 2021,Polk,Infrastructure,995241.0,3
+Q1 2021,Jefferson County,Infrastructure,993328.8,6
+Q1 2021,Tyler County,Infrastructure,757502.0,4
+Q1 2021,Orange County,Infrastructure,680000.0,4
+Q1 2021,Liberty County,Infrastructure,539711.0,1
+Q1 2021,Wharton County,Infrastructure,412453.0,5
+Q1 2021,Jasper County,Infrastructure,312375.0,1
+Q1 2021,Fayette County,Infrastructure,293250.0,1
+Q1 2021,Colorado,Infrastructure,227232.0,2
+Q1 2021,Austin,Infrastructure,0.0,5
+Q1 2021,Austin County,Infrastructure,0.0,1
+Q1 2021,Bastrop,Infrastructure,0.0,3
+Q1 2021,Bastrop County,Infrastructure,0.0,3
+Q1 2021,Bee County,Infrastructure,0.0,2
+Q1 2021,Caldwell,Infrastructure,0.0,3
+Q1 2021,Goliad,Infrastructure,0.0,2
+Q1 2021,Goliad County,Infrastructure,0.0,5
+Q1 2021,Gonzales,Infrastructure,0.0,3
+Q1 2021,Gonzales County,Infrastructure,0.0,1
+Q1 2021,Grimes,Infrastructure,0.0,2
+Q1 2021,Grimes County,Infrastructure,0.0,2
+Q1 2021,Jackson,Infrastructure,0.0,2
+Q1 2021,Karnes,Infrastructure,0.0,4
+Q1 2021,Karnes County,Infrastructure,0.0,1
+Q1 2021,Lavaca,Infrastructure,0.0,1
+Q1 2021,Lee,Infrastructure,0.0,2
+Q1 2021,Lee County,Infrastructure,0.0,1
+Q1 2021,Milam,Infrastructure,0.0,5
+Q1 2021,Milam County,Infrastructure,0.0,1
+Q1 2021,Sabine,Infrastructure,0.0,1
+Q1 2021,Tyler,Infrastructure,0.0,2
+Q1 2021,Waller County,Infrastructure,0.0,1
+Q1 2022,Statewide,Infrastructure,3985046647.88,324
+Q1 2022,Statewide,Housing,57800000.0,17
+Q1 2022,Aransas County,Infrastructure,33815495.0,3
+Q1 2022,FortBend,Infrastructure,17881491.0,4
+Q1 2022,SanJacinto,Infrastructure,13964183.0,4
+Q1 2022,Montgomery,Infrastructure,12392489.0,3
+Q1 2022,Liberty,Infrastructure,11125680.36,5
+Q1 2022,Brazoria,Infrastructure,10917829.0,1
+Q1 2022,Refugio County,Infrastructure,10297160.0,5
+Q1 2022,Fayette,Infrastructure,9550829.31,4
+Q1 2022,Jasper,Infrastructure,7806652.0,5
+Q1 2022,Newton,Infrastructure,7746418.0,3
+Q1 2022,FortBend County,Infrastructure,7630381.0,6
+Q1 2022,Montgomery County,Infrastructure,7411888.5,8
+Q1 2022,Hardin County,Infrastructure,5703589.59,5
+Q1 2022,Nueces County,Infrastructure,4644430.59,2
+Q1 2022,Galveston,Infrastructure,3401405.0,1
+Q1 2022,Orange,Infrastructure,3364044.78,2
+Q1 2022,Hardin,Infrastructure,2938238.56,2
+Q1 2022,Galveston County,Infrastructure,2838296.0,2
+Q1 2022,Chambers,Infrastructure,2703753.0,1
+Q1 2022,Victoria,Infrastructure,2414369.58,3
+Q1 2022,Wharton,Infrastructure,2173864.0,3
+Q1 2022,Calhoun County,Infrastructure,2139161.5,2
+Q1 2022,SanPatricio,Infrastructure,2037215.0,1
+Q1 2022,Jefferson,Infrastructure,1885562.0,3
+Q1 2022,Newton County,Infrastructure,1869100.0,4
+Q1 2022,Waller,Infrastructure,1828698.0,4
+Q1 2022,Matagorda County,Infrastructure,1373481.0,5
+Q1 2022,Victoria County,Infrastructure,1324645.94,2
+Q1 2022,Polk,Infrastructure,995241.0,3
+Q1 2022,Jefferson County,Infrastructure,993328.8,6
+Q1 2022,Tyler County,Infrastructure,757502.0,4
+Q1 2022,Orange County,Infrastructure,680331.38,4
+Q1 2022,Liberty County,Infrastructure,539782.64,1
+Q1 2022,Wharton County,Infrastructure,413348.0,5
+Q1 2022,Jasper County,Infrastructure,312375.0,1
+Q1 2022,Fayette County,Infrastructure,293279.44,1
+Q1 2022,Colorado,Infrastructure,227232.0,2
+Q1 2022,Austin,Infrastructure,0.0,5
+Q1 2022,Austin County,Infrastructure,0.0,1
+Q1 2022,Bastrop,Infrastructure,0.0,3
+Q1 2022,Bastrop County,Infrastructure,0.0,3
+Q1 2022,Bee County,Infrastructure,0.0,2
+Q1 2022,Caldwell,Infrastructure,0.0,3
+Q1 2022,Goliad,Infrastructure,0.0,2
+Q1 2022,Goliad County,Infrastructure,0.0,5
+Q1 2022,Gonzales,Infrastructure,0.0,3
+Q1 2022,Gonzales County,Infrastructure,0.0,1
+Q1 2022,Grimes,Infrastructure,0.0,2
+Q1 2022,Grimes County,Infrastructure,0.0,2
+Q1 2022,Jackson,Infrastructure,0.0,2
+Q1 2022,Karnes,Infrastructure,0.0,4
+Q1 2022,Karnes County,Infrastructure,0.0,1
+Q1 2022,Lavaca,Infrastructure,0.0,1
+Q1 2022,Lee,Infrastructure,0.0,2
+Q1 2022,Lee County,Infrastructure,0.0,1
+Q1 2022,Milam,Infrastructure,0.0,5
+Q1 2022,Milam County,Infrastructure,0.0,1
+Q1 2022,Sabine,Infrastructure,0.0,1
+Q1 2022,Tyler,Infrastructure,0.0,2
+Q1 2022,Walker,Infrastructure,0.0,2
+Q1 2022,Waller County,Infrastructure,0.0,1
+Q1 2023,Statewide,Infrastructure,4025264669.59,349
+Q1 2023,Statewide,Housing,57400000.0,18
+Q1 2023,Aransas County,Infrastructure,24537451.23,3
+Q1 2023,Montgomery,Infrastructure,11228396.77,4
+Q1 2023,Liberty,Infrastructure,11155240.290000001,5
+Q1 2023,Brazoria,Infrastructure,10917829.0,1
+Q1 2023,Refugio County,Infrastructure,10878831.42,6
+Q1 2023,SanJacinto,Infrastructure,9094510.82,4
+Q1 2023,Montgomery County,Infrastructure,8575980.73,12
+Q1 2023,Hardin County,Infrastructure,7816935.109999999,4
+Q1 2023,Jasper,Infrastructure,7808442.0,5
+Q1 2023,Newton,Infrastructure,7747543.0,3
+Q1 2023,Nueces County,Infrastructure,4645555.59,2
+Q1 2023,Galveston County,Infrastructure,4236803.04,2
+Q1 2023,FortBend County,Infrastructure,4062281.05,4
+Q1 2023,Fayette,Infrastructure,3779063.89,4
+Q1 2023,Calhoun County,Infrastructure,3729579.24,2
+Q1 2023,Galveston,Infrastructure,3401405.0,1
+Q1 2023,FortBend,Infrastructure,2769491.0,2
+Q1 2023,Chambers,Infrastructure,2703753.0,1
+Q1 2023,Hardin,Infrastructure,2127400.0,2
+Q1 2023,SanPatricio,Infrastructure,2041280.0,1
+Q1 2023,Victoria County,Infrastructure,2015847.94,2
+Q1 2023,SanJacinto County,Infrastructure,1920000.0,3
+Q1 2023,Jefferson,Infrastructure,1886457.0,3
+Q1 2023,Newton County,Infrastructure,1869100.0,4
+Q1 2023,Wharton,Infrastructure,1843903.3399999999,3
+Q1 2023,Waller,Infrastructure,1828698.0,4
+Q1 2023,Orange,Infrastructure,1707229.7799999998,2
+Q1 2023,Matagorda County,Infrastructure,1373870.3900000001,5
+Q1 2023,Victoria,Infrastructure,1204109.06,3
+Q1 2023,Polk,Infrastructure,995816.0,3
+Q1 2023,Jefferson County,Infrastructure,993328.8,6
+Q1 2023,Tyler County,Infrastructure,758397.0,4
+Q1 2023,Orange County,Infrastructure,600331.38,6
+Q1 2023,Liberty County,Infrastructure,526062.71,2
+Q1 2023,Wharton County,Infrastructure,491147.0,5
+Q1 2023,Fayette County,Infrastructure,455029.44,3
+Q1 2023,Jasper County,Infrastructure,312375.0,1
+Q1 2023,Colorado,Infrastructure,227232.0,2
+Q1 2023,Austin,Infrastructure,0.0,5
+Q1 2023,Austin County,Infrastructure,0.0,3
+Q1 2023,Bastrop,Infrastructure,0.0,3
+Q1 2023,Bastrop County,Infrastructure,0.0,3
+Q1 2023,Bee County,Infrastructure,0.0,2
+Q1 2023,Caldwell,Infrastructure,0.0,3
+Q1 2023,Goliad,Infrastructure,0.0,2
+Q1 2023,Goliad County,Infrastructure,0.0,5
+Q1 2023,Gonzales,Infrastructure,0.0,3
+Q1 2023,Gonzales County,Infrastructure,0.0,1
+Q1 2023,Grimes,Infrastructure,0.0,2
+Q1 2023,Grimes County,Infrastructure,0.0,2
+Q1 2023,Jackson,Infrastructure,0.0,2
+Q1 2023,Karnes,Infrastructure,0.0,4
+Q1 2023,Karnes County,Infrastructure,0.0,1
+Q1 2023,Lee,Infrastructure,0.0,2
+Q1 2023,Lee County,Infrastructure,0.0,1
+Q1 2023,Milam,Infrastructure,0.0,5
+Q1 2023,Milam County,Infrastructure,0.0,1
+Q1 2023,Sabine,Infrastructure,0.0,1
+Q1 2023,Tyler,Infrastructure,0.0,2
+Q1 2023,Walker,Infrastructure,0.0,2
+Q1 2023,Waller County,Infrastructure,0.0,2
+Q1 2024,Statewide,Infrastructure,4054585619.6,344
+Q1 2024,Statewide,Housing,57800000.0,16
+Q1 2024,Aransas County,Infrastructure,24537451.23,3
+Q1 2024,Montgomery,Infrastructure,11480489.0,4
+Q1 2024,Liberty,Infrastructure,11155242.11,5
+Q1 2024,Brazoria,Infrastructure,10917829.0,1
+Q1 2024,Refugio County,Infrastructure,10846941.42,6
+Q1 2024,SanJacinto,Infrastructure,9195613.82,4
+Q1 2024,Hardin County,Infrastructure,7816935.109999999,4
+Q1 2024,Newton,Infrastructure,7747543.0,3
+Q1 2024,Nueces County,Infrastructure,4645555.59,2
+Q1 2024,Jasper,Infrastructure,4633379.73,5
+Q1 2024,Galveston County,Infrastructure,4235621.0,6
+Q1 2024,FortBend County,Infrastructure,4062281.05,4
+Q1 2024,Fayette,Infrastructure,3868969.77,4
+Q1 2024,Calhoun County,Infrastructure,3578192.24,2
+Q1 2024,Galveston,Infrastructure,3401405.0,1
+Q1 2024,FortBend,Infrastructure,2769491.0,2
+Q1 2024,Chambers,Infrastructure,2703753.0,1
+Q1 2024,Hardin,Infrastructure,2129370.0,2
+Q1 2024,SanPatricio,Infrastructure,2041280.0,1
+Q1 2024,Victoria County,Infrastructure,2015847.94,2
+Q1 2024,SanJacinto County,Infrastructure,1920000.0,3
+Q1 2024,Jefferson,Infrastructure,1886457.0,3
+Q1 2024,Newton County,Infrastructure,1869100.0,4
+Q1 2024,Wharton,Infrastructure,1843903.3399999999,3
+Q1 2024,Waller,Infrastructure,1828698.0,4
+Q1 2024,Montgomery County,Infrastructure,1433684.53,6
+Q1 2024,Matagorda County,Infrastructure,1373870.3900000001,5
+Q1 2024,Orange,Infrastructure,1361491.03,2
+Q1 2024,Victoria,Infrastructure,1204109.06,3
+Q1 2024,Polk,Infrastructure,995816.0,4
+Q1 2024,Jefferson County,Infrastructure,993328.8,6
+Q1 2024,Tyler County,Infrastructure,768397.0,6
+Q1 2024,Liberty County,Infrastructure,526060.89,2
+Q1 2024,Wharton County,Infrastructure,491147.0,5
+Q1 2024,Fayette County,Infrastructure,455123.56,3
+Q1 2024,Orange County,Infrastructure,240331.38,6
+Q1 2024,Colorado,Infrastructure,221125.0,2
+Q1 2024,Jasper County,Infrastructure,60000.0,2
+Q1 2024,Caldwell,Infrastructure,17996.0,3
+Q1 2024,Austin,Infrastructure,0.0,5
+Q1 2024,Austin County,Infrastructure,0.0,2
+Q1 2024,Bastrop,Infrastructure,0.0,2
+Q1 2024,Bastrop County,Infrastructure,0.0,3
+Q1 2024,Bee County,Infrastructure,0.0,2
+Q1 2024,Goliad,Infrastructure,0.0,2
+Q1 2024,Goliad County,Infrastructure,0.0,5
+Q1 2024,Gonzales,Infrastructure,0.0,3
+Q1 2024,Gonzales County,Infrastructure,0.0,1
+Q1 2024,Grimes,Infrastructure,0.0,2
+Q1 2024,Grimes County,Infrastructure,0.0,2
+Q1 2024,Jackson,Infrastructure,0.0,2
+Q1 2024,Karnes,Infrastructure,0.0,4
+Q1 2024,Karnes County,Infrastructure,0.0,1
+Q1 2024,Lee,Infrastructure,0.0,2
+Q1 2024,Milam,Infrastructure,0.0,5
+Q1 2024,Milam County,Infrastructure,0.0,2
+Q1 2024,Polk County,Infrastructure,0.0,2
+Q1 2024,Sabine,Infrastructure,0.0,1
+Q1 2024,Tyler,Infrastructure,0.0,3
+Q1 2024,Walker,Infrastructure,0.0,2
+Q1 2024,Waller County,Infrastructure,0.0,2
+Q1 2025,Statewide,Infrastructure,4235634888.24,373
+Q1 2025,Statewide,Housing,57800000.0,30
+Q1 2025,Aransas County,Infrastructure,28797241.849999998,3
+Q1 2025,Refugio County,Infrastructure,11727057.24,6
+Q1 2025,Liberty,Infrastructure,11155242.11,5
+Q1 2025,Brazoria,Infrastructure,10917829.0,1
+Q1 2025,Montgomery,Infrastructure,10304489.0,3
+Q1 2025,SanJacinto,Infrastructure,9195613.82,4
+Q1 2025,Newton,Infrastructure,7839731.0,3
+Q1 2025,Hardin County,Infrastructure,7826814.66,4
+Q1 2025,Nueces County,Infrastructure,4645555.59,2
+Q1 2025,Galveston County,Infrastructure,4235621.0,6
+Q1 2025,FortBend County,Infrastructure,4062281.05,4
+Q1 2025,Fayette,Infrastructure,3868969.77,4
+Q1 2025,Polk,Infrastructure,3640646.0,4
+Q1 2025,Calhoun County,Infrastructure,3578192.24,2
+Q1 2025,Jasper,Infrastructure,3437811.54,5
+Q1 2025,Galveston,Infrastructure,3293091.27,1
+Q1 2025,FortBend,Infrastructure,2769491.0,2
+Q1 2025,Chambers,Infrastructure,2703753.0,1
+Q1 2025,Montgomery County,Infrastructure,2592000.0,7
+Q1 2025,Waller,Infrastructure,2199081.8,4
+Q1 2025,Hardin,Infrastructure,2129370.0,2
+Q1 2025,SanPatricio,Infrastructure,2041280.0,1
+Q1 2025,SanJacinto County,Infrastructure,1920000.0,3
+Q1 2025,Victoria County,Infrastructure,1918269.5499999998,2
+Q1 2025,Jefferson,Infrastructure,1886457.0,3
+Q1 2025,Wharton,Infrastructure,1843903.3399999999,3
+Q1 2025,Orange,Infrastructure,1432031.03,2
+Q1 2025,Jefferson County,Infrastructure,993328.8,6
+Q1 2025,Matagorda County,Infrastructure,977132.89,5
+Q1 2025,Newton County,Infrastructure,935000.0,4
+Q1 2025,Tyler County,Infrastructure,768397.0,6
+Q1 2025,Liberty County,Infrastructure,526060.89,2
+Q1 2025,Wharton County,Infrastructure,491147.0,5
+Q1 2025,Fayette County,Infrastructure,455123.56,3
+Q1 2025,Colorado,Infrastructure,221125.0,2
+Q1 2025,Orange County,Infrastructure,170331.38,5
+Q1 2025,Polk County,Infrastructure,100000.0,2
+Q1 2025,Victoria,Infrastructure,50868.75,3
+Q1 2025,Jasper County,Infrastructure,20000.0,2
+Q1 2025,Austin,Infrastructure,0.0,5
+Q1 2025,Austin County,Infrastructure,0.0,3
+Q1 2025,Bastrop,Infrastructure,0.0,2
+Q1 2025,Bastrop County,Infrastructure,0.0,4
+Q1 2025,Bee County,Infrastructure,0.0,2
+Q1 2025,Caldwell,Infrastructure,0.0,3
+Q1 2025,Goliad,Infrastructure,0.0,2
+Q1 2025,Goliad County,Infrastructure,0.0,5
+Q1 2025,Gonzales,Infrastructure,0.0,3
+Q1 2025,Gonzales County,Infrastructure,0.0,1
+Q1 2025,Grimes,Infrastructure,0.0,2
+Q1 2025,Grimes County,Infrastructure,0.0,2
+Q1 2025,Jackson,Infrastructure,0.0,2
+Q1 2025,Karnes,Infrastructure,0.0,4
+Q1 2025,Karnes County,Infrastructure,0.0,1
+Q1 2025,Lee,Infrastructure,0.0,2
+Q1 2025,Milam,Infrastructure,0.0,4
+Q1 2025,Milam County,Infrastructure,0.0,2
+Q1 2025,Sabine,Infrastructure,0.0,1
+Q1 2025,Tyler,Infrastructure,0.0,3
+Q1 2025,Walker,Infrastructure,0.0,2
+Q1 2025,Waller County,Infrastructure,0.0,2
+Q2 2020,Statewide,Infrastructure,3469216679.28,390
+Q2 2020,Aransas County,Infrastructure,23343264.0,3
+Q2 2020,FortBend,Infrastructure,17881491.0,4
+Q2 2020,Statewide,Housing,14334400.0,11
+Q2 2020,SanJacinto,Infrastructure,13963288.0,4
+Q2 2020,Montgomery,Infrastructure,12392489.0,3
+Q2 2020,Liberty,Infrastructure,11124857.0,5
+Q2 2020,Brazoria,Infrastructure,10916934.0,1
+Q2 2020,Refugio County,Infrastructure,10294295.0,5
+Q2 2020,Fayette,Infrastructure,9549388.75,4
+Q2 2020,Jasper,Infrastructure,7806652.0,5
+Q2 2020,Newton,Infrastructure,7745843.0,3
+Q2 2020,FortBend County,Infrastructure,7630381.0,6
+Q2 2020,Nueces County,Infrastructure,4644430.59,2
+Q2 2020,Jefferson,Infrastructure,4409005.7700000005,4
+Q2 2020,Galveston,Infrastructure,3399435.0,1
+Q2 2020,Hardin,Infrastructure,2938238.56,2
+Q2 2020,Chambers,Infrastructure,2701783.0,1
+Q2 2020,Victoria,Infrastructure,2413521.0,3
+Q2 2020,Wharton,Infrastructure,2173864.0,3
+Q2 2020,SanPatricio,Infrastructure,2037215.0,1
+Q2 2020,Newton County,Infrastructure,1869100.0,4
+Q2 2020,Victoria County,Infrastructure,1324296.0,2
+Q2 2020,Jefferson County,Infrastructure,765746.8,5
+Q2 2020,Liberty County,Infrastructure,539711.0,1
+Q2 2020,Montgomery County,Infrastructure,504000.0,1
+Q2 2020,Hardin County,Infrastructure,450000.0,2
+Q2 2020,Wharton County,Infrastructure,412453.0,5
+Q2 2020,Jasper County,Infrastructure,312375.0,1
+Q2 2020,Fayette County,Infrastructure,293250.0,1
+Q2 2020,Austin,Infrastructure,0.0,5
+Q2 2020,Austin County,Infrastructure,0.0,1
+Q2 2020,Bastrop,Infrastructure,0.0,3
+Q2 2020,Bastrop County,Infrastructure,0.0,1
+Q2 2020,Bee County,Infrastructure,0.0,2
+Q2 2020,Caldwell,Infrastructure,0.0,3
+Q2 2020,Calhoun County,Infrastructure,0.0,2
+Q2 2020,Colorado,Infrastructure,0.0,2
+Q2 2020,Goliad,Infrastructure,0.0,2
+Q2 2020,Goliad County,Infrastructure,0.0,5
+Q2 2020,Gonzales,Infrastructure,0.0,3
+Q2 2020,Gonzales County,Infrastructure,0.0,1
+Q2 2020,Grimes,Infrastructure,0.0,2
+Q2 2020,Grimes County,Infrastructure,0.0,2
+Q2 2020,Jackson,Infrastructure,0.0,2
+Q2 2020,Karnes,Infrastructure,0.0,4
+Q2 2020,Karnes County,Infrastructure,0.0,1
+Q2 2020,Lee,Infrastructure,0.0,2
+Q2 2020,Lee County,Infrastructure,0.0,1
+Q2 2020,Matagorda County,Infrastructure,0.0,5
+Q2 2020,Milam,Infrastructure,0.0,5
+Q2 2020,Milam County,Infrastructure,0.0,1
+Q2 2020,Polk,Infrastructure,0.0,3
+Q2 2020,Sabine,Infrastructure,0.0,1
+Q2 2020,Tyler,Infrastructure,0.0,2
+Q2 2020,Tyler County,Infrastructure,0.0,4
+Q2 2020,Walker,Infrastructure,0.0,2
+Q2 2020,Waller,Infrastructure,0.0,4
+Q2 2020,Waller County,Infrastructure,0.0,1
+Q2 2021,Statewide,Infrastructure,3907229900.08,437
+Q2 2021,Statewide,Housing,57800000.0,26
+Q2 2021,Aransas County,Infrastructure,33812910.0,3
+Q2 2021,FortBend,Infrastructure,17881491.0,4
+Q2 2021,SanJacinto,Infrastructure,13963288.0,4
+Q2 2021,Montgomery,Infrastructure,12392489.0,3
+Q2 2021,Liberty,Infrastructure,11124857.0,5
+Q2 2021,Brazoria,Infrastructure,10916934.0,1
+Q2 2021,Refugio County,Infrastructure,10294295.0,5
+Q2 2021,Fayette,Infrastructure,9549388.75,4
+Q2 2021,Jasper,Infrastructure,7806652.0,5
+Q2 2021,Newton,Infrastructure,7745843.0,3
+Q2 2021,FortBend County,Infrastructure,7630381.0,6
+Q2 2021,Montgomery County,Infrastructure,7411888.5,8
+Q2 2021,Hardin County,Infrastructure,5701204.59,5
+Q2 2021,Nueces County,Infrastructure,4644430.59,2
+Q2 2021,Galveston,Infrastructure,3399435.0,1
+Q2 2021,Orange,Infrastructure,3362406.17,2
+Q2 2021,Hardin,Infrastructure,2938238.56,2
+Q2 2021,Galveston County,Infrastructure,2838296.0,2
+Q2 2021,Chambers,Infrastructure,2701783.0,1
+Q2 2021,Victoria,Infrastructure,2413521.0,3
+Q2 2021,Wharton,Infrastructure,2173864.0,3
+Q2 2021,Calhoun County,Infrastructure,2138266.5,2
+Q2 2021,SanPatricio,Infrastructure,2037215.0,1
+Q2 2021,Jefferson,Infrastructure,1885562.0,3
+Q2 2021,Newton County,Infrastructure,1869100.0,4
+Q2 2021,Waller,Infrastructure,1828698.0,4
+Q2 2021,Matagorda County,Infrastructure,1373481.0,5
+Q2 2021,Victoria County,Infrastructure,1324296.0,2
+Q2 2021,Walker,Infrastructure,1102398.0,2
+Q2 2021,Polk,Infrastructure,995241.0,3
+Q2 2021,Jefferson County,Infrastructure,993328.8,6
+Q2 2021,Tyler County,Infrastructure,757502.0,4
+Q2 2021,Orange County,Infrastructure,680000.0,4
+Q2 2021,Liberty County,Infrastructure,539711.0,1
+Q2 2021,Wharton County,Infrastructure,412453.0,5
+Q2 2021,Jasper County,Infrastructure,312375.0,1
+Q2 2021,Fayette County,Infrastructure,293250.0,1
+Q2 2021,Colorado,Infrastructure,227232.0,2
+Q2 2021,Austin,Infrastructure,0.0,5
+Q2 2021,Austin County,Infrastructure,0.0,1
+Q2 2021,Bastrop,Infrastructure,0.0,3
+Q2 2021,Bastrop County,Infrastructure,0.0,3
+Q2 2021,Bee County,Infrastructure,0.0,2
+Q2 2021,Caldwell,Infrastructure,0.0,3
+Q2 2021,Goliad,Infrastructure,0.0,2
+Q2 2021,Goliad County,Infrastructure,0.0,5
+Q2 2021,Gonzales,Infrastructure,0.0,3
+Q2 2021,Gonzales County,Infrastructure,0.0,1
+Q2 2021,Grimes,Infrastructure,0.0,2
+Q2 2021,Grimes County,Infrastructure,0.0,2
+Q2 2021,Jackson,Infrastructure,0.0,2
+Q2 2021,Karnes,Infrastructure,0.0,4
+Q2 2021,Karnes County,Infrastructure,0.0,1
+Q2 2021,Lavaca,Infrastructure,0.0,1
+Q2 2021,Lee,Infrastructure,0.0,2
+Q2 2021,Lee County,Infrastructure,0.0,1
+Q2 2021,Milam,Infrastructure,0.0,5
+Q2 2021,Milam County,Infrastructure,0.0,1
+Q2 2021,Sabine,Infrastructure,0.0,1
+Q2 2021,Tyler,Infrastructure,0.0,2
+Q2 2021,Waller County,Infrastructure,0.0,1
+Q2 2022,Statewide,Infrastructure,3962711388.89,342
+Q2 2022,Statewide,Housing,57800000.0,16
+Q2 2022,Aransas County,Infrastructure,33815495.0,3
+Q2 2022,FortBend,Infrastructure,17881491.0,4
+Q2 2022,SanJacinto,Infrastructure,13964183.0,4
+Q2 2022,Montgomery,Infrastructure,12392489.0,3
+Q2 2022,Liberty,Infrastructure,11125680.36,5
+Q2 2022,Brazoria,Infrastructure,10917829.0,1
+Q2 2022,Refugio County,Infrastructure,10297160.0,5
+Q2 2022,Fayette,Infrastructure,9550829.31,4
+Q2 2022,Jasper,Infrastructure,7806652.0,5
+Q2 2022,Newton,Infrastructure,7746418.0,3
+Q2 2022,FortBend County,Infrastructure,7630381.0,6
+Q2 2022,Montgomery County,Infrastructure,7411888.5,8
+Q2 2022,Hardin County,Infrastructure,5703589.59,5
+Q2 2022,Nueces County,Infrastructure,4644430.59,2
+Q2 2022,Galveston,Infrastructure,3401405.0,1
+Q2 2022,Orange,Infrastructure,3364044.78,2
+Q2 2022,Hardin,Infrastructure,2938238.56,2
+Q2 2022,Galveston County,Infrastructure,2838296.0,2
+Q2 2022,Chambers,Infrastructure,2703753.0,1
+Q2 2022,Victoria,Infrastructure,2414369.58,3
+Q2 2022,Wharton,Infrastructure,2173864.0,3
+Q2 2022,Calhoun County,Infrastructure,2139161.5,2
+Q2 2022,SanPatricio,Infrastructure,2037215.0,1
+Q2 2022,Jefferson,Infrastructure,1885562.0,3
+Q2 2022,Newton County,Infrastructure,1869100.0,4
+Q2 2022,Waller,Infrastructure,1828698.0,4
+Q2 2022,Matagorda County,Infrastructure,1373481.0,5
+Q2 2022,Victoria County,Infrastructure,1324645.94,2
+Q2 2022,Polk,Infrastructure,995241.0,3
+Q2 2022,Jefferson County,Infrastructure,993328.8,6
+Q2 2022,Tyler County,Infrastructure,757502.0,4
+Q2 2022,Orange County,Infrastructure,680331.38,4
+Q2 2022,Liberty County,Infrastructure,539782.64,1
+Q2 2022,Wharton County,Infrastructure,413348.0,5
+Q2 2022,Jasper County,Infrastructure,312375.0,1
+Q2 2022,Fayette County,Infrastructure,293279.44,1
+Q2 2022,Colorado,Infrastructure,227232.0,2
+Q2 2022,Austin,Infrastructure,0.0,5
+Q2 2022,Austin County,Infrastructure,0.0,1
+Q2 2022,Bastrop,Infrastructure,0.0,3
+Q2 2022,Bastrop County,Infrastructure,0.0,3
+Q2 2022,Bee County,Infrastructure,0.0,2
+Q2 2022,Caldwell,Infrastructure,0.0,3
+Q2 2022,Goliad,Infrastructure,0.0,2
+Q2 2022,Goliad County,Infrastructure,0.0,5
+Q2 2022,Gonzales,Infrastructure,0.0,3
+Q2 2022,Gonzales County,Infrastructure,0.0,1
+Q2 2022,Grimes,Infrastructure,0.0,2
+Q2 2022,Grimes County,Infrastructure,0.0,2
+Q2 2022,Jackson,Infrastructure,0.0,2
+Q2 2022,Karnes,Infrastructure,0.0,4
+Q2 2022,Karnes County,Infrastructure,0.0,1
+Q2 2022,Lavaca,Infrastructure,0.0,1
+Q2 2022,Lee,Infrastructure,0.0,2
+Q2 2022,Lee County,Infrastructure,0.0,1
+Q2 2022,Milam,Infrastructure,0.0,5
+Q2 2022,Milam County,Infrastructure,0.0,1
+Q2 2022,Sabine,Infrastructure,0.0,1
+Q2 2022,Tyler,Infrastructure,0.0,2
+Q2 2022,Walker,Infrastructure,0.0,2
+Q2 2022,Waller County,Infrastructure,0.0,1
+Q2 2023,Statewide,Infrastructure,4038355577.22,349
+Q2 2023,Statewide,Housing,57400000.0,16
+Q2 2023,Aransas County,Infrastructure,24537451.23,3
+Q2 2023,Montgomery,Infrastructure,11480489.0,4
+Q2 2023,Liberty,Infrastructure,11155240.290000001,5
+Q2 2023,Brazoria,Infrastructure,10917829.0,1
+Q2 2023,Refugio County,Infrastructure,10878831.42,6
+Q2 2023,SanJacinto,Infrastructure,9094510.82,4
+Q2 2023,Montgomery County,Infrastructure,8323888.5,12
+Q2 2023,Hardin County,Infrastructure,7816935.109999999,4
+Q2 2023,Jasper,Infrastructure,7808442.0,5
+Q2 2023,Newton,Infrastructure,7747543.0,3
+Q2 2023,Nueces County,Infrastructure,4645555.59,2
+Q2 2023,Galveston County,Infrastructure,4236803.04,2
+Q2 2023,FortBend County,Infrastructure,4062281.05,4
+Q2 2023,Fayette,Infrastructure,3779063.89,4
+Q2 2023,Calhoun County,Infrastructure,3729579.24,2
+Q2 2023,Galveston,Infrastructure,3401405.0,1
+Q2 2023,FortBend,Infrastructure,2769491.0,2
+Q2 2023,Chambers,Infrastructure,2703753.0,1
+Q2 2023,Hardin,Infrastructure,2127400.0,2
+Q2 2023,SanPatricio,Infrastructure,2041280.0,1
+Q2 2023,Victoria County,Infrastructure,2015847.94,2
+Q2 2023,SanJacinto County,Infrastructure,1920000.0,3
+Q2 2023,Jefferson,Infrastructure,1886457.0,3
+Q2 2023,Newton County,Infrastructure,1869100.0,4
+Q2 2023,Wharton,Infrastructure,1843903.3399999999,3
+Q2 2023,Waller,Infrastructure,1828698.0,4
+Q2 2023,Orange,Infrastructure,1707229.7799999998,2
+Q2 2023,Matagorda County,Infrastructure,1373870.3900000001,5
+Q2 2023,Victoria,Infrastructure,1204109.06,3
+Q2 2023,Polk,Infrastructure,995816.0,4
+Q2 2023,Jefferson County,Infrastructure,993328.8,6
+Q2 2023,Tyler County,Infrastructure,758397.0,4
+Q2 2023,Orange County,Infrastructure,600331.38,6
+Q2 2023,Liberty County,Infrastructure,526062.71,2
+Q2 2023,Wharton County,Infrastructure,491147.0,5
+Q2 2023,Fayette County,Infrastructure,455029.44,3
+Q2 2023,Jasper County,Infrastructure,312375.0,1
+Q2 2023,Colorado,Infrastructure,227232.0,2
+Q2 2023,Austin,Infrastructure,0.0,5
+Q2 2023,Austin County,Infrastructure,0.0,3
+Q2 2023,Bastrop,Infrastructure,0.0,2
+Q2 2023,Bastrop County,Infrastructure,0.0,4
+Q2 2023,Bee County,Infrastructure,0.0,2
+Q2 2023,Caldwell,Infrastructure,0.0,3
+Q2 2023,Goliad,Infrastructure,0.0,2
+Q2 2023,Goliad County,Infrastructure,0.0,5
+Q2 2023,Gonzales,Infrastructure,0.0,3
+Q2 2023,Gonzales County,Infrastructure,0.0,1
+Q2 2023,Grimes,Infrastructure,0.0,2
+Q2 2023,Grimes County,Infrastructure,0.0,2
+Q2 2023,Jackson,Infrastructure,0.0,2
+Q2 2023,Karnes,Infrastructure,0.0,4
+Q2 2023,Karnes County,Infrastructure,0.0,1
+Q2 2023,Lee,Infrastructure,0.0,2
+Q2 2023,Lee County,Infrastructure,0.0,1
+Q2 2023,Milam,Infrastructure,0.0,5
+Q2 2023,Milam County,Infrastructure,0.0,1
+Q2 2023,Polk County,Infrastructure,0.0,1
+Q2 2023,Sabine,Infrastructure,0.0,1
+Q2 2023,Tyler,Infrastructure,0.0,2
+Q2 2023,Walker,Infrastructure,0.0,2
+Q2 2023,Waller County,Infrastructure,0.0,2
+Q2 2024,Statewide,Infrastructure,4053610942.15,343
+Q2 2024,Statewide,Housing,57800000.0,16
+Q2 2024,Aransas County,Infrastructure,24537451.23,3
+Q2 2024,Montgomery,Infrastructure,11480489.0,4
+Q2 2024,Liberty,Infrastructure,11155242.11,5
+Q2 2024,Brazoria,Infrastructure,10917829.0,1
+Q2 2024,Refugio County,Infrastructure,10846941.42,6
+Q2 2024,SanJacinto,Infrastructure,9195613.82,4
+Q2 2024,Newton,Infrastructure,7839731.0,3
+Q2 2024,Hardin County,Infrastructure,7816935.109999999,4
+Q2 2024,Nueces County,Infrastructure,4645555.59,2
+Q2 2024,Galveston County,Infrastructure,4235621.0,6
+Q2 2024,FortBend County,Infrastructure,4062281.05,4
+Q2 2024,Fayette,Infrastructure,3868969.77,4
+Q2 2024,Calhoun County,Infrastructure,3578192.24,2
+Q2 2024,Jasper,Infrastructure,3437811.54,5
+Q2 2024,Galveston,Infrastructure,3401405.0,1
+Q2 2024,FortBend,Infrastructure,2769491.0,2
+Q2 2024,Chambers,Infrastructure,2703753.0,1
+Q2 2024,Waller,Infrastructure,2199081.8,4
+Q2 2024,Victoria County,Infrastructure,2133269.55,2
+Q2 2024,Hardin,Infrastructure,2129370.0,2
+Q2 2024,SanPatricio,Infrastructure,2041280.0,1
+Q2 2024,SanJacinto County,Infrastructure,1920000.0,3
+Q2 2024,Jefferson,Infrastructure,1886457.0,3
+Q2 2024,Wharton,Infrastructure,1843903.3399999999,3
+Q2 2024,Montgomery County,Infrastructure,1416000.0,5
+Q2 2024,Matagorda County,Infrastructure,1373870.3900000001,5
+Q2 2024,Orange,Infrastructure,1361491.03,2
+Q2 2024,Victoria,Infrastructure,1204109.06,3
+Q2 2024,Polk,Infrastructure,995816.0,4
+Q2 2024,Jefferson County,Infrastructure,993328.8,6
+Q2 2024,Newton County,Infrastructure,935000.0,4
+Q2 2024,Tyler County,Infrastructure,768397.0,6
+Q2 2024,Liberty County,Infrastructure,526060.89,2
+Q2 2024,Wharton County,Infrastructure,491147.0,5
+Q2 2024,Fayette County,Infrastructure,455123.56,3
+Q2 2024,Orange County,Infrastructure,240331.38,6
+Q2 2024,Colorado,Infrastructure,221125.0,2
+Q2 2024,Jasper County,Infrastructure,20000.0,1
+Q2 2024,Austin,Infrastructure,0.0,5
+Q2 2024,Austin County,Infrastructure,0.0,2
+Q2 2024,Bastrop,Infrastructure,0.0,2
+Q2 2024,Bastrop County,Infrastructure,0.0,3
+Q2 2024,Bee County,Infrastructure,0.0,2
+Q2 2024,Caldwell,Infrastructure,0.0,3
+Q2 2024,Goliad,Infrastructure,0.0,2
+Q2 2024,Goliad County,Infrastructure,0.0,5
+Q2 2024,Gonzales,Infrastructure,0.0,3
+Q2 2024,Gonzales County,Infrastructure,0.0,1
+Q2 2024,Grimes,Infrastructure,0.0,2
+Q2 2024,Grimes County,Infrastructure,0.0,2
+Q2 2024,Jackson,Infrastructure,0.0,2
+Q2 2024,Karnes,Infrastructure,0.0,4
+Q2 2024,Karnes County,Infrastructure,0.0,1
+Q2 2024,Lee,Infrastructure,0.0,2
+Q2 2024,Milam,Infrastructure,0.0,5
+Q2 2024,Milam County,Infrastructure,0.0,2
+Q2 2024,Polk County,Infrastructure,0.0,2
+Q2 2024,Sabine,Infrastructure,0.0,1
+Q2 2024,Tyler,Infrastructure,0.0,3
+Q2 2024,Walker,Infrastructure,0.0,2
+Q2 2024,Waller County,Infrastructure,0.0,2
+Q2 2025,Statewide,Infrastructure,4199421684.14,397
+Q2 2025,Statewide,Housing,57800000.0,30
+Q2 2025,Aransas County,Infrastructure,28797241.849999998,3
+Q2 2025,Refugio County,Infrastructure,11727057.24,6
+Q2 2025,Liberty,Infrastructure,11155242.11,5
+Q2 2025,Brazoria,Infrastructure,10917829.0,1
+Q2 2025,SanJacinto,Infrastructure,9195613.82,4
+Q2 2025,Newton,Infrastructure,7839731.0,3
+Q2 2025,Hardin County,Infrastructure,7826814.66,4
+Q2 2025,Montgomery,Infrastructure,7175792.78,3
+Q2 2025,Nueces County,Infrastructure,4645555.59,2
+Q2 2025,Galveston County,Infrastructure,4235621.0,6
+Q2 2025,Fayette,Infrastructure,3868969.77,4
+Q2 2025,Polk,Infrastructure,3640646.0,4
+Q2 2025,Calhoun County,Infrastructure,3578192.24,2
+Q2 2025,Jasper,Infrastructure,3437811.54,5
+Q2 2025,Galveston,Infrastructure,3293091.27,1
+Q2 2025,Chambers,Infrastructure,2703753.0,1
+Q2 2025,FortBend,Infrastructure,2675575.0,1
+Q2 2025,Waller,Infrastructure,2199081.8,4
+Q2 2025,Hardin,Infrastructure,2129370.0,2
+Q2 2025,Montgomery County,Infrastructure,2061000.0,7
+Q2 2025,SanPatricio,Infrastructure,2041280.0,1
+Q2 2025,SanJacinto County,Infrastructure,1920000.0,3
+Q2 2025,Victoria County,Infrastructure,1918269.5499999998,2
+Q2 2025,Jefferson,Infrastructure,1886457.0,3
+Q2 2025,Wharton,Infrastructure,1843903.3399999999,3
+Q2 2025,Orange,Infrastructure,1432031.03,2
+Q2 2025,Jefferson County,Infrastructure,993328.8,6
+Q2 2025,Matagorda County,Infrastructure,977132.89,5
+Q2 2025,Newton County,Infrastructure,935000.0,4
+Q2 2025,Tyler County,Infrastructure,768397.0,6
+Q2 2025,Liberty County,Infrastructure,526060.89,2
+Q2 2025,Wharton County,Infrastructure,491147.0,5
+Q2 2025,FortBend County,Infrastructure,480000.0,3
+Q2 2025,Fayette County,Infrastructure,455123.56,3
+Q2 2025,Colorado,Infrastructure,221125.0,2
+Q2 2025,Orange County,Infrastructure,170331.38,5
+Q2 2025,Polk County,Infrastructure,100000.0,2
+Q2 2025,Victoria,Infrastructure,50868.75,3
+Q2 2025,Jasper County,Infrastructure,20000.0,2
+Q2 2025,Austin,Infrastructure,0.0,5
+Q2 2025,Austin County,Infrastructure,0.0,3
+Q2 2025,Bastrop,Infrastructure,0.0,2
+Q2 2025,Bastrop County,Infrastructure,0.0,4
+Q2 2025,Bee County,Infrastructure,0.0,2
+Q2 2025,Caldwell,Infrastructure,0.0,3
+Q2 2025,Goliad,Infrastructure,0.0,2
+Q2 2025,Goliad County,Infrastructure,0.0,6
+Q2 2025,Gonzales,Infrastructure,0.0,3
+Q2 2025,Gonzales County,Infrastructure,0.0,1
+Q2 2025,Grimes,Infrastructure,0.0,2
+Q2 2025,Grimes County,Infrastructure,0.0,3
+Q2 2025,Jackson,Infrastructure,0.0,2
+Q2 2025,Karnes,Infrastructure,0.0,4
+Q2 2025,Karnes County,Infrastructure,0.0,1
+Q2 2025,Lee,Infrastructure,0.0,2
+Q2 2025,Milam,Infrastructure,0.0,4
+Q2 2025,Milam County,Infrastructure,0.0,2
+Q2 2025,Sabine,Infrastructure,0.0,1
+Q2 2025,Tyler,Infrastructure,0.0,3
+Q2 2025,Walker,Infrastructure,0.0,2
+Q2 2025,Waller County,Infrastructure,0.0,2
+Q3 2020,Statewide,Infrastructure,3557459822.28,401
+Q3 2020,Aransas County,Infrastructure,23343264.0,3
+Q3 2020,FortBend,Infrastructure,17881491.0,4
+Q3 2020,Statewide,Housing,14334400.0,11
+Q3 2020,SanJacinto,Infrastructure,13963288.0,4
+Q3 2020,Montgomery,Infrastructure,12392489.0,3
+Q3 2020,Liberty,Infrastructure,11124857.0,5
+Q3 2020,Brazoria,Infrastructure,10916934.0,1
+Q3 2020,Refugio County,Infrastructure,10294295.0,5
+Q3 2020,Fayette,Infrastructure,9549388.75,4
+Q3 2020,Jasper,Infrastructure,7806652.0,5
+Q3 2020,Newton,Infrastructure,7745843.0,3
+Q3 2020,FortBend County,Infrastructure,7630381.0,6
+Q3 2020,Montgomery County,Infrastructure,7411888.5,8
+Q3 2020,Nueces County,Infrastructure,4644430.59,2
+Q3 2020,Jefferson,Infrastructure,4409005.7700000005,4
+Q3 2020,Galveston,Infrastructure,3399435.0,1
+Q3 2020,Orange,Infrastructure,3362406.17,2
+Q3 2020,Hardin,Infrastructure,2938238.56,2
+Q3 2020,Galveston County,Infrastructure,2838296.0,2
+Q3 2020,Chambers,Infrastructure,2701783.0,1
+Q3 2020,Victoria,Infrastructure,2413521.0,3
+Q3 2020,Wharton,Infrastructure,2173864.0,3
+Q3 2020,Calhoun County,Infrastructure,2138266.5,2
+Q3 2020,SanPatricio,Infrastructure,2037215.0,1
+Q3 2020,Newton County,Infrastructure,1869100.0,4
+Q3 2020,Waller,Infrastructure,1828698.0,4
+Q3 2020,Matagorda County,Infrastructure,1373481.0,5
+Q3 2020,Victoria County,Infrastructure,1324296.0,2
+Q3 2020,Walker,Infrastructure,1102398.0,2
+Q3 2020,Polk,Infrastructure,995241.0,3
+Q3 2020,Jefferson County,Infrastructure,765746.8,5
+Q3 2020,Tyler County,Infrastructure,757502.0,4
+Q3 2020,Orange County,Infrastructure,680000.0,4
+Q3 2020,Liberty County,Infrastructure,539711.0,1
+Q3 2020,Hardin County,Infrastructure,450000.0,2
+Q3 2020,Wharton County,Infrastructure,412453.0,5
+Q3 2020,Jasper County,Infrastructure,312375.0,1
+Q3 2020,Fayette County,Infrastructure,293250.0,1
+Q3 2020,Colorado,Infrastructure,227232.0,2
+Q3 2020,Austin,Infrastructure,0.0,5
+Q3 2020,Austin County,Infrastructure,0.0,1
+Q3 2020,Bastrop,Infrastructure,0.0,3
+Q3 2020,Bastrop County,Infrastructure,0.0,3
+Q3 2020,Bee County,Infrastructure,0.0,2
+Q3 2020,Caldwell,Infrastructure,0.0,3
+Q3 2020,Goliad,Infrastructure,0.0,2
+Q3 2020,Goliad County,Infrastructure,0.0,5
+Q3 2020,Gonzales,Infrastructure,0.0,3
+Q3 2020,Gonzales County,Infrastructure,0.0,1
+Q3 2020,Grimes,Infrastructure,0.0,2
+Q3 2020,Grimes County,Infrastructure,0.0,2
+Q3 2020,Jackson,Infrastructure,0.0,2
+Q3 2020,Karnes,Infrastructure,0.0,4
+Q3 2020,Karnes County,Infrastructure,0.0,1
+Q3 2020,Lavaca,Infrastructure,0.0,1
+Q3 2020,Lee,Infrastructure,0.0,2
+Q3 2020,Lee County,Infrastructure,0.0,1
+Q3 2020,Milam,Infrastructure,0.0,5
+Q3 2020,Milam County,Infrastructure,0.0,1
+Q3 2020,Sabine,Infrastructure,0.0,1
+Q3 2020,Tyler,Infrastructure,0.0,2
+Q3 2020,Waller County,Infrastructure,0.0,1
+Q3 2021,Statewide,Infrastructure,3988846037.52,440
+Q3 2021,Statewide,Housing,57800000.0,27
+Q3 2021,Aransas County,Infrastructure,33812910.0,3
+Q3 2021,FortBend,Infrastructure,17881491.0,4
+Q3 2021,SanJacinto,Infrastructure,13963288.0,4
+Q3 2021,Montgomery,Infrastructure,12392489.0,3
+Q3 2021,Liberty,Infrastructure,11124857.0,5
+Q3 2021,Brazoria,Infrastructure,10916934.0,1
+Q3 2021,Refugio County,Infrastructure,10294295.0,5
+Q3 2021,Fayette,Infrastructure,9549388.75,4
+Q3 2021,Jasper,Infrastructure,7806652.0,5
+Q3 2021,Newton,Infrastructure,7745843.0,3
+Q3 2021,FortBend County,Infrastructure,7630381.0,6
+Q3 2021,Montgomery County,Infrastructure,7411888.5,8
+Q3 2021,Hardin County,Infrastructure,5701204.59,5
+Q3 2021,Nueces County,Infrastructure,4644430.59,2
+Q3 2021,Galveston,Infrastructure,3399435.0,1
+Q3 2021,Orange,Infrastructure,3362406.17,2
+Q3 2021,Hardin,Infrastructure,2938238.56,2
+Q3 2021,Galveston County,Infrastructure,2838296.0,2
+Q3 2021,Chambers,Infrastructure,2701783.0,1
+Q3 2021,Victoria,Infrastructure,2413521.0,3
+Q3 2021,Wharton,Infrastructure,2173864.0,3
+Q3 2021,Calhoun County,Infrastructure,2138266.5,2
+Q3 2021,SanPatricio,Infrastructure,2037215.0,1
+Q3 2021,Jefferson,Infrastructure,1885562.0,3
+Q3 2021,Newton County,Infrastructure,1869100.0,4
+Q3 2021,Waller,Infrastructure,1828698.0,4
+Q3 2021,Matagorda County,Infrastructure,1373481.0,5
+Q3 2021,Victoria County,Infrastructure,1324296.0,2
+Q3 2021,Polk,Infrastructure,995241.0,3
+Q3 2021,Jefferson County,Infrastructure,993328.8,6
+Q3 2021,Tyler County,Infrastructure,757502.0,4
+Q3 2021,Orange County,Infrastructure,680000.0,4
+Q3 2021,Liberty County,Infrastructure,539711.0,1
+Q3 2021,Wharton County,Infrastructure,412453.0,5
+Q3 2021,Jasper County,Infrastructure,312375.0,1
+Q3 2021,Fayette County,Infrastructure,293250.0,1
+Q3 2021,Colorado,Infrastructure,227232.0,2
+Q3 2021,Austin,Infrastructure,0.0,5
+Q3 2021,Austin County,Infrastructure,0.0,1
+Q3 2021,Bastrop,Infrastructure,0.0,3
+Q3 2021,Bastrop County,Infrastructure,0.0,3
+Q3 2021,Bee County,Infrastructure,0.0,2
+Q3 2021,Caldwell,Infrastructure,0.0,3
+Q3 2021,Goliad,Infrastructure,0.0,2
+Q3 2021,Goliad County,Infrastructure,0.0,5
+Q3 2021,Gonzales,Infrastructure,0.0,3
+Q3 2021,Gonzales County,Infrastructure,0.0,1
+Q3 2021,Grimes,Infrastructure,0.0,2
+Q3 2021,Grimes County,Infrastructure,0.0,2
+Q3 2021,Jackson,Infrastructure,0.0,2
+Q3 2021,Karnes,Infrastructure,0.0,4
+Q3 2021,Karnes County,Infrastructure,0.0,1
+Q3 2021,Lavaca,Infrastructure,0.0,1
+Q3 2021,Lee,Infrastructure,0.0,2
+Q3 2021,Lee County,Infrastructure,0.0,1
+Q3 2021,Milam,Infrastructure,0.0,5
+Q3 2021,Milam County,Infrastructure,0.0,1
+Q3 2021,Sabine,Infrastructure,0.0,1
+Q3 2021,Tyler,Infrastructure,0.0,2
+Q3 2021,Walker,Infrastructure,0.0,2
+Q3 2021,Waller County,Infrastructure,0.0,1
+Q3 2022,Statewide,Infrastructure,3871343797.11,342
+Q3 2022,Statewide,Housing,57800000.0,16
+Q3 2022,Aransas County,Infrastructure,24537451.23,3
+Q3 2022,FortBend,Infrastructure,17881491.0,4
+Q3 2022,SanJacinto,Infrastructure,13964183.0,4
+Q3 2022,Montgomery,Infrastructure,12392489.0,3
+Q3 2022,Liberty,Infrastructure,11125680.36,5
+Q3 2022,Brazoria,Infrastructure,10917829.0,1
+Q3 2022,Refugio County,Infrastructure,10878206.42,6
+Q3 2022,Fayette,Infrastructure,9553079.31,4
+Q3 2022,Jasper,Infrastructure,7807547.0,5
+Q3 2022,Newton,Infrastructure,7746418.0,3
+Q3 2022,Montgomery County,Infrastructure,7411888.5,8
+Q3 2022,FortBend County,Infrastructure,6950281.05,6
+Q3 2022,Hardin County,Infrastructure,5703589.59,5
+Q3 2022,Nueces County,Infrastructure,4645555.59,2
+Q3 2022,Galveston County,Infrastructure,4235621.0,2
+Q3 2022,Galveston,Infrastructure,3401405.0,1
+Q3 2022,Orange,Infrastructure,3364044.78,2
+Q3 2022,Hardin,Infrastructure,2938238.56,2
+Q3 2022,Chambers,Infrastructure,2703753.0,1
+Q3 2022,Victoria,Infrastructure,2414369.58,3
+Q3 2022,Wharton,Infrastructure,2173864.0,3
+Q3 2022,Calhoun County,Infrastructure,2139677.85,2
+Q3 2022,SanPatricio,Infrastructure,2039235.0,1
+Q3 2022,Victoria County,Infrastructure,1932871.94,2
+Q3 2022,Jefferson,Infrastructure,1885562.0,3
+Q3 2022,Newton County,Infrastructure,1869100.0,4
+Q3 2022,Waller,Infrastructure,1828698.0,4
+Q3 2022,Matagorda County,Infrastructure,1373481.0,5
+Q3 2022,Polk,Infrastructure,995241.0,3
+Q3 2022,Jefferson County,Infrastructure,993328.8,6
+Q3 2022,Tyler County,Infrastructure,758397.0,4
+Q3 2022,Orange County,Infrastructure,680331.38,4
+Q3 2022,Liberty County,Infrastructure,539782.64,1
+Q3 2022,Wharton County,Infrastructure,405848.0,5
+Q3 2022,Jasper County,Infrastructure,312375.0,1
+Q3 2022,Fayette County,Infrastructure,293279.44,1
+Q3 2022,Colorado,Infrastructure,227232.0,2
+Q3 2022,Austin,Infrastructure,0.0,5
+Q3 2022,Austin County,Infrastructure,0.0,1
+Q3 2022,Bastrop,Infrastructure,0.0,3
+Q3 2022,Bastrop County,Infrastructure,0.0,3
+Q3 2022,Bee County,Infrastructure,0.0,2
+Q3 2022,Caldwell,Infrastructure,0.0,3
+Q3 2022,Goliad,Infrastructure,0.0,2
+Q3 2022,Goliad County,Infrastructure,0.0,5
+Q3 2022,Gonzales,Infrastructure,0.0,3
+Q3 2022,Gonzales County,Infrastructure,0.0,1
+Q3 2022,Grimes,Infrastructure,0.0,2
+Q3 2022,Grimes County,Infrastructure,0.0,2
+Q3 2022,Jackson,Infrastructure,0.0,2
+Q3 2022,Karnes,Infrastructure,0.0,4
+Q3 2022,Karnes County,Infrastructure,0.0,1
+Q3 2022,Lavaca,Infrastructure,0.0,1
+Q3 2022,Lee,Infrastructure,0.0,2
+Q3 2022,Lee County,Infrastructure,0.0,1
+Q3 2022,Milam,Infrastructure,0.0,5
+Q3 2022,Milam County,Infrastructure,0.0,1
+Q3 2022,Sabine,Infrastructure,0.0,1
+Q3 2022,Tyler,Infrastructure,0.0,2
+Q3 2022,Walker,Infrastructure,0.0,2
+Q3 2022,Waller County,Infrastructure,0.0,1
+Q3 2023,Statewide,Infrastructure,3946577037.55,327
+Q3 2023,Statewide,Housing,57400000.0,16
+Q3 2023,Aransas County,Infrastructure,24537451.23,3
+Q3 2023,Montgomery,Infrastructure,11480489.0,4
+Q3 2023,Liberty,Infrastructure,11155240.290000001,5
+Q3 2023,Brazoria,Infrastructure,10917829.0,1
+Q3 2023,Refugio County,Infrastructure,10878831.42,6
+Q3 2023,SanJacinto,Infrastructure,9094511.82,4
+Q3 2023,Hardin County,Infrastructure,7816935.109999999,4
+Q3 2023,Newton,Infrastructure,7747543.0,3
+Q3 2023,Nueces County,Infrastructure,4645555.59,2
+Q3 2023,Jasper,Infrastructure,4633379.73,5
+Q3 2023,Galveston County,Infrastructure,4236803.04,2
+Q3 2023,FortBend County,Infrastructure,4062281.05,4
+Q3 2023,Fayette,Infrastructure,3869063.89,4
+Q3 2023,Calhoun County,Infrastructure,3729579.24,2
+Q3 2023,Galveston,Infrastructure,3401405.0,1
+Q3 2023,FortBend,Infrastructure,2769491.0,2
+Q3 2023,Chambers,Infrastructure,2703753.0,1
+Q3 2023,Hardin,Infrastructure,2129370.0,2
+Q3 2023,SanPatricio,Infrastructure,2041280.0,1
+Q3 2023,Victoria County,Infrastructure,2015847.94,2
+Q3 2023,SanJacinto County,Infrastructure,1920000.0,3
+Q3 2023,Jefferson,Infrastructure,1886457.0,3
+Q3 2023,Newton County,Infrastructure,1869100.0,4
+Q3 2023,Wharton,Infrastructure,1843903.3399999999,3
+Q3 2023,Waller,Infrastructure,1828698.0,4
+Q3 2023,Orange,Infrastructure,1707229.7799999998,2
+Q3 2023,Montgomery County,Infrastructure,1433684.53,6
+Q3 2023,Matagorda County,Infrastructure,1373870.3900000001,5
+Q3 2023,Victoria,Infrastructure,1204109.06,3
+Q3 2023,Polk,Infrastructure,995816.0,4
+Q3 2023,Jefferson County,Infrastructure,993328.8,6
+Q3 2023,Tyler County,Infrastructure,768397.0,6
+Q3 2023,Orange County,Infrastructure,600331.38,6
+Q3 2023,Liberty County,Infrastructure,526062.71,2
+Q3 2023,Wharton County,Infrastructure,491147.0,5
+Q3 2023,Fayette County,Infrastructure,455000.0,2
+Q3 2023,Colorado,Infrastructure,221125.0,2
+Q3 2023,Jasper County,Infrastructure,60000.0,2
+Q3 2023,Austin,Infrastructure,0.0,5
+Q3 2023,Austin County,Infrastructure,0.0,2
+Q3 2023,Bastrop,Infrastructure,0.0,2
+Q3 2023,Bastrop County,Infrastructure,0.0,3
+Q3 2023,Bee County,Infrastructure,0.0,2
+Q3 2023,Caldwell,Infrastructure,0.0,3
+Q3 2023,Goliad,Infrastructure,0.0,2
+Q3 2023,Goliad County,Infrastructure,0.0,5
+Q3 2023,Gonzales,Infrastructure,0.0,3
+Q3 2023,Gonzales County,Infrastructure,0.0,1
+Q3 2023,Grimes,Infrastructure,0.0,2
+Q3 2023,Grimes County,Infrastructure,0.0,2
+Q3 2023,Jackson,Infrastructure,0.0,2
+Q3 2023,Karnes,Infrastructure,0.0,4
+Q3 2023,Karnes County,Infrastructure,0.0,1
+Q3 2023,Lee,Infrastructure,0.0,2
+Q3 2023,Lee County,Infrastructure,0.0,1
+Q3 2023,Milam,Infrastructure,0.0,5
+Q3 2023,Milam County,Infrastructure,0.0,2
+Q3 2023,Polk County,Infrastructure,0.0,1
+Q3 2023,Sabine,Infrastructure,0.0,1
+Q3 2023,Tyler,Infrastructure,0.0,3
+Q3 2023,Walker,Infrastructure,0.0,2
+Q3 2023,Waller County,Infrastructure,0.0,2
+Q3 2024,Statewide,Infrastructure,8440338777.92,684
+Q3 2024,Statewide,Housing,115600000.0,32
+Q3 2024,Aransas County,Infrastructure,56931763.94,6
+Q3 2024,Liberty,Infrastructure,22310484.22,10
+Q3 2024,Brazoria,Infrastructure,21835658.0,2
+Q3 2024,Refugio County,Infrastructure,21693882.84,12
+Q3 2024,Montgomery,Infrastructure,20608978.0,6
+Q3 2024,SanJacinto,Infrastructure,18391227.64,8
+Q3 2024,Newton,Infrastructure,15679462.0,6
+Q3 2024,Hardin County,Infrastructure,15633870.219999999,8
+Q3 2024,Nueces County,Infrastructure,9291111.18,4
+Q3 2024,Galveston County,Infrastructure,8471242.0,12
+Q3 2024,FortBend County,Infrastructure,8124562.1,8
+Q3 2024,Fayette,Infrastructure,7737939.54,8
+Q3 2024,Calhoun County,Infrastructure,7156384.48,4
+Q3 2024,Jasper,Infrastructure,6875623.08,10
+Q3 2024,Galveston,Infrastructure,6802810.0,2
+Q3 2024,FortBend,Infrastructure,5538982.0,4
+Q3 2024,Chambers,Infrastructure,5407506.0,2
+Q3 2024,Montgomery County,Infrastructure,5184000.0,12
+Q3 2024,Waller,Infrastructure,4398163.6,8
+Q3 2024,Victoria County,Infrastructure,4266539.1,4
+Q3 2024,Hardin,Infrastructure,4258740.0,4
+Q3 2024,SanPatricio,Infrastructure,4082560.0,2
+Q3 2024,SanJacinto County,Infrastructure,3840000.0,6
+Q3 2024,Jefferson,Infrastructure,3772914.0,6
+Q3 2024,Wharton,Infrastructure,3687806.6799999997,6
+Q3 2024,Matagorda County,Infrastructure,2747740.7800000003,10
+Q3 2024,Orange,Infrastructure,2722982.06,4
+Q3 2024,Victoria,Infrastructure,2408218.12,6
+Q3 2024,Polk,Infrastructure,1991632.0,8
+Q3 2024,Jefferson County,Infrastructure,1986657.6,12
+Q3 2024,Newton County,Infrastructure,1870000.0,8
+Q3 2024,Tyler County,Infrastructure,1536794.0,12
+Q3 2024,Liberty County,Infrastructure,1052121.78,4
+Q3 2024,Wharton County,Infrastructure,982294.0,10
+Q3 2024,Fayette County,Infrastructure,910247.12,6
+Q3 2024,Orange County,Infrastructure,480662.76,12
+Q3 2024,Colorado,Infrastructure,442250.0,4
+Q3 2024,Jasper County,Infrastructure,40000.0,2
+Q3 2024,Austin,Infrastructure,0.0,8
+Q3 2024,Austin County,Infrastructure,0.0,4
+Q3 2024,Bastrop,Infrastructure,0.0,4
+Q3 2024,Bastrop County,Infrastructure,0.0,6
+Q3 2024,Bee County,Infrastructure,0.0,4
+Q3 2024,Caldwell,Infrastructure,0.0,6
+Q3 2024,Goliad,Infrastructure,0.0,4
+Q3 2024,Goliad County,Infrastructure,0.0,10
+Q3 2024,Gonzales,Infrastructure,0.0,6
+Q3 2024,Gonzales County,Infrastructure,0.0,2
+Q3 2024,Grimes,Infrastructure,0.0,4
+Q3 2024,Grimes County,Infrastructure,0.0,4
+Q3 2024,Jackson,Infrastructure,0.0,4
+Q3 2024,Karnes,Infrastructure,0.0,8
+Q3 2024,Karnes County,Infrastructure,0.0,2
+Q3 2024,Lee,Infrastructure,0.0,4
+Q3 2024,Milam,Infrastructure,0.0,8
+Q3 2024,Polk County,Infrastructure,0.0,4
+Q3 2024,Sabine,Infrastructure,0.0,2
+Q3 2024,Tyler,Infrastructure,0.0,6
+Q3 2024,Walker,Infrastructure,0.0,4
+Q3 2024,Waller County,Infrastructure,0.0,4
+Q3 2025,Statewide,Infrastructure,4230272796.35,394
+Q3 2025,Statewide,Housing,57800000.0,30
+Q3 2025,Aransas County,Infrastructure,28797241.849999998,3
+Q3 2025,Refugio County,Infrastructure,11727057.24,6
+Q3 2025,Liberty,Infrastructure,11155242.11,5
+Q3 2025,Brazoria,Infrastructure,10917829.0,1
+Q3 2025,SanJacinto,Infrastructure,9195613.82,4
+Q3 2025,Hardin County,Infrastructure,7826814.66,4
+Q3 2025,Montgomery,Infrastructure,7175792.78,3
+Q3 2025,Newton,Infrastructure,6171945.58,3
+Q3 2025,Nueces County,Infrastructure,4645555.59,2
+Q3 2025,Galveston County,Infrastructure,4235621.0,6
+Q3 2025,Fayette,Infrastructure,3868969.77,4
+Q3 2025,Calhoun County,Infrastructure,3644596.74,2
+Q3 2025,Polk,Infrastructure,3640646.0,4
+Q3 2025,Jasper,Infrastructure,3437811.54,5
+Q3 2025,Galveston,Infrastructure,3293091.27,1
+Q3 2025,Chambers,Infrastructure,2703753.0,1
+Q3 2025,FortBend,Infrastructure,2675575.0,1
+Q3 2025,Jefferson,Infrastructure,2475607.0,3
+Q3 2025,Waller,Infrastructure,2199081.8,4
+Q3 2025,Hardin,Infrastructure,2129370.0,2
+Q3 2025,Montgomery County,Infrastructure,2061000.0,7
+Q3 2025,SanPatricio,Infrastructure,2041280.0,1
+Q3 2025,SanJacinto County,Infrastructure,1920000.0,3
+Q3 2025,Victoria County,Infrastructure,1918223.13,2
+Q3 2025,Wharton,Infrastructure,1843903.3399999999,3
+Q3 2025,Orange,Infrastructure,1432031.03,2
+Q3 2025,Matagorda County,Infrastructure,977132.39,5
+Q3 2025,Tyler County,Infrastructure,768397.0,6
+Q3 2025,Brazoria County,Infrastructure,533393.0,3
+Q3 2025,Liberty County,Infrastructure,526060.89,2
+Q3 2025,Wharton County,Infrastructure,491147.0,5
+Q3 2025,FortBend County,Infrastructure,480000.0,3
+Q3 2025,Fayette County,Infrastructure,455123.56,3
+Q3 2025,Jefferson County,Infrastructure,404178.8,4
+Q3 2025,Colorado,Infrastructure,221125.0,2
+Q3 2025,Orange County,Infrastructure,170331.38,5
+Q3 2025,Polk County,Infrastructure,100000.0,2
+Q3 2025,Victoria,Infrastructure,50760.439999999995,3
+Q3 2025,Jasper County,Infrastructure,20000.0,2
+Q3 2025,Austin,Infrastructure,0.0,5
+Q3 2025,Austin County,Infrastructure,0.0,3
+Q3 2025,Bastrop,Infrastructure,0.0,2
+Q3 2025,Bastrop County,Infrastructure,0.0,4
+Q3 2025,Bee County,Infrastructure,0.0,2
+Q3 2025,Caldwell,Infrastructure,0.0,3
+Q3 2025,Goliad,Infrastructure,0.0,2
+Q3 2025,Goliad County,Infrastructure,0.0,6
+Q3 2025,Gonzales,Infrastructure,0.0,3
+Q3 2025,Gonzales County,Infrastructure,0.0,1
+Q3 2025,Grimes,Infrastructure,0.0,2
+Q3 2025,Grimes County,Infrastructure,0.0,3
+Q3 2025,Jackson,Infrastructure,0.0,2
+Q3 2025,Jackson County,Infrastructure,0.0,1
+Q3 2025,Karnes,Infrastructure,0.0,4
+Q3 2025,Karnes County,Infrastructure,0.0,1
+Q3 2025,Lee,Infrastructure,0.0,2
+Q3 2025,Milam,Infrastructure,0.0,4
+Q3 2025,Milam County,Infrastructure,0.0,2
+Q3 2025,Sabine,Infrastructure,0.0,1
+Q3 2025,Tyler,Infrastructure,0.0,3
+Q3 2025,Walker,Infrastructure,0.0,2
+Q3 2025,Waller County,Infrastructure,0.0,2
+Q4 2019,Statewide,Housing,54748160.0,22
+Q4 2020,Statewide,Housing,4060799892.29,421
+Q4 2020,Statewide,Infrastructure,4060799892.29,421
+Q4 2020,Aransas County,Housing,33812910.0,3
+Q4 2020,Aransas County,Infrastructure,33812910.0,3
+Q4 2020,FortBend,Housing,17881491.0,4
+Q4 2020,FortBend,Infrastructure,17881491.0,4
+Q4 2020,SanJacinto,Housing,13963288.0,4
+Q4 2020,SanJacinto,Infrastructure,13963288.0,4
+Q4 2020,Montgomery,Housing,12392489.0,3
+Q4 2020,Montgomery,Infrastructure,12392489.0,3
+Q4 2020,Liberty,Housing,11124857.0,5
+Q4 2020,Liberty,Infrastructure,11124857.0,5
+Q4 2020,Brazoria,Housing,10916934.0,1
+Q4 2020,Brazoria,Infrastructure,10916934.0,1
+Q4 2020,Refugio County,Housing,10294295.0,5
+Q4 2020,Refugio County,Infrastructure,10294295.0,5
+Q4 2020,Fayette,Housing,9549388.75,4
+Q4 2020,Fayette,Infrastructure,9549388.75,4
+Q4 2020,Jasper,Housing,7806652.0,5
+Q4 2020,Jasper,Infrastructure,7806652.0,5
+Q4 2020,Newton,Housing,7745843.0,3
+Q4 2020,Newton,Infrastructure,7745843.0,3
+Q4 2020,FortBend County,Housing,7630381.0,6
+Q4 2020,FortBend County,Infrastructure,7630381.0,6
+Q4 2020,Montgomery County,Housing,7411888.5,8
+Q4 2020,Montgomery County,Infrastructure,7411888.5,8
+Q4 2020,Nueces County,Housing,4644430.59,2
+Q4 2020,Nueces County,Infrastructure,4644430.59,2
+Q4 2020,Galveston,Housing,3399435.0,1
+Q4 2020,Galveston,Infrastructure,3399435.0,1
+Q4 2020,Orange,Housing,3362406.17,2
+Q4 2020,Orange,Infrastructure,3362406.17,2
+Q4 2020,Hardin,Housing,2938238.56,2
+Q4 2020,Hardin,Infrastructure,2938238.56,2
+Q4 2020,Galveston County,Housing,2838296.0,2
+Q4 2020,Galveston County,Infrastructure,2838296.0,2
+Q4 2020,Chambers,Housing,2701783.0,1
+Q4 2020,Chambers,Infrastructure,2701783.0,1
+Q4 2020,Victoria,Housing,2413521.0,3
+Q4 2020,Victoria,Infrastructure,2413521.0,3
+Q4 2020,Wharton,Housing,2173864.0,3
+Q4 2020,Wharton,Infrastructure,2173864.0,3
+Q4 2020,Calhoun County,Housing,2138266.5,2
+Q4 2020,Calhoun County,Infrastructure,2138266.5,2
+Q4 2020,SanPatricio,Housing,2037215.0,1
+Q4 2020,SanPatricio,Infrastructure,2037215.0,1
+Q4 2020,Jefferson,Housing,1885562.0,3
+Q4 2020,Jefferson,Infrastructure,1885562.0,3
+Q4 2020,Newton County,Housing,1869100.0,4
+Q4 2020,Newton County,Infrastructure,1869100.0,4
+Q4 2020,Waller,Housing,1828698.0,4
+Q4 2020,Waller,Infrastructure,1828698.0,4
+Q4 2020,Matagorda County,Housing,1373481.0,5
+Q4 2020,Matagorda County,Infrastructure,1373481.0,5
+Q4 2020,Victoria County,Housing,1324296.0,2
+Q4 2020,Victoria County,Infrastructure,1324296.0,2
+Q4 2020,Walker,Housing,1102398.0,2
+Q4 2020,Walker,Infrastructure,1102398.0,2
+Q4 2020,Polk,Housing,995241.0,3
+Q4 2020,Polk,Infrastructure,995241.0,3
+Q4 2020,Jefferson County,Housing,993328.8,6
+Q4 2020,Jefferson County,Infrastructure,993328.8,6
+Q4 2020,Tyler County,Housing,757502.0,4
+Q4 2020,Tyler County,Infrastructure,757502.0,4
+Q4 2020,Orange County,Housing,680000.0,4
+Q4 2020,Orange County,Infrastructure,680000.0,4
+Q4 2020,Liberty County,Housing,539711.0,1
+Q4 2020,Liberty County,Infrastructure,539711.0,1
+Q4 2020,Hardin County,Housing,450000.0,2
+Q4 2020,Hardin County,Infrastructure,450000.0,2
+Q4 2020,Wharton County,Housing,412453.0,5
+Q4 2020,Wharton County,Infrastructure,412453.0,5
+Q4 2020,Jasper County,Housing,312375.0,1
+Q4 2020,Jasper County,Infrastructure,312375.0,1
+Q4 2020,Fayette County,Housing,293250.0,1
+Q4 2020,Fayette County,Infrastructure,293250.0,1
+Q4 2020,Colorado,Housing,227232.0,2
+Q4 2020,Colorado,Infrastructure,227232.0,2
+Q4 2020,Austin,Housing,0.0,5
+Q4 2020,Austin,Infrastructure,0.0,5
+Q4 2020,Austin County,Housing,0.0,1
+Q4 2020,Austin County,Infrastructure,0.0,1
+Q4 2020,Bastrop,Housing,0.0,3
+Q4 2020,Bastrop,Infrastructure,0.0,3
+Q4 2020,Bastrop County,Housing,0.0,3
+Q4 2020,Bastrop County,Infrastructure,0.0,3
+Q4 2020,Bee County,Housing,0.0,2
+Q4 2020,Bee County,Infrastructure,0.0,2
+Q4 2020,Caldwell,Housing,0.0,3
+Q4 2020,Caldwell,Infrastructure,0.0,3
+Q4 2020,Goliad,Housing,0.0,2
+Q4 2020,Goliad,Infrastructure,0.0,2
+Q4 2020,Goliad County,Housing,0.0,5
+Q4 2020,Goliad County,Infrastructure,0.0,5
+Q4 2020,Gonzales,Housing,0.0,3
+Q4 2020,Gonzales,Infrastructure,0.0,3
+Q4 2020,Gonzales County,Housing,0.0,1
+Q4 2020,Gonzales County,Infrastructure,0.0,1
+Q4 2020,Grimes,Housing,0.0,2
+Q4 2020,Grimes,Infrastructure,0.0,2
+Q4 2020,Grimes County,Housing,0.0,2
+Q4 2020,Grimes County,Infrastructure,0.0,2
+Q4 2020,Jackson,Housing,0.0,2
+Q4 2020,Jackson,Infrastructure,0.0,2
+Q4 2020,Karnes,Housing,0.0,4
+Q4 2020,Karnes,Infrastructure,0.0,4
+Q4 2020,Karnes County,Housing,0.0,1
+Q4 2020,Karnes County,Infrastructure,0.0,1
+Q4 2020,Lavaca,Housing,0.0,1
+Q4 2020,Lavaca,Infrastructure,0.0,1
+Q4 2020,Lee,Housing,0.0,2
+Q4 2020,Lee,Infrastructure,0.0,2
+Q4 2020,Lee County,Housing,0.0,1
+Q4 2020,Lee County,Infrastructure,0.0,1
+Q4 2020,Milam,Housing,0.0,5
+Q4 2020,Milam,Infrastructure,0.0,5
+Q4 2020,Milam County,Housing,0.0,1
+Q4 2020,Milam County,Infrastructure,0.0,1
+Q4 2020,Sabine,Housing,0.0,1
+Q4 2020,Sabine,Infrastructure,0.0,1
+Q4 2020,Tyler,Housing,0.0,2
+Q4 2020,Tyler,Infrastructure,0.0,2
+Q4 2020,Waller County,Housing,0.0,1
+Q4 2020,Waller County,Infrastructure,0.0,1
+Q4 2021,Statewide,Infrastructure,3985024920.2,443
+Q4 2021,Statewide,Housing,57800000.0,27
+Q4 2021,Aransas County,Infrastructure,33812910.0,3
+Q4 2021,FortBend,Infrastructure,17881491.0,4
+Q4 2021,SanJacinto,Infrastructure,13963288.0,4
+Q4 2021,Montgomery,Infrastructure,12392489.0,3
+Q4 2021,Liberty,Infrastructure,11124857.0,5
+Q4 2021,Brazoria,Infrastructure,10916934.0,1
+Q4 2021,Refugio County,Infrastructure,10294295.0,5
+Q4 2021,Fayette,Infrastructure,9549388.75,4
+Q4 2021,Jasper,Infrastructure,7806652.0,5
+Q4 2021,Newton,Infrastructure,7745843.0,3
+Q4 2021,FortBend County,Infrastructure,7630381.0,6
+Q4 2021,Montgomery County,Infrastructure,7411888.5,8
+Q4 2021,Hardin County,Infrastructure,5701204.59,5
+Q4 2021,Nueces County,Infrastructure,4644430.59,2
+Q4 2021,Galveston,Infrastructure,3399435.0,1
+Q4 2021,Orange,Infrastructure,3362406.17,2
+Q4 2021,Hardin,Infrastructure,2938238.56,2
+Q4 2021,Galveston County,Infrastructure,2838296.0,2
+Q4 2021,Chambers,Infrastructure,2701783.0,1
+Q4 2021,Victoria,Infrastructure,2413521.0,3
+Q4 2021,Wharton,Infrastructure,2173864.0,3
+Q4 2021,Calhoun County,Infrastructure,2138266.5,2
+Q4 2021,SanPatricio,Infrastructure,2037215.0,1
+Q4 2021,Jefferson,Infrastructure,1885562.0,3
+Q4 2021,Newton County,Infrastructure,1869100.0,4
+Q4 2021,Waller,Infrastructure,1828698.0,4
+Q4 2021,Matagorda County,Infrastructure,1373481.0,5
+Q4 2021,Victoria County,Infrastructure,1324296.0,2
+Q4 2021,Polk,Infrastructure,995241.0,3
+Q4 2021,Jefferson County,Infrastructure,993328.8,6
+Q4 2021,Tyler County,Infrastructure,757502.0,4
+Q4 2021,Orange County,Infrastructure,680000.0,4
+Q4 2021,Liberty County,Infrastructure,539711.0,1
+Q4 2021,Wharton County,Infrastructure,412453.0,5
+Q4 2021,Jasper County,Infrastructure,312375.0,1
+Q4 2021,Fayette County,Infrastructure,293250.0,1
+Q4 2021,Colorado,Infrastructure,227232.0,2
+Q4 2021,Austin,Infrastructure,0.0,5
+Q4 2021,Austin County,Infrastructure,0.0,1
+Q4 2021,Bastrop,Infrastructure,0.0,3
+Q4 2021,Bastrop County,Infrastructure,0.0,3
+Q4 2021,Bee County,Infrastructure,0.0,2
+Q4 2021,Caldwell,Infrastructure,0.0,3
+Q4 2021,Goliad,Infrastructure,0.0,2
+Q4 2021,Goliad County,Infrastructure,0.0,5
+Q4 2021,Gonzales,Infrastructure,0.0,3
+Q4 2021,Gonzales County,Infrastructure,0.0,1
+Q4 2021,Grimes,Infrastructure,0.0,2
+Q4 2021,Grimes County,Infrastructure,0.0,2
+Q4 2021,Jackson,Infrastructure,0.0,2
+Q4 2021,Karnes,Infrastructure,0.0,4
+Q4 2021,Karnes County,Infrastructure,0.0,1
+Q4 2021,Lavaca,Infrastructure,0.0,1
+Q4 2021,Lee,Infrastructure,0.0,2
+Q4 2021,Lee County,Infrastructure,0.0,1
+Q4 2021,Milam,Infrastructure,0.0,5
+Q4 2021,Milam County,Infrastructure,0.0,1
+Q4 2021,Sabine,Infrastructure,0.0,1
+Q4 2021,Tyler,Infrastructure,0.0,2
+Q4 2021,Walker,Infrastructure,0.0,2
+Q4 2021,Waller County,Infrastructure,0.0,1
+Q4 2022,Statewide,Infrastructure,3879367437.91,349
+Q4 2022,Statewide,Housing,57400000.0,17
+Q4 2022,Aransas County,Infrastructure,24537451.23,3
+Q4 2022,SanJacinto,Infrastructure,13964183.0,4
+Q4 2022,Montgomery,Infrastructure,11228396.77,4
+Q4 2022,Liberty,Infrastructure,11125680.36,5
+Q4 2022,Brazoria,Infrastructure,10917829.0,1
+Q4 2022,Refugio County,Infrastructure,10878206.42,6
+Q4 2022,Montgomery County,Infrastructure,8575980.73,12
+Q4 2022,Jasper,Infrastructure,7807547.0,5
+Q4 2022,Newton,Infrastructure,7746418.0,3
+Q4 2022,Hardin County,Infrastructure,5703589.59,5
+Q4 2022,Nueces County,Infrastructure,4645555.59,2
+Q4 2022,Galveston County,Infrastructure,4235621.0,2
+Q4 2022,FortBend County,Infrastructure,4062281.05,4
+Q4 2022,Fayette,Infrastructure,3773538.89,4
+Q4 2022,Galveston,Infrastructure,3401405.0,1
+Q4 2022,Hardin,Infrastructure,2938238.56,2
+Q4 2022,FortBend,Infrastructure,2769491.0,2
+Q4 2022,Chambers,Infrastructure,2703753.0,1
+Q4 2022,Victoria,Infrastructure,2414369.58,3
+Q4 2022,Calhoun County,Infrastructure,2139677.85,2
+Q4 2022,SanPatricio,Infrastructure,2039235.0,1
+Q4 2022,Victoria County,Infrastructure,1932871.94,2
+Q4 2022,Jefferson,Infrastructure,1885562.0,3
+Q4 2022,Newton County,Infrastructure,1869100.0,4
+Q4 2022,Wharton,Infrastructure,1843008.3399999999,3
+Q4 2022,Waller,Infrastructure,1828698.0,4
+Q4 2022,Orange,Infrastructure,1707229.7799999998,2
+Q4 2022,Matagorda County,Infrastructure,1373481.0,5
+Q4 2022,Polk,Infrastructure,995241.0,3
+Q4 2022,Jefferson County,Infrastructure,993328.8,6
+Q4 2022,Tyler County,Infrastructure,758397.0,4
+Q4 2022,Orange County,Infrastructure,600331.38,6
+Q4 2022,Liberty County,Infrastructure,539782.64,1
+Q4 2022,Wharton County,Infrastructure,491147.0,5
+Q4 2022,Fayette County,Infrastructure,455029.44,3
+Q4 2022,Jasper County,Infrastructure,312375.0,1
+Q4 2022,Colorado,Infrastructure,227232.0,2
+Q4 2022,Austin,Infrastructure,0.0,5
+Q4 2022,Austin County,Infrastructure,0.0,3
+Q4 2022,Bastrop,Infrastructure,0.0,3
+Q4 2022,Bastrop County,Infrastructure,0.0,3
+Q4 2022,Bee County,Infrastructure,0.0,2
+Q4 2022,Caldwell,Infrastructure,0.0,3
+Q4 2022,Goliad,Infrastructure,0.0,2
+Q4 2022,Goliad County,Infrastructure,0.0,5
+Q4 2022,Gonzales,Infrastructure,0.0,3
+Q4 2022,Gonzales County,Infrastructure,0.0,1
+Q4 2022,Grimes,Infrastructure,0.0,2
+Q4 2022,Grimes County,Infrastructure,0.0,2
+Q4 2022,Jackson,Infrastructure,0.0,2
+Q4 2022,Karnes,Infrastructure,0.0,4
+Q4 2022,Karnes County,Infrastructure,0.0,1
+Q4 2022,Lee,Infrastructure,0.0,2
+Q4 2022,Lee County,Infrastructure,0.0,1
+Q4 2022,Milam,Infrastructure,0.0,5
+Q4 2022,Milam County,Infrastructure,0.0,1
+Q4 2022,Sabine,Infrastructure,0.0,1
+Q4 2022,Tyler,Infrastructure,0.0,2
+Q4 2022,Walker,Infrastructure,0.0,2
+Q4 2022,Waller County,Infrastructure,0.0,1
+Q4 2023,Statewide,Infrastructure,3998277138.98,330
+Q4 2023,Statewide,Housing,57800000.0,16
+Q4 2023,Aransas County,Infrastructure,24537451.23,3
+Q4 2023,Montgomery,Infrastructure,11480489.0,4
+Q4 2023,Liberty,Infrastructure,11155240.290000001,5
+Q4 2023,Brazoria,Infrastructure,10917829.0,1
+Q4 2023,Refugio County,Infrastructure,10846941.42,6
+Q4 2023,SanJacinto,Infrastructure,9094511.82,4
+Q4 2023,Hardin County,Infrastructure,7816935.109999999,4
+Q4 2023,Newton,Infrastructure,7747543.0,3
+Q4 2023,Nueces County,Infrastructure,4645555.59,2
+Q4 2023,Jasper,Infrastructure,4633379.73,5
+Q4 2023,Galveston County,Infrastructure,4236803.04,2
+Q4 2023,FortBend County,Infrastructure,4062281.05,4
+Q4 2023,Fayette,Infrastructure,3869063.89,4
+Q4 2023,Calhoun County,Infrastructure,3729579.24,2
+Q4 2023,Galveston,Infrastructure,3401405.0,1
+Q4 2023,FortBend,Infrastructure,2769491.0,2
+Q4 2023,Chambers,Infrastructure,2703753.0,1
+Q4 2023,Hardin,Infrastructure,2129370.0,2
+Q4 2023,SanPatricio,Infrastructure,2041280.0,1
+Q4 2023,Victoria County,Infrastructure,2015847.94,2
+Q4 2023,SanJacinto County,Infrastructure,1920000.0,3
+Q4 2023,Jefferson,Infrastructure,1886457.0,3
+Q4 2023,Newton County,Infrastructure,1869100.0,4
+Q4 2023,Wharton,Infrastructure,1843903.3399999999,3
+Q4 2023,Waller,Infrastructure,1828698.0,4
+Q4 2023,Montgomery County,Infrastructure,1433684.53,6
+Q4 2023,Matagorda County,Infrastructure,1373870.3900000001,5
+Q4 2023,Orange,Infrastructure,1361491.02,2
+Q4 2023,Victoria,Infrastructure,1204109.06,3
+Q4 2023,Polk,Infrastructure,995816.0,4
+Q4 2023,Jefferson County,Infrastructure,993328.8,6
+Q4 2023,Tyler County,Infrastructure,768397.0,6
+Q4 2023,Liberty County,Infrastructure,526062.71,2
+Q4 2023,Wharton County,Infrastructure,491147.0,5
+Q4 2023,Fayette County,Infrastructure,455000.0,3
+Q4 2023,Orange County,Infrastructure,240331.38,6
+Q4 2023,Colorado,Infrastructure,221125.0,2
+Q4 2023,Jasper County,Infrastructure,60000.0,2
+Q4 2023,Austin,Infrastructure,0.0,5
+Q4 2023,Austin County,Infrastructure,0.0,2
+Q4 2023,Bastrop,Infrastructure,0.0,2
+Q4 2023,Bastrop County,Infrastructure,0.0,3
+Q4 2023,Bee County,Infrastructure,0.0,2
+Q4 2023,Caldwell,Infrastructure,0.0,3
+Q4 2023,Goliad,Infrastructure,0.0,2
+Q4 2023,Goliad County,Infrastructure,0.0,5
+Q4 2023,Gonzales,Infrastructure,0.0,3
+Q4 2023,Gonzales County,Infrastructure,0.0,1
+Q4 2023,Grimes,Infrastructure,0.0,2
+Q4 2023,Grimes County,Infrastructure,0.0,2
+Q4 2023,Jackson,Infrastructure,0.0,2
+Q4 2023,Karnes,Infrastructure,0.0,4
+Q4 2023,Karnes County,Infrastructure,0.0,1
+Q4 2023,Lee,Infrastructure,0.0,2
+Q4 2023,Lee County,Infrastructure,0.0,1
+Q4 2023,Milam,Infrastructure,0.0,5
+Q4 2023,Milam County,Infrastructure,0.0,2
+Q4 2023,Polk County,Infrastructure,0.0,1
+Q4 2023,Sabine,Infrastructure,0.0,1
+Q4 2023,Tyler,Infrastructure,0.0,3
+Q4 2023,Walker,Infrastructure,0.0,2
+Q4 2023,Waller County,Infrastructure,0.0,2
+Q4 2024,Statewide,Infrastructure,4241887889.6,356
+Q4 2024,Statewide,Housing,57800000.0,30
+Q4 2024,Aransas County,Infrastructure,28465881.97,3
+Q4 2024,Refugio County,Infrastructure,11727057.24,6
+Q4 2024,Liberty,Infrastructure,11155242.11,5
+Q4 2024,Brazoria,Infrastructure,10917829.0,1
+Q4 2024,Montgomery,Infrastructure,10304489.0,3
+Q4 2024,SanJacinto,Infrastructure,9195613.82,4
+Q4 2024,Newton,Infrastructure,7839731.0,3
+Q4 2024,Hardin County,Infrastructure,7816935.11,4
+Q4 2024,Nueces County,Infrastructure,4645555.59,2
+Q4 2024,Galveston County,Infrastructure,4235621.0,6
+Q4 2024,FortBend County,Infrastructure,4062281.05,4
+Q4 2024,Fayette,Infrastructure,3868969.77,4
+Q4 2024,Polk,Infrastructure,3640646.0,4
+Q4 2024,Calhoun County,Infrastructure,3578192.24,2
+Q4 2024,Jasper,Infrastructure,3437811.54,5
+Q4 2024,Galveston,Infrastructure,3293091.27,1
+Q4 2024,FortBend,Infrastructure,2769491.0,2
+Q4 2024,Chambers,Infrastructure,2703753.0,1
+Q4 2024,Montgomery County,Infrastructure,2592000.0,6
+Q4 2024,Waller,Infrastructure,2199081.8,4
+Q4 2024,Hardin,Infrastructure,2129370.0,2
+Q4 2024,SanPatricio,Infrastructure,2041280.0,1
+Q4 2024,SanJacinto County,Infrastructure,1920000.0,3
+Q4 2024,Victoria County,Infrastructure,1918269.5499999998,2
+Q4 2024,Jefferson,Infrastructure,1886457.0,3
+Q4 2024,Wharton,Infrastructure,1843903.3399999999,3
+Q4 2024,Matagorda County,Infrastructure,1373870.3900000001,5
+Q4 2024,Orange,Infrastructure,1361491.03,2
+Q4 2024,Jefferson County,Infrastructure,993328.8,6
+Q4 2024,Newton County,Infrastructure,935000.0,4
+Q4 2024,Tyler County,Infrastructure,768397.0,6
+Q4 2024,Liberty County,Infrastructure,526060.89,2
+Q4 2024,Wharton County,Infrastructure,491147.0,5
+Q4 2024,Fayette County,Infrastructure,455123.56,3
+Q4 2024,Orange County,Infrastructure,240331.38,6
+Q4 2024,Colorado,Infrastructure,221125.0,2
+Q4 2024,Polk County,Infrastructure,100000.0,2
+Q4 2024,Victoria,Infrastructure,50868.75,3
+Q4 2024,Jasper County,Infrastructure,20000.0,2
+Q4 2024,Austin,Infrastructure,0.0,4
+Q4 2024,Austin County,Infrastructure,0.0,2
+Q4 2024,Bastrop,Infrastructure,0.0,2
+Q4 2024,Bastrop County,Infrastructure,0.0,3
+Q4 2024,Bee County,Infrastructure,0.0,2
+Q4 2024,Caldwell,Infrastructure,0.0,3
+Q4 2024,Goliad,Infrastructure,0.0,2
+Q4 2024,Goliad County,Infrastructure,0.0,5
+Q4 2024,Gonzales,Infrastructure,0.0,3
+Q4 2024,Gonzales County,Infrastructure,0.0,1
+Q4 2024,Grimes,Infrastructure,0.0,2
+Q4 2024,Grimes County,Infrastructure,0.0,2
+Q4 2024,Jackson,Infrastructure,0.0,2
+Q4 2024,Karnes,Infrastructure,0.0,4
+Q4 2024,Karnes County,Infrastructure,0.0,1
+Q4 2024,Lee,Infrastructure,0.0,2
+Q4 2024,Milam,Infrastructure,0.0,4
+Q4 2024,Milam County,Infrastructure,0.0,2
+Q4 2024,Sabine,Infrastructure,0.0,1
+Q4 2024,Tyler,Infrastructure,0.0,3
+Q4 2024,Walker,Infrastructure,0.0,2
+Q4 2024,Waller County,Infrastructure,0.0,2
+Q4 2025,Statewide,Infrastructure,4268415688.31,399
+Q4 2025,Statewide,Housing,57800000.0,30
+Q4 2025,Aransas County,Infrastructure,28797241.849999998,3
+Q4 2025,Refugio County,Infrastructure,11727057.24,6
+Q4 2025,Liberty,Infrastructure,11155242.11,5
+Q4 2025,Brazoria,Infrastructure,10917829.0,1
+Q4 2025,SanJacinto,Infrastructure,9195613.82,4
+Q4 2025,Hardin County,Infrastructure,7826814.66,4
+Q4 2025,Montgomery,Infrastructure,7175792.78,3
+Q4 2025,Newton,Infrastructure,6171945.58,3
+Q4 2025,Nueces County,Infrastructure,4645555.59,2
+Q4 2025,Galveston County,Infrastructure,4235621.0,6
+Q4 2025,Fayette,Infrastructure,3868969.77,4
+Q4 2025,Calhoun County,Infrastructure,3644596.74,2
+Q4 2025,Polk,Infrastructure,3640646.0,4
+Q4 2025,Jasper,Infrastructure,3437811.54,5
+Q4 2025,Galveston,Infrastructure,3293091.27,1
+Q4 2025,Chambers,Infrastructure,2703753.0,1
+Q4 2025,FortBend,Infrastructure,2675575.0,1
+Q4 2025,Jefferson,Infrastructure,2475607.0,3
+Q4 2025,Waller,Infrastructure,2199081.8,4
+Q4 2025,Hardin,Infrastructure,2129370.0,2
+Q4 2025,Montgomery County,Infrastructure,2061000.0,7
+Q4 2025,SanPatricio,Infrastructure,2041280.0,1
+Q4 2025,SanJacinto County,Infrastructure,1920000.0,3
+Q4 2025,Victoria County,Infrastructure,1918223.13,2
+Q4 2025,Wharton,Infrastructure,1843903.3399999999,3
+Q4 2025,Orange,Infrastructure,1432031.03,2
+Q4 2025,Matagorda County,Infrastructure,977132.39,5
+Q4 2025,Tyler County,Infrastructure,768397.0,6
+Q4 2025,Brazoria County,Infrastructure,533393.0,3
+Q4 2025,Liberty County,Infrastructure,526060.89,2
+Q4 2025,Wharton County,Infrastructure,491147.0,5
+Q4 2025,FortBend County,Infrastructure,480000.0,3
+Q4 2025,Fayette County,Infrastructure,455123.56,3
+Q4 2025,Jefferson County,Infrastructure,404178.8,4
+Q4 2025,Colorado,Infrastructure,221125.0,2
+Q4 2025,Orange County,Infrastructure,170331.38,5
+Q4 2025,Polk County,Infrastructure,100000.0,2
+Q4 2025,Victoria,Infrastructure,50760.439999999995,3
+Q4 2025,Jasper County,Infrastructure,20000.0,2
+Q4 2025,Austin,Infrastructure,0.0,5
+Q4 2025,Austin County,Infrastructure,0.0,3
+Q4 2025,Bastrop,Infrastructure,0.0,2
+Q4 2025,Bastrop County,Infrastructure,0.0,4
+Q4 2025,Bee County,Infrastructure,0.0,2
+Q4 2025,Caldwell,Infrastructure,0.0,3
+Q4 2025,Goliad,Infrastructure,0.0,2
+Q4 2025,Goliad County,Infrastructure,0.0,6
+Q4 2025,Gonzales,Infrastructure,0.0,3
+Q4 2025,Gonzales County,Infrastructure,0.0,1
+Q4 2025,Grimes,Infrastructure,0.0,2
+Q4 2025,Grimes County,Infrastructure,0.0,3
+Q4 2025,Jackson,Infrastructure,0.0,2
+Q4 2025,Jackson County,Infrastructure,0.0,1
+Q4 2025,Karnes,Infrastructure,0.0,4
+Q4 2025,Karnes County,Infrastructure,0.0,1
+Q4 2025,Lee,Infrastructure,0.0,2
+Q4 2025,Milam,Infrastructure,0.0,4
+Q4 2025,Milam County,Infrastructure,0.0,2
+Q4 2025,Sabine,Infrastructure,0.0,1
+Q4 2025,Tyler,Infrastructure,0.0,3
+Q4 2025,Walker,Infrastructure,0.0,2
+Q4 2025,Waller County,Infrastructure,0.0,2
