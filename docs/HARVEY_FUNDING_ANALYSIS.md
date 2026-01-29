@@ -197,6 +197,17 @@ This diagram shows the Q4 2025 budget allocations for the Harvey Infrastructure 
 
 The smaller 57M Housing grant focuses on Affordable Rental and Local Buyout/Acquisition programs.
 
+### Harvey Funding by Recipient Organization
+
+![Harvey Funding by Recipient](../outputs/visualizations/harvey_sankey_recipients.png)
+
+This diagram shows how funds flow to recipient organizations:
+- **GLO Direct Administration**: $2.73B (61%) - Texas GLO administers projects directly in 62 counties
+- **City of Houston**: $1.04B (23%) - Manages their own projects
+- **Harris County**: $709M (16%) - Manages their own projects
+
+The right side breaks down GLO Direct administration by top counties: Aransas ($28.8M), Refugio ($11.7M), Liberty ($11.2M), and others.
+
 ### Flow Structure
 
 ```
@@ -269,6 +280,7 @@ Level 0: HUD (Source)
 | harvey_sankey_data.json | JSON | 2KB | D3.js Sankey visualization data |
 | harvey_sankey_infrastructure.json | JSON | 3KB | Infrastructure grant Sankey data |
 | harvey_sankey_housing.json | JSON | 1KB | Housing grant Sankey data |
+| harvey_sankey_recipients.json | JSON | 2KB | Recipient organization Sankey data with county breakdown |
 | harvey_quarterly_trends.json | JSON | 15KB | Time series data |
 | harvey_funding_hierarchy.json | JSON | 8KB | Hierarchical structure |
 | harvey_org_allocations.csv | CSV | 20KB | Organization-level data |
@@ -282,7 +294,10 @@ Level 0: HUD (Source)
 | harvey_sankey_5b.png | PNG | Infrastructure grant Sankey (web display) |
 | harvey_sankey_57m.pdf | PDF | Housing grant Sankey (print quality) |
 | harvey_sankey_57m.png | PNG | Housing grant Sankey (web display) |
+| harvey_sankey_recipients.pdf | PDF | Recipient organization Sankey (print quality) |
+| harvey_sankey_recipients.png | PNG | Recipient organization Sankey (web display) |
 | generate_sankey_matplotlib.py | Python | Sankey generator using matplotlib |
+| generate_sankey_recipients.py | Python | Recipient Sankey generator using matplotlib |
 
 ---
 

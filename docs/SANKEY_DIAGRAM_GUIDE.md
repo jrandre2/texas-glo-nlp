@@ -14,7 +14,7 @@ Sankey diagrams visualize flow quantities between nodes. For CDBG-DR funding, th
 
 ### Input JSON Structure
 
-The Sankey data files (`harvey_sankey_infrastructure.json`, `harvey_sankey_housing.json`) use this structure:
+The Sankey data files (`harvey_sankey_infrastructure.json`, `harvey_sankey_housing.json`, `harvey_sankey_recipients.json`) use this structure:
 
 ```json
 {
@@ -267,6 +267,10 @@ Edit `src/funding_tracker.py` to modify the Sankey data generation, then regener
 | `outputs/visualizations/harvey_sankey_5b.png` | Infrastructure Sankey PNG |
 | `outputs/visualizations/harvey_sankey_57m.pdf` | Housing Sankey PDF |
 | `outputs/visualizations/harvey_sankey_57m.png` | Housing Sankey PNG |
+| `outputs/exports/harvey_sankey_recipients.json` | Recipient organization flow data |
+| `outputs/visualizations/generate_sankey_recipients.py` | Recipient PDF generator |
+| `outputs/visualizations/harvey_sankey_recipients.pdf` | Recipient Sankey PDF |
+| `outputs/visualizations/harvey_sankey_recipients.png` | Recipient Sankey PNG |
 
 ---
 
