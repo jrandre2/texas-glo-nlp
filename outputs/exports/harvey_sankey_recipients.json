@@ -1,0 +1,112 @@
+{
+  "quarter": "Q4 2025",
+  "view_type": "Recipients with County Breakdown",
+  "nodes": [
+    {"id": "Texas GLO", "name": "Texas GLO", "level": 0},
+    {"id": "GLO Direct", "name": "GLO Direct Administration", "level": 1},
+    {"id": "City of Houston", "name": "City of Houston", "level": 1},
+    {"id": "Harris County", "name": "Harris County", "level": 1},
+    {"id": "Aransas County", "name": "Aransas County", "level": 2},
+    {"id": "Refugio County", "name": "Refugio County", "level": 2},
+    {"id": "Liberty", "name": "Liberty County", "level": 2},
+    {"id": "Brazoria", "name": "Brazoria County", "level": 2},
+    {"id": "San Jacinto", "name": "San Jacinto County", "level": 2},
+    {"id": "Hardin County", "name": "Hardin County", "level": 2},
+    {"id": "Montgomery", "name": "Montgomery County", "level": 2},
+    {"id": "Newton", "name": "Newton County", "level": 2},
+    {"id": "Other Counties", "name": "Other Counties (50+)", "level": 2}
+  ],
+  "links": [
+    {
+      "source": "Texas GLO",
+      "target": "GLO Direct",
+      "value": 2727092535.89,
+      "infrastructure": 2716139604.0,
+      "housing": 10952931.89,
+      "activities": 538,
+      "note": "Direct GLO administration of local projects"
+    },
+    {
+      "source": "Texas GLO",
+      "target": "City of Houston",
+      "value": 1035382736.84,
+      "infrastructure": 1035382736.84,
+      "housing": 0,
+      "activities": 17
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Harris County",
+      "value": 709103718.29,
+      "infrastructure": 665224650.18,
+      "housing": 43879068.11,
+      "activities": 51
+    },
+    {
+      "source": "GLO Direct",
+      "target": "Aransas County",
+      "value": 28797241.85,
+      "activities": 3
+    },
+    {
+      "source": "GLO Direct",
+      "target": "Refugio County",
+      "value": 11727057.24,
+      "activities": 6
+    },
+    {
+      "source": "GLO Direct",
+      "target": "Liberty",
+      "value": 11155242.11,
+      "activities": 5
+    },
+    {
+      "source": "GLO Direct",
+      "target": "Brazoria",
+      "value": 10917829.0,
+      "activities": 1
+    },
+    {
+      "source": "GLO Direct",
+      "target": "San Jacinto",
+      "value": 9195613.82,
+      "activities": 4
+    },
+    {
+      "source": "GLO Direct",
+      "target": "Hardin County",
+      "value": 7826814.66,
+      "activities": 4
+    },
+    {
+      "source": "GLO Direct",
+      "target": "Montgomery",
+      "value": 7175792.78,
+      "activities": 3
+    },
+    {
+      "source": "GLO Direct",
+      "target": "Newton",
+      "value": 6171945.58,
+      "activities": 3
+    },
+    {
+      "source": "GLO Direct",
+      "target": "Other Counties",
+      "value": 2634124998.85,
+      "activities": 509,
+      "note": "Remaining 50+ counties plus statewide projects"
+    }
+  ],
+  "summary": {
+    "total_budget": 4474546991.02,
+    "total_activities": 616,
+    "recipients": 3,
+    "counties_with_funding": 62,
+    "top_county": "Aransas County ($28.8M)",
+    "notes": {
+      "glo_direct": "GLO Direct includes Texas GLO administration of projects in 62 counties",
+      "statewide": "A large portion of GLO Direct funds are categorized as 'Statewide' projects"
+    }
+  }
+}
