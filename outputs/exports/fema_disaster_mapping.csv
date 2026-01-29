@@ -1,0 +1,44 @@
+disaster_type,disaster_year,census_year,is_program,fema_number
+2001 World Trade Center,2001.0,2000,False,1391
+"2005 Hurricanes Katrina, Rita, Wilma",2005.0,2000,False,1602
+"2005 Hurricanes Katrina, Rita, Wilma",2005.0,2000,False,1603
+"2005 Hurricanes Katrina, Rita, Wilma",2005.0,2000,False,1604
+"2005 Hurricanes Katrina, Rita, Wilma",2005.0,2000,False,1606
+"2005 Hurricanes Katrina, Rita, Wilma",2005.0,2000,False,1607
+2008 Midwest Floods,2008.0,2000,False,1763
+2008 Midwest Floods,2008.0,2000,False,1771
+2008 Midwest Floods,2008.0,2000,False,1773
+2008 Hurricane Ike and Other Events,2008.0,2000,False,1780
+2008 Hurricane Ike and Other Events,2008.0,2000,False,1791
+2008 Hurricane Ike and Other Events,2008.0,2000,False,1794
+2010 Severe Storms and Flooding,2010.0,2010,False,1935
+2010 Severe Storms and Flooding,2010.0,2010,False,1924
+2010 Severe Storms and Flooding,2010.0,2010,False,1927
+2011 Multiple Disasters,2011.0,2010,False,1991
+2011 Multiple Disasters,2011.0,2010,False,1994
+2011 Multiple Disasters,2011.0,2010,False,4012
+2011 Multiple Disasters,2011.0,2010,False,4024
+2011-2013 Hurricane Sandy and Other Events,2012.0,2010,False,4085
+2011-2013 Hurricane Sandy and Other Events,2012.0,2010,False,4086
+2011-2013 Hurricane Sandy and Other Events,2012.0,2010,False,4087
+2015 Hurricane Joaquin and Patricia and Other Events,2015.0,2010,False,4241
+2015 Hurricane Joaquin and Patricia and Other Events,2015.0,2010,False,4245
+2016 Louisiana Floods and Other Events,2016.0,2010,False,4277
+2016 Louisiana Floods and Other Events,2016.0,2010,False,4280
+"2017 Hurricanes Harvey, Irma and Maria",2017.0,2010,False,4332
+"2017 Hurricanes Harvey, Irma and Maria",2017.0,2010,False,4336
+"2017 Hurricanes Harvey, Irma and Maria",2017.0,2010,False,4339
+Electrical Power Systems in Puerto Rico and the U.S. Virgin Islands,2017.0,2010,False,4339
+2019 Disasters,2019.0,2010,False,4420
+2019 Disasters,2019.0,2010,False,4466
+2019 Disasters,2019.0,2010,False,4485
+2019 Disasters,2019.0,2010,False,4473
+2018 Disasters,2018.0,2010,False,4393
+2018 Disasters,2018.0,2010,False,4396
+2018 Disasters,2018.0,2010,False,4399
+2018 Disasters,2018.0,2010,False,4407
+"Storms, Flooding, and Other Disasters in California, Alabama, and Georgia",2023.0,2020,False,4699
+"Storms, Flooding, and Other Disasters in California, Alabama, and Georgia",2023.0,2020,False,4683
+2022 Disasters including Hurricanes Fiona and Ian,2022.0,2020,False,4671
+2022 Disasters including Hurricanes Fiona and Ian,2022.0,2020,False,4673
+2022 Disasters including Hurricanes Fiona and Ian,2022.0,2020,False,4675
