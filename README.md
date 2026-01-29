@@ -56,6 +56,27 @@ Texas GLO Action Plan Project/
 └── requirements.txt              # Python dependencies
 ```
 
+## Harvey Funding Flow Visualization
+
+The project includes Sankey diagram visualizations showing how Hurricane Harvey CDBG-DR funds flow from HUD through Texas GLO to specific programs.
+
+### Harvey 5B Infrastructure Grant ($4.42B)
+
+![Harvey 5B Infrastructure Grant Funding Flow](outputs/visualizations/harvey_sankey_5b.png)
+
+This diagram shows the Q4 2025 budget allocations for the $4.42B Harvey Infrastructure grant, with funds flowing from Texas GLO to 13 program categories. The largest allocations are:
+- **Homeowner Assistance Program**: $1.93B (43.6%)
+- **Affordable Rental**: $1.09B (24.6%)
+- **Infrastructure Projects**: $289M (6.5%)
+
+### Harvey 57M Housing Grant ($57.8M)
+
+![Harvey 57M Housing Grant Funding Flow](outputs/visualizations/harvey_sankey_57m.png)
+
+The smaller 57M Housing grant focuses primarily on Affordable Rental ($27.6M) and Local Buyout/Acquisition ($27.3M) programs.
+
+> **Note**: These values represent budget allocations as of Q4 2025, not actual expenditures. For spending data, see the Texas Disaster Funding table below.
+
 ## Current Statistics
 
 | Metric | Value |
@@ -96,6 +117,8 @@ Texas GLO Action Plan Project/
 - [Data Formats](docs/DATA.md) - File formats and schemas
 - [Entity Reference](docs/ENTITIES.md) - NLP entity documentation
 - [Workflows](docs/WORKFLOWS.md) - Step-by-step guides
+- [Harvey Funding Analysis](docs/HARVEY_FUNDING_ANALYSIS.md) - Detailed funding flow analysis
+- [Sankey Diagram Guide](docs/SANKEY_DIAGRAM_GUIDE.md) - Best practices for visualizations
 
 ## Requirements
 
