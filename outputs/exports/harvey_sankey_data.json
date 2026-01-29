@@ -1,0 +1,83 @@
+{
+  "quarter": "Q4 2025",
+  "nodes": [
+    {
+      "id": "HUD",
+      "name": "HUD",
+      "level": 0
+    },
+    {
+      "id": "Texas GLO",
+      "name": "Texas GLO",
+      "level": 1
+    },
+    {
+      "id": "Housing",
+      "name": "Housing",
+      "level": 2
+    },
+    {
+      "id": "Infrastructure",
+      "name": "Infrastructure",
+      "level": 2
+    },
+    {
+      "id": "Harris County",
+      "name": "Harris County",
+      "level": 3
+    },
+    {
+      "id": "Texas General Land Office",
+      "name": "Texas General Land Office",
+      "level": 3
+    },
+    {
+      "id": "City of Houston",
+      "name": "City of Houston",
+      "level": 3
+    }
+  ],
+  "links": [
+    {
+      "source": "HUD",
+      "target": "Texas GLO",
+      "value": 4474546991.0199995
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Housing",
+      "value": 57800000.0
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Infrastructure",
+      "value": 4416746991.0199995
+    },
+    {
+      "source": "Housing",
+      "target": "Harris County",
+      "value": 43879068.11
+    },
+    {
+      "source": "Housing",
+      "target": "Texas General Land Office",
+      "value": 2968000.0
+    },
+    {
+      "source": "Infrastructure",
+      "target": "City of Houston",
+      "value": 1035382736.84
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Harris County",
+      "value": 665224650.18
+    }
+  ],
+  "summary": {
+    "total_budget": 4474546991.0199995,
+    "programs": 2,
+    "organizations": 3,
+    "counties": 62
+  }
+}
