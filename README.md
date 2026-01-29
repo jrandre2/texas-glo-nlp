@@ -77,6 +77,14 @@ The smaller 57M Housing grant focuses primarily on Affordable Rental ($27.6M) an
 
 > **Note**: These values represent budget allocations as of Q4 2025, not actual expenditures. For spending data, see the Texas Disaster Funding table below.
 
+### Funding by Recipient Organization
+
+![Harvey Funding by Recipient](outputs/visualizations/harvey_sankey_recipients.png)
+
+This diagram shows how funds flow to recipient organizations:
+- **Houston Metro Area** (City of Houston + Harris County): $1.74B (39%) - These organizations manage their own projects
+- **GLO Direct Administration**: $2.73B (61%) - Texas GLO administers projects directly in 62 counties, with the top recipients being coastal counties like Aransas ($28.8M), Refugio ($11.7M), and Liberty ($11.2M)
+
 ## Current Statistics
 
 | Metric | Value |
