@@ -367,7 +367,7 @@ def main():
     parser = argparse.ArgumentParser(description='Spatial boundary loader + join pipeline')
     parser.add_argument('--db', type=str, default=str(config.DATABASE_PATH), help='Path to SQLite DB')
     parser.add_argument('--boundaries', type=str, default=str(config.DATA_DIR / 'boundaries'), help='Path to boundaries directory')
-    parser.add_argument('--export-dir', type=str, default=str(config.OUTPUTS_DIR / 'exports'), help='Export directory for CSVs')
+    parser.add_argument('--export-dir', type=str, default=str(config.SPATIAL_EXPORTS_DIR), help='Export directory for CSVs')
     parser.add_argument('--county-fips', type=str, default=str(config.DATA_DIR / 'reference' / 'tx_county_fips.csv'), help='County FIPS CSV (county,fips)')
     parser.add_argument('--join', action='store_true', help='Join aggregations into GeoJSON files')
     parser.add_argument('--map', action='store_true', help='Generate Plotly choropleth with scale toggles')

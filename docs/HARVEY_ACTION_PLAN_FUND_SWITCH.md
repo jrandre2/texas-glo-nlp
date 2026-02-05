@@ -11,14 +11,15 @@ It is designed to answer questions like:
 
 - HTML report (non-technical friendly):
   - `outputs/reports/harvey_action_plan_fund_switch_report.html`
-- Data exports:
-  - `outputs/exports/harvey_action_plan_fund_switch_statements.csv`
-  - `outputs/exports/harvey_action_plan_fund_switch_doc_summary.csv`
-  - `outputs/exports/harvey_action_plan_fund_switch_semantic_paragraph_candidates.csv`
-  - `outputs/exports/harvey_action_plan_fund_switch_semantic_dedup_groups.csv`
-  - `outputs/exports/harvey_action_plan_fund_switch_bertopic_topics.csv`
-  - `outputs/exports/harvey_action_plan_fund_switch_bertopic_paragraphs.csv`
-  - `outputs/exports/harvey_action_plan_fund_switch_relocation_justification_timeline.csv`
+- Data exports (in `outputs/exports/harvey/`):
+  - `harvey_action_plan_fund_switch_statements.csv`
+  - `harvey_action_plan_fund_switch_doc_summary.csv`
+  - `harvey_action_plan_fund_switch_semantic_paragraph_candidates.csv`
+  - `harvey_action_plan_fund_switch_semantic_dedup_groups.csv`
+  - `harvey_action_plan_fund_switch_bertopic_topics.csv`
+  - `harvey_action_plan_fund_switch_bertopic_paragraphs.csv`
+  - `harvey_action_plan_fund_switch_justification_timeline_by_topic.csv`
+  - `harvey_action_plan_fund_switch_relocation_justification_timeline.csv`
 
 These are also linked from `TEAM_PORTAL.html`.
 
@@ -65,6 +66,7 @@ This produces:
 
 - `harvey_action_plan_fund_switch_bertopic_topics.csv` (topic summary with top terms + example paragraphs)
 - `harvey_action_plan_fund_switch_bertopic_paragraphs.csv` (paragraph-level topic assignments + confidence)
+- `harvey_action_plan_fund_switch_justification_timeline_by_topic.csv` (quarter-by-quarter timeline of BERTopic themes)
 - `harvey_action_plan_fund_switch_relocation_justification_timeline.csv` (quarter-by-quarter timeline for relocation/buyout-related justifications)
 
 ## Limitations (important)

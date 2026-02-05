@@ -8,7 +8,7 @@ Each analysis should have:
 
 - A **script** in `src/` that can be run end-to-end (incremental where possible)
 - One or more **SQLite tables** to persist results
-- A **repeatable export** (CSV/JSON) in `outputs/exports/` when applicable
+- A **repeatable export** (CSV/JSON) in `outputs/exports/nlp/` (or the appropriate subdirectory) when applicable
 - A dedicated **documentation page** describing purpose, inputs, outputs, and validation
 
 ## Index

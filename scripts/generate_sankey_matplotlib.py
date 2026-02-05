@@ -12,8 +12,9 @@ from matplotlib.sankey import Sankey
 import numpy as np
 
 # Paths
-EXPORTS_DIR = Path(__file__).parent.parent / 'exports'
-OUTPUT_DIR = Path(__file__).parent
+ROOT = Path(__file__).resolve().parents[1]
+EXPORTS_DIR = ROOT / 'outputs' / 'exports' / 'harvey'
+OUTPUT_DIR = ROOT / 'outputs' / 'visualizations'
 
 # Color scheme
 COLORS = {

@@ -98,7 +98,7 @@ def main():
     parser = argparse.ArgumentParser(description='Tract choropleth for latest quarter')
     parser.add_argument('--db', type=str, default=str(config.DATABASE_PATH))
     parser.add_argument('--boundaries', type=str, default=str(config.DATA_DIR / 'boundaries' / 'tx_tracts.geojson'))
-    parser.add_argument('--output', type=str, default=str(config.OUTPUTS_DIR / 'exports' / 'spatial_tract_latest_quarter.html'))
+    parser.add_argument('--output', type=str, default=str(config.SPATIAL_EXPORTS_DIR / 'spatial_tract_latest_quarter.html'))
     args = parser.parse_args()
 
     conn = utils.init_database(Path(args.db))

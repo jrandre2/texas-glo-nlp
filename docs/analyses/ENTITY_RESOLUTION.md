@@ -30,7 +30,7 @@ This improves:
 
 ### Exports
 
-- `outputs/exports/entity_aliases_review.csv` (human review queue)
+- `outputs/exports/nlp/entity_aliases_review.csv` (human review queue)
 
 ## Run
 
@@ -42,7 +42,7 @@ python src/entity_resolution.py --export
 ### Notes
 
 - ORG resolution includes a conservative filter to avoid canonicalizing obvious non-org noise (grant numbers, form labels, codes).
-- Prefer reviewing `outputs/exports/entity_aliases_review.csv` before using aliases for downstream aggregation.
+- Prefer reviewing `outputs/exports/nlp/entity_aliases_review.csv` before using aliases for downstream aggregation.
 
 ## Validation
 

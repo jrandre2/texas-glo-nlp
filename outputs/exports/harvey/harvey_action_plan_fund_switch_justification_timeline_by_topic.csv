@@ -1,0 +1,30 @@
+year,quarter,quarter_label,bertopic_topic_id,n_paragraphs,n_unique_paragraphs,n_pdfs,topic_label
+2022,2,Q2 2022,-1,1,1,1,Outliers (-1)
+2022,3,Q3 2022,1,1,1,1,"Topic 1: project, city, facilities, projected, material shortages,…"
+2022,4,Q4 2022,1,1,1,1,"Topic 1: project, city, facilities, projected, material shortages,…"
+2023,1,Q1 2023,0,1,1,1,"Topic 0: activity, funds, total, lowmod, city, program, project,…"
+2023,1,Q1 2023,1,1,1,1,"Topic 1: project, city, facilities, projected, material shortages,…"
+2023,2,Q2 2023,0,1,1,1,"Topic 0: activity, funds, total, lowmod, city, program, project,…"
+2023,2,Q2 2023,1,1,1,1,"Topic 1: project, city, facilities, projected, material shortages,…"
+2023,3,Q3 2023,0,2,2,1,"Topic 0: activity, funds, total, lowmod, city, program, project,…"
+2023,4,Q4 2023,0,2,2,1,"Topic 0: activity, funds, total, lowmod, city, program, project,…"
+2024,1,Q1 2024,-1,1,1,1,Outliers (-1)
+2024,1,Q1 2024,0,1,1,1,"Topic 0: activity, funds, total, lowmod, city, program, project,…"
+2024,2,Q2 2024,0,1,1,1,"Topic 0: activity, funds, total, lowmod, city, program, project,…"
+2024,2,Q2 2024,1,1,1,1,"Topic 1: project, city, facilities, projected, material shortages,…"
+2024,3,Q3 2024,0,1,1,1,"Topic 0: activity, funds, total, lowmod, city, program, project,…"
+2024,3,Q3 2024,1,1,1,1,"Topic 1: project, city, facilities, projected, material shortages,…"
+2024,4,Q4 2024,0,1,1,1,"Topic 0: activity, funds, total, lowmod, city, program, project,…"
+2024,4,Q4 2024,1,1,1,1,"Topic 1: project, city, facilities, projected, material shortages,…"
+2025,1,Q1 2025,-1,2,2,1,Outliers (-1)
+2025,1,Q1 2025,0,1,1,1,"Topic 0: activity, funds, total, lowmod, city, program, project,…"
+2025,1,Q1 2025,1,1,1,1,"Topic 1: project, city, facilities, projected, material shortages,…"
+2025,2,Q2 2025,-1,1,1,1,Outliers (-1)
+2025,2,Q2 2025,0,1,1,1,"Topic 0: activity, funds, total, lowmod, city, program, project,…"
+2025,2,Q2 2025,1,1,1,1,"Topic 1: project, city, facilities, projected, material shortages,…"
+2025,3,Q3 2025,-1,1,1,1,Outliers (-1)
+2025,3,Q3 2025,0,1,1,1,"Topic 0: activity, funds, total, lowmod, city, program, project,…"
+2025,3,Q3 2025,1,1,1,1,"Topic 1: project, city, facilities, projected, material shortages,…"
+2025,4,Q4 2025,-1,1,1,1,Outliers (-1)
+2025,4,Q4 2025,0,1,1,1,"Topic 0: activity, funds, total, lowmod, city, program, project,…"
+2025,4,Q4 2025,1,1,1,1,"Topic 1: project, city, facilities, projected, material shortages,…"

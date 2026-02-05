@@ -468,7 +468,7 @@ class NLPProcessor:
         import pandas as pd
 
         if output_path is None:
-            output_path = config.EXPORTS_DIR / 'entities.csv'
+            output_path = config.GENERAL_EXPORTS_DIR / 'entities.csv'
 
         cursor = self.conn.cursor()
         cursor.execute('''

@@ -267,7 +267,7 @@ Generate CSV exports for analysis.
 python src/nlp_processor.py --export
 ```
 
-Creates: `outputs/exports/entities.csv` (~286 MB)
+Creates: `outputs/exports/general/entities.csv` (~286 MB)
 
 #### Custom Export
 
@@ -286,7 +286,7 @@ query = '''
 '''
 
 df = pd.read_sql_query(query, conn)
-df.to_csv('outputs/exports/disasters_only.csv', index=False)
+df.to_csv('outputs/exports/general/disasters_only.csv', index=False)
 ```
 
 ### Financial Exports
@@ -296,10 +296,10 @@ python src/data_linker.py
 ```
 
 Creates:
-- `outputs/exports/texas_glo_national_grants.csv`
-- `outputs/exports/linked_entities_summary.csv`
-- `outputs/exports/texas_disaster_financial_summary.csv`
-- `outputs/exports/fema_disaster_mapping.csv`
+- `outputs/exports/general/texas_glo_national_grants.csv`
+- `outputs/exports/general/linked_entities_summary.csv`
+- `outputs/exports/general/texas_disaster_financial_summary.csv`
+- `outputs/exports/general/fema_disaster_mapping.csv`
 
 ### Document Exports
 
@@ -312,7 +312,7 @@ query = '''
 '''
 
 df = pd.read_sql_query(query, conn)
-df.to_csv('outputs/exports/document_inventory.csv', index=False)
+df.to_csv('outputs/exports/general/document_inventory.csv', index=False)
 ```
 
 ---
@@ -592,9 +592,9 @@ python src/funding_tracker.py --export
 #### 3. (Optional) Generate PDFs/PNGs and dashboards
 
 ```bash
-python outputs/visualizations/generate_sankey_matplotlib.py
-python outputs/visualizations/generate_sankey_recipients.py
-python outputs/visualizations/view_dashboard.py
+python scripts/generate_sankey_matplotlib.py
+python scripts/generate_sankey_recipients.py
+python scripts/view_dashboard.py
 ```
 
 ---

@@ -747,7 +747,7 @@ python src/financial_parser.py --reprocess
 
 Compute quarter-to-quarter deltas and export funding-flow artifacts (Sankey + trends).
 
-**Primary outputs (files)**: `outputs/exports/harvey_sankey_*.json`, `outputs/exports/harvey_quarterly_trends.json`, `outputs/exports/harvey_*_allocations.csv`
+**Primary outputs (files)**: `outputs/exports/harvey/harvey_sankey_*.json`, `outputs/exports/harvey/harvey_quarterly_trends.json`, `outputs/exports/harvey/harvey_*_allocations.csv`
 
 ### CLI Usage
 
@@ -755,7 +755,7 @@ Compute quarter-to-quarter deltas and export funding-flow artifacts (Sankey + tr
 # Show quarters and latest rollups
 python src/funding_tracker.py
 
-# Export JSON/CSV artifacts to outputs/exports/
+# Export JSON/CSV artifacts to outputs/exports/harvey/
 python src/funding_tracker.py --export
 
 # Print Sankey summary for latest (or a specific) quarter
@@ -833,7 +833,7 @@ python src/geocode_enricher.py --mode coords --coord-limit 500
 
 Join spatial aggregations against boundary GeoJSONs and export choropleth maps.
 
-**Primary outputs (files)**: `outputs/exports/spatial_*_agg.csv`, `outputs/exports/spatial_*_joined.geojson`, `outputs/exports/spatial_choropleth.html`
+**Primary outputs (files)**: `outputs/exports/spatial/spatial_*_agg.csv`, `outputs/exports/spatial/spatial_*_joined.geojson`, `outputs/exports/spatial/spatial_choropleth.html`
 
 ### CLI Usage
 
@@ -849,7 +849,7 @@ python src/spatial_mapper.py --join --map
 
 ## spatial_quarter_map.py
 
-Generate a ZIP choropleth for the latest quarter in `documents` (`outputs/exports/spatial_zip_latest_quarter.html`).
+Generate a ZIP choropleth for the latest quarter in `documents` (`outputs/exports/spatial/spatial_zip_latest_quarter.html`).
 
 ### CLI Usage
 
@@ -861,7 +861,7 @@ python src/spatial_quarter_map.py
 
 ## spatial_tract_all_map.py
 
-Generate a tract choropleth for all mentions (no time filter) (`outputs/exports/spatial_tract_all.html`).
+Generate a tract choropleth for all mentions (no time filter) (`outputs/exports/spatial/spatial_tract_all.html`).
 
 ### CLI Usage
 
@@ -873,7 +873,7 @@ python src/spatial_tract_all_map.py
 
 ## spatial_tract_harris_map.py
 
-Generate a tract choropleth filtered to Harris County (`outputs/exports/spatial_tract_harris.html`).
+Generate a tract choropleth filtered to Harris County (`outputs/exports/spatial/spatial_tract_harris.html`).
 
 ### CLI Usage
 
@@ -885,7 +885,7 @@ python src/spatial_tract_harris_map.py
 
 ## spatial_tract_quarter_map.py
 
-Generate a tract choropleth for the latest quarter (`outputs/exports/spatial_tract_latest_quarter.html`).
+Generate a tract choropleth for the latest quarter (`outputs/exports/spatial/spatial_tract_latest_quarter.html`).
 
 ### CLI Usage
 

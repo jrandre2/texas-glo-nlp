@@ -77,7 +77,7 @@ Generate aggregation CSVs (always), then optionally join them into GeoJSON and e
 python src/spatial_mapper.py --join --map
 ```
 
-Outputs (written to `outputs/exports/` by default):
+Outputs (written to `outputs/exports/spatial/` by default):
 
 - Aggregations: `spatial_{county,tract,block_group,zip}_agg.csv`, `spatial_h3_r7_agg.csv`
 - Joined GeoJSONs: `spatial_{county,tract,block_group,zip}_joined.geojson`
@@ -97,7 +97,7 @@ python src/spatial_tract_harris_map.py      # tract map, Harris County only
 ## Large Files / Performance
 
 - Plotly HTML exports can be **very large** (100MB+), especially when embedding large GeoJSON and Plotly JS.
-- Treat `outputs/exports/spatial_*.html` and `outputs/exports/spatial_*_joined.geojson` as generated artifacts.
+- Treat `outputs/exports/spatial/spatial_*.html` and `outputs/exports/spatial/spatial_*_joined.geojson` as generated artifacts.
 - If you need smaller exports for sharing:
   - simplify GeoJSON (topology-preserving simplification),
   - generate maps at a coarser scale (county/tract vs block group/ZIP), or

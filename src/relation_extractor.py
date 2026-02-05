@@ -639,7 +639,7 @@ def main():
     parser.add_argument("--db", type=str, default=str(config.DATABASE_PATH), help="Path to SQLite DB")
     parser.add_argument("--rebuild", action="store_true", help="Clear and rebuild entity_relations tables")
     parser.add_argument("--export", action="store_true", help="Export top edges CSV")
-    parser.add_argument("--export-path", type=str, default=str(config.EXPORTS_DIR / "entity_relations_top_edges.csv"), help="CSV output path")
+    parser.add_argument("--export-path", type=str, default=str(config.NLP_EXPORTS_DIR / "entity_relations_top_edges.csv"), help="CSV output path")
     parser.add_argument("--export-limit", type=int, default=10000, help="Max edges to export")
 
     parser.add_argument("--category", type=str, help="Comma-separated categories filter")

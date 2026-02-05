@@ -488,7 +488,7 @@ def export_topics(db_path: Path, model_id: Optional[int] = None) -> None:
             raise SystemExit("No topic models found. Run: python src/topic_model.py --fit")
         model_id = int(row["id"])
 
-    exports_dir = Path(config.EXPORTS_DIR)
+    exports_dir = Path(config.NLP_EXPORTS_DIR)
     exports_dir.mkdir(parents=True, exist_ok=True)
 
     trends_path = exports_dir / "topic_trends_by_quarter.csv"

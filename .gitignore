@@ -34,10 +34,10 @@ data/vector_store/
 data/boundaries/*.geojson
 
 # Large exports
-outputs/exports/entities.csv
-outputs/exports/spatial_*.html
-outputs/exports/spatial_*_agg.csv
-outputs/exports/spatial_*_joined.geojson
+outputs/exports/general/entities.csv
+outputs/exports/spatial/spatial_*.html
+outputs/exports/spatial/spatial_*_agg.csv
+outputs/exports/spatial/spatial_*_joined.geojson
 
 # Share bundles (generated)
 outputs/share_bundle/

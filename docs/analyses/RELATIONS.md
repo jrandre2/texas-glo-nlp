@@ -31,7 +31,7 @@ This supports:
 
 ### Exports
 
-- `outputs/exports/entity_relations_top_edges.csv`
+- `outputs/exports/nlp/entity_relations_top_edges.csv`
 
 ## Run
 

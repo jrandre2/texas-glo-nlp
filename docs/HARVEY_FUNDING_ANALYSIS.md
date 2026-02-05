@@ -277,14 +277,14 @@ Level 0: HUD (Source)
 
 | File | Format | Size | Description |
 |------|--------|------|-------------|
-| harvey_sankey_data.json | JSON | 2KB | D3.js Sankey visualization data |
-| harvey_sankey_infrastructure.json | JSON | 3KB | Infrastructure grant Sankey data |
-| harvey_sankey_housing.json | JSON | 1KB | Housing grant Sankey data |
-| harvey_sankey_recipients.json | JSON | 2KB | Recipient organization Sankey data with county breakdown |
-| harvey_quarterly_trends.json | JSON | 15KB | Time series data |
-| harvey_funding_hierarchy.json | JSON | 8KB | Hierarchical structure |
-| harvey_org_allocations.csv | CSV | 20KB | Organization-level data |
-| harvey_county_allocations.csv | CSV | 50KB | County-level data |
+| harvey_sankey_data.json | JSON | 2KB | D3.js Sankey visualization data (in `outputs/exports/harvey/`) |
+| harvey_sankey_infrastructure.json | JSON | 3KB | Infrastructure grant Sankey data (in `outputs/exports/harvey/`) |
+| harvey_sankey_housing.json | JSON | 1KB | Housing grant Sankey data (in `outputs/exports/harvey/`) |
+| harvey_sankey_recipients.json | JSON | 2KB | Recipient organization Sankey data with county breakdown (in `outputs/exports/harvey/`) |
+| harvey_quarterly_trends.json | JSON | 15KB | Time series data (in `outputs/exports/harvey/`) |
+| harvey_funding_hierarchy.json | JSON | 8KB | Hierarchical structure (in `outputs/exports/harvey/`) |
+| harvey_org_allocations.csv | CSV | 20KB | Organization-level data (in `outputs/exports/harvey/`) |
+| harvey_county_allocations.csv | CSV | 50KB | County-level data (in `outputs/exports/harvey/`) |
 
 ### Visualization Files
 
@@ -296,8 +296,8 @@ Level 0: HUD (Source)
 | harvey_sankey_57m.png | PNG | Housing grant Sankey (web display) |
 | harvey_sankey_recipients.pdf | PDF | Recipient organization Sankey (print quality) |
 | harvey_sankey_recipients.png | PNG | Recipient organization Sankey (web display) |
-| generate_sankey_matplotlib.py | Python | Sankey generator using matplotlib |
-| generate_sankey_recipients.py | Python | Recipient Sankey generator using matplotlib |
+| generate_sankey_matplotlib.py | Python | Sankey generator using matplotlib (in `scripts/`) |
+| generate_sankey_recipients.py | Python | Recipient Sankey generator using matplotlib (in `scripts/`) |
 
 ---
 

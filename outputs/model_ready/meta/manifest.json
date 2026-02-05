@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-02-05T12:13:19",
+  "built_at": "2026-02-05T13:00:40",
   "db_path": "/Volumes/T9/Texas GLO Action Plan Project/data/glo_reports.db",
   "outputs": {
     "panel_document": "outputs/model_ready/panels/panel_document.csv",
@@ -32,6 +32,5 @@
     "beneficiary_measures": 2823,
     "severity_proxies_by_quarter": 567,
     "fema_declarations_by_quarter": 656
-  },
-  "macos_artifacts_removed": 15
+  }
 }

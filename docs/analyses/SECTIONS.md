@@ -24,8 +24,8 @@ Segment extracted DRGR page text into **document sections** (e.g., “Recovery N
 
 ### Exports
 
-- `outputs/exports/document_sections_summary.csv`: counts by section title and by category/quarter
-- `outputs/exports/section_heading_families_review.csv`: heading counts + predicted family (for manual review/overrides)
+- `outputs/exports/nlp/document_sections_summary.csv`: counts by section title and by category/quarter
+- `outputs/exports/nlp/section_heading_families_review.csv`: heading counts + predicted family (for manual review/overrides)
 
 ## How it works (v1 heuristics)
 

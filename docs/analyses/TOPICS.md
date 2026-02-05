@@ -25,8 +25,8 @@ Discover and track recurring themes across the corpus (and over time) without ma
 
 ### Exports
 
-- `outputs/exports/topic_trends_by_quarter.csv` (topic counts over time by category/quarter)
-- `outputs/exports/topic_examples.csv` (top terms + representative snippets per topic)
+- `outputs/exports/nlp/topic_trends_by_quarter.csv` (topic counts over time by category/quarter)
+- `outputs/exports/nlp/topic_examples.csv` (top terms + representative snippets per topic)
 
 ## Run
 

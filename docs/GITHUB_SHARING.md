@@ -20,9 +20,9 @@ This project contains **large source documents (PDFs)**, a **large SQLite databa
 - `DRGR_Reports/` (raw PDFs; large + often licensed/restricted)
 - `data/*.db` (SQLite databases are large; treat as build artifacts)
 - Large generated outputs (some are >100MB and exceed GitHub limits):
-  - `outputs/exports/spatial_*.html`
-  - `outputs/exports/*_joined.geojson`
-  - any other multi‑hundred‑MB HTML/GeoJSON
+  - `outputs/exports/spatial/spatial_*.html`
+  - `outputs/exports/spatial/*_joined.geojson`
+  - any other multi-hundred-MB HTML/GeoJSON
 
 These are already covered by `.gitignore` in this repo.
 

@@ -11,8 +11,8 @@ This is a best-effort, rule-based extractor intended to accelerate review.
 It will include false positives and should be treated as a screening tool.
 
 Writes:
-  outputs/exports/harvey_action_plan_fund_switch_statements.csv
-  outputs/exports/harvey_action_plan_fund_switch_doc_summary.csv
+  outputs/exports/harvey/harvey_action_plan_fund_switch_statements.csv
+  outputs/exports/harvey/harvey_action_plan_fund_switch_doc_summary.csv
   outputs/reports/harvey_action_plan_fund_switch_report.html
   outputs/reports/assets/harvey_action_plan_fund_switch_*.png
 """
@@ -34,7 +34,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DB_PATH = ROOT / "data" / "glo_reports.db"
-EXPORTS_DIR = ROOT / "outputs" / "exports"
+EXPORTS_DIR = ROOT / "outputs" / "exports" / "harvey"
 REPORTS_DIR = ROOT / "outputs" / "reports"
 ASSETS_DIR = REPORTS_DIR / "assets"
 
@@ -1384,8 +1384,8 @@ def build_outputs(
       It helps catch paraphrases that keyword scans miss, and groups near-duplicates across quarters.
     </div>
     <p class="small">
-      Semantic candidates CSV: <a href="../exports/{out_semantic.name}">outputs/exports/{esc(out_semantic.name)}</a><br/>
-      Semantic dedup groups CSV: <a href="../exports/{out_semantic_groups.name}">outputs/exports/{esc(out_semantic_groups.name)}</a>
+      Semantic candidates CSV: <a href="../exports/harvey/{out_semantic.name}">outputs/exports/harvey/{esc(out_semantic.name)}</a><br/>
+      Semantic dedup groups CSV: <a href="../exports/harvey/{out_semantic_groups.name}">outputs/exports/harvey/{esc(out_semantic_groups.name)}</a>
     </p>
     <div class="grid">
       <div class="card"><b>{n_paras}</b><div class="small muted">Narrative paragraphs scanned (pre-filtered)</div></div>
@@ -1429,6 +1429,7 @@ def build_outputs(
     # BERTopic: exploratory topic modeling over semantically-ranked narrative paragraphs
     out_ber_topics = EXPORTS_DIR / "harvey_action_plan_fund_switch_bertopic_topics.csv"
     out_ber_assign = EXPORTS_DIR / "harvey_action_plan_fund_switch_bertopic_paragraphs.csv"
+    out_theme_timeline = EXPORTS_DIR / "harvey_action_plan_fund_switch_justification_timeline_by_topic.csv"
     out_reloc_timeline = EXPORTS_DIR / "harvey_action_plan_fund_switch_relocation_justification_timeline.csv"
     bertopic_section_html = ""
 
@@ -1570,6 +1571,144 @@ def build_outputs(
                             ]
                         )
                     )
+
+            # Fund reallocation justification timeline (all BERTopic themes)
+            theme_timeline_png = ASSETS_DIR / "harvey_action_plan_fund_switch_justification_timeline_by_topic.png"
+            theme_timeline_html = ""
+
+            if assign_df.empty or "paragraph" not in assign_df.columns:
+                pd.DataFrame(columns=["year", "quarter", "quarter_label", "bertopic_topic_id", "topic_label", "n_paragraphs", "n_unique_paragraphs", "n_pdfs"]).to_csv(
+                    out_theme_timeline, index=False
+                )
+                theme_timeline_html = "<div class='muted'>Timeline unavailable (no BERTopic paragraph assignments).</div>"
+            else:
+                base_df = assign_df.copy()
+                base_df["_canon"] = base_df["paragraph"].fillna("").astype(str).map(_canonicalize_for_key)
+                base_df["_qidx"] = base_df.apply(lambda r: (int(r.get("year") or 0) * 10 + int(r.get("quarter") or 0)), axis=1)
+                base_df = base_df.sort_values(["_qidx", "filename", "start_page"])
+
+                label_map: Dict[int, str] = {-1: "Outliers (-1)"}
+                if not topics_df.empty:
+                    for rr in topics_df.itertuples(index=False):
+                        try:
+                            tid_i = int(getattr(rr, "topic_id", -999))
+                        except Exception:
+                            continue
+                        if tid_i < 0:
+                            continue
+                        terms = str(getattr(rr, "top_words", "") or "")
+                        label_map[tid_i] = f"Topic {tid_i}: {trim(terms, 60)}"
+
+                def _topic_label(tid: Any) -> str:
+                    try:
+                        tid_i = int(tid)
+                    except Exception:
+                        tid_i = -1
+                    return label_map.get(tid_i, f"Topic {tid_i}")
+
+                tl_all = (
+                    base_df.groupby(["year", "quarter", "quarter_label", "bertopic_topic_id"], dropna=False)
+                    .agg(
+                        n_paragraphs=("paragraph", "count"),
+                        n_unique_paragraphs=("_canon", "nunique"),
+                        n_pdfs=("filename", "nunique"),
+                    )
+                    .reset_index()
+                )
+                tl_all["topic_label"] = tl_all["bertopic_topic_id"].map(_topic_label)
+                tl_all["_qidx"] = tl_all.apply(lambda r: (int(r.get("year") or 0) * 10 + int(r.get("quarter") or 0)), axis=1)
+                tl_all = tl_all.sort_values(["_qidx", "bertopic_topic_id"]).drop(columns=["_qidx"])
+                tl_all.to_csv(out_theme_timeline, index=False)
+
+                pivot = tl_all.pivot_table(
+                    index=["year", "quarter", "quarter_label"],
+                    columns="bertopic_topic_id",
+                    values="n_unique_paragraphs",
+                    aggfunc="sum",
+                    fill_value=0,
+                ).reset_index()
+                pivot["_qidx"] = pivot["year"].astype(int) * 10 + pivot["quarter"].astype(int)
+                pivot = pivot.sort_values("_qidx")
+
+                topic_cols = [c for c in pivot.columns if c not in {"year", "quarter", "quarter_label", "_qidx"}]
+                topic_ids: List[int] = []
+                for c in topic_cols:
+                    try:
+                        topic_ids.append(int(c))
+                    except Exception:
+                        continue
+                topic_ids = sorted(set(topic_ids), key=lambda t: (t == -1, t))
+
+                x = pivot["quarter_label"].astype(str).tolist()
+                bottoms = [0] * len(pivot)
+
+                plt.figure(figsize=(11, 4.5))
+                colors = ["#7aa2ff", "#8fe3b5", "#ffcc66", "#ff8a8a", "#c792ea", "#89ddff", "#b0bec5", "#ffd1dc"]
+                for idx, tid in enumerate(topic_ids):
+                    col = tid if tid in pivot.columns else str(tid)
+                    if col not in pivot.columns:
+                        continue
+                    vals = pivot[col].astype(int).tolist()
+                    if sum(vals) == 0:
+                        continue
+                    color = "#bdbdbd" if tid == -1 else colors[idx % len(colors)]
+                    plt.bar(x, vals, bottom=bottoms, label=_topic_label(tid), color=color)
+                    bottoms = [b + v for b, v in zip(bottoms, vals)]
+
+                plt.title("Fund reallocation justification themes over time (deduplicated paragraphs)")
+                plt.ylabel("Unique paragraphs (per quarter)")
+                plt.xticks(rotation=45, ha="right")
+                plt.legend(loc="upper left", bbox_to_anchor=(1.01, 1.0), frameon=False, fontsize=8)
+                plt.tight_layout()
+                plt.savefig(theme_timeline_png, dpi=160)
+                plt.close()
+
+                # Quarter examples (deduped)
+                q_order = (
+                    base_df[["year", "quarter", "quarter_label"]]
+                    .drop_duplicates()
+                    .assign(_qidx=lambda d: d["year"].astype(int) * 10 + d["quarter"].astype(int))
+                    .sort_values("_qidx")
+                )
+                quarter_blocks_all: List[str] = []
+                for qr in q_order.itertuples(index=False):
+                    qlab = str(getattr(qr, "quarter_label", ""))
+                    gq = base_df[base_df["quarter_label"] == qlab].copy()
+                    if gq.empty:
+                        continue
+                    gq = gq.sort_values(["semantic_score", "bertopic_confidence"], ascending=[False, False]).copy()
+                    gq = gq.drop_duplicates(subset=["_canon"])
+
+                    items: List[str] = []
+                    for ex in gq.head(5).itertuples(index=False):
+                        tid = getattr(ex, "bertopic_topic_id", -1)
+                        tlabel = esc(_topic_label(tid))
+                        meta = f"{getattr(ex,'filename','')} p{getattr(ex,'start_page','')}-{getattr(ex,'end_page','')}"
+                        para = esc(trim(getattr(ex, "paragraph", ""), 520))
+                        items.append(f"<li><b>{tlabel}</b> <span class='small muted'>{esc(meta)}</span><br/>{para}</li>")
+
+                    quarter_blocks_all.append(
+                        "\n".join(
+                            [
+                                "<details style='margin-top:10px'>",
+                                f"<summary>{esc(qlab)} • {len(gq)} unique paragraphs</summary>",
+                                "<ul class='sub'>",
+                                "".join(items) if items else "<li class='muted'>No examples.</li>",
+                                "</ul>",
+                                "</details>",
+                            ]
+                        )
+                    )
+
+                theme_timeline_html = f"""
+    <div style="margin-top:10px">
+      <img src="assets/{theme_timeline_png.name}" alt="Fund reallocation justification timeline" />
+    </div>
+    <details style="margin-top:12px">
+      <summary>Quarter-by-quarter examples (deduplicated)</summary>
+      {''.join(quarter_blocks_all) if quarter_blocks_all else '<div class="muted">No examples available.</div>'}
+    </details>
+"""
 
             # Relocation / buyout justification timeline (subset of BERTopic assignments)
             reloc_hint_re = re.compile(r"\b(?:relocat\w*|relocation|buyout|acquisit\w*|floodplain|repetitive)\b", re.IGNORECASE)
@@ -1720,8 +1859,8 @@ def build_outputs(
       then clustered into topics. Use this to discover recurring themes and to spot additional reallocation narratives.
     </div>
     <p class="small">
-      Topics CSV: <a href="../exports/{out_ber_topics.name}">outputs/exports/{esc(out_ber_topics.name)}</a><br/>
-      Paragraph assignments CSV: <a href="../exports/{out_ber_assign.name}">outputs/exports/{esc(out_ber_assign.name)}</a>
+      Topics CSV: <a href="../exports/harvey/{out_ber_topics.name}">outputs/exports/harvey/{esc(out_ber_topics.name)}</a><br/>
+      Paragraph assignments CSV: <a href="../exports/harvey/{out_ber_assign.name}">outputs/exports/harvey/{esc(out_ber_assign.name)}</a>
     </p>
     <div class="grid">
       <div class="card"><b>{n_pool}</b><div class="small muted">Narrative paragraphs in BERTopic pool (filtered)</div></div>
@@ -1742,29 +1881,45 @@ def build_outputs(
       </tbody>
     </table>
 
-    <h3 style="margin-top:18px">Topic details (examples)</h3>
-    <div class="sub">Expand a topic to see deduplicated example paragraphs (ranked by semantic score).</div>
-    {''.join(topic_details_html) if topic_details_html else '<div class="muted">No topic details available.</div>'}
+	    <h3 style="margin-top:18px">Topic details (examples)</h3>
+	    <div class="sub">Expand a topic to see deduplicated example paragraphs (ranked by semantic score).</div>
+	    {''.join(topic_details_html) if topic_details_html else '<div class="muted">No topic details available.</div>'}
 
-    <h3 style="margin-top:18px">Relocation / buyout justification timeline</h3>
-    <div class="sub">
-      This uses BERTopic clusters to summarize and trend relocation-related justifications (paragraphs mentioning relocation/buyout/floodplain).
-      Counts are deduplicated by normalized paragraph text to reduce repeated quarter-to-quarter boilerplate.
+	    <h3 style="margin-top:18px">Fund reallocation justification timeline (all themes)</h3>
+	    <div class="sub">
+	      Quarter-by-quarter view of fund-switch narrative themes (BERTopic topics). Counts are deduplicated by normalized paragraph text
+	      to reduce repeated quarter-to-quarter boilerplate.
+	    </div>
+	    <p class="small">
+	      Timeline CSV: <a href="../exports/harvey/{out_theme_timeline.name}">outputs/exports/harvey/{esc(out_theme_timeline.name)}</a>
+	    </p>
+	    {theme_timeline_html}
+
+	    <h3 style="margin-top:18px">Relocation / buyout justification timeline</h3>
+	    <div class="sub">
+	      This uses BERTopic clusters to summarize and trend relocation-related justifications (paragraphs mentioning relocation/buyout/floodplain).
+	      Counts are deduplicated by normalized paragraph text to reduce repeated quarter-to-quarter boilerplate.
     </div>
     <p class="small">
-      Timeline CSV: <a href="../exports/{out_reloc_timeline.name}">outputs/exports/{esc(out_reloc_timeline.name)}</a>
+      Timeline CSV: <a href="../exports/harvey/{out_reloc_timeline.name}">outputs/exports/harvey/{esc(out_reloc_timeline.name)}</a>
     </p>
     {timeline_html}
 """
         except Exception as e:
             pd.DataFrame(columns=["topic_id", "n_paragraphs"]).to_csv(out_ber_topics, index=False)
             pd.DataFrame(columns=["document_id", "paragraph", "bertopic_topic_id"]).to_csv(out_ber_assign, index=False)
+            pd.DataFrame(columns=["year", "quarter", "quarter_label", "bertopic_topic_id", "topic_label", "n_paragraphs", "n_unique_paragraphs", "n_pdfs"]).to_csv(
+                out_theme_timeline, index=False
+            )
             pd.DataFrame(columns=["year", "quarter", "quarter_label", "bertopic_topic_id", "n_paragraphs"]).to_csv(out_reloc_timeline, index=False)
             bertopic_section_html = f"<h2>BERTopic</h2><div class='muted'>BERTopic skipped: {html.escape(str(e))}</div>"
     else:
         # BERTopic disabled; keep portal links stable
         pd.DataFrame(columns=["topic_id", "n_paragraphs"]).to_csv(out_ber_topics, index=False)
         pd.DataFrame(columns=["document_id", "paragraph", "bertopic_topic_id"]).to_csv(out_ber_assign, index=False)
+        pd.DataFrame(columns=["year", "quarter", "quarter_label", "bertopic_topic_id", "topic_label", "n_paragraphs", "n_unique_paragraphs", "n_pdfs"]).to_csv(
+            out_theme_timeline, index=False
+        )
         pd.DataFrame(columns=["year", "quarter", "quarter_label", "bertopic_topic_id", "n_paragraphs"]).to_csv(out_reloc_timeline, index=False)
 
     # HTML report
@@ -1932,8 +2087,8 @@ def build_outputs(
       “Confidence” is a simple score based on from→to phrases, money-like patterns, multiple organizations on the page, and justification cue words.
     </div>
     <p class="small">
-      Full CSV: <a href="../exports/harvey_action_plan_fund_switch_statements.csv">outputs/exports/harvey_action_plan_fund_switch_statements.csv</a><br/>
-      Doc summary: <a href="../exports/harvey_action_plan_fund_switch_doc_summary.csv">outputs/exports/harvey_action_plan_fund_switch_doc_summary.csv</a>
+      Full CSV: <a href="../exports/harvey/harvey_action_plan_fund_switch_statements.csv">outputs/exports/harvey/harvey_action_plan_fund_switch_statements.csv</a><br/>
+      Doc summary: <a href="../exports/harvey/harvey_action_plan_fund_switch_doc_summary.csv">outputs/exports/harvey/harvey_action_plan_fund_switch_doc_summary.csv</a>
     </p>
 
     <h2>Summary charts</h2>
@@ -2005,6 +2160,7 @@ def build_outputs(
         "semantic_dedup_groups_csv": out_semantic_groups,
         "bertopic_topics_csv": out_ber_topics,
         "bertopic_paragraphs_csv": out_ber_assign,
+        "theme_timeline_csv": out_theme_timeline,
         "reloc_timeline_csv": out_reloc_timeline,
         "report_html": report_path,
     }

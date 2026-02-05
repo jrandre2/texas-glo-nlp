@@ -1,4 +1,4 @@
-outputs/exports/money_mentions.csv filter=lfs diff=lfs merge=lfs -text
 outputs/exports/nlp/money_mentions.csv filter=lfs diff=lfs merge=lfs -text
 outputs/model_ready/long/activities.csv filter=lfs diff=lfs merge=lfs -text
 outputs/model_ready/long/activities_unique.csv filter=lfs diff=lfs merge=lfs -text
+outputs/exports/money_mentions.csv filter=lfs diff=lfs merge=lfs -text

@@ -34,7 +34,7 @@ Individual module CLIs accept `--stats`, `--rebuild`, and `--export` flags. See 
 ## Gotchas
 
 - IMPORTANT: The database is on an external volume (`/Volumes/T9/`). If the volume is unmounted, all file operations will fail.
-- Large spatial HTML files (100MB+) are generated in `outputs/exports/`. These are gitignored.
+- Large spatial HTML files (100MB+) are generated in `outputs/exports/spatial/`. These are gitignored.
 - No automated test suite exists. Each module has `--stats` for manual verification.
 - Money mentions are NLP-extracted approximations, not official accounting totals. Always caveat this in outputs.
 - SQLite does not support concurrent writes. Only run one write pipeline at a time.

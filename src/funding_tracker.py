@@ -14,9 +14,9 @@ from collections import defaultdict
 
 # Handle both package and direct execution imports
 try:
-    from .config import DATABASE_PATH, EXPORTS_DIR
+    from .config import DATABASE_PATH, HARVEY_EXPORTS_DIR
 except ImportError:
-    from config import DATABASE_PATH, EXPORTS_DIR
+    from config import DATABASE_PATH, HARVEY_EXPORTS_DIR
 
 
 class FundingTracker:
@@ -414,7 +414,7 @@ class FundingTracker:
 
     def export_all(self, output_dir: Path = None):
         """Export all tracking data."""
-        output_dir = output_dir or EXPORTS_DIR
+        output_dir = output_dir or HARVEY_EXPORTS_DIR
         output_dir.mkdir(parents=True, exist_ok=True)
 
         # Export Infrastructure (5B) Sankey data

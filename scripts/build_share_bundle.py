@@ -99,11 +99,11 @@ def _is_local_relpath(href: str) -> bool:
 
 def _should_skip(relpath: str, include_spatial: bool) -> bool:
     p = relpath.replace("\\", "/")
-    if p == "outputs/exports/entities.csv":
+    if p == "outputs/exports/general/entities.csv":
         return True
     if p.startswith("DRGR_Reports/"):
         return True
-    if not include_spatial and p.startswith("outputs/exports/spatial_") and p.endswith(".html"):
+    if not include_spatial and p.startswith("outputs/exports/spatial/spatial_") and p.endswith(".html"):
         return True
     if not include_spatial and p.endswith("_joined.geojson"):
         return True

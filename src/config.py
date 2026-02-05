@@ -27,6 +27,10 @@ DATABASE_PATH = DATA_DIR / "glo_reports.db"
 
 # Output subdirectories
 EXPORTS_DIR = OUTPUTS_DIR / "exports"
+HARVEY_EXPORTS_DIR = EXPORTS_DIR / "harvey"
+SPATIAL_EXPORTS_DIR = EXPORTS_DIR / "spatial"
+NLP_EXPORTS_DIR = EXPORTS_DIR / "nlp"
+GENERAL_EXPORTS_DIR = EXPORTS_DIR / "general"
 REPORTS_DIR = OUTPUTS_DIR / "reports"
 
 # API Keys (from environment)
@@ -82,6 +86,10 @@ def ensure_directories():
         EXTRACTED_TEXT_CLEAN_DIR,
         VECTOR_STORE_DIR,
         EXPORTS_DIR,
+        HARVEY_EXPORTS_DIR,
+        SPATIAL_EXPORTS_DIR,
+        NLP_EXPORTS_DIR,
+        GENERAL_EXPORTS_DIR,
         REPORTS_DIR,
     ]
     for directory in directories:

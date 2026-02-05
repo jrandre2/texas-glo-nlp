@@ -805,7 +805,7 @@ def main():
     parser.add_argument("--skip-processed", action="store_true", help="Skip documents that already have money_mentions")
 
     parser.add_argument("--export", action="store_true", help="Export money mention CSVs")
-    parser.add_argument("--export-dir", type=str, default=str(config.EXPORTS_DIR), help="Directory for CSV exports")
+    parser.add_argument("--export-dir", type=str, default=str(config.NLP_EXPORTS_DIR), help="Directory for CSV exports")
     parser.add_argument(
         "--export-limit",
         type=int,

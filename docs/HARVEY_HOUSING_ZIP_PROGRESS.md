@@ -16,10 +16,10 @@ It is designed for:
 
 ### Model-ready exports (CSV)
 
-- `outputs/exports/harvey_housing_zip_quarter_panel.csv`
+- `outputs/exports/harvey/harvey_housing_zip_quarter_panel.csv`
   - One row per **(quarter, ZIP code)**
   - Includes allocated budget and selected beneficiary/outcome measures when present
-- `outputs/exports/harvey_housing_quarter_summary.csv`
+- `outputs/exports/harvey/harvey_housing_quarter_summary.csv`
   - One row per **quarter** (all Harvey Housing activities, even when no ZIP is available)
 
 ## How it’s built (data sources + method)
@@ -51,7 +51,7 @@ In the exported panel, allocated measures are prefixed with `sum_alloc_*` (e.g.,
 
 ## Key columns (ZIP × quarter panel)
 
-In `outputs/exports/harvey_housing_zip_quarter_panel.csv`:
+In `outputs/exports/harvey/harvey_housing_zip_quarter_panel.csv`:
 
 - `quarter_label` — e.g., `Q4 2023` (recommended time key)
 - `zip_code` — 5-digit ZIP

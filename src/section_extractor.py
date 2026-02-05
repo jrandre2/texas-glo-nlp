@@ -414,7 +414,7 @@ def main():
     parser.add_argument(
         "--export-path",
         type=str,
-        default=str(config.EXPORTS_DIR / "document_sections_summary.csv"),
+        default=str(config.NLP_EXPORTS_DIR / "document_sections_summary.csv"),
         help="CSV output path for --export",
     )
     args = parser.parse_args()

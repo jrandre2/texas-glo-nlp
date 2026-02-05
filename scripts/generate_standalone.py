@@ -8,8 +8,9 @@ import csv
 from pathlib import Path
 
 # Paths
-EXPORTS_DIR = Path(__file__).parent.parent / 'exports'
-OUTPUT_FILE = Path(__file__).parent / 'harvey_dashboard_standalone.html'
+ROOT = Path(__file__).resolve().parents[1]
+EXPORTS_DIR = ROOT / 'outputs' / 'exports' / 'harvey'
+OUTPUT_FILE = ROOT / 'outputs' / 'visualizations' / 'harvey_dashboard_standalone.html'
 
 def load_data():
     """Load all data files."""

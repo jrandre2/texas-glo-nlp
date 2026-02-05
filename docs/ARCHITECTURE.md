@@ -140,7 +140,7 @@ The system follows a multi-phase pipeline architecture:
 | Rollups | Quarterly/org/county aggregation tables |
 | Sankey/Trends | JSON/CSV exports for visualization |
 
-**Output**: `harvey_*` tables + `outputs/exports/harvey_*.{json,csv}`
+**Output**: `harvey_*` tables + `outputs/exports/harvey/harvey_*.{json,csv}`
 
 ### Phase 3c: Spatial Extraction & Mapping (Complete)
 
@@ -151,7 +151,7 @@ The system follows a multi-phase pipeline architecture:
 | Boundary Joins | Join aggregations to Texas boundary GeoJSONs |
 | Map Exports | Plotly choropleth HTML exports |
 
-**Output**: `location_*` / `spatial_units` tables + `outputs/exports/spatial_*`
+**Output**: `location_*` / `spatial_units` tables + `outputs/exports/spatial/spatial_*`
 
 ### Phase 4: Semantic Search (Complete, Local)
 
@@ -263,7 +263,7 @@ documents + extracted_text
                                      │
                                      ├──▶ harvey_quarterly_totals / harvey_org_allocations / harvey_county_allocations
                                      │
-                                     └──▶ funding_tracker.py ──▶ outputs/exports/harvey_sankey_*.json + trends
+                                     └──▶ funding_tracker.py ──▶ outputs/exports/harvey/harvey_sankey_*.json + trends
 ```
 
 ### Spatial Extraction Flow
@@ -277,7 +277,7 @@ document_text + document_tables
                                        │
                                        ├──▶ (optional) geocode_enricher.py ──▶ enrich location_mentions + geocode_cache
                                        │
-                                       └──▶ spatial_mapper.py ──▶ spatial_* exports + choropleth HTML
+                                       └──▶ spatial_mapper.py ──▶ outputs/exports/spatial/ exports + choropleth HTML
 ```
 
 ---

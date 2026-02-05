@@ -8,8 +8,9 @@ import json
 from pathlib import Path
 
 # Paths
-EXPORTS_DIR = Path(__file__).parent.parent / 'exports'
-OUTPUT_DIR = Path(__file__).parent
+ROOT = Path(__file__).resolve().parents[1]
+EXPORTS_DIR = ROOT / 'outputs' / 'exports' / 'harvey'
+OUTPUT_DIR = ROOT / 'outputs' / 'visualizations'
 
 def generate_sankey_html(sankey_data, title, width=1400, height=700):
     """Generate optimized HTML for PDF export."""

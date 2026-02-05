@@ -19,8 +19,8 @@ This avoids double-counting when aggregating across ZIPs, but is still an
 assumption.
 
 Writes:
-  outputs/exports/harvey_housing_zip_quarter_panel.csv
-  outputs/exports/harvey_housing_quarter_summary.csv
+  outputs/exports/harvey/harvey_housing_zip_quarter_panel.csv
+  outputs/exports/harvey/harvey_housing_quarter_summary.csv
   outputs/reports/harvey_housing_zip_progress_report.html
   outputs/reports/assets/harvey_housing_zip_*.png
 """
@@ -42,7 +42,7 @@ import seaborn as sns
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DB_PATH = ROOT / "data" / "glo_reports.db"
-EXPORTS_DIR = ROOT / "outputs" / "exports"
+EXPORTS_DIR = ROOT / "outputs" / "exports" / "harvey"
 REPORTS_DIR = ROOT / "outputs" / "reports"
 ASSETS_DIR = REPORTS_DIR / "assets"
 
@@ -444,8 +444,8 @@ def build_outputs(db_path: Path) -> Dict[str, Path]:
   <main>
     <h2>Files</h2>
     <p class="small">
-      Panel CSV: <a href="../exports/harvey_housing_zip_quarter_panel.csv">outputs/exports/harvey_housing_zip_quarter_panel.csv</a><br/>
-      Quarter summary CSV: <a href="../exports/harvey_housing_quarter_summary.csv">outputs/exports/harvey_housing_quarter_summary.csv</a>
+      Panel CSV: <a href="../exports/harvey/harvey_housing_zip_quarter_panel.csv">outputs/exports/harvey/harvey_housing_zip_quarter_panel.csv</a><br/>
+      Quarter summary CSV: <a href="../exports/harvey/harvey_housing_quarter_summary.csv">outputs/exports/harvey/harvey_housing_quarter_summary.csv</a>
     </p>
 
     <h2>Overall progress (all Housing activities)</h2>

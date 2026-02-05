@@ -92,7 +92,11 @@ Texas GLO Action Plan Project/
 │   ├── 01_exploration.ipynb      # Data exploration
 │   └── 02_entity_analysis.ipynb  # Entity analysis
 ├── dashboard/                    # Streamlit analysis explorer app
-├── outputs/exports/              # CSV/JSON exports (some large, generated)
+├── outputs/exports/              # CSV/JSON exports (organized into subdirectories)
+│   ├── general/                  # Cross-cutting exports (financial summaries, entity data)
+│   ├── harvey/                   # Harvey-specific CSVs and JSONs
+│   ├── nlp/                      # NLP analysis exports (money mentions, topics, etc.)
+│   └── spatial/                  # Spatial files (aggregations, GeoJSONs, HTML maps)
 ├── outputs/model_ready/          # Model-ready CSV panels (shareable)
 ├── outputs/visualizations/        # Sankey + dashboards
 ├── scripts/                      # Helper scripts (portal + model-ready exports)

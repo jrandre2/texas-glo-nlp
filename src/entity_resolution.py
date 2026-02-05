@@ -327,7 +327,7 @@ def main():
     parser.add_argument(
         "--export-path",
         type=str,
-        default=str(config.EXPORTS_DIR / "entity_aliases_review.csv"),
+        default=str(config.NLP_EXPORTS_DIR / "entity_aliases_review.csv"),
         help="CSV path for --export",
     )
     parser.add_argument("--export-limit", type=int, default=5000, help="Max rows to export")

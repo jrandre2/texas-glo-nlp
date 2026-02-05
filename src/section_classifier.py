@@ -314,7 +314,7 @@ def main():
     parser.add_argument(
         "--export-path",
         type=str,
-        default=str(config.EXPORTS_DIR / "section_heading_families_review.csv"),
+        default=str(config.NLP_EXPORTS_DIR / "section_heading_families_review.csv"),
         help="CSV output path for --export",
     )
     parser.add_argument("--export-limit", type=int, help="Limit number of headings exported (debug)")

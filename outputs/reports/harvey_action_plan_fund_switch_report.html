@@ -53,7 +53,7 @@
     <div class="sub">
       Scans Harvey Action Plan documents for keywords like <span class="mono">reallocate</span>/<span class="mono">reprogram</span>/<span class="mono">transfer</span> and extracts nearby text snippets.
       Intended as a screening tool to accelerate human review (expect false positives).
-      Built at <span class="mono">2026-02-05T12:41:08</span>.
+      Built at <span class="mono">2026-02-05T13:01:29</span>.
     </div>
     <div class="grid">
       <div class="card"><b>50</b><div class="small muted">Documents scanned (categories: Harvey_5B_ActionPlan, Harvey_57M_ActionPlan)</div></div>
@@ -68,8 +68,8 @@
       “Confidence” is a simple score based on from→to phrases, money-like patterns, multiple organizations on the page, and justification cue words.
     </div>
     <p class="small">
-      Full CSV: <a href="../exports/harvey_action_plan_fund_switch_statements.csv">outputs/exports/harvey_action_plan_fund_switch_statements.csv</a><br/>
-      Doc summary: <a href="../exports/harvey_action_plan_fund_switch_doc_summary.csv">outputs/exports/harvey_action_plan_fund_switch_doc_summary.csv</a>
+      Full CSV: <a href="../exports/harvey/harvey_action_plan_fund_switch_statements.csv">outputs/exports/harvey/harvey_action_plan_fund_switch_statements.csv</a><br/>
+      Doc summary: <a href="../exports/harvey/harvey_action_plan_fund_switch_doc_summary.csv">outputs/exports/harvey/harvey_action_plan_fund_switch_doc_summary.csv</a>
     </p>
 
     <h2>Summary charts</h2>
@@ -91,8 +91,8 @@
       It helps catch paraphrases that keyword scans miss, and groups near-duplicates across quarters.
     </div>
     <p class="small">
-      Semantic candidates CSV: <a href="../exports/harvey_action_plan_fund_switch_semantic_paragraph_candidates.csv">outputs/exports/harvey_action_plan_fund_switch_semantic_paragraph_candidates.csv</a><br/>
-      Semantic dedup groups CSV: <a href="../exports/harvey_action_plan_fund_switch_semantic_dedup_groups.csv">outputs/exports/harvey_action_plan_fund_switch_semantic_dedup_groups.csv</a>
+      Semantic candidates CSV: <a href="../exports/harvey/harvey_action_plan_fund_switch_semantic_paragraph_candidates.csv">outputs/exports/harvey/harvey_action_plan_fund_switch_semantic_paragraph_candidates.csv</a><br/>
+      Semantic dedup groups CSV: <a href="../exports/harvey/harvey_action_plan_fund_switch_semantic_dedup_groups.csv">outputs/exports/harvey/harvey_action_plan_fund_switch_semantic_dedup_groups.csv</a>
     </p>
     <div class="grid">
       <div class="card"><b>330</b><div class="small muted">Narrative paragraphs scanned (pre-filtered)</div></div>
@@ -189,8 +189,8 @@
       then clustered into topics. Use this to discover recurring themes and to spot additional reallocation narratives.
     </div>
     <p class="small">
-      Topics CSV: <a href="../exports/harvey_action_plan_fund_switch_bertopic_topics.csv">outputs/exports/harvey_action_plan_fund_switch_bertopic_topics.csv</a><br/>
-      Paragraph assignments CSV: <a href="../exports/harvey_action_plan_fund_switch_bertopic_paragraphs.csv">outputs/exports/harvey_action_plan_fund_switch_bertopic_paragraphs.csv</a>
+      Topics CSV: <a href="../exports/harvey/harvey_action_plan_fund_switch_bertopic_topics.csv">outputs/exports/harvey/harvey_action_plan_fund_switch_bertopic_topics.csv</a><br/>
+      Paragraph assignments CSV: <a href="../exports/harvey/harvey_action_plan_fund_switch_bertopic_paragraphs.csv">outputs/exports/harvey/harvey_action_plan_fund_switch_bertopic_paragraphs.csv</a>
     </p>
     <div class="grid">
       <div class="card"><b>330</b><div class="small muted">Narrative paragraphs in BERTopic pool (filtered)</div></div>
@@ -221,9 +221,9 @@
       </tbody>
     </table>
 
-    <h3 style="margin-top:18px">Topic details (examples)</h3>
-    <div class="sub">Expand a topic to see deduplicated example paragraphs (ranked by semantic score).</div>
-    <details style='margin-top:10px'>
+	    <h3 style="margin-top:18px">Topic details (examples)</h3>
+	    <div class="sub">Expand a topic to see deduplicated example paragraphs (ranked by semantic score).</div>
+	    <details style='margin-top:10px'>
 <summary>Topic 0 • 14 paragraphs • move-rate 1.0</summary>
 <div class='small muted'>Range: Q1 2023 → Q4 2025 • Terms: activity, funds, total, lowmod, city, program, project, projected</div>
 <div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.444</span> • Q3 2023 • drgr-h5b-2023-q3.pdf p269-269</div><div>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures</div></div><div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.357</span> • Q1 2023 • drgr-h5b-2023-q1.pdf p966-966</div><div>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units # of Housing Units Activity funds eligible for DREF (Ike Only) Total acquisition compensation to owners # of Parcels acquired voluntarily # of Parcels acquired by admin settlement # of Parcels acquired by condemnation # of Properties</div></div>
@@ -233,13 +233,106 @@
 <div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.502</span> • Q2 2023 • drgr-h5b-2023-q2.pdf p272-272</div><div>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project.</div></div><div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.447</span> • Q3 2022 • drgr-h5b-2022-q3.pdf p271-271</div><div>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. # of Elevated Structures # of Non-business Organizations benefitting # of public facilities</div></div><div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.444</span> • Q2 2024 • drgr-h5b-2024-q2.pdf p302-302</div><div>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures</div></div>
 </details>
 
-    <h3 style="margin-top:18px">Relocation / buyout justification timeline</h3>
-    <div class="sub">
-      This uses BERTopic clusters to summarize and trend relocation-related justifications (paragraphs mentioning relocation/buyout/floodplain).
-      Counts are deduplicated by normalized paragraph text to reduce repeated quarter-to-quarter boilerplate.
+	    <h3 style="margin-top:18px">Fund reallocation justification timeline (all themes)</h3>
+	    <div class="sub">
+	      Quarter-by-quarter view of fund-switch narrative themes (BERTopic topics). Counts are deduplicated by normalized paragraph text
+	      to reduce repeated quarter-to-quarter boilerplate.
+	    </div>
+	    <p class="small">
+	      Timeline CSV: <a href="../exports/harvey/harvey_action_plan_fund_switch_justification_timeline_by_topic.csv">outputs/exports/harvey/harvey_action_plan_fund_switch_justification_timeline_by_topic.csv</a>
+	    </p>
+	    
+    <div style="margin-top:10px">
+      <img src="assets/harvey_action_plan_fund_switch_justification_timeline_by_topic.png" alt="Fund reallocation justification timeline" />
+    </div>
+    <details style="margin-top:12px">
+      <summary>Quarter-by-quarter examples (deduplicated)</summary>
+      <details style='margin-top:10px'>
+<summary>Q2 2022 • 1 unique paragraphs</summary>
+<ul class='sub'>
+<li><b>Outliers (-1)</b> <span class='small muted'>drgr-hh5b-2022-q2.pdf p273-273</span><br/>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project.</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q3 2022 • 1 unique paragraphs</summary>
+<ul class='sub'>
+<li><b>Topic 1: project, city, facilities, projected, material shortages,…</b> <span class='small muted'>drgr-h5b-2022-q3.pdf p271-271</span><br/>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. # of Elevated Structures # of Non-business Organizations benefitting # of public facilities</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q4 2022 • 1 unique paragraphs</summary>
+<ul class='sub'>
+<li><b>Topic 1: project, city, facilities, projected, material shortages,…</b> <span class='small muted'>drgr-h5b-2022-q4.pdf p272-272</span><br/>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. # of Elevated Structures # of Non-business Organizations benefitting # of public facilities</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q1 2023 • 2 unique paragraphs</summary>
+<ul class='sub'>
+<li><b>Topic 1: project, city, facilities, projected, material shortages,…</b> <span class='small muted'>drgr-h5b-2023-q1.pdf p272-272</span><br/>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. # of Elevated Structures # of Non-business Organizations benefitting # of public facilities</li><li><b>Topic 0: activity, funds, total, lowmod, city, program, project,…</b> <span class='small muted'>drgr-h5b-2023-q1.pdf p966-966</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q2 2023 • 2 unique paragraphs</summary>
+<ul class='sub'>
+<li><b>Topic 1: project, city, facilities, projected, material shortages,…</b> <span class='small muted'>drgr-h5b-2023-q2.pdf p272-272</span><br/>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project.</li><li><b>Topic 0: activity, funds, total, lowmod, city, program, project,…</b> <span class='small muted'>drgr-h5b-2023-q2.pdf p965-965</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q3 2023 • 2 unique paragraphs</summary>
+<ul class='sub'>
+<li><b>Topic 0: activity, funds, total, lowmod, city, program, project,…</b> <span class='small muted'>drgr-h5b-2023-q3.pdf p269-269</span><br/>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures</li><li><b>Topic 0: activity, funds, total, lowmod, city, program, project,…</b> <span class='small muted'>drgr-h5b-2023-q3.pdf p930-930</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q4 2023 • 2 unique paragraphs</summary>
+<ul class='sub'>
+<li><b>Topic 0: activity, funds, total, lowmod, city, program, project,…</b> <span class='small muted'>drgr-h5b-2023-q4.pdf p296-296</span><br/>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures</li><li><b>Topic 0: activity, funds, total, lowmod, city, program, project,…</b> <span class='small muted'>drgr-h5b-2023-q4.pdf p1078-1078</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q1 2024 • 2 unique paragraphs</summary>
+<ul class='sub'>
+<li><b>Outliers (-1)</b> <span class='small muted'>drgr-h5b-2024-q1.pdf p294-294</span><br/>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures</li><li><b>Topic 0: activity, funds, total, lowmod, city, program, project,…</b> <span class='small muted'>drgr-h5b-2024-q1.pdf p1091-1091</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q2 2024 • 2 unique paragraphs</summary>
+<ul class='sub'>
+<li><b>Topic 1: project, city, facilities, projected, material shortages,…</b> <span class='small muted'>drgr-h5b-2024-q2.pdf p302-302</span><br/>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures</li><li><b>Topic 0: activity, funds, total, lowmod, city, program, project,…</b> <span class='small muted'>drgr-h5b-2024-q2.pdf p1100-1100</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q3 2024 • 2 unique paragraphs</summary>
+<ul class='sub'>
+<li><b>Topic 1: project, city, facilities, projected, material shortages,…</b> <span class='small muted'>drgr-h5b-2024-q3.pdf p304-304</span><br/>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures</li><li><b>Topic 0: activity, funds, total, lowmod, city, program, project,…</b> <span class='small muted'>drgr-h5b-2024-q3.pdf p1098-1098</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q4 2024 • 2 unique paragraphs</summary>
+<ul class='sub'>
+<li><b>Topic 1: project, city, facilities, projected, material shortages,…</b> <span class='small muted'>drgr-h5b-2024-q4 (1).pdf p312-312</span><br/>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures</li><li><b>Topic 0: activity, funds, total, lowmod, city, program, project,…</b> <span class='small muted'>drgr-h5b-2024-q4 (1).pdf p1102-1102</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q1 2025 • 4 unique paragraphs</summary>
+<ul class='sub'>
+<li><b>Topic 1: project, city, facilities, projected, material shortages,…</b> <span class='small muted'>drgr-h5b-2025-q1.pdf p319-319</span><br/>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures</li><li><b>Outliers (-1)</b> <span class='small muted'>drgr-h5b-2025-q1.pdf p1374-1374</span><br/>Placeholder activity to transfer Program Income generated by Harris County to its annual CDBG Program. $ 0.00 Local Government Harris, County $ 0.00 State Agency Texas General Land Office</li><li><b>Topic 0: activity, funds, total, lowmod, city, program, project,…</b> <span class='small muted'>drgr-h5b-2025-q1.pdf p1115-1115</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li><li><b>Outliers (-1)</b> <span class='small muted'>drgr-h5b-2025-q1.pdf p1372-1372</span><br/>This activity will serve as the placeholder for Harris County to retain the Program Income generated by transferring to its annual CDBG program. $ 0.00 State Agency Texas General Land Office</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q2 2025 • 3 unique paragraphs</summary>
+<ul class='sub'>
+<li><b>Topic 1: project, city, facilities, projected, material shortages,…</b> <span class='small muted'>drgr-h5b-2025-q2.pdf p320-320</span><br/>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures</li><li><b>Outliers (-1)</b> <span class='small muted'>drgr-h5b-2025-q2.pdf p1436-1436</span><br/>Placeholder activity to transfer Program Income generated by Harris County to its annual CDBG Program. $ 0.00 Local Government Harris, County $ 0.00 State Agency Texas General Land Office</li><li><b>Topic 0: activity, funds, total, lowmod, city, program, project,…</b> <span class='small muted'>drgr-h5b-2025-q2.pdf p1128-1128</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q3 2025 • 3 unique paragraphs</summary>
+<ul class='sub'>
+<li><b>Topic 1: project, city, facilities, projected, material shortages,…</b> <span class='small muted'>drgr-h5b-2025-q3.pdf p320-320</span><br/>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures</li><li><b>Outliers (-1)</b> <span class='small muted'>drgr-h5b-2025-q3.pdf p1428-1428</span><br/>Placeholder activity to transfer Program Income generated by Harris County to its annual CDBG Program. $ 0.00 Local Government Harris, County $ 0.00 State Agency Texas General Land Office</li><li><b>Topic 0: activity, funds, total, lowmod, city, program, project,…</b> <span class='small muted'>drgr-h5b-2025-q3.pdf p1131-1131</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q4 2025 • 3 unique paragraphs</summary>
+<ul class='sub'>
+<li><b>Topic 1: project, city, facilities, projected, material shortages,…</b> <span class='small muted'>drgr-h5b-2025-q4.pdf p413-413</span><br/>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures</li><li><b>Outliers (-1)</b> <span class='small muted'>drgr-h5b-2025-q4.pdf p1823-1823</span><br/>Placeholder activity to transfer Program Income generated by Harris County to its annual CDBG Program. $ 0.00 Local Government Harris, County $ 0.00 State Agency Texas General Land Office</li><li><b>Topic 0: activity, funds, total, lowmod, city, program, project,…</b> <span class='small muted'>drgr-h5b-2025-q4.pdf p1499-1499</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details>
+    </details>
+
+
+	    <h3 style="margin-top:18px">Relocation / buyout justification timeline</h3>
+	    <div class="sub">
+	      This uses BERTopic clusters to summarize and trend relocation-related justifications (paragraphs mentioning relocation/buyout/floodplain).
+	      Counts are deduplicated by normalized paragraph text to reduce repeated quarter-to-quarter boilerplate.
     </div>
     <p class="small">
-      Timeline CSV: <a href="../exports/harvey_action_plan_fund_switch_relocation_justification_timeline.csv">outputs/exports/harvey_action_plan_fund_switch_relocation_justification_timeline.csv</a>
+      Timeline CSV: <a href="../exports/harvey/harvey_action_plan_fund_switch_relocation_justification_timeline.csv">outputs/exports/harvey/harvey_action_plan_fund_switch_relocation_justification_timeline.csv</a>
     </p>
     
     <div style="margin-top:10px">

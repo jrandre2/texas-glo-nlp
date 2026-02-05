@@ -33,16 +33,16 @@ Short, read-through reports (linked from the portal) live in:
 
 ### 2) Spatial maps
 
-- Spatial HTML maps live in `outputs/exports/` and can be **very large**.
+- Spatial HTML maps live in `outputs/exports/spatial/` and can be **very large**.
 - If a map opens slowly, close other tabs and wait; Chrome tends to work best.
 
 ### 3) Data tables (CSV)
 
-If you want “numbers you can filter/sort”, look in `outputs/exports/` for:
+If you want "numbers you can filter/sort", look in `outputs/exports/` subdirectories:
 
-- `texas_disaster_financial_summary.csv` — high-level totals by disaster/program
-- `harvey_*_allocations.csv` — Harvey rollups by county/org
-- `money_mentions_by_quarter.csv` — NLP-derived money mentions over time (see note below)
+- `outputs/exports/general/texas_disaster_financial_summary.csv` — high-level totals by disaster/program
+- `outputs/exports/harvey/harvey_*_allocations.csv` — Harvey rollups by county/org
+- `outputs/exports/nlp/money_mentions_by_quarter.csv` — NLP-derived money mentions over time (see note below)
 
 ### 4) Model-ready tables (CSV)
 
@@ -70,7 +70,11 @@ The NLP layer extracts dollar amounts that appear in narrative text and labels e
 - `TEAM_PORTAL.html` — click-to-view hub for non-technical users
 - `outputs/reports/` — short HTML reports for specific questions/deliverables
 - `outputs/visualizations/` — dashboards + Sankey images/PDFs
-- `outputs/exports/` — CSV/JSON exports + spatial HTML maps
+- `outputs/exports/` — CSV/JSON exports organized into subdirectories:
+  - `general/` — cross-cutting financial summaries, entity exports
+  - `harvey/` — Harvey-specific CSVs and JSONs
+  - `nlp/` — NLP analysis exports (money mentions, topics, entities, sections)
+  - `spatial/` — spatial HTML maps, aggregation CSVs, GeoJSONs
 - `outputs/model_ready/` — model-ready panels (shareable CSVs)
 - `data/glo_reports.db` — the master SQLite database
 - `docs/` — project documentation (technical + analysis notes)

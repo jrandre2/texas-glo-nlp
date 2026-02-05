@@ -28,7 +28,7 @@ This is a *mentions* layer (narrative language), not an authoritative accounting
 
 ### Exports
 
-Written to `outputs/exports/` by default:
+Written to `outputs/exports/nlp/` by default:
 
 - `money_mentions.csv` (detailed row-level export)
 - `money_mentions.csv` is capped by default (`--export-limit 200000`) since it can be large; use `--export-limit 0` to export all rows.

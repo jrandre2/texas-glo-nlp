@@ -308,7 +308,7 @@ class DataLinker:
 
     def export_linked_data(self, output_dir: Optional[Path] = None):
         """Export linked data to CSV files."""
-        output_dir = output_dir or config.EXPORTS_DIR
+        output_dir = output_dir or config.GENERAL_EXPORTS_DIR
         output_dir.mkdir(parents=True, exist_ok=True)
 
         # Export Texas GLO national grants data

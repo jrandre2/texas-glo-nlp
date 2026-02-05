@@ -12,8 +12,9 @@ from matplotlib.patches import PathPatch
 from matplotlib.path import Path as MPath
 
 # Paths
-EXPORTS_DIR = Path(__file__).parent.parent / 'exports'
-OUTPUT_DIR = Path(__file__).parent
+ROOT = Path(__file__).resolve().parents[1]
+EXPORTS_DIR = ROOT / 'outputs' / 'exports' / 'harvey'
+OUTPUT_DIR = ROOT / 'outputs' / 'visualizations'
 
 # Color scheme
 COLORS = {
