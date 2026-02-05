@@ -1,0 +1,1844 @@
+subject_type,subject_text,object_type,object_text,relation,context_window,weight
+ORG,Area Benefit (Survey,DISASTER,Hurricane Ike,cooccurs,sentence,1048
+ORG,AMI,DISASTER,Ike,cooccurs,sentence,664
+ORG,Texas GLO,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,632
+ORG,Substantially Rehabilitated,DISASTER,Ike,cooccurs,sentence,580
+ORG,County Total Projected Budget,TX_COUNTY,Harris County,cooccurs,sentence,540
+ORG,Targeted Section 3 Labor Hours,DISASTER,Ike,cooccurs,sentence,467
+ORG,DRS,DISASTER,Hurricane Ike,cooccurs,sentence,446
+ORG,UN,TX_COUNTY,Harris County,cooccurs,sentence,437
+ORG,State Agency,DISASTER,Ike,cooccurs,sentence,433
+PROGRAM,Homeowner Assistance Program,DISASTER,Hurricane Harvey,cooccurs,sentence,431
+ORG,HUD,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,422
+ORG,SBA,PROGRAM,Homeowner Reimbursement Program,cooccurs,sentence,392
+ORG,Small Business Administration,PROGRAM,Homeowner Reimbursement Program,cooccurs,sentence,392
+ORG,RHP,DISASTER,Hurricane Harvey,cooccurs,sentence,390
+ORG,The Resilient Housing Program,DISASTER,Hurricane Harvey,cooccurs,sentence,390
+PROGRAM,Homeowner Assistance Program,TX_COUNTY,Harris County,cooccurs,sentence,380
+ORG,HUD,DISASTER,Hurricane Harvey,cooccurs,sentence,356
+ORG,Sewer Facilities,TX_COUNTY,San Augustine County,cooccurs,sentence,353
+ORG,Sewer Facilities,TX_COUNTY,Sabine County,cooccurs,sentence,344
+ORG,GLO,TX_COUNTY,Harris County,cooccurs,sentence,339
+ORG,Sewer Facilities,TX_COUNTY,Matagorda County,cooccurs,sentence,336
+ORG,SF 0005,TX_COUNTY,San Augustine County,cooccurs,sentence,327
+ORG,Texas GLO,TX_COUNTY,Jasper County,cooccurs,sentence,327
+ORG,MIT - Rehabilitation,DISASTER,Hurricane Harvey,cooccurs,sentence,320
+ORG,SF 0005,TX_COUNTY,Sabine County,cooccurs,sentence,317
+ORG,Public Facilities,TX_COUNTY,Harris County,cooccurs,sentence,306
+ORG,Texas GLO,TX_COUNTY,Waller County,cooccurs,sentence,291
+ORG,Completed Activity Description,DISASTER,Hurricane Ike,cooccurs,sentence,289
+DISASTER,Hurricane Harvey,TX_COUNTY,Harris County,cooccurs,sentence,287
+ORG,MIT - Public Facilities,TX_COUNTY,San Augustine County,cooccurs,sentence,281
+ORG,DRS,TX_COUNTY,Galveston County,cooccurs,sentence,271
+ORG,Texas GLO,TX_COUNTY,Walker County,cooccurs,sentence,270
+ORG,Improvements- Non Covered Projects Palacios,TX_COUNTY,Matagorda County,cooccurs,sentence,268
+ORG,Improvements- Non Covered Projects Palacios,TX_COUNTY,San Augustine County,cooccurs,sentence,268
+ORG,MIT - Public Facilities,TX_COUNTY,Sabine County,cooccurs,sentence,263
+ORG,Texas GLO,DISASTER,Ike,cooccurs,sentence,263
+ORG,Improvements- Non Covered Projects Palacios,TX_COUNTY,Sabine County,cooccurs,sentence,261
+ORG,SF 0005,TX_COUNTY,Matagorda County,cooccurs,sentence,256
+ORG,UN,TX_COUNTY,Jefferson County,cooccurs,sentence,256
+ORG,KRW,DISASTER,Ike,cooccurs,sentence,256
+ORG,Non Covered Projects,TX_COUNTY,San Augustine County,cooccurs,sentence,255
+ORG,Non Covered Projects,TX_COUNTY,Sabine County,cooccurs,sentence,255
+ORG,HUD,TX_COUNTY,Harris County,cooccurs,sentence,254
+ORG,Date 03/31/2020 Direct,DISASTER,Hurricane Harvey,cooccurs,sentence,252
+DISASTER,Hurricane Harvey,TX_COUNTY,Montgomery County,cooccurs,sentence,250
+ORG,Texas GLO,TX_COUNTY,Polk County,cooccurs,sentence,246
+ORG,Texas GLO,TX_COUNTY,Matagorda County,cooccurs,sentence,240
+ORG,SI 0006 Construction,TX_COUNTY,Waller County,cooccurs,sentence,236
+ORG,SI 0006 Construction,TX_COUNTY,Jasper County,cooccurs,sentence,236
+ORG,SI 0006 Construction,TX_COUNTY,Polk County,cooccurs,sentence,236
+ORG,UN,DISASTER,Hurricane Ike,cooccurs,sentence,234
+ORG,Area Benefit (Survey,TX_COUNTY,Brazoria County,cooccurs,sentence,231
+ORG,Affordable Rental Housing,DISASTER,Ike,cooccurs,sentence,228
+ORG,Local Government,DISASTER,Ike,cooccurs,sentence,226
+PROGRAM,Affordable Rental Program,TX_COUNTY,Harris County,cooccurs,sentence,222
+ORG,Area Benefit (Survey,DISASTER,Hurricane Dolly,cooccurs,sentence,218
+ORG,Urgent Need,TX_COUNTY,Jefferson County,cooccurs,sentence,216
+ORG,Texas GLO,TX_COUNTY,Refugio County,cooccurs,sentence,215
+ORG,MIT - Rehabilitation,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,214
+ORG,Public Improvement,DISASTER,Ike,cooccurs,sentence,213
+ORG,GLO,TX_COUNTY,Bastrop County,cooccurs,sentence,203
+ORG,Non Covered Projects,TX_COUNTY,Matagorda County,cooccurs,sentence,200
+ORG,MIT - Public Facilities,TX_COUNTY,Matagorda County,cooccurs,sentence,199
+ORG,Urgent Need,TX_COUNTY,Chambers County,cooccurs,sentence,192
+ORG,Texas GLO,TX_COUNTY,Austin County,cooccurs,sentence,186
+ORG,Date 03/31/2020 Direct,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,183
+ORG,GLO,PROGRAM,Homeowner Reimbursement Program,cooccurs,sentence,182
+DISASTER,Hurricane Harvey,TX_COUNTY,Orange County,cooccurs,sentence,178
+ORG,DRS,TX_COUNTY,Jasper County,cooccurs,sentence,176
+ORG,UN,TX_COUNTY,Polk County,cooccurs,sentence,175
+ORG,Targeted Section 3 Labor Hours 1 #,DISASTER,Ike,cooccurs,sentence,174
+ORG,SI 0006 Construction,TX_COUNTY,Matagorda County,cooccurs,sentence,170
+ORG,UN,TX_COUNTY,Galveston County,cooccurs,sentence,168
+ORG,Public Facilities,TX_COUNTY,Galveston County,cooccurs,sentence,167
+ORG,Urgent Need,TX_COUNTY,Galveston County,cooccurs,sentence,157
+ORG,UN,TX_COUNTY,Jasper County,cooccurs,sentence,157
+PROGRAM,Homeowner Assistance Program,DISASTER,Tropical Storm Imelda,cooccurs,sentence,156
+ORG,GLO,DISASTER,Hurricane Harvey,cooccurs,sentence,156
+ORG,Sewer Facilities,DISASTER,Hurricane Harvey,cooccurs,sentence,154
+ORG,FEMA,TX_COUNTY,Bastrop County,cooccurs,sentence,154
+ORG,Texas GLO,PROGRAM,Homeowner Reimbursement Program,cooccurs,sentence,154
+DISASTER,Hurricane Harvey,TX_COUNTY,Jefferson County,cooccurs,sentence,152
+ORG,Date 01/01/2010 Area Benefit (Survey,DISASTER,Hurricane Ike,cooccurs,sentence,148
+DISASTER,Hurricane Harvey,TX_COUNTY,Austin County,cooccurs,sentence,148
+ORG,Area Benefit (Survey,TX_COUNTY,Harris County,cooccurs,sentence,147
+ORG,Texas GLO,PROGRAM,Local Infrastructure Program,cooccurs,sentence,147
+ORG,Hot Mix Asphalt Concrete,TX_COUNTY,Willacy County,cooccurs,sentence,144
+ORG,Area Benefit (Survey,TX_COUNTY,Chambers County,cooccurs,sentence,144
+DISASTER,Hurricane Harvey,TX_COUNTY,Fayette County,cooccurs,sentence,143
+ORG,Urgent Need,TX_COUNTY,Harris County,cooccurs,sentence,142
+ORG,HMAC,TX_COUNTY,Willacy County,cooccurs,sentence,141
+ORG,DRS,TX_COUNTY,Newton County,cooccurs,sentence,137
+ORG,Sewer Facilities,PROGRAM,Local Infrastructure Program,cooccurs,sentence,137
+DISASTER,Hurricane Ike,TX_COUNTY,Harris County,cooccurs,sentence,132
+DISASTER,Hurricane Harvey,TX_COUNTY,Jasper County,cooccurs,sentence,132
+DISASTER,Hurricane Harvey,TX_COUNTY,Fort Bend County,cooccurs,sentence,129
+ORG,HMAC,TX_COUNTY,Orange County,cooccurs,sentence,128
+ORG,UN,TX_COUNTY,Tyler County,cooccurs,sentence,128
+ORG,HMAC,TX_COUNTY,Tyler County,cooccurs,sentence,127
+ORG,Texas GLO,TX_COUNTY,Bastrop County,cooccurs,sentence,127
+ORG,Urgent Need,DISASTER,Hurricane Ike,cooccurs,sentence,126
+ORG,Lower Rio Grande Valley Floods,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,126
+ORG,Direct Benefit,DISASTER,Ike,cooccurs,sentence,124
+ORG,Public Improvement,TX_COUNTY,Matagorda County,cooccurs,sentence,124
+ORG,GLO,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,124
+ORG,Public Facilities,TX_COUNTY,Brazoria County,cooccurs,sentence,123
+ORG,DRS,TX_COUNTY,Tyler County,cooccurs,sentence,123
+DISASTER,Hurricane Harvey,TX_COUNTY,Waller County,cooccurs,sentence,123
+ORG,Texas GLO,TX_COUNTY,Victoria County,cooccurs,sentence,122
+ORG,GLO,PROGRAM,Local Infrastructure Program,cooccurs,sentence,122
+DISASTER,Hurricane Harvey,TX_COUNTY,Liberty County,cooccurs,sentence,121
+ORG,Flood and Drainage,DISASTER,Ike,cooccurs,sentence,121
+ORG,SI 0006 Construction,TX_COUNTY,Walker County,cooccurs,sentence,120
+ORG,SI 0006 Construction,TX_COUNTY,Austin County,cooccurs,sentence,120
+DISASTER,Hurricane Harvey,TX_COUNTY,Bastrop County,cooccurs,sentence,120
+ORG,Area Benefit (Census,TX_COUNTY,Brazoria County,cooccurs,sentence,119
+DISASTER,Hurricane Harvey,TX_COUNTY,Newton County,cooccurs,sentence,119
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Harris County,cooccurs,sentence,117
+ORG,Urgent Need,TX_COUNTY,Orange County,cooccurs,sentence,114
+ORG,NCP 0005,TX_COUNTY,San Augustine County,cooccurs,sentence,112
+ORG,Area Benefit (Survey,TX_COUNTY,Cameron County,cooccurs,sentence,112
+ORG,Texas GLO,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,112
+DISASTER,Hurricane Harvey,TX_COUNTY,Gonzales County,cooccurs,sentence,112
+ORG,Local Government,TX_COUNTY,Newton County,cooccurs,sentence,112
+ORG,Urgent Need,TX_COUNTY,Brazoria County,cooccurs,sentence,112
+ORG,DRS,TX_COUNTY,Harris County,cooccurs,sentence,111
+ORG,Non-Match Funds,PROGRAM,Local Infrastructure Program,cooccurs,sentence,109
+PROGRAM,Homeowner Assistance Program,TX_COUNTY,Newton County,cooccurs,sentence,109
+DISASTER,Hurricane Harvey,TX_COUNTY,San Jacinto County,cooccurs,sentence,108
+ORG,Local Government,TX_COUNTY,Fort Bend County,cooccurs,sentence,108
+ORG,Texas GLO,PROGRAM,Affordable Rental Program,cooccurs,sentence,106
+ORG,Local Government Houston,DISASTER,Ike,cooccurs,sentence,105
+DISASTER,Hurricane Harvey,TX_COUNTY,Aransas County,cooccurs,sentence,105
+ORG,Direct Benefit,DISASTER,Hurricane Ike,cooccurs,sentence,103
+ORG,Local Government,TX_COUNTY,Harris County,cooccurs,sentence,103
+ORG,NCP 0005,TX_COUNTY,Sabine County,cooccurs,sentence,102
+ORG,SI 0006 Construction,TX_COUNTY,Victoria County,cooccurs,sentence,101
+ORG,Countywide &,TX_COUNTY,Harris County,cooccurs,sentence,100
+DISASTER,Hurricane Harvey,TX_COUNTY,Victoria County,cooccurs,sentence,98
+DISASTER,Hurricane Ike,TX_COUNTY,Chambers County,cooccurs,sentence,97
+DISASTER,Hurricane Harvey,TX_COUNTY,Polk County,cooccurs,sentence,96
+DISASTER,Hurricane Harvey,TX_COUNTY,Wharton County,cooccurs,sentence,96
+ORG,HMAC,TX_COUNTY,San Jacinto County,cooccurs,sentence,96
+ORG,Area Benefit (Survey,TX_COUNTY,Newton County,cooccurs,sentence,95
+ORG,Texas GLO,TX_COUNTY,Milam County,cooccurs,sentence,95
+DISASTER,Hurricane Harvey,TX_COUNTY,Galveston County,cooccurs,sentence,95
+ORG,Completed Activity Description,TX_COUNTY,Brazoria County,cooccurs,sentence,95
+ORG,Texas GLO,TX_COUNTY,San Jacinto County,cooccurs,sentence,93
+ORG,Drainage Facilities,PROGRAM,Local Infrastructure Program,cooccurs,sentence,92
+DISASTER,Hurricane Harvey,TX_COUNTY,Goliad County,cooccurs,sentence,92
+DISASTER,Hurricane Harvey,TX_COUNTY,Milam County,cooccurs,sentence,92
+ORG,F&D 0006 Rehabilitation,DISASTER,Ike,cooccurs,sentence,91
+ORG,UN,TX_COUNTY,Trinity County,cooccurs,sentence,90
+DISASTER,Ike,TX_COUNTY,Galveston County,cooccurs,sentence,90
+ORG,Texas GLO,TX_COUNTY,Nueces County,cooccurs,sentence,90
+ORG,Public Facilities,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,90
+PROGRAM,Economic Revitalization Program,DISASTER,Hurricane Harvey,cooccurs,sentence,90
+ORG,Texas GLO,TX_COUNTY,Chambers County,cooccurs,sentence,89
+ORG,Area Benefit (Survey,TX_COUNTY,Orange County,cooccurs,sentence,88
+ORG,Flood and Drainage,TX_COUNTY,Chambers County,cooccurs,sentence,87
+DISASTER,Ike,TX_COUNTY,Harris County,cooccurs,sentence,86
+ORG,Project Title,TX_COUNTY,Harris County,cooccurs,sentence,86
+ORG,Supervisory Control and Data Acquisition System,TX_COUNTY,Brazoria County,cooccurs,sentence,85
+PROGRAM,Affordable Rental Program,DISASTER,Hurricane Harvey,cooccurs,sentence,84
+ORG,Public Facilities,TX_COUNTY,Refugio County,cooccurs,sentence,83
+DISASTER,Hurricane Harvey,TX_COUNTY,Tyler County,cooccurs,sentence,83
+ORG,Local Government,TX_COUNTY,Jasper County,cooccurs,sentence,83
+ORG,UN,DISASTER,Hurricane Harvey,cooccurs,sentence,83
+ORG,Public Facilities,TX_COUNTY,Grimes County,cooccurs,sentence,82
+ORG,Public Facilities,TX_COUNTY,Nueces County,cooccurs,sentence,81
+ORG,GLO,DISASTER,Tropical Storm Imelda,cooccurs,sentence,81
+ORG,Texas Department of Housing and Community Affairs,TX_COUNTY,Harris County,cooccurs,sentence,80
+ORG,State Agency,PROGRAM,Local Infrastructure Program,cooccurs,sentence,80
+ORG,Public Improvement,TX_COUNTY,San Augustine County,cooccurs,sentence,79
+ORG,Public Improvement,TX_COUNTY,Sabine County,cooccurs,sentence,79
+ORG,F&D 0006 Rehabilitation,TX_COUNTY,Chambers County,cooccurs,sentence,79
+DISASTER,Ike,TX_COUNTY,Chambers County,cooccurs,sentence,79
+ORG,DRS,TX_COUNTY,Hidalgo County,cooccurs,sentence,78
+ORG,DRS,DISASTER,Ike,cooccurs,sentence,78
+ORG,County Total Projected Budget,DISASTER,Hurricane Harvey,cooccurs,sentence,78
+DISASTER,Hurricane Harvey,TX_COUNTY,Hardin County,cooccurs,sentence,78
+DISASTER,Hurricane Harvey,TX_COUNTY,Grimes County,cooccurs,sentence,77
+ORG,DRS,TX_COUNTY,Willacy County,cooccurs,sentence,76
+ORG,Public Improvement,TX_COUNTY,Jasper County,cooccurs,sentence,76
+ORG,Area Benefit (Survey,TX_COUNTY,Willacy County,cooccurs,sentence,75
+ORG,Texas GLO,TX_COUNTY,Harris County,cooccurs,sentence,75
+ORG,newacct04112013 Program Income Account,TX_COUNTY,Tyler County,cooccurs,sentence,74
+ORG,Area Benefit (Survey,TX_COUNTY,Jasper County,cooccurs,sentence,74
+DISASTER,Ike,TX_COUNTY,Montgomery County,cooccurs,sentence,74
+ORG,Flood & Drainage,TX_COUNTY,Chambers County,cooccurs,sentence,74
+ORG,Area Benefit (Survey,TX_COUNTY,Houston County,cooccurs,sentence,73
+ORG,Flood & Drainage,DISASTER,Ike,cooccurs,sentence,73
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Refugio County,cooccurs,sentence,72
+ORG,Non-Match Funds,TX_COUNTY,Harris County,cooccurs,sentence,72
+ORG,Water Plant,DISASTER,Hurricane Ike,cooccurs,sentence,71
+ORG,Area Benefit (Survey,TX_COUNTY,Tyler County,cooccurs,sentence,70
+ORG,Public Facilities,TX_COUNTY,Jefferson County,cooccurs,sentence,70
+ORG,Area Benefit (Survey,TX_COUNTY,Kleberg County,cooccurs,sentence,70
+DISASTER,Ike,TX_COUNTY,Bastrop County,cooccurs,sentence,70
+ORG,NCP 0005,TX_COUNTY,Matagorda County,cooccurs,sentence,69
+ORG,HMAC,TX_COUNTY,Brazoria County,cooccurs,sentence,69
+ORG,SCADA,TX_COUNTY,Brazoria County,cooccurs,sentence,69
+DISASTER,Ike,TX_COUNTY,Milam County,cooccurs,sentence,69
+ORG,Urgent Need,TX_COUNTY,Newton County,cooccurs,sentence,69
+ORG,DRS,DISASTER,Hurricane Rita,cooccurs,sentence,68
+ORG,Public Facilities,TX_COUNTY,Jasper County,cooccurs,sentence,68
+ORG,Urgent Need,TX_COUNTY,Liberty County,cooccurs,sentence,68
+ORG,Local Government Harris,DISASTER,Ike,cooccurs,sentence,68
+ORG,Completed Activity Description,DISASTER,Hurricane Rita,cooccurs,sentence,67
+ORG,Area Benefit (Survey,TX_COUNTY,Trinity County,cooccurs,sentence,67
+ORG,Date 06/01/2010 Area Benefit (Survey,TX_COUNTY,Polk County,cooccurs,sentence,67
+ORG,Street Improvements,TX_COUNTY,Newton County,cooccurs,sentence,67
+ORG,Public Facilities,TX_COUNTY,Chambers County,cooccurs,sentence,66
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Matagorda County,cooccurs,sentence,66
+ORG,Area Benefit (Survey,TX_COUNTY,Hidalgo County,cooccurs,sentence,65
+ORG,DRS,TX_COUNTY,Walker County,cooccurs,sentence,65
+ORG,Urgent Need Texas General Land Office Total Projected Budget,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,65
+ORG,Local Government,TX_COUNTY,Matagorda County,cooccurs,sentence,64
+ORG,Local Government,TX_COUNTY,Austin County,cooccurs,sentence,64
+ORG,Urgent Need,DISASTER,Hurricane Harvey,cooccurs,sentence,64
+ORG,DRS,DISASTER,Hurricane Dolly,cooccurs,sentence,63
+ORG,Countywide &,TX_COUNTY,Galveston County,cooccurs,sentence,63
+ORG,DRS,TX_COUNTY,Sabine County,cooccurs,sentence,63
+ORG,Area Benefit (Survey,TX_COUNTY,Galveston County,cooccurs,sentence,62
+ORG,Urgent Need,TX_COUNTY,Polk County,cooccurs,sentence,62
+ORG,City of Total Projected Budget,DISASTER,Hurricane Harvey,cooccurs,sentence,62
+DISASTER,Ike,TX_COUNTY,Orange County,cooccurs,sentence,62
+ORG,Area Benefit (Survey,TX_COUNTY,Matagorda County,cooccurs,sentence,61
+ORG,Volunteer Fire Department,TX_COUNTY,Walker County,cooccurs,sentence,61
+ORG,HMAC,TX_COUNTY,Starr County,cooccurs,sentence,60
+ORG,Lower Rio Grande Valley Floods,DISASTER,Tropical Storm Imelda,cooccurs,sentence,60
+ORG,Area Benefit (Survey,TX_COUNTY,Walker County,cooccurs,sentence,59
+ORG,GLO,TX_COUNTY,Walker County,cooccurs,sentence,59
+ORG,Texas Department of Housing and Community Affairs,TX_COUNTY,Galveston County,cooccurs,sentence,59
+ORG,MIT - Public Facilities,TX_COUNTY,Tyler County,cooccurs,sentence,58
+ORG,State Highway,TX_COUNTY,Galveston County,cooccurs,sentence,58
+ORG,Area Benefit (Census,TX_COUNTY,Harris County,cooccurs,sentence,58
+ORG,Urgent Need,TX_COUNTY,Hardin County,cooccurs,sentence,58
+ORG,Public Facilities,TX_COUNTY,Walker County,cooccurs,sentence,58
+DISASTER,Hurricane Ike,TX_COUNTY,Galveston County,cooccurs,sentence,58
+ORG,Local Government,TX_COUNTY,Liberty County,cooccurs,sentence,58
+DISASTER,Ike,TX_COUNTY,Liberty County,cooccurs,sentence,58
+ORG,Date Total Projected Budget,TX_COUNTY,Galveston County,cooccurs,sentence,57
+ORG,Urgent Need,TX_COUNTY,Trinity County,cooccurs,sentence,57
+ORG,GLO,TX_COUNTY,Newton County,cooccurs,sentence,56
+ORG,Project Number,TX_COUNTY,Harris County,cooccurs,sentence,56
+ORG,Public Improvement,TX_COUNTY,Polk County,cooccurs,sentence,56
+DISASTER,Ike,TX_COUNTY,Polk County,cooccurs,sentence,56
+ORG,HUD,DISASTER,Tropical Storm Imelda,cooccurs,sentence,56
+PROGRAM,Homeowner Assistance Program,TX_COUNTY,Hays County,cooccurs,sentence,56
+ORG,Public Facilities,TX_COUNTY,Tyler County,cooccurs,sentence,55
+ORG,Area Benefit (Survey,TX_COUNTY,Nacogdoches County,cooccurs,sentence,55
+ORG,Non-Match Funds,TX_COUNTY,Galveston County,cooccurs,sentence,55
+ORG,Housing Assistance Program(s,TX_COUNTY,Harris County,cooccurs,sentence,55
+ORG,GLO,TX_COUNTY,Coryell County,cooccurs,sentence,54
+ORG,FEMA,DISASTER,Hurricane Rita,cooccurs,sentence,54
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Galveston County,cooccurs,sentence,54
+ORG,DRS,TX_COUNTY,San Jacinto County,cooccurs,sentence,54
+ORG,Date Total Projected Budget,TX_COUNTY,Harris County,cooccurs,sentence,53
+ORG,newacct04112013 Program Income Account,TX_COUNTY,Trinity County,cooccurs,sentence,53
+ORG,Affordable Rental Housing Under Way Activity Description,TX_COUNTY,Galveston County,cooccurs,sentence,53
+ORG,Area Benefit (Survey,TX_COUNTY,Starr County,cooccurs,sentence,53
+ORG,COCC,TX_COUNTY,Newton County,cooccurs,sentence,53
+ORG,Public Facilities,TX_COUNTY,Polk County,cooccurs,sentence,52
+ORG,State Highway,TX_COUNTY,Liberty County,cooccurs,sentence,52
+ORG,Galveston Total Projected Budget,DISASTER,Hurricane Ike,cooccurs,sentence,52
+DISASTER,Hurricane Ike,TX_COUNTY,Liberty County,cooccurs,sentence,52
+ORG,Total Funds,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,52
+ORG,Local Government,TX_COUNTY,San Augustine County,cooccurs,sentence,51
+ORG,Local Government,TX_COUNTY,Sabine County,cooccurs,sentence,51
+ORG,GLO,DISASTER,Hurricane Ike,cooccurs,sentence,51
+DISASTER,Hurricane Ike,TX_COUNTY,Madison County,cooccurs,sentence,51
+ORG,LF,TX_COUNTY,Newton County,cooccurs,sentence,51
+ORG,Project Number,TX_COUNTY,Cameron County,cooccurs,sentence,50
+ORG,Public Facilities,TX_COUNTY,Madison County,cooccurs,sentence,50
+ORG,Flood and Drainage,TX_COUNTY,Fort Bend County,cooccurs,sentence,50
+ORG,Local Government,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,50
+ORG,Area Benefit (Census,TX_COUNTY,Chambers County,cooccurs,sentence,49
+ORG,Area Benefit (Survey,TX_COUNTY,Cherokee County,cooccurs,sentence,49
+ORG,Public Facilities,TX_COUNTY,Liberty County,cooccurs,sentence,49
+ORG,Public Improvement,TX_COUNTY,Waller County,cooccurs,sentence,49
+ORG,HUD,PROGRAM,Local Infrastructure Program,cooccurs,sentence,49
+ORG,Local Government,TX_COUNTY,Grimes County,cooccurs,sentence,49
+PROGRAM,Homeowner Reimbursement Program,TX_COUNTY,Harris County,cooccurs,sentence,49
+ORG,Project Title,PROGRAM,Affordable Rental Program,cooccurs,sentence,49
+ORG,Non-Match Funds,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,49
+ORG,Urgent Need Texas General Land Office Total Projected Budget,PROGRAM,Homeowner Reimbursement Program,cooccurs,sentence,49
+ORG,HUD,PROGRAM,Affordable Rental Program,cooccurs,sentence,49
+ORG,Texas GLO,TX_COUNTY,Fort Bend County,cooccurs,sentence,49
+ORG,FEMA,DISASTER,Rita,cooccurs,sentence,48
+ORG,HUD,DISASTER,Hurricane Rita,cooccurs,sentence,48
+ORG,Area Benefit (Census,TX_COUNTY,Liberty County,cooccurs,sentence,48
+ORG,Area Benefit (Survey,TX_COUNTY,Hardin County,cooccurs,sentence,48
+ORG,UN,TX_COUNTY,Washington County,cooccurs,sentence,48
+ORG,Area Benefit (Survey,DISASTER,Ike,cooccurs,sentence,48
+DISASTER,Ike,TX_COUNTY,Waller County,cooccurs,sentence,48
+ORG,Local Government,TX_COUNTY,Montgomery County,cooccurs,sentence,48
+ORG,Restricted Balance,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,48
+ORG,Date 06/01/2010 Area Benefit (Survey,TX_COUNTY,San Jacinto County,cooccurs,sentence,47
+ORG,Area Benefit (Survey,TX_COUNTY,Robertson County,cooccurs,sentence,47
+ORG,Area Benefit (Census,DISASTER,Hurricane Ike,cooccurs,sentence,47
+ORG,Area Benefit (Survey,TX_COUNTY,Angelina County,cooccurs,sentence,47
+ORG,UN,TX_COUNTY,Liberty County,cooccurs,sentence,47
+DISASTER,Hurricane Dolly,TX_COUNTY,Willacy County,cooccurs,sentence,47
+DISASTER,Hurricane Harvey,TX_COUNTY,Caldwell County,cooccurs,sentence,47
+DISASTER,Ike,TX_COUNTY,Victoria County,cooccurs,sentence,47
+ORG,Restricted Balance,TX_COUNTY,Harris County,cooccurs,sentence,47
+ORG,Date Total Projected Budget,DISASTER,Ike,cooccurs,sentence,46
+ORG,DRS,TX_COUNTY,Polk County,cooccurs,sentence,46
+DISASTER,Ike,TX_COUNTY,Austin County,cooccurs,sentence,46
+ORG,TX,TX_COUNTY,Jefferson County,cooccurs,sentence,46
+ORG,Sewer Facilities,TX_COUNTY,Harris County,cooccurs,sentence,46
+ORG,FEMA,TX_COUNTY,Eastland County,cooccurs,sentence,45
+ORG,newacct04112013 Program Income Account,TX_COUNTY,Walker County,cooccurs,sentence,45
+ORG,DRS,TX_COUNTY,Liberty County,cooccurs,sentence,45
+ORG,Public Facilities,TX_COUNTY,Angelina County,cooccurs,sentence,45
+ORG,Water Plant,TX_COUNTY,Matagorda County,cooccurs,sentence,45
+ORG,Local Government,TX_COUNTY,Galveston County,cooccurs,sentence,45
+ORG,GLO,DISASTER,Ike,cooccurs,sentence,45
+ORG,Restricted Balance,PROGRAM,Affordable Rental Program,cooccurs,sentence,45
+ORG,TX,TX_COUNTY,Galveston County,cooccurs,sentence,44
+ORG,State Highway,TX_COUNTY,Newton County,cooccurs,sentence,44
+ORG,DRS,TX_COUNTY,Jefferson County,cooccurs,sentence,44
+ORG,Public Facilities,TX_COUNTY,Montgomery County,cooccurs,sentence,44
+PROGRAM,Local Infrastructure Program,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,44
+ORG,F&D 0006 Rehabilitation,TX_COUNTY,Fort Bend County,cooccurs,sentence,44
+ORG,Flood and Drainage Facilities,TX_COUNTY,Fort Bend County,cooccurs,sentence,44
+DISASTER,Ike,TX_COUNTY,Jasper County,cooccurs,sentence,44
+ORG,State Highway,TX_COUNTY,Hardin County,cooccurs,sentence,43
+ORG,Public Facilities,TX_COUNTY,Burleson County,cooccurs,sentence,43
+ORG,DRS,TX_COUNTY,Leon County,cooccurs,sentence,43
+PROGRAM,Affordable Rental Program,DISASTER,Imelda,cooccurs,sentence,43
+ORG,UN,TX_COUNTY,Montgomery County,cooccurs,sentence,43
+ORG,HUD,DISASTER,Rita,cooccurs,sentence,42
+ORG,GLO,TX_COUNTY,Galveston County,cooccurs,sentence,42
+ORG,Total Funds,TX_COUNTY,Harris County,cooccurs,sentence,42
+ORG,State Highway,TX_COUNTY,Bastrop County,cooccurs,sentence,41
+ORG,Salary Allocations Activity Progress Narrative,TX_COUNTY,Harris County,cooccurs,sentence,41
+ORG,Area Benefit (Survey,TX_COUNTY,Liberty County,cooccurs,sentence,41
+ORG,Direct Benefit,TX_COUNTY,Galveston County,cooccurs,sentence,41
+ORG,Date 06/01/2010 Area Benefit (Survey,TX_COUNTY,Jasper County,cooccurs,sentence,41
+ORG,UN,DISASTER,Ike,cooccurs,sentence,41
+DISASTER,Hurricane Ike,TX_COUNTY,Angelina County,cooccurs,sentence,41
+DISASTER,Ike,TX_COUNTY,Walker County,cooccurs,sentence,41
+ORG,NCP,TX_COUNTY,Tyler County,cooccurs,sentence,40
+ORG,FEMA,TX_COUNTY,Bee County,cooccurs,sentence,40
+ORG,Date Total Projected Budget,DISASTER,Hurricane Ike,cooccurs,sentence,40
+ORG,Public Facilities,TX_COUNTY,Trinity County,cooccurs,sentence,40
+ORG,DRS,TX_COUNTY,Chambers County,cooccurs,sentence,40
+ORG,Date 01/01/2010 Area Benefit (Survey,TX_COUNTY,Cameron County,cooccurs,sentence,40
+ORG,UN,TX_COUNTY,Brazoria County,cooccurs,sentence,40
+ORG,Texas GLO,TX_COUNTY,Gonzales County,cooccurs,sentence,40
+ORG,Public Improvement,TX_COUNTY,Walker County,cooccurs,sentence,40
+ORG,HUD,DISASTER,Ike,cooccurs,sentence,40
+ORG,Public Facilities,TX_COUNTY,Houston County,cooccurs,sentence,39
+ORG,Public Improvement,TX_COUNTY,Refugio County,cooccurs,sentence,39
+ORG,Project Title,DISASTER,Hurricane Harvey,cooccurs,sentence,39
+ORG,FEMA,TX_COUNTY,Hays County,cooccurs,sentence,38
+ORG,FEMA,TX_COUNTY,Colorado County,cooccurs,sentence,38
+ORG,Completed Activity Description,TX_COUNTY,Cameron County,cooccurs,sentence,38
+ORG,WWTP,TX_COUNTY,Galveston County,cooccurs,sentence,38
+ORG,Clearance and Demolition,TX_COUNTY,Galveston County,cooccurs,sentence,38
+ORG,Public Improvement,TX_COUNTY,Bastrop County,cooccurs,sentence,38
+DISASTER,Ike,TX_COUNTY,Gonzales County,cooccurs,sentence,38
+ORG,CDBG-MIT,DISASTER,Hurricane Harvey,cooccurs,sentence,38
+ORG,Public Facilities,TX_COUNTY,Cameron County,cooccurs,sentence,37
+ORG,Direct Benefit,TX_COUNTY,Liberty County,cooccurs,sentence,37
+ORG,DRS,TX_COUNTY,Montgomery County,cooccurs,sentence,37
+ORG,GLO,DISASTER,Harvey,cooccurs,sentence,37
+ORG,FEMA,TX_COUNTY,Anderson County,cooccurs,sentence,36
+ORG,Affordable Rental Housing Under Way Activity Description,TX_COUNTY,County Of Galveston County,cooccurs,sentence,36
+ORG,SETRPC,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,36
+ORG,Public Facilities,TX_COUNTY,Willacy County,cooccurs,sentence,36
+ORG,UN,TX_COUNTY,Anderson County,cooccurs,sentence,36
+DISASTER,Hurricane Ike,TX_COUNTY,Fort Bend County,cooccurs,sentence,36
+ORG,Texas GLO,PROGRAM,Economic Revitalization Program,cooccurs,sentence,36
+DISASTER,Ike,TX_COUNTY,Jefferson County,cooccurs,sentence,36
+ORG,State Agency,PROGRAM,Homeowner Reimbursement Program,cooccurs,sentence,36
+ORG,Sewer Facilities,TX_COUNTY,Montgomery County,cooccurs,sentence,36
+PROGRAM,Homeowner Assistance Program,TX_COUNTY,Hidalgo County,cooccurs,sentence,36
+ORG,ADA,TX_COUNTY,Galveston County,cooccurs,sentence,35
+ORG,Affordable Rental Housing Under Way Activity Description,TX_COUNTY,County Of Liberty County,cooccurs,sentence,35
+ORG,Public Facilities,TX_COUNTY,Leon County,cooccurs,sentence,35
+ORG,Texas Department of Housing and Community Affairs,TX_COUNTY,Montgomery County,cooccurs,sentence,35
+DISASTER,Ike,TX_COUNTY,Newton County,cooccurs,sentence,35
+ORG,ADA,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,35
+ORG,MIT - Public Facilities,TX_COUNTY,Bastrop County,cooccurs,sentence,34
+ORG,FEMA,TX_COUNTY,Willacy County,cooccurs,sentence,34
+ORG,Area Benefit (Survey,TX_COUNTY,Jefferson County,cooccurs,sentence,34
+ORG,Completed Activity Description,TX_COUNTY,Leon County,cooccurs,sentence,34
+ORG,Houston-Galveston Area Council,DISASTER,Hurricane Ike,cooccurs,sentence,34
+ORG,Urgent Need,TX_COUNTY,Sabine County,cooccurs,sentence,34
+DISASTER,Ike,TX_COUNTY,Tyler County,cooccurs,sentence,34
+DISASTER,Ike,TX_COUNTY,San Jacinto County,cooccurs,sentence,34
+ORG,MIT - Public Facilities,TX_COUNTY,Jasper County,cooccurs,sentence,33
+ORG,GLO,DISASTER,Rita,cooccurs,sentence,33
+ORG,Post Office Street,DISASTER,Hurricane Ike,cooccurs,sentence,33
+ORG,McNair Street,TX_COUNTY,Harris County,cooccurs,sentence,33
+ORG,Public Facilities,TX_COUNTY,Nacogdoches County,cooccurs,sentence,33
+ORG,UN,TX_COUNTY,Chambers County,cooccurs,sentence,33
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Walker County,cooccurs,sentence,33
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Victoria County,cooccurs,sentence,33
+ORG,Texas GLO,DISASTER,Harvey,cooccurs,sentence,33
+ORG,Restricted Balance,PROGRAM,Homeowner Reimbursement Program,cooccurs,sentence,33
+ORG,Texas GLO,TX_COUNTY,Newton County,cooccurs,sentence,33
+ORG,0.0 Total Projected,TX_COUNTY,San Augustine County,cooccurs,sentence,32
+ORG,0.0 Total Projected,TX_COUNTY,Sabine County,cooccurs,sentence,32
+ORG,FEMA,TX_COUNTY,Chambers County,cooccurs,sentence,32
+ORG,FEMA,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,32
+ORG,RCP,TX_COUNTY,Hidalgo County,cooccurs,sentence,32
+ORG,Direct Benefit,DISASTER,Hurricane Dolly,cooccurs,sentence,32
+ORG,USGS National Land Cover Database,TX_COUNTY,Liberty County,cooccurs,sentence,32
+ORG,Urgent Need,TX_COUNTY,San Augustine County,cooccurs,sentence,32
+ORG,Affordable Rental Housing Under Way Activity Description,TX_COUNTY,Harris County,cooccurs,sentence,32
+ORG,FEMA,TX_COUNTY,Milam County,cooccurs,sentence,32
+DISASTER,Ike,TX_COUNTY,Fort Bend County,cooccurs,sentence,32
+ORG,Properties 0,TX_COUNTY,Harris County,cooccurs,sentence,32
+PROGRAM,Homeowner Assistance Program,TX_COUNTY,Fort Bend County,cooccurs,sentence,32
+ORG,Improvements-Non Covered,TX_COUNTY,Jasper County,cooccurs,sentence,31
+ORG,Salary Allocations Activity Progress Narrative,TX_COUNTY,Galveston County,cooccurs,sentence,31
+ORG,Area Benefit (Survey,TX_COUNTY,Polk County,cooccurs,sentence,31
+ORG,Completed Activity Description,TX_COUNTY,Walker County,cooccurs,sentence,31
+ORG,Hot Mix Asphalt Concrete,TX_COUNTY,Brazoria County,cooccurs,sentence,31
+ORG,HUD,TX_COUNTY,Galveston County,cooccurs,sentence,31
+ORG,Public Facilities,TX_COUNTY,Cherokee County,cooccurs,sentence,31
+ORG,DRS,TX_COUNTY,Houston County,cooccurs,sentence,31
+ORG,Lift Station,DISASTER,Hurricane Ike,cooccurs,sentence,31
+ORG,HMAC,TX_COUNTY,Matagorda County,cooccurs,sentence,31
+ORG,Local Government,TX_COUNTY,Waller County,cooccurs,sentence,31
+ORG,Public Improvement,TX_COUNTY,Victoria County,cooccurs,sentence,31
+ORG,FEMA,TX_COUNTY,Lee County,cooccurs,sentence,30
+ORG,MIT - Public Facilities,TX_COUNTY,Hidalgo County,cooccurs,sentence,30
+ORG,FEMA,TX_COUNTY,Nueces County,cooccurs,sentence,30
+ORG,Houston-Galveston Area Council,TX_COUNTY,Austin County,cooccurs,sentence,30
+ORG,Houston-Galveston Area Council,TX_COUNTY,Walker County,cooccurs,sentence,30
+ORG,FEMA,TX_COUNTY,Wichita County,cooccurs,sentence,30
+ORG,FEMA,TX_COUNTY,Newton County,cooccurs,sentence,30
+ORG,Houston-Galveston Area Council,TX_COUNTY,Liberty County,cooccurs,sentence,30
+ORG,Area Benefit (Census,TX_COUNTY,Trinity County,cooccurs,sentence,30
+ORG,Completed Activity Description,DISASTER,Hurricane Dolly,cooccurs,sentence,30
+ORG,Public Facilities,TX_COUNTY,Sabine County,cooccurs,sentence,30
+ORG,State Highway,TX_COUNTY,Cameron County,cooccurs,sentence,30
+ORG,Area Benefit (Survey,TX_COUNTY,Montgomery County,cooccurs,sentence,30
+ORG,State Highway,DISASTER,Hurricane Ike,cooccurs,sentence,30
+DISASTER,Hurricane Ike,TX_COUNTY,Matagorda County,cooccurs,sentence,30
+DISASTER,Hurricane Ike,TX_COUNTY,Brazoria County,cooccurs,sentence,30
+ORG,Direct Benefit,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,30
+ORG,HUD,TX_COUNTY,Bastrop County,cooccurs,sentence,30
+ORG,County Total Projected Budget,PROGRAM,Affordable Rental Program,cooccurs,sentence,30
+DISASTER,Hurricane Harvey,TX_COUNTY,Lee County,cooccurs,sentence,30
+DISASTER,Ike,TX_COUNTY,San Patricio County,cooccurs,sentence,30
+ORG,TX,TX_COUNTY,San Patricio County,cooccurs,sentence,30
+ORG,COCC,TX_COUNTY,Harris County,cooccurs,sentence,30
+ORG,Restricted Balance,TX_COUNTY,Newton County,cooccurs,sentence,30
+ORG,COCC,TX_COUNTY,Brazoria County,cooccurs,sentence,30
+ORG,GLO,PROGRAM,Affordable Rental Program,cooccurs,sentence,30
+ORG,Countywide &,TX_COUNTY,Chambers County,cooccurs,sentence,29
+ORG,Public Facilities,TX_COUNTY,Robertson County,cooccurs,sentence,29
+ORG,USGS National Land Cover Database,TX_COUNTY,Willacy County,cooccurs,sentence,29
+ORG,Urgent Need,TX_COUNTY,Nueces County,cooccurs,sentence,29
+DISASTER,Hurricane Ike,TX_COUNTY,Hardin County,cooccurs,sentence,29
+ORG,Public Improvement,TX_COUNTY,Milam County,cooccurs,sentence,29
+ORG,Public Improvement,TX_COUNTY,Austin County,cooccurs,sentence,29
+ORG,Local Government,TX_COUNTY,Refugio County,cooccurs,sentence,29
+ORG,Local Government,TX_COUNTY,Gonzales County,cooccurs,sentence,29
+PROGRAM,Homeowner Assistance Program,TX_COUNTY,Brazoria County,cooccurs,sentence,29
+ORG,COCC,TX_COUNTY,Willacy County,cooccurs,sentence,29
+ORG,Sewer Lines,TX_COUNTY,Polk County,cooccurs,sentence,28
+ORG,HUD,TX_COUNTY,Waller County,cooccurs,sentence,28
+ORG,FEMA,TX_COUNTY,San Jacinto County,cooccurs,sentence,28
+ORG,FEMA,TX_COUNTY,Polk County,cooccurs,sentence,28
+ORG,Improvements- Non Covered Projects Texas General Land Office,TX_COUNTY,San Augustine County,cooccurs,sentence,28
+ORG,FEMA,TX_COUNTY,Goliad County,cooccurs,sentence,28
+ORG,FEMA,TX_COUNTY,Marion County,cooccurs,sentence,28
+ORG,HGAC,TX_COUNTY,Galveston County,cooccurs,sentence,28
+ORG,GLO,TX_COUNTY,County Of Harris County,cooccurs,sentence,28
+ORG,Public Facilities,TX_COUNTY,Waller County,cooccurs,sentence,28
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Tyler County,cooccurs,sentence,28
+ORG,Local Government,TX_COUNTY,Walker County,cooccurs,sentence,28
+ORG,HUD,TX_COUNTY,Fort Bend County,cooccurs,sentence,28
+ORG,GLO,TX_COUNTY,Montgomery County,cooccurs,sentence,28
+PROGRAM,Homeowner Assistance Program,TX_COUNTY,Willacy County,cooccurs,sentence,28
+ORG,COCC,TX_COUNTY,Galveston County,cooccurs,sentence,27
+ORG,Project Number,DISASTER,Ike,cooccurs,sentence,27
+ORG,Completed Activity Actual End Date,TX_COUNTY,Galveston County,cooccurs,sentence,27
+ORG,Hot Mix Asphaltic Concrete,TX_COUNTY,Orange County,cooccurs,sentence,27
+ORG,DRS,TX_COUNTY,Cameron County,cooccurs,sentence,27
+ORG,La Porte,DISASTER,Hurricane Ike,cooccurs,sentence,27
+ORG,Urgent Need,TX_COUNTY,Jasper County,cooccurs,sentence,27
+ORG,Total Funds,PROGRAM,Local Infrastructure Program,cooccurs,sentence,27
+DISASTER,Ike,TX_COUNTY,Grimes County,cooccurs,sentence,27
+ORG,ADA,TX_COUNTY,Goliad County,cooccurs,sentence,27
+PROGRAM,Homeowner Reimbursement Program,DISASTER,Hurricane Harvey,cooccurs,sentence,27
+ORG,FEMA,TX_COUNTY,Gonzales County,cooccurs,sentence,26
+ORG,FEMA,TX_COUNTY,Sabine County,cooccurs,sentence,26
+ORG,FEMA,TX_COUNTY,Houston County,cooccurs,sentence,26
+ORG,FEMA,TX_COUNTY,Coryell County,cooccurs,sentence,26
+DISASTER,Hurricane Rita,TX_COUNTY,Harris County,cooccurs,sentence,26
+ORG,Date Total Projected Budget,TX_COUNTY,Willacy County,cooccurs,sentence,26
+ORG,Date Total Projected Budget,TX_COUNTY,Brazoria County,cooccurs,sentence,26
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Galveston County,cooccurs,sentence,26
+ORG,Project Number,TX_COUNTY,Galveston County,cooccurs,sentence,26
+ORG,Completed Activity Actual End Date,TX_COUNTY,Harris County,cooccurs,sentence,26
+ORG,North Country Club Drive,TX_COUNTY,Harris County,cooccurs,sentence,26
+ORG,South Country Club Drive,TX_COUNTY,Harris County,cooccurs,sentence,26
+ORG,Shoreacres Boulevard,TX_COUNTY,Harris County,cooccurs,sentence,26
+ORG,Completed Activity Description,TX_COUNTY,Burleson County,cooccurs,sentence,26
+ORG,Public Facilities,DISASTER,Ike,cooccurs,sentence,26
+ORG,Countywide &,TX_COUNTY,Cameron County,cooccurs,sentence,26
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Austin County,cooccurs,sentence,26
+ORG,Texas GLO,DISASTER,Hurricane Harvey,cooccurs,sentence,26
+ORG,Flood and Drainage Facilities,TX_COUNTY,Grimes County,cooccurs,sentence,26
+ORG,Flood and Drainage Facilities,TX_COUNTY,Milam County,cooccurs,sentence,26
+ORG,Improvements- Non Covered Projects Texas General Land Office,TX_COUNTY,Sabine County,cooccurs,sentence,25
+DISASTER,Hurricane Rita,TX_COUNTY,Newton County,cooccurs,sentence,25
+ORG,Completed Activity Description,TX_COUNTY,Nacogdoches County,cooccurs,sentence,25
+ORG,Street Improvement,TX_COUNTY,Liberty County,cooccurs,sentence,25
+ORG,County Road,TX_COUNTY,Liberty County,cooccurs,sentence,25
+ORG,Public Facilities,TX_COUNTY,San Jacinto County,cooccurs,sentence,25
+ORG,Urgent Need,TX_COUNTY,Nacogdoches County,cooccurs,sentence,25
+ORG,Area Benefit (Survey,TX_COUNTY,Milam County,cooccurs,sentence,25
+ORG,Texas Department of Housing and Community Affairs,TX_COUNTY,Willacy County,cooccurs,sentence,25
+ORG,Water Plant,DISASTER,Hurricane Dolly,cooccurs,sentence,25
+ORG,Direct Benefit,TX_COUNTY,Harris County,cooccurs,sentence,25
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Jefferson County,cooccurs,sentence,25
+ORG,Texas GLO,TX_COUNTY,Grimes County,cooccurs,sentence,25
+ORG,FEMA,TX_COUNTY,Walker County,cooccurs,sentence,25
+ORG,State Agency,TX_COUNTY,Harris County,cooccurs,sentence,25
+ORG,Sewer Lines,TX_COUNTY,Tyler County,cooccurs,sentence,24
+ORG,FEMA,TX_COUNTY,Galveston County,cooccurs,sentence,24
+ORG,FEMA,TX_COUNTY,Travis County,cooccurs,sentence,24
+ORG,Sewer Lines,TX_COUNTY,Newton County,cooccurs,sentence,24
+DISASTER,Rita,FEMA_DECLARATION,1606,cooccurs,sentence,24
+ORG,Area Benefit (Survey,TX_COUNTY,Grimes County,cooccurs,sentence,24
+ORG,Completed Activity Actual End Date,DISASTER,Ike,cooccurs,sentence,24
+ORG,ADA,TX_COUNTY,Chambers County,cooccurs,sentence,24
+ORG,Area Benefit (Survey,TX_COUNTY,Burleson County,cooccurs,sentence,24
+ORG,Hot Mix Asphaltic Concrete,TX_COUNTY,Matagorda County,cooccurs,sentence,24
+ORG,Completed Activity Description,TX_COUNTY,Grimes County,cooccurs,sentence,24
+ORG,Public Facilities,TX_COUNTY,County Of Galveston County,cooccurs,sentence,24
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Chambers County,cooccurs,sentence,24
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Montgomery County,cooccurs,sentence,24
+ORG,Public Facilities,TX_COUNTY,Washington County,cooccurs,sentence,24
+ORG,Countywide &,TX_COUNTY,Liberty County,cooccurs,sentence,24
+ORG,Date 01/01/2010 Area Benefit (Survey,TX_COUNTY,Washington County,cooccurs,sentence,24
+ORG,DRS,TX_COUNTY,Upshur County,cooccurs,sentence,24
+ORG,Completed Activity Description,TX_COUNTY,Galveston County,cooccurs,sentence,24
+ORG,Local Government,TX_COUNTY,Polk County,cooccurs,sentence,24
+ORG,AMI,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,24
+ORG,Buyout Program,DISASTER,Hurricane Harvey,cooccurs,sentence,24
+ORG,Local Government,TX_COUNTY,Hidalgo County,cooccurs,sentence,24
+ORG,GLO,TX_COUNTY,Hays County,cooccurs,sentence,24
+ORG,0.0 Total Projected,TX_COUNTY,Matagorda County,cooccurs,sentence,23
+ORG,Sewer Facilities,DISASTER,Harvey,cooccurs,sentence,23
+ORG,Salary Allocations Activity Progress Narrative,TX_COUNTY,Newton County,cooccurs,sentence,23
+DISASTER,Hurricane Ike,TX_COUNTY,Grimes County,cooccurs,sentence,23
+ORG,newacct04112013 Program Income Account,TX_COUNTY,Waller County,cooccurs,sentence,23
+ORG,Completed Activity Description,TX_COUNTY,Houston County,cooccurs,sentence,23
+ORG,GLO,TX_COUNTY,Willacy County,cooccurs,sentence,23
+ORG,Area Benefit (Survey,TX_COUNTY,San Patricio County,cooccurs,sentence,23
+ORG,Area Benefit (Census,TX_COUNTY,Hidalgo County,cooccurs,sentence,23
+ORG,Area Benefit (Survey,TX_COUNTY,Fort Bend County,cooccurs,sentence,23
+ORG,UN,TX_COUNTY,Grimes County,cooccurs,sentence,23
+ORG,DRS,TX_COUNTY,Orange County,cooccurs,sentence,23
+ORG,HUD,TX_COUNTY,Newton County,cooccurs,sentence,23
+ORG,Public Improvement,TX_COUNTY,Fort Bend County,cooccurs,sentence,23
+ORG,Local Government,TX_COUNTY,Bastrop County,cooccurs,sentence,23
+PROGRAM,Homeowner Assistance Program,DISASTER,Ike,cooccurs,sentence,23
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Harris County,cooccurs,sentence,23
+DISASTER,Ike,TX_COUNTY,Willacy County,cooccurs,sentence,23
+ORG,Drainage Facilities,TX_COUNTY,Grimes County,cooccurs,sentence,23
+ORG,Street Improvement,TX_COUNTY,Newton County,cooccurs,sentence,23
+ORG,Total Funds,DISASTER,Hurricane Harvey,cooccurs,sentence,22
+ORG,Improvements-Non Covered,TX_COUNTY,Sabine County,cooccurs,sentence,22
+ORG,FEMA,TX_COUNTY,Cooke County,cooccurs,sentence,22
+ORG,FEMA,TX_COUNTY,Lavaca County,cooccurs,sentence,22
+ORG,MIT - Public Facilities,TX_COUNTY,Newton County,cooccurs,sentence,22
+ORG,Sewer Lines,TX_COUNTY,San Augustine County,cooccurs,sentence,22
+PROGRAM,Homeowner Assistance Program,DISASTER,Rita,cooccurs,sentence,22
+ORG,Area Benefit (Survey,TX_COUNTY,Sabine County,cooccurs,sentence,22
+ORG,Date Total Projected Budget,TX_COUNTY,Newton County,cooccurs,sentence,22
+ORG,Date Total Projected Budget,TX_COUNTY,Chambers County,cooccurs,sentence,22
+ORG,GLO,TX_COUNTY,Chambers County,cooccurs,sentence,22
+DISASTER,Hurricane Dolly,TX_COUNTY,Hidalgo County,cooccurs,sentence,22
+ORG,DRS,TX_COUNTY,Brazoria County,cooccurs,sentence,22
+ORG,KRW,TX_COUNTY,Harris County,cooccurs,sentence,22
+ORG,Affordable Rental Housing,TX_COUNTY,Harris County,cooccurs,sentence,22
+ORG,Area Benefit (Census,PROGRAM,Local Infrastructure Program,cooccurs,sentence,22
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Bastrop County,cooccurs,sentence,22
+ORG,Urgent Need,TX_COUNTY,Tyler County,cooccurs,sentence,22
+ORG,Flood and Drainage Facilities,DISASTER,Ike,cooccurs,sentence,22
+ORG,ADA,TX_COUNTY,Refugio County,cooccurs,sentence,22
+ORG,UN,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,22
+ORG,Completed Activity Description,TX_COUNTY,Harris County,cooccurs,sentence,22
+ORG,Improvements-Non Covered,TX_COUNTY,Tyler County,cooccurs,sentence,21
+ORG,Improvements-Non Covered,TX_COUNTY,Austin County,cooccurs,sentence,21
+ORG,MIT - Public Facilities,TX_COUNTY,Austin County,cooccurs,sentence,21
+ORG,Completed Activity Description,TX_COUNTY,Jefferson County,cooccurs,sentence,21
+ORG,Completed Activity Description,TX_COUNTY,Waller County,cooccurs,sentence,21
+ORG,Affordable Rental Housing Under Way Activity Description,TX_COUNTY,Liberty County,cooccurs,sentence,21
+ORG,Area Benefit (Survey,TX_COUNTY,San Jacinto County,cooccurs,sentence,21
+ORG,Public Facilities,TX_COUNTY,Jim Wells County,cooccurs,sentence,21
+ORG,Public Facilities,TX_COUNTY,Fort Bend County,cooccurs,sentence,21
+ORG,Non-Match Funds,TX_COUNTY,Bastrop County,cooccurs,sentence,21
+ORG,Drainage Facilities,TX_COUNTY,Milam County,cooccurs,sentence,21
+DISASTER,Ike,TX_COUNTY,Matagorda County,cooccurs,sentence,21
+PROGRAM,Economic Revitalization Program,TX_COUNTY,Harris County,cooccurs,sentence,21
+ORG,Texas GLO,TX_COUNTY,Coryell County,cooccurs,sentence,20
+ORG,Non-Match Funds,TX_COUNTY,Walker County,cooccurs,sentence,20
+ORG,Non-Match Funds,TX_COUNTY,Newton County,cooccurs,sentence,20
+ORG,Non-Match Funds,TX_COUNTY,Coryell County,cooccurs,sentence,20
+ORG,Improvements-Non Covered,TX_COUNTY,San Augustine County,cooccurs,sentence,20
+DISASTER,Hurricane Harvey,TX_COUNTY,San Patricio County,cooccurs,sentence,20
+ORG,MIT - Public Facilities,TX_COUNTY,Gonzales County,cooccurs,sentence,20
+ORG,FEMA,TX_COUNTY,Dallas County,cooccurs,sentence,20
+ORG,MIT - Public Facilities,TX_COUNTY,Dewitt County,cooccurs,sentence,20
+ORG,NCP,TX_COUNTY,Bastrop County,cooccurs,sentence,20
+ORG,MIT - Public Facilities,TX_COUNTY,Kleberg County,cooccurs,sentence,20
+ORG,TDEM,TX_COUNTY,Bee County,cooccurs,sentence,20
+ORG,GLO,TX_COUNTY,Bee County,cooccurs,sentence,20
+ORG,HMP,TX_COUNTY,Bee County,cooccurs,sentence,20
+ORG,Texas Department of Housing and Community Affairs,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,20
+DISASTER,Hurricane Rita,FEMA_DECLARATION,1606,cooccurs,sentence,20
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Harris County,cooccurs,sentence,20
+ORG,Project Number,TX_COUNTY,Cherokee County,cooccurs,sentence,20
+ORG,NON-HOUSING Projected End Date,DISASTER,Ike,cooccurs,sentence,20
+ORG,Fair Housing Planning,TX_COUNTY,Newton County,cooccurs,sentence,20
+ORG,Fair Housing Planning,TX_COUNTY,Trinity County,cooccurs,sentence,20
+ORG,Completed Activity Description,TX_COUNTY,Sabine County,cooccurs,sentence,20
+ORG,UN,TX_COUNTY,Walker County,cooccurs,sentence,20
+ORG,UN,TX_COUNTY,Victoria County,cooccurs,sentence,20
+ORG,Area Benefit (Survey,TX_COUNTY,Upshur County,cooccurs,sentence,20
+ORG,Area Benefit (Survey,TX_COUNTY,Rusk County,cooccurs,sentence,20
+ORG,Area Benefit (Survey,TX_COUNTY,Panola County,cooccurs,sentence,20
+ORG,UN,TX_COUNTY,Cameron County,cooccurs,sentence,20
+ORG,UN,TX_COUNTY,Burleson County,cooccurs,sentence,20
+ORG,UN,TX_COUNTY,Hardin County,cooccurs,sentence,20
+ORG,DRS,TX_COUNTY,Cherokee County,cooccurs,sentence,20
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Gonzales County,cooccurs,sentence,20
+PROGRAM,Local Infrastructure Program,TX_COUNTY,San Jacinto County,cooccurs,sentence,20
+ORG,SI 0006 Construction,DISASTER,Ike,cooccurs,sentence,20
+ORG,Public Improvement,TX_COUNTY,San Jacinto County,cooccurs,sentence,20
+ORG,Public Improvement,TX_COUNTY,Tyler County,cooccurs,sentence,20
+DISASTER,Ike,TX_COUNTY,Brazoria County,cooccurs,sentence,20
+ORG,Flood and Drainage,TX_COUNTY,Harris County,cooccurs,sentence,20
+ORG,TX,TX_COUNTY,Brazoria County,cooccurs,sentence,20
+ORG,TX,TX_COUNTY,Milam County,cooccurs,sentence,20
+ORG,Texas GLO,TX_COUNTY,Brazoria County,cooccurs,sentence,20
+ORG,COCC,TX_COUNTY,Hidalgo County,cooccurs,sentence,20
+ORG,Restricted Balance,TX_COUNTY,Walker County,cooccurs,sentence,19
+ORG,Restricted Balance,TX_COUNTY,Coryell County,cooccurs,sentence,19
+ORG,Restricted Balance,TX_COUNTY,Bastrop County,cooccurs,sentence,19
+ORG,TDEM,TX_COUNTY,Hays County,cooccurs,sentence,19
+ORG,HMP,TX_COUNTY,Hays County,cooccurs,sentence,19
+ORG,TDEM,TX_COUNTY,Colorado County,cooccurs,sentence,19
+ORG,GLO,TX_COUNTY,Colorado County,cooccurs,sentence,19
+ORG,HMP,TX_COUNTY,Colorado County,cooccurs,sentence,19
+ORG,Texas GLO,DISASTER,Hurricane Rita,cooccurs,sentence,19
+ORG,Area Benefit (Survey,DISASTER,Hurricane Rita,cooccurs,sentence,19
+ORG,Direct Benefit,TX_COUNTY,County Of Liberty County,cooccurs,sentence,19
+ORG,Completed Activity Actual End Date,TX_COUNTY,Brazoria County,cooccurs,sentence,19
+ORG,Date Total Projected Budget,TX_COUNTY,Liberty County,cooccurs,sentence,19
+ORG,Affirmatively Further Fair Housing (AFFH,TX_COUNTY,Trinity County,cooccurs,sentence,19
+ORG,Project Title,TX_COUNTY,Galveston County,cooccurs,sentence,19
+ORG,Public Facilities,TX_COUNTY,Matagorda County,cooccurs,sentence,19
+DISASTER,Hurricane Ike,TX_COUNTY,Montgomery County,cooccurs,sentence,19
+ORG,UN,TX_COUNTY,Shelby County,cooccurs,sentence,19
+DISASTER,Hurricane Ike,TX_COUNTY,Houston County,cooccurs,sentence,19
+DISASTER,Hurricane Ike,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,19
+ORG,GLO,TX_COUNTY,Liberty County,cooccurs,sentence,19
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Jasper County,cooccurs,sentence,19
+ORG,Texas GLO,TX_COUNTY,Tyler County,cooccurs,sentence,19
+ORG,TX,TX_COUNTY,Wharton County,cooccurs,sentence,19
+ORG,TX,TX_COUNTY,Matagorda County,cooccurs,sentence,19
+ORG,Public Improvement,TX_COUNTY,Chambers County,cooccurs,sentence,19
+ORG,Flood and Drainage,TX_COUNTY,Bastrop County,cooccurs,sentence,19
+ORG,FEMA,TX_COUNTY,Montgomery County,cooccurs,sentence,19
+ORG,COCC,TX_COUNTY,Bastrop County,cooccurs,sentence,18
+ORG,FEMA,TX_COUNTY,San Augustine County,cooccurs,sentence,18
+ORG,FEMA,TX_COUNTY,Fort Bend County,cooccurs,sentence,18
+ORG,TDEM,TX_COUNTY,Anderson County,cooccurs,sentence,18
+ORG,GLO,TX_COUNTY,Anderson County,cooccurs,sentence,18
+ORG,HMP,TX_COUNTY,Anderson County,cooccurs,sentence,18
+ORG,Public Improvement,TX_COUNTY,Hidalgo County,cooccurs,sentence,18
+ORG,SETRPC,DISASTER,Rita,cooccurs,sentence,18
+ORG,Direct Benefit,DISASTER,Rita,cooccurs,sentence,18
+ORG,Restricted Balance,TX_COUNTY,Grimes County,cooccurs,sentence,18
+DISASTER,Hurricane Ike,TX_COUNTY,Robertson County,cooccurs,sentence,18
+DISASTER,Hurricane Ike,TX_COUNTY,Leon County,cooccurs,sentence,18
+ORG,HUD,TX_COUNTY,Walker County,cooccurs,sentence,18
+ORG,Project Number,TX_COUNTY,Houston County,cooccurs,sentence,18
+ORG,Date 01/01/2010 Area Benefit (Survey,TX_COUNTY,Leon County,cooccurs,sentence,18
+ORG,Area Benefit (Survey,TX_COUNTY,Jim Wells County,cooccurs,sentence,18
+ORG,ADA,TX_COUNTY,Tyler County,cooccurs,sentence,18
+ORG,ADA,TX_COUNTY,Nacogdoches County,cooccurs,sentence,18
+ORG,Water Facilities,TX_COUNTY,Jasper County,cooccurs,sentence,18
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Hidalgo County,cooccurs,sentence,18
+ORG,Public Facilities,TX_COUNTY,Harrison County,cooccurs,sentence,18
+ORG,Council of Government,DISASTER,Hurricane Ike,cooccurs,sentence,18
+ORG,Texas Department of Housing and Community Affairs,TX_COUNTY,Hidalgo County,cooccurs,sentence,18
+ORG,Texas Department of Housing and Community Affairs,TX_COUNTY,Chambers County,cooccurs,sentence,18
+DISASTER,Hurricane Ike,TX_COUNTY,Panola County,cooccurs,sentence,18
+DISASTER,Hurricane Ike,TX_COUNTY,Newton County,cooccurs,sentence,18
+DISASTER,Hurricane Ike,TX_COUNTY,Nacogdoches County,cooccurs,sentence,18
+DISASTER,Hurricane Dolly,TX_COUNTY,Cameron County,cooccurs,sentence,18
+ORG,Water Facilities,TX_COUNTY,Matagorda County,cooccurs,sentence,18
+ORG,Texas GLO,TX_COUNTY,Liberty County,cooccurs,sentence,18
+ORG,TX,TX_COUNTY,Refugio County,cooccurs,sentence,18
+ORG,Flood and Drainage Facilities,TX_COUNTY,Harris County,cooccurs,sentence,18
+ORG,Affordable Rental Housing Under Way Activity Description,DISASTER,Tropical Storm Imelda,cooccurs,sentence,18
+ORG,Drainage Facilities,TX_COUNTY,Harris County,cooccurs,sentence,18
+ORG,Improvements-Non Covered,TX_COUNTY,Gonzales County,cooccurs,sentence,17
+ORG,Improvements-Non Covered,TX_COUNTY,Caldwell County,cooccurs,sentence,17
+ORG,MIT - Public Facilities,TX_COUNTY,Caldwell County,cooccurs,sentence,17
+ORG,Improvements-Non Covered,TX_COUNTY,Newton County,cooccurs,sentence,17
+ORG,FEMA,TX_COUNTY,Mclennan County,cooccurs,sentence,17
+ORG,TDEM,TX_COUNTY,Willacy County,cooccurs,sentence,17
+ORG,HMP,TX_COUNTY,Willacy County,cooccurs,sentence,17
+ORG,FEMA,TX_COUNTY,Fayette County,cooccurs,sentence,17
+ORG,TDEM,TX_COUNTY,Fayette County,cooccurs,sentence,17
+ORG,GLO,TX_COUNTY,Fayette County,cooccurs,sentence,17
+ORG,HMP,TX_COUNTY,Fayette County,cooccurs,sentence,17
+ORG,Hazard Mitigation Grant Program,DISASTER,Hurricane Harvey,cooccurs,sentence,17
+DISASTER,Hurricane Ike,TX_COUNTY,County Of Liberty County,cooccurs,sentence,17
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Brazoria County,cooccurs,sentence,17
+ORG,Project Number,DISASTER,Hurricane Ike,cooccurs,sentence,17
+ORG,GLO,TX_COUNTY,Kleberg County,cooccurs,sentence,17
+ORG,Fair Housing Planning,TX_COUNTY,Houston County,cooccurs,sentence,17
+ORG,Completed Activity Description,DISASTER,Ike,cooccurs,sentence,17
+ORG,DRS,TX_COUNTY,San Patricio County,cooccurs,sentence,17
+ORG,Date 06/01/2010 Area Benefit (Survey,TX_COUNTY,Liberty County,cooccurs,sentence,17
+ORG,Texas Department of Housing and Community Affairs,TX_COUNTY,Fort Bend County,cooccurs,sentence,17
+ORG,Texas Department of Housing and Community Affairs,TX_COUNTY,Liberty County,cooccurs,sentence,17
+DISASTER,Hurricane Ike,TX_COUNTY,Marion County,cooccurs,sentence,17
+ORG,COCC,TX_COUNTY,Polk County,cooccurs,sentence,17
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Milam County,cooccurs,sentence,17
+ORG,Public Improvement,TX_COUNTY,Galveston County,cooccurs,sentence,17
+ORG,Local Government,TX_COUNTY,Brazoria County,cooccurs,sentence,17
+ORG,Targeted Section 3 Labor Hours,TX_COUNTY,Harris County,cooccurs,sentence,17
+ORG,Sewer Facilities,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,17
+ORG,Flood and Drainage Facilities,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,17
+ORG,TX,TX_COUNTY,Orange County,cooccurs,sentence,17
+ORG,Planning/Administration or Unprogrammed Funds,TX_COUNTY,Harris County,cooccurs,sentence,17
+ORG,GLO,TX_COUNTY,Fort Bend County,cooccurs,sentence,17
+ORG,Completed Activity Description,TX_COUNTY,Madison County,cooccurs,sentence,17
+ORG,GLO,TX_COUNTY,Travis County,cooccurs,sentence,17
+ORG,Restricted Balance,TX_COUNTY,Travis County,cooccurs,sentence,17
+ORG,Restricted Balance,TX_COUNTY,Hidalgo County,cooccurs,sentence,17
+ORG,Restricted Balance,TX_COUNTY,Hays County,cooccurs,sentence,17
+ORG,HUD,TX_COUNTY,Coryell County,cooccurs,sentence,16
+ORG,Improvements-Non Covered,TX_COUNTY,Polk County,cooccurs,sentence,16
+ORG,Improvements-Non Covered,TX_COUNTY,San Patricio County,cooccurs,sentence,16
+ORG,FEMA,TX_COUNTY,Leon County,cooccurs,sentence,16
+ORG,FEMA,TX_COUNTY,Tarrant County,cooccurs,sentence,16
+ORG,FEMA,TX_COUNTY,Duval County,cooccurs,sentence,16
+ORG,Sewer Lines,TX_COUNTY,Sabine County,cooccurs,sentence,16
+ORG,Sewer Lines,TX_COUNTY,Jasper County,cooccurs,sentence,16
+ORG,Sewer Lines,TX_COUNTY,Waller County,cooccurs,sentence,16
+ORG,MIT - Public Facilities,TX_COUNTY,Grimes County,cooccurs,sentence,16
+ORG,TDEM,TX_COUNTY,Chambers County,cooccurs,sentence,16
+ORG,HMP,TX_COUNTY,Chambers County,cooccurs,sentence,16
+ORG,TDEM,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,16
+ORG,GLO,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,16
+ORG,HMP,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,16
+ORG,CDBG-MIT,TX_COUNTY,Harris County,cooccurs,sentence,16
+ORG,TDEM,TX_COUNTY,Montgomery County,cooccurs,sentence,16
+ORG,HMP,TX_COUNTY,Montgomery County,cooccurs,sentence,16
+ORG,Texas GLO,DISASTER,Rita,cooccurs,sentence,16
+ORG,SETRPC,TX_COUNTY,Jefferson County,cooccurs,sentence,16
+ORG,Area Benefit (Census,TX_COUNTY,Cameron County,cooccurs,sentence,16
+ORG,State Highway,TX_COUNTY,Brazoria County,cooccurs,sentence,16
+ORG,Completed Activity Actual End Date,TX_COUNTY,Newton County,cooccurs,sentence,16
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Newton County,cooccurs,sentence,16
+ORG,Project Number,TX_COUNTY,Brazoria County,cooccurs,sentence,16
+ORG,Completed Activity Description,TX_COUNTY,Willacy County,cooccurs,sentence,16
+ORG,Area Benefit (Survey,TX_COUNTY,San Augustine County,cooccurs,sentence,16
+ORG,Affirmatively Further Fair Housing (AFFH,TX_COUNTY,Houston County,cooccurs,sentence,16
+ORG,GLO,TX_COUNTY,Houston County,cooccurs,sentence,16
+ORG,Public Facilities,TX_COUNTY,Rusk County,cooccurs,sentence,16
+ORG,DRS,TX_COUNTY,Matagorda County,cooccurs,sentence,16
+ORG,Texas Department of Housing and Community Affairs,TX_COUNTY,Cameron County,cooccurs,sentence,16
+DISASTER,Hurricane Ike,TX_COUNTY,San Augustine County,cooccurs,sentence,16
+DISASTER,Hurricane Dolly,TX_COUNTY,Jim Hogg County,cooccurs,sentence,16
+ORG,GLO,TX_COUNTY,Austin County,cooccurs,sentence,16
+ORG,Flood and Drainage,TX_COUNTY,Matagorda County,cooccurs,sentence,16
+ORG,Urgent Need,TX_COUNTY,Bastrop County,cooccurs,sentence,16
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Montgomery County,cooccurs,sentence,16
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Brazoria County,cooccurs,sentence,16
+ORG,Sewer Facilities,TX_COUNTY,Refugio County,cooccurs,sentence,16
+ORG,Flood and Drainage,TX_COUNTY,Victoria County,cooccurs,sentence,16
+ORG,Texas GLO,TX_COUNTY,Jefferson County,cooccurs,sentence,16
+ORG,Local Government Harris,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,16
+ORG,Flood and Drainage,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,16
+ORG,Flood and Drainage,PROGRAM,Affordable Rental Program,cooccurs,sentence,16
+ORG,Sewer Facilities,PROGRAM,Affordable Rental Program,cooccurs,sentence,16
+ORG,Flood and Drainage Facilities,PROGRAM,Affordable Rental Program,cooccurs,sentence,16
+DISASTER,Harvey,TX_COUNTY,Harris County,cooccurs,sentence,16
+ORG,Texas GLO,DISASTER,Imelda,cooccurs,sentence,16
+ORG,Texas General Land Office NA Benefit Report Type,DISASTER,Ike,cooccurs,sentence,16
+PROGRAM,Homeowner Reimbursement Program,DISASTER,Imelda,cooccurs,sentence,16
+PROGRAM,Homeowner Assistance Program,DISASTER,Imelda,cooccurs,sentence,16
+ORG,City of Total Projected Budget,TX_COUNTY,Harris County,cooccurs,sentence,16
+ORG,GLO,TX_COUNTY,Hidalgo County,cooccurs,sentence,16
+ORG,TDEM,TX_COUNTY,Lee County,cooccurs,sentence,15
+ORG,GLO,TX_COUNTY,Lee County,cooccurs,sentence,15
+ORG,HMP,TX_COUNTY,Lee County,cooccurs,sentence,15
+ORG,TDEM,TX_COUNTY,Nueces County,cooccurs,sentence,15
+ORG,GLO,TX_COUNTY,Nueces County,cooccurs,sentence,15
+ORG,HMP,TX_COUNTY,Nueces County,cooccurs,sentence,15
+ORG,FEMA,TX_COUNTY,Austin County,cooccurs,sentence,15
+ORG,TDEM,TX_COUNTY,Austin County,cooccurs,sentence,15
+ORG,TDEM,TX_COUNTY,Walker County,cooccurs,sentence,15
+ORG,TDEM,TX_COUNTY,Wichita County,cooccurs,sentence,15
+ORG,GLO,TX_COUNTY,Wichita County,cooccurs,sentence,15
+ORG,HMP,TX_COUNTY,Wichita County,cooccurs,sentence,15
+ORG,TDEM,TX_COUNTY,Newton County,cooccurs,sentence,15
+ORG,HMP,TX_COUNTY,Newton County,cooccurs,sentence,15
+ORG,FEMA,TX_COUNTY,Liberty County,cooccurs,sentence,15
+ORG,TDEM,TX_COUNTY,Liberty County,cooccurs,sentence,15
+ORG,Planning Products,TX_COUNTY,Bastrop County,cooccurs,sentence,15
+ORG,Texas - GLO LOCCS Authorized,DISASTER,Rita,cooccurs,sentence,15
+ORG,Completed Activity Description,TX_COUNTY,Jasper County,cooccurs,sentence,15
+ORG,Area Benefit (Census,TX_COUNTY,Tyler County,cooccurs,sentence,15
+ORG,CBCOG,TX_COUNTY,Kleberg County,cooccurs,sentence,15
+ORG,Direct Benefit,TX_COUNTY,County Of Galveston County,cooccurs,sentence,15
+ORG,Completed Activity Description,TX_COUNTY,Montgomery County,cooccurs,sentence,15
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Liberty County,cooccurs,sentence,15
+ORG,Area Benefit (Survey,TX_COUNTY,Brooks County,cooccurs,sentence,15
+DISASTER,Hurricane Ike,TX_COUNTY,Jefferson County,cooccurs,sentence,15
+ORG,Clearance and Demolition,TX_COUNTY,Montgomery County,cooccurs,sentence,15
+ORG,Completed Activity Description,DISASTER,Hurricane Harvey,cooccurs,sentence,15
+ORG,COCC,TX_COUNTY,Refugio County,cooccurs,sentence,15
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Fort Bend County,cooccurs,sentence,15
+ORG,Public Improvement,TX_COUNTY,Grimes County,cooccurs,sentence,15
+ORG,Sewer Facilities,TX_COUNTY,Tyler County,cooccurs,sentence,15
+DISASTER,Ike,TX_COUNTY,Refugio County,cooccurs,sentence,15
+ORG,Substantially Rehabilitated Units,PROGRAM,Local Infrastructure Program,cooccurs,sentence,15
+ORG,Targeted Section 3 Labor Hours,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,15
+ORG,Local Government Houston,TX_COUNTY,Harris County,cooccurs,sentence,15
+ORG,Multifamily Units 0 Beneficiaries,TX_COUNTY,Harris County,cooccurs,sentence,15
+ORG,Clearance and Demolition,TX_COUNTY,Harris County,cooccurs,sentence,15
+ORG,Improvements-Non Covered,TX_COUNTY,Bastrop County,cooccurs,sentence,14
+ORG,FEMA,TX_COUNTY,Trinity County,cooccurs,sentence,14
+ORG,Sewer Lines,TX_COUNTY,Hardin County,cooccurs,sentence,14
+ORG,Texas Avenue,TX_COUNTY,Wharton County,cooccurs,sentence,14
+ORG,GLO,TX_COUNTY,Waller County,cooccurs,sentence,14
+ORG,HMP,TX_COUNTY,Waller County,cooccurs,sentence,14
+ORG,TDEM,TX_COUNTY,San Jacinto County,cooccurs,sentence,14
+ORG,GLO,TX_COUNTY,San Jacinto County,cooccurs,sentence,14
+ORG,HMP,TX_COUNTY,San Jacinto County,cooccurs,sentence,14
+ORG,TDEM,TX_COUNTY,Polk County,cooccurs,sentence,14
+ORG,GLO,TX_COUNTY,Polk County,cooccurs,sentence,14
+ORG,HMP,TX_COUNTY,Polk County,cooccurs,sentence,14
+ORG,TDEM,TX_COUNTY,Goliad County,cooccurs,sentence,14
+ORG,GLO,TX_COUNTY,Goliad County,cooccurs,sentence,14
+ORG,HMP,TX_COUNTY,Goliad County,cooccurs,sentence,14
+ORG,TDEM,TX_COUNTY,Marion County,cooccurs,sentence,14
+ORG,GLO,TX_COUNTY,Marion County,cooccurs,sentence,14
+ORG,HMP,TX_COUNTY,Marion County,cooccurs,sentence,14
+ORG,FEMA,TX_COUNTY,Kleberg County,cooccurs,sentence,14
+ORG,TDEM,TX_COUNTY,Kleberg County,cooccurs,sentence,14
+ORG,HMP,TX_COUNTY,Kleberg County,cooccurs,sentence,14
+ORG,Local Government,TX_COUNTY,Dewitt County,cooccurs,sentence,14
+DISASTER,Hurricane Rita,TX_COUNTY,Jefferson County,cooccurs,sentence,14
+ORG,Street Improvements,TX_COUNTY,Harris County,cooccurs,sentence,14
+ORG,Area Benefit (Survey,TX_COUNTY,Leon County,cooccurs,sentence,14
+ORG,Project Number,TX_COUNTY,Newton County,cooccurs,sentence,14
+ORG,Date Total Projected Budget,TX_COUNTY,San Jacinto County,cooccurs,sentence,14
+ORG,NON-HOUSING Projected End Date,DISASTER,Hurricane Ike,cooccurs,sentence,14
+ORG,Date Total Projected Budget,TX_COUNTY,Cameron County,cooccurs,sentence,14
+ORG,Completed Activity Description,TX_COUNTY,Robertson County,cooccurs,sentence,14
+ORG,GLO,TX_COUNTY,Matagorda County,cooccurs,sentence,14
+ORG,Affirmatively Further Fair Housing (AFFH,TX_COUNTY,Shelby County,cooccurs,sentence,14
+ORG,Fair Housing Planning,TX_COUNTY,Shelby County,cooccurs,sentence,14
+ORG,Fair Housing Planning,TX_COUNTY,San Augustine County,cooccurs,sentence,14
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Nacogdoches County,cooccurs,sentence,14
+ORG,Public Facilities,TX_COUNTY,Upshur County,cooccurs,sentence,14
+ORG,Direct Benefit,TX_COUNTY,Chambers County,cooccurs,sentence,14
+ORG,UN,TX_COUNTY,Upshur County,cooccurs,sentence,14
+ORG,Area Benefit (Survey,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,14
+ORG,Texas Department of Housing and Community Affairs No Accomplishments Performance Measures,TX_COUNTY,Galveston County,cooccurs,sentence,14
+ORG,Texas Department of Housing and Community Affairs No Accomplishments Performance Measures,TX_COUNTY,Montgomery County,cooccurs,sentence,14
+DISASTER,Hurricane Ike,TX_COUNTY,San Jacinto County,cooccurs,sentence,14
+DISASTER,Hurricane Ike,TX_COUNTY,Rusk County,cooccurs,sentence,14
+ORG,WWTP,DISASTER,Hurricane Dolly,cooccurs,sentence,14
+ORG,Street Improvements,TX_COUNTY,Hardin County,cooccurs,sentence,14
+ORG,COCC,TX_COUNTY,San Jacinto County,cooccurs,sentence,14
+ORG,Urgent Need,TX_COUNTY,San Jacinto County,cooccurs,sentence,14
+ORG,City of Total Projected Budget,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,14
+ORG,Urgent Need,PROGRAM,Homeowner Reimbursement Program,cooccurs,sentence,14
+ORG,Non-Match Funds,TX_COUNTY,Willacy County,cooccurs,sentence,14
+ORG,Flood and Drainage,TX_COUNTY,Grimes County,cooccurs,sentence,14
+ORG,MIT - Public Facilities,TX_COUNTY,Polk County,cooccurs,sentence,13
+ORG,SCADA,DISASTER,Hurricane Harvey,cooccurs,sentence,13
+ORG,Improvements-Non Covered,TX_COUNTY,Kleberg County,cooccurs,sentence,13
+ORG,Improvements-Non Covered,TX_COUNTY,Jim Wells County,cooccurs,sentence,13
+ORG,MIT - Public Facilities,TX_COUNTY,Jim Wells County,cooccurs,sentence,13
+ORG,TDEM,TX_COUNTY,Gonzales County,cooccurs,sentence,13
+ORG,GLO,TX_COUNTY,Gonzales County,cooccurs,sentence,13
+ORG,HMP,TX_COUNTY,Gonzales County,cooccurs,sentence,13
+ORG,Sewer Lines,TX_COUNTY,Jefferson County,cooccurs,sentence,13
+ORG,TDEM,TX_COUNTY,Sabine County,cooccurs,sentence,13
+ORG,GLO,TX_COUNTY,Sabine County,cooccurs,sentence,13
+ORG,HMP,TX_COUNTY,Sabine County,cooccurs,sentence,13
+ORG,Sewer Facilities,TX_COUNTY,Grimes County,cooccurs,sentence,13
+ORG,TDEM,TX_COUNTY,Houston County,cooccurs,sentence,13
+ORG,TDEM,TX_COUNTY,Coryell County,cooccurs,sentence,13
+ORG,HMP,TX_COUNTY,Coryell County,cooccurs,sentence,13
+DISASTER,Hurricane Rita,TX_COUNTY,Hardin County,cooccurs,sentence,13
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Tyler County,cooccurs,sentence,13
+ORG,Date Total Projected Budget,TX_COUNTY,Starr County,cooccurs,sentence,13
+ORG,Date Total Projected Budget,TX_COUNTY,Polk County,cooccurs,sentence,13
+ORG,Project Number,TX_COUNTY,Grimes County,cooccurs,sentence,13
+ORG,Completed Activity Actual End Date,TX_COUNTY,Liberty County,cooccurs,sentence,13
+ORG,Completed Activity Description,TX_COUNTY,Fort Bend County,cooccurs,sentence,13
+ORG,GLO,TX_COUNTY,Tyler County,cooccurs,sentence,13
+ORG,Affirmatively Further Fair Housing (AFFH,TX_COUNTY,San Augustine County,cooccurs,sentence,13
+ORG,Fair Housing Planning,TX_COUNTY,Angelina County,cooccurs,sentence,13
+ORG,GLO,TX_COUNTY,County Of Brazoria County,cooccurs,sentence,13
+ORG,Public Facilities,TX_COUNTY,Milam County,cooccurs,sentence,13
+ORG,UN,TX_COUNTY,Brazos County,cooccurs,sentence,13
+DISASTER,Hurricane Ike,TX_COUNTY,Tyler County,cooccurs,sentence,13
+ORG,Texas Department of Housing and Community Affairs No Accomplishments Performance Measures,TX_COUNTY,Chambers County,cooccurs,sentence,13
+ORG,Texas Department of Housing and Community Affairs No Accomplishments Performance Measures,TX_COUNTY,Fort Bend County,cooccurs,sentence,13
+ORG,DRS,TX_COUNTY,Madison County,cooccurs,sentence,13
+ORG,KRW,TX_COUNTY,Galveston County,cooccurs,sentence,13
+ORG,Affordable Rental Housing,TX_COUNTY,Galveston County,cooccurs,sentence,13
+ORG,GLO,TX_COUNTY,Milam County,cooccurs,sentence,13
+ORG,Housing Assistance Program,DISASTER,Ike,cooccurs,sentence,13
+ORG,Texas General Land Office NA Benefit Report Type,PROGRAM,Local Infrastructure Program,cooccurs,sentence,13
+ORG,UN,TX_COUNTY,Newton County,cooccurs,sentence,13
+ORG,Urgent Need,TX_COUNTY,Montgomery County,cooccurs,sentence,13
+ORG,Urgent Need,TX_COUNTY,Fort Bend County,cooccurs,sentence,13
+ORG,Project Title,TX_COUNTY,Montgomery County,cooccurs,sentence,13
+ORG,Flood and Drainage,TX_COUNTY,County Of Bastrop County,cooccurs,sentence,12
+ORG,Improvements-Non Covered,TX_COUNTY,Hardin County,cooccurs,sentence,12
+ORG,Improvements-Non Covered,TX_COUNTY,Refugio County,cooccurs,sentence,12
+ORG,Sewer Facilities & Water Facilities,DISASTER,Hurricane Harvey,cooccurs,sentence,12
+ORG,Smith Street,DISASTER,Hurricane Harvey,cooccurs,sentence,12
+ORG,Improvements-Non Covered,TX_COUNTY,Galveston County,cooccurs,sentence,12
+ORG,Improvements-Non Covered,TX_COUNTY,Eastland County,cooccurs,sentence,12
+ORG,MIT - Public Facilities,TX_COUNTY,Eastland County,cooccurs,sentence,12
+ORG,FEMA,TX_COUNTY,Waller County,cooccurs,sentence,12
+ORG,TDEM,TX_COUNTY,Waller County,cooccurs,sentence,12
+ORG,Improvements- Non Covered Projects Texas General Land Office,TX_COUNTY,Matagorda County,cooccurs,sentence,12
+ORG,TDEM,TX_COUNTY,Galveston County,cooccurs,sentence,12
+ORG,HMP,TX_COUNTY,Galveston County,cooccurs,sentence,12
+ORG,TDEM,TX_COUNTY,Travis County,cooccurs,sentence,12
+ORG,Corpus Christi Street,TX_COUNTY,Harris County,cooccurs,sentence,12
+ORG,Area Benefit (Survey,TX_COUNTY,Waller County,cooccurs,sentence,12
+ORG,Completed Activity Actual End Date,TX_COUNTY,Willacy County,cooccurs,sentence,12
+ORG,Completed Activity Actual End Date,TX_COUNTY,Polk County,cooccurs,sentence,12
+ORG,Project Number,TX_COUNTY,Liberty County,cooccurs,sentence,12
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Chambers County,cooccurs,sentence,12
+ORG,Date Total Projected Budget,TX_COUNTY,Montgomery County,cooccurs,sentence,12
+ORG,Date Total Projected Budget,TX_COUNTY,Hidalgo County,cooccurs,sentence,12
+ORG,Water Facilities,TX_COUNTY,County Of Nacogdoches County,cooccurs,sentence,12
+DISASTER,Harvey,TX_COUNTY,Orange County,cooccurs,sentence,12
+ORG,Affirmatively Further Fair Housing (AFFH,TX_COUNTY,Angelina County,cooccurs,sentence,12
+ORG,TX,TX_COUNTY,San Jacinto County,cooccurs,sentence,12
+ORG,TX,TX_COUNTY,Montgomery County,cooccurs,sentence,12
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Willacy County,cooccurs,sentence,12
+ORG,DRS,TX_COUNTY,Burleson County,cooccurs,sentence,12
+ORG,Direct Benefit,TX_COUNTY,Willacy County,cooccurs,sentence,12
+ORG,ADA,TX_COUNTY,Robertson County,cooccurs,sentence,12
+ORG,Area Benefit (Survey,TX_COUNTY,Refugio County,cooccurs,sentence,12
+ORG,Area Benefit (Survey,TX_COUNTY,Marion County,cooccurs,sentence,12
+ORG,Texas Department of Housing and Community Affairs No Accomplishments Performance Measures,TX_COUNTY,Hidalgo County,cooccurs,sentence,12
+ORG,Texas Department of Housing and Community Affairs No Accomplishments Performance Measures,TX_COUNTY,Cameron County,cooccurs,sentence,12
+ORG,Texas Department of Housing and Community Affairs No Accomplishments Performance Measures,TX_COUNTY,Liberty County,cooccurs,sentence,12
+ORG,Clearance and Demolition,DISASTER,Hurricane Ike,cooccurs,sentence,12
+DISASTER,Hurricane Ike,FEMA_DECLARATION,1791,cooccurs,sentence,12
+DISASTER,Hurricane Ike,FEMA_DECLARATION,1780,cooccurs,sentence,12
+DISASTER,Hurricane Dolly,FEMA_DECLARATION,1791,cooccurs,sentence,12
+DISASTER,Hurricane Dolly,FEMA_DECLARATION,1780,cooccurs,sentence,12
+PROGRAM,Homeowner Assistance Program,DISASTER,Harvey,cooccurs,sentence,12
+ORG,Public Facilities,TX_COUNTY,Hardin County,cooccurs,sentence,12
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Waller County,cooccurs,sentence,12
+DISASTER,Ike,TX_COUNTY,Sabine County,cooccurs,sentence,12
+ORG,Local Government Harris,TX_COUNTY,Harris County,cooccurs,sentence,12
+ORG,Non-Match Funds,TX_COUNTY,Orange County,cooccurs,sentence,12
+ORG,Local Government,TX_COUNTY,Willacy County,cooccurs,sentence,12
+ORG,Sewer Facilities,TX_COUNTY,Fort Bend County,cooccurs,sentence,12
+ORG,City of Total Projected Budget,TX_COUNTY,Fort Bend County,cooccurs,sentence,12
+ORG,Texas GLO,TX_COUNTY,Willacy County,cooccurs,sentence,12
+ORG,Direct Benefit,TX_COUNTY,Bastrop County,cooccurs,sentence,11
+ORG,Improvements-Non Covered,TX_COUNTY,Waller County,cooccurs,sentence,11
+ORG,Improvements-Non Covered,TX_COUNTY,Wharton County,cooccurs,sentence,11
+DISASTER,Hurricane Harvey,TX_COUNTY,Sabine County,cooccurs,sentence,11
+ORG,Improvements-Non Covered,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,11
+ORG,MIT - Public Facilities,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,11
+ORG,MIT - Public Facilities,TX_COUNTY,San Patricio County,cooccurs,sentence,11
+ORG,Improvements-Non Covered,TX_COUNTY,Harris County,cooccurs,sentence,11
+ORG,MIT - Public Facilities,TX_COUNTY,Harris County,cooccurs,sentence,11
+ORG,Improvements-Non Covered,TX_COUNTY,Hidalgo County,cooccurs,sentence,11
+ORG,TDEM,TX_COUNTY,Eastland County,cooccurs,sentence,11
+ORG,GLO,TX_COUNTY,Eastland County,cooccurs,sentence,11
+ORG,HMP,TX_COUNTY,Eastland County,cooccurs,sentence,11
+ORG,Sewer Lines,TX_COUNTY,Fort Bend County,cooccurs,sentence,11
+ORG,Water Plant,TX_COUNTY,Polk County,cooccurs,sentence,11
+ORG,SMI,TX_COUNTY,Kleberg County,cooccurs,sentence,11
+ORG,Standardized Area Median Income,TX_COUNTY,Kleberg County,cooccurs,sentence,11
+ORG,TDEM,TX_COUNTY,Milam County,cooccurs,sentence,11
+ORG,HMP,TX_COUNTY,Milam County,cooccurs,sentence,11
+ORG,IRC,TX_COUNTY,Coryell County,cooccurs,sentence,11
+ORG,Planning Activities,TX_COUNTY,Coryell County,cooccurs,sentence,11
+ORG,TDEM,TX_COUNTY,Cooke County,cooccurs,sentence,11
+ORG,GLO,TX_COUNTY,Cooke County,cooccurs,sentence,11
+ORG,HMP,TX_COUNTY,Cooke County,cooccurs,sentence,11
+ORG,TDEM,TX_COUNTY,Lavaca County,cooccurs,sentence,11
+ORG,GLO,TX_COUNTY,Lavaca County,cooccurs,sentence,11
+ORG,HMP,TX_COUNTY,Lavaca County,cooccurs,sentence,11
+ORG,Local Government,TX_COUNTY,Kleberg County,cooccurs,sentence,11
+ORG,Sewer Lines,TX_COUNTY,Bastrop County,cooccurs,sentence,11
+ORG,Completed Activity Description,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,11
+ORG,Texas - GLO LOCCS Authorized,DISASTER,Hurricane Rita,cooccurs,sentence,11
+ORG,Urgent Need,DISASTER,Hurricane Rita,cooccurs,sentence,11
+DISASTER,Ike,TX_COUNTY,County Of Galveston County,cooccurs,sentence,11
+ORG,Area Benefit (Census,TX_COUNTY,Robertson County,cooccurs,sentence,11
+ORG,Completed Activity Description,TX_COUNTY,Liberty County,cooccurs,sentence,11
+ORG,Area Benefit (Census,TX_COUNTY,Orange County,cooccurs,sentence,11
+ORG,Area Benefit (Census,TX_COUNTY,Hardin County,cooccurs,sentence,11
+ORG,Area Benefit (Census,TX_COUNTY,Houston County,cooccurs,sentence,11
+ORG,Area Benefit (Census,TX_COUNTY,Nacogdoches County,cooccurs,sentence,11
+ORG,Project Number,TX_COUNTY,Starr County,cooccurs,sentence,11
+ORG,Date Total Projected Budget,TX_COUNTY,Jefferson County,cooccurs,sentence,11
+ORG,Date Total Projected Budget,TX_COUNTY,Orange County,cooccurs,sentence,11
+ORG,Project Number,TX_COUNTY,Matagorda County,cooccurs,sentence,11
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Liberty County,cooccurs,sentence,11
+ORG,Project Number,TX_COUNTY,Chambers County,cooccurs,sentence,11
+ORG,Completed Activity Actual End Date,DISASTER,Hurricane Ike,cooccurs,sentence,11
+ORG,Completed Activity Actual End Date,TX_COUNTY,Cameron County,cooccurs,sentence,11
+ORG,Post Office Street,TX_COUNTY,County Of Starr County,cooccurs,sentence,11
+ORG,Hot Mix Asphalt Concrete,TX_COUNTY,Starr County,cooccurs,sentence,11
+ORG,Urgent Need,TX_COUNTY,Matagorda County,cooccurs,sentence,11
+ORG,Public Facilities,TX_COUNTY,Victoria County,cooccurs,sentence,11
+ORG,Public Facilities,TX_COUNTY,Panola County,cooccurs,sentence,11
+ORG,Public Facilities,TX_COUNTY,Jim Hogg County,cooccurs,sentence,11
+ORG,DRS,TX_COUNTY,Angelina County,cooccurs,sentence,11
+ORG,Date 01/01/2010 Area Benefit (Survey,TX_COUNTY,San Augustine County,cooccurs,sentence,11
+ORG,Area Benefit (Survey,TX_COUNTY,Jim Hogg County,cooccurs,sentence,11
+ORG,Properties 0,TX_COUNTY,Galveston County,cooccurs,sentence,11
+ORG,Galveston Total Projected Budget,DISASTER,Ike,cooccurs,sentence,11
+ORG,Area Benefit (Census,TX_COUNTY,Galveston County,cooccurs,sentence,11
+ORG,Public Facilities,TX_COUNTY,Gonzales County,cooccurs,sentence,11
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Galveston County,cooccurs,sentence,11
+ORG,County Total Projected Budget,PROGRAM,Homeowner Reimbursement Program,cooccurs,sentence,11
+ORG,Flood and Drainage,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,11
+ORG,Local Government,TX_COUNTY,Milam County,cooccurs,sentence,11
+ORG,TX,TX_COUNTY,Aransas County,cooccurs,sentence,11
+ORG,Non-Match Funds,PROGRAM,Homeowner Reimbursement Program,cooccurs,sentence,11
+ORG,Urgent Need Texas General Land Office Total Projected Budget,DISASTER,Tropical Storm Imelda,cooccurs,sentence,11
+ORG,Local Government,TX_COUNTY,Chambers County,cooccurs,sentence,11
+ORG,Drainage Facilities,TX_COUNTY,Montgomery County,cooccurs,sentence,11
+ORG,Restricted Balance,TX_COUNTY,Montgomery County,cooccurs,sentence,11
+ORG,Restricted Balance,TX_COUNTY,Fort Bend County,cooccurs,sentence,11
+ORG,Restricted Balance,TX_COUNTY,Brazoria County,cooccurs,sentence,11
+ORG,County Road,TX_COUNTY,Jasper County,cooccurs,sentence,11
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Bastrop County,cooccurs,sentence,10
+ORG,Improvements-Non Covered,TX_COUNTY,Jefferson County,cooccurs,sentence,10
+ORG,MIT - Rehabilitation,DISASTER,Tropical Storm Imelda,cooccurs,sentence,10
+ORG,Improvements-Non Covered,TX_COUNTY,Dewitt County,cooccurs,sentence,10
+DISASTER,Hurricane Harvey,TX_COUNTY,Kleberg County,cooccurs,sentence,10
+DISASTER,Hurricane Harvey,TX_COUNTY,Refugio County,cooccurs,sentence,10
+ORG,Improvements-Non Covered,TX_COUNTY,Matagorda County,cooccurs,sentence,10
+DISASTER,Hurricane Harvey,TX_COUNTY,Jim Wells County,cooccurs,sentence,10
+ORG,FEMA,TX_COUNTY,Dewitt County,cooccurs,sentence,10
+ORG,Sewer Lines,TX_COUNTY,Refugio County,cooccurs,sentence,10
+ORG,TDEM,TX_COUNTY,Dallas County,cooccurs,sentence,10
+ORG,GLO,TX_COUNTY,Dallas County,cooccurs,sentence,10
+ORG,HMP,TX_COUNTY,Dallas County,cooccurs,sentence,10
+ORG,NCP,TX_COUNTY,Dewitt County,cooccurs,sentence,10
+ORG,Local Government,TX_COUNTY,Tyler County,cooccurs,sentence,10
+ORG,0.0 Total Projected,TX_COUNTY,Bastrop County,cooccurs,sentence,10
+ORG,0.0 Total Projected,TX_COUNTY,Tyler County,cooccurs,sentence,10
+ORG,SF 0005,TX_COUNTY,Grimes County,cooccurs,sentence,10
+ORG,Non Covered Projects,TX_COUNTY,Grimes County,cooccurs,sentence,10
+ORG,Sewer Facilities,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,10
+ORG,Non Covered Projects,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,10
+ORG,Improvements- Non Covered Projects,TX_COUNTY,Jasper County,cooccurs,sentence,10
+ORG,Improvements- Non Covered Projects,TX_COUNTY,San Augustine County,cooccurs,sentence,10
+ORG,Improvements- Non Covered Projects,TX_COUNTY,Hidalgo County,cooccurs,sentence,10
+ORG,Sewer Facilities,TX_COUNTY,Newton County,cooccurs,sentence,10
+ORG,DETCOG,TX_COUNTY,Newton County,cooccurs,sentence,10
+ORG,Sewer Facilities & Flood and Drainage,TX_COUNTY,Newton County,cooccurs,sentence,10
+ORG,NCP,TX_COUNTY,Hidalgo County,cooccurs,sentence,10
+ORG,0.0 Total Projected,TX_COUNTY,Hidalgo County,cooccurs,sentence,10
+ORG,Texas Department of Housing and Community Affairs,DISASTER,Hurricane Rita,cooccurs,sentence,10
+ORG,Affordable Rental Housing Under Way Activity Description,DISASTER,Hurricane Ike,cooccurs,sentence,10
+ORG,Completed Activity Description,TX_COUNTY,Harrison County,cooccurs,sentence,10
+ORG,Project Number,TX_COUNTY,Willacy County,cooccurs,sentence,10
+ORG,Project Number,TX_COUNTY,Walker County,cooccurs,sentence,10
+ORG,Project Number,TX_COUNTY,San Jacinto County,cooccurs,sentence,10
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Polk County,cooccurs,sentence,10
+ORG,Project Number,TX_COUNTY,Polk County,cooccurs,sentence,10
+ORG,Date Total Projected Budget,DISASTER,Hurricane Dolly,cooccurs,sentence,10
+ORG,Completed Activity Description,TX_COUNTY,Upshur County,cooccurs,sentence,10
+ORG,Water Facilities,TX_COUNTY,Nacogdoches County,cooccurs,sentence,10
+ORG,GLO,TX_COUNTY,County Of Tyler County,cooccurs,sentence,10
+ORG,Street Improvements,TX_COUNTY,County Of Orange County,cooccurs,sentence,10
+ORG,SETRPC,DISASTER,Ike,cooccurs,sentence,10
+ORG,Completed Activity Description,TX_COUNTY,Rusk County,cooccurs,sentence,10
+ORG,GLO,TX_COUNTY,Cameron County,cooccurs,sentence,10
+ORG,Public Facilities,TX_COUNTY,Anderson County,cooccurs,sentence,10
+ORG,Date 01/01/2010 Area Benefit (Survey,TX_COUNTY,Nueces County,cooccurs,sentence,10
+ORG,Date 06/01/2010 Area Benefit (Survey,TX_COUNTY,Burleson County,cooccurs,sentence,10
+ORG,DRS,TX_COUNTY,Robertson County,cooccurs,sentence,10
+DISASTER,Hurricane Ike,TX_COUNTY,Upshur County,cooccurs,sentence,10
+DISASTER,Hurricane Dolly,TX_COUNTY,Starr County,cooccurs,sentence,10
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Aransas County,cooccurs,sentence,10
+ORG,Flood and Drainage,TX_COUNTY,Aransas County,cooccurs,sentence,10
+ORG,Street Improvements,TX_COUNTY,San Jacinto County,cooccurs,sentence,10
+ORG,Flood and Drainage,TX_COUNTY,San Patricio County,cooccurs,sentence,10
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Nueces County,cooccurs,sentence,10
+PROGRAM,Local Infrastructure Program,TX_COUNTY,San Patricio County,cooccurs,sentence,10
+ORG,Affordable Rental Housing Under Way Activity Description,DISASTER,Hurricane Harvey,cooccurs,sentence,10
+ORG,HMAC,TX_COUNTY,Walker County,cooccurs,sentence,10
+ORG,HMAC,TX_COUNTY,Austin County,cooccurs,sentence,10
+ORG,Texas GLO,TX_COUNTY,Orange County,cooccurs,sentence,10
+ORG,SI 0006 Construction,TX_COUNTY,Newton County,cooccurs,sentence,10
+ORG,SI 0006 Construction,TX_COUNTY,San Jacinto County,cooccurs,sentence,10
+ORG,SI 0006 Construction,TX_COUNTY,Nueces County,cooccurs,sentence,10
+ORG,SI 0006 Construction,TX_COUNTY,Tyler County,cooccurs,sentence,10
+ORG,Local Government,TX_COUNTY,Nueces County,cooccurs,sentence,10
+ORG,Planning/Administration or Unprogrammed Funds,PROGRAM,Local Infrastructure Program,cooccurs,sentence,10
+ORG,TX,TX_COUNTY,Nueces County,cooccurs,sentence,10
+ORG,LF,TX_COUNTY,Refugio County,cooccurs,sentence,10
+ORG,Non-Match Funds,TX_COUNTY,Chambers County,cooccurs,sentence,10
+ORG,Total Funds,PROGRAM,Affordable Rental Program,cooccurs,sentence,10
+ORG,COCC,TX_COUNTY,Montgomery County,cooccurs,sentence,10
+ORG,Project Title,TX_COUNTY,Newton County,cooccurs,sentence,10
+ORG,Flood & Drainage,TX_COUNTY,Hardin County,cooccurs,sentence,9
+ORG,MIT - Public Facilities,TX_COUNTY,Waller County,cooccurs,sentence,9
+ORG,MIT - Planning and Capacity Building Under Way Activity Description,TX_COUNTY,Waller County,cooccurs,sentence,9
+ORG,Hazard Mitigation Grant Program,TX_COUNTY,Tyler County,cooccurs,sentence,9
+ORG,Project Title,TX_COUNTY,Tyler County,cooccurs,sentence,9
+DISASTER,Hurricane Harvey,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,9
+ORG,State Highway,TX_COUNTY,Colorado County,cooccurs,sentence,9
+ORG,TX,TX_COUNTY,Colorado County,cooccurs,sentence,9
+ORG,Flood and Drainage Facilities,TX_COUNTY,Newton County,cooccurs,sentence,9
+ORG,HMAC,TX_COUNTY,Refugio County,cooccurs,sentence,9
+ORG,TDEM,TX_COUNTY,San Augustine County,cooccurs,sentence,9
+ORG,GLO,TX_COUNTY,San Augustine County,cooccurs,sentence,9
+ORG,HMP,TX_COUNTY,San Augustine County,cooccurs,sentence,9
+ORG,TDEM,TX_COUNTY,Fort Bend County,cooccurs,sentence,9
+ORG,HMP,TX_COUNTY,Fort Bend County,cooccurs,sentence,9
+ORG,Flood & Drainage,TX_COUNTY,Austin County,cooccurs,sentence,9
+ORG,SF 0005,TX_COUNTY,Gonzales County,cooccurs,sentence,9
+ORG,Sewer Facilities,TX_COUNTY,Gonzales County,cooccurs,sentence,9
+ORG,Non Covered Projects,TX_COUNTY,Gonzales County,cooccurs,sentence,9
+ORG,Water Facilities,TX_COUNTY,San Augustine County,cooccurs,sentence,9
+ORG,Water Facilities,TX_COUNTY,Sabine County,cooccurs,sentence,9
+ORG,0.0 Total Projected,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,9
+PROGRAM,Homeowner Assistance Program,DISASTER,Hurricane Rita,cooccurs,sentence,9
+DISASTER,Hurricane Rita,TX_COUNTY,Tyler County,cooccurs,sentence,9
+ORG,Affirmatively Further Fair Housing (AFFH,TX_COUNTY,Newton County,cooccurs,sentence,9
+ORG,Completed Activity Description,TX_COUNTY,Angelina County,cooccurs,sentence,9
+ORG,COCC,TX_COUNTY,Kleberg County,cooccurs,sentence,9
+ORG,Date Total Projected Budget,TX_COUNTY,Hardin County,cooccurs,sentence,9
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Willacy County,cooccurs,sentence,9
+ORG,Date Total Projected Budget,TX_COUNTY,Tyler County,cooccurs,sentence,9
+ORG,Date Total Projected Budget,TX_COUNTY,Matagorda County,cooccurs,sentence,9
+ORG,Project Number,TX_COUNTY,Leon County,cooccurs,sentence,9
+ORG,Project Number,TX_COUNTY,Kleberg County,cooccurs,sentence,9
+ORG,Project Number,TX_COUNTY,Hidalgo County,cooccurs,sentence,9
+ORG,Date Total Projected Budget,TX_COUNTY,Cherokee County,cooccurs,sentence,9
+ORG,Completed Activity Actual End Date,TX_COUNTY,Chambers County,cooccurs,sentence,9
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Cameron County,cooccurs,sentence,9
+ORG,Project Number,TX_COUNTY,Burleson County,cooccurs,sentence,9
+ORG,Completed Activity Actual End Date,TX_COUNTY,Hidalgo County,cooccurs,sentence,9
+ORG,Urgent Need,TX_COUNTY,Angelina County,cooccurs,sentence,9
+ORG,Southeast Texas Regional Planning Commission,DISASTER,Ike,cooccurs,sentence,9
+DISASTER,Ike,TX_COUNTY,Cameron County,cooccurs,sentence,9
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Sabine County,cooccurs,sentence,9
+ORG,Volunteer Fire Department,TX_COUNTY,Jefferson County,cooccurs,sentence,9
+ORG,Public Facilities,TX_COUNTY,Marion County,cooccurs,sentence,9
+ORG,Date 01/01/2010 Area Benefit (Survey,TX_COUNTY,Brazos County,cooccurs,sentence,9
+ORG,Area Benefit (Census,DISASTER,Hurricane Location,cooccurs,sentence,9
+ORG,COCC,TX_COUNTY,Matagorda County,cooccurs,sentence,9
+ORG,COCC,TX_COUNTY,Jefferson County,cooccurs,sentence,9
+ORG,COCC,TX_COUNTY,Hardin County,cooccurs,sentence,9
+ORG,Project Title,TX_COUNTY,Bastrop County,cooccurs,sentence,9
+ORG,Pine Forest,PROGRAM,Local Infrastructure Program,cooccurs,sentence,9
+ORG,Street Improvements,TX_COUNTY,Matagorda County,cooccurs,sentence,9
+ORG,Buyout Program,TX_COUNTY,Orange County,cooccurs,sentence,9
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Grimes County,cooccurs,sentence,9
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Newton County,cooccurs,sentence,9
+ORG,Local Government,TX_COUNTY,San Jacinto County,cooccurs,sentence,9
+ORG,SI 0006 Construction,TX_COUNTY,Liberty County,cooccurs,sentence,9
+ORG,HMAC,TX_COUNTY,Waller County,cooccurs,sentence,9
+ORG,HMAC,TX_COUNTY,Jasper County,cooccurs,sentence,9
+ORG,HMAC,TX_COUNTY,Polk County,cooccurs,sentence,9
+ORG,Sewer Facilities,TX_COUNTY,San Jacinto County,cooccurs,sentence,9
+ORG,Non-Match Funds,PROGRAM,Affordable Rental Program,cooccurs,sentence,9
+ORG,TX,PROGRAM,Affordable Rental Program,cooccurs,sentence,9
+DISASTER,Ike,TX_COUNTY,Hidalgo County,cooccurs,sentence,9
+ORG,Street Improvements,TX_COUNTY,Austin County,cooccurs,sentence,9
+ORG,Flood and Drainage,TX_COUNTY,Montgomery County,cooccurs,sentence,9
+ORG,Completed Activity Description,TX_COUNTY,Jim Wells County,cooccurs,sentence,9
+ORG,COCC,TX_COUNTY,Jasper County,cooccurs,sentence,9
+ORG,Project Title,TX_COUNTY,Hidalgo County,cooccurs,sentence,9
+ORG,Project Title,TX_COUNTY,Hays County,cooccurs,sentence,9
+ORG,Flood and Drainage,TX_COUNTY,Willacy County,cooccurs,sentence,9
+ORG,Area Benefit (Survey,TX_COUNTY,Bastrop County,cooccurs,sentence,8
+ORG,MIT - Public Facilities,TX_COUNTY,Hardin County,cooccurs,sentence,8
+ORG,Date 03/31/2020 Direct,DISASTER,Tropical Storm Imelda,cooccurs,sentence,8
+ORG,Hazard Mitigation Grant Program,TX_COUNTY,Dewitt County,cooccurs,sentence,8
+ORG,Project Title,TX_COUNTY,Dewitt County,cooccurs,sentence,8
+ORG,Hazard Mitigation Grant Program,TX_COUNTY,Bastrop County,cooccurs,sentence,8
+ORG,MIT - Public Facilities,TX_COUNTY,Refugio County,cooccurs,sentence,8
+ORG,FEMA,TX_COUNTY,Falls County,cooccurs,sentence,8
+ORG,FEMA,TX_COUNTY,Cameron County,cooccurs,sentence,8
+ORG,FEMA,TX_COUNTY,Red River County,cooccurs,sentence,8
+ORG,FEMA,TX_COUNTY,Tyler County,cooccurs,sentence,8
+ORG,Sewer Lines,TX_COUNTY,Guadalupe County,cooccurs,sentence,8
+ORG,Sewer Lines,TX_COUNTY,Madison County,cooccurs,sentence,8
+ORG,FEMA,TX_COUNTY,Caldwell County,cooccurs,sentence,8
+ORG,GLO,TX_COUNTY,Caldwell County,cooccurs,sentence,8
+ORG,FEMA,TX_COUNTY,Stephens County,cooccurs,sentence,8
+ORG,TDEM,TX_COUNTY,Stephens County,cooccurs,sentence,8
+ORG,GLO,TX_COUNTY,Stephens County,cooccurs,sentence,8
+ORG,HMP,TX_COUNTY,Stephens County,cooccurs,sentence,8
+ORG,FEMA,TX_COUNTY,Limestone County,cooccurs,sentence,8
+ORG,GLO,TX_COUNTY,Limestone County,cooccurs,sentence,8
+ORG,TDEM,TX_COUNTY,Leon County,cooccurs,sentence,8
+ORG,GLO,TX_COUNTY,Leon County,cooccurs,sentence,8
+ORG,HMP,TX_COUNTY,Leon County,cooccurs,sentence,8
+ORG,GLO,TX_COUNTY,Tarrant County,cooccurs,sentence,8
+ORG,TDEM,TX_COUNTY,Duval County,cooccurs,sentence,8
+ORG,GLO,TX_COUNTY,Duval County,cooccurs,sentence,8
+ORG,HMP,TX_COUNTY,Duval County,cooccurs,sentence,8
+ORG,Sewer Lines,TX_COUNTY,Chambers County,cooccurs,sentence,8
+ORG,Sewer Lines,TX_COUNTY,Leon County,cooccurs,sentence,8
+ORG,Sewer Lines,TX_COUNTY,Kleberg County,cooccurs,sentence,8
+ORG,Sewer Lines,TX_COUNTY,Austin County,cooccurs,sentence,8
+ORG,Public Improvement,TX_COUNTY,Hardin County,cooccurs,sentence,8
+ORG,Properties 0,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,8
+ORG,Direct Benefit,DISASTER,Hurricane Rita,cooccurs,sentence,8
+ORG,GLO,TX_COUNTY,Grimes County,cooccurs,sentence,8
+ORG,Salary Allocations Activity Progress Narrative,TX_COUNTY,Polk County,cooccurs,sentence,8
+ORG,Salary Allocations Activity Progress Narrative,TX_COUNTY,Liberty County,cooccurs,sentence,8
+ORG,Lift Station,TX_COUNTY,Galveston County,cooccurs,sentence,8
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Newton County,cooccurs,sentence,8
+ORG,Completed Activity Actual End Date,TX_COUNTY,Jefferson County,cooccurs,sentence,8
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Jefferson County,cooccurs,sentence,8
+ORG,Completed Activity Actual End Date,TX_COUNTY,Orange County,cooccurs,sentence,8
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Hidalgo County,cooccurs,sentence,8
+ORG,Project Number,TX_COUNTY,Harrison County,cooccurs,sentence,8
+ORG,Project Number,TX_COUNTY,Angelina County,cooccurs,sentence,8
+ORG,Planning Products,DISASTER,Ike,cooccurs,sentence,8
+ORG,CBCOG,TX_COUNTY,Kenedy County,cooccurs,sentence,8
+ORG,Completed Activity Description,TX_COUNTY,Washington County,cooccurs,sentence,8
+ORG,TX,TX_COUNTY,Shelby County,cooccurs,sentence,8
+DISASTER,Hurricane Ike,TX_COUNTY,Trinity County,cooccurs,sentence,8
+ORG,DRS,TX_COUNTY,Grimes County,cooccurs,sentence,8
+ORG,USGS National Land Cover Database,TX_COUNTY,Hidalgo County,cooccurs,sentence,8
+ORG,DRS,TX_COUNTY,Refugio County,cooccurs,sentence,8
+ORG,Flood and Drainage,TX_COUNTY,Hardin County,cooccurs,sentence,8
+ORG,City of Total Projected Budget,DISASTER,Harvey,cooccurs,sentence,8
+ORG,Project Title,TX_COUNTY,Liberty County,cooccurs,sentence,8
+ORG,Drainage Facilities,TX_COUNTY,Victoria County,cooccurs,sentence,8
+ORG,Public Facilities,TX_COUNTY,Aransas County,cooccurs,sentence,8
+ORG,Flood and Drainage,TX_COUNTY,Walker County,cooccurs,sentence,8
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Polk County,cooccurs,sentence,8
+ORG,Drainage Facilities,DISASTER,Ike,cooccurs,sentence,8
+DISASTER,Harvey,TX_COUNTY,Grimes County,cooccurs,sentence,8
+ORG,Public Improvement,TX_COUNTY,San Patricio County,cooccurs,sentence,8
+ORG,Lower Rio Grande Valley Floods,DISASTER,Ike,cooccurs,sentence,8
+ORG,Project Title,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,8
+ORG,Project Title,TX_COUNTY,Fort Bend County,cooccurs,sentence,8
+ORG,Project Title,TX_COUNTY,Travis County,cooccurs,sentence,8
+ORG,Project Number,TX_COUNTY,Bastrop County,cooccurs,sentence,7
+ORG,Project Number,TX_COUNTY,Eastland County,cooccurs,sentence,7
+ORG,Sewer Facilities & Water Facilities,TX_COUNTY,San Patricio County,cooccurs,sentence,7
+DISASTER,Hurricane Harvey,TX_COUNTY,San Augustine County,cooccurs,sentence,7
+ORG,MIT - Public Facilities,TX_COUNTY,Galveston County,cooccurs,sentence,7
+ORG,Restricted Balance,DISASTER,Hurricane Harvey,cooccurs,sentence,7
+ORG,TDEM,TX_COUNTY,Trinity County,cooccurs,sentence,7
+ORG,GLO,TX_COUNTY,Trinity County,cooccurs,sentence,7
+ORG,HMP,TX_COUNTY,Trinity County,cooccurs,sentence,7
+ORG,SMI,TX_COUNTY,Fort Bend County,cooccurs,sentence,7
+ORG,the State Standardized Area Median Income,TX_COUNTY,Fort Bend County,cooccurs,sentence,7
+ORG,Local Government,TX_COUNTY,Burleson County,cooccurs,sentence,7
+ORG,Sewer Lines,TX_COUNTY,Burleson County,cooccurs,sentence,7
+ORG,Sewer Lines,TX_COUNTY,Orange County,cooccurs,sentence,7
+ORG,Improvements- Non Covered Projects Palacios,TX_COUNTY,Grimes County,cooccurs,sentence,7
+ORG,SF 0005,TX_COUNTY,Kleberg County,cooccurs,sentence,7
+ORG,Improvements- Non Covered Projects Palacios,TX_COUNTY,Kleberg County,cooccurs,sentence,7
+ORG,Sewer Facilities,TX_COUNTY,Kleberg County,cooccurs,sentence,7
+ORG,Improvements- Non Covered Projects Palacios,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,7
+ORG,SF 0005,TX_COUNTY,Austin County,cooccurs,sentence,7
+ORG,Improvements- Non Covered Projects Palacios,TX_COUNTY,Austin County,cooccurs,sentence,7
+ORG,Sewer Facilities,TX_COUNTY,Austin County,cooccurs,sentence,7
+ORG,Non Covered Projects,TX_COUNTY,Austin County,cooccurs,sentence,7
+ORG,0.0 Total Projected,TX_COUNTY,San Patricio County,cooccurs,sentence,7
+ORG,Completed Activity Description,DISASTER,Rita,cooccurs,sentence,7
+DISASTER,Rita,TX_COUNTY,Jefferson County,cooccurs,sentence,7
+ORG,TX,TX_COUNTY,Liberty County,cooccurs,sentence,7
+ORG,Salary Allocations Activity Progress Narrative,TX_COUNTY,Orange County,cooccurs,sentence,7
+ORG,COCC,TX_COUNTY,County Of Galveston County,cooccurs,sentence,7
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Jefferson County,cooccurs,sentence,7
+ORG,Area Benefit (Census,TX_COUNTY,Leon County,cooccurs,sentence,7
+ORG,Area Benefit (Census,TX_COUNTY,Brooks County,cooccurs,sentence,7
+ORG,COCC,TX_COUNTY,Sabine County,cooccurs,sentence,7
+ORG,COCC,TX_COUNTY,Liberty County,cooccurs,sentence,7
+ORG,Project Number,TX_COUNTY,Jefferson County,cooccurs,sentence,7
+ORG,Project Number,TX_COUNTY,Orange County,cooccurs,sentence,7
+ORG,Date Total Projected Budget,TX_COUNTY,Robertson County,cooccurs,sentence,7
+ORG,Completed Activity Actual End Date,TX_COUNTY,Montgomery County,cooccurs,sentence,7
+ORG,Date Total Projected Budget,TX_COUNTY,Leon County,cooccurs,sentence,7
+ORG,Date Total Projected Budget,TX_COUNTY,Jasper County,cooccurs,sentence,7
+ORG,Project Number,TX_COUNTY,Fort Bend County,cooccurs,sentence,7
+ORG,Completed Activity Actual End Date,TX_COUNTY,Cherokee County,cooccurs,sentence,7
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Cherokee County,cooccurs,sentence,7
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Orange County,cooccurs,sentence,7
+ORG,WWTP,TX_COUNTY,Walker County,cooccurs,sentence,7
+ORG,Completed Activity Description,TX_COUNTY,Chambers County,cooccurs,sentence,7
+ORG,La Parra Avenue,TX_COUNTY,Kenedy County,cooccurs,sentence,7
+ORG,Water Facilities,TX_COUNTY,Liberty County,cooccurs,sentence,7
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Walker County,cooccurs,sentence,7
+ORG,Street Improvements,TX_COUNTY,Liberty County,cooccurs,sentence,7
+ORG,Completed Activity Description,TX_COUNTY,Shelby County,cooccurs,sentence,7
+ORG,Street Improvements,TX_COUNTY,County Of Newton County,cooccurs,sentence,7
+ORG,Completed Activity Description,TX_COUNTY,Brazos County,cooccurs,sentence,7
+ORG,Reinforced Concrete Pipe,TX_COUNTY,Hidalgo County,cooccurs,sentence,7
+ORG,COCC,TX_COUNTY,Tyler County,cooccurs,sentence,7
+ORG,DRS,TX_COUNTY,Shelby County,cooccurs,sentence,7
+ORG,Public Facilities,TX_COUNTY,Brooks County,cooccurs,sentence,7
+ORG,DRS,TX_COUNTY,Hardin County,cooccurs,sentence,7
+ORG,DRS,TX_COUNTY,Washington County,cooccurs,sentence,7
+ORG,DRS,TX_COUNTY,Anderson County,cooccurs,sentence,7
+ORG,FEMA,PROGRAM,Local Infrastructure Program,cooccurs,sentence,7
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Orange County,cooccurs,sentence,7
+ORG,Street Improvement,TX_COUNTY,Victoria County,cooccurs,sentence,7
+ORG,Buyout Program,TX_COUNTY,Tyler County,cooccurs,sentence,7
+ORG,Buyout Program,TX_COUNTY,San Jacinto County,cooccurs,sentence,7
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Sabine County,cooccurs,sentence,7
+PROGRAM,Local Infrastructure Program,TX_COUNTY,Chambers County,cooccurs,sentence,7
+ORG,County Total Projected Budget,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,7
+ORG,Sewer Facilities,DISASTER,Ike,cooccurs,sentence,7
+ORG,Water Facilities,TX_COUNTY,Refugio County,cooccurs,sentence,7
+ORG,Sewer Facilities,TX_COUNTY,Chambers County,cooccurs,sentence,7
+ORG,F&D 0006 Rehabilitation,TX_COUNTY,Galveston County,cooccurs,sentence,7
+ORG,Flood and Drainage Facilities,TX_COUNTY,Galveston County,cooccurs,sentence,7
+ORG,Flood and Drainage,TX_COUNTY,Galveston County,cooccurs,sentence,7
+ORG,HUD,TX_COUNTY,Montgomery County,cooccurs,sentence,7
+ORG,Pine Forest,TX_COUNTY,Orange County,cooccurs,sentence,7
+ORG,Clearance and Demolition,TX_COUNTY,Newton County,cooccurs,sentence,7
+ORG,Texas GLO,TX_COUNTY,Montgomery County,cooccurs,sentence,7
+ORG,Way Sewer Facilities,TX_COUNTY,Harris County,cooccurs,sentence,7
+ORG,Improvements-Non Covered,TX_COUNTY,Madison County,cooccurs,sentence,6
+ORG,MIT - Public Facilities,TX_COUNTY,Madison County,cooccurs,sentence,6
+ORG,Improvements-Non Covered,TX_COUNTY,Fort Bend County,cooccurs,sentence,6
+ORG,Flood & Drainage,TX_COUNTY,Jefferson County,cooccurs,sentence,6
+ORG,MIT - Public Facilities,TX_COUNTY,Wharton County,cooccurs,sentence,6
+ORG,MIT - Planning and Capacity Building Under Way Activity Description,TX_COUNTY,Lee County,cooccurs,sentence,6
+ORG,Improvements-Non Covered,TX_COUNTY,Grimes County,cooccurs,sentence,6
+ORG,FEMA,TX_COUNTY,County Of Archer County,cooccurs,sentence,6
+ORG,FEMA,TX_COUNTY,Rusk County,cooccurs,sentence,6
+ORG,FEMA,TX_COUNTY,County Of Jack County,cooccurs,sentence,6
+ORG,FEMA,TX_COUNTY,County Of Montague County,cooccurs,sentence,6
+ORG,FEMA,TX_COUNTY,County Of Young County,cooccurs,sentence,6
+ORG,Sewer Lines,TX_COUNTY,Harris County,cooccurs,sentence,6
+ORG,Local Government,TX_COUNTY,Coryell County,cooccurs,sentence,6
+ORG,Sewer Lines,TX_COUNTY,Coryell County,cooccurs,sentence,6
+ORG,Sewer Lines,TX_COUNTY,County Of Jim Wells County,cooccurs,sentence,6
+ORG,Sewer Lines,TX_COUNTY,County Of Dewitt County,cooccurs,sentence,6
+ORG,Sewer Lines,TX_COUNTY,San Jacinto County,cooccurs,sentence,6
+ORG,Sewer Lines,TX_COUNTY,Montgomery County,cooccurs,sentence,6
+ORG,Sewer Lines,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,6
+ORG,Sewer Lines,TX_COUNTY,Walker County,cooccurs,sentence,6
+ORG,RCP,TX_COUNTY,Harris County,cooccurs,sentence,6
+ORG,TDEM,TX_COUNTY,Mclennan County,cooccurs,sentence,6
+ORG,GLO,TX_COUNTY,Mclennan County,cooccurs,sentence,6
+ORG,HMP,TX_COUNTY,Mclennan County,cooccurs,sentence,6
+ORG,FEMA,TX_COUNTY,Aransas County,cooccurs,sentence,6
+ORG,GLO,TX_COUNTY,Aransas County,cooccurs,sentence,6
+ORG,Sewer Lines,TX_COUNTY,Grimes County,cooccurs,sentence,6
+ORG,Sewer Lines,TX_COUNTY,Robertson County,cooccurs,sentence,6
+ORG,Improvements- Non Covered Projects Palacios,TX_COUNTY,Gonzales County,cooccurs,sentence,6
+ORG,Sewer Lines,TX_COUNTY,Gonzales County,cooccurs,sentence,6
+ORG,Local Government,TX_COUNTY,Jim Wells County,cooccurs,sentence,6
+DISASTER,Hurricane Rita,TX_COUNTY,Jasper County,cooccurs,sentence,6
+DISASTER,Hurricane Katrina,TX_COUNTY,Harris County,cooccurs,sentence,6
+DISASTER,Hurricane Rita,TX_COUNTY,San Jacinto County,cooccurs,sentence,6
+ORG,Completed Activity Description,TX_COUNTY,San Jacinto County,cooccurs,sentence,6
+ORG,Non-Match Funds,TX_COUNTY,Liberty County,cooccurs,sentence,6
+ORG,Water Facilities,TX_COUNTY,Harris County,cooccurs,sentence,6
+ORG,Salary Allocations Activity Progress Narrative,TX_COUNTY,Kleberg County,cooccurs,sentence,6
+ORG,Salary Allocations Activity Progress Narrative,TX_COUNTY,Hardin County,cooccurs,sentence,6
+ORG,Area Benefit (Census,TX_COUNTY,Grimes County,cooccurs,sentence,6
+ORG,Corpus Christi Street,DISASTER,Hurricane Dolly,cooccurs,sentence,6
+ORG,COCC,TX_COUNTY,Walker County,cooccurs,sentence,6
+ORG,COCC,TX_COUNTY,Orange County,cooccurs,sentence,6
+ORG,COCC,TX_COUNTY,Brooks County,cooccurs,sentence,6
+ORG,Urgent Need Texas General Land Office Total Projected Budget,DISASTER,Hurricane Ike,cooccurs,sentence,6
+ORG,Area Benefit (Census,TX_COUNTY,Jim Wells County,cooccurs,sentence,6
+ORG,Completed Activity Description,TX_COUNTY,Cherokee County,cooccurs,sentence,6
+ORG,Area Benefit (Survey,TX_COUNTY,Shelby County,cooccurs,sentence,6
+ORG,Completed Activity Actual End Date,TX_COUNTY,San Jacinto County,cooccurs,sentence,6
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,San Jacinto County,cooccurs,sentence,6
+ORG,Project Number,TX_COUNTY,Sabine County,cooccurs,sentence,6
+ORG,Completed Activity Actual End Date,TX_COUNTY,Starr County,cooccurs,sentence,6
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Starr County,cooccurs,sentence,6
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Orange County,cooccurs,sentence,6
+ORG,Date Total Projected Budget,TX_COUNTY,Trinity County,cooccurs,sentence,6
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Montgomery County,cooccurs,sentence,6
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Leon County,cooccurs,sentence,6
+ORG,Completed Activity Actual End Date,TX_COUNTY,Jasper County,cooccurs,sentence,6
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Jasper County,cooccurs,sentence,6
+ORG,Total Funds,TX_COUNTY,Hidalgo County,cooccurs,sentence,6
+ORG,Date Total Projected Budget,TX_COUNTY,Fort Bend County,cooccurs,sentence,6
+ORG,Total Funds,DISASTER,Ike,cooccurs,sentence,6
+ORG,Project Number,DISASTER,Hurricane Dolly,cooccurs,sentence,6
+ORG,State Highway,TX_COUNTY,Burleson County,cooccurs,sentence,6
+ORG,Flood and Drainage,TX_COUNTY,Liberty County,cooccurs,sentence,6
+ORG,Properties 0,TX_COUNTY,Liberty County,cooccurs,sentence,6
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Robertson County,cooccurs,sentence,6
+ORG,Project Title,DISASTER,Hurricane Ike,cooccurs,sentence,6
+ORG,GLO,TX_COUNTY,County Of Nacogdoches County,cooccurs,sentence,6
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Angelina County,cooccurs,sentence,6
+ORG,Public Facilities,DISASTER,Hurricane Ike,cooccurs,sentence,6
+ORG,Public Improvement,TX_COUNTY,Newton County,cooccurs,sentence,6
+ORG,Completed Activity Description,TX_COUNTY,Marion County,cooccurs,sentence,6
+ORG,Completed Activity Description,TX_COUNTY,Anderson County,cooccurs,sentence,6
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Burleson County,cooccurs,sentence,6
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Grimes County,cooccurs,sentence,6
+ORG,Flood and Drainage,TX_COUNTY,Wharton County,cooccurs,sentence,6
+ORG,Urgent Need,TX_COUNTY,Walker County,cooccurs,sentence,6
+ORG,COCC,TX_COUNTY,Goliad County,cooccurs,sentence,6
+ORG,Non-Match Funds,TX_COUNTY,Fort Bend County,cooccurs,sentence,6
+ORG,Buyout Program,TX_COUNTY,Austin County,cooccurs,sentence,6
+ORG,Properties 0,PROGRAM,Affordable Rental Program,cooccurs,sentence,6
+ORG,Water Facilities,TX_COUNTY,Goliad County,cooccurs,sentence,6
+ORG,Street Improvements,TX_COUNTY,Aransas County,cooccurs,sentence,6
+ORG,Buyout Program,TX_COUNTY,Polk County,cooccurs,sentence,6
+ORG,Street Improvements,TX_COUNTY,Walker County,cooccurs,sentence,6
+ORG,Buyout Program,TX_COUNTY,Bastrop County,cooccurs,sentence,6
+ORG,Buyout Program,TX_COUNTY,Gonzales County,cooccurs,sentence,6
+ORG,HUD,PROGRAM,Homeowner Reimbursement Program,cooccurs,sentence,6
+ORG,Flood and Drainage Facilities,TX_COUNTY,Bastrop County,cooccurs,sentence,6
+ORG,Water Facilities,TX_COUNTY,Tyler County,cooccurs,sentence,6
+ORG,Water Facilities,TX_COUNTY,Chambers County,cooccurs,sentence,6
+ORG,Texas GLO,TX_COUNTY,Galveston County,cooccurs,sentence,6
+ORG,Local Government,TX_COUNTY,Victoria County,cooccurs,sentence,6
+ORG,HUD,TX_COUNTY,Orange County,cooccurs,sentence,6
+ORG,Project Title,PROGRAM,Homeowner Reimbursement Program,cooccurs,sentence,6
+ORG,Project Number,PROGRAM,Homeowner Reimbursement Program,cooccurs,sentence,6
+ORG,Project Title,TX_COUNTY,Brazoria County,cooccurs,sentence,6
+ORG,Street Improvements,TX_COUNTY,Jasper County,cooccurs,sentence,6
+ORG,Completed Activity Description,TX_COUNTY,Hidalgo County,cooccurs,sentence,6
+ORG,Street Improvements,TX_COUNTY,Hays County,cooccurs,sentence,6
+ORG,Flood and Drainage,TX_COUNTY,Hidalgo County,cooccurs,sentence,6
+ORG,Street Improvements,TX_COUNTY,Bastrop County,cooccurs,sentence,5
+ORG,Date Total Projected Budget,TX_COUNTY,Bastrop County,cooccurs,sentence,5
+ORG,Improvements-Non Covered,TX_COUNTY,County Of Jim Wells County,cooccurs,sentence,5
+ORG,MIT - Public Facilities,TX_COUNTY,County Of Jim Wells County,cooccurs,sentence,5
+ORG,Flood & Drainage,TX_COUNTY,Waller County,cooccurs,sentence,5
+ORG,MIT - Public Facilities,TX_COUNTY,Jefferson County,cooccurs,sentence,5
+ORG,MIT - Planning and Capacity Building Under Way Activity Description,TX_COUNTY,Coryell County,cooccurs,sentence,5
+ORG,Public Facilities,TX_COUNTY,Caldwell County,cooccurs,sentence,5
+DISASTER,Hurricane Harvey,TX_COUNTY,Matagorda County,cooccurs,sentence,5
+ORG,SMI,TX_COUNTY,Lee County,cooccurs,sentence,5
+ORG,the State Standardized Area Median Income,TX_COUNTY,Lee County,cooccurs,sentence,5
+ORG,Block Group,TX_COUNTY,Lee County,cooccurs,sentence,5
+ORG,Flood & Drainage,TX_COUNTY,San Patricio County,cooccurs,sentence,5
+ORG,TDEM,TX_COUNTY,Dewitt County,cooccurs,sentence,5
+ORG,GLO,TX_COUNTY,Dewitt County,cooccurs,sentence,5
+ORG,HMP,TX_COUNTY,Dewitt County,cooccurs,sentence,5
+ORG,FEMA,TX_COUNTY,Hidalgo County,cooccurs,sentence,5
+ORG,TDEM,TX_COUNTY,Hidalgo County,cooccurs,sentence,5
+ORG,HMP,TX_COUNTY,Hidalgo County,cooccurs,sentence,5
+ORG,Local Government,TX_COUNTY,Jefferson County,cooccurs,sentence,5
+ORG,HUD,TX_COUNTY,Jefferson County,cooccurs,sentence,5
+DISASTER,Hurricane Evacuees,TX_COUNTY,Harris County,cooccurs,sentence,5
+ORG,FEMA,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,5
+DISASTER,Hurricane Rita,TX_COUNTY,Liberty County,cooccurs,sentence,5
+DISASTER,Hurricane Rita,TX_COUNTY,Orange County,cooccurs,sentence,5
+ORG,Restricted Balance,DISASTER,Hurricane Ike,cooccurs,sentence,5
+ORG,Completed Activity Description,TX_COUNTY,Trinity County,cooccurs,sentence,5
+ORG,Completed Activity Description,TX_COUNTY,Polk County,cooccurs,sentence,5
+ORG,Urgent Need,TX_COUNTY,Hidalgo County,cooccurs,sentence,5
+ORG,Completed Activity Description,TX_COUNTY,Tyler County,cooccurs,sentence,5
+ORG,Area Benefit (Census,DISASTER,Hurricane Dolly,cooccurs,sentence,5
+ORG,Area Benefit (Census,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,5
+ORG,Area Benefit (Survey,TX_COUNTY,Harrison County,cooccurs,sentence,5
+ORG,Completed Activity Actual End Date,TX_COUNTY,Tyler County,cooccurs,sentence,5
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Tyler County,cooccurs,sentence,5
+ORG,Total Funds,TX_COUNTY,Galveston County,cooccurs,sentence,5
+ORG,Date Total Projected Budget,TX_COUNTY,Waller County,cooccurs,sentence,5
+ORG,Date Total Projected Budget,TX_COUNTY,Walker County,cooccurs,sentence,5
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Trinity County,cooccurs,sentence,5
+ORG,CBCOG,TX_COUNTY,San Patricio County,cooccurs,sentence,5
+ORG,Project Number,TX_COUNTY,Montgomery County,cooccurs,sentence,5
+ORG,Total Funds,TX_COUNTY,Liberty County,cooccurs,sentence,5
+ORG,Date Total Projected Budget,TX_COUNTY,Kleberg County,cooccurs,sentence,5
+ORG,Date Total Projected Budget,TX_COUNTY,Harrison County,cooccurs,sentence,5
+ORG,COCC,TX_COUNTY,Chambers County,cooccurs,sentence,5
+ORG,Date Total Projected Budget,TX_COUNTY,Burleson County,cooccurs,sentence,5
+ORG,Date Total Projected Budget,TX_COUNTY,Angelina County,cooccurs,sentence,5
+ORG,Completed Activity Actual End Date,DISASTER,Hurricane Dolly,cooccurs,sentence,5
+ORG,NON-HOUSING Projected End Date,DISASTER,Hurricane Dolly,cooccurs,sentence,5
+ORG,Street Improvement,TX_COUNTY,Tyler County,cooccurs,sentence,5
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Victoria County,cooccurs,sentence,5
+ORG,Texas GLO,DISASTER,Hurricane Ike,cooccurs,sentence,5
+ORG,Sewer Facilities,TX_COUNTY,County Of Sabine County,cooccurs,sentence,5
+ORG,GLO,TX_COUNTY,Nacogdoches County,cooccurs,sentence,5
+ORG,Royal Pine Drive,TX_COUNTY,Harris County,cooccurs,sentence,5
+ORG,Brea Crest Street,TX_COUNTY,Harris County,cooccurs,sentence,5
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Hardin County,cooccurs,sentence,5
+ORG,GLO,TX_COUNTY,County Of Waller County,cooccurs,sentence,5
+ORG,Area Benefit (Survey,TX_COUNTY,County Of Brazoria County,cooccurs,sentence,5
+ORG,QPR,TX_COUNTY,Jasper County,cooccurs,sentence,5
+ORG,Properties 0,TX_COUNTY,Montgomery County,cooccurs,sentence,5
+ORG,DRS,TX_COUNTY,Milam County,cooccurs,sentence,5
+ORG,DRS,TX_COUNTY,Jim Wells County,cooccurs,sentence,5
+ORG,Clearance and Demolition,DISASTER,Hurricane Location,cooccurs,sentence,5
+ORG,Texas Department of Housing and Community Affairs No Accomplishments Performance Measures,TX_COUNTY,Harris County,cooccurs,sentence,5
+ORG,Texas Department of Housing and Community Affairs,DISASTER,Ike,cooccurs,sentence,5
+ORG,COCC,TX_COUNTY,Waller County,cooccurs,sentence,5
+ORG,Completed Activity Description,PROGRAM,Homeowner Reimbursement Program,cooccurs,sentence,5
+ORG,QPR,PROGRAM,Local Infrastructure Program,cooccurs,sentence,5
+ORG,Project Number,PROGRAM,Local Infrastructure Program,cooccurs,sentence,5
+ORG,COCC,TX_COUNTY,Aransas County,cooccurs,sentence,5
+ORG,Water Facilities,TX_COUNTY,Gonzales County,cooccurs,sentence,5
+ORG,Buyout Program,TX_COUNTY,Jefferson County,cooccurs,sentence,5
+ORG,Buyout Program,TX_COUNTY,Waller County,cooccurs,sentence,5
+ORG,Public Improvement,TX_COUNTY,Harris County,cooccurs,sentence,5
+PROGRAM,Affordable Rental Program,DISASTER,Ike,cooccurs,sentence,5
+ORG,Drainage Facilities,TX_COUNTY,Fort Bend County,cooccurs,sentence,5
+DISASTER,Tropical Storm Imelda,FEMA_DECLARATION,4466,cooccurs,sentence,5
+DISASTER,Tropical Storm Imelda,FEMA_DECLARATION,4454,cooccurs,sentence,5
+ORG,UN,PROGRAM,Affordable Rental Program,cooccurs,sentence,5
+ORG,Flood and Drainage Facilities,TX_COUNTY,Montgomery County,cooccurs,sentence,5
+ORG,Affordable Rental Housing Under Way Activity Description,TX_COUNTY,Willacy County,cooccurs,sentence,5
+ORG,Street Improvements,TX_COUNTY,County Of Bastrop County,cooccurs,sentence,4
+ORG,Improvements-Non Covered,TX_COUNTY,Lavaca County,cooccurs,sentence,4
+ORG,MIT - Public Facilities,TX_COUNTY,Lavaca County,cooccurs,sentence,4
+ORG,Improvements-Non Covered,TX_COUNTY,Guadalupe County,cooccurs,sentence,4
+ORG,MIT - Public Facilities,TX_COUNTY,Guadalupe County,cooccurs,sentence,4
+ORG,Flood & Drainage,TX_COUNTY,Madison County,cooccurs,sentence,4
+ORG,Improvements-Non Covered,TX_COUNTY,Walker County,cooccurs,sentence,4
+ORG,Flood & Drainage,TX_COUNTY,Refugio County,cooccurs,sentence,4
+ORG,HMAC,DISASTER,Hurricane Harvey,cooccurs,sentence,4
+ORG,Improvements-Non Covered,TX_COUNTY,Leon County,cooccurs,sentence,4
+ORG,MIT - Public Facilities,TX_COUNTY,Leon County,cooccurs,sentence,4
+ORG,Improvements-Non Covered,TX_COUNTY,Orange County,cooccurs,sentence,4
+ORG,MIT - Public Facilities,TX_COUNTY,Fort Bend County,cooccurs,sentence,4
+ORG,Flood & Drainage,TX_COUNTY,Hidalgo County,cooccurs,sentence,4
+ORG,MIT - Planning and Capacity Building Under Way Activity Description,TX_COUNTY,Hays County,cooccurs,sentence,4
+ORG,MIT - Planning and Capacity Building Under Way Activity Description,TX_COUNTY,Anderson County,cooccurs,sentence,4
+ORG,MIT - Planning and Capacity Building Under Way Activity Description,TX_COUNTY,Willacy County,cooccurs,sentence,4
+ORG,MIT - Planning and Capacity Building Under Way Activity Description,TX_COUNTY,Liberty County,cooccurs,sentence,4
+ORG,MIT - Planning and Capacity Building Under Way Activity Description,TX_COUNTY,Bee County,cooccurs,sentence,4
+ORG,Sewer Lines,TX_COUNTY,Nueces County,cooccurs,sentence,4
+ORG,TDEM,TX_COUNTY,Falls County,cooccurs,sentence,4
+ORG,GLO,TX_COUNTY,Falls County,cooccurs,sentence,4
+ORG,HMP,TX_COUNTY,Falls County,cooccurs,sentence,4
+ORG,TDEM,TX_COUNTY,Cameron County,cooccurs,sentence,4
+ORG,HMP,TX_COUNTY,Cameron County,cooccurs,sentence,4
+ORG,TDEM,TX_COUNTY,Red River County,cooccurs,sentence,4
+ORG,GLO,TX_COUNTY,Red River County,cooccurs,sentence,4
+ORG,HMP,TX_COUNTY,Red River County,cooccurs,sentence,4
+ORG,TDEM,TX_COUNTY,Tyler County,cooccurs,sentence,4
+ORG,HMP,TX_COUNTY,Tyler County,cooccurs,sentence,4
+ORG,Volunteer Fire Department,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,4
+ORG,Local Government,TX_COUNTY,Guadalupe County,cooccurs,sentence,4
+ORG,Public Improvement,TX_COUNTY,Madison County,cooccurs,sentence,4
+ORG,Sewer Lines,TX_COUNTY,Milam County,cooccurs,sentence,4
+ORG,SF 0005,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,4
+ORG,Completed Activity Description,TX_COUNTY,Newton County,cooccurs,sentence,4
+ORG,Flood and Drainage,TX_COUNTY,Brooks County,cooccurs,sentence,4
+ORG,Planning Products,TX_COUNTY,Matagorda County,cooccurs,sentence,4
+ORG,Salary Allocations Activity Progress Narrative,TX_COUNTY,Willacy County,cooccurs,sentence,4
+ORG,Completed Activity Description,TX_COUNTY,Matagorda County,cooccurs,sentence,4
+ORG,Completed Activity Description,TX_COUNTY,Kenedy County,cooccurs,sentence,4
+ORG,Completed Activity Description,TX_COUNTY,Milam County,cooccurs,sentence,4
+ORG,SETRPC,TX_COUNTY,Hardin County,cooccurs,sentence,4
+ORG,Area Benefit (Census,TX_COUNTY,Willacy County,cooccurs,sentence,4
+ORG,Planning Products,TX_COUNTY,Brazoria County,cooccurs,sentence,4
+ORG,Project Number,TX_COUNTY,Rusk County,cooccurs,sentence,4
+ORG,Project Number,TX_COUNTY,Tyler County,cooccurs,sentence,4
+ORG,Date Total Projected Budget,TX_COUNTY,Nacogdoches County,cooccurs,sentence,4
+ORG,Project Number,TX_COUNTY,Nacogdoches County,cooccurs,sentence,4
+ORG,Completed Activity Actual End Date,TX_COUNTY,Waller County,cooccurs,sentence,4
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Waller County,cooccurs,sentence,4
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Hardin County,cooccurs,sentence,4
+ORG,Project Number,TX_COUNTY,Hardin County,cooccurs,sentence,4
+ORG,Completed Activity Actual End Date,TX_COUNTY,Trinity County,cooccurs,sentence,4
+ORG,Project Number,TX_COUNTY,Trinity County,cooccurs,sentence,4
+ORG,Completed Activity Actual End Date,TX_COUNTY,Robertson County,cooccurs,sentence,4
+ORG,Project Number,TX_COUNTY,Madison County,cooccurs,sentence,4
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Kleberg County,cooccurs,sentence,4
+ORG,Project Number,TX_COUNTY,Jasper County,cooccurs,sentence,4
+ORG,Completed Activity Actual End Date,TX_COUNTY,Harrison County,cooccurs,sentence,4
+ORG,Completed Activity Actual End Date,TX_COUNTY,Burleson County,cooccurs,sentence,4
+ORG,Completed Activity Actual End Date,TX_COUNTY,Angelina County,cooccurs,sentence,4
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Angelina County,cooccurs,sentence,4
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Trinity County,cooccurs,sentence,4
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Cherokee County,cooccurs,sentence,4
+ORG,Planning Products,TX_COUNTY,Orange County,cooccurs,sentence,4
+ORG,Flood and Drainage Facilities,TX_COUNTY,Liberty County,cooccurs,sentence,4
+ORG,Planning Products 0,DISASTER,Ike,cooccurs,sentence,4
+ORG,TX,DISASTER,Hurricane Ike,cooccurs,sentence,4
+ORG,GLO,TX_COUNTY,County Of Orange County,cooccurs,sentence,4
+ORG,GLO,TX_COUNTY,County Of Walker County,cooccurs,sentence,4
+ORG,Public Facilities,TX_COUNTY,Brazos County,cooccurs,sentence,4
+ORG,Units 0 Beneficiaries,DISASTER,Ike,cooccurs,sentence,4
+ORG,Multifamily Units 0 Beneficiaries,DISASTER,Ike,cooccurs,sentence,4
+ORG,Direct Benefit,TX_COUNTY,Montgomery County,cooccurs,sentence,4
+ORG,Royal Pine Drive,DISASTER,Hurricane Ike,cooccurs,sentence,4
+ORG,Brea Crest Street,DISASTER,Hurricane Ike,cooccurs,sentence,4
+ORG,QPR,TX_COUNTY,Galveston County,cooccurs,sentence,4
+ORG,GLO,TX_COUNTY,Rusk County,cooccurs,sentence,4
+ORG,QPR,TX_COUNTY,Grimes County,cooccurs,sentence,4
+ORG,TX,TX_COUNTY,Anderson County,cooccurs,sentence,4
+ORG,DRS,TX_COUNTY,Nacogdoches County,cooccurs,sentence,4
+ORG,State Highway,TX_COUNTY,Rusk County,cooccurs,sentence,4
+ORG,DRS,TX_COUNTY,Jim Hogg County,cooccurs,sentence,4
+ORG,HMAC,DISASTER,Hurricane Ike,cooccurs,sentence,4
+ORG,ADA,DISASTER,Hurricane Dolly,cooccurs,sentence,4
+ORG,Clearance and Demolition,DISASTER,Ike,cooccurs,sentence,4
+DISASTER,Hurricane Ike,TX_COUNTY,Nueces County,cooccurs,sentence,4
+ORG,GLO,TX_COUNTY,Jefferson County,cooccurs,sentence,4
+ORG,COCC,TX_COUNTY,Milam County,cooccurs,sentence,4
+ORG,Project Number,PROGRAM,Economic Revitalization Program,cooccurs,sentence,4
+ORG,Urgent Need,TX_COUNTY,Austin County,cooccurs,sentence,4
+ORG,COCC,PROGRAM,Local Infrastructure Program,cooccurs,sentence,4
+ORG,Sewer Facilities,TX_COUNTY,County Of Matagorda County,cooccurs,sentence,4
+ORG,COCC,TX_COUNTY,Victoria County,cooccurs,sentence,4
+ORG,City of Total Projected Budget,PROGRAM,Local Infrastructure Program,cooccurs,sentence,4
+ORG,Direct Benefit,DISASTER,Hurricane Harvey,cooccurs,sentence,4
+ORG,Public Facilities,TX_COUNTY,Goliad County,cooccurs,sentence,4
+ORG,Street Improvements,TX_COUNTY,Tyler County,cooccurs,sentence,4
+ORG,Units 0 Beneficiaries,PROGRAM,Affordable Rental Program,cooccurs,sentence,4
+ORG,Street Improvements,TX_COUNTY,Nueces County,cooccurs,sentence,4
+ORG,Buyout Program,TX_COUNTY,Victoria County,cooccurs,sentence,4
+ORG,HUD,TX_COUNTY,Liberty County,cooccurs,sentence,4
+ORG,City of Environmental Assessment,DISASTER,Ike,cooccurs,sentence,4
+ORG,Substantially Rehabilitated,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,4
+ORG,Drainage Facilities,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,4
+ORG,Public Improvement,TX_COUNTY,Brazoria County,cooccurs,sentence,4
+ORG,Public Improvement,TX_COUNTY,Montgomery County,cooccurs,sentence,4
+PROGRAM,Affordable Rental Program,DISASTER,Harvey,cooccurs,sentence,4
+ORG,Buyout Program,TX_COUNTY,Harris County,cooccurs,sentence,4
+ORG,Affordable Rental Housing,TX_COUNTY,Refugio County,cooccurs,sentence,4
+ORG,Pine Forest,TX_COUNTY,San Jacinto County,cooccurs,sentence,4
+ORG,Non-Match Funds,TX_COUNTY,San Jacinto County,cooccurs,sentence,4
+DISASTER,Tropical Storm Imelda,TX_COUNTY,Orange County,cooccurs,sentence,4
+DISASTER,Tropical Storm Imelda,TX_COUNTY,Jefferson County,cooccurs,sentence,4
+DISASTER,Ike,FEMA_DECLARATION,4454,cooccurs,sentence,4
+DISASTER,Tropical Storm Total,FEMA_DECLARATION,4454,cooccurs,sentence,4
+ORG,HUD,DISASTER,Tropical Storm Total,cooccurs,sentence,4
+ORG,Texas General Land Office NA Benefit Report Type,DISASTER,Tropical Storm Total,cooccurs,sentence,4
+ORG,State Agency,DISASTER,Tropical Storm Total,cooccurs,sentence,4
+ORG,Lower Rio Grande Valley Floods,DISASTER,Tropical Storm Total,cooccurs,sentence,4
+ORG,Project Number,PROGRAM,Affordable Rental Program,cooccurs,sentence,4
+ORG,Total Funds,PROGRAM,Homeowner Reimbursement Program,cooccurs,sentence,4
+ORG,GLO,TX_COUNTY,Brazoria County,cooccurs,sentence,4
+ORG,Completed Activity Description,TX_COUNTY,Bastrop County,cooccurs,sentence,4
+ORG,TX,TX_COUNTY,Harris County,cooccurs,sentence,4
+ORG,Buyout Program,TX_COUNTY,Montgomery County,cooccurs,sentence,4
+ORG,Flood and Drainage,TX_COUNTY,Brazoria County,cooccurs,sentence,4
+ORG,Total Funds,TX_COUNTY,Newton County,cooccurs,sentence,4
+PROGRAM,Affordable Rental Program,TX_COUNTY,Willacy County,cooccurs,sentence,4
+ORG,Drainage Facilities,TX_COUNTY,Hays County,cooccurs,sentence,4
+ORG,Improvements-Non Covered,TX_COUNTY,Montgomery County,cooccurs,sentence,3
+ORG,MIT - Public Facilities,TX_COUNTY,Montgomery County,cooccurs,sentence,3
+ORG,MIT - Public Facilities,TX_COUNTY,Walker County,cooccurs,sentence,3
+ORG,Improvements-Non Covered,TX_COUNTY,Milam County,cooccurs,sentence,3
+ORG,MIT - Public Facilities,TX_COUNTY,Milam County,cooccurs,sentence,3
+ORG,Flood & Drainage,TX_COUNTY,Wharton County,cooccurs,sentence,3
+ORG,MIT - Planning and Capacity Building Under Way Activity Description,TX_COUNTY,Caldwell County,cooccurs,sentence,3
+ORG,MIT - Planning and Capacity Building Under Way Activity Description,TX_COUNTY,Aransas County,cooccurs,sentence,3
+ORG,MIT - Planning and,TX_COUNTY,Liberty County,cooccurs,sentence,3
+ORG,Improvements-Non Covered,TX_COUNTY,Robertson County,cooccurs,sentence,3
+ORG,MIT - Public Facilities,TX_COUNTY,Robertson County,cooccurs,sentence,3
+ORG,Flood and Drainage,TX_COUNTY,Austin County,cooccurs,sentence,3
+ORG,Improvements-Non Covered,TX_COUNTY,Burleson County,cooccurs,sentence,3
+ORG,MIT - Public Facilities,TX_COUNTY,Burleson County,cooccurs,sentence,3
+ORG,Improvements-Non Covered,TX_COUNTY,Chambers County,cooccurs,sentence,3
+ORG,MIT - Planning and,TX_COUNTY,Hays County,cooccurs,sentence,3
+ORG,Flood and Drainage,TX_COUNTY,Dewitt County,cooccurs,sentence,3
+ORG,Hazard Mitigation Grant Program,TX_COUNTY,Harris County,cooccurs,sentence,3
+ORG,Texas GLO,TX_COUNTY,San Patricio County,cooccurs,sentence,3
+ORG,the RCP Application Guide,TX_COUNTY,Grimes County,cooccurs,sentence,3
+ORG,Planning Activities,TX_COUNTY,Grimes County,cooccurs,sentence,3
+ORG,IRC,TX_COUNTY,Jefferson County,cooccurs,sentence,3
+ORG,the RCP Application Guide,TX_COUNTY,Jefferson County,cooccurs,sentence,3
+ORG,Planning Activities,TX_COUNTY,Jefferson County,cooccurs,sentence,3
+ORG,TDEM,TX_COUNTY,County Of Archer County,cooccurs,sentence,3
+ORG,GLO,TX_COUNTY,County Of Archer County,cooccurs,sentence,3
+ORG,HMP,TX_COUNTY,County Of Archer County,cooccurs,sentence,3
+ORG,TDEM,TX_COUNTY,Rusk County,cooccurs,sentence,3
+ORG,HMP,TX_COUNTY,Rusk County,cooccurs,sentence,3
+ORG,FEMA,TX_COUNTY,Clay County,cooccurs,sentence,3
+ORG,GLO,TX_COUNTY,Clay County,cooccurs,sentence,3
+ORG,TDEM,TX_COUNTY,County Of Jack County,cooccurs,sentence,3
+ORG,GLO,TX_COUNTY,County Of Jack County,cooccurs,sentence,3
+ORG,HMP,TX_COUNTY,County Of Jack County,cooccurs,sentence,3
+ORG,TDEM,TX_COUNTY,County Of Montague County,cooccurs,sentence,3
+ORG,GLO,TX_COUNTY,County Of Montague County,cooccurs,sentence,3
+ORG,HMP,TX_COUNTY,County Of Montague County,cooccurs,sentence,3
+ORG,TDEM,TX_COUNTY,County Of Young County,cooccurs,sentence,3
+ORG,GLO,TX_COUNTY,County Of Young County,cooccurs,sentence,3
+ORG,HMP,TX_COUNTY,County Of Young County,cooccurs,sentence,3
+ORG,Targeted Section 3 Labor Hours 1 #,TX_COUNTY,Bastrop County,cooccurs,sentence,3
+ORG,Local Government,TX_COUNTY,County Of Jim Wells County,cooccurs,sentence,3
+ORG,Public Improvement,TX_COUNTY,County Of Dewitt County,cooccurs,sentence,3
+ORG,Sewer Lines,TX_COUNTY,Washington County,cooccurs,sentence,3
+ORG,NCP 0005,TX_COUNTY,Grimes County,cooccurs,sentence,3
+ORG,the Coastal Bend Council of Governments,DISASTER,Hurricane Harvey,cooccurs,sentence,3
+ORG,MIT - Public Facilities,DISASTER,Hurricane Harvey,cooccurs,sentence,3
+ORG,Multifamily Units 0 Beneficiaries,PROGRAM,Homeowner Assistance Program,cooccurs,sentence,3
+ORG,Properties 0,TX_COUNTY,Hardin County,cooccurs,sentence,3
+ORG,TX,DISASTER,Rita,cooccurs,sentence,3
+ORG,Office of Rural Community Affairs,DISASTER,Hurricane Rita,cooccurs,sentence,3
+DISASTER,Hurricane Rita,TX_COUNTY,Nacogdoches County,cooccurs,sentence,3
+DISASTER,Hurricane Rita,TX_COUNTY,Walker County,cooccurs,sentence,3
+DISASTER,Hurricane Rita,TX_COUNTY,Polk County,cooccurs,sentence,3
+ORG,TX,DISASTER,Ike,cooccurs,sentence,3
+ORG,Flood and Drainage,TX_COUNTY,Starr County,cooccurs,sentence,3
+ORG,Area Benefit (Census,TX_COUNTY,Angelina County,cooccurs,sentence,3
+ORG,Block Group,TX_COUNTY,Brazoria County,cooccurs,sentence,3
+ORG,Salary Allocations Activity Progress Narrative,TX_COUNTY,Hidalgo County,cooccurs,sentence,3
+ORG,COCC,TX_COUNTY,Jim Wells County,cooccurs,sentence,3
+ORG,Completed Activity Description,TX_COUNTY,Panola County,cooccurs,sentence,3
+ORG,Area Benefit (Census,TX_COUNTY,Montgomery County,cooccurs,sentence,3
+ORG,Area Benefit (Census,TX_COUNTY,Fort Bend County,cooccurs,sentence,3
+ORG,COCC,TX_COUNTY,Trinity County,cooccurs,sentence,3
+ORG,Area Benefit (Census,TX_COUNTY,Matagorda County,cooccurs,sentence,3
+ORG,HUD,TX_COUNTY,Chambers County,cooccurs,sentence,3
+ORG,Completed Activity Description,TX_COUNTY,Brooks County,cooccurs,sentence,3
+ORG,COCC,TX_COUNTY,Starr County,cooccurs,sentence,3
+ORG,HMAC,TX_COUNTY,Houston County,cooccurs,sentence,3
+ORG,Hot Mix Asphalt Concrete,TX_COUNTY,Houston County,cooccurs,sentence,3
+ORG,Area Benefit (Survey,TX_COUNTY,Madison County,cooccurs,sentence,3
+ORG,Texas Department of Housing and Community Affairs,DISASTER,Hurricane Ike,cooccurs,sentence,3
+ORG,Project Number,TX_COUNTY,San Augustine County,cooccurs,sentence,3
+ORG,Date Total Projected Budget,TX_COUNTY,Sabine County,cooccurs,sentence,3
+ORG,Completed Activity Actual End Date,TX_COUNTY,Nacogdoches County,cooccurs,sentence,3
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Nacogdoches County,cooccurs,sentence,3
+ORG,Completed Activity Actual End Date,TX_COUNTY,Kleberg County,cooccurs,sentence,3
+ORG,Project Number,TX_COUNTY,Jim Wells County,cooccurs,sentence,3
+ORG,Date Total Projected Budget,TX_COUNTY,Houston County,cooccurs,sentence,3
+ORG,Completed Activity Actual End Date,TX_COUNTY,Houston County,cooccurs,sentence,3
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Houston County,cooccurs,sentence,3
+ORG,Project Number,TX_COUNTY,Waller County,cooccurs,sentence,3
+ORG,Completed Activity Actual End Date,TX_COUNTY,Hardin County,cooccurs,sentence,3
+ORG,Street Improvements,TX_COUNTY,County Of Willacy County,cooccurs,sentence,3
+ORG,COCC,TX_COUNTY,County Of Willacy County,cooccurs,sentence,3
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Matagorda County,cooccurs,sentence,3
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Walker County,cooccurs,sentence,3
+ORG,Project Number,TX_COUNTY,San Patricio County,cooccurs,sentence,3
+ORG,Project Number,TX_COUNTY,Robertson County,cooccurs,sentence,3
+ORG,Project Number,TX_COUNTY,Panola County,cooccurs,sentence,3
+ORG,Date Total Projected Budget,TX_COUNTY,Madison County,cooccurs,sentence,3
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Harrison County,cooccurs,sentence,3
+ORG,Date Total Projected Budget,TX_COUNTY,Grimes County,cooccurs,sentence,3
+ORG,Completed Activity Actual End Date,TX_COUNTY,Fort Bend County,cooccurs,sentence,3
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Fort Bend County,cooccurs,sentence,3
+ORG,Total Funds,TX_COUNTY,Chambers County,cooccurs,sentence,3
+ORG,NON-HOUSING Projected End Date,TX_COUNTY,Burleson County,cooccurs,sentence,3
+ORG,Total Funds,DISASTER,Hurricane Ike,cooccurs,sentence,3
+ORG,newacct04112013 Program Income Account,TX_COUNTY,Brazos County,cooccurs,sentence,3
+ORG,Urgent Need,TX_COUNTY,Grimes County,cooccurs,sentence,3
+ORG,Flood and Drainage Facilities,TX_COUNTY,Chambers County,cooccurs,sentence,3
+ORG,Sewer Facilities,TX_COUNTY,Jasper County,cooccurs,sentence,3
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Harrison County,cooccurs,sentence,3
+ORG,Planning Products,TX_COUNTY,Trinity County,cooccurs,sentence,3
+ORG,Planning Products,TX_COUNTY,Shelby County,cooccurs,sentence,3
+ORG,Planning Products,TX_COUNTY,San Augustine County,cooccurs,sentence,3
+ORG,Planning Products,TX_COUNTY,Houston County,cooccurs,sentence,3
+ORG,Planning Products,TX_COUNTY,Angelina County,cooccurs,sentence,3
+ORG,Planning Products,TX_COUNTY,Montgomery County,cooccurs,sentence,3
+ORG,Planning Products,TX_COUNTY,Willacy County,cooccurs,sentence,3
+ORG,Planning Products,TX_COUNTY,Harris County,cooccurs,sentence,3
+ORG,Texas Activity Progress Narrative,TX_COUNTY,Fort Bend County,cooccurs,sentence,3
+DISASTER,Hurricane Ike,TX_COUNTY,Orange County,cooccurs,sentence,3
+DISASTER,Hurricane Ike,TX_COUNTY,Walker County,cooccurs,sentence,3
+ORG,GLO,TX_COUNTY,County Of Kleberg County,cooccurs,sentence,3
+ORG,GLO,TX_COUNTY,County Of Houston County,cooccurs,sentence,3
+ORG,GLO,TX_COUNTY,County Of Hardin County,cooccurs,sentence,3
+ORG,Sewer Facilities,TX_COUNTY,County Of Angelina County,cooccurs,sentence,3
+ORG,GLO,TX_COUNTY,County Of Jefferson County,cooccurs,sentence,3
+ORG,Office of Rural Community Affairs,TX_COUNTY,Brazoria County,cooccurs,sentence,3
+ORG,Units 0,DISASTER,Ike,cooccurs,sentence,3
+ORG,QPR,TX_COUNTY,Jefferson County,cooccurs,sentence,3
+ORG,DRS,TX_COUNTY,Brazos County,cooccurs,sentence,3
+ORG,DRS,TX_COUNTY,Victoria County,cooccurs,sentence,3
+ORG,Public Facilities,TX_COUNTY,Shelby County,cooccurs,sentence,3
+ORG,DRS,TX_COUNTY,San Augustine County,cooccurs,sentence,3
+ORG,DRS,TX_COUNTY,Rusk County,cooccurs,sentence,3
+ORG,DRS,DISASTER,Hurricane Location,cooccurs,sentence,3
+ORG,DRS,TX_COUNTY,Nueces County,cooccurs,sentence,3
+ORG,DRS,TX_COUNTY,Kleberg County,cooccurs,sentence,3
+ORG,DRS,TX_COUNTY,Harrison County,cooccurs,sentence,3
+ORG,DRS,TX_COUNTY,Fort Bend County,cooccurs,sentence,3
+ORG,DRS,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,3
+ORG,DRS,TX_COUNTY,Brooks County,cooccurs,sentence,3
+ORG,Units 0 Beneficiaries,TX_COUNTY,Harris County,cooccurs,sentence,3
+ORG,Water Facilities,TX_COUNTY,County Of Refugio County,cooccurs,sentence,3
+ORG,COCC,TX_COUNTY,Bee County,cooccurs,sentence,3
+ORG,Urgent Need Texas General Land Office Total Projected Budget,TX_COUNTY,Harris County,cooccurs,sentence,3
+ORG,COCC,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,3
+ORG,COCC,TX_COUNTY,Gonzales County,cooccurs,sentence,3
+ORG,Non-Match Funds,TX_COUNTY,Refugio County,cooccurs,sentence,3
+ORG,Non-Match Funds,TX_COUNTY,Tyler County,cooccurs,sentence,3
+ORG,Street Improvements,TX_COUNTY,Waller County,cooccurs,sentence,3
+ORG,Direct Benefit,PROGRAM,Homeowner Reimbursement Program,cooccurs,sentence,3
+ORG,Non-Match Funds,DISASTER,Hurricane Harvey,cooccurs,sentence,3
+ORG,Drainage Facilities,TX_COUNTY,Matagorda County,cooccurs,sentence,3
+ORG,Buyout Program,TX_COUNTY,Liberty County,cooccurs,sentence,3
+ORG,Flood and Drainage Facilities,TX_COUNTY,Colorado County,cooccurs,sentence,3
+ORG,Buyout Program,TX_COUNTY,Jasper County,cooccurs,sentence,3
+ORG,Street Improvements,TX_COUNTY,Goliad County,cooccurs,sentence,3
+ORG,Flood and Drainage,TX_COUNTY,Caldwell County,cooccurs,sentence,3
+ORG,Street Improvements,TX_COUNTY,Polk County,cooccurs,sentence,3
+ORG,GLO,PROGRAM,Economic Revitalization Program,cooccurs,sentence,3
+ORG,Urgent Need,TX_COUNTY,Waller County,cooccurs,sentence,3
+ORG,Affordable Rental Housing Under Way Activity Description,PROGRAM,Affordable Rental Program,cooccurs,sentence,3
+ORG,Planning/Administration or Unprogrammed Funds,DISASTER,Harvey,cooccurs,sentence,3
+ORG,State Agency,DISASTER,Hurricane Harvey,cooccurs,sentence,3
+ORG,State Agency,PROGRAM,Economic Revitalization Program,cooccurs,sentence,3
+ORG,Water Facilities,DISASTER,Ike,cooccurs,sentence,3
+ORG,Public Improvement,TX_COUNTY,CALHOUN COUNTY,cooccurs,sentence,3
+ORG,Drainage Facilities,TX_COUNTY,Galveston County,cooccurs,sentence,3
+ORG,Flood and Drainage,TX_COUNTY,Jefferson County,cooccurs,sentence,3
+ORG,Flood and Drainage,TX_COUNTY,Refugio County,cooccurs,sentence,3
+ORG,Project Delivery and Administration,TX_COUNTY,Harris County,cooccurs,sentence,3
+ORG,Flood and Drainage,TX_COUNTY,Orange County,cooccurs,sentence,3
+ORG,Non-Match Funds,TX_COUNTY,Hidalgo County,cooccurs,sentence,3
+ORG,Flood & Drainage,TX_COUNTY,Orange County,cooccurs,sentence,3
+ORG,Project Title,TX_COUNTY,Chambers County,cooccurs,sentence,3
+PROGRAM,Homeowner Assistance Program,TX_COUNTY,Chambers County,cooccurs,sentence,3
+PROGRAM,Affordable Rental Program,TX_COUNTY,Chambers County,cooccurs,sentence,3
+ORG,Texas General Land Office NA Benefit Report Type,TX_COUNTY,Orange County,cooccurs,sentence,3
+ORG,State Agency,TX_COUNTY,Orange County,cooccurs,sentence,3
+ORG,Flood and Drainage Facilities,TX_COUNTY,Madison County,cooccurs,sentence,3
+ORG,FEMA,TX_COUNTY,Harris County,cooccurs,sentence,3
+ORG,La Porte,TX_COUNTY,Harris County,cooccurs,sentence,3
+ORG,Street Improvements,TX_COUNTY,Grimes County,cooccurs,sentence,3
+ORG,Flood and Drainage,TX_COUNTY,Jim Wells County,cooccurs,sentence,3

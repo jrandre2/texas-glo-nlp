@@ -8,6 +8,7 @@ Documentation of all data sources, file formats, and schemas.
 - [Extracted Data](#extracted-data)
 - [National Grants Reference](#national-grants-reference)
 - [CSV Exports](#csv-exports)
+- [Model-Ready Exports](#model-ready-exports)
 
 ---
 
@@ -25,24 +26,36 @@ Disaster Recovery Grant Reporting (DRGR) quarterly reports from the Texas Genera
 DRGR_Reports/
 ├── 2015_Floods/
 ├── 2016_Floods/
-├── 2018_Floods/
-├── 2019_Disasters/
+├── 2018_Floods_ActionPlan/
+├── 2018_Floods_Performance/
+├── 2019_Disasters_ActionPlan/
+├── 2019_Disasters_Performance/
 ├── 2024_Disasters/
-├── Hurricane_Dolly/
-├── Hurricane_Harvey/
+├── Expenditure_Reports/
+├── Harvey_5B_ActionPlan/
+├── Harvey_5B_Performance/
+├── Harvey_57M_ActionPlan/
+├── Harvey_57M_Performance/
 ├── Hurricane_Ike/
-├── Hurricane_Rita/
-├── Mitigation/
-├── ... (20 categories total)
+├── Hurricane_Rita1/
+├── Hurricane_Rita2/
+├── Mitigation_ActionPlan/
+├── Mitigation_Performance/
+└── Wildfire_I/
 ```
+
+Folder names are treated as the document **category** throughout the pipeline (stored in the `documents.category` column).
 
 #### Filename Conventions
 
 | Pattern | Example | Parsed |
 |---------|---------|--------|
 | `drgr-{disaster}-{year}-q{quarter}.pdf` | `drgr-2019-disasters-2025-q4.pdf` | disaster=2019-disasters, year=2025, quarter=4 |
-| `{code}-{year}-q{quarter}.pdf` | `harvey-2024-q3.pdf` | disaster=harvey, year=2024, quarter=3 |
-| `{disaster}-{year}-{quarter}q.pdf` | `ike-2023-4q.pdf` | disaster=ike, year=2023, quarter=4 |
+| `drgr-{code}-{year}-q{quarter}.pdf` | `drgr-h5b-2025-q4.pdf` | disaster=h5b, year=2025, quarter=4 |
+| `{code}-{year}-q{quarter}.pdf` | `ike-2025-q3.pdf` | disaster=ike, year=2025, quarter=3 |
+| `{code}-{year}-{quarter}q.pdf` | `ike-2023-4q.pdf` | disaster=ike, year=2023, quarter=4 |
+
+> Note: Some source PDFs include duplicate suffixes like `(...).pdf` or `_0.pdf`; the pipeline keeps the filename as-is and parses year/quarter using regex.
 
 #### Report Categories
 
@@ -50,16 +63,21 @@ DRGR_Reports/
 |-------------------|-------------|
 | 2015_Floods | 2015 Texas flood events |
 | 2016_Floods | 2016 Texas flood events |
-| 2018_Floods | 2018 flood recovery |
-| 2019_Disasters | 2019 disaster events including Tropical Storm Imelda |
-| 2024_Disasters | Recent disaster events |
-| Hurricane_Dolly | 2008 Hurricane Dolly recovery |
-| Hurricane_Harvey | 2017 Hurricane Harvey recovery |
+| 2018_Floods_ActionPlan | 2018 South Texas Floods action plans |
+| 2018_Floods_Performance | 2018 South Texas Floods quarterly performance reports |
+| 2019_Disasters_ActionPlan | 2019 disasters action plans (incl. TS Imelda) |
+| 2019_Disasters_Performance | 2019 disasters quarterly performance reports |
+| 2024_Disasters | 2024 disaster category |
+| Expenditure_Reports | DRGR expenditure report snapshots |
+| Harvey_5B_ActionPlan | Hurricane Harvey 5B action plans |
+| Harvey_5B_Performance | Hurricane Harvey 5B quarterly performance reports |
+| Harvey_57M_ActionPlan | Hurricane Harvey 57M action plans |
+| Harvey_57M_Performance | Hurricane Harvey 57M quarterly performance reports |
 | Hurricane_Ike | 2008 Hurricane Ike recovery |
-| Hurricane_Rita | 2005 Hurricane Rita recovery |
-| Mitigation | Hazard mitigation programs |
-| Round_2_Ike | Second round Ike funding |
-| Round_2_Rita | Second round Rita funding |
+| Hurricane_Rita1 | Hurricane Rita (Round 1) |
+| Hurricane_Rita2 | Hurricane Rita (Round 2) |
+| Mitigation_ActionPlan | Mitigation action plans |
+| Mitigation_Performance | Mitigation quarterly performance reports |
 | Wildfire_I | Wildfire recovery |
 
 ### Download Script
@@ -75,15 +93,22 @@ DRGR_Reports/
 
 ### Text Files
 
-**Location**: `data/extracted_text/`
+**Locations**:
+- `data/extracted_text/` (line-preserving text for QPR parsing)
+- `data/extracted_text_clean/` (whitespace-normalized text)
 
 Plain text extracted from each PDF, one file per document.
 
 ```
 extracted_text/
-├── harvey-2024-q3.txt
-├── ike-2023-q4.txt
+├── drgr-h5b-2025-q4.txt
+├── ike-2025-q3.txt
 ├── drgr-2019-disasters-2025-q4.txt
+└── ... (442 files)
+
+extracted_text_clean/
+├── drgr-h5b-2025-q4.txt
+├── ike-2025-q3.txt
 └── ... (442 files)
 ```
 
@@ -109,8 +134,8 @@ Tables extracted from each PDF as JSON arrays.
 
 ```
 extracted_tables/
-├── harvey-2024-q3_tables.json
-├── ike-2023-q4_tables.json
+├── drgr-h5b-2025-q4_tables.json
+├── ike-2025-q3_tables.json
 └── ... (442 files)
 ```
 
@@ -136,6 +161,39 @@ extracted_tables/
     }
 ]
 ```
+
+### Boundary Files (GeoJSON)
+
+**Location**: `data/boundaries/`
+
+Texas boundary GeoJSONs used for choropleth joins/visualization:
+
+- `tx_counties.geojson`
+- `tx_tracts.geojson`
+- `tx_block_groups.geojson`
+- `tx_zcta5.geojson`
+
+See `data/boundaries/README.md` for provenance and expected property keys.
+
+### Reference Lookups
+
+**Location**: `data/reference/`
+
+Small CSV lookups used by spatial joins and normalization:
+
+- `tx_county_fips.csv` (columns: `county`, `fips`)
+
+### Evaluation Data
+
+**Location**: `data/eval/`
+
+Gold-standard datasets used for evaluation/validation (not provided by default). See `data/eval/README.md`.
+
+### Vector Store (Semantic Search)
+
+**Location**: `data/vector_store/`
+
+ChromaDB persistence directory created by `python src/semantic_search.py --build`.
 
 ---
 
@@ -255,6 +313,7 @@ All extracted entities with metadata (~286 MB).
 |--------|------|-------------|
 | entity_type | string | Entity type |
 | entity_text | string | Extracted text |
+| normalized_text | string | Canonical/normalized text |
 | filename | string | Source document |
 | category | string | Report category |
 | year | int | Report year |
@@ -319,3 +378,67 @@ Financial summary by disaster and program.
 | completion_rate | float | Expenditure rate |
 | duration_quarters | int | Program duration |
 | entity_mentions | int | Related entity count |
+
+### money_mentions*.csv
+
+Money mentions extracted from narrative spans with context labels (budget/expended/obligated/drawdown).
+
+- `money_mentions.csv` - Row-level mentions with sentence snippet + parsed `amount_usd`
+- `money_mentions.csv` is capped by default (`--export-limit 200000`) since it can be large; set `--export-limit 0` to export all rows.
+- `money_mentions_by_quarter.csv` - Rollup by category/year/quarter/context label
+- `money_mentions_top_entities.csv` - Top co-mentioned entities per context label
+
+### Harvey Funding Flow Exports
+
+Generated by the Harvey parsing + tracking pipeline (`python src/financial_parser.py` and `python src/funding_tracker.py --export`):
+
+- `harvey_sankey_infrastructure.json`, `harvey_sankey_housing.json`, `harvey_sankey_recipients.json`
+- `harvey_sankey_combined.json`, `harvey_sankey_data.json`
+- `harvey_quarterly_trends.json`, `harvey_funding_hierarchy.json`
+- `harvey_org_allocations.csv`, `harvey_county_allocations.csv`
+
+### Harvey Deliverable Exports (Heuristic Reports)
+
+Generated by the deliverable report builders:
+
+- Fund switching / reallocation statement screening:
+  - `harvey_action_plan_fund_switch_statements.csv`
+  - `harvey_action_plan_fund_switch_doc_summary.csv`
+  - `harvey_action_plan_fund_switch_semantic_paragraph_candidates.csv`
+  - `harvey_action_plan_fund_switch_semantic_dedup_groups.csv`
+  - `harvey_action_plan_fund_switch_bertopic_topics.csv`
+  - `harvey_action_plan_fund_switch_bertopic_paragraphs.csv`
+  - `harvey_action_plan_fund_switch_relocation_justification_timeline.csv`
+  - HTML report: `outputs/reports/harvey_action_plan_fund_switch_report.html`
+  - See: `docs/HARVEY_ACTION_PLAN_FUND_SWITCH.md`
+- Housing program progress by ZIP × quarter (allocated panel):
+  - `harvey_housing_zip_quarter_panel.csv`
+  - `harvey_housing_quarter_summary.csv`
+  - HTML report: `outputs/reports/harvey_housing_zip_progress_report.html`
+  - See: `docs/HARVEY_HOUSING_ZIP_PROGRESS.md`
+
+### Spatial Exports
+
+Generated by the spatial pipeline (`python src/location_extractor.py` + `python src/spatial_mapper.py` and/or `python src/spatial_*_map.py`):
+
+- Aggregations: `spatial_county_agg.csv`, `spatial_tract_agg.csv`, `spatial_block_group_agg.csv`, `spatial_zip_agg.csv`, `spatial_h3_r7_agg.csv`
+- Joined GeoJSONs: `spatial_county_joined.geojson`, `spatial_tract_joined.geojson`, `spatial_block_group_joined.geojson`, `spatial_zip_joined.geojson`
+- HTML maps (large): `spatial_choropleth.html`, `spatial_zip_latest_quarter.html`, `spatial_tract_latest_quarter.html`, `spatial_tract_all.html`, `spatial_tract_harris.html`
+
+> Note: The Plotly HTML exports can be very large (100MB+). Treat them as generated artifacts rather than source data.
+
+---
+
+## Model-Ready Exports
+
+**Location**: `outputs/model_ready/`
+
+Smaller, tidy CSVs designed for:
+
+- exploratory data analysis (EDA)
+- statistical models (including SEM-style panels)
+- repeatable visualizations
+
+These tables are intentionally scoped to be more GitHub/share friendly than the large `outputs/exports/` artifacts.
+
+See `docs/MODEL_READY.md` for the current dataset list and build instructions (`make model-ready`).

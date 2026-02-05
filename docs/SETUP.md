@@ -17,8 +17,8 @@ Complete installation and environment setup for the Texas GLO NLP project.
 ### Required
 
 - **Python**: 3.12 or higher
-- **Disk Space**: ~2GB for database and extracted files
-- **Memory**: 4GB+ RAM recommended for NLP processing
+- **Disk Space**: ~8–12GB free recommended for end-to-end processing (PDFs + extracted text/tables + SQLite DB + exports)
+- **Memory**: 8GB+ RAM recommended (spaCy transformer models can require more)
 
 ### Optional
 
@@ -31,7 +31,7 @@ Complete installation and environment setup for the Texas GLO NLP project.
   sudo apt-get install tesseract-ocr
   ```
 
-- **Anthropic API Key**: For Phase 4 Claude integration
+- **Anthropic API Key**: Optional (only if you add Claude-based Q&A/summarization; not required for semantic indexing)
 
 ---
 
@@ -84,11 +84,11 @@ cp .env.example .env
 Create a `.env` file in the project root:
 
 ```bash
-# Required for Phase 4 (Semantic Search)
+# Optional: used only for Claude-based integrations (not required for semantic indexing)
 ANTHROPIC_API_KEY=your-api-key-here
 
-# Optional: Override default spaCy model
-SPACY_MODEL=en_core_web_sm
+# Optional: default spaCy model (some scripts may also accept --model)
+# SPACY_MODEL=en_core_web_sm
 ```
 
 ### Configuration Options
@@ -101,8 +101,9 @@ Edit `src/config.py` to customize:
 | `extract_tables` | True | Enable table extraction |
 | `ocr_fallback` | False | Use OCR for scanned PDFs |
 | `min_text_length` | 100 | Minimum chars for valid extraction |
-| `spacy_model` | en_core_web_trf | NLP model to use |
+| `spacy_model` | en_core_web_sm | NLP model to use (CLI default; can override with `--model`) |
 | `chunk_size` | 1000 | Tokens per embedding chunk |
+| `chunk_overlap` | 200 | Overlap between embedding chunks |
 
 ---
 
@@ -134,8 +135,8 @@ python src/pdf_processor.py --stats
 # Document Statistics:
 #   Total documents: 442
 #   Processed: 442
-#   Total pages: 153,540
-#   Total tables: 148,806
+#   Total pages: 153540
+#   Total tables: 175208
 ```
 
 ```bash
@@ -144,9 +145,8 @@ python src/nlp_processor.py --stats
 
 # Expected output:
 # Entity Statistics:
-#   Total entities: 4,234,550
-#   Entity types: 27
-#   Unique entity values: 311,000+
+#   Total entities: 4,246,325
+#   Documents with entities: 442
 ```
 
 ### Run Quick Test
@@ -211,7 +211,7 @@ pip install PyMuPDF==1.24.0
 ### Performance Tips
 
 1. **Memory Usage**: Close Jupyter notebooks when running batch processing
-2. **Disk Space**: Extracted text files total ~230MB, tables ~155MB
+2. **Disk Space**: Current artifacts are roughly: PDFs ~450MB, extracted text ~230MB, clean text ~230MB, tables ~155MB, DB ~1.5GB, vector store ~2GB (optional)
 3. **Processing Time**: Full PDF extraction takes ~85 minutes
 4. **NLP Processing**: Entity extraction takes ~30 minutes for all documents
 
@@ -225,5 +225,6 @@ After setup is complete:
 2. Review entity extraction: `jupyter notebook notebooks/02_entity_analysis.ipynb`
 3. Export data: `python src/nlp_processor.py --export`
 4. Link to grants: `python src/data_linker.py`
+5. Spatial exports: `python src/location_extractor.py --rebuild && python src/spatial_mapper.py --join --map`
 
 See [Workflows](WORKFLOWS.md) for detailed processing guides.

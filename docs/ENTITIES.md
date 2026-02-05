@@ -14,13 +14,13 @@ Documentation of all named entity types extracted by the NLP pipeline.
 
 ## Entity Overview
 
-The NLP pipeline extracts 27 entity types totaling 4.2M+ entities:
+The pipeline combines multiple extraction approaches:
 
-| Category | Entity Types | Count |
-|----------|-------------|-------|
-| Standard spaCy | MONEY, ORG, CARDINAL, DATE, GPE, etc. | 3.8M |
-| Custom Domain | DISASTER, FEMA_DECLARATION, TX_COUNTY, PROGRAM | 180K |
-| Regex Patterns | MONEY, DAMAGE_METRIC, RAINFALL, WIND_SPEED, QUARTER | 25K |
+- **spaCy NER** for standard entity labels (ORG, MONEY, DATE, …)
+- **EntityRuler patterns** for domain entities (DISASTER, FEMA_DECLARATION, TX_COUNTY, PROGRAM)
+- **Regex patterns** for metrics (RAINFALL, WIND_SPEED, DAMAGE_METRIC, QUARTER, …)
+
+In the current `data/glo_reports.db` snapshot, `python src/nlp_processor.py --stats` reports **4,246,325 entities** across **26 entity types**.
 
 ---
 
@@ -40,7 +40,7 @@ Companies, agencies, institutions.
 
 **Examples**: `Texas GLO`, `HUD`, `FEMA`, `Harris County`, `City of Houston`
 
-**Count**: 1,152,944
+**Count**: 1,154,058
 
 ### GPE (Geopolitical Entity)
 
@@ -48,7 +48,7 @@ Countries, cities, states.
 
 **Examples**: `Texas`, `Houston`, `United States`, `Harris County`
 
-**Count**: 198,125
+**Count**: 194,085
 
 ### DATE
 
@@ -56,7 +56,7 @@ Dates and time periods.
 
 **Examples**: `August 25, 2017`, `Q4 2024`, `2019`, `September`
 
-**Count**: 351,447
+**Count**: 352,089
 
 ### MONEY
 
@@ -64,7 +64,7 @@ Monetary values (also extracted via regex).
 
 **Examples**: `$5,685,492,029.81`, `$1.3 billion`, `$50 million`
 
-**Count**: 1,284,980
+**Count**: 1,287,763
 
 ### CARDINAL
 
@@ -72,7 +72,7 @@ Numerals that don't fit other categories.
 
 **Examples**: `442`, `153,540`, `82`
 
-**Count**: 488,396
+**Count**: 489,301
 
 ### ORDINAL
 
@@ -86,7 +86,7 @@ Percentage values.
 
 **Examples**: `95%`, `73 percent`, `0.5%`
 
-**Count**: 28,097
+**Count**: 28,131
 
 ### QUANTITY
 
@@ -94,7 +94,7 @@ Measurements with units.
 
 **Examples**: `60 inches`, `150 mph`, `1,200 homes`
 
-**Count**: 68,573
+**Count**: 68,795
 
 ### FAC (Facility)
 
@@ -102,7 +102,7 @@ Buildings, infrastructure.
 
 **Examples**: `City Hall`, `Highway 290`, `Port of Houston`
 
-**Count**: 180,231
+**Count**: 180,865
 
 ### LOC (Location)
 
@@ -110,7 +110,7 @@ Non-GPE locations.
 
 **Examples**: `Lower Rio Grande Valley`, `Gulf Coast`, `Galveston Bay`
 
-**Count**: 30,065
+**Count**: 30,122
 
 ### PRODUCT
 
@@ -124,7 +124,7 @@ Named laws and regulations.
 
 **Examples**: `Stafford Act`, `CDBG regulations`, `42 U.S.C. 5306`
 
-**Count**: 9,851
+**Count**: 9,871
 
 ### EVENT
 
@@ -132,13 +132,21 @@ Named events (hurricanes, etc.).
 
 **Examples**: `Hurricane Harvey`, `Tropical Storm Imelda`
 
-**Count**: 6,916
+**Count**: 6,944
 
 ### WORK_OF_ART
 
 Titles of documents, reports.
 
 **Examples**: `Action Plan`, `Quarterly Performance Report`
+
+### LANGUAGE
+
+Languages.
+
+**Examples**: `English`, `Spanish`
+
+**Count**: 54
 
 ### NORP
 
@@ -170,13 +178,13 @@ Named disaster events.
 **Examples**:
 | Entity | Mentions |
 |--------|----------|
-| Hurricane Ike | 23,933 |
+| Hurricane Ike | 24,034 |
 | Hurricane Harvey | 13,213 |
-| Hurricane Dolly | 3,431 |
+| Hurricane Dolly | 3,451 |
 | Hurricane Rita | 724 |
 | Tropical Storm Imelda | 650 |
 
-**Count**: 50,676 (24 unique)
+**Count**: 50,805 (24 unique)
 
 ### FEMA_DECLARATION
 
@@ -200,30 +208,18 @@ FEMA disaster declaration numbers.
 
 ### TX_COUNTY
 
-Texas county names.
-
-**Recognized Counties** (54 total):
-```
-Harris, Jefferson, Galveston, Chambers, Orange, Brazoria,
-Fort Bend, Montgomery, Liberty, Waller, Austin, Colorado,
-Wharton, Matagorda, Jackson, Victoria, Calhoun, Refugio,
-Aransas, San Patricio, Nueces, Kleberg, Kenedy, Willacy,
-Cameron, Hidalgo, Starr, Webb, Zapata, Jim Hogg, Brooks,
-Duval, Jim Wells, Live Oak, Bee, Goliad, DeWitt, Lavaca,
-Fayette, Bastrop, Lee, Washington, Grimes, Walker, San Jacinto,
-Polk, Tyler, Hardin, Jasper, Newton, Sabine, Angelina, Nacogdoches
-```
+Texas county names (matched against a curated list; see `TEXAS_COUNTIES` in `src/nlp_processor.py`).
 
 **Top Counties**:
 | County | Mentions |
 |--------|----------|
-| Harris | 15,234 |
-| Jefferson | 8,921 |
-| Galveston | 7,456 |
-| Cameron | 5,123 |
-| Hidalgo | 4,892 |
+| Harris County | 16,954 |
+| Galveston County | 6,774 |
+| Newton County | 5,312 |
+| Brazoria County | 3,624 |
+| Jefferson County | 3,387 |
 
-**Count**: 103,497 (104 unique)
+**Count**: 113,390 (178 unique)
 
 ### PROGRAM
 
@@ -303,7 +299,7 @@ r'\d+(?:,\d{3})*\s+(?:homes?|units?|structures?|buildings?|families|households|r
 | Families | `50,000 families affected` |
 | Units | `3,500 housing units` |
 
-**Count**: 2,867 (408 unique)
+**Count**: 2,871 (408 unique)
 
 ### RAINFALL
 
@@ -321,7 +317,7 @@ r'\d+(?:\.\d+)?\s*(?:inches?|in\.)\s*(?:of\s+)?(?:rain(?:fall)?)?'
 | 25.5 in | `25.5 in. of rain` |
 | 40 inches | `40 inches of precipitation` |
 
-**Count**: 22,163 (433 unique)
+**Count**: 22,236 (433 unique)
 
 ### WIND_SPEED
 
@@ -363,29 +359,24 @@ r'(?:first|second|third|fourth)\s+quarter\s+\d{4}'
 
 ### Adding Custom Entity Patterns
 
-Edit `src/nlp_processor.py`:
+Edit `src/nlp_processor.py` and add patterns to `ENTITY_PATTERNS` (spaCy `EntityRuler`).
 
 ```python
-# In DISASTER_PATTERNS list
-DISASTER_PATTERNS = [
-    # Add new disaster pattern
+ENTITY_PATTERNS = [
+    # ... existing patterns ...
+
+    # Example: "Winter Storm Uri"
     {"label": "DISASTER", "pattern": [{"LOWER": "winter"}, {"LOWER": "storm"}, {"IS_TITLE": True}]},
-    # Pattern: "Winter Storm Uri"
 ]
-
-# In COUNTY_PATTERNS - add county names
-{"label": "TX_COUNTY", "pattern": [{"LOWER": "travis"}, {"LOWER": "county"}]},
 ```
 
-### Adding Regex Patterns
+### Adding County Matching
 
-```python
-# In REGEX_PATTERNS dictionary
-REGEX_PATTERNS = {
-    # Add new pattern
-    'POPULATION': r'\d+(?:,\d{3})*\s+(?:residents|population|people)',
-}
-```
+Add counties to `TEXAS_COUNTIES`. Patterns are generated automatically by `build_county_patterns()`.
+
+### Adding Regex-Based Entity Types
+
+Add a new compiled regex near the top of `src/nlp_processor.py`, then extend `extract_entities_regex()` to emit the new `entity_type`.
 
 ### Testing New Patterns
 
@@ -399,7 +390,7 @@ test_text = "Winter Storm Uri caused damage to 5,000 homes in Travis County."
 entities = processor.extract_all_entities(test_text)
 
 for ent in entities:
-    print(f"{ent['type']}: {ent['text']}")
+    print(f"{ent['entity_type']}: {ent['entity_text']}")
 ```
 
 ### Reprocessing After Changes

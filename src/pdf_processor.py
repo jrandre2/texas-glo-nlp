@@ -2,6 +2,9 @@
 
 import json
 import sys
+import shutil
+import subprocess
+import tempfile
 from pathlib import Path
 from datetime import datetime
 from typing import Optional, List, Dict, Any, Tuple
@@ -34,10 +37,10 @@ class PDFProcessor:
 
     def extract_text_pymupdf(self, pdf_path: Path) -> Tuple[List[str], int]:
         """
-        Extract text from PDF using PyMuPDF (fast, handles most PDFs well).
+        Extract raw text from PDF using PyMuPDF (fast, handles most PDFs well).
 
         Returns:
-            Tuple of (list of text per page, page count)
+            Tuple of (list of raw text per page, page count)
         """
         try:
             doc = fitz.open(pdf_path)
@@ -45,7 +48,7 @@ class PDFProcessor:
 
             for page in doc:
                 text = page.get_text()
-                pages_text.append(utils.clean_text(text))
+                pages_text.append(text)
 
             page_count = len(doc)
             doc.close()
@@ -53,6 +56,51 @@ class PDFProcessor:
 
         except Exception as e:
             print(f"Error extracting text from {pdf_path.name}: {e}")
+            return [], 0
+
+    def _tesseract_available(self) -> bool:
+        """Check whether the tesseract CLI is available."""
+        return shutil.which("tesseract") is not None
+
+    def extract_text_ocr(self, pdf_path: Path, dpi: int = 300) -> Tuple[List[str], int]:
+        """
+        Extract text from PDF using OCR via Tesseract.
+
+        Returns:
+            Tuple of (list of raw text per page, page count)
+        """
+        if not self._tesseract_available():
+            print("Tesseract not available; skipping OCR.")
+            return [], 0
+
+        pages_text = []
+        try:
+            doc = fitz.open(pdf_path)
+            page_count = len(doc)
+
+            for page in doc:
+                pix = page.get_pixmap(dpi=dpi)
+                tmp_path = None
+                try:
+                    with tempfile.NamedTemporaryFile(suffix=".png", delete=False) as tmp_file:
+                        tmp_path = Path(tmp_file.name)
+                    pix.save(str(tmp_path))
+                    result = subprocess.run(
+                        ["tesseract", str(tmp_path), "stdout", "--dpi", str(dpi), "-l", "eng"],
+                        capture_output=True,
+                        text=True,
+                        check=False,
+                    )
+                    pages_text.append(result.stdout or "")
+                finally:
+                    if tmp_path and tmp_path.exists():
+                        tmp_path.unlink()
+
+            doc.close()
+            return pages_text, page_count
+
+        except Exception as e:
+            print(f"Error extracting OCR text from {pdf_path.name}: {e}")
             return [], 0
 
     def extract_tables_pdfplumber(self, pdf_path: Path) -> List[Dict[str, Any]]:
@@ -122,10 +170,13 @@ class PDFProcessor:
         cursor = self.conn.cursor()
 
         for page_num, text in enumerate(pages_text, start=1):
+            raw_text = utils.clean_text(text, preserve_newlines=True)
+            clean_text = utils.clean_text(text, preserve_newlines=False)
             cursor.execute('''
-                INSERT OR REPLACE INTO document_text (document_id, page_number, text_content, char_count)
-                VALUES (?, ?, ?, ?)
-            ''', (document_id, page_num, text, len(text)))
+                INSERT OR REPLACE INTO document_text
+                (document_id, page_number, text_content, raw_text_content, char_count)
+                VALUES (?, ?, ?, ?, ?)
+            ''', (document_id, page_num, clean_text, raw_text, len(clean_text)))
 
         # Update page count
         cursor.execute('''
@@ -153,7 +204,14 @@ class PDFProcessor:
 
         self.conn.commit()
 
-    def process_pdf(self, pdf_path: Path, extract_tables: bool = True) -> bool:
+    def clear_document_data(self, document_id: int):
+        """Clear existing extracted text/tables for a document (used for reprocess)."""
+        cursor = self.conn.cursor()
+        cursor.execute('DELETE FROM document_text WHERE document_id = ?', (document_id,))
+        cursor.execute('DELETE FROM document_tables WHERE document_id = ?', (document_id,))
+        self.conn.commit()
+
+    def process_pdf(self, pdf_path: Path, extract_tables: bool = True, reprocess: bool = False) -> bool:
         """
         Process a single PDF: extract text and optionally tables.
 
@@ -162,9 +220,17 @@ class PDFProcessor:
         try:
             # Register document
             doc_id = self.register_document(pdf_path)
+            if reprocess:
+                self.clear_document_data(doc_id)
 
             # Extract text
             pages_text, page_count = self.extract_text_pymupdf(pdf_path)
+
+            total_chars = sum(len(p) for p in pages_text if p)
+            if (not pages_text or total_chars < config.PDF_PROCESSING.get("min_text_length", 0)) \
+                    and config.PDF_PROCESSING.get("ocr_fallback", False):
+                print(f"Falling back to OCR for {pdf_path.name}")
+                pages_text, page_count = self.extract_text_ocr(pdf_path)
 
             if pages_text:
                 self.save_extracted_text(doc_id, pages_text)
@@ -172,7 +238,13 @@ class PDFProcessor:
 
                 # Also save to text file for easy access
                 text_file = config.EXTRACTED_TEXT_DIR / f"{pdf_path.stem}.txt"
-                text_file.write_text('\n\n--- PAGE BREAK ---\n\n'.join(pages_text))
+                raw_pages = [utils.clean_text(p, preserve_newlines=True) for p in pages_text]
+                text_file.write_text('\n\n--- PAGE BREAK ---\n\n'.join(raw_pages))
+
+                # Save cleaned text separately
+                clean_text_file = config.EXTRACTED_TEXT_CLEAN_DIR / f"{pdf_path.stem}.txt"
+                clean_pages = [utils.clean_text(p, preserve_newlines=False) for p in pages_text]
+                clean_text_file.write_text('\n\n--- PAGE BREAK ---\n\n'.join(clean_pages))
 
             # Extract tables if requested
             tables_extracted = False
@@ -229,7 +301,11 @@ class PDFProcessor:
 
         # Process with progress bar
         for pdf_path in tqdm(pdf_files, desc="Processing PDFs"):
-            self.process_pdf(pdf_path, extract_tables=config.PDF_PROCESSING['extract_tables'])
+            self.process_pdf(
+                pdf_path,
+                extract_tables=config.PDF_PROCESSING['extract_tables'],
+                reprocess=not skip_processed,
+            )
 
         # Print summary
         print("\n" + "="*50)
@@ -290,6 +366,7 @@ def main():
     parser.add_argument('--limit', type=int, help='Limit number of PDFs to process')
     parser.add_argument('--no-tables', action='store_true', help='Skip table extraction')
     parser.add_argument('--reprocess', action='store_true', help='Reprocess already processed files')
+    parser.add_argument('--ocr', action='store_true', help='Enable OCR fallback for scanned PDFs')
     parser.add_argument('--stats', action='store_true', help='Show statistics only')
 
     args = parser.parse_args()
@@ -309,6 +386,8 @@ def main():
     else:
         if args.no_tables:
             config.PDF_PROCESSING['extract_tables'] = False
+        if args.ocr:
+            config.PDF_PROCESSING['ocr_fallback'] = True
 
         processor.process_all(limit=args.limit, skip_processed=not args.reprocess)
 

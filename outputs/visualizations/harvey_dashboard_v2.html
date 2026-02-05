@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harvey CDBG-DR Funding Dashboard</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; }
+        .header { background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 2rem; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 1.1rem; }
+        .stats-row { display: flex; justify-content: center; gap: 40px; margin-top: 20px; flex-wrap: wrap; }
+        .stat { text-align: center; }
+        .stat-value { font-size: 1.8rem; font-weight: bold; }
+        .stat-label { font-size: 0.9rem; opacity: 0.8; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 20px; }
+        .section { background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; overflow: hidden; }
+        .section-header { background: #f8f9fa; padding: 15px 20px; border-bottom: 1px solid #e9ecef; display: flex; justify-content: space-between; align-items: center; }
+        .section-header h2 { font-size: 1.2rem; color: #2d3748; }
+        .section-content { padding: 20px; min-height: 400px; }
+        .tabs { display: flex; gap: 10px; }
+        .tab { padding: 6px 12px; border: 1px solid #e9ecef; border-radius: 4px; cursor: pointer; background: white; font-size: 0.9rem; }
+        .tab:hover { background: #f8f9fa; }
+        .tab.active { background: #2c5282; color: white; border-color: #2c5282; }
+        .data-table { width: 100%; border-collapse: collapse; }
+        .data-table th, .data-table td { padding: 12px; text-align: left; border-bottom: 1px solid #e9ecef; }
+        .data-table th { background: #f8f9fa; font-weight: 600; }
+        .data-table .amount { text-align: right; font-family: monospace; }
+        .footer { text-align: center; padding: 20px; color: #666; font-size: 0.9rem; }
+        .footer a { color: #2c5282; }
+        .error { color: #c53030; padding: 20px; text-align: center; }
+        .loading { color: #666; padding: 20px; text-align: center; }
+        svg { display: block; }
+        .grid line { stroke: #e9ecef; }
+        .grid path { stroke: none; }
+        .bar { fill: #38a169; }
+        .bar:hover { fill: #2f855a; }
+        .link { stroke-opacity: 0.5; }
+        .link:hover { stroke-opacity: 0.8; }
+        .node rect { stroke: #fff; stroke-width: 2px; }
+        .node text { font-size: 12px; }
+        .axis text { font-size: 11px; }
+        .line { fill: none; stroke-width: 2; }
+        .dot { stroke: white; stroke-width: 2; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Hurricane Harvey CDBG-DR Funding Flow</h1>
+        <p>Tracking $4.47B in disaster recovery funds across 616 activities</p>
+        <div class="stats-row">
+            <div class="stat"><div class="stat-value" id="total-budget">$4.47B</div><div class="stat-label">Total Budget</div></div>
+            <div class="stat"><div class="stat-value" id="total-activities">616</div><div class="stat-label">Activities</div></div>
+            <div class="stat"><div class="stat-value" id="total-counties">62</div><div class="stat-label">Counties</div></div>
+            <div class="stat"><div class="stat-value" id="completion-rate">12.5%</div><div class="stat-label">Completion Rate</div></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <div class="section-header">
+                <h2>Funding Flow: HUD to Local Expenditures</h2>
+            </div>
+            <div class="section-content" id="sankey-chart">
+                <p class="loading">Loading Sankey diagram...</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Quarterly Budget Trends</h2>
+                <div class="tabs">
+                    <div class="tab active" data-view="budget">Budget</div>
+                    <div class="tab" data-view="activities">Activities</div>
+                </div>
+            </div>
+            <div class="section-content" id="timeline-chart">
+                <p class="loading">Loading timeline...</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Top 15 Counties by Funding</h2>
+            </div>
+            <div class="section-content" id="county-chart">
+                <p class="loading">Loading county chart...</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Organization Allocations (Q4 2025)</h2>
+            </div>
+            <div class="section-content">
+                <table class="data-table" id="org-table">
+                    <thead><tr><th>Organization</th><th>Program</th><th class="amount">Allocated</th><th class="amount">Activities</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Data Source: Texas GLO DRGR Reports | Generated by <a href="https://github.com/jrandre2/texas-glo-nlp">Texas GLO NLP Project</a></p>
+    </div>
+
+    <!-- Load D3 first, then d3-sankey -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+
+    <script>
+        // ========== EMBEDDED DATA ==========
+        const SANKEY_DATA = {
+            "quarter": "Q4 2025",
+            "nodes": [
+                {"id": "HUD", "name": "HUD", "level": 0},
+                {"id": "Texas GLO", "name": "Texas GLO", "level": 1},
+                {"id": "Housing", "name": "Housing", "level": 2},
+                {"id": "Infrastructure", "name": "Infrastructure", "level": 2},
+                {"id": "Harris County", "name": "Harris County", "level": 3},
+                {"id": "Texas GLO Direct", "name": "Texas GLO Direct", "level": 3},
+                {"id": "City of Houston", "name": "City of Houston", "level": 3}
+            ],
+            "links": [
+                {"source": "HUD", "target": "Texas GLO", "value": 4474546991},
+                {"source": "Texas GLO", "target": "Housing", "value": 57800000},
+                {"source": "Texas GLO", "target": "Infrastructure", "value": 4416746991},
+                {"source": "Housing", "target": "Harris County", "value": 43879068},
+                {"source": "Housing", "target": "Texas GLO Direct", "value": 13920932},
+                {"source": "Infrastructure", "target": "City of Houston", "value": 1035382737},
+                {"source": "Infrastructure", "target": "Harris County", "value": 665224650},
+                {"source": "Infrastructure", "target": "Texas GLO Direct", "value": 2716139604}
+            ]
+        };
+
+        const TRENDS_DATA = [
+            {"quarter": "Q1 2020", "program": "Infrastructure", "budget": 3469283205, "activities": 462},
+            {"quarter": "Q2 2020", "program": "Infrastructure", "budget": 3633053987, "activities": 544},
+            {"quarter": "Q3 2020", "program": "Infrastructure", "budget": 3743508539, "activities": 573},
+            {"quarter": "Q4 2020", "program": "Infrastructure", "budget": 4101703605, "activities": 558},
+            {"quarter": "Q1 2021", "program": "Infrastructure", "budget": 4138322582, "activities": 611},
+            {"quarter": "Q2 2021", "program": "Infrastructure", "budget": 4106703606, "activities": 612},
+            {"quarter": "Q3 2021", "program": "Infrastructure", "budget": 4187217345, "activities": 615},
+            {"quarter": "Q4 2021", "program": "Infrastructure", "budget": 4183396228, "activities": 618},
+            {"quarter": "Q1 2022", "program": "Infrastructure", "budget": 4183439419, "activities": 499},
+            {"quarter": "Q2 2022", "program": "Infrastructure", "budget": 4161104160, "activities": 517},
+            {"quarter": "Q3 2022", "program": "Infrastructure", "budget": 4062365223, "activities": 518},
+            {"quarter": "Q4 2022", "program": "Infrastructure", "budget": 4044788702, "activities": 531},
+            {"quarter": "Q1 2023", "program": "Infrastructure", "budget": 4189531377, "activities": 535},
+            {"quarter": "Q2 2023", "program": "Infrastructure", "budget": 4202622284, "activities": 537},
+            {"quarter": "Q3 2023", "program": "Infrastructure", "budget": 4100621938, "activities": 511},
+            {"quarter": "Q4 2023", "program": "Infrastructure", "budget": 4151584411, "activities": 515},
+            {"quarter": "Q1 2024", "program": "Infrastructure", "budget": 4207859450, "activities": 533},
+            {"quarter": "Q2 2024", "program": "Infrastructure", "budget": 4205259417, "activities": 530},
+            {"quarter": "Q3 2024", "program": "Infrastructure", "budget": 4378756099, "activities": 564},
+            {"quarter": "Q4 2024", "program": "Infrastructure", "budget": 4399613187, "activities": 542},
+            {"quarter": "Q1 2025", "program": "Infrastructure", "budget": 4393305228, "activities": 562},
+            {"quarter": "Q2 2025", "program": "Infrastructure", "budget": 4349756130, "activities": 586},
+            {"quarter": "Q3 2025", "program": "Infrastructure", "budget": 4378604099, "activities": 581},
+            {"quarter": "Q4 2025", "program": "Infrastructure", "budget": 4416746991, "activities": 586},
+            {"quarter": "Q4 2019", "program": "Housing", "budget": 54748160, "activities": 22},
+            {"quarter": "Q2 2020", "program": "Housing", "budget": 14334400, "activities": 11},
+            {"quarter": "Q3 2020", "program": "Housing", "budget": 14334400, "activities": 11},
+            {"quarter": "Q1 2021", "program": "Housing", "budget": 57800000, "activities": 26},
+            {"quarter": "Q2 2021", "program": "Housing", "budget": 57800000, "activities": 26},
+            {"quarter": "Q3 2021", "program": "Housing", "budget": 57800000, "activities": 27},
+            {"quarter": "Q4 2021", "program": "Housing", "budget": 57800000, "activities": 27},
+            {"quarter": "Q1 2022", "program": "Housing", "budget": 57800000, "activities": 17},
+            {"quarter": "Q2 2022", "program": "Housing", "budget": 57800000, "activities": 16},
+            {"quarter": "Q3 2022", "program": "Housing", "budget": 57800000, "activities": 16},
+            {"quarter": "Q4 2022", "program": "Housing", "budget": 57400000, "activities": 17},
+            {"quarter": "Q1 2023", "program": "Housing", "budget": 57400000, "activities": 18},
+            {"quarter": "Q2 2023", "program": "Housing", "budget": 57400000, "activities": 16},
+            {"quarter": "Q3 2023", "program": "Housing", "budget": 57400000, "activities": 16},
+            {"quarter": "Q4 2023", "program": "Housing", "budget": 57800000, "activities": 16},
+            {"quarter": "Q1 2024", "program": "Housing", "budget": 57800000, "activities": 16},
+            {"quarter": "Q2 2024", "program": "Housing", "budget": 57800000, "activities": 16},
+            {"quarter": "Q3 2024", "program": "Housing", "budget": 57800000, "activities": 16},
+            {"quarter": "Q4 2024", "program": "Housing", "budget": 57800000, "activities": 28},
+            {"quarter": "Q1 2025", "program": "Housing", "budget": 57800000, "activities": 30},
+            {"quarter": "Q2 2025", "program": "Housing", "budget": 57800000, "activities": 30},
+            {"quarter": "Q3 2025", "program": "Housing", "budget": 57800000, "activities": 30},
+            {"quarter": "Q4 2025", "program": "Housing", "budget": 57800000, "activities": 30}
+        ];
+
+        const COUNTY_DATA = [
+            {"county": "Aransas County", "allocated": 28797242, "activities": 3},
+            {"county": "Refugio County", "allocated": 11727057, "activities": 6},
+            {"county": "Liberty", "allocated": 11155242, "activities": 5},
+            {"county": "Brazoria", "allocated": 10917829, "activities": 1},
+            {"county": "SanJacinto", "allocated": 9195614, "activities": 4},
+            {"county": "Hardin County", "allocated": 7826815, "activities": 4},
+            {"county": "Montgomery", "allocated": 7175793, "activities": 3},
+            {"county": "Newton", "allocated": 6171946, "activities": 3},
+            {"county": "Nueces County", "allocated": 4645556, "activities": 2},
+            {"county": "Galveston County", "allocated": 4235621, "activities": 6},
+            {"county": "Fayette", "allocated": 3868970, "activities": 4},
+            {"county": "Calhoun County", "allocated": 3644597, "activities": 2},
+            {"county": "Polk", "allocated": 3640646, "activities": 4},
+            {"county": "Jasper", "allocated": 3437812, "activities": 5},
+            {"county": "Galveston", "allocated": 3293091, "activities": 1}
+        ];
+
+        const ORG_DATA = [
+            {"organization": "Texas GLO Direct", "program": "Infrastructure", "allocated": 2716139604, "activities": 536},
+            {"organization": "City of Houston", "program": "Infrastructure", "allocated": 1035382737, "activities": 17},
+            {"organization": "Harris County", "program": "Infrastructure", "allocated": 665224650, "activities": 29},
+            {"organization": "Harris County", "program": "Housing", "allocated": 43879068, "activities": 22},
+            {"organization": "Texas GLO Direct", "program": "Housing", "allocated": 13920932, "activities": 8}
+        ];
+
+        // ========== COLOR SCHEME ==========
+        const COLORS = {
+            hud: '#1a365d',
+            glo: '#2c5282',
+            infrastructure: '#38a169',
+            housing: '#d69e2e',
+            organization: '#805ad5',
+            county: '#dd6b20'
+        };
+
+        // ========== UTILITY FUNCTIONS ==========
+        function formatCurrency(value) {
+            if (value >= 1e9) return '$' + (value / 1e9).toFixed(2) + 'B';
+            if (value >= 1e6) return '$' + (value / 1e6).toFixed(1) + 'M';
+            if (value >= 1e3) return '$' + (value / 1e3).toFixed(0) + 'K';
+            return '$' + value.toFixed(0);
+        }
+
+        function formatNumber(value) {
+            return value.toLocaleString();
+        }
+
+        // ========== SANKEY DIAGRAM ==========
+        function drawSankey() {
+            console.log('Drawing Sankey diagram...');
+            const container = d3.select('#sankey-chart');
+            container.selectAll('*').remove();
+
+            const containerWidth = container.node().getBoundingClientRect().width;
+            const width = Math.max(800, containerWidth);
+            const height = 500;
+            const margin = {top: 20, right: 200, bottom: 20, left: 20};
+
+            const svg = container.append('svg')
+                .attr('width', width)
+                .attr('height', height);
+
+            // Check if d3.sankey exists
+            if (typeof d3.sankey !== 'function') {
+                container.html('<p class="error">Error: d3-sankey library not loaded</p>');
+                console.error('d3.sankey is not a function');
+                return;
+            }
+
+            try {
+                // Create sankey generator
+                const sankey = d3.sankey()
+                    .nodeId(d => d.id)
+                    .nodeWidth(20)
+                    .nodePadding(30)
+                    .extent([[margin.left, margin.top], [width - margin.right, height - margin.bottom]]);
+
+                // Deep copy and prepare data
+                const graph = sankey({
+                    nodes: SANKEY_DATA.nodes.map(d => ({...d})),
+                    links: SANKEY_DATA.links.map(d => ({
+                        source: d.source,
+                        target: d.target,
+                        value: d.value
+                    }))
+                });
+
+                // Get node color
+                function getColor(d) {
+                    if (d.id === 'HUD') return COLORS.hud;
+                    if (d.id === 'Texas GLO') return COLORS.glo;
+                    if (d.id === 'Infrastructure') return COLORS.infrastructure;
+                    if (d.id === 'Housing') return COLORS.housing;
+                    return COLORS.organization;
+                }
+
+                // Draw links
+                svg.append('g')
+                    .attr('fill', 'none')
+                    .selectAll('path')
+                    .data(graph.links)
+                    .join('path')
+                    .attr('class', 'link')
+                    .attr('d', d3.sankeyLinkHorizontal())
+                    .attr('stroke', d => getColor(d.source))
+                    .attr('stroke-width', d => Math.max(1, d.width))
+                    .append('title')
+                    .text(d => `${d.source.name} → ${d.target.name}\n${formatCurrency(d.value)}`);
+
+                // Draw nodes
+                const node = svg.append('g')
+                    .selectAll('g')
+                    .data(graph.nodes)
+                    .join('g')
+                    .attr('class', 'node');
+
+                node.append('rect')
+                    .attr('x', d => d.x0)
+                    .attr('y', d => d.y0)
+                    .attr('height', d => Math.max(1, d.y1 - d.y0))
+                    .attr('width', d => d.x1 - d.x0)
+                    .attr('fill', d => getColor(d))
+                    .append('title')
+                    .text(d => `${d.name}\n${formatCurrency(d.value)}`);
+
+                // Add labels
+                node.append('text')
+                    .attr('x', d => d.x0 < width / 2 ? d.x1 + 6 : d.x0 - 6)
+                    .attr('y', d => (d.y1 + d.y0) / 2)
+                    .attr('dy', '0.35em')
+                    .attr('text-anchor', d => d.x0 < width / 2 ? 'start' : 'end')
+                    .text(d => d.name)
+                    .style('font-size', '12px')
+                    .style('font-weight', '500');
+
+                // Add value labels
+                node.append('text')
+                    .attr('x', d => d.x0 < width / 2 ? d.x1 + 6 : d.x0 - 6)
+                    .attr('y', d => (d.y1 + d.y0) / 2 + 14)
+                    .attr('dy', '0.35em')
+                    .attr('text-anchor', d => d.x0 < width / 2 ? 'start' : 'end')
+                    .text(d => formatCurrency(d.value))
+                    .style('font-size', '10px')
+                    .style('fill', '#666');
+
+                console.log('Sankey diagram drawn successfully');
+            } catch (error) {
+                console.error('Error drawing Sankey:', error);
+                container.html('<p class="error">Error: ' + error.message + '</p>');
+            }
+        }
+
+        // ========== TIMELINE CHART ==========
+        function drawTimeline(viewType) {
+            console.log('Drawing timeline chart:', viewType);
+            const container = d3.select('#timeline-chart');
+            container.selectAll('*').remove();
+
+            const containerWidth = container.node().getBoundingClientRect().width;
+            const width = Math.max(800, containerWidth);
+            const height = 350;
+            const margin = {top: 30, right: 120, bottom: 60, left: 80};
+
+            const svg = container.append('svg')
+                .attr('width', width)
+                .attr('height', height);
+
+            // Group data by quarter
+            const quarterData = d3.group(TRENDS_DATA, d => d.quarter);
+            const quarters = [...new Set(TRENDS_DATA.map(d => d.quarter))].sort((a, b) => {
+                const [qa, ya] = a.match(/Q(\d) (\d{4})/).slice(1);
+                const [qb, yb] = b.match(/Q(\d) (\d{4})/).slice(1);
+                return (parseInt(ya) * 10 + parseInt(qa)) - (parseInt(yb) * 10 + parseInt(qb));
+            });
+
+            // Create scales
+            const x = d3.scalePoint()
+                .domain(quarters)
+                .range([margin.left, width - margin.right])
+                .padding(0.5);
+
+            const yField = viewType === 'budget' ? 'budget' : 'activities';
+            const yMax = d3.max(TRENDS_DATA, d => d[yField]);
+            const y = d3.scaleLinear()
+                .domain([0, yMax * 1.1])
+                .range([height - margin.bottom, margin.top]);
+
+            // Draw grid
+            svg.append('g')
+                .attr('class', 'grid')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x).tickSize(-(height - margin.top - margin.bottom)).tickFormat(''));
+
+            // Draw axes
+            svg.append('g')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x))
+                .selectAll('text')
+                .attr('transform', 'rotate(-45)')
+                .style('text-anchor', 'end');
+
+            svg.append('g')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y).tickFormat(viewType === 'budget' ? d => formatCurrency(d) : d => formatNumber(d)));
+
+            // Draw lines for each program
+            const programs = ['Infrastructure', 'Housing'];
+            const programColors = {Infrastructure: COLORS.infrastructure, Housing: COLORS.housing};
+
+            programs.forEach(program => {
+                const programData = TRENDS_DATA.filter(d => d.program === program).sort((a, b) => {
+                    const [qa, ya] = a.quarter.match(/Q(\d) (\d{4})/).slice(1);
+                    const [qb, yb] = b.quarter.match(/Q(\d) (\d{4})/).slice(1);
+                    return (parseInt(ya) * 10 + parseInt(qa)) - (parseInt(yb) * 10 + parseInt(qb));
+                });
+
+                const line = d3.line()
+                    .x(d => x(d.quarter))
+                    .y(d => y(d[yField]))
+                    .defined(d => d[yField] !== undefined);
+
+                svg.append('path')
+                    .datum(programData)
+                    .attr('class', 'line')
+                    .attr('d', line)
+                    .attr('stroke', programColors[program]);
+
+                svg.selectAll(`.dot-${program}`)
+                    .data(programData)
+                    .join('circle')
+                    .attr('class', `dot dot-${program}`)
+                    .attr('cx', d => x(d.quarter))
+                    .attr('cy', d => y(d[yField]))
+                    .attr('r', 4)
+                    .attr('fill', programColors[program]);
+            });
+
+            // Legend
+            const legend = svg.append('g')
+                .attr('transform', `translate(${width - 100}, 40)`);
+
+            programs.forEach((program, i) => {
+                const g = legend.append('g').attr('transform', `translate(0, ${i * 25})`);
+                g.append('rect').attr('width', 15).attr('height', 15).attr('fill', programColors[program]);
+                g.append('text').attr('x', 20).attr('y', 12).text(program).style('font-size', '12px');
+            });
+
+            console.log('Timeline chart drawn successfully');
+        }
+
+        // ========== COUNTY CHART ==========
+        function drawCountyChart() {
+            console.log('Drawing county chart...');
+            const container = d3.select('#county-chart');
+            container.selectAll('*').remove();
+
+            const containerWidth = container.node().getBoundingClientRect().width;
+            const width = Math.max(600, containerWidth);
+            const height = 400;
+            const margin = {top: 20, right: 120, bottom: 40, left: 150};
+
+            const svg = container.append('svg')
+                .attr('width', width)
+                .attr('height', height);
+
+            // Sort data
+            const sortedData = [...COUNTY_DATA].sort((a, b) => b.allocated - a.allocated).slice(0, 15);
+
+            // Scales
+            const y = d3.scaleBand()
+                .domain(sortedData.map(d => d.county))
+                .range([margin.top, height - margin.bottom])
+                .padding(0.2);
+
+            const x = d3.scaleLinear()
+                .domain([0, d3.max(sortedData, d => d.allocated) * 1.1])
+                .range([margin.left, width - margin.right]);
+
+            // Grid
+            svg.append('g')
+                .attr('class', 'grid')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y).tickSize(-(width - margin.left - margin.right)).tickFormat(''));
+
+            // Bars
+            svg.selectAll('.bar')
+                .data(sortedData)
+                .join('rect')
+                .attr('class', 'bar')
+                .attr('y', d => y(d.county))
+                .attr('x', margin.left)
+                .attr('height', y.bandwidth())
+                .attr('width', d => x(d.allocated) - margin.left)
+                .attr('fill', COLORS.county);
+
+            // Labels on bars
+            svg.selectAll('.bar-label')
+                .data(sortedData)
+                .join('text')
+                .attr('class', 'bar-label')
+                .attr('y', d => y(d.county) + y.bandwidth() / 2)
+                .attr('x', d => x(d.allocated) + 5)
+                .attr('dy', '0.35em')
+                .text(d => formatCurrency(d.allocated))
+                .style('font-size', '11px');
+
+            // Axes
+            svg.append('g')
+                .attr('transform', `translate(${margin.left},0)`)
+                .call(d3.axisLeft(y));
+
+            svg.append('g')
+                .attr('transform', `translate(0,${height - margin.bottom})`)
+                .call(d3.axisBottom(x).tickFormat(d => formatCurrency(d)));
+
+            console.log('County chart drawn successfully');
+        }
+
+        // ========== ORGANIZATION TABLE ==========
+        function populateOrgTable() {
+            console.log('Populating organization table...');
+            const tbody = document.querySelector('#org-table tbody');
+            tbody.innerHTML = '';
+
+            ORG_DATA.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${row.organization}</td>
+                    <td>${row.program}</td>
+                    <td class="amount">${formatCurrency(row.allocated)}</td>
+                    <td class="amount">${formatNumber(row.activities)}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            console.log('Organization table populated');
+        }
+
+        // ========== TAB HANDLING ==========
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                drawTimeline(this.dataset.view);
+            });
+        });
+
+        // ========== INITIALIZATION ==========
+        function init() {
+            console.log('Initializing dashboard...');
+            console.log('d3 version:', d3.version);
+            console.log('d3.sankey available:', typeof d3.sankey);
+
+            try {
+                drawSankey();
+                drawTimeline('budget');
+                drawCountyChart();
+                populateOrgTable();
+                console.log('Dashboard initialized successfully!');
+            } catch (error) {
+                console.error('Error initializing dashboard:', error);
+            }
+        }
+
+        // Wait for DOM and scripts to load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            // Small delay to ensure d3-sankey is loaded
+            setTimeout(init, 100);
+        }
+    </script>
+</body>
+</html>

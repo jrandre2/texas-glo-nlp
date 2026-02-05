@@ -1,0 +1,199 @@
+{
+  "quarter": "Q4 2025",
+  "program_type": null,
+  "nodes": [
+    {
+      "id": "HUD",
+      "name": "HUD",
+      "level": 0
+    },
+    {
+      "id": "Texas GLO",
+      "name": "Texas GLO",
+      "level": 1
+    },
+    {
+      "id": "Housing",
+      "name": "Housing",
+      "level": 2
+    },
+    {
+      "id": "Infrastructure",
+      "name": "Infrastructure",
+      "level": 2
+    },
+    {
+      "id": "Homeowner Assistance Program",
+      "name": "Homeowner Assistance Program",
+      "level": 3
+    },
+    {
+      "id": "Affordable Rental",
+      "name": "Affordable Rental",
+      "level": 3
+    },
+    {
+      "id": "Local Buyout/Acquisition",
+      "name": "Local Buyout/Acquisition",
+      "level": 3
+    },
+    {
+      "id": "Infrastructure Projects",
+      "name": "Infrastructure Projects",
+      "level": 3
+    },
+    {
+      "id": "Administration",
+      "name": "Administration",
+      "level": 3
+    },
+    {
+      "id": "Homeowner Reimbursement",
+      "name": "Homeowner Reimbursement",
+      "level": 3
+    },
+    {
+      "id": "Economic Revitalization",
+      "name": "Economic Revitalization",
+      "level": 3
+    },
+    {
+      "id": "Planning",
+      "name": "Planning",
+      "level": 3
+    },
+    {
+      "id": "Other",
+      "name": "Other",
+      "level": 3
+    },
+    {
+      "id": "Single Family Housing",
+      "name": "Single Family Housing",
+      "level": 3
+    },
+    {
+      "id": "Homebuyer Assistance",
+      "name": "Homebuyer Assistance",
+      "level": 3
+    },
+    {
+      "id": "PREPS Program",
+      "name": "PREPS Program",
+      "level": 3
+    },
+    {
+      "id": "Public Services",
+      "name": "Public Services",
+      "level": 3
+    }
+  ],
+  "links": [
+    {
+      "source": "HUD",
+      "target": "Texas GLO",
+      "value": 4474546991.0199995
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Infrastructure",
+      "value": 4416746991.0199995
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Homeowner Assistance Program",
+      "value": 1927075533.54
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Affordable Rental",
+      "value": 1085028956.94
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Local Buyout/Acquisition",
+      "value": 291808101.61
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Infrastructure Projects",
+      "value": 288615515.25
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Administration",
+      "value": 205042529.76
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Homeowner Reimbursement",
+      "value": 151190392.88
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Economic Revitalization",
+      "value": 129030552.47
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Planning",
+      "value": 104638289.77000001
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Other",
+      "value": 97767916.07000001
+    },
+    {
+      "source": "Texas GLO",
+      "target": "Housing",
+      "value": 57800000.0
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Single Family Housing",
+      "value": 56024482.95999999
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Homebuyer Assistance",
+      "value": 37122163.68
+    },
+    {
+      "source": "Housing",
+      "target": "Affordable Rental",
+      "value": 27552978.05
+    },
+    {
+      "source": "Housing",
+      "target": "Local Buyout/Acquisition",
+      "value": 27279021.95
+    },
+    {
+      "source": "Infrastructure",
+      "target": "PREPS Program",
+      "value": 22443328.2
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Public Services",
+      "value": 20959227.89
+    },
+    {
+      "source": "Housing",
+      "target": "Administration",
+      "value": 2890000.0
+    },
+    {
+      "source": "Housing",
+      "target": "Planning",
+      "value": 78000.0
+    }
+  ],
+  "summary": {
+    "total_budget": 4474546991.0199995,
+    "programs": 2,
+    "organizations": 3,
+    "counties": 62
+  }
+}

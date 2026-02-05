@@ -19,19 +19,29 @@ ENV/
 *.swp
 *.swo
 .DS_Store
+._*
 
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb_checkpoints
 
 # Data files (too large for git)
-data/glo_reports.db
+data/*.db
 data/extracted_text/
+data/extracted_text_clean/
 data/extracted_tables/
 data/vector_store/
+data/boundaries/*.geojson
 
 # Large exports
 outputs/exports/entities.csv
+outputs/exports/spatial_*.html
+outputs/exports/spatial_*_agg.csv
+outputs/exports/spatial_*_joined.geojson
+
+# Share bundles (generated)
+outputs/share_bundle/
+outputs/share_bundle.zip
 
 # PDF source documents (download separately)
 DRGR_Reports/

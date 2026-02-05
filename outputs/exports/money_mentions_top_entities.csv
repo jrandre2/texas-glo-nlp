@@ -1,0 +1,1295 @@
+context_label,entity_type,entity_text,n_mentions
+unknown,PROGRAM,Local Infrastructure Program,66183
+unknown,ORG,Texas GLO,51409
+unknown,DISASTER,Hurricane Harvey,25582
+unknown,PROGRAM,Homeowner Assistance Program,24491
+drawdown,ORG,Area Benefit (Survey,21006
+unknown,TX_COUNTY,Harris County,20400
+obligated,ORG,Area Benefit (Survey,19915
+drawdown,TX_COUNTY,Harris County,19882
+expended,ORG,Area Benefit (Survey,19453
+drawdown,PROGRAM,Local Infrastructure Program,15468
+budget,ORG,Area Benefit (Survey,15073
+drawdown,ORG,Public Facilities,13140
+unknown,ORG,Sewer Facilities,12693
+drawdown,ORG,Texas GLO,12533
+drawdown,TX_COUNTY,Galveston County,11874
+expended,TX_COUNTY,Harris County,10296
+drawdown,ORG,Date Total Projected Budget,10142
+drawdown,DISASTER,Hurricane Ike,10063
+drawdown,DISASTER,Hurricane Harvey,10056
+expended,DISASTER,Hurricane Ike,10056
+unknown,ORG,Non-Match Funds,9563
+unknown,ORG,Public Facilities,9039
+drawdown,ORG,DRS,8750
+drawdown,ORG,Completed Activity Description,8675
+budget,DISASTER,Hurricane Ike,7950
+expended,ORG,DRS,7915
+drawdown,PROGRAM,Homeowner Assistance Program,7823
+obligated,DISASTER,Hurricane Ike,7772
+drawdown,ORG,Project Number,7661
+expended,ORG,Completed Activity Description,7111
+obligated,TX_COUNTY,Harris County,7034
+budget,ORG,DRS,6969
+obligated,ORG,Completed Activity Description,6953
+obligated,ORG,DRS,6927
+expended,PROGRAM,Local Infrastructure Program,6915
+drawdown,TX_COUNTY,Brazoria County,6868
+expended,DISASTER,Hurricane Harvey,6698
+drawdown,TX_COUNTY,Newton County,6595
+drawdown,ORG,UN,6447
+expended,ORG,Texas GLO,6338
+expended,ORG,Improvements-Non Covered,6178
+drawdown,ORG,Improvements-Non Covered,6136
+budget,TX_COUNTY,Harris County,6124
+expended,TX_COUNTY,Galveston County,6101
+drawdown,ORG,Completed Activity Actual End Date,6014
+expended,ORG,UN,5911
+unknown,PROGRAM,Homeowner Reimbursement Program,5594
+drawdown,ORG,NON-HOUSING Projected End Date,5496
+expended,ORG,MIT - Public Facilities,5481
+drawdown,ORG,MIT - Public Facilities,5469
+unknown,ORG,Project Title,5209
+unknown,PROGRAM,Affordable Rental Program,5112
+budget,ORG,UN,5037
+unknown,ORG,Total Funds,5026
+obligated,ORG,UN,5023
+unknown,ORG,DRS,5010
+drawdown,ORG,Urgent Need,4951
+unknown,ORG,Hazard Mitigation Grant Program,4905
+expended,ORG,Urgent Need,4762
+budget,ORG,Completed Activity Description,4720
+obligated,ORG,Improvements-Non Covered,4661
+drawdown,TX_COUNTY,Willacy County,4660
+drawdown,ORG,HMAC,4643
+obligated,TX_COUNTY,Galveston County,4603
+drawdown,TX_COUNTY,Liberty County,4504
+drawdown,ORG,Non-Match Funds,4498
+drawdown,ORG,Area Benefit (Census,4494
+drawdown,ORG,GLO,4310
+unknown,TX_COUNTY,Newton County,4244
+obligated,ORG,Urgent Need,4194
+unknown,TX_COUNTY,Galveston County,4146
+obligated,ORG,MIT - Public Facilities,4124
+unknown,ORG,Restricted Balance,4072
+drawdown,TX_COUNTY,Montgomery County,3994
+unknown,ORG,UN,3956
+expended,ORG,HMAC,3886
+expended,PROGRAM,Homeowner Assistance Program,3803
+unknown,TX_COUNTY,Matagorda County,3765
+unknown,TX_COUNTY,Montgomery County,3544
+obligated,DISASTER,Hurricane Harvey,3492
+unknown,ORG,Area Benefit (Survey,3487
+drawdown,TX_COUNTY,Chambers County,3485
+expended,ORG,GLO,3452
+expended,TX_COUNTY,Brazoria County,3452
+unknown,ORG,AMI,3440
+budget,TX_COUNTY,Galveston County,3395
+unknown,TX_COUNTY,Jasper County,3360
+unknown,TX_COUNTY,Bastrop County,3322
+unknown,TX_COUNTY,Austin County,3319
+obligated,ORG,Area Benefit (Census,3261
+expended,TX_COUNTY,Newton County,3259
+budget,ORG,HUD,3213
+budget,ORG,Urgent Need,3184
+drawdown,TX_COUNTY,Bastrop County,3139
+drawdown,TX_COUNTY,Jefferson County,3116
+expended,ORG,Non-Match Funds,3076
+drawdown,ORG,Sewer Facilities,3074
+obligated,ORG,HMAC,3023
+drawdown,TX_COUNTY,San Jacinto County,2991
+unknown,TX_COUNTY,Jefferson County,2959
+drawdown,TX_COUNTY,Polk County,2940
+expended,ORG,Date Total Projected Budget,2911
+drawdown,TX_COUNTY,Cameron County,2902
+unknown,ORG,Buyout Program,2896
+unknown,DISASTER,Ike,2881
+unknown,TX_COUNTY,Liberty County,2857
+unknown,ORG,Substantially Rehabilitated,2847
+unknown,ORG,Project Number,2834
+drawdown,TX_COUNTY,Orange County,2824
+unknown,ORG,GLO,2820
+obligated,TX_COUNTY,Brazoria County,2818
+unknown,TX_COUNTY,Brazoria County,2770
+unknown,ORG,Drainage Facilities,2763
+expended,ORG,Area Benefit (Census,2747
+obligated,ORG,GLO,2746
+unknown,TX_COUNTY,Polk County,2645
+drawdown,TX_COUNTY,Hidalgo County,2577
+drawdown,ORG,Direct Benefit,2541
+unknown,TX_COUNTY,Refugio County,2518
+unknown,TX_COUNTY,San Jacinto County,2495
+drawdown,ORG,City of Total Projected Budget,2482
+unknown,TX_COUNTY,Orange County,2473
+obligated,TX_COUNTY,Newton County,2420
+expended,TX_COUNTY,Willacy County,2394
+unknown,TX_COUNTY,Waller County,2389
+unknown,DISASTER,Hurricane Ike,2383
+expended,TX_COUNTY,Liberty County,2343
+drawdown,TX_COUNTY,Tyler County,2321
+budget,ORG,HMAC,2309
+unknown,TX_COUNTY,Tyler County,2263
+drawdown,ORG,Fair Housing Planning,2219
+budget,TX_COUNTY,Brazoria County,2216
+drawdown,DISASTER,Ike,2197
+drawdown,PROGRAM,Homeowner Reimbursement Program,2190
+drawdown,ORG,Affirmatively Further Fair Housing (AFFH,2181
+expended,ORG,City of Total Projected Budget,2172
+unknown,PROGRAM,Economic Revitalization Program,2166
+unknown,TX_COUNTY,Fort Bend County,2156
+budget,ORG,State Agency,2155
+drawdown,TX_COUNTY,Jasper County,2142
+drawdown,ORG,Project Title,2137
+unknown,TX_COUNTY,Walker County,2098
+drawdown,ORG,County Total Projected Budget,2091
+budget,DISASTER,Hurricane Harvey,2070
+budget,ORG,Improvements-Non Covered,2067
+expended,ORG,Direct Benefit,2063
+unknown,ORG,Area Benefit (Census,2048
+obligated,ORG,Direct Benefit,2037
+unknown,TX_COUNTY,Victoria County,2017
+drawdown,TX_COUNTY,Fort Bend County,2014
+unknown,TX_COUNTY,Grimes County,1988
+drawdown,TX_COUNTY,Matagorda County,1983
+expended,ORG,County Total Projected Budget,1977
+budget,ORG,Area Benefit (Census,1970
+expended,TX_COUNTY,Chambers County,1968
+budget,ORG,GLO,1956
+drawdown,ORG,HUD,1956
+budget,ORG,MIT - Public Facilities,1922
+expended,TX_COUNTY,Jefferson County,1904
+obligated,TX_COUNTY,Liberty County,1889
+obligated,ORG,City of Total Projected Budget,1834
+unknown,ORG,HUD,1831
+obligated,TX_COUNTY,Willacy County,1819
+unknown,TX_COUNTY,Milam County,1812
+expended,DISASTER,Hurricane Dolly,1787
+drawdown,ORG,Affordable Rental Housing Under Way Activity Description,1777
+drawdown,DISASTER,Hurricane Dolly,1776
+unknown,TX_COUNTY,Sabine County,1768
+budget,TX_COUNTY,Newton County,1758
+unknown,TX_COUNTY,Gonzales County,1747
+drawdown,TX_COUNTY,Hardin County,1741
+drawdown,TX_COUNTY,Starr County,1732
+drawdown,TX_COUNTY,Walker County,1717
+expended,ORG,Project Number,1710
+expended,ORG,Fair Housing Planning,1682
+obligated,ORG,County Total Projected Budget,1680
+expended,ORG,Completed Activity Actual End Date,1663
+unknown,TX_COUNTY,CALHOUN COUNTY,1657
+expended,ORG,Affirmatively Further Fair Housing (AFFH,1645
+drawdown,ORG,Texas Activity Progress Narrative,1641
+drawdown,ORG,Total Funds,1637
+drawdown,ORG,newacct04112013 Program Income Account,1631
+expended,ORG,MIT - Planning and Capacity Building Under Way Activity Description,1608
+expended,TX_COUNTY,Cameron County,1596
+obligated,ORG,Fair Housing Planning,1587
+unknown,TX_COUNTY,Hidalgo County,1566
+obligated,ORG,Affirmatively Further Fair Housing (AFFH,1555
+obligated,PROGRAM,Homeowner Assistance Program,1555
+expended,ORG,NON-HOUSING Projected End Date,1547
+expended,TX_COUNTY,Montgomery County,1543
+obligated,TX_COUNTY,Chambers County,1540
+unknown,ORG,County Total Projected Budget,1540
+budget,ORG,Direct Benefit,1537
+unknown,TX_COUNTY,Chambers County,1536
+expended,TX_COUNTY,Polk County,1535
+drawdown,TX_COUNTY,Grimes County,1531
+drawdown,ORG,RCP,1521
+drawdown,ORG,Hot Mix Asphalt Concrete,1518
+expended,TX_COUNTY,Bastrop County,1504
+obligated,TX_COUNTY,Jefferson County,1496
+unknown,TX_COUNTY,Willacy County,1482
+expended,ORG,RCP,1481
+unknown,ORG,Flood & Drainage,1477
+expended,DISASTER,Ike,1471
+budget,TX_COUNTY,Willacy County,1463
+drawdown,ORG,MIT - Planning and Capacity Building Under Way Activity Description,1461
+drawdown,TX_COUNTY,Trinity County,1455
+budget,DISASTER,Hurricane Dolly,1449
+drawdown,TX_COUNTY,Kleberg County,1441
+budget,TX_COUNTY,Liberty County,1431
+unknown,ORG,State Agency,1417
+expended,TX_COUNTY,Orange County,1409
+expended,TX_COUNTY,Hidalgo County,1404
+budget,ORG,AMI,1399
+drawdown,PROGRAM,Affordable Rental Program,1395
+unknown,ORG,Texas Department of Housing and Community Affairs,1357
+obligated,DISASTER,Hurricane Dolly,1354
+unknown,ORG,Direct Benefit,1348
+budget,DISASTER,Ike,1340
+budget,TX_COUNTY,Chambers County,1340
+expended,TX_COUNTY,Jasper County,1330
+expended,ORG,Sewer Facilities,1328
+expended,TX_COUNTY,Tyler County,1325
+obligated,ORG,Affordable Rental Housing Under Way Activity Description,1299
+unknown,ORG,HMAC,1298
+budget,TX_COUNTY,Jefferson County,1289
+unknown,TX_COUNTY,San Augustine County,1282
+unknown,ORG,Completed Activity Description,1278
+budget,ORG,Substantially Rehabilitated,1262
+expended,TX_COUNTY,San Jacinto County,1262
+expended,ORG,Affordable Rental Housing Under Way Activity Description,1259
+obligated,TX_COUNTY,Cameron County,1247
+drawdown,TX_COUNTY,Hays County,1223
+expended,ORG,Date 01/01/2010 Area Benefit (Survey,1221
+drawdown,ORG,Texas Department of Housing and Community Affairs,1207
+obligated,TX_COUNTY,Montgomery County,1200
+drawdown,ORG,Date 01/01/2010 Area Benefit (Survey,1172
+obligated,ORG,Date 01/01/2010 Area Benefit (Survey,1172
+drawdown,ORG,Urgent Need Texas General Land Office Total Projected Budget,1166
+expended,ORG,Hot Mix Asphalt Concrete,1165
+obligated,TX_COUNTY,Polk County,1153
+budget,ORG,Texas General Land Office NA Benefit Report Type,1141
+unknown,ORG,Public 0,1132
+drawdown,ORG,Reinforced Concrete Pipe,1120
+drawdown,ORG,Clearance and Demolition,1111
+drawdown,TX_COUNTY,Waller County,1106
+unknown,ORG,City of Total Projected Budget,1099
+unknown,TX_COUNTY,San Patricio County,1095
+budget,TX_COUNTY,Cameron County,1080
+unknown,TX_COUNTY,Hays County,1080
+drawdown,DISASTER,Hurricane Rita,1077
+expended,TX_COUNTY,Matagorda County,1077
+expended,PROGRAM,Homeowner Reimbursement Program,1076
+budget,TX_COUNTY,Polk County,1068
+drawdown,TX_COUNTY,Sabine County,1064
+obligated,ORG,RCP,1064
+expended,ORG,Reinforced Concrete Pipe,1051
+obligated,TX_COUNTY,Hidalgo County,1047
+budget,ORG,City of Total Projected Budget,1041
+budget,PROGRAM,Homeowner Assistance Program,1038
+drawdown,ORG,Salary Allocations Activity Progress Narrative,1034
+budget,ORG,Date 01/01/2010 Area Benefit (Survey,1029
+expended,ORG,HUD,1028
+obligated,DISASTER,Ike,1021
+expended,TX_COUNTY,Walker County,1019
+obligated,TX_COUNTY,Orange County,1019
+budget,ORG,County Total Projected Budget,1016
+obligated,ORG,Hot Mix Asphalt Concrete,1016
+unknown,ORG,MIT - Public Facilities,1016
+drawdown,ORG,MIT - Rehabilitation,1003
+obligated,ORG,Urgent Need Texas General Land Office Total Projected Budget,1003
+obligated,TX_COUNTY,Tyler County,994
+expended,ORG,Urgent Need Texas General Land Office Total Projected Budget,986
+drawdown,TX_COUNTY,Austin County,984
+obligated,TX_COUNTY,San Jacinto County,979
+expended,ORG,Galveston Total Projected Budget,976
+obligated,TX_COUNTY,Bastrop County,974
+expended,DISASTER,Hurricane Rita,973
+drawdown,ORG,FEMA,968
+obligated,TX_COUNTY,Jasper County,944
+expended,ORG,Clearance and Demolition,941
+expended,TX_COUNTY,Hardin County,940
+obligated,ORG,MIT - Rehabilitation,935
+drawdown,ORG,Galveston Total Projected Budget,927
+budget,TX_COUNTY,San Jacinto County,915
+unknown,ORG,Urgent Need,915
+expended,TX_COUNTY,Grimes County,914
+budget,ORG,Texas GLO,908
+expended,ORG,FEMA,895
+expended,TX_COUNTY,Starr County,895
+budget,TX_COUNTY,Hidalgo County,894
+budget,TX_COUNTY,Montgomery County,890
+drawdown,ORG,WWTP,886
+obligated,DISASTER,Hurricane Rita,876
+drawdown,TX_COUNTY,Jim Wells County,874
+drawdown,ORG,Drainage Facilities,873
+budget,TX_COUNTY,Jasper County,869
+unknown,ORG,Date Total Projected Budget,864
+drawdown,TX_COUNTY,Nacogdoches County,862
+unknown,ORG,Public Facilities 0,860
+expended,ORG,MIT - Rehabilitation,857
+drawdown,ORG,Hazard Mitigation Grant Program,853
+budget,ORG,Fair Housing Planning,852
+obligated,ORG,HUD,849
+drawdown,ORG,SETRPC,846
+obligated,ORG,Clearance and Demolition,839
+expended,ORG,Total Funds,835
+drawdown,TX_COUNTY,Refugio County,823
+budget,ORG,Affirmatively Further Fair Housing (AFFH,821
+obligated,ORG,Galveston Total Projected Budget,820
+unknown,ORG,Properties 0,814
+obligated,TX_COUNTY,Hardin County,809
+expended,ORG,Date 06/01/2010 Area Benefit (Survey,804
+unknown,ORG,Pine Forest,801
+budget,ORG,Affordable Rental Housing Under Way Activity Description,799
+budget,ORG,Date Total Projected Budget,798
+drawdown,TX_COUNTY,Madison County,798
+budget,ORG,Planning/Administration or Unprogrammed Funds,797
+drawdown,ORG,ADA,796
+budget,TX_COUNTY,Orange County,792
+drawdown,TX_COUNTY,Houston County,792
+budget,TX_COUNTY,Tyler County,791
+budget,ORG,RCP,785
+expended,ORG,Project Title,784
+obligated,TX_COUNTY,Matagorda County,781
+drawdown,ORG,SBA,775
+budget,ORG,Galveston Total Projected Budget,773
+expended,ORG,ADA,771
+unknown,TX_COUNTY,Cameron County,771
+unknown,TX_COUNTY,Nueces County,769
+budget,ORG,Hot Mix Asphalt Concrete,766
+drawdown,ORG,Date 03/31/2020 Direct,765
+expended,ORG,TDEM,765
+drawdown,ORG,Small Business Administration,759
+expended,TX_COUNTY,Trinity County,759
+expended,ORG,KRW,754
+obligated,ORG,Reinforced Concrete Pipe,754
+expended,TX_COUNTY,Fort Bend County,749
+obligated,TX_COUNTY,Starr County,746
+expended,TX_COUNTY,Kleberg County,744
+drawdown,ORG,Date 06/01/2010 Area Benefit (Survey,735
+obligated,ORG,Date 03/31/2020 Direct,733
+unknown,TX_COUNTY,Kleberg County,731
+obligated,ORG,Date 06/01/2010 Area Benefit (Survey,728
+drawdown,TX_COUNTY,Cherokee County,718
+expended,ORG,Affordable Rental Housing,713
+drawdown,ORG,Buyout Program,708
+expended,ORG,Planning Activities,707
+expended,ORG,HMP,706
+drawdown,ORG,TDEM,703
+expended,ORG,the RCP Application Guide,703
+obligated,TX_COUNTY,Grimes County,703
+drawdown,ORG,KRW,701
+drawdown,TX_COUNTY,CALHOUN COUNTY,700
+budget,ORG,Date 06/01/2010 Area Benefit (Survey,696
+unknown,TX_COUNTY,Hardin County,696
+drawdown,ORG,Housing Assistance Program,694
+drawdown,ORG,Planning Products,694
+obligated,ORG,Housing Assistance Program,694
+obligated,TX_COUNTY,Trinity County,690
+obligated,PROGRAM,Homeowner Reimbursement Program,689
+drawdown,TX_COUNTY,Leon County,684
+budget,DISASTER,Hurricane Rita,678
+budget,TX_COUNTY,Matagorda County,675
+unknown,ORG,Units 0 Beneficiaries,675
+drawdown,ORG,Planning Activities,674
+drawdown,ORG,the RCP Application Guide,668
+drawdown,ORG,Affordable Rental Housing,662
+drawdown,TX_COUNTY,Victoria County,662
+unknown,ORG,NON-HOUSING Projected End Date,658
+expended,TX_COUNTY,Sabine County,656
+unknown,ORG,SI 0006 Construction,655
+drawdown,TX_COUNTY,Brooks County,652
+expended,ORG,WWTP,652
+drawdown,ORG,HMP,650
+drawdown,TX_COUNTY,Burleson County,648
+expended,ORG,Date 03/31/2020 Direct,648
+unknown,ORG,Targeted Section 3 Labor Hours 1 #,647
+budget,TX_COUNTY,Bastrop County,645
+obligated,TX_COUNTY,Walker County,642
+unknown,ORG,Urgent Need Texas General Land Office Total Projected Budget,642
+budget,ORG,Texas - GLO LOCCS Authorized,641
+unknown,TX_COUNTY,Travis County,641
+expended,TX_COUNTY,Waller County,637
+drawdown,ORG,Office of Rural Community Affairs,634
+drawdown,TX_COUNTY,Milam County,623
+unknown,ORG,Targeted Section 3 Labor Hours,613
+obligated,ORG,WWTP,612
+unknown,ORG,Affordable Rental Housing Under Way Activity Description,607
+drawdown,TX_COUNTY,Gonzales County,602
+drawdown,ORG,SCADA,600
+unknown,ORG,SETRPC,594
+drawdown,TX_COUNTY,San Patricio County,590
+budget,ORG,KRW,586
+budget,TX_COUNTY,Hardin County,584
+unknown,ORG,Texas Department of Housing and Community Affairs No Accomplishments Performance Measures,584
+obligated,TX_COUNTY,Kleberg County,578
+unknown,TX_COUNTY,Jim Wells County,578
+budget,ORG,Affordable Rental Housing,575
+expended,ORG,CDBG-MIT,575
+drawdown,ORG,State Highway,572
+unknown,ORG,Improvements- Non Covered Projects Texas General Land Office,572
+unknown,ORG,NCP 0005,572
+unknown,ORG,SF 0005,572
+drawdown,TX_COUNTY,Angelina County,571
+obligated,ORG,KRW,571
+obligated,ORG,ADA,568
+budget,TX_COUNTY,Grimes County,565
+budget,PROGRAM,Local Infrastructure Program,562
+expended,TX_COUNTY,Austin County,562
+unknown,ORG,Completed Activity Actual End Date,562
+unknown,ORG,Public Improvement,562
+expended,ORG,SBA,556
+unknown,ORG,Deep East Texas Council of Governments,553
+obligated,TX_COUNTY,Fort Bend County,549
+budget,TX_COUNTY,Starr County,548
+expended,ORG,Small Business Administration,546
+budget,ORG,Urgent Need Texas General Land Office Total Projected Budget,544
+drawdown,ORG,Texas - GLO LOCCS Authorized,541
+unknown,TX_COUNTY,Coryell County,539
+obligated,ORG,Affordable Rental Housing,536
+unknown,ORG,Sewer Lines,534
+budget,ORG,Reinforced Concrete Pipe,533
+expended,TX_COUNTY,Refugio County,531
+unknown,ORG,SCADA,531
+drawdown,ORG,CDBG-MIT,528
+budget,ORG,Targeted Section 3 Labor Hours 1 #,526
+unknown,ORG,Local Government,521
+budget,ORG,Clearance and Demolition,515
+obligated,ORG,MIT - Planning and Capacity Building Under Way Activity Description,514
+drawdown,TX_COUNTY,Robertson County,505
+drawdown,TX_COUNTY,San Augustine County,503
+budget,TX_COUNTY,Trinity County,496
+obligated,ORG,SBA,492
+expended,TX_COUNTY,Houston County,490
+obligated,ORG,Small Business Administration,487
+drawdown,ORG,Restricted Balance,481
+unknown,ORG,Public Improvement 0,481
+expended,ORG,Housing Assistance Program,480
+expended,TX_COUNTY,Madison County,480
+budget,TX_COUNTY,Walker County,479
+unknown,ORG,SBA,478
+drawdown,ORG,RHP,474
+drawdown,ORG,The Resilient Housing Program,474
+budget,ORG,Project Title,473
+obligated,TX_COUNTY,Sabine County,473
+expended,TX_COUNTY,Nacogdoches County,470
+drawdown,TX_COUNTY,Travis County,469
+drawdown,ORG,Southeast Texas Regional Planning Commission,468
+unknown,ORG,TX,468
+expended,PROGRAM,Affordable Rental Program,467
+unknown,ORG,Non Covered Projects,464
+expended,TX_COUNTY,Jim Wells County,462
+obligated,ORG,RHP,460
+obligated,ORG,The Resilient Housing Program,460
+unknown,ORG,RCP,459
+unknown,ORG,Improvements- Non Covered Projects Palacios,457
+expended,TX_COUNTY,CALHOUN COUNTY,453
+obligated,ORG,Non-Match Funds,452
+expended,ORG,SCADA,451
+budget,ORG,Completed Activity Actual End Date,448
+unknown,ORG,Flood and Drainage,448
+budget,ORG,Texas - GLO Grantee,447
+expended,ORG,Hazard Mitigation Grant Program,446
+expended,ORG,RHP,445
+expended,ORG,The Resilient Housing Program,445
+drawdown,ORG,Lower Rio Grande Valley Floods,443
+budget,ORG,Buyout/Acquisition Program,435
+drawdown,DISASTER,Tropical Storm Imelda,432
+budget,ORG,MIT - Rehabilitation,427
+unknown,TX_COUNTY,Leon County,427
+budget,TX_COUNTY,Kleberg County,423
+drawdown,ORG,Hot Mix Asphaltic Concrete,421
+expended,TX_COUNTY,Leon County,421
+budget,TX_COUNTY,Fort Bend County,417
+budget,ORG,NON-HOUSING Projected End Date,412
+budget,TX_COUNTY,Sabine County,409
+unknown,ORG,DETCOG,409
+unknown,ORG,Southeast Texas Regional Planning Commission,407
+obligated,TX_COUNTY,Nacogdoches County,404
+budget,ORG,WWTP,403
+obligated,TX_COUNTY,Houston County,403
+budget,ORG,Project Number,402
+unknown,ORG,FEMA,401
+budget,ORG,ADA,399
+expended,TX_COUNTY,Cherokee County,398
+unknown,TX_COUNTY,Starr County,398
+expended,ORG,Hot Mix Asphaltic Concrete,392
+unknown,ORG,Reinforced Concrete Pipe,389
+unknown,ORG,Units 0,389
+obligated,TX_COUNTY,Madison County,387
+expended,TX_COUNTY,San Patricio County,386
+unknown,ORG,Multifamily Units 0 Beneficiaries,384
+drawdown,ORG,Flood & Drainage,381
+unknown,TX_COUNTY,Madison County,380
+obligated,ORG,Texas GLO,375
+unknown,ORG,KRW,374
+expended,TX_COUNTY,Victoria County,372
+obligated,TX_COUNTY,Waller County,366
+budget,TX_COUNTY,Waller County,363
+unknown,ORG,DREF 0,363
+expended,TX_COUNTY,Burleson County,357
+expended,TX_COUNTY,Angelina County,355
+drawdown,ORG,La Porte,352
+expended,DISASTER,Tropical Storm Imelda,350
+obligated,TX_COUNTY,Jim Wells County,350
+expended,TX_COUNTY,Gonzales County,349
+unknown,ORG,Date 01/01/2010 Area Benefit (Survey,346
+drawdown,ORG,Supervisory Control and Data Acquisition System,344
+expended,ORG,Lower Rio Grande Valley Floods,343
+unknown,ORG,Date 06/01/2010 Area Benefit (Survey,342
+unknown,TX_COUNTY,Aransas County,342
+expended,TX_COUNTY,Milam County,341
+budget,TX_COUNTY,Nacogdoches County,338
+expended,ORG,Drainage Facilities,338
+budget,ORG,Date 03/31/2020 Direct,337
+obligated,ORG,CDBG-MIT,335
+budget,ORG,MIT - Planning and Capacity Building Under Way Activity Description,331
+budget,TX_COUNTY,Madison County,331
+unknown,TX_COUNTY,Trinity County,329
+unknown,ORG,Office of Rural Community Affairs,327
+drawdown,DISASTER,Rita,325
+expended,ORG,Water Plant,325
+budget,TX_COUNTY,Houston County,324
+expended,TX_COUNTY,Robertson County,324
+obligated,TX_COUNTY,Leon County,324
+drawdown,ORG,Deep East Texas Council of Governments,323
+expended,TX_COUNTY,San Augustine County,323
+expended,TX_COUNTY,Brooks County,320
+obligated,ORG,Housing Assistance Program(s,320
+obligated,ORG,SCADA,320
+budget,PROGRAM,Homeowner Reimbursement Program,319
+budget,ORG,FEMA,316
+unknown,TX_COUNTY,Burleson County,316
+drawdown,ORG,Water Plant,314
+obligated,TX_COUNTY,Cherokee County,313
+unknown,TX_COUNTY,DeWitt County,313
+obligated,ORG,FEMA,312
+drawdown,ORG,Council of Government,311
+unknown,ORG,Sewer Facilities & Water Facilities,310
+drawdown,ORG,Pine Forest,308
+drawdown,TX_COUNTY,Harrison County,308
+obligated,TX_COUNTY,Angelina County,308
+unknown,ORG,Planning Products,307
+unknown,ORG,Texas Activity Progress Narrative,304
+drawdown,ORG,Texas - GLO Grantee,303
+budget,ORG,Targeted Section 3 Labor Hours,301
+unknown,ORG,Smith Street,301
+drawdown,ORG,Housing Assistance Program(s,297
+expended,ORG,Public Facilities,297
+budget,ORG,Housing Assistance Program,295
+unknown,DISASTER,Hurricane Dolly,293
+obligated,ORG,Lower Rio Grande Valley Floods,291
+unknown,ORG,WWTP,291
+expended,ORG,Supervisory Control and Data Acquisition System,286
+budget,TX_COUNTY,Leon County,285
+drawdown,TX_COUNTY,County of Galveston,285
+obligated,ORG,Hot Mix Asphaltic Concrete,285
+drawdown,TX_COUNTY,Coryell County,283
+obligated,DISASTER,Tropical Storm Imelda,279
+expended,ORG,Housing Assistance Program(s,278
+drawdown,TX_COUNTY,Shelby County,275
+obligated,TX_COUNTY,Burleson County,274
+budget,TX_COUNTY,Refugio County,272
+budget,TX_COUNTY,Jim Wells County,271
+drawdown,ORG,CBCOG,270
+obligated,PROGRAM,Local Infrastructure Program,269
+drawdown,TX_COUNTY,Nueces County,266
+unknown,ORG,Water Plant,265
+unknown,ORG,newacct04112013 Program Income Account,263
+budget,TX_COUNTY,Angelina County,262
+obligated,ORG,Project Title,262
+unknown,ORG,ADA,262
+unknown,ORG,Hot Mix Asphalt Concrete,261
+budget,ORG,Water Plant,258
+budget,TX_COUNTY,Cherokee County,258
+obligated,TX_COUNTY,Refugio County,257
+expended,ORG,Buyout Program,255
+expended,TX_COUNTY,Hays County,255
+obligated,TX_COUNTY,CALHOUN COUNTY,255
+unknown,TX_COUNTY,Cherokee County,255
+obligated,TX_COUNTY,Austin County,254
+unknown,TX_COUNTY,Houston County,254
+obligated,TX_COUNTY,Robertson County,253
+budget,TX_COUNTY,Burleson County,250
+expended,ORG,State Highway,250
+expended,ORG,SETRPC,249
+obligated,ORG,TDEM,248
+obligated,TX_COUNTY,San Patricio County,247
+obligated,ORG,Council of Government,245
+obligated,TX_COUNTY,Brooks County,245
+obligated,ORG,HMP,244
+unknown,ORG,Affordable Rental Housing,239
+unknown,ORG,Clearance and Demolition,236
+unknown,ORG,NCP,236
+drawdown,TX_COUNTY,Wharton County,234
+obligated,ORG,Water Plant,233
+drawdown,ORG,Houston-Galveston Area Council,231
+obligated,ORG,Supervisory Control and Data Acquisition System,231
+expended,ORG,Council of Government,230
+obligated,TX_COUNTY,San Augustine County,228
+unknown,DISASTER,Harvey,228
+expended,ORG,Houston-Galveston Area Council,225
+unknown,ORG,Salary Allocations Activity Progress Narrative,225
+unknown,ORG,Small Business Administration,225
+budget,TX_COUNTY,Robertson County,221
+expended,DISASTER,Rita,220
+obligated,ORG,Planning Activities,219
+obligated,ORG,the RCP Application Guide,218
+unknown,TX_COUNTY,Robertson County,214
+budget,ORG,SCADA,213
+obligated,TX_COUNTY,Milam County,212
+budget,ORG,Non-Match Funds,211
+unknown,ORG,SMI,211
+expended,TX_COUNTY,Coryell County,210
+drawdown,ORG,DETCOG,209
+unknown,DISASTER,Hurricane Rita,209
+budget,TX_COUNTY,CALHOUN COUNTY,208
+drawdown,PROGRAM,Economic Revitalization Program,208
+budget,ORG,Hot Mix Asphaltic Concrete,206
+obligated,TX_COUNTY,Victoria County,206
+budget,TX_COUNTY,San Augustine County,204
+drawdown,ORG,Countywide &,203
+drawdown,ORG,TX,202
+obligated,PROGRAM,Affordable Rental Program,202
+unknown,ORG,F&D 0006 Rehabilitation,201
+budget,TX_COUNTY,Milam County,200
+obligated,ORG,State Highway,199
+budget,ORG,CDBG-MIT,198
+budget,ORG,RHP,198
+budget,ORG,The Resilient Housing Program,198
+drawdown,TX_COUNTY,Washington County,198
+unknown,ORG,Galveston Total Projected Budget,196
+budget,TX_COUNTY,Victoria County,195
+obligated,TX_COUNTY,Hays County,195
+expended,TX_COUNTY,Wharton County,194
+budget,ORG,SBA,191
+budget,ORG,Small Business Administration,191
+budget,ORG,Housing Assistance Program(s,190
+unknown,ORG,La Porte,189
+unknown,ORG,Lift Station,189
+unknown,ORG,Water Facilities,187
+expended,TX_COUNTY,Aransas County,185
+expended,TX_COUNTY,Harrison County,185
+drawdown,ORG,Supervisory Control and Data Acquisition,184
+drawdown,TX_COUNTY,County of Liberty,184
+budget,FEMA_DECLARATION,4029,181
+budget,TX_COUNTY,Brooks County,181
+drawdown,TX_COUNTY,Fayette County,180
+unknown,ORG,Improvements-Non Covered,180
+obligated,DISASTER,Rita,179
+unknown,TX_COUNTY,Eastland County,178
+expended,ORG,Pine Forest,177
+budget,ORG,TDEM,174
+budget,TX_COUNTY,San Patricio County,174
+drawdown,TX_COUNTY,Aransas County,172
+unknown,ORG,LF,172
+unknown,ORG,MIT - Rehabilitation,172
+unknown,TX_COUNTY,Nacogdoches County,171
+drawdown,TX_COUNTY,Anderson County,170
+expended,TX_COUNTY,Nueces County,168
+budget,DISASTER,Rita,167
+budget,TX_COUNTY,Austin County,167
+unknown,TX_COUNTY,County of Jim Wells,167
+drawdown,ORG,Properties 0,166
+unknown,DISASTER,Tropical Storm Imelda,166
+unknown,ORG,Texas Avenue,165
+budget,ORG,HMP,164
+budget,FEMA_DECLARATION,4272,163
+obligated,ORG,Houston-Galveston Area Council,163
+unknown,ORG,0.0 Total Projected,160
+budget,ORG,Supervisory Control and Data Acquisition System,158
+unknown,ORG,LMISD,158
+unknown,ORG,Standardized Area Median Income,158
+drawdown,ORG,Flood and Drainage,157
+unknown,ORG,Housing Assistance Program(s,157
+unknown,TX_COUNTY,Brooks County,157
+unknown,TX_COUNTY,Angelina County,156
+drawdown,TX_COUNTY,Lee County,154
+expended,TX_COUNTY,Shelby County,154
+drawdown,TX_COUNTY,Rusk County,151
+obligated,TX_COUNTY,Gonzales County,151
+unknown,ORG,QPR,151
+drawdown,ORG,McNair Street,150
+expended,ORG,Restricted Balance,150
+obligated,TX_COUNTY,Wharton County,150
+budget,ORG,Council of Government,149
+expended,ORG,Supervisory Control and Data Acquisition,149
+obligated,ORG,SETRPC,149
+unknown,ORG,Flood and Drainage Facilities,149
+drawdown,ORG,Block Group,148
+expended,ORG,Flood & Drainage,148
+unknown,ORG,Hot Mix Asphaltic Concrete,147
+unknown,ORG,Lower Rio Grande Valley Floods,147
+drawdown,ORG,AMI,146
+drawdown,TX_COUNTY,Panola County,145
+expended,TX_COUNTY,Fayette County,145
+budget,ORG,SETRPC,142
+drawdown,ORG,North Country Club Drive,142
+drawdown,ORG,South Country Club Drive,142
+drawdown,TX_COUNTY,Upshur County,142
+obligated,TX_COUNTY,Shelby County,142
+unknown,TX_COUNTY,County of Galveston,142
+drawdown,ORG,MIT - Planning and,141
+budget,ORG,State Highway,140
+drawdown,ORG,Volunteer Fire Department,139
+unknown,TX_COUNTY,Harrison County,139
+budget,ORG,Planning Activities,138
+budget,ORG,the RCP Application Guide,137
+expended,ORG,Texas Department of Housing and Community Affairs,137
+expended,TX_COUNTY,Lee County,137
+drawdown,FEMA_DECLARATION,1606,136
+budget,FEMA_DECLARATION,4223,135
+budget,FEMA_DECLARATION,4245,135
+budget,ORG,Lower Rio Grande Valley Floods,134
+obligated,TX_COUNTY,Harrison County,134
+unknown,ORG,Date 03/31/2020 Direct,134
+unknown,ORG,State Highway,133
+budget,DISASTER,Tropical Storm Imelda,132
+budget,ORG,Public Facilities,132
+drawdown,TX_COUNTY,Caldwell County,132
+obligated,TX_COUNTY,County of Liberty,132
+budget,ORG,Houston-Galveston Area Council,131
+expended,ORG,MIT - Planning and,131
+expended,ORG,TX,131
+expended,PROGRAM,Economic Revitalization Program,131
+unknown,TX_COUNTY,Marion County,131
+expended,TX_COUNTY,Washington County,130
+drawdown,FEMA_DECLARATION,1791,128
+drawdown,DISASTER,Imelda,127
+expended,TX_COUNTY,Anderson County,127
+drawdown,ORG,Shoreacres Boulevard,126
+obligated,TX_COUNTY,County of Galveston,126
+unknown,ORG,Local Government Houston,126
+expended,ORG,Planning Products,125
+obligated,TX_COUNTY,Nueces County,125
+expended,TX_COUNTY,County of Liberty,124
+unknown,TX_COUNTY,Washington County,123
+budget,PROGRAM,Affordable Rental Program,122
+expended,TX_COUNTY,County of Galveston,122
+obligated,ORG,Golden Crescent Regional Planning Commission,122
+obligated,ORG,Supervisory Control and Data Acquisition,122
+budget,TX_COUNTY,Nueces County,120
+drawdown,ORG,HGAC,120
+budget,TX_COUNTY,Harrison County,119
+unknown,ORG,COCC,117
+drawdown,TX_COUNTY,Goliad County,116
+expended,TX_COUNTY,Travis County,116
+budget,ORG,Public Improvement,115
+drawdown,FEMA_DECLARATION,4272,114
+obligated,TX_COUNTY,Travis County,113
+budget,ORG,Sewer Facilities,112
+obligated,ORG,AMI,112
+budget,FEMA_DECLARATION,4332,110
+unknown,TX_COUNTY,Colorado County,109
+budget,TX_COUNTY,Hays County,108
+budget,TX_COUNTY,Washington County,108
+budget,FEMA_DECLARATION,4377,107
+budget,TX_COUNTY,Shelby County,107
+unknown,DISASTER,Rita,107
+expended,TX_COUNTY,Caldwell County,105
+expended,TX_COUNTY,Panola County,105
+drawdown,FEMA_DECLARATION,4332,104
+obligated,TX_COUNTY,Anderson County,104
+obligated,TX_COUNTY,Washington County,104
+unknown,ORG,Supervisory Control and Data Acquisition,104
+unknown,TX_COUNTY,Guadalupe County,104
+drawdown,TX_COUNTY,Kenedy County,103
+expended,TX_COUNTY,Upshur County,103
+unknown,ORG,Project Delivery and Administration,103
+drawdown,ORG,Golden Crescent Regional Planning Commission,102
+expended,ORG,Flood and Drainage,102
+obligated,TX_COUNTY,Fayette County,102
+expended,TX_COUNTY,Goliad County,101
+obligated,TX_COUNTY,Aransas County,101
+unknown,TX_COUNTY,Anderson County,100
+budget,ORG,Flood and Drainage,99
+budget,TX_COUNTY,Gonzales County,99
+drawdown,TX_COUNTY,Colorado County,99
+drawdown,TX_COUNTY,Marion County,99
+expended,TX_COUNTY,Rusk County,99
+drawdown,ORG,Smith Street,98
+drawdown,ORG,Texas Avenue,98
+expended,ORG,Volunteer Fire Department,97
+unknown,FEMA_DECLARATION,4029,97
+obligated,ORG,Texas Department of Housing and Community Affairs,95
+obligated,TX_COUNTY,Lee County,94
+unknown,ORG,Housing Assistance Program,94
+unknown,ORG,Countywide &,92
+budget,ORG,SI 0006 Construction,90
+budget,TX_COUNTY,County of Liberty,90
+drawdown,TX_COUNTY,DeWitt County,90
+unknown,ORG,Corpus Christi Street,90
+unknown,ORG,McNair Street,90
+budget,ORG,Sewer Lines,89
+unknown,ORG,RHP,89
+unknown,ORG,The Resilient Housing Program,89
+budget,TX_COUNTY,County of Galveston,88
+unknown,ORG,Houston-Galveston Area Council,88
+budget,TX_COUNTY,Anderson County,87
+budget,FEMA_DECLARATION,1606,84
+expended,ORG,Golden Crescent Regional Planning Commission,84
+obligated,TX_COUNTY,Panola County,84
+budget,ORG,Texas Department of Housing and Community Affairs,83
+expended,TX_COUNTY,Colorado County,83
+drawdown,TX_COUNTY,Jim Hogg County,81
+obligated,ORG,Volunteer Fire Department,81
+drawdown,FEMA_DECLARATION,3294,80
+obligated,ORG,TX,80
+obligated,TX_COUNTY,Upshur County,80
+drawdown,TX_COUNTY,Eastland County,79
+budget,ORG,TX,78
+drawdown,FEMA_DECLARATION,4029,77
+drawdown,FEMA_DECLARATION,4223,77
+drawdown,FEMA_DECLARATION,4245,77
+drawdown,ORG,Sewer Facilities & Water Facilities,77
+expended,TX_COUNTY,Eastland County,77
+budget,ORG,Local Government,76
+budget,TX_COUNTY,Wharton County,75
+expended,ORG,AMI,75
+obligated,TX_COUNTY,Goliad County,75
+obligated,TX_COUNTY,Rusk County,75
+budget,TX_COUNTY,Panola County,74
+obligated,TX_COUNTY,Caldwell County,74
+budget,ORG,CBCOG,73
+budget,ORG,Supervisory Control and Data Acquisition,73
+budget,TX_COUNTY,Upshur County,72
+drawdown,TX_COUNTY,Brazos County,72
+unknown,ORG,Fair Housing Planning,72
+budget,ORG,Volunteer Fire Department,71
+unknown,ORG,Local Government Harris,71
+drawdown,ORG,Utility Easement,70
+budget,TX_COUNTY,Rusk County,69
+unknown,ORG,Affirmatively Further Fair Housing (AFFH,69
+unknown,ORG,Planning Products 0,69
+budget,ORG,Total Funds,68
+drawdown,TX_COUNTY,Bee County,68
+expended,ORG,Deep East Texas Council of Governments,68
+expended,TX_COUNTY,Marion County,68
+unknown,TX_COUNTY,County of Liberty,68
+unknown,TX_COUNTY,Upshur County,66
+expended,ORG,HGAC,64
+unknown,TX_COUNTY,Rusk County,64
+drawdown,ORG,COCC,63
+drawdown,ORG,Texas Department of Housing and Community Affairs No Accomplishments Performance Measures,63
+expended,TX_COUNTY,Bee County,63
+expended,TX_COUNTY,Brazos County,62
+unknown,ORG,Supervisory Control and Data Acquisition System,62
+budget,ORG,Planning Products,61
+budget,TX_COUNTY,Travis County,61
+expended,TX_COUNTY,Kenedy County,61
+budget,ORG,F&D 0006 Rehabilitation,58
+obligated,TX_COUNTY,Kenedy County,58
+unknown,TX_COUNTY,Fayette County,58
+budget,TX_COUNTY,Brazos County,57
+expended,ORG,DETCOG,57
+expended,TX_COUNTY,DeWitt County,57
+obligated,ORG,MIT - Planning and,57
+obligated,ORG,Pine Forest,57
+budget,TX_COUNTY,Aransas County,56
+drawdown,FEMA_DECLARATION,4266,56
+drawdown,FEMA_DECLARATION,4269,56
+drawdown,ORG,Corpus Christi Street,56
+unknown,ORG,Block Group,56
+unknown,TX_COUNTY,COUNTY OF DEWITT,56
+budget,ORG,Golden Crescent Regional Planning Commission,55
+budget,TX_COUNTY,Fayette County,55
+drawdown,ORG,City Limits,55
+unknown,ORG,"Flood and Drainage, Water Facilities",55
+drawdown,ORG,Water Facilities,54
+expended,TX_COUNTY,Jim Hogg County,54
+unknown,ORG,Quick Connect,54
+unknown,TX_COUNTY,Brazos County,54
+unknown,ORG,the State Standardized Area Median Income,53
+unknown,TX_COUNTY,COUNTY OF DALLAS,53
+budget,TX_COUNTY,Jim Hogg County,52
+drawdown,ORG,SMI,50
+obligated,TX_COUNTY,Brazos County,50
+drawdown,DISASTER,Harvey,49
+unknown,ORG,CDBG-MIT,49
+unknown,TX_COUNTY,Lavaca County,49
+drawdown,ORG,State Agency,48
+budget,FEMA_DECLARATION,4266,47
+budget,FEMA_DECLARATION,4269,47
+budget,ORG,Improvements- Non Covered Projects Texas General Land Office,47
+budget,ORG,NCP,47
+budget,TX_COUNTY,Marion County,47
+drawdown,ORG,Lift Station,47
+expended,ORG,Texas Department of Housing and Community Affairs No Accomplishments Performance Measures,47
+drawdown,TX_COUNTY,County of Jim Wells,46
+obligated,TX_COUNTY,Colorado County,46
+budget,FEMA_DECLARATION,1791,44
+budget,ORG,Water Facilities,44
+drawdown,TX_COUNTY,Guadalupe County,44
+obligated,TX_COUNTY,Jim Hogg County,44
+obligated,TX_COUNTY,Marion County,43
+unknown,ORG,CBCOG,43
+expended,ORG,Properties 0,42
+expended,ORG,Southeast Texas Regional Planning Commission,42
+obligated,ORG,HGAC,42
+drawdown,ORG,Milam Street,41
+drawdown,ORG,QPR,41
+expended,FEMA_DECLARATION,1606,41
+expended,ORG,Texas - GLO LOCCS Authorized,41
+expended,ORG,La Porte,40
+obligated,ORG,Texas Department of Housing and Community Affairs No Accomplishments Performance Measures,40
+unknown,ORG,Council of Government,40
+budget,ORG,MIT - Planning and,39
+budget,ORG,Texas Department of Housing and Community Affairs No Accomplishments Performance Measures,39
+budget,ORG,the Coastal Bend Council of Governments,39
+drawdown,DISASTER,Hurricane Location,39
+drawdown,ORG,Public Improvement,39
+expended,ORG,County Road,39
+unknown,FEMA_DECLARATION,1606,39
+expended,DISASTER,Hurricane Location,38
+budget,ORG,Central Texas Council of Governments,37
+budget,ORG,NCP 0005,37
+budget,TX_COUNTY,Lee County,37
+drawdown,FEMA_DECLARATION,4454,37
+budget,DISASTER,Hurricane Location,36
+budget,ORG,Brazos Valley Council of Governments,36
+budget,ORG,Flood & Drainage,36
+budget,ORG,HGAC,36
+budget,TX_COUNTY,Caldwell County,36
+drawdown,ORG,County Road,36
+drawdown,ORG,Street Improvement,36
+obligated,ORG,Flood and Drainage,36
+budget,TX_COUNTY,Goliad County,35
+drawdown,ORG,LMISD,35
+drawdown,ORG,Standardized Area Median Income,35
+expended,FEMA_DECLARATION,1791,35
+expended,FEMA_DECLARATION,3294,35
+expended,ORG,Sewer Facilities & Water Facilities,35
+obligated,DISASTER,Hurricane Location,35
+obligated,ORG,Sewer Facilities,35
+budget,ORG,Units 0 Beneficiaries,34
+drawdown,FEMA_DECLARATION,4377,34
+obligated,TX_COUNTY,Bee County,34
+obligated,TX_COUNTY,Eastland County,34
+budget,TX_COUNTY,Kenedy County,33
+unknown,ORG,Texas - GLO LOCCS Authorized,33
+unknown,TX_COUNTY,Panola County,33
+budget,ORG,SF 0005,32
+expended,ORG,Water Facilities,32
+unknown,TX_COUNTY,Shelby County,32
+unknown,TX_COUNTY,Wharton County,32
+expended,ORG,Texas Activity Progress Narrative,31
+drawdown,ORG,Texas General Land Office NA Benefit Report Type,30
+drawdown,TX_COUNTY,County of Brazoria,30
+expended,ORG,Smith Street,30
+obligated,FEMA_DECLARATION,1791,30
+obligated,FEMA_DECLARATION,3294,30
+unknown,ORG,Street Improvement,30
+obligated,ORG,County Road,29
+unknown,ORG,Texas General Land Office NA Benefit Report Type,29
+budget,ORG,County Road,28
+expended,TX_COUNTY,County of Jim Wells,28
+obligated,ORG,Public Facilities,28
+unknown,ORG,Buyout/Acquisition Program,28
+unknown,TX_COUNTY,COUNTY OF FALLS,28
+drawdown,TX_COUNTY,COUNTY OF DEWITT,27
+expended,DISASTER,Harvey,27
+obligated,ORG,Properties 0,27
+unknown,DISASTER,Imelda,27
+unknown,TX_COUNTY,Limestone County,27
+budget,TX_COUNTY,Colorado County,26
+drawdown,TX_COUNTY,Jackson County,26
+expended,ORG,Office of Rural Community Affairs,26
+expended,ORG,Street Improvement,26
+obligated,ORG,Lift Station,26
+obligated,ORG,Planning Products,26
+obligated,TX_COUNTY,DeWitt County,26
+unknown,TX_COUNTY,COUNTY OF RED RIVER,26
+unknown,TX_COUNTY,Cooke County,26
+unknown,TX_COUNTY,Duval County,26
+unknown,TX_COUNTY,Tarrant County,26
+budget,ORG,Improvements- Non Covered Projects Palacios,25
+budget,ORG,Southeast Texas Regional Planning Commission,25
+expended,ORG,QPR,25
+expended,TX_COUNTY,Jackson County,25
+obligated,ORG,Southeast Texas Regional Planning Commission,25
+obligated,TX_COUNTY,Coryell County,25
+unknown,TX_COUNTY,Jim Hogg County,25
+budget,ORG,Pine Forest,24
+drawdown,TX_COUNTY,Cass County,24
+obligated,FEMA_DECLARATION,1606,24
+obligated,ORG,Buyout Program,24
+obligated,ORG,Drainage Facilities,24
+unknown,ORG,HQS,24
+unknown,ORG,Housing Quality Standards,24
+budget,ORG,Non Covered Projects,23
+drawdown,ORG,LF,23
+drawdown,ORG,Way Sewer Facilities,23
+expended,ORG,Lift Station,23
+budget,ORG,Properties 0,22
+drawdown,ORG,La Parra Avenue,22
+expended,ORG,SMI,22
+obligated,ORG,Total Funds,22
+unknown,ORG,Improvements- Non Covered Projects,22
+budget,ORG,Lift Station,21
+drawdown,ORG,Public Facilities 0,21
+drawdown,TX_COUNTY,Lavaca County,21
+expended,ORG,Eagle Drive,21
+expended,TX_COUNTY,Guadalupe County,21
+obligated,DISASTER,Harvey,21
+obligated,ORG,La Porte,21
+obligated,ORG,Project Number,21
+budget,FEMA_DECLARATION,4454,20
+budget,ORG,Eagle Drive,20
+drawdown,ORG,Street Improvements,20
+drawdown,TX_COUNTY,COUNTY OF DALLAS,20
+obligated,TX_COUNTY,Jackson County,20
+budget,ORG,Flood and Drainage Facilities,19
+budget,ORG,La Porte,19
+budget,TX_COUNTY,Bee County,19
+budget,TX_COUNTY,Coryell County,19
+expended,ORG,COCC,19
+expended,TX_COUNTY,County of Brazoria,19
+obligated,ORG,Deep East Texas Council of Governments,19
+unknown,ORG,HGAC,19
+budget,ORG,0.0 Total Projected,18
+budget,ORG,Local Government Houston,18
+drawdown,DISASTER,Hurricane Katrina,18
+expended,ORG,McNair Street,18
+obligated,ORG,DETCOG,18
+obligated,TX_COUNTY,County of Brazoria,18
+budget,FEMA_DECLARATION,3294,17
+budget,ORG,Way Sewer Facilities,17
+budget,PROGRAM,Economic Revitalization Program,17
+drawdown,ORG,Montgomery Street,17
+drawdown,ORG,Units 0 Beneficiaries,17
+expended,DISASTER,Hurricane Katrina,17
+expended,ORG,LMISD,17
+expended,ORG,Standardized Area Median Income,17
+expended,ORG,Texas Avenue,17
+unknown,ORG,Volunteer Fire Department,17
+unknown,TX_COUNTY,Cass County,17
+budget,DISASTER,Harvey,16
+budget,ORG,Buyout Program,16
+drawdown,ORG,Brea Crest Street,16
+drawdown,ORG,Buyout/Acquisition Program,16
+drawdown,ORG,"Flood and Drainage, Water Facilities",16
+drawdown,ORG,Local Government,16
+drawdown,ORG,Post Office Street,16
+drawdown,ORG,Royal Pine Drive,16
+expended,TX_COUNTY,Lavaca County,16
+unknown,ORG,Golden Crescent Regional Planning Commission,16
+drawdown,ORG,the State Standardized Area Median Income,15
+drawdown,TX_COUNTY,COUNTY OF RED RIVER,15
+drawdown,TX_COUNTY,County of Newton,15
+obligated,ORG,Eagle Drive,15
+obligated,ORG,Water Facilities,15
+budget,ORG,Office of Rural Community Affairs,14
+budget,ORG,Texas Activity Progress Narrative,14
+drawdown,DISASTER,Hurricane Evacuees,14
+drawdown,ORG,Eagle Drive,14
+drawdown,TX_COUNTY,County of Matagorda,14
+drawdown,TX_COUNTY,Limestone County,14
+expended,FEMA_DECLARATION,4029,14
+expended,TX_COUNTY,COUNTY OF DEWITT,14
+expended,TX_COUNTY,County of Chambers,14
+unknown,FEMA_DECLARATION,1791,14
+unknown,ORG,County Road,14
+budget,ORG,Deep East Texas Council of Governments,13
+budget,ORG,Drainage Facilities,13
+drawdown,ORG,Flood and Drainage Facilities,13
+drawdown,TX_COUNTY,County of Chambers,13
+drawdown,TX_COUNTY,County of Polk,13
+unknown,FEMA_DECLARATION,3294,13
+unknown,ORG,Way Sewer Facilities,13
+budget,ORG,DETCOG,12
+budget,ORG,Local Government Harris,12
+budget,TX_COUNTY,County of Chambers,12
+drawdown,ORG,Planning/Administration or Unprogrammed Funds,12
+drawdown,TX_COUNTY,Duval County,12
+drawdown,TX_COUNTY,Tarrant County,12
+expended,TX_COUNTY,COUNTY OF DALLAS,12
+obligated,ORG,Texas - GLO LOCCS Authorized,12
+obligated,ORG,Texas Activity Progress Narrative,12
+unknown,ORG,Planning/Administration or Unprogrammed Funds,12
+unknown,TX_COUNTY,County of Newton,12
+budget,TX_COUNTY,DeWitt County,11
+drawdown,ORG,the Coastal Bend Council of Governments,11
+drawdown,TX_COUNTY,COUNTY OF FALLS,11
+drawdown,TX_COUNTY,Cooke County,11
+obligated,ORG,Office of Rural Community Affairs,11
+obligated,TX_COUNTY,County of Chambers,11
+obligated,TX_COUNTY,County of Jim Wells,11
+budget,DISASTER,Hurricane Katrina,10
+budget,ORG,Substantially Rehabilitated Units,10
+budget,TX_COUNTY,Eastland County,10
+obligated,DISASTER,Hurricane Katrina,10
+obligated,ORG,Street Improvement,10
+obligated,TX_COUNTY,Lavaca County,10
+unknown,DISASTER,Hurricane Location,10
+unknown,ORG,Sewer Facilities & Flood and Drainage,10
+drawdown,TX_COUNTY,County of Brooks,9
+drawdown,TX_COUNTY,County of Tyler,9
+expended,ORG,North Country Club Drive,9
+expended,ORG,Shoreacres Boulevard,9
+expended,ORG,South Country Club Drive,9
+obligated,ORG,COCC,9
+obligated,ORG,Way Sewer Facilities,9
+unknown,ORG,City of Environmental Assessment,9
+unknown,TX_COUNTY,County of Polk,9
+drawdown,ORG,Planning Products 0,8
+drawdown,TX_COUNTY,County of Angelina,8
+drawdown,TX_COUNTY,Dallas County,8
+drawdown,TX_COUNTY,Wichita County,8
+expended,DISASTER,Imelda,8
+expended,ORG,newacct04112013 Program Income Account,8
+expended,ORG,the Coastal Bend Council of Governments,8
+expended,TX_COUNTY,Dallas County,8
+expended,TX_COUNTY,Stephens County,8
+expended,TX_COUNTY,Wichita County,8
+obligated,PROGRAM,Economic Revitalization Program,8
+obligated,TX_COUNTY,County of Angelina,8
+obligated,TX_COUNTY,Guadalupe County,8
+unknown,ORG,Street Improvements,8
+unknown,TX_COUNTY,County of Matagorda,8
+unknown,TX_COUNTY,Goliad County,8
+budget,ORG,Street Improvement,7
+budget,TX_COUNTY,County of Brazoria,7
+budget,TX_COUNTY,Jackson County,7
+drawdown,TX_COUNTY,County of Harris,7
+expended,FEMA_DECLARATION,4454,7
+expended,FEMA_DECLARATION,4466,7
+expended,ORG,Milam Street,7
+expended,ORG,Post Office Street,7
+obligated,FEMA_DECLARATION,4029,7
+obligated,ORG,Street Improvements,7
+unknown,TX_COUNTY,County of Brazoria,7
+budget,ORG,COCC,6
+budget,TX_COUNTY,Lavaca County,6
+drawdown,TX_COUNTY,County Of Tyler County,6
+drawdown,TX_COUNTY,Red River County,6
+expended,ORG,Buyout/Acquisition Program,6
+expended,ORG,Street Improvements,6
+expended,TX_COUNTY,COUNTY OF FALLS,6
+expended,TX_COUNTY,County of Angelina,6
+expended,TX_COUNTY,County of Brooks,6
+expended,TX_COUNTY,Limestone County,6
+obligated,ORG,Buyout/Acquisition Program,6
+unknown,ORG,Milam Street,6
+unknown,ORG,Post Office Street,6
+unknown,TX_COUNTY,Lee County,6
+budget,ORG,QPR,5
+budget,TX_COUNTY,County of Jim Wells,5
+drawdown,FEMA_DECLARATION,4466,5
+expended,ORG,Block Group,5
+expended,ORG,the State Standardized Area Median Income,5
+expended,TX_COUNTY,COUNTY OF RED RIVER,5
+expended,TX_COUNTY,Cooke County,5
+expended,TX_COUNTY,Duval County,5
+expended,TX_COUNTY,Tarrant County,5
+obligated,ORG,QPR,5
+obligated,ORG,the Coastal Bend Council of Governments,5
+obligated,TX_COUNTY,COUNTY OF DEWITT,5
+obligated,TX_COUNTY,County of Brooks,5
+unknown,DISASTER,Hurricane Katrina,5
+unknown,TX_COUNTY,County of Cherokee,5
+budget,TX_COUNTY,Guadalupe County,4
+drawdown,DISASTER,Tropical Storm Total,4
+drawdown,TX_COUNTY,County of Madison,4
+drawdown,TX_COUNTY,County of Nacogdoches,4
+drawdown,TX_COUNTY,County of Shelby,4
+drawdown,TX_COUNTY,Stephens County,4
+expended,ORG,CBCOG,4
+expended,ORG,Central Texas Council of Governments,4
+expended,ORG,"Flood and Drainage, Water Facilities",4
+expended,ORG,LF,4
+expended,ORG,Montgomery Street,4
+expended,ORG,Utility Easement,4
+expended,ORG,the Alamo Area Council of Governments,4
+expended,TX_COUNTY,Clay County,4
+expended,TX_COUNTY,County of Archer,4
+expended,TX_COUNTY,County of Jack,4
+expended,TX_COUNTY,County of Jefferson,4
+expended,TX_COUNTY,County of Matagorda,4
+expended,TX_COUNTY,County of Montague,4
+expended,TX_COUNTY,County of Young,4
+expended,TX_COUNTY,Falls County,4
+expended,TX_COUNTY,McLennan County,4
+expended,TX_COUNTY,Red River County,4
+unknown,DISASTER,Hurricane Evacuees,4
+unknown,TX_COUNTY,Caldwell County,4
+unknown,TX_COUNTY,County Of Tyler County,4
+unknown,TX_COUNTY,County of Hidalgo,4
+unknown,TX_COUNTY,County of Nacogdoches,4
+unknown,TX_COUNTY,County of Tyler,4
+unknown,TX_COUNTY,Kenedy County,4
+budget,FEMA_DECLARATION,1780,3
+budget,ORG,Hazard Mitigation Grant Program,3
+budget,TX_COUNTY,COUNTY OF DEWITT,3
+budget,TX_COUNTY,County of Angelina,3
+budget,TX_COUNTY,County of Matagorda,3
+drawdown,ORG,Multifamily Units 0 Beneficiaries,3
+drawdown,ORG,Project Delivery and Administration,3
+drawdown,TX_COUNTY,County of Hidalgo,3
+drawdown,TX_COUNTY,County of Jefferson,3
+drawdown,TX_COUNTY,County of Sabine,3
+drawdown,TX_COUNTY,County of Trinity,3
+drawdown,TX_COUNTY,McLennan County,3
+expended,ORG,DREF 0,3
+expended,ORG,Multifamily Units 0 Beneficiaries,3
+expended,ORG,Way Sewer Facilities,3
+expended,TX_COUNTY,County of Hidalgo,3
+expended,TX_COUNTY,County of Shelby,3
+obligated,FEMA_DECLARATION,4454,3
+obligated,FEMA_DECLARATION,4466,3
+obligated,ORG,the Alamo Area Council of Governments,3
+obligated,TX_COUNTY,County of Jefferson,3
+obligated,TX_COUNTY,County of Shelby,3
+unknown,ORG,Montgomery Street,3
+unknown,ORG,Utility Easement,3
+budget,FEMA_DECLARATION,4466,2
+budget,ORG,Public 0,2
+budget,ORG,Street Improvements,2
+budget,TX_COUNTY,COUNTY OF DALLAS,2
+budget,TX_COUNTY,County of Brooks,2
+budget,TX_COUNTY,County of Jefferson,2
+budget,TX_COUNTY,County of Shelby,2
+budget,TX_COUNTY,Dallas County,2
+budget,TX_COUNTY,Stephens County,2
+budget,TX_COUNTY,Wichita County,2
+drawdown,ORG,Units 0,2
+drawdown,TX_COUNTY,Clay County,2
+drawdown,TX_COUNTY,County of Archer,2
+drawdown,TX_COUNTY,County of Jack,2
+drawdown,TX_COUNTY,County of Montague,2
+drawdown,TX_COUNTY,County of San Jacinto,2
+drawdown,TX_COUNTY,County of Young,2
+drawdown,TX_COUNTY,Falls County,2
+expended,ORG,Units 0 Beneficiaries,2
+obligated,ORG,Central Texas Council of Governments,2
+obligated,TX_COUNTY,COUNTY OF DALLAS,2
+obligated,TX_COUNTY,County of Matagorda,2
+obligated,TX_COUNTY,Dallas County,2
+obligated,TX_COUNTY,Stephens County,2
+obligated,TX_COUNTY,Wichita County,2
+unknown,ORG,Affirmatively Further Fair Housing,2
+unknown,ORG,Eagle Drive,2
+unknown,ORG,Fair Housing,2
+unknown,TX_COUNTY,Bee County,2
+unknown,TX_COUNTY,County of Brooks,2
+unknown,TX_COUNTY,County of Chambers,2
+unknown,TX_COUNTY,County of Jefferson,2
+unknown,TX_COUNTY,County of Trinity,2
+unknown,TX_COUNTY,Jackson County,2
+budget,ORG,Quick Connect,1
+budget,ORG,the Alamo Area Council of Governments,1
+budget,TX_COUNTY,COUNTY OF FALLS,1
+budget,TX_COUNTY,COUNTY OF RED RIVER,1
+budget,TX_COUNTY,Clay County,1
+budget,TX_COUNTY,Cooke County,1
+budget,TX_COUNTY,County of Archer,1
+budget,TX_COUNTY,County of Jack,1
+budget,TX_COUNTY,County of Montague,1
+budget,TX_COUNTY,County of Young,1
+budget,TX_COUNTY,Duval County,1
+budget,TX_COUNTY,Falls County,1
+budget,TX_COUNTY,Limestone County,1
+budget,TX_COUNTY,McLennan County,1
+budget,TX_COUNTY,Red River County,1
+budget,TX_COUNTY,Tarrant County,1
+drawdown,ORG,Central Texas Council of Governments,1
+drawdown,ORG,the Alamo Area Council of Governments,1
+expended,ORG,Salary Allocations Activity Progress Narrative,1
+obligated,ORG,Public 0,1
+obligated,ORG,Units 0 Beneficiaries,1
+obligated,TX_COUNTY,COUNTY OF FALLS,1
+obligated,TX_COUNTY,COUNTY OF RED RIVER,1
+obligated,TX_COUNTY,Clay County,1
+obligated,TX_COUNTY,Cooke County,1
+obligated,TX_COUNTY,County of Archer,1
+obligated,TX_COUNTY,County of Jack,1
+obligated,TX_COUNTY,County of Montague,1
+obligated,TX_COUNTY,County of Young,1
+obligated,TX_COUNTY,Duval County,1
+obligated,TX_COUNTY,Falls County,1
+obligated,TX_COUNTY,Limestone County,1
+obligated,TX_COUNTY,McLennan County,1
+obligated,TX_COUNTY,Red River County,1
+obligated,TX_COUNTY,Tarrant County,1
+unknown,FEMA_DECLARATION,1780,1
+unknown,ORG,Brazos Valley Council of Governments,1
+unknown,ORG,MIT - Planning and Capacity Building Under Way Activity Description,1
+unknown,ORG,The Council of Governments,1
+unknown,TX_COUNTY,County Of Harrison County,1
+unknown,TX_COUNTY,County of Burleson,1
+unknown,TX_COUNTY,County of Hardin,1
+unknown,TX_COUNTY,County of Jasper,1
+unknown,TX_COUNTY,County of Sabine,1
+unknown,TX_COUNTY,County of Shelby,1

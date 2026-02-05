@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harvey Housing – Progress by ZIP</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #101a2e;
+      --card: #122042;
+      --text: #e9eefc;
+      --muted: #b7c3e0;
+      --link: #8ab4ff;
+      --border: rgba(255,255,255,0.12);
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, var(--bg), #070b14 60%);
+      color: var(--text);
+    }
+    header {
+      padding: 26px 22px 12px;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(1200px 500px at 20% 0%, rgba(138,180,255,0.20), transparent 60%);
+    }
+    h1 { margin: 0 0 8px; font-size: 20px; }
+    .sub { color: var(--muted); font-size: 13px; line-height: 1.4; max-width: 1100px; }
+    main { padding: 18px 22px 60px; max-width: 1200px; margin: 0 auto; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin-top: 14px; }
+    .card { background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 12px; padding: 12px 12px; }
+    .card b { display:block; font-size: 18px; margin-bottom: 2px; }
+    .muted { color: var(--muted); }
+    .small { font-size: 12px; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; }
+    h2 { margin: 26px 0 10px; font-size: 15px; }
+    img { max-width: 100%; border-radius: 12px; border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border-top: 1px solid var(--border); padding: 10px 8px; vertical-align: top; }
+    th { text-align: left; font-size: 12px; color: var(--muted); }
+    td { font-size: 13px; line-height: 1.35; }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Harvey Housing – Progress by ZIP (Heuristic)</h1>
+    <div class="sub">
+      Builds a ZIP×quarter panel from Harvey QPR-derived tables in <span class="mono">data/glo_reports.db</span>.
+      ZIPs are extracted from text (best-effort). Metrics are allocated across ZIPs when an activity lists multiple ZIPs.
+      Built at <span class="mono">2026-02-05T12:14:10</span>.
+    </div>
+    <div class="grid">
+      <div class="card"><b>151</b><div class="small muted">ZIPs with any Harvey Housing coverage</div></div>
+      <div class="card"><b>1634</b><div class="small muted">ZIP×quarter rows</div></div>
+      <div class="card"><b>82</b><div class="small muted">Activity×quarter pairs with ZIPs</div></div>
+    </div>
+  </header>
+  <main>
+    <h2>Files</h2>
+    <p class="small">
+      Panel CSV: <a href="../exports/harvey_housing_zip_quarter_panel.csv">outputs/exports/harvey_housing_zip_quarter_panel.csv</a><br/>
+      Quarter summary CSV: <a href="../exports/harvey_housing_quarter_summary.csv">outputs/exports/harvey_housing_quarter_summary.csv</a>
+    </p>
+
+    <h2>Overall progress (all Housing activities)</h2>
+    <div class="sub">These charts are built from <span class="mono">harvey_activities</span> (not the ZIP panel).</div>
+    <div style="margin-top:12px"><img src="assets/harvey_housing_zip_total_budget_by_quarter.png" alt="Total budget by quarter" /></div>
+    <div style="margin-top:12px"><img src="assets/harvey_housing_zip_activities_by_quarter.png" alt="Activities by quarter" /></div>
+
+    <h2>Where (ZIPs) – latest quarter snapshot (Q4 2025)</h2>
+    <div class="sub">
+      This uses the ZIP×quarter panel. Budget values are <b>allocated</b> across ZIPs for activities that list multiple ZIPs.
+    </div>
+    <div style="margin-top:12px"><img src="assets/harvey_housing_zip_top_zips_latest_quarter.png" alt="Top ZIPs" /></div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:90px">ZIP</th>
+          <th style="width:180px">County (mode)</th>
+          <th style="width:120px; text-align:right">Activities</th>
+          <th style="text-align:right">Allocated budget</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td colspan="4" class="muted">No ZIP rows for the latest quarter.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Top ZIPs over time (heatmap)</h2>
+    <div class="sub">Top 25 ZIPs by cumulative allocated budget across all quarters.</div>
+    <div style="margin-top:12px"><img src="assets/harvey_housing_zip_heatmap.png" alt="ZIP heatmap" /></div>
+
+    <h2>Notes / limitations</h2>
+    <ul class="sub">
+      <li>ZIP codes are extracted from QPR narrative/text; many activities do not list ZIPs consistently.</li>
+      <li>Allocated ZIP budgets are computed by splitting an activity’s budget equally across its listed ZIP codes for that quarter.</li>
+      <li>County/city labels are “mode” hints from extracted text; ZIPs can span multiple counties.</li>
+    </ul>
+  </main>
+</body>
+</html>

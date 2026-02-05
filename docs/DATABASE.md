@@ -15,16 +15,18 @@ Complete documentation of the SQLite database structure.
 ## Overview
 
 **Database File**: `data/glo_reports.db`
-**Size**: ~650 MB
+**Size**: ~1.5 GB (varies by extraction options)
 **Engine**: SQLite 3
 
-The database contains 7 tables organized into three categories:
+The database contains core processing tables plus analysis/enrichment tables:
 
 | Category | Tables |
 |----------|--------|
 | Document Storage | documents, document_text, document_tables |
 | Entity Extraction | entities |
 | Data Linking | fema_disaster_mapping, national_grants, linked_entities |
+| Spatial / Locations | location_mentions, spatial_units, location_links, geocode_cache |
+| Harvey Funding Analysis | harvey_activities, harvey_quarterly_totals, harvey_org_allocations, harvey_county_allocations, harvey_funding_changes, … |
 
 ---
 
@@ -55,7 +57,7 @@ CREATE TABLE documents (
 | Column | Type | Description |
 |--------|------|-------------|
 | id | INTEGER | Auto-increment primary key |
-| filename | TEXT | PDF filename (e.g., `harvey-2024-q3.pdf`) |
+| filename | TEXT | PDF filename (e.g., `drgr-h5b-2025-q4.pdf`) |
 | filepath | TEXT | Full path to PDF file (unique) |
 | category | TEXT | Report category from parent directory |
 | disaster_code | TEXT | Parsed disaster identifier |
@@ -80,6 +82,7 @@ CREATE TABLE document_text (
     document_id INTEGER NOT NULL,
     page_number INTEGER NOT NULL,
     text_content TEXT,
+    raw_text_content TEXT,
     char_count INTEGER,
     FOREIGN KEY (document_id) REFERENCES documents(id),
     UNIQUE(document_id, page_number)
@@ -91,7 +94,8 @@ CREATE TABLE document_text (
 | id | INTEGER | Auto-increment primary key |
 | document_id | INTEGER | Foreign key to documents table |
 | page_number | INTEGER | Page number (1-indexed) |
-| text_content | TEXT | Extracted text from page |
+| text_content | TEXT | Extracted text from page (normalized whitespace) |
+| raw_text_content | TEXT | Line-preserving text for QPR parsing |
 | char_count | INTEGER | Character count of text |
 
 ---
@@ -148,6 +152,7 @@ CREATE TABLE entities (
     start_char INTEGER,
     end_char INTEGER,
     confidence REAL,
+    normalized_text TEXT,
     FOREIGN KEY (document_id) REFERENCES documents(id)
 );
 ```
@@ -159,6 +164,7 @@ CREATE TABLE entities (
 | page_number | INTEGER | Page where entity appears |
 | entity_type | TEXT | Entity type (e.g., DISASTER, MONEY) |
 | entity_text | TEXT | The extracted entity text |
+| normalized_text | TEXT | Canonical/normalized text for linking |
 | start_char | INTEGER | Start character position |
 | end_char | INTEGER | End character position |
 | confidence | REAL | Confidence score (0-1) |
@@ -254,6 +260,108 @@ CREATE TABLE linked_entities (
 
 ---
 
+## Spatial / Location Tables
+
+These tables support location mention extraction and choropleth mapping. They are populated by `src/location_extractor.py` and (optionally) enriched by `src/geocode_enricher.py`.
+
+### location_mentions
+
+Raw extracted mentions (one row per mention).
+
+Key columns: `document_id`, `page_number`, `mention_text`, `address`, `city`, `state`, `zip`, `county`, `census_tract`, `block_group`, `geoid`, `latitude`, `longitude`, `method`, `confidence`.
+
+### spatial_units
+
+Deduplicated normalized spatial units (ZIPs, counties, GEOIDs, point coords).
+
+Key columns: `unit_type`, `unit_value`, `county`, `state`, `zip`, `geoid`, `latitude`, `longitude`, `source`, `confidence`.
+
+### location_links
+
+Join table linking `location_mentions` to `spatial_units` (many-to-many).
+
+Key columns: `location_mention_id`, `spatial_unit_id`, `relation`.
+
+### geocode_cache
+
+Cache for geocoding API responses to avoid repeated calls.
+
+Key columns: `cache_key`, `response_json`, `created_at`.
+
+---
+
+## Harvey Funding Analysis Tables
+
+These tables support activity-level parsing and quarter-over-quarter tracking for Harvey. They are populated by `src/financial_parser.py` and `src/funding_tracker.py`.
+
+### harvey_activities
+
+Parsed activity blocks per quarter (activity code, program, org, county, budgets, status, dates).
+
+Key columns: `quarter`, `year`, `quarter_num`, `program_type`, `grant_number`, `activity_code`, `responsible_org`, `county`, `total_budget`, `status`, `start_date`, `end_date`.
+
+### harvey_quarterly_totals / harvey_org_allocations / harvey_county_allocations
+
+Rollups for time series and Sankey summaries.
+
+### harvey_funding_changes
+
+Quarter-to-quarter deltas for activity budget/status changes.
+
+> For the full DDL (including additional `harvey_*` tables), see `src/utils.py` (`init_database`).
+
+---
+
+## NLP Analysis Tables
+
+These tables persist “higher-level” NLP layers built on top of extracted text/entities.
+
+### document_sections
+
+Heading-based segmentation of extracted page text (one row per section span).
+
+Populated by: `src/section_extractor.py`
+
+Key columns: `document_id`, `section_index`, `heading_text`, `start_page`, `start_line`, `end_page`, `end_line`.
+
+### section_heading_families
+
+Heading-level taxonomy used to classify section headings into families (e.g., `narrative`, `finance`, `metadata`).
+This enables narrative-only filtering for topic modeling, relations, and money-context extraction.
+
+Populated by: `src/section_classifier.py`
+
+Key columns: `heading_text`, `predicted_family`, `override_family`.
+
+### topic_models / topics / topic_assignments
+
+Stores topic model metadata and assignments from sections/chunks to topics.
+
+Populated by: `src/topic_model.py`
+
+### entity_canonical / entity_aliases
+
+Canonical registry and alias mappings for high-volume entities (ORG/PROGRAM/GPE/TX_COUNTY).
+
+Populated by: `src/entity_resolution.py`
+
+### entity_relations / entity_relation_evidence
+
+Lightweight co-occurrence graph edges and evidence snippets for drill-down.
+
+Populated by: `src/relation_extractor.py`
+
+### money_mentions / money_mention_entities
+
+Money mentions extracted from narrative spans, labeled by context (budget/expended/obligated/drawdown) and linked to
+co-mentioned entities in the same sentence.
+
+Populated by: `src/money_context_extractor.py`
+
+> For full DDL, see `src/utils.py` (`init_database`).
+
+---
+
 ## Indexes
 
 ```sql
@@ -264,6 +372,7 @@ CREATE INDEX idx_documents_year ON documents(year);
 -- Entity queries
 CREATE INDEX idx_entities_type ON entities(entity_type);
 CREATE INDEX idx_entities_document ON entities(document_id);
+CREATE INDEX idx_entities_normalized ON entities(normalized_text);
 
 -- FEMA mapping
 CREATE INDEX idx_fema_number ON fema_disaster_mapping(fema_number);
@@ -373,37 +482,61 @@ LIMIT 20;
 
 ## Data Statistics
 
-### Current Counts
+> Counts below reflect the current `data/glo_reports.db` in this workspace (latest year/quarter in `documents`: **Q4 2025**).
+
+### Core Table Counts
 
 | Table | Row Count |
 |-------|-----------|
 | documents | 442 |
 | document_text | 153,540 |
-| document_tables | 148,806 |
-| entities | 4,234,550 |
+| document_tables | 175,208 |
+| entities | 4,246,325 |
 | fema_disaster_mapping | 42 |
 | national_grants | 22 |
-| linked_entities | 175,124 |
+| linked_entities | 99,580 |
 
-### Entity Distribution
+### Spatial / Location Counts
+
+| Table | Row Count |
+|-------|-----------|
+| location_mentions | 402,382 |
+| spatial_units | 35,694 |
+| location_links | 980,838 |
+| geocode_cache | 30,626 |
+
+### Harvey Analysis Counts (Selected)
+
+| Table | Row Count |
+|-------|-----------|
+| harvey_activities | 14,850 |
+| harvey_quarterly_totals | 25 |
+| harvey_org_allocations | 164 |
+| harvey_county_allocations | 1,562 |
+| harvey_funding_changes | 3,078 |
+
+### Entity Distribution (Top Types)
 
 | Entity Type | Count | Unique Values |
 |-------------|-------|---------------|
-| MONEY | 1,284,980 | 234,097 |
-| ORG | 1,152,944 | 32,121 |
-| CARDINAL | 488,396 | 18,161 |
-| DATE | 351,447 | 9,131 |
-| GPE | 198,125 | 2,979 |
-| TX_COUNTY | 103,497 | 104 |
-| DISASTER | 50,676 | 24 |
+| MONEY | 1,287,763 | 234,610 |
+| ORG | 1,154,058 | 32,149 |
+| CARDINAL | 489,301 | 18,217 |
+| DATE | 352,089 | 9,154 |
+| GPE | 194,085 | 2,901 |
+| TX_COUNTY | 113,390 | 178 |
+| DISASTER | 50,805 | 24 |
 | PROGRAM | 24,638 | 24 |
 | FEMA_DECLARATION | 893 | 23 |
 
-### Storage Size
+### Storage Size (Approximate)
 
 | Component | Size |
 |-----------|------|
-| Database (glo_reports.db) | ~650 MB |
-| Extracted text files | ~230 MB |
-| Extracted table JSON files | ~155 MB |
-| CSV exports | ~290 MB |
+| Database (`data/glo_reports.db`) | ~1.5 GB |
+| Source PDFs (`DRGR_Reports/`) | ~450 MB |
+| Extracted text (`data/extracted_text/`) | ~230 MB |
+| Clean text (`data/extracted_text_clean/`) | ~230 MB |
+| Extracted tables (`data/extracted_tables/`) | ~155 MB |
+| Vector store (`data/vector_store/`, optional) | ~2 GB |
+| Exports (`outputs/exports/`, varies; includes large Plotly HTML) | ~0.9 GB |

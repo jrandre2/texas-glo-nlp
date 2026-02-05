@@ -12,7 +12,11 @@ from pathlib import Path
 from typing import Dict, List, Any, Optional
 from collections import defaultdict
 
-from config import DATABASE_PATH, EXPORTS_DIR
+# Handle both package and direct execution imports
+try:
+    from .config import DATABASE_PATH, EXPORTS_DIR
+except ImportError:
+    from config import DATABASE_PATH, EXPORTS_DIR
 
 
 class FundingTracker:
@@ -221,8 +225,13 @@ class FundingTracker:
 
         return hierarchy
 
-    def generate_sankey_data(self, quarter: str = None) -> Dict[str, Any]:
-        """Generate Sankey diagram data in D3.js format."""
+    def generate_sankey_data(self, quarter: str = None, program_type: str = None) -> Dict[str, Any]:
+        """Generate Sankey diagram data in D3.js format.
+
+        Args:
+            quarter: Specific quarter to analyze (default: latest)
+            program_type: Filter to specific program ('Infrastructure' or 'Housing')
+        """
         hierarchy = self.get_funding_hierarchy(quarter)
 
         if not hierarchy:
@@ -231,12 +240,21 @@ class FundingTracker:
         nodes = []
         links = []
         node_index = {}
+        cursor = self.conn.cursor()
 
         def add_node(name: str, level: int) -> int:
             if name not in node_index:
                 node_index[name] = len(nodes)
                 nodes.append({'id': name, 'name': name, 'level': level})
             return node_index[name]
+
+        # Filter programs if program_type specified
+        if program_type:
+            filtered_programs = {k: v for k, v in hierarchy['programs'].items() if k == program_type}
+            total_budget = sum(p['total'] for p in filtered_programs.values())
+        else:
+            filtered_programs = hierarchy['programs']
+            total_budget = hierarchy['glo']['total']
 
         # Level 0: HUD (source)
         add_node('HUD', 0)
@@ -246,68 +264,127 @@ class FundingTracker:
         links.append({
             'source': 'HUD',
             'target': 'Texas GLO',
-            'value': hierarchy['glo']['total'],
+            'value': total_budget,
         })
 
-        # Level 2: Programs (Housing, Infrastructure)
-        for prog, data in hierarchy['programs'].items():
-            if data['total'] > 0:
-                add_node(prog, 2)
-                links.append({
-                    'source': 'Texas GLO',
-                    'target': prog,
-                    'value': data['total'],
-                })
+        # Level 2: Programs (skip if filtering to single program - go direct to categories)
+        if program_type:
+            # Single program - GLO flows directly to categories
+            pass
+        else:
+            # Multiple programs
+            for prog, data in filtered_programs.items():
+                if data['total'] > 0:
+                    add_node(prog, 2)
+                    links.append({
+                        'source': 'Texas GLO',
+                        'target': prog,
+                        'value': data['total'],
+                    })
 
-        # Level 3: Organizations
-        cursor = self.conn.cursor()
-        cursor.execute('''
-            SELECT program_type, responsible_org, SUM(total_budget) as total
-            FROM harvey_activities
-            WHERE quarter = ? AND responsible_org IS NOT NULL
-            GROUP BY program_type, responsible_org
-        ''', (hierarchy['quarter'],))
+        # Level 3: Activity Categories (spending types)
+        # Derive meaningful categories from activity codes when activity_category is an org name
+        category_sql = '''
+            CASE
+                -- Use existing category if it's meaningful (not an org name)
+                WHEN activity_category NOT IN ('City of Houston', 'Harris County', 'Unknown')
+                     AND activity_category IS NOT NULL
+                THEN activity_category
+
+                -- Parse activity_code to derive category for org-managed activities
+                WHEN activity_code LIKE 'HAP[%' OR activity_code LIKE '%HAP%' THEN 'Homeowner Assistance Program'
+                WHEN activity_code LIKE 'HouMFRP%' OR activity_code LIKE 'HCARP%' OR activity_code LIKE 'ARP%'
+                     OR activity_code LIKE 'HouSRP%' THEN 'Affordable Rental'
+                WHEN activity_code LIKE 'HouBP%' OR activity_code LIKE 'HCBP%' OR activity_code LIKE 'LBAP%'
+                     OR activity_code LIKE 'HCComBP%' OR activity_code LIKE 'HCBAP%' OR activity_code LIKE 'HCBIV%'
+                     THEN 'Local Buyout/Acquisition'
+                WHEN activity_code LIKE 'HouERP%' OR activity_code LIKE 'ERP%' THEN 'Economic Revitalization'
+                WHEN activity_code LIKE 'HouHoAP%' THEN 'Homeowner Assistance Program'
+                WHEN activity_code LIKE 'HouHBAP%' THEN 'Homebuyer Assistance'
+                WHEN activity_code LIKE 'HCSFNC%' OR activity_code LIKE 'HouSFDP%' THEN 'Single Family Housing'
+                WHEN activity_code LIKE 'HCHRP%' OR activity_code LIKE 'HRP%' THEN 'Homeowner Reimbursement'
+                WHEN activity_code LIKE 'HouPS%' OR activity_code LIKE 'HCPS%' THEN 'Public Services'
+                WHEN activity_code LIKE 'INF_%' OR activity_code LIKE 'HCCompApp%' OR activity_code LIKE 'HCMOD%'
+                     OR activity_code LIKE 'HCFCD%' THEN 'Infrastructure Projects'
+                WHEN activity_code LIKE 'PREPS%' THEN 'PREPS Program'
+                WHEN activity_code LIKE '%ADMIN%' OR activity_code LIKE 'ADMIN%' THEN 'Administration'
+                WHEN activity_code LIKE '%PLAN%' OR activity_code LIKE 'PLAN%' THEN 'Planning'
+                WHEN activity_code LIKE 'DRRP%' THEN 'Disaster Recovery Reallocation'
+                ELSE 'Other'
+            END
+        '''
+
+        # Categories that conflict with program names
+        category_renames = {
+            'Infrastructure': 'Infrastructure Projects',
+            'Housing': 'Housing Projects',
+        }
+
+        if program_type:
+            cursor.execute(f'''
+                SELECT program_type,
+                       {category_sql} as category,
+                       SUM(total_budget) as total
+                FROM harvey_activities
+                WHERE quarter = ? AND program_type = ?
+                GROUP BY program_type, {category_sql}
+                ORDER BY total DESC
+            ''', (hierarchy['quarter'], program_type))
+        else:
+            cursor.execute(f'''
+                SELECT program_type,
+                       {category_sql} as category,
+                       SUM(total_budget) as total
+                FROM harvey_activities
+                WHERE quarter = ?
+                GROUP BY program_type, {category_sql}
+                ORDER BY total DESC
+            ''', (hierarchy['quarter'],))
 
         for row in cursor.fetchall():
             if row['total'] and row['total'] > 0:
-                org = row['responsible_org']
+                category = row['category']
                 prog = row['program_type'] or 'Unknown'
-                add_node(org, 3)
+
+                # Rename categories that conflict with program names
+                if category in category_renames:
+                    category = category_renames[category]
+
+                add_node(category, 2 if program_type else 3)
+
+                # Link from GLO if single program, otherwise from program
+                source = 'Texas GLO' if program_type else prog
                 links.append({
-                    'source': prog,
-                    'target': org,
+                    'source': source,
+                    'target': category,
                     'value': row['total'],
                 })
 
-        # Level 4: Top counties (limit to prevent clutter)
-        cursor.execute('''
-            SELECT responsible_org, county, SUM(total_budget) as total
-            FROM harvey_activities
-            WHERE quarter = ? AND county IS NOT NULL
-            GROUP BY responsible_org, county
-            ORDER BY total DESC
-            LIMIT 30
-        ''', (hierarchy['quarter'],))
+        # Note: Organizations (Houston, Harris County) removed for cleaner category-only view
+        # Their spending is already included in the activity categories above
 
-        for row in cursor.fetchall():
-            if row['total'] and row['total'] > 0:
-                county = row['county']
-                org = row['responsible_org']
-                if org:
-                    add_node(county, 4)
-                    links.append({
-                        'source': org,
-                        'target': county,
-                        'value': row['total'],
-                    })
+        # Aggregate duplicate links (same source/target)
+        link_totals = {}
+        for link in links:
+            key = (link['source'], link['target'])
+            if key in link_totals:
+                link_totals[key] += link['value']
+            else:
+                link_totals[key] = link['value']
+
+        aggregated_links = [
+            {'source': k[0], 'target': k[1], 'value': v}
+            for k, v in sorted(link_totals.items(), key=lambda x: -x[1])
+        ]
 
         return {
             'quarter': hierarchy['quarter'],
+            'program_type': program_type,
             'nodes': nodes,
-            'links': links,
+            'links': aggregated_links,
             'summary': {
-                'total_budget': hierarchy['glo']['total'],
-                'programs': len(hierarchy['programs']),
+                'total_budget': total_budget,
+                'programs': len(filtered_programs),
                 'organizations': len(hierarchy['organizations']),
                 'counties': len(hierarchy['counties']),
             },
@@ -340,11 +417,23 @@ class FundingTracker:
         output_dir = output_dir or EXPORTS_DIR
         output_dir.mkdir(parents=True, exist_ok=True)
 
-        # Export Sankey data
-        sankey = self.generate_sankey_data()
-        with open(output_dir / 'harvey_sankey_data.json', 'w') as f:
-            json.dump(sankey, f, indent=2)
-        print(f"  Exported: {output_dir / 'harvey_sankey_data.json'}")
+        # Export Infrastructure (5B) Sankey data
+        sankey_infra = self.generate_sankey_data(program_type='Infrastructure')
+        with open(output_dir / 'harvey_sankey_infrastructure.json', 'w') as f:
+            json.dump(sankey_infra, f, indent=2)
+        print(f"  Exported: {output_dir / 'harvey_sankey_infrastructure.json'}")
+
+        # Export Housing (57M) Sankey data
+        sankey_housing = self.generate_sankey_data(program_type='Housing')
+        with open(output_dir / 'harvey_sankey_housing.json', 'w') as f:
+            json.dump(sankey_housing, f, indent=2)
+        print(f"  Exported: {output_dir / 'harvey_sankey_housing.json'}")
+
+        # Export combined Sankey data (for reference)
+        sankey_combined = self.generate_sankey_data()
+        with open(output_dir / 'harvey_sankey_combined.json', 'w') as f:
+            json.dump(sankey_combined, f, indent=2)
+        print(f"  Exported: {output_dir / 'harvey_sankey_combined.json'}")
 
         # Export quarterly trends
         trends = self.generate_quarterly_trends()

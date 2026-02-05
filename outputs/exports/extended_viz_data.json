@@ -1,0 +1,905 @@
+{
+  "activity_types": [
+    {
+      "type": "Rehabilitation/Reconstruction",
+      "is_buyout": false,
+      "count": 49,
+      "budget": 26493818141.56
+    },
+    {
+      "type": "Public Services",
+      "is_buyout": false,
+      "count": 7,
+      "budget": 6268562703.67
+    },
+    {
+      "type": "Affordable Rental",
+      "is_buyout": false,
+      "count": 19,
+      "budget": 5667344565.03
+    },
+    {
+      "type": "Acquisition/Buyout",
+      "is_buyout": true,
+      "count": 141,
+      "budget": 1927565682.75
+    },
+    {
+      "type": "Other",
+      "is_buyout": false,
+      "count": 213,
+      "budget": 1649922325.17
+    },
+    {
+      "type": "Relocation",
+      "is_buyout": false,
+      "count": 50,
+      "budget": 1473273543.6100001
+    },
+    {
+      "type": "Economic Development",
+      "is_buyout": false,
+      "count": 8,
+      "budget": 1390751785.78
+    },
+    {
+      "type": "Planning",
+      "is_buyout": false,
+      "count": 29,
+      "budget": 1259006224.06
+    },
+    {
+      "type": "Infrastructure",
+      "is_buyout": false,
+      "count": 180,
+      "budget": 1149471070.33
+    },
+    {
+      "type": "Administration",
+      "is_buyout": false,
+      "count": 22,
+      "budget": 1060928533.13
+    },
+    {
+      "type": "Homeownership Assistance",
+      "is_buyout": false,
+      "count": 23,
+      "budget": 545591927.34
+    },
+    {
+      "type": "New Construction",
+      "is_buyout": false,
+      "count": 3,
+      "budget": 357339678.21
+    },
+    {
+      "type": "Housing Incentives",
+      "is_buyout": false,
+      "count": 50,
+      "budget": 249496748.45000002
+    }
+  ],
+  "geographic": [
+    {
+      "zip": "77339",
+      "county": "Harris County",
+      "activities": 69
+    },
+    {
+      "zip": "77083",
+      "county": "Harris County",
+      "activities": 65
+    },
+    {
+      "zip": "77089",
+      "county": "Harris County",
+      "activities": 64
+    },
+    {
+      "zip": "77489",
+      "county": "Harris County",
+      "activities": 64
+    },
+    {
+      "zip": "77053",
+      "county": "Harris County",
+      "activities": 63
+    },
+    {
+      "zip": "77099",
+      "county": "Harris County",
+      "activities": 63
+    },
+    {
+      "zip": "77001",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77002",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77003",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77004",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77005",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77006",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77007",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77008",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77009",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77011",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77012",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77013",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77014",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77015",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77016",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77017",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77018",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77019",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77020",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77021",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77022",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77023",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77024",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77025",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77026",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77027",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77028",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77029",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77030",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77031",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77032",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77033",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77034",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77035",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77036",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77037",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77038",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77039",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77040",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77041",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77042",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77043",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77044",
+      "county": "Harris County",
+      "activities": 62
+    },
+    {
+      "zip": "77045",
+      "county": "Harris County",
+      "activities": 62
+    }
+  ],
+  "beneficiaries": [
+    {
+      "quarter": "Q1 2022",
+      "year": 2022,
+      "qnum": 1,
+      "households": 5760,
+      "renters": 0,
+      "owners": 0,
+      "sf": 5622,
+      "mf": 138
+    },
+    {
+      "quarter": "Q2 2022",
+      "year": 2022,
+      "qnum": 2,
+      "households": 7394,
+      "renters": 0,
+      "owners": 67,
+      "sf": 7256,
+      "mf": 138
+    },
+    {
+      "quarter": "Q3 2022",
+      "year": 2022,
+      "qnum": 3,
+      "households": 9792,
+      "renters": 150,
+      "owners": 39,
+      "sf": 9654,
+      "mf": 138
+    },
+    {
+      "quarter": "Q4 2022",
+      "year": 2022,
+      "qnum": 4,
+      "households": 10328,
+      "renters": 2,
+      "owners": 2241,
+      "sf": 10188,
+      "mf": 138
+    },
+    {
+      "quarter": "Q2 2023",
+      "year": 2023,
+      "qnum": 2,
+      "households": 8770,
+      "renters": 0,
+      "owners": 0,
+      "sf": 7993,
+      "mf": 778
+    },
+    {
+      "quarter": "Q3 2023",
+      "year": 2023,
+      "qnum": 3,
+      "households": 28794,
+      "renters": 0,
+      "owners": 0,
+      "sf": 26839,
+      "mf": 1947
+    },
+    {
+      "quarter": "Q4 2023",
+      "year": 2023,
+      "qnum": 4,
+      "households": 12067,
+      "renters": 0,
+      "owners": 0,
+      "sf": 9452,
+      "mf": 2578
+    },
+    {
+      "quarter": "Q1 2024",
+      "year": 2024,
+      "qnum": 1,
+      "households": 13485,
+      "renters": 0,
+      "owners": 0,
+      "sf": 9333,
+      "mf": 4102
+    },
+    {
+      "quarter": "Q2 2024",
+      "year": 2024,
+      "qnum": 2,
+      "households": 14734,
+      "renters": 0,
+      "owners": 0,
+      "sf": 9537,
+      "mf": 5011
+    },
+    {
+      "quarter": "Q4 2024",
+      "year": 2024,
+      "qnum": 4,
+      "households": 16630,
+      "renters": 0,
+      "owners": 0,
+      "sf": 9806,
+      "mf": 6638
+    },
+    {
+      "quarter": "Q1 2025",
+      "year": 2025,
+      "qnum": 1,
+      "households": 19647,
+      "renters": 0,
+      "owners": 0,
+      "sf": 12840,
+      "mf": 6600
+    },
+    {
+      "quarter": "Q2 2025",
+      "year": 2025,
+      "qnum": 2,
+      "households": 16930,
+      "renters": 0,
+      "owners": 0,
+      "sf": 9977,
+      "mf": 6826
+    },
+    {
+      "quarter": "Q3 2025",
+      "year": 2025,
+      "qnum": 3,
+      "households": 20020,
+      "renters": 0,
+      "owners": 0,
+      "sf": 11952,
+      "mf": 8011
+    }
+  ],
+  "sectors": [
+    {
+      "type": "government",
+      "activities": 1,
+      "funding": 0,
+      "expended": 190.0
+    },
+    {
+      "type": "unknown",
+      "activities": 523,
+      "funding": 0,
+      "expended": 55513224798.23
+    }
+  ],
+  "counties": [
+    {
+      "county": "Harris County",
+      "zips": 157,
+      "activities": 44
+    },
+    {
+      "county": "Orange County",
+      "zips": 28,
+      "activities": 20
+    },
+    {
+      "county": "Bastrop County",
+      "zips": 34,
+      "activities": 18
+    },
+    {
+      "county": "Austin County",
+      "zips": 47,
+      "activities": 16
+    },
+    {
+      "county": "Victoria County",
+      "zips": 29,
+      "activities": 12
+    },
+    {
+      "county": "Jasper County",
+      "zips": 29,
+      "activities": 12
+    },
+    {
+      "county": "Fayette County",
+      "zips": 30,
+      "activities": 12
+    },
+    {
+      "county": "Polk County",
+      "zips": 51,
+      "activities": 11
+    },
+    {
+      "county": "Wharton County",
+      "zips": 50,
+      "activities": 10
+    },
+    {
+      "county": "Jacinto County",
+      "zips": 21,
+      "activities": 10
+    },
+    {
+      "county": "Waller County",
+      "zips": 45,
+      "activities": 9
+    },
+    {
+      "county": "Liberty County",
+      "zips": 58,
+      "activities": 9
+    },
+    {
+      "county": "Montgomery County",
+      "zips": 33,
+      "activities": 8
+    },
+    {
+      "county": "Jefferson County",
+      "zips": 23,
+      "activities": 8
+    },
+    {
+      "county": "Tyler County",
+      "zips": 20,
+      "activities": 7
+    },
+    {
+      "county": "Karnes County",
+      "zips": 7,
+      "activities": 7
+    },
+    {
+      "county": "Hardin County",
+      "zips": 26,
+      "activities": 7
+    },
+    {
+      "county": "Galveston County",
+      "zips": 29,
+      "activities": 7
+    },
+    {
+      "county": "Newton County",
+      "zips": 26,
+      "activities": 6
+    },
+    {
+      "county": "Grimes County",
+      "zips": 26,
+      "activities": 6
+    }
+  ],
+  "spending_trends": [
+    {
+      "quarter": "Q2 2019",
+      "year": 2019,
+      "qnum": 2,
+      "activities": 1,
+      "allocated": 0,
+      "expended": 809.0
+    },
+    {
+      "quarter": "Q2 2020",
+      "year": 2020,
+      "qnum": 2,
+      "activities": 1,
+      "allocated": 0,
+      "expended": 9.0
+    },
+    {
+      "quarter": "Q3 2020",
+      "year": 2020,
+      "qnum": 3,
+      "activities": 1,
+      "allocated": 0,
+      "expended": 326842372.76
+    },
+    {
+      "quarter": "Q4 2020",
+      "year": 2020,
+      "qnum": 4,
+      "activities": 1,
+      "allocated": 0,
+      "expended": 275794738.63
+    },
+    {
+      "quarter": "Q1 2021",
+      "year": 2021,
+      "qnum": 1,
+      "activities": 1,
+      "allocated": 0,
+      "expended": 297057520.91
+    },
+    {
+      "quarter": "Q4 2021",
+      "year": 2021,
+      "qnum": 4,
+      "activities": 1,
+      "allocated": 0,
+      "expended": 374948325.49
+    },
+    {
+      "quarter": "Q1 2022",
+      "year": 2022,
+      "qnum": 1,
+      "activities": 262,
+      "allocated": 0,
+      "expended": 5001192027.87
+    },
+    {
+      "quarter": "Q2 2022",
+      "year": 2022,
+      "qnum": 2,
+      "activities": 200,
+      "allocated": 0,
+      "expended": 4478768159.33
+    },
+    {
+      "quarter": "Q3 2022",
+      "year": 2022,
+      "qnum": 3,
+      "activities": 220,
+      "allocated": 0,
+      "expended": 4395830081.92
+    },
+    {
+      "quarter": "Q2 2023",
+      "year": 2023,
+      "qnum": 2,
+      "activities": 274,
+      "allocated": 0,
+      "expended": 5174837023.45
+    },
+    {
+      "quarter": "Q3 2023",
+      "year": 2023,
+      "qnum": 3,
+      "activities": 243,
+      "allocated": 0,
+      "expended": 4505887492.54
+    },
+    {
+      "quarter": "Q4 2023",
+      "year": 2023,
+      "qnum": 4,
+      "activities": 239,
+      "allocated": 0,
+      "expended": 4484806003.35
+    },
+    {
+      "quarter": "Q1 2024",
+      "year": 2024,
+      "qnum": 1,
+      "activities": 190,
+      "allocated": 0,
+      "expended": 4468071908.48
+    },
+    {
+      "quarter": "Q2 2024",
+      "year": 2024,
+      "qnum": 2,
+      "activities": 240,
+      "allocated": 0,
+      "expended": 4482777102.89
+    },
+    {
+      "quarter": "Q4 2024",
+      "year": 2024,
+      "qnum": 4,
+      "activities": 180,
+      "allocated": 0,
+      "expended": 4368614882.74
+    },
+    {
+      "quarter": "Q1 2025",
+      "year": 2025,
+      "qnum": 1,
+      "activities": 201,
+      "allocated": 0,
+      "expended": 4334054730.13
+    },
+    {
+      "quarter": "Q2 2025",
+      "year": 2025,
+      "qnum": 2,
+      "activities": 213,
+      "allocated": 0,
+      "expended": 4212967954.37
+    },
+    {
+      "quarter": "Q3 2025",
+      "year": 2025,
+      "qnum": 3,
+      "activities": 242,
+      "allocated": 0,
+      "expended": 4330773845.37
+    }
+  ],
+  "budget_trends": [
+    {
+      "quarter": "Q4 2019",
+      "year": 2019,
+      "qnum": 4,
+      "activities": 22,
+      "budget": 54748160.0
+    },
+    {
+      "quarter": "Q1 2020",
+      "year": 2020,
+      "qnum": 1,
+      "activities": 462,
+      "budget": 3469283204.96
+    },
+    {
+      "quarter": "Q2 2020",
+      "year": 2020,
+      "qnum": 2,
+      "activities": 555,
+      "budget": 3647388386.75
+    },
+    {
+      "quarter": "Q3 2020",
+      "year": 2020,
+      "qnum": 3,
+      "activities": 584,
+      "budget": 3757842938.92
+    },
+    {
+      "quarter": "Q4 2020",
+      "year": 2020,
+      "qnum": 4,
+      "activities": 1186,
+      "budget": 8510044786.32
+    },
+    {
+      "quarter": "Q1 2021",
+      "year": 2021,
+      "qnum": 1,
+      "activities": 637,
+      "budget": 4196122581.54
+    },
+    {
+      "quarter": "Q2 2021",
+      "year": 2021,
+      "qnum": 2,
+      "activities": 638,
+      "budget": 4164503605.54
+    },
+    {
+      "quarter": "Q3 2021",
+      "year": 2021,
+      "qnum": 3,
+      "activities": 642,
+      "budget": 4245017344.98
+    },
+    {
+      "quarter": "Q4 2021",
+      "year": 2021,
+      "qnum": 4,
+      "activities": 645,
+      "budget": 4241196227.66
+    },
+    {
+      "quarter": "Q1 2022",
+      "year": 2022,
+      "qnum": 1,
+      "activities": 516,
+      "budget": 4241239418.85
+    },
+    {
+      "quarter": "Q2 2022",
+      "year": 2022,
+      "qnum": 2,
+      "activities": 533,
+      "budget": 4218904159.86
+    },
+    {
+      "quarter": "Q3 2022",
+      "year": 2022,
+      "qnum": 3,
+      "activities": 534,
+      "budget": 4120165223.13
+    },
+    {
+      "quarter": "Q4 2022",
+      "year": 2022,
+      "qnum": 4,
+      "activities": 548,
+      "budget": 4102188701.85
+    },
+    {
+      "quarter": "Q1 2023",
+      "year": 2023,
+      "qnum": 1,
+      "activities": 553,
+      "budget": 4246931376.61
+    },
+    {
+      "quarter": "Q2 2023",
+      "year": 2023,
+      "qnum": 2,
+      "activities": 553,
+      "budget": 4260022284.24
+    },
+    {
+      "quarter": "Q3 2023",
+      "year": 2023,
+      "qnum": 3,
+      "activities": 527,
+      "budget": 4158021937.89
+    },
+    {
+      "quarter": "Q4 2023",
+      "year": 2023,
+      "qnum": 4,
+      "activities": 531,
+      "budget": 4209384410.56
+    },
+    {
+      "quarter": "Q1 2024",
+      "year": 2024,
+      "qnum": 1,
+      "activities": 549,
+      "budget": 4265659449.59
+    },
+    {
+      "quarter": "Q2 2024",
+      "year": 2024,
+      "qnum": 2,
+      "activities": 546,
+      "budget": 4263059416.83
+    },
+    {
+      "quarter": "Q3 2024",
+      "year": 2024,
+      "qnum": 3,
+      "activities": 1082,
+      "budget": 8867092588.76
+    },
+    {
+      "quarter": "Q4 2024",
+      "year": 2024,
+      "qnum": 4,
+      "activities": 572,
+      "budget": 4457413186.8
+    },
+    {
+      "quarter": "Q1 2025",
+      "year": 2025,
+      "qnum": 1,
+      "activities": 592,
+      "budget": 4451105227.37
+    },
+    {
+      "quarter": "Q2 2025",
+      "year": 2025,
+      "qnum": 2,
+      "activities": 616,
+      "budget": 4407556130.0
+    },
+    {
+      "quarter": "Q3 2025",
+      "year": 2025,
+      "qnum": 3,
+      "activities": 611,
+      "budget": 4436404099.06
+    },
+    {
+      "quarter": "Q4 2025",
+      "year": 2025,
+      "qnum": 4,
+      "activities": 616,
+      "budget": 4474546991.0199995
+    }
+  ]
+}

@@ -193,7 +193,8 @@ class DataLinker:
 
         # Get all FEMA_DECLARATION entities
         cursor.execute('''
-            SELECT id, entity_text FROM entities
+            SELECT id, COALESCE(normalized_text, entity_text) as entity_text
+            FROM entities
             WHERE entity_type = 'FEMA_DECLARATION'
         ''')
         fema_entities = cursor.fetchall()
@@ -256,7 +257,8 @@ class DataLinker:
         for entity_pattern, disaster_type in disaster_mapping.items():
             cursor.execute('''
                 SELECT id FROM entities
-                WHERE entity_type = 'DISASTER' AND LOWER(entity_text) LIKE ?
+                WHERE entity_type = 'DISASTER'
+                  AND LOWER(COALESCE(normalized_text, entity_text)) LIKE ?
             ''', (f'%{entity_pattern}%',))
 
             entity_ids = cursor.fetchall()
@@ -364,6 +366,8 @@ class DataLinker:
 
         # Link entities
         print("\n4. Linking FEMA declarations...")
+        self.conn.execute('DELETE FROM linked_entities')
+        self.conn.commit()
         fema_linked = self.link_fema_declarations()
         print(f"   Linked {fema_linked:,} FEMA declaration mentions")
 

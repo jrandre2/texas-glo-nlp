@@ -268,10 +268,10 @@ Level 0: HUD (Source)
 | Table | Records | Description |
 |-------|---------|-------------|
 | harvey_activities | 14,850 | All activity records across quarters |
-| harvey_quarterly_totals | ~150 | Aggregated quarterly data |
-| harvey_org_allocations | ~200 | By organization per quarter |
-| harvey_county_allocations | ~500 | By county per quarter |
-| harvey_funding_changes | ~5,000 | Quarter-over-quarter changes |
+| harvey_quarterly_totals | 25 | Aggregated quarterly data |
+| harvey_org_allocations | 164 | By organization per quarter |
+| harvey_county_allocations | 1,562 | By county per quarter |
+| harvey_funding_changes | 3,078 | Quarter-over-quarter changes |
 
 ### Export Files
 
@@ -306,7 +306,7 @@ Level 0: HUD (Source)
 ### Query Funding by County
 
 ```python
-from harvey_queries import HarveyQueries
+from src.harvey_queries import HarveyQueries
 
 hq = HarveyQueries()
 df = hq.get_funding_by_county()
@@ -323,7 +323,7 @@ print(details)
 ### Generate Sankey Data
 
 ```bash
-python src/funding_tracker.py --sankey
+python src/funding_tracker.py --export
 ```
 
 ---
@@ -347,8 +347,8 @@ python src/funding_tracker.py --sankey
 
 1. **Parse Expenditure Data**: Add parsing for actual drawdown/expenditure amounts from DRGR reports
 2. **Track Timeline Changes**: Compare projected vs. actual completion dates
-3. **Beneficiary Analysis**: Link to accomplishment data (households served, units built)
-4. **Geographic Mapping**: Create choropleth maps of funding by county
+3. **Beneficiary Analysis**: Validate and expand accomplishment/beneficiary extraction (see `harvey_beneficiaries`, `harvey_accomplishments`)
+4. **Geographic Mapping**: Use the spatial pipeline (`docs/SPATIAL.md`) and join `harvey_county_allocations` to county boundaries for county-level funding maps
 5. **National Comparison**: Compare Texas GLO performance to other Harvey grantees
 
 ---

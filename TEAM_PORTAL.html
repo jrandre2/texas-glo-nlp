@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Texas GLO DRGR – Team Portal</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #101a2e;
+      --card: #122042;
+      --text: #e9eefc;
+      --muted: #b7c3e0;
+      --link: #8ab4ff;
+      --border: rgba(255,255,255,0.10);
+      --shadow: 0 6px 22px rgba(0,0,0,0.35);
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, var(--bg), #070b14 60%);
+      color: var(--text);
+    }
+    header {
+      padding: 28px 22px 14px;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(1200px 500px at 20% 0%, rgba(138,180,255,0.20), transparent 60%);
+    }
+    h1 {
+      margin: 0 0 6px;
+      font-size: 22px;
+      letter-spacing: 0.2px;
+    }
+    .sub {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+      max-width: 1100px;
+    }
+    .stats {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .stat {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 13px;
+    }
+    .stat b {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+    main {
+      padding: 18px 22px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    section {
+      margin-top: 26px;
+    }
+    h2 {
+      margin: 0 0 12px;
+      font-size: 16px;
+      letter-spacing: 0.2px;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px;
+      box-shadow: var(--shadow);
+      margin: 10px 0;
+    }
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .card-meta {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+    .card-desc {
+      color: var(--text);
+      font-size: 13px;
+      opacity: 0.95;
+      line-height: 1.35;
+    }
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .muted {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    details {
+      margin-top: 12px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 12px;
+    }
+    summary {
+      cursor: pointer;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 13px;
+    }
+    table.mini {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--text);
+    }
+    table.mini th, table.mini td {
+      border-bottom: 1px solid var(--border);
+      padding: 6px 4px;
+    }
+    footer {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 30px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+    code {
+      background: rgba(255,255,255,0.08);
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Texas GLO DRGR – Team Portal</h1>
+    <div class="sub">
+      Click any link below to open dashboards, maps, or tables. This portal is generated from the local project folder.
+      <br/>Built at <b>2026-02-05 12:41</b>. Latest documents in DB: <b>Q4 2025</b>.
+      <br/><span class="muted">Note: some HTML maps are very large and may take time to load.</span>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>442</b>Documents</div>
+      <div class="stat"><b>4,246,325</b>Entities (NER)</div>
+      <div class="stat"><b>1,843</b>Relation edges</div>
+      <div class="stat"><b>1,053,274</b>Money mentions (NLP)</div>
+    </div>
+    <details>
+          <summary>Money mention context breakdown (top labels)</summary>
+          <table class="mini">
+            <thead><tr><th>Context</th><th style="text-align:right">Mentions</th></tr></thead>
+            <tbody><tr><td>unknown</td><td style="text-align:right">334,442</td></tr><tr><td>drawdown</td><td style="text-align:right">326,358</td></tr><tr><td>expended</td><td style="text-align:right">173,550</td></tr><tr><td>obligated</td><td style="text-align:right">122,389</td></tr><tr><td>budget</td><td style="text-align:right">96,535</td></tr></tbody>
+          </table>
+        </details>
+  </header>
+  <main>
+    <section>
+      <h2>How to use</h2>
+      <div class="card">
+        <div class="card-desc">
+          <ul>
+            <li><b>Dashboards / maps:</b> open the <code>.html</code> links in your browser.</li>
+            <li><b>Tables:</b> open <code>.csv</code> in Excel/Sheets. Use filters to explore.</li>
+            <li><b>Master database:</b> <code>data/glo_reports.db</code> can be opened with “DB Browser for SQLite”.</li>
+            <li><b>Interpretation:</b> “money mentions” are extracted from narrative text and are <i>not</i> official accounting totals.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+              <h2>Dashboards</h2>
+              <div class="card">
+              <div class="card-title"><a href="outputs/visualizations/harvey_dashboard_standalone.html">Harvey dashboard (standalone)</a></div>
+              <div class="card-meta">256.1 KB • updated 2026-01-29 09:37</div>
+              <div class="card-desc">Interactive overview of Harvey program flows, rollups, and trends.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/visualizations/harvey_extended_dashboard.html">Harvey extended dashboard</a></div>
+              <div class="card-meta">35.7 KB • updated 2026-01-29 13:23</div>
+              <div class="card-desc">Additional Harvey views and drill-down tables (lighter-weight HTML).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/visualizations/harvey_dashboard_v2.html">Harvey dashboard v2</a></div>
+              <div class="card-meta">27.2 KB • updated 2026-01-29 09:02</div>
+              <div class="card-desc">Alternative Harvey dashboard layout.</div>
+            </div>
+            </section><section>
+              <h2>Reports (HTML)</h2>
+              <div class="card">
+              <div class="card-title"><a href="outputs/reports/harvey_action_plan_fund_switch_report.html">Harvey: fund switching / reallocation statements</a></div>
+              <div class="card-meta">70.1 KB • updated 2026-02-05 12:41</div>
+              <div class="card-desc">Extracted statements related to reallocating/switching funds (with snippets and counts).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/reports/harvey_housing_zip_progress_report.html">Harvey: housing progress by ZIP × quarter</a></div>
+              <div class="card-meta">5.0 KB • updated 2026-02-05 12:14</div>
+              <div class="card-desc">Quarter-by-quarter Housing activity trends with ZIP-level panel export (allocated).</div>
+            </div>
+            </section><section>
+              <h2>Sankey (Images/PDF)</h2>
+              <div class="card">
+              <div class="card-title"><a href="outputs/visualizations/harvey_sankey_5b.png">Harvey 5B Sankey (PNG)</a></div>
+              <div class="card-meta">170.1 KB • updated 2026-01-29 10:31</div>
+              <div class="card-desc">Quick slide-friendly Sankey image for the 5B grant (budget allocations).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/visualizations/harvey_sankey_5b.pdf">Harvey 5B Sankey (PDF)</a></div>
+              <div class="card-meta">31.4 KB • updated 2026-01-29 10:02</div>
+              <div class="card-desc">Print-friendly Sankey PDF for the 5B grant.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/visualizations/harvey_sankey_57m.png">Harvey 57M Sankey (PNG)</a></div>
+              <div class="card-meta">69.3 KB • updated 2026-01-29 10:31</div>
+              <div class="card-desc">Quick Sankey image for the 57M grant (budget allocations).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/visualizations/harvey_sankey_57m.pdf">Harvey 57M Sankey (PDF)</a></div>
+              <div class="card-meta">29.2 KB • updated 2026-01-29 10:02</div>
+              <div class="card-desc">Print-friendly Sankey PDF for the 57M grant.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/visualizations/harvey_sankey_recipients.png">Recipients Sankey (PNG)</a></div>
+              <div class="card-meta">173.5 KB • updated 2026-01-29 11:12</div>
+              <div class="card-desc">Sankey view focused on recipient organizations.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/visualizations/harvey_sankey_recipients.pdf">Recipients Sankey (PDF)</a></div>
+              <div class="card-meta">44.7 KB • updated 2026-01-29 11:12</div>
+              <div class="card-desc">Print-friendly recipients Sankey PDF.</div>
+            </div>
+            </section><section>
+              <h2>Spatial Maps (HTML)</h2>
+              <div class="card">
+              <div class="card-title"><a href="outputs/exports/spatial_zip_latest_quarter.html">ZIP choropleth (latest quarter)</a></div>
+              <div class="card-meta">154.5 MB • updated 2026-02-02 13:13</div>
+              <div class="card-desc">Very large interactive map; may take time to load.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/spatial_tract_latest_quarter.html">Tract choropleth (latest quarter)</a></div>
+              <div class="card-meta">15.1 MB • updated 2026-02-02 14:04</div>
+              <div class="card-desc">Interactive tract map for the latest quarter.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/spatial_tract_harris.html">Tract choropleth (Harris County)</a></div>
+              <div class="card-meta">5.6 MB • updated 2026-02-02 14:04</div>
+              <div class="card-desc">Tract map filtered to Harris County.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/spatial_tract_all.html">Tract choropleth (all mentions)</a></div>
+              <div class="card-meta">15.2 MB • updated 2026-02-02 14:04</div>
+              <div class="card-desc">All tract mentions (no time filter).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/spatial_choropleth.html">Statewide choropleth (general)</a></div>
+              <div class="card-meta">185.6 MB • updated 2026-02-02 12:05</div>
+              <div class="card-desc">Statewide choropleth (very large).</div>
+            </div>
+            </section><section>
+              <h2>Key Tables (CSV/JSON)</h2>
+              <div class="card">
+              <div class="card-title"><a href="outputs/exports/texas_disaster_financial_summary.csv">Texas disaster financial summary (CSV)</a></div>
+              <div class="card-meta">2.8 KB • updated 2026-02-04 11:54</div>
+              <div class="card-desc">High-level totals by disaster/program (obligated/disbursed/expended).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/linked_entities_summary.csv">Linked entities summary (CSV)</a></div>
+              <div class="card-meta">6.2 KB • updated 2026-02-04 11:54</div>
+              <div class="card-desc">Entity → national grant links and rollups.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/harvey_county_allocations.csv">Harvey county allocations (CSV)</a></div>
+              <div class="card-meta">68.6 KB • updated 2026-02-04 12:13</div>
+              <div class="card-desc">Harvey rollups by county (quarter-aware).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/harvey_org_allocations.csv">Harvey org allocations (CSV)</a></div>
+              <div class="card-meta">8.3 KB • updated 2026-02-04 12:13</div>
+              <div class="card-desc">Harvey rollups by recipient organization.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/harvey_action_plan_fund_switch_statements.csv">Harvey fund switch statements (CSV)</a></div>
+              <div class="card-meta">52.3 KB • updated 2026-02-05 12:40</div>
+              <div class="card-desc">Row-level statement snippets about moving/reallocating funds (heuristic extraction).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/harvey_action_plan_fund_switch_doc_summary.csv">Harvey fund switch doc summary (CSV)</a></div>
+              <div class="card-meta">1.0 KB • updated 2026-02-05 12:40</div>
+              <div class="card-desc">Document-level counts of detected fund-switch statements.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/harvey_action_plan_fund_switch_semantic_paragraph_candidates.csv">Harvey fund switch semantic candidates (CSV)</a></div>
+              <div class="card-meta">29.0 KB • updated 2026-02-05 12:40</div>
+              <div class="card-desc">Paragraph-level narrative candidates ranked by transformer embedding similarity + clustered into themes.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/harvey_action_plan_fund_switch_semantic_dedup_groups.csv">Harvey fund switch semantic dedup groups (CSV)</a></div>
+              <div class="card-meta">3.2 KB • updated 2026-02-05 12:40</div>
+              <div class="card-desc">Near-duplicate groups of semantic candidates (collapsed across quarters/PDFs).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/harvey_action_plan_fund_switch_bertopic_topics.csv">Harvey fund switch BERTopic topics (CSV)</a></div>
+              <div class="card-meta">2.1 KB • updated 2026-02-05 12:41</div>
+              <div class="card-desc">Exploratory topics discovered from narrative paragraphs (ranked by movement-like phrasing).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/harvey_action_plan_fund_switch_bertopic_paragraphs.csv">Harvey fund switch BERTopic paragraph assignments (CSV)</a></div>
+              <div class="card-meta">38.9 KB • updated 2026-02-05 12:41</div>
+              <div class="card-desc">Paragraph-level topic assignments + confidence for BERTopic (use to review clusters and deduplicate).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/harvey_action_plan_fund_switch_relocation_justification_timeline.csv">Harvey fund switch relocation justification timeline (CSV)</a></div>
+              <div class="card-meta">361 B • updated 2026-02-05 12:41</div>
+              <div class="card-desc">Quarter-by-quarter counts of relocation/buyout-related justifications (from BERTopic paragraph assignments).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/harvey_housing_quarter_summary.csv">Harvey housing quarter summary (CSV)</a></div>
+              <div class="card-meta">1.4 KB • updated 2026-02-05 12:14</div>
+              <div class="card-desc">Quarter-by-quarter summary for all Harvey Housing activities.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/harvey_housing_zip_quarter_panel.csv">Harvey housing ZIP × quarter panel (CSV)</a></div>
+              <div class="card-meta">154.5 KB • updated 2026-02-05 12:14</div>
+              <div class="card-desc">ZIP-by-quarter panel with allocated budgets/outcomes to avoid double-counting multi-ZIP activities.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/topic_examples.csv">Topic examples (CSV)</a></div>
+              <div class="card-meta">82.4 KB • updated 2026-02-04 17:49</div>
+              <div class="card-desc">Top terms + representative snippets for each discovered topic.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/topic_trends_by_quarter.csv">Topic trends by quarter (CSV)</a></div>
+              <div class="card-meta">319.0 KB • updated 2026-02-04 17:49</div>
+              <div class="card-desc">Topic frequency over time by category/year/quarter.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/entity_relations_top_edges.csv">Entity relations (top edges) (CSV)</a></div>
+              <div class="card-meta">125.6 KB • updated 2026-02-04 17:52</div>
+              <div class="card-desc">High-frequency entity co-mentions with weights (sentence co-occurrence).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/money_mentions_by_quarter.csv">Money mentions by quarter (CSV)</a></div>
+              <div class="card-meta">93.2 KB • updated 2026-02-04 17:56</div>
+              <div class="card-desc">NLP-derived money mentions over time, grouped by context label.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/money_mentions_top_entities.csv">Money mentions: top linked entities (CSV)</a></div>
+              <div class="card-meta">49.5 KB • updated 2026-02-04 17:56</div>
+              <div class="card-desc">Entities most often co-mentioned with money mentions, by context label.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/exports/money_mentions.csv">Money mentions (row-level, capped) (CSV)</a></div>
+              <div class="card-meta">93.7 MB • updated 2026-02-04 17:56</div>
+              <div class="card-desc">Row-level money mentions with sentence snippets (large).</div>
+            </div>
+            </section><section>
+              <h2>Model-Ready Datasets (CSV)</h2>
+              <div class="card">
+              <div class="card-title"><a href="outputs/model_ready/panels/panel_document.csv">Panel: document (CSV)</a></div>
+              <div class="card-meta">159.5 KB • updated 2026-02-05 12:13</div>
+              <div class="card-desc">One row per PDF report (document metadata + entity/money rollups + activity counts).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/model_ready/panels/panel_disaster_quarter.csv">Panel: disaster × quarter (CSV)</a></div>
+              <div class="card-meta">170.8 KB • updated 2026-02-05 12:13</div>
+              <div class="card-desc">One row per (category, disaster_code, year, quarter) with aggregated report-level features.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/model_ready/panels/panel_county_quarter.csv">Panel: county × quarter (CSV)</a></div>
+              <div class="card-meta">735.0 KB • updated 2026-02-05 12:13</div>
+              <div class="card-desc">County-by-quarter panel from unique activities (county inferred from location mentions within activity pages).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/model_ready/panels/panel_city_quarter.csv">Panel: city × quarter (CSV)</a></div>
+              <div class="card-meta">6.1 MB • updated 2026-02-05 12:13</div>
+              <div class="card-desc">City-by-quarter panel from unique activities (city inferred from location mentions; county included when available).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/model_ready/panels/panel_state_quarter.csv">Panel: state × quarter (CSV)</a></div>
+              <div class="card-meta">12.1 KB • updated 2026-02-05 12:13</div>
+              <div class="card-desc">Statewide rollup by (year, quarter) across all disasters (unique activities).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/model_ready/long/activities.csv">Activities (long) (CSV)</a></div>
+              <div class="card-meta">23.7 MB • updated 2026-02-05 12:13</div>
+              <div class="card-desc">One row per detected activity-group (header page + continuation pages) with status/type, geo hints, money aggregates, and beneficiary summaries (when present).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/model_ready/long/activities_unique.csv">Activities (unique, long) (CSV)</a></div>
+              <div class="card-meta">18.7 MB • updated 2026-02-05 12:13</div>
+              <div class="card-desc">Deduplicated activities by (category, disaster_code, year, quarter, activity_key) for modeling/panels.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/model_ready/long/money_mentions_by_quarter.csv">Money mentions by quarter (CSV)</a></div>
+              <div class="card-meta">102.6 KB • updated 2026-02-05 12:13</div>
+              <div class="card-desc">Money mention counts/sums by (category, year, quarter, context_label).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/model_ready/long/topic_trends_by_quarter.csv">Topic trends by quarter (CSV)</a></div>
+              <div class="card-meta">340.7 KB • updated 2026-02-05 12:13</div>
+              <div class="card-desc">Topic frequency over time (long format).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/model_ready/long/entity_counts_by_quarter.csv">Entity counts by quarter (CSV)</a></div>
+              <div class="card-meta">382.1 KB • updated 2026-02-05 12:13</div>
+              <div class="card-desc">Entity type counts by quarter (long format).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/model_ready/long/keyword_pages_by_quarter.csv">Keyword pages by quarter (CSV)</a></div>
+              <div class="card-meta">35.0 KB • updated 2026-02-05 12:13</div>
+              <div class="card-desc">Counts of pages/documents containing selected keywords (e.g., payroll, deaths).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/model_ready/long/beneficiary_measures.csv">Beneficiary measures (long) (CSV)</a></div>
+              <div class="card-meta">249.6 KB • updated 2026-02-05 12:13</div>
+              <div class="card-desc">Row-level parsed accomplishment/beneficiary counts (coverage varies by report format).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/model_ready/long/severity_proxies_by_quarter.csv">Severity proxies by quarter (CSV)</a></div>
+              <div class="card-meta">31.1 KB • updated 2026-02-05 12:13</div>
+              <div class="card-desc">Quarterly rainfall/wind-speed proxies parsed from entity text (use as weak signals; prefer external joins).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/model_ready/long/fema_declarations_by_quarter.csv">FEMA declarations by quarter (CSV)</a></div>
+              <div class="card-meta">25.8 KB • updated 2026-02-05 12:13</div>
+              <div class="card-desc">FEMA declaration numbers by quarter to support external joins.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="outputs/model_ready/meta/manifest.json">Build manifest (JSON)</a></div>
+              <div class="card-meta">1.8 KB • updated 2026-02-05 12:13</div>
+              <div class="card-desc">Build timestamp + row counts for each model-ready dataset.</div>
+            </div>
+            </section><section>
+              <h2>Docs</h2>
+              <div class="card">
+              <div class="card-title"><a href="docs/START_HERE.md">Start Here (non-technical)</a></div>
+              <div class="card-meta">2.7 KB • updated 2026-02-05 10:37</div>
+              <div class="card-desc">Plain-language guide and directory map.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="docs/GLOSSARY.md">Glossary</a></div>
+              <div class="card-meta">1.5 KB • updated 2026-02-04 18:10</div>
+              <div class="card-desc">Key terms used in the project.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="docs/DASHBOARD.md">Dashboard (Streamlit) guide</a></div>
+              <div class="card-meta">778 B • updated 2026-02-04 16:47</div>
+              <div class="card-desc">How to run the interactive explorer.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="docs/WORKFLOWS.md">Workflows</a></div>
+              <div class="card-meta">15.7 KB • updated 2026-02-05 10:39</div>
+              <div class="card-desc">Step-by-step operational workflows (technical).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="docs/ANALYSES.md">NLP analyses index</a></div>
+              <div class="card-meta">1.7 KB • updated 2026-02-04 16:43</div>
+              <div class="card-desc">Sections/topics/relations/money-context documentation (technical).</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="docs/MODEL_READY.md">Model-ready datasets</a></div>
+              <div class="card-meta">5.3 KB • updated 2026-02-04 19:34</div>
+              <div class="card-desc">What model-ready datasets exist + how to build them.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="docs/MODELING_VARIABLES.md">Modeling variables map</a></div>
+              <div class="card-meta">3.4 KB • updated 2026-02-04 19:45</div>
+              <div class="card-desc">Mapping from requested SEM/EDA variables to available outputs/proxies.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="docs/HARVEY_ACTION_PLAN_FUND_SWITCH.md">Harvey: fund switch extraction</a></div>
+              <div class="card-meta">4.6 KB • updated 2026-02-05 12:37</div>
+              <div class="card-desc">How fund reallocation statements are detected + outputs + limitations.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="docs/HARVEY_HOUSING_ZIP_PROGRESS.md">Harvey: housing ZIP progress</a></div>
+              <div class="card-meta">3.8 KB • updated 2026-02-05 10:36</div>
+              <div class="card-desc">How the ZIP × quarter housing panel is built + outputs + coverage notes.</div>
+            </div>
+<div class="card">
+              <div class="card-title"><a href="docs/GITHUB_SHARING.md">GitHub sharing guide</a></div>
+              <div class="card-meta">2.4 KB • updated 2026-02-04 19:37</div>
+              <div class="card-desc">What to commit vs share externally (large files).</div>
+            </div>
+            </section>
+
+    <footer>
+      Tip: for interactive filtering/search, run the Streamlit explorer:
+      <code>streamlit run dashboard/app.py</code>
+    </footer>
+  </main>
+</body>
+</html>

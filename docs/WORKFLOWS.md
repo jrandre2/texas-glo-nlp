@@ -10,6 +10,11 @@ Step-by-step guides for common processing tasks.
 - [Workflow 4: Export Data](#workflow-4-export-data)
 - [Workflow 5: Query the Database](#workflow-5-query-the-database)
 - [Workflow 6: Add New Entity Patterns](#workflow-6-add-new-entity-patterns)
+- [Workflow 7: Build Semantic Search Index](#workflow-7-build-semantic-search-index)
+- [Workflow 8: Evaluate NER Quality](#workflow-8-evaluate-ner-quality)
+- [Workflow 9: Harvey Funding Flow Exports](#workflow-9-harvey-funding-flow-exports)
+- [Workflow 10: Spatial Extraction and Choropleth Maps](#workflow-10-spatial-extraction-and-choropleth-maps)
+- [Workflow 11: Run NLP Analyses](#workflow-11-run-nlp-analyses)
 
 ---
 
@@ -42,8 +47,8 @@ Expected output:
 Document Statistics:
   Total documents: 442
   Processed: 442
-  Total pages: 153,540
-  Total tables: 148,806
+  Total pages: 153540
+  Total tables: 175208
 ```
 
 #### 3. Process New Documents
@@ -113,9 +118,8 @@ python src/nlp_processor.py --stats
 Expected output:
 ```
 Entity Statistics:
-  Total entities: 4,234,550
-  Entity types: 27
-  Unique entity values: 311,000+
+  Total entities: 4,246,325
+  Documents with entities: 442
 ```
 
 #### 2. Process Documents
@@ -203,15 +207,15 @@ LINKING TEXAS GLO DATA TO NATIONAL GRANTS
 4. Linking FEMA declarations...
    Linked 652 FEMA declaration mentions
 5. Linking disaster names...
-   Linked 174,472 disaster name mentions
+   Linked 174,936 disaster name mentions
 6. Exporting linked data...
 
 ============================================================
 LINKING COMPLETE
 ============================================================
   National grant records: 22
-  Total entity links: 175,124
-  Unique entities linked: 49,661
+  Total entity links: 99,580
+  Unique entities linked: 49,790
 ```
 
 #### 2. View Linked Data
@@ -366,7 +370,7 @@ query = '''
     SELECT entity_type, entity_text, page_number
     FROM entities
     WHERE document_id = (
-        SELECT id FROM documents WHERE filename = 'harvey-2024-q3.pdf'
+        SELECT id FROM documents WHERE filename = 'drgr-h5b-2025-q4.pdf'
     )
     ORDER BY page_number, entity_type
 '''
@@ -532,6 +536,161 @@ print(result)
 
 ---
 
+## Workflow 7: Build Semantic Search Index
+
+Create embeddings and a Chroma index for semantic search.
+
+```bash
+# Build or rebuild index (uses raw text if available)
+python src/semantic_search.py --build
+
+# Reset and rebuild
+python src/semantic_search.py --build --reset
+
+# Query
+python src/semantic_search.py --query "homeowner assistance program funding" --top-k 5
+```
+
+---
+
+## Workflow 8: Evaluate NER Quality
+
+Add a gold CSV in `data/eval/gold_entities.csv` and run evaluation:
+
+```bash
+python src/ner_evaluate.py --gold data/eval/gold_entities.csv
+```
+
+See `data/eval/README.md` for the expected format.
+
+---
+
+## Workflow 9: Harvey Funding Flow Exports
+
+Parse Harvey QPR activity blocks into structured tables and export Sankey/trend artifacts.
+
+### Prerequisites
+
+- PDF text extracted (Workflow 1)
+- Harvey categories present in `DRGR_Reports/` (`Harvey_5B_*`, `Harvey_57M_*`)
+
+### Steps
+
+#### 1. Parse Harvey activity blocks
+
+```bash
+python src/financial_parser.py
+python src/financial_parser.py --stats
+```
+
+#### 2. Export Sankey + trends
+
+```bash
+python src/funding_tracker.py --export
+```
+
+#### 3. (Optional) Generate PDFs/PNGs and dashboards
+
+```bash
+python outputs/visualizations/generate_sankey_matplotlib.py
+python outputs/visualizations/generate_sankey_recipients.py
+python outputs/visualizations/view_dashboard.py
+```
+
+---
+
+## Workflow 10: Spatial Extraction and Choropleth Maps
+
+Extract location mentions (ZIP/tract/county/coords) and generate choropleth exports.
+
+### Prerequisites
+
+- PDF text extracted (Workflow 1)
+- Boundary GeoJSONs in `data/boundaries/` (see `data/boundaries/README.md`)
+
+### Steps
+
+#### 1. Extract locations into spatial tables
+
+```bash
+python src/location_extractor.py --rebuild
+```
+
+#### 2. (Optional) Enrich with geocoding / GEOIDs
+
+```bash
+python src/geocode_enricher.py --mode addresses --address-limit 500
+python src/geocode_enricher.py --mode coords --coord-limit 500
+```
+
+#### 3. Export joined GeoJSONs + choropleth HTML
+
+```bash
+python src/spatial_mapper.py --join --map
+```
+
+---
+
+## Workflow 11: Run NLP Analyses
+
+Build higher-level NLP layers (sections → topics → aliases → relations).
+
+### Prerequisites
+
+- `data/glo_reports.db` populated (PDF + NLP phases complete)
+- Virtual environment activated
+
+### Option A: Run everything via Make
+
+```bash
+make analyses
+```
+
+### Option B: Run analyses individually
+
+```bash
+# 1) Segment documents into sections
+make sections
+
+# 2) Classify section headings into families (narrative vs form/table/etc)
+make section-families
+
+# 3) Fit topic clusters (embedding-based) and export CSVs
+make topics
+
+# 4) Build entity canonical/alias mappings and export a review CSV
+make entity-resolve
+
+# 5) Build sentence co-occurrence relations and export top edges
+make relations
+
+# 6) Extract money mentions + context labels and export CSVs
+make money
+```
+
+### Tips for faster iterations
+
+```bash
+# Process only a small sample of documents/sections while tuning
+python src/section_extractor.py --limit 5 --rebuild
+python src/section_classifier.py --build --min-count 5
+python src/topic_model.py --fit --k 10 --limit-sections 200 --rebuild
+python src/relation_extractor.py --limit-docs 5 --min-weight 1 --rebuild --section-families narrative
+```
+
+#### 4. (Optional) Generate single-purpose maps
+
+```bash
+python src/spatial_quarter_map.py
+python src/spatial_tract_quarter_map.py
+python src/spatial_tract_all_map.py
+python src/spatial_tract_harris_map.py
+```
+
+> Note: Plotly HTML exports can be very large. Treat them as generated artifacts.
+
+---
+
 ## Quick Reference
 
 | Task | Command |
@@ -539,9 +698,19 @@ print(result)
 | Process PDFs | `python src/pdf_processor.py` |
 | Extract entities | `python src/nlp_processor.py` |
 | Link to grants | `python src/data_linker.py` |
+| Harvey parse (tables) | `python src/financial_parser.py` |
+| Harvey exports (Sankey/trends) | `python src/funding_tracker.py --export` |
+| Spatial extract | `python src/location_extractor.py --rebuild` |
+| Spatial maps | `python src/spatial_mapper.py --join --map` |
 | View PDF stats | `python src/pdf_processor.py --stats` |
 | View entity stats | `python src/nlp_processor.py --stats` |
 | Export entities | `python src/nlp_processor.py --export` |
-| Reprocess PDFs | `python src/pdf_processor.py --reprocess` |
-| Reprocess entities | `python src/nlp_processor.py --reprocess` |
+| Build semantic index | `python src/semantic_search.py --build` |
+| Evaluate NER | `python src/ner_evaluate.py --gold data/eval/gold_entities.csv` |
+| Launch dashboard | `streamlit run dashboard/app.py` |
+| Build model-ready datasets | `make model-ready` |
+| Build Harvey deliverable reports | `make harvey-reports` |
+| Build team portal | `make portal` |
+| Build share bundle | `make share-bundle` |
+| Remove macOS artifacts | `make clean-macos` |
 | Launch notebooks | `jupyter notebook notebooks/` |

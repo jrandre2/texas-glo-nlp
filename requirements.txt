@@ -11,16 +11,20 @@ spacy>=3.7.0             # NLP pipeline
 # Download model separately: python -m spacy download en_core_web_trf
 
 # NLP - Topic Modeling (Phase 2+)
-# bertopic>=0.16.0       # Uncomment when needed
+bertopic>=0.17.0        # Topic modeling over paragraphs/sections
+umap-learn>=0.5.0       # BERTopic dimensionality reduction backend
+hdbscan>=0.8.0          # BERTopic clustering backend
 sentence-transformers>=2.5.0  # Embeddings for similarity/search
 
 # LLM Integration (Phase 4)
 anthropic>=0.39.0        # Claude API
 chromadb>=0.5.0          # Vector store for RAG
+h3>=3.7.7                # Hex indexing for spatial aggregation
 
 # Data Processing
 pandas>=2.2.0
 numpy>=1.26.0
+scikit-learn>=1.4.0
 sqlite-utils>=3.36       # SQLite helpers
 
 # Jupyter and Visualization

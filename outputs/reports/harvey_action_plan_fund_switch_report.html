@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harvey Action Plan – Fund Switching Statements</title>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --panel: #101a2e;
+      --card: #122042;
+      --text: #e9eefc;
+      --muted: #b7c3e0;
+      --link: #8ab4ff;
+      --border: rgba(255,255,255,0.12);
+    }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, var(--bg), #070b14 60%);
+      color: var(--text);
+    }
+    header {
+      padding: 26px 22px 12px;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(1200px 500px at 20% 0%, rgba(138,180,255,0.20), transparent 60%);
+    }
+    h1 { margin: 0 0 8px; font-size: 20px; }
+    .sub { color: var(--muted); font-size: 13px; line-height: 1.4; max-width: 1100px; }
+    main { padding: 18px 22px 60px; max-width: 1200px; margin: 0 auto; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; margin-top: 14px; }
+    .card { background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 12px; padding: 12px 12px; }
+    .card b { display:block; font-size: 18px; margin-bottom: 2px; }
+    .muted { color: var(--muted); }
+    .small { font-size: 12px; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; font-size: 12px; }
+    h2 { margin: 26px 0 10px; font-size: 15px; }
+    img { max-width: 100%; border-radius: 12px; border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+    th, td { border-top: 1px solid var(--border); padding: 10px 8px; vertical-align: top; }
+    th { text-align: left; font-size: 12px; color: var(--muted); }
+    td { font-size: 13px; line-height: 1.35; }
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Harvey Action Plan – Fund Switching Statements (Heuristic)</h1>
+    <div class="sub">
+      Scans Harvey Action Plan documents for keywords like <span class="mono">reallocate</span>/<span class="mono">reprogram</span>/<span class="mono">transfer</span> and extracts nearby text snippets.
+      Intended as a screening tool to accelerate human review (expect false positives).
+      Built at <span class="mono">2026-02-05T12:41:08</span>.
+    </div>
+    <div class="grid">
+      <div class="card"><b>50</b><div class="small muted">Documents scanned (categories: Harvey_5B_ActionPlan, Harvey_57M_ActionPlan)</div></div>
+      <div class="card"><b>14</b><div class="small muted">Extracted snippets (all confidence levels)</div></div>
+      <div class="card"><b>17</b><div class="small muted">High/medium-confidence snippets (recommended starting point)</div></div>
+    </div>
+  </header>
+  <main>
+    <h2>How to use</h2>
+    <div class="sub">
+      Start with the table below (high/medium confidence), then open the CSV for the full list.
+      “Confidence” is a simple score based on from→to phrases, money-like patterns, multiple organizations on the page, and justification cue words.
+    </div>
+    <p class="small">
+      Full CSV: <a href="../exports/harvey_action_plan_fund_switch_statements.csv">outputs/exports/harvey_action_plan_fund_switch_statements.csv</a><br/>
+      Doc summary: <a href="../exports/harvey_action_plan_fund_switch_doc_summary.csv">outputs/exports/harvey_action_plan_fund_switch_doc_summary.csv</a>
+    </p>
+
+    <h2>Summary charts</h2>
+    <div class="sub">These help prioritize which PDFs to review first.</div>
+    <div style="margin-top:12px">
+      <img src="assets/harvey_action_plan_fund_switch_top_docs.png" alt="Top docs" />
+    </div>
+    <div style="margin-top:12px">
+      <img src="assets/harvey_action_plan_fund_switch_keywords.png" alt="Keyword distribution" />
+    </div>
+    <div style="margin-top:12px">
+      <img src="assets/harvey_action_plan_fund_switch_orgs.png" alt="Top orgs" />
+    </div>
+
+    
+    <h2>Semantic candidates (narrative paragraphs)</h2>
+    <div class="sub">
+      This section uses transformer embeddings to find paragraphs that are semantically similar to “fund switch / reallocation” seed queries.
+      It helps catch paraphrases that keyword scans miss, and groups near-duplicates across quarters.
+    </div>
+    <p class="small">
+      Semantic candidates CSV: <a href="../exports/harvey_action_plan_fund_switch_semantic_paragraph_candidates.csv">outputs/exports/harvey_action_plan_fund_switch_semantic_paragraph_candidates.csv</a><br/>
+      Semantic dedup groups CSV: <a href="../exports/harvey_action_plan_fund_switch_semantic_dedup_groups.csv">outputs/exports/harvey_action_plan_fund_switch_semantic_dedup_groups.csv</a>
+    </p>
+    <div class="grid">
+      <div class="card"><b>330</b><div class="small muted">Narrative paragraphs scanned (pre-filtered)</div></div>
+      <div class="card"><b>37</b><div class="small muted">Top semantic matches kept (min similarity 0.30)</div></div>
+      <div class="card"><b>5</b><div class="small muted">Semantic duplicate groups (cosine ≥ 0.90)</div></div>
+    </div>
+    <details style="margin-top:12px">
+      <summary>Seed queries used for ranking</summary>
+      <ul class="sub"><li>Funds were reallocated to another project or program.</li>
+<li>Remaining funds were reallocated into a different project.</li>
+<li>Unspent funds were moved to a different activity.</li>
+<li>Budget was reprogrammed from one activity to another.</li>
+<li>Funds were redirected from one program to another program.</li>
+<li>Funds were transferred from one organization to another organization.</li>
+<li>Deobligated funds were reallocated to other eligible uses.</li>
+<li>The project was cancelled and remaining funds were reallocated.</li>
+<li>Costs increased and the remaining balance was reallocated.</li>
+<li>Funding was shifted to another project to address an urgent need.</li></ul>
+      <div class="small muted">Embedding model: <span class="mono">all-MiniLM-L6-v2</span></div>
+    </details>
+
+    <h3 style="margin-top:18px">Top semantic duplicates (collapsed across quarters)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:120px">Occurrences</th>
+          <th style="width:220px">Quarter range</th>
+          <th>Statement</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+<td><div class='mono'>15</div><div class='small muted'>hits</div></td>
+<td><div class='small'>Q2 2022 → Q4 2025</div><div class='small muted'>15 PDFs • 15 quarters</div></td>
+<td>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project.<div class='small muted' style='margin-top:6px'>Example: <span class='mono'>drgr-hh5b-2022-q2.pdf p273-273</span> • Latest: <span class='mono'>drgr-h5b-2025-q4.pdf p413-413</span></div></td>
+</tr><tr>
+<td><div class='mono'>12</div><div class='small muted'>hits</div></td>
+<td><div class='small'>Q1 2023 → Q4 2025</div><div class='small muted'>12 PDFs • 12 quarters</div></td>
+<td>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units # of…<div class='small muted' style='margin-top:6px'>Example: <span class='mono'>drgr-h5b-2023-q1.pdf p966-966</span> • Latest: <span class='mono'>drgr-h5b-2025-q4.pdf p1499-1499</span></div></td>
+</tr><tr>
+<td><div class='mono'>4</div><div class='small muted'>hits</div></td>
+<td><div class='small'>Q1 2025 → Q4 2025</div><div class='small muted'>4 PDFs • 4 quarters</div></td>
+<td>Placeholder activity to transfer Program Income generated by Harris County to its annual CDBG Program. $ 0.00 Local Government Harris, County $ 0.00 State Agency Texas General Land Office<div class='small muted' style='margin-top:6px'>Example: <span class='mono'>drgr-h5b-2025-q1.pdf p1374-1374</span> • Latest: <span class='mono'>drgr-h5b-2025-q4.pdf p1823-1823</span></div></td>
+</tr><tr>
+<td><div class='mono'>3</div><div class='small muted'>hits</div></td>
+<td><div class='small'>Q2 2025 → Q4 2025</div><div class='small muted'>3 PDFs • 3 quarters</div></td>
+<td>Disaster Recovery Reallocation Program Grantee Support for Subrecipient HMID LMI Rehabilitation/reconstruction of a public improvement Activities - see &quot;Associated Activities&quot; for full list of activities, beneficiaries and accomplishments. Total Projected Accomplishments # of Targeted Section 3 Labor Hours # of Section 3 Labor Hours # of Total Labor Hours # cubic feet of stormwater storage added # of Elevated Structures Activity funds eligible for DREF (Ike Only) # of cable feet of public utility # of Linear miles …<div class='small muted' style='margin-top:6px'>Example: <span class='mono'>drgr-h5b-2025-q2.pdf p1427-1427</span> • Latest: <span class='mono'>drgr-h5b-2025-q4.pdf p1814-1814</span></div></td>
+</tr><tr>
+<td><div class='mono'>3</div><div class='small muted'>hits</div></td>
+<td><div class='small'>Q2 2025 → Q4 2025</div><div class='small muted'>3 PDFs • 3 quarters</div></td>
+<td>Disaster Recovery Reallocation Program Grantee Support for Subrecipient HMID LMI acquisition Activities - see &quot;Associated Activities&quot; for full list of activities, beneficiaries and accomplishments. # of Elevated Structures # of Substantially Rehabilitated Units # ELI Households (0-30% AMI) Activity funds eligible for DREF (Ike Only) #Units with other green #Units deconstructed #Sites re-used #Units exceeding Energy Star #Units with bus/rail access #Low flow showerheads #Low flow toilets #Units with solar panels #Di…<div class='small muted' style='margin-top:6px'>Example: <span class='mono'>drgr-h5b-2025-q2.pdf p1429-1429</span> • Latest: <span class='mono'>drgr-h5b-2025-q4.pdf p1816-1816</span></div></td>
+</tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:18px">Themes (topic-like clusters)</h3>
+    <div class="sub">Clusters are built over the semantic candidate embeddings and labeled using top TF‑IDF terms per cluster.</div>
+    <details open>
+<summary><span class='mono'>Theme 1</span>: parcels, parcels acquired, acquired, units, activity, floodplain <span class='muted'>(12 paragraphs)</span></summary>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.357</span> • Q1 2023 • drgr-h5b-2023-q1.pdf p966-966</div><div>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units # of Housing Units Activity funds eligible for DREF (Ike Only) Total acquisition compensation to owners # of Parcels acquired voluntarily # of Parcels acquired by admin settlement # of…</div></div>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.357</span> • Q2 2023 • drgr-h5b-2023-q2.pdf p965-965</div><div>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units # of Housing Units Activity funds eligible for DREF (Ike Only) Total acquisition compensation to owners # of Parcels acquired voluntarily # of Parcels acquired by admin settlement # of…</div></div>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.357</span> • Q3 2023 • drgr-h5b-2023-q3.pdf p930-930</div><div>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units # of Housing Units Activity funds eligible for DREF (Ike Only) Total acquisition compensation to owners # of Parcels acquired voluntarily # of Parcels acquired by admin settlement # of…</div></div>
+</details><details open>
+<summary><span class='mono'>Theme 0</span>: project, projected, city, low mod, mod, total <span class='muted'>(10 paragraphs)</span></summary>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.444</span> • Q3 2023 • drgr-h5b-2023-q3.pdf p269-269</div><div>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures</div></div>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.444</span> • Q4 2023 • drgr-h5b-2023-q4.pdf p296-296</div><div>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures</div></div>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.444</span> • Q1 2024 • drgr-h5b-2024-q1.pdf p294-294</div><div>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures</div></div>
+</details><details open>
+<summary><span class='mono'>Theme 4</span>: project, city, facilities, city alvin, contract, remaining <span class='muted'>(5 paragraphs)</span></summary>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.502</span> • Q2 2022 • drgr-hh5b-2022-q2.pdf p273-273</div><div>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project.</div></div>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.502</span> • Q2 2023 • drgr-h5b-2023-q2.pdf p272-272</div><div>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project.</div></div>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.447</span> • Q3 2022 • drgr-h5b-2022-q3.pdf p271-271</div><div>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. # of Elevated Structures # of Non-business Organizations benefitting # of public facilities</div></div>
+</details><details>
+<summary><span class='mono'>Theme 2</span>: county, harris county, harris, 00, government, activity transfer <span class='muted'>(4 paragraphs)</span></summary>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.359</span> • Q1 2025 • drgr-h5b-2025-q1.pdf p1374-1374</div><div>Placeholder activity to transfer Program Income generated by Harris County to its annual CDBG Program. $ 0.00 Local Government Harris, County $ 0.00 State Agency Texas General Land Office</div></div>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.359</span> • Q2 2025 • drgr-h5b-2025-q2.pdf p1436-1436</div><div>Placeholder activity to transfer Program Income generated by Harris County to its annual CDBG Program. $ 0.00 Local Government Harris, County $ 0.00 State Agency Texas General Land Office</div></div>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.359</span> • Q3 2025 • drgr-h5b-2025-q3.pdf p1428-1428</div><div>Placeholder activity to transfer Program Income generated by Harris County to its annual CDBG Program. $ 0.00 Local Government Harris, County $ 0.00 State Agency Texas General Land Office</div></div>
+</details><details>
+<summary><span class='mono'>Theme 3</span>: replaced, units, replaced light, fixtures, light, flow <span class='muted'>(3 paragraphs)</span></summary>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.306</span> • Q3 2025 • drgr-h5b-2025-q3.pdf p1421-1421</div><div>Disaster Recovery Reallocation Program Grantee Support for Subrecipient HMID LMI acquisition Activities - see &quot;Associated Activities&quot; for full list of activities, beneficiaries and accomplishments. # of Elevated Structures # of Substantially Rehabilitated Units # ELI Households (0-30% AMI) Activity funds eligible for DREF (Ike Only) #Units with other green #Units deconstructed #Sites re-used #Units exceeding Energy Star #Units with bus/rail access #Low flow showerheads #Low flow toilets #Units with solar panels #Dishwashers replaced #Clothes washers replaced #Refrigerators replaced #Light fixtures (outdoors) replaced #Light Fixtures (indoors) replaced #Replaced hot water heaters #Replaced th…</div></div>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.306</span> • Q2 2025 • drgr-h5b-2025-q2.pdf p1429-1429</div><div>Disaster Recovery Reallocation Program Grantee Support for Subrecipient HMID LMI acquisition Activities - see &quot;Associated Activities&quot; for full list of activities, beneficiaries and accomplishments. # of Elevated Structures # of Substantially Rehabilitated Units # ELI Households (0-30% AMI) Activity funds eligible for DREF (Ike Only) #Units with other green #Units deconstructed #Sites re-used #Units exceeding Energy Star #Units with bus/rail access #Low flow showerheads #Low flow toilets #Units with solar panels #Dishwashers replaced #Clothes washers replaced #Refrigerators replaced #Light fixtures (outdoors) replaced #Light Fixtures (indoors) replaced #Replaced hot water heaters #Replaced th…</div></div>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.306</span> • Q4 2025 • drgr-h5b-2025-q4.pdf p1816-1816</div><div>Disaster Recovery Reallocation Program Grantee Support for Subrecipient HMID LMI acquisition Activities - see &quot;Associated Activities&quot; for full list of activities, beneficiaries and accomplishments. # of Elevated Structures # of Substantially Rehabilitated Units # ELI Households (0-30% AMI) Activity funds eligible for DREF (Ike Only) #Units with other green #Units deconstructed #Sites re-used #Units exceeding Energy Star #Units with bus/rail access #Low flow showerheads #Low flow toilets #Units with solar panels #Dishwashers replaced #Clothes washers replaced #Refrigerators replaced #Light fixtures (outdoors) replaced #Light Fixtures (indoors) replaced #Replaced hot water heaters #Replaced th…</div></div>
+</details><details>
+<summary><span class='mono'>Theme 5</span>: public, improvement, public improvement, feet, feet public, linear <span class='muted'>(3 paragraphs)</span></summary>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.322</span> • Q4 2025 • drgr-h5b-2025-q4.pdf p1814-1814</div><div>Disaster Recovery Reallocation Program Grantee Support for Subrecipient HMID LMI Rehabilitation/reconstruction of a public improvement Activities - see &quot;Associated Activities&quot; for full list of activities, beneficiaries and accomplishments. Total Projected Accomplishments # of Targeted Section 3 Labor Hours # of Section 3 Labor Hours # of Total Labor Hours # cubic feet of stormwater storage added # of Elevated Structures Activity funds eligible for DREF (Ike Only) # of cable feet of public utility # of Linear miles of Public Improvement # of Linear feet of Public Improvement</div></div>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.302</span> • Q2 2025 • drgr-h5b-2025-q2.pdf p1427-1427</div><div>Disaster Recovery Reallocation Program Grantee Support for Subrecipient HMID LMI Rehabilitation/reconstruction of a public improvement Activities - see &quot;Associated Activities&quot; for full list of activities, beneficiaries and accomplishments. # of Elevated Structures Activity funds eligible for DREF (Ike Only) # of cable feet of public utility # of Linear miles of Public Improvement # of Linear feet of Public Improvement</div></div>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.302</span> • Q3 2025 • drgr-h5b-2025-q3.pdf p1419-1419</div><div>Disaster Recovery Reallocation Program Grantee Support for Subrecipient HMID LMI Rehabilitation/reconstruction of a public improvement Activities - see &quot;Associated Activities&quot; for full list of activities, beneficiaries and accomplishments. # of Elevated Structures Activity funds eligible for DREF (Ike Only) # of cable feet of public utility # of Linear miles of Public Improvement # of Linear feet of Public Improvement</div></div>
+</details>
+
+    
+    <h2>BERTopic (exploratory)</h2>
+    <div class="sub">
+      BERTopic is run on a semantically-ranked set of narrative paragraphs related to fund switching (seed-query similarity),
+      then clustered into topics. Use this to discover recurring themes and to spot additional reallocation narratives.
+    </div>
+    <p class="small">
+      Topics CSV: <a href="../exports/harvey_action_plan_fund_switch_bertopic_topics.csv">outputs/exports/harvey_action_plan_fund_switch_bertopic_topics.csv</a><br/>
+      Paragraph assignments CSV: <a href="../exports/harvey_action_plan_fund_switch_bertopic_paragraphs.csv">outputs/exports/harvey_action_plan_fund_switch_bertopic_paragraphs.csv</a>
+    </p>
+    <div class="grid">
+      <div class="card"><b>330</b><div class="small muted">Narrative paragraphs in BERTopic pool (filtered)</div></div>
+      <div class="card"><b>32</b><div class="small muted">Top semantic matches modeled</div></div>
+      <div class="card"><b>2</b><div class="small muted">Topics (excluding outliers; outliers=7)</div></div>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:90px">Topic</th>
+          <th style="width:140px">Size</th>
+          <th style="width:260px">Range / top terms</th>
+          <th>Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+<td><div class='mono'>0</div></td>
+<td><div class='mono'>14</div><div class='small muted'>move-rate 1.0</div></td>
+<td><div class='small'>Q1 2023 → Q4 2025</div><div class='small muted'>activity, funds, total, lowmod, city, program, project, projected</div></td>
+<td>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures</td>
+</tr><tr>
+<td><div class='mono'>1</div></td>
+<td><div class='mono'>11</div><div class='small muted'>move-rate 1.0</div></td>
+<td><div class='small'>Q3 2022 → Q4 2025</div><div class='small muted'>project, city, facilities, projected, material shortages, reallocated citys, reallocated, facilities project</div></td>
+<td>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project.</td>
+</tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:18px">Topic details (examples)</h3>
+    <div class="sub">Expand a topic to see deduplicated example paragraphs (ranked by semantic score).</div>
+    <details style='margin-top:10px'>
+<summary>Topic 0 • 14 paragraphs • move-rate 1.0</summary>
+<div class='small muted'>Range: Q1 2023 → Q4 2025 • Terms: activity, funds, total, lowmod, city, program, project, projected</div>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.444</span> • Q3 2023 • drgr-h5b-2023-q3.pdf p269-269</div><div>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures</div></div><div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.357</span> • Q1 2023 • drgr-h5b-2023-q1.pdf p966-966</div><div>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units # of Housing Units Activity funds eligible for DREF (Ike Only) Total acquisition compensation to owners # of Parcels acquired voluntarily # of Parcels acquired by admin settlement # of Parcels acquired by condemnation # of Properties</div></div>
+</details><details style='margin-top:10px'>
+<summary>Topic 1 • 11 paragraphs • move-rate 1.0</summary>
+<div class='small muted'>Range: Q3 2022 → Q4 2025 • Terms: project, city, facilities, projected, material shortages, reallocated citys, reallocated, facilities project</div>
+<div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.502</span> • Q2 2023 • drgr-h5b-2023-q2.pdf p272-272</div><div>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project.</div></div><div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.447</span> • Q3 2022 • drgr-h5b-2022-q3.pdf p271-271</div><div>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. # of Elevated Structures # of Non-business Organizations benefitting # of public facilities</div></div><div style='margin-top:10px'><div class='small muted'><span class='mono'>score 0.444</span> • Q2 2024 • drgr-h5b-2024-q2.pdf p302-302</div><div>During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures</div></div>
+</details>
+
+    <h3 style="margin-top:18px">Relocation / buyout justification timeline</h3>
+    <div class="sub">
+      This uses BERTopic clusters to summarize and trend relocation-related justifications (paragraphs mentioning relocation/buyout/floodplain).
+      Counts are deduplicated by normalized paragraph text to reduce repeated quarter-to-quarter boilerplate.
+    </div>
+    <p class="small">
+      Timeline CSV: <a href="../exports/harvey_action_plan_fund_switch_relocation_justification_timeline.csv">outputs/exports/harvey_action_plan_fund_switch_relocation_justification_timeline.csv</a>
+    </p>
+    
+    <div style="margin-top:10px">
+      <img src="assets/harvey_action_plan_fund_switch_relocation_justification_timeline.png" alt="Relocation justification timeline" />
+    </div>
+    <details style="margin-top:12px">
+      <summary>Quarter-by-quarter examples (deduplicated)</summary>
+      <details style='margin-top:10px'>
+<summary>Q1 2023 • 1 unique paragraphs (1 total)</summary>
+<ul class='sub'>
+<li><span class='small muted'>drgr-h5b-2023-q1.pdf p966-966</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q2 2023 • 1 unique paragraphs (1 total)</summary>
+<ul class='sub'>
+<li><span class='small muted'>drgr-h5b-2023-q2.pdf p965-965</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q3 2023 • 1 unique paragraphs (1 total)</summary>
+<ul class='sub'>
+<li><span class='small muted'>drgr-h5b-2023-q3.pdf p930-930</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q4 2023 • 1 unique paragraphs (1 total)</summary>
+<ul class='sub'>
+<li><span class='small muted'>drgr-h5b-2023-q4.pdf p1078-1078</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q1 2024 • 1 unique paragraphs (1 total)</summary>
+<ul class='sub'>
+<li><span class='small muted'>drgr-h5b-2024-q1.pdf p1091-1091</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q2 2024 • 1 unique paragraphs (1 total)</summary>
+<ul class='sub'>
+<li><span class='small muted'>drgr-h5b-2024-q2.pdf p1100-1100</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q3 2024 • 1 unique paragraphs (1 total)</summary>
+<ul class='sub'>
+<li><span class='small muted'>drgr-h5b-2024-q3.pdf p1098-1098</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q4 2024 • 1 unique paragraphs (1 total)</summary>
+<ul class='sub'>
+<li><span class='small muted'>drgr-h5b-2024-q4 (1).pdf p1102-1102</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q1 2025 • 1 unique paragraphs (1 total)</summary>
+<ul class='sub'>
+<li><span class='small muted'>drgr-h5b-2025-q1.pdf p1115-1115</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q2 2025 • 1 unique paragraphs (1 total)</summary>
+<ul class='sub'>
+<li><span class='small muted'>drgr-h5b-2025-q2.pdf p1128-1128</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q3 2025 • 1 unique paragraphs (1 total)</summary>
+<ul class='sub'>
+<li><span class='small muted'>drgr-h5b-2025-q3.pdf p1131-1131</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details><details style='margin-top:10px'>
+<summary>Q4 2025 • 1 unique paragraphs (1 total)</summary>
+<ul class='sub'>
+<li><span class='small muted'>drgr-h5b-2025-q4.pdf p1499-1499</span><br/>The City of Wharton will provide a buyout program for residential dwellings affected by Hurricane Harvey. Assistance will be provided to homeowners who are located in a floodplain or reside in a repetitive flood area and who agree to relocate to outside the floodplain or a location of reduced flood risk. These activities will meet the urgent need national objective. Unexpended funds from this activity were moved to a low/mod housing relocation assistance activity. # of Singlefamily Units # of Multifamily Units #…</li>
+</ul>
+</details>
+    </details>
+
+
+
+    <h2>Deduplicated view (unique statements)</h2>
+    <div class="sub">
+      The table below groups repeated statements across quarters/documents, so you can see which reallocation narratives persist over time.
+      Each row represents a “unique” statement (heuristically deduplicated from the page-level snippets).
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:120px">Occurrences</th>
+          <th style="width:220px">Quarter range</th>
+          <th>Statement</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+<td><div class='mono'>14</div><div class='small muted'>hits</div></td>
+<td><div class='small'>Q3 2022 → Q4 2025</div><div class='small muted'>14 PDFs • 14 quarters</div></td>
+<td>Activity Description: During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project.<div class='small muted' style='margin-top:6px'>Example: <span class='mono'>drgr-h5b-2022-q3.pdf p271</span> • Latest: <span class='mono'>drgr-h5b-2025-q4.pdf p413</span></div></td>
+</tr><tr>
+<td><div class='mono'>1</div><div class='small muted'>hits</div></td>
+<td><div class='small'>Q2 2025 → Q2 2025</div><div class='small muted'>1 PDFs • 1 quarters</div></td>
+<td>22 Local Government HARRIS COUNTY FLOOD CONTROL LMI%: 31. 76 Activity Supporting Documents: None Environmental Assessment: UNDERWAY Environmental Reviews: None None Activity Attributes: Project # / 0015 / Disaster Recovery Reallocation Program 1385 Community Development Systems Disaster Recovery Grant Reporting System (DRGR)<div class='small muted' style='margin-top:6px'>Example: <span class='mono'>drgr-h5b-2025-q2.pdf p1385</span> • Latest: <span class='mono'>drgr-h5b-2025-q2.pdf p1385</span></div></td>
+</tr><tr>
+<td><div class='mono'>1</div><div class='small muted'>hits</div></td>
+<td><div class='small'>Q3 2025 → Q3 2025</div><div class='small muted'>1 PDFs • 1 quarters</div></td>
+<td>22 Local Government HARRIS COUNTY FLOOD CONTROL LMI%: 31. 76 Activity Supporting Documents: None Environmental Assessment: UNDERWAY Environmental Reviews: None None Activity Attributes: Project # / 0015 / Disaster Recovery Reallocation Program 1382 Community Development Systems Disaster Recovery Grant Reporting System (DRGR)<div class='small muted' style='margin-top:6px'>Example: <span class='mono'>drgr-h5b-2025-q3.pdf p1382</span> • Latest: <span class='mono'>drgr-h5b-2025-q3.pdf p1382</span></div></td>
+</tr><tr>
+<td><div class='mono'>1</div><div class='small muted'>hits</div></td>
+<td><div class='small'>Q4 2025 → Q4 2025</div><div class='small muted'>1 PDFs • 1 quarters</div></td>
+<td>22 Local Government HARRIS COUNTY FLOOD CONTROL LMI%: 31. 76 Activity Supporting Documents: None Environmental Assessment: UNDERWAY Environmental Reviews: None None Activity Attributes: Project # / 0015 / Disaster Recovery Reallocation Program 1750 Community Development Systems Disaster Recovery Grant Reporting System (DRGR)<div class='small muted' style='margin-top:6px'>Example: <span class='mono'>drgr-h5b-2025-q4.pdf p1750</span> • Latest: <span class='mono'>drgr-h5b-2025-q4.pdf p1750</span></div></td>
+</tr>
+      </tbody>
+    </table>
+
+    <h2>High/medium confidence snippets (top 17)</h2>
+    <div class="sub">This is the raw page-level view (repeats across quarters are expected). Use the deduplicated view above to collapse repeats.</div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width:120px">Confidence</th>
+          <th style="width:360px">Document</th>
+          <th>Snippet</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+<td><div class='small'>medium</div><div class='mono'>reallocat</div></td>
+<td><div class='mono'>drgr-h5b-2022-q3.pdf</div><div class='small'>Q3 2022 • page 271</div><div class='small muted'>Proposed Budgets For Organizations Carrying Out Activity</div></td>
+<td>Location Description: Construction was cancelled. Activity Description: During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. # of Elevated Structures # of Non-business Organizations benefitting # of public facilities Proposed budgets for organizations carrying out Activity: Responsible Organization Organization Type Proposed Budget $ 12,931.24 Local Government Alvin, City of LMI%: 40.04 Activity Supporting Documents: None Environmental Assessment: UNDERWAY Environmental Reviews: None None Activity Attributes: 271 Community Development Systems Disaster Recovery Grant Reporting System (DRGR)<div class='small muted' style='margin-top:6px'>Elevated Structures; Local Government Alvin; Responsible Organization Organization Type Proposed Budget</div></td>
+</tr><tr>
+<td><div class='small'>medium</div><div class='mono'>reallocat</div></td>
+<td><div class='mono'>drgr-h5b-2022-q4.pdf</div><div class='small'>Q4 2022 • page 272</div><div class='small muted'>LMI%</div></td>
+<td>Location Description: Construction was cancelled. Activity Description: During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. # of Elevated Structures # of Non-business Organizations benefitting # of public facilities Proposed budgets for organizations carrying out Activity: Responsible Organization Organization Type Proposed Budget $ 12,931.24 Local Government Alvin, City of LMI%: 40.04 Activity Supporting Documents: None Environmental Assessment: UNDERWAY Environmental Reviews: None None Activity Attributes: 272 Community Development Systems Disaster Recovery Grant Reporting System (DRGR)<div class='small muted' style='margin-top:6px'>Elevated Structures; Local Government Alvin; Responsible Organization Organization Type Proposed Budget</div></td>
+</tr><tr>
+<td><div class='small'>medium</div><div class='mono'>reallocat</div></td>
+<td><div class='mono'>drgr-h5b-2023-q1.pdf</div><div class='small'>Q1 2023 • page 272</div><div class='small muted'>Activity Attributes</div></td>
+<td>Location Description: Construction was cancelled. Activity Description: During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. # of Elevated Structures # of Non-business Organizations benefitting # of public facilities Proposed budgets for organizations carrying out Activity: Responsible Organization Organization Type Proposed Budget $ 12,931.24 Local Government Alvin, City of LMI%: 40.04 Activity Supporting Documents: None Environmental Assessment: UNDERWAY Environmental Reviews: None None Activity Attributes: 272 Community Development Systems Disaster Recovery Grant Reporting System (DRGR)<div class='small muted' style='margin-top:6px'>Elevated Structures; Local Government Alvin; Responsible Organization Organization Type Proposed Budget</div></td>
+</tr><tr>
+<td><div class='small'>medium</div><div class='mono'>reallocat</div></td>
+<td><div class='mono'>drgr-h5b-2023-q2.pdf</div><div class='small'>Q2 2023 • page 272</div><div class='small muted'>Location Description</div></td>
+<td>Location Description: Construction was cancelled. Activity Description: During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Proposed budgets for organizations carrying out Activity: Responsible Organization Organization Type Proposed Budget $ 12,931.24 Local Government Alvin, City of Activity Supporting Documents: None Environmental Assessment: UNDERWAY Environmental Reviews: None None Activity Attributes: 272 Community Development Systems Disaster Recovery Grant Reporting System (DRGR)<div class='small muted' style='margin-top:6px'>Local Government Alvin; Responsible Organization Organization Type Proposed Budget</div></td>
+</tr><tr>
+<td><div class='small'>medium</div><div class='mono'>reallocat</div></td>
+<td><div class='mono'>drgr-h5b-2023-q3.pdf</div><div class='small'>Q3 2023 • page 269</div><div class='small muted'>Proposed Budgets For Organizations Carrying Out Activity</div></td>
+<td>Location Description: Construction was cancelled. Activity Description: During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures Proposed budgets for organizations carrying out Activity: Responsible Organization Organization Type Proposed Budget $ 12,931.24 Local Government Alvin, City of Responsible Organization Activity Type Project # Activity # Activity Title PIA Name Primary RLF Grant Number Public Facilities ty_PF 0006 facilities Hardin, County of P-17-TX-48- HIM1 Infrastructure Grantee Support for Subrecipient HMID LMI Public Facilities Activities INF_HMID_LMI_Gr anteeSupport[H5B]_ PF 0006 Rehabilitation/re construction of public facilities Texas General Land Office Y P-17-TX-48- HIM1 Activity Supporting Documents: None Environmental Assessment: UNDERWAY Environmental Reviews: Non…<div class='small muted' style='margin-top:6px'>City of Responsible Organization Activity Type Project; Local Government Alvin; Responsible Organization Organization Type Proposed Budget; Texas General Land Office</div></td>
+</tr><tr>
+<td><div class='small'>medium</div><div class='mono'>reallocat</div></td>
+<td><div class='mono'>drgr-h5b-2023-q4.pdf</div><div class='small'>Q4 2023 • page 296</div><div class='small muted'>Proposed Budgets For Organizations Carrying Out Activity</div></td>
+<td>Location Description: Construction was cancelled. Activity Description: During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures Proposed budgets for organizations carrying out Activity: Responsible Organization Organization Type Proposed Budget $ 12,931.24 Local Government Alvin, City of Responsible Organization Activity Type Project # Activity # Activity Title PIA Name Primary RLF Grant Number Public Facilities unty_PF 0006 facilities CALHOUN COUNTY P-17-TX-48- HIM1 Public Facilities INF_HMID_LMI_20- 065-110- C306_RefugioCount y_PF 0006 Rehabilitation/re construction of public facilities Refugio County P-17-TX-48- HIM1 Public Facilities INF_HMID_LMI_20- 065-091- C254_NuecesCount y_PF 0006 Rehabilitation/re construction of public facilities Nueces County P-17-TX-48- HIM1 Public Facilit…<div class='small muted' style='margin-top:6px'>Public Facilities; City of Responsible Organization Activity Type Project; Local Government Alvin; Responsible Organization Organization Type Proposed Budget; Texas General Land Office</div></td>
+</tr><tr>
+<td><div class='small'>medium</div><div class='mono'>reallocat</div></td>
+<td><div class='mono'>drgr-h5b-2024-q1.pdf</div><div class='small'>Q1 2024 • page 294</div><div class='small muted'>Proposed Budgets For Organizations Carrying Out Activity</div></td>
+<td>Location Description: Construction was cancelled. Activity Description: During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures Proposed budgets for organizations carrying out Activity: Responsible Organization Organization Type Proposed Budget $ 12,931.24 Local Government Alvin, City of Responsible Organization Activity Type Project # Activity # Activity Title PIA Name Primary RLF Grant Number Public Facilities unty_PF 0006 facilities CALHOUN COUNTY P-17-TX-48- HIM1 Public Facilities INF_HMID_LMI_20- 065-110- C306_RefugioCount y_PF 0006 Rehabilitation/re construction of public facilities Refugio County P-17-TX-48- HIM1 Public Facilities INF_HMID_LMI_20- 065-091- C254_NuecesCount y_PF 0006 Rehabilitation/re construction of public facilities Nueces County P-17-TX-48- HIM1 Public Facilit…<div class='small muted' style='margin-top:6px'>Public Facilities; City of Responsible Organization Activity Type Project; Local Government Alvin; Responsible Organization Organization Type Proposed Budget; Texas General Land Office</div></td>
+</tr><tr>
+<td><div class='small'>medium</div><div class='mono'>reallocat</div></td>
+<td><div class='mono'>drgr-h5b-2024-q2.pdf</div><div class='small'>Q2 2024 • page 302</div><div class='small muted'>Proposed Budgets For Organizations Carrying Out Activity</div></td>
+<td>Location Description: Construction was cancelled. Activity Description: During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures Proposed budgets for organizations carrying out Activity: Responsible Organization Organization Type Proposed Budget $ 12,931.24 Local Government Alvin, City of Responsible Organization Activity Type Project # Activity # Activity Title PIA Name Primary RLF Grant Number Public Facilities unty_PF 0006 facilities CALHOUN COUNTY P-17-TX-48- HIM1 Public Facilities INF_HMID_LMI_20- 065-110- C306_RefugioCount y_PF 0006 Rehabilitation/re construction of public facilities Refugio County P-17-TX-48- HIM1 Public Facilities INF_HMID_LMI_20- 065-091- C254_NuecesCount y_PF 0006 Rehabilitation/re construction of public facilities Nueces County P-17-TX-48- HIM1 Public Facilit…<div class='small muted' style='margin-top:6px'>Public Facilities; City of Responsible Organization Activity Type Project; Local Government Alvin; Responsible Organization Organization Type Proposed Budget; Texas General Land Office</div></td>
+</tr><tr>
+<td><div class='small'>medium</div><div class='mono'>reallocat</div></td>
+<td><div class='mono'>drgr-h5b-2024-q3.pdf</div><div class='small'>Q3 2024 • page 304</div><div class='small muted'>Proposed Budgets For Organizations Carrying Out Activity</div></td>
+<td>Location Description: Construction was cancelled. Activity Description: During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures Proposed budgets for organizations carrying out Activity: Responsible Organization Organization Type Proposed Budget $ 12,931.24 Local Government Alvin, City of Responsible Organization Activity Type Project # Activity # Activity Title PIA Name Primary RLF Grant Number Public Facilities unty_PF 0006 facilities CALHOUN COUNTY P-17-TX-48- HIM1 Public Facilities INF_HMID_LMI_20- 065-110- C306_RefugioCount y_PF 0006 Rehabilitation/re construction of public facilities Refugio County P-17-TX-48- HIM1 Public Facilities INF_HMID_LMI_20- 065-091- C254_NuecesCount y_PF 0006 Rehabilitation/re construction of public facilities Nueces County P-17-TX-48- HIM1 Public Facilit…<div class='small muted' style='margin-top:6px'>Public Facilities; City of Responsible Organization Activity Type Project; Local Government Alvin; Responsible Organization Organization Type Proposed Budget; Texas General Land Office</div></td>
+</tr><tr>
+<td><div class='small'>medium</div><div class='mono'>reallocat</div></td>
+<td><div class='mono'>drgr-h5b-2024-q4 (1).pdf</div><div class='small'>Q4 2024 • page 312</div><div class='small muted'>Proposed Budgets For Organizations Carrying Out Activity</div></td>
+<td>Location Description: Construction was cancelled. Activity Description: During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures Proposed budgets for organizations carrying out Activity: Responsible Organization Organization Type Proposed Budget $ 12,931.24 Local Government Alvin, City of Responsible Organization Activity Type Project # Activity # Activity Title PIA Name Primary RLF Grant Number Public Facilities unty_PF 0006 facilities CALHOUN COUNTY P-17-TX-48- HIM1 Public Facilities INF_HMID_LMI_20- 065-110- C306_RefugioCount y_PF 0006 Rehabilitation/re construction of public facilities Refugio County P-17-TX-48- HIM1 Public Facilities INF_HMID_LMI_20- 065-091- C254_NuecesCount y_PF 0006 Rehabilitation/re construction of public facilities Nueces County P-17-TX-48- HIM1 Public Facilit…<div class='small muted' style='margin-top:6px'>Public Facilities; City of Responsible Organization Activity Type Project; Local Government Alvin; Responsible Organization Organization Type Proposed Budget; Texas General Land Office</div></td>
+</tr><tr>
+<td><div class='small'>medium</div><div class='mono'>reallocat</div></td>
+<td><div class='mono'>drgr-h5b-2025-q1.pdf</div><div class='small'>Q1 2025 • page 319</div><div class='small muted'>Proposed Budgets For Organizations Carrying Out Activity</div></td>
+<td>Location Description: Construction was cancelled. Activity Description: During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures Proposed budgets for organizations carrying out Activity: Responsible Organization Organization Type Proposed Budget $ 12,931.24 Local Government Alvin, City of Responsible Organization Activity Type Project # Activity # Activity Title PIA Name Primary RLF Grant Number Public Facilities unty_PF 0006 facilities CALHOUN COUNTY P-17-TX-48- HIM1 Public Facilities INF_HMID_LMI_20- 065-110- C306_RefugioCount y_PF 0006 Rehabilitation/re construction of public facilities Refugio County P-17-TX-48- HIM1 Public Facilities INF_HMID_LMI_20- 065-091- C254_NuecesCount y_PF 0006 Rehabilitation/re construction of public facilities Nueces County P-17-TX-48- HIM1 Public Facilit…<div class='small muted' style='margin-top:6px'>Public Facilities; City of Responsible Organization Activity Type Project; Local Government Alvin; Responsible Organization Organization Type Proposed Budget; Texas General Land Office</div></td>
+</tr><tr>
+<td><div class='small'>medium</div><div class='mono'>reallocat</div></td>
+<td><div class='mono'>drgr-h5b-2025-q2.pdf</div><div class='small'>Q2 2025 • page 320</div><div class='small muted'>Activity Attributes</div></td>
+<td>Location Description: Construction was cancelled. Activity Description: During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures Proposed budgets for organizations carrying out Activity: Responsible Organization Organization Type Proposed Budget $ 12,931.24 Local Government Alvin, City of Responsible Organization Activity Type Project # Activity # Activity Title PIA Name Primary RLF Grant Number Public Facilities unty_PF 0006 facilities CALHOUN COUNTY P-17-TX-48- HIM1 Public Facilities INF_HMID_LMI_20- 065-110- C306_RefugioCount y_PF 0006 Rehabilitation/re construction of public facilities Refugio County P-17-TX-48- HIM1 Public Facilities INF_HMID_LMI_20- 065-091- C254_NuecesCount y_PF 0006 Rehabilitation/re construction of public facilities Nueces County P-17-TX-48- HIM1 Public Facilit…<div class='small muted' style='margin-top:6px'>Public Facilities; 320 Community Development Systems Disaster; City of Responsible Organization Activity Type Project; Local Government Alvin; Responsible Organization Organization Type Proposed Budget; Texas General Land Office</div></td>
+</tr><tr>
+<td><div class='small'>medium</div><div class='mono'>reallocat</div></td>
+<td><div class='mono'>drgr-h5b-2025-q3.pdf</div><div class='small'>Q3 2025 • page 320</div><div class='small muted'>Proposed Budgets For Organizations Carrying Out Activity</div></td>
+<td>Location Description: Construction was cancelled. Activity Description: During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures Proposed budgets for organizations carrying out Activity: Responsible Organization Organization Type Proposed Budget $ 12,931.24 Local Government Alvin, City of Responsible Organization Activity Type Project # Activity # Activity Title PIA Name Primary RLF Grant Number Public Facilities unty_PF 0006 facilities CALHOUN COUNTY P-17-TX-48- HIM1 Public Facilities INF_HMID_LMI_20- 065-110- C306_RefugioCount y_PF 0006 Rehabilitation/re construction of public facilities Refugio County P-17-TX-48- HIM1 Public Facilities INF_HMID_LMI_20- 065-091- C254_NuecesCount y_PF 0006 Rehabilitation/re construction of public facilities Nueces County P-17-TX-48- HIM1 Public Facilit…<div class='small muted' style='margin-top:6px'>Public Facilities; 320 Community Development Systems Disaster; City of Responsible Organization Activity Type Project; Local Government Alvin; Responsible Organization Organization Type Proposed Budget; Texas General Land Office</div></td>
+</tr><tr>
+<td><div class='small'>medium</div><div class='mono'>reallocat</div></td>
+<td><div class='mono'>drgr-h5b-2025-q4.pdf</div><div class='small'>Q4 2025 • page 413</div><div class='small muted'>Activity Attributes</div></td>
+<td>Location Description: Construction was cancelled. Activity Description: During the course of the project, rising costs and material shortages restricted the City of Alvin&#x27;s ability to carry out the project scope outlined by the initial contract. The city has decided that the project is therefore unable to be completed and the remaining funds have been reallocated into the city’s sewer facilities project. Total Low Mod Projected Beneficiaries Low/Mod% # of Persons 1 0.00 Total Projected Accomplishments # of Elevated Structures Proposed budgets for organizations carrying out Activity: Responsible Organization Organization Type Proposed Budget $ 12,931.24 Local Government Alvin, City of Responsible Organization Activity Type Project # Activity # Activity Title PIA Name Primary RLF Grant Number Public Facilities unty_PF 0006 facilities CALHOUN COUNTY P-17-TX-48- HIM1 Public Facilities INF_HMID_LMI_20- 065-110- C306_RefugioCount y_PF 0006 Rehabilitation/re construction of public facilities Refugio County P-17-TX-48- HIM1 Public Facilities INF_HMID_LMI_20- 065-091- C254_NuecesCount y_PF 0006 Rehabilitation/re construction of public facilities Nueces County P-17-TX-48- HIM1 Public Facilit…<div class='small muted' style='margin-top:6px'>Public Facilities; City of Responsible Organization Activity Type Project; Local Government Alvin; Responsible Organization Organization Type Proposed Budget; Texas General Land Office</div></td>
+</tr><tr>
+<td><div class='small'>medium</div><div class='mono'>reallocat</div></td>
+<td><div class='mono'>drgr-h5b-2025-q2.pdf</div><div class='small'>Q2 2025 • page 1385</div><div class='small muted'>Location Description</div></td>
+<td>Location Description: Construction for the East TC Jester Detention Basin project shall take place in Harris County south of Cypresswood Drive and east of TC Jester Blvd. Construction for the Kludge Stormwater Detention Basin - Phase 3 shall take place in Harris County 400 ft southeast of Pierce Drive and east of the existing detention basin. Service areas for each project are distinct. Activity Description: Harris County Flood Control District shall construct a stormwater detention basin. Construction will include excavation; grading; incorporation of weirs, outfall structures, backslope swales, interceptor structures, silt fence, channel lining, pipe outfalls, headwalls, and wingwalls; installation of manholes, slope stability, and riprap; and completion of associated appurtenances for the East TC Jester Detention Basin Project. Harris County Flood Control District shall construct a stormwater detention basin. Construction will include excavation, an interceptor structures, concrete channel lining, riprap, anchored sod, cement stabilized sand, and completion of associated appurtenances for the Kluge Stormwater Detention Basin – Phase 3. These activities meet the urgent need natio…<div class='small muted' style='margin-top:6px'>Community Development Systems Disaster; Elevated Structures; Local Government; Responsible Organization Organization Type Proposed Budget; TC Jester Blvd; backslope swales; the Kludge Stormwater Detention Basin - Phase</div></td>
+</tr><tr>
+<td><div class='small'>medium</div><div class='mono'>reallocat</div></td>
+<td><div class='mono'>drgr-h5b-2025-q3.pdf</div><div class='small'>Q3 2025 • page 1382</div><div class='small muted'>Activity Attributes</div></td>
+<td>Location Description: Construction for the East TC Jester Detention Basin project shall take place in Harris County south of Cypresswood Drive and east of TC Jester Blvd. Construction for the Kludge Stormwater Detention Basin - Phase 3 shall take place in Harris County 400 ft southeast of Pierce Drive and east of the existing detention basin. Service areas for each project are distinct. Activity Description: Harris County Flood Control District shall construct a stormwater detention basin. Construction will include excavation; grading; incorporation of weirs, outfall structures, backslope swales, interceptor structures, silt fence, channel lining, pipe outfalls, headwalls, and wingwalls; installation of manholes, slope stability, and riprap; and completion of associated appurtenances for the East TC Jester Detention Basin Project. Harris County Flood Control District shall construct a stormwater detention basin. Construction will include excavation, an interceptor structures, concrete channel lining, riprap, anchored sod, cement stabilized sand, and completion of associated appurtenances for the Kluge Stormwater Detention Basin – Phase 3. These activities meet the urgent need natio…<div class='small muted' style='margin-top:6px'>Community Development Systems Disaster; Elevated Structures; Local Government; Responsible Organization Organization Type Proposed Budget; TC Jester Blvd; backslope swales; the Kludge Stormwater Detention Basin - Phase</div></td>
+</tr><tr>
+<td><div class='small'>medium</div><div class='mono'>reallocat</div></td>
+<td><div class='mono'>drgr-h5b-2025-q4.pdf</div><div class='small'>Q4 2025 • page 1750</div><div class='small muted'>LMI%</div></td>
+<td>Location Description: Construction for the East TC Jester Detention Basin project shall take place in Harris County south of Cypresswood Drive and east of TC Jester Blvd. Construction for the Kludge Stormwater Detention Basin - Phase 3 shall take place in Harris County 400 ft southeast of Pierce Drive and east of the existing detention basin. Service areas for each project are distinct. Activity Description: Harris County Flood Control District shall construct a stormwater detention basin. Construction will include excavation; grading; incorporation of weirs, outfall structures, backslope swales, interceptor structures, silt fence, channel lining, pipe outfalls, headwalls, and wingwalls; installation of manholes, slope stability, and riprap; and completion of associated appurtenances for the East TC Jester Detention Basin Project. Harris County Flood Control District shall construct a stormwater detention basin. Construction will include excavation, an interceptor structures, concrete channel lining, riprap, anchored sod, cement stabilized sand, and completion of associated appurtenances for the Kluge Stormwater Detention Basin – Phase 3. These activities meet the urgent need natio…<div class='small muted' style='margin-top:6px'>Community Development Systems Disaster; Elevated Structures; Local Government; Responsible Organization Organization Type Proposed Budget; TC Jester Blvd; backslope swales; the Kludge Stormwater Detention Basin - Phase</div></td>
+</tr>
+      </tbody>
+    </table>
+
+    <h2>Notes / limitations</h2>
+    <ul class="sub">
+      <li>This is keyword-driven and will miss fund switches described without those keywords.</li>
+      <li>“From/To” extraction is a rough text pattern and may mis-parse long phrases.</li>
+      <li>Organization matching uses ORG entities extracted by NLP; some pages may be missing ORG entities.</li>
+    </ul>
+  </main>
+</body>
+</html>

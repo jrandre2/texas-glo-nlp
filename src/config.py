@@ -15,7 +15,10 @@ NOTEBOOKS_DIR = PROJECT_ROOT / "notebooks"
 OUTPUTS_DIR = PROJECT_ROOT / "outputs"
 
 # Data subdirectories
+# extracted_text now stores line-preserving text for QPR/NLP parsing.
+# cleaned text is stored separately for any workflows that prefer normalized whitespace.
 EXTRACTED_TEXT_DIR = DATA_DIR / "extracted_text"
+EXTRACTED_TEXT_CLEAN_DIR = DATA_DIR / "extracted_text_clean"
 EXTRACTED_TABLES_DIR = DATA_DIR / "extracted_tables"
 VECTOR_STORE_DIR = DATA_DIR / "vector_store"
 
@@ -29,6 +32,9 @@ REPORTS_DIR = OUTPUTS_DIR / "reports"
 # API Keys (from environment)
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 
+# Default spaCy model (can be overridden via .env / environment)
+SPACY_MODEL = os.getenv("SPACY_MODEL", "en_core_web_sm")
+
 # PDF Processing settings
 PDF_PROCESSING = {
     "batch_size": 10,           # Number of PDFs to process before saving progress
@@ -39,7 +45,7 @@ PDF_PROCESSING = {
 
 # NLP settings
 NLP_SETTINGS = {
-    "spacy_model": "en_core_web_trf",  # Transformer-based model
+    "spacy_model": SPACY_MODEL,  # spaCy model to use (e.g., en_core_web_sm, en_core_web_trf)
     "chunk_size": 1000,                 # Tokens per chunk for embeddings
     "chunk_overlap": 200,               # Overlap between chunks
 }
@@ -73,6 +79,7 @@ def ensure_directories():
         DATA_DIR,
         EXTRACTED_TEXT_DIR,
         EXTRACTED_TABLES_DIR,
+        EXTRACTED_TEXT_CLEAN_DIR,
         VECTOR_STORE_DIR,
         EXPORTS_DIR,
         REPORTS_DIR,

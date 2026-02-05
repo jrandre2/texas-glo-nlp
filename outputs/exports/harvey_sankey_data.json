@@ -22,19 +22,64 @@
       "level": 2
     },
     {
-      "id": "Harris County",
-      "name": "Harris County",
+      "id": "Homeowner Assistance Program",
+      "name": "Homeowner Assistance Program",
       "level": 3
     },
     {
-      "id": "Texas General Land Office",
-      "name": "Texas General Land Office",
+      "id": "Affordable Rental",
+      "name": "Affordable Rental",
       "level": 3
+    },
+    {
+      "id": "Infrastructure Projects",
+      "name": "Infrastructure Projects",
+      "level": 3
+    },
+    {
+      "id": "Administration",
+      "name": "Administration",
+      "level": 3
+    },
+    {
+      "id": "Economic Revitalization",
+      "name": "Economic Revitalization",
+      "level": 3
+    },
+    {
+      "id": "Homeowner Reimbursement",
+      "name": "Homeowner Reimbursement",
+      "level": 3
+    },
+    {
+      "id": "Local Buyout/Acquisition",
+      "name": "Local Buyout/Acquisition",
+      "level": 3
+    },
+    {
+      "id": "Other",
+      "name": "Other",
+      "level": 3
+    },
+    {
+      "id": "Planning",
+      "name": "Planning",
+      "level": 3
+    },
+    {
+      "id": "PREPS Program",
+      "name": "PREPS Program",
+      "level": 3
+    },
+    {
+      "id": "Harris County",
+      "name": "Harris County",
+      "level": 4
     },
     {
       "id": "City of Houston",
       "name": "City of Houston",
-      "level": 3
+      "level": 4
     }
   ],
   "links": [
@@ -54,14 +99,74 @@
       "value": 4416746991.0199995
     },
     {
-      "source": "Housing",
-      "target": "Harris County",
-      "value": 43879068.11
+      "source": "Infrastructure",
+      "target": "Homeowner Assistance Program",
+      "value": 1804031989.3899999
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Affordable Rental",
+      "value": 563148296.38
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Infrastructure Projects",
+      "value": 231313186.49
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Administration",
+      "value": 185689318.26
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Economic Revitalization",
+      "value": 106785659.9
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Homeowner Reimbursement",
+      "value": 102139714.93
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Local Buyout/Acquisition",
+      "value": 77605230.15
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Other",
+      "value": 75189218.9
+    },
+    {
+      "source": "Infrastructure",
+      "target": "Planning",
+      "value": 70143007.65
+    },
+    {
+      "source": "Infrastructure",
+      "target": "PREPS Program",
+      "value": 22443328.2
     },
     {
       "source": "Housing",
-      "target": "Texas General Land Office",
-      "value": 2968000.0
+      "target": "Affordable Rental",
+      "value": 10952931.89
+    },
+    {
+      "source": "Housing",
+      "target": "Administration",
+      "value": 2890000.0
+    },
+    {
+      "source": "Housing",
+      "target": "Planning",
+      "value": 78000.0
+    },
+    {
+      "source": "Housing",
+      "target": "Harris County",
+      "value": 43879068.11
     },
     {
       "source": "Infrastructure",

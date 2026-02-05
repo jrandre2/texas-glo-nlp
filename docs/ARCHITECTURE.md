@@ -110,7 +110,7 @@ The system follows a multi-phase pipeline architecture:
 | Table Extraction | pdfplumber | Extract tabular data |
 | OCR Fallback | Tesseract | Handle scanned documents |
 
-**Output**: 153,540 pages of text, 148,806 tables
+**Output**: 153,540 pages of text, 175,208 tables (current DB snapshot)
 
 ### Phase 2: NLP Extraction (Complete)
 
@@ -120,7 +120,7 @@ The system follows a multi-phase pipeline architecture:
 | Custom Patterns | EntityRuler | Domain-specific entities |
 | Regex Extraction | Python re | Financial/metric patterns |
 
-**Output**: 4.2M+ entities across 27 types
+**Output**: 4,246,325 entities across 26 types (current DB snapshot)
 
 ### Phase 3: Data Linking (Complete)
 
@@ -130,17 +130,38 @@ The system follows a multi-phase pipeline architecture:
 | Name Matching | Link disaster names to grants |
 | Financial Join | Associate entities with $10.46B in funding |
 
-**Output**: 175,124 entity-to-grant links
+**Output**: 99,580 entity-to-grant links (current DB snapshot)
 
-### Phase 4: Semantic Search (Planned)
+### Phase 3b: Harvey Funding Analysis (Complete)
+
+| Component | Purpose |
+|-----------|---------|
+| Activity Parsing | Parse QPR activity blocks into `harvey_activities` |
+| Rollups | Quarterly/org/county aggregation tables |
+| Sankey/Trends | JSON/CSV exports for visualization |
+
+**Output**: `harvey_*` tables + `outputs/exports/harvey_*.{json,csv}`
+
+### Phase 3c: Spatial Extraction & Mapping (Complete)
+
+| Component | Purpose |
+|-----------|---------|
+| Location Mentions | Extract ZIP/tract/county/coords from text/tables |
+| Geocode Enrichment (Optional) | Add lat/lon + GEOIDs via geocoding APIs |
+| Boundary Joins | Join aggregations to Texas boundary GeoJSONs |
+| Map Exports | Plotly choropleth HTML exports |
+
+**Output**: `location_*` / `spatial_units` tables + `outputs/exports/spatial_*`
+
+### Phase 4: Semantic Search (Complete, Local)
 
 | Component | Library | Purpose |
 |-----------|---------|---------|
 | Embeddings | sentence-transformers | Document vectorization |
 | Vector Store | ChromaDB | Similarity search |
-| RAG Pipeline | Claude API | Question answering |
+| (Optional) LLM Q&A | Claude API | Not required for indexing; optional integration |
 
-### Phase 5: Dashboard (Planned)
+### Phase 5: Dashboard (Complete)
 
 | Component | Library | Purpose |
 |-----------|---------|---------|
@@ -180,6 +201,12 @@ The system follows a multi-phase pipeline architecture:
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
+Additional analysis/enrichment entry points:
+
+- Harvey funding flow: `financial_parser.py`, `funding_tracker.py`, `harvey_queries.py`
+- Spatial extraction + mapping: `location_extractor.py`, `geocode_enricher.py`, `spatial_mapper.py`, `spatial_*_map.py`
+- Semantic search: `semantic_search.py`
 
 ---
 
@@ -227,6 +254,32 @@ entities (DISASTER)           │
               └──▶ linked_entities table
 ```
 
+### Harvey Funding Flow (Activity Parsing)
+
+```
+documents + extracted_text
+        │
+        └──▶ financial_parser.py ──▶ harvey_activities
+                                     │
+                                     ├──▶ harvey_quarterly_totals / harvey_org_allocations / harvey_county_allocations
+                                     │
+                                     └──▶ funding_tracker.py ──▶ outputs/exports/harvey_sankey_*.json + trends
+```
+
+### Spatial Extraction Flow
+
+```
+document_text + document_tables
+        │
+        └──▶ location_extractor.py ──▶ location_mentions
+                                       │
+                                       ├──▶ spatial_units + location_links
+                                       │
+                                       ├──▶ (optional) geocode_enricher.py ──▶ enrich location_mentions + geocode_cache
+                                       │
+                                       └──▶ spatial_mapper.py ──▶ spatial_* exports + choropleth HTML
+```
+
 ---
 
 ## Technology Stack
@@ -238,10 +291,12 @@ entities (DISASTER)           │
 | **NLP** | spaCy | Entity recognition |
 | **Database** | SQLite | Structured storage |
 | **Analysis** | pandas, Jupyter | Data exploration |
-| **Visualization** | matplotlib, seaborn | Charts |
-| **Future: Embeddings** | sentence-transformers | Vectorization |
-| **Future: Vector DB** | ChromaDB | Semantic search |
-| **Future: LLM** | Claude API | Q&A, summarization |
+| **Visualization** | matplotlib, plotly, seaborn | Charts + HTML exports |
+| **Spatial** | h3 | Hex aggregation for point data |
+| **Geocoding (Optional)** | US Census Geocoder, ArcGIS, Nominatim | Lat/lon + GEOID enrichment |
+| **Embeddings** | sentence-transformers | Vectorization for semantic search |
+| **Vector DB** | ChromaDB | Local similarity search |
+| **LLM (Optional)** | Claude API | Not required for indexing; optional Q&A integration |
 | **Future: Dashboard** | Streamlit | Web interface |
 
 ---
@@ -256,7 +311,7 @@ Documents ──▶ Chunking ──▶ Embeddings ──▶ ChromaDB
 User Query ──▶ Embed ──▶ Similarity Search ───┘
                               │
                               ▼
-                        Claude API ──▶ Answer
+                      (Optional) LLM ──▶ Answer
 ```
 
 ### Phase 5: Dashboard

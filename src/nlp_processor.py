@@ -21,8 +21,42 @@ except ImportError:
     import utils
 
 
+# Texas counties (lowercase names, including multi-word)
+TEXAS_COUNTIES = [
+    "harris", "jefferson", "orange", "chambers", "galveston", "brazoria",
+    "fort bend", "liberty", "montgomery", "waller", "austin", "colorado",
+    "wharton", "matagorda", "jackson", "victoria", "calhoun", "refugio",
+    "aransas", "san patricio", "nueces", "kleberg", "kenedy", "willacy",
+    "cameron", "hidalgo", "starr", "zapata", "webb", "jim hogg", "brooks",
+    "duval", "jim wells", "live oak", "bee", "goliad", "dewitt", "lavaca",
+    "gonzales", "caldwell", "guadalupe", "comal", "hays", "travis", "bastrop",
+    "lee", "fayette", "burleson", "washington", "grimes", "walker", "san jacinto",
+    "polk", "tyler", "hardin", "jasper", "newton", "sabine", "shelby", "panola",
+    "harrison", "marion", "cass", "bowie", "red river", "lamar", "fannin",
+    "grayson", "cooke", "montague", "clay", "wichita", "archer", "young",
+    "jack", "wise", "denton", "collin", "hunt", "hopkins", "delta", "titus",
+    "morris", "camp", "upshur", "wood", "rains", "van zandt", "kaufman",
+    "rockwall", "dallas", "tarrant", "parker", "palo pinto", "stephens",
+    "eastland", "erath", "hood", "somervell", "johnson", "ellis", "navarro",
+    "freestone", "limestone", "falls", "mclennan", "coryell", "bell", "milam",
+    "robertson", "brazos", "leon", "madison", "trinity", "houston", "angelina",
+    "nacogdoches", "san augustine", "rusk", "cherokee", "anderson", "henderson",
+]
+
+
+def build_county_patterns() -> List[Dict[str, Any]]:
+    """Build multi-token patterns for Texas counties."""
+    patterns = []
+    for county in TEXAS_COUNTIES:
+        tokens = county.split()
+        base = [{"LOWER": t} for t in tokens]
+        patterns.append({"label": "TX_COUNTY", "pattern": base + [{"LOWER": "county"}]})
+        patterns.append({"label": "TX_COUNTY", "pattern": [{"LOWER": "county"}, {"LOWER": "of"}] + base})
+    return patterns
+
+
 # Custom entity patterns for disaster recovery domain
-DISASTER_PATTERNS = [
+ENTITY_PATTERNS = [
     # Disaster names
     {"label": "DISASTER", "pattern": [{"LOWER": "hurricane"}, {"IS_TITLE": True}]},
     {"label": "DISASTER", "pattern": [{"LOWER": "tropical"}, {"LOWER": "storm"}, {"IS_TITLE": True}]},
@@ -37,28 +71,6 @@ DISASTER_PATTERNS = [
     # Grant numbers
     {"label": "GRANT_NUMBER", "pattern": [{"TEXT": {"REGEX": r"^[BP]-\d{2}-[A-Z]{2}-\d{2}-\d{4}"}}]},
 
-    # Texas counties (common ones in disaster reports)
-    {"label": "TX_COUNTY", "pattern": [{"LOWER": {"IN": [
-        "harris", "jefferson", "orange", "chambers", "galveston", "brazoria",
-        "fort bend", "liberty", "montgomery", "waller", "austin", "colorado",
-        "wharton", "matagorda", "jackson", "victoria", "calhoun", "refugio",
-        "aransas", "san patricio", "nueces", "kleberg", "kenedy", "willacy",
-        "cameron", "hidalgo", "starr", "zapata", "webb", "jim hogg", "brooks",
-        "duval", "jim wells", "live oak", "bee", "goliad", "dewitt", "lavaca",
-        "gonzales", "caldwell", "guadalupe", "comal", "hays", "travis", "bastrop",
-        "lee", "fayette", "burleson", "washington", "grimes", "walker", "san jacinto",
-        "polk", "tyler", "hardin", "jasper", "newton", "sabine", "shelby", "panola",
-        "harrison", "marion", "cass", "bowie", "red river", "lamar", "fannin",
-        "grayson", "cooke", "montague", "clay", "wichita", "archer", "young",
-        "jack", "wise", "denton", "collin", "hunt", "hopkins", "delta", "titus",
-        "morris", "camp", "upshur", "wood", "rains", "van zandt", "kaufman",
-        "rockwall", "dallas", "tarrant", "parker", "palo pinto", "stephens",
-        "eastland", "erath", "hood", "somervell", "johnson", "ellis", "navarro",
-        "freestone", "limestone", "falls", "mclennan", "coryell", "bell", "milam",
-        "robertson", "brazos", "leon", "madison", "trinity", "houston", "angelina",
-        "nacogdoches", "san augustine", "rusk", "cherokee", "anderson", "henderson"
-    ]}}, {"LOWER": "county"}]},
-
     # Program names
     {"label": "PROGRAM", "pattern": [{"LOWER": "homeowner"}, {"LOWER": {"IN": ["assistance", "reimbursement"]}}, {"LOWER": "program"}]},
     {"label": "PROGRAM", "pattern": [{"LOWER": "local"}, {"LOWER": "buyout"}, {"LOWER": "program"}]},
@@ -67,6 +79,17 @@ DISASTER_PATTERNS = [
     {"label": "PROGRAM", "pattern": [{"LOWER": "economic"}, {"LOWER": "revitalization"}, {"LOWER": "program"}]},
     {"label": "PROGRAM", "pattern": [{"TEXT": {"REGEX": r"^(HAP|HRP|CDBG-DR|CDBG-MIT)$"}}]},
 ]
+
+# Add county patterns
+ENTITY_PATTERNS.extend(build_county_patterns())
+
+# Program normalization map (abbreviations)
+PROGRAM_NORMALIZATION = {
+    "HAP": "Homeowner Assistance Program",
+    "HRP": "Homeowner Reimbursement Program",
+    "CDBG-DR": "Community Development Block Grant - Disaster Recovery",
+    "CDBG-MIT": "Community Development Block Grant - Mitigation",
+}
 
 # Regex patterns for extraction
 MONEY_PATTERN = re.compile(r'\$[\d,]+(?:\.\d{2})?(?:\s*(?:million|billion|M|B))?', re.IGNORECASE)
@@ -108,7 +131,46 @@ class NLPProcessor:
         # Add entity ruler to pipeline
         if "entity_ruler" not in self.nlp.pipe_names:
             ruler = self.nlp.add_pipe("entity_ruler", before="ner")
-            ruler.add_patterns(DISASTER_PATTERNS)
+            ruler.add_patterns(ENTITY_PATTERNS)
+
+    def normalize_entity_text(self, entity_type: str, text: str) -> Optional[str]:
+        """Normalize entity text for linking/aggregation."""
+        if not text:
+            return None
+
+        text = text.strip()
+
+        if entity_type == 'FEMA_DECLARATION':
+            match = re.search(r'(\d{4})', text)
+            return match.group(1) if match else None
+
+        if entity_type == 'GRANT_NUMBER':
+            return text.upper()
+
+        if entity_type == 'TX_COUNTY':
+            cleaned = re.sub(r'\s+county$', '', text.lower()).strip()
+            cleaned = ' '.join([w.capitalize() for w in cleaned.split()])
+            return f"{cleaned} County" if cleaned else None
+
+        if entity_type == 'PROGRAM':
+            key = text.upper()
+            if key in PROGRAM_NORMALIZATION:
+                return PROGRAM_NORMALIZATION[key]
+            # Title-case but keep common acronyms
+            return text.title()
+
+        if entity_type == 'DISASTER':
+            # Simple title-casing with small-word preservation
+            words = []
+            for w in text.split():
+                lw = w.lower()
+                if lw in {'of', 'and', 'the', 'in', 'on'}:
+                    words.append(lw)
+                else:
+                    words.append(w.capitalize())
+            return ' '.join(words)
+
+        return text
 
     def extract_entities_spacy(self, text: str) -> List[Dict[str, Any]]:
         """
@@ -239,9 +301,11 @@ class NLPProcessor:
         cursor = self.conn.cursor()
 
         for ent in entities:
+            normalized = self.normalize_entity_text(ent['entity_type'], ent['entity_text'])
             cursor.execute('''
-                INSERT INTO entities (document_id, page_number, entity_type, entity_text, start_char, end_char)
-                VALUES (?, ?, ?, ?, ?, ?)
+                INSERT INTO entities
+                (document_id, page_number, entity_type, entity_text, start_char, end_char, normalized_text)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
             ''', (
                 document_id,
                 page_number,
@@ -249,6 +313,7 @@ class NLPProcessor:
                 ent['entity_text'],
                 ent['start_char'],
                 ent['end_char'],
+                normalized,
             ))
 
             self.stats['entity_counts'][ent['entity_type']] += 1
@@ -294,6 +359,9 @@ class NLPProcessor:
         print(f"Processing {len(documents)} documents for entity extraction")
 
         for doc_id, filename in tqdm(documents, desc="Extracting entities"):
+            if not skip_processed:
+                cursor.execute('DELETE FROM entities WHERE document_id = ?', (doc_id,))
+                self.conn.commit()
             # Get all text for this document
             cursor.execute('''
                 SELECT page_number, text_content
@@ -407,6 +475,7 @@ class NLPProcessor:
             SELECT
                 e.entity_type,
                 e.entity_text,
+                e.normalized_text,
                 d.filename,
                 d.category,
                 d.year,
@@ -417,7 +486,8 @@ class NLPProcessor:
             ORDER BY e.entity_type, e.entity_text
         ''')
 
-        columns = ['entity_type', 'entity_text', 'filename', 'category', 'year', 'quarter', 'page_number']
+        columns = ['entity_type', 'entity_text', 'normalized_text',
+                   'filename', 'category', 'year', 'quarter', 'page_number']
         df = pd.DataFrame(cursor.fetchall(), columns=columns)
         df.to_csv(output_path, index=False)
 
@@ -438,7 +508,8 @@ def main():
     parser.add_argument('--reprocess', action='store_true', help='Reprocess already processed documents')
     parser.add_argument('--stats', action='store_true', help='Show statistics only')
     parser.add_argument('--export', action='store_true', help='Export entities to CSV')
-    parser.add_argument('--model', default='en_core_web_sm', help='spaCy model to use')
+    parser.add_argument('--model', default=config.NLP_SETTINGS.get('spacy_model', 'en_core_web_sm'),
+                        help='spaCy model to use')
 
     args = parser.parse_args()
 

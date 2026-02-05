@@ -14,7 +14,13 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Any
 from datetime import datetime
 
-from config import DATABASE_PATH, DATA_DIR, EXTRACTED_TEXT_DIR
+# Handle both package and direct execution imports
+try:
+    from .config import DATABASE_PATH, DATA_DIR, EXTRACTED_TEXT_DIR
+    from .utils import parse_usd
+except ImportError:
+    from config import DATABASE_PATH, DATA_DIR, EXTRACTED_TEXT_DIR
+    from utils import parse_usd
 
 # Regex patterns for parsing financial data
 PATTERNS = {
@@ -59,20 +65,10 @@ ACTIVITY_CATEGORIES = {
 COUNTY_PATTERN = re.compile(r'_([A-Za-z]+County)_|_([A-Za-z]+)County')
 
 
-def parse_money(value: str) -> float:
-    """Convert string money value to float."""
-    if not value:
-        return 0.0
-    cleaned = value.replace(',', '').replace('$', '').strip()
-    try:
-        return float(cleaned)
-    except ValueError:
-        return 0.0
-
 
 def extract_quarter_from_filename(filename: str) -> Tuple[Optional[int], Optional[int]]:
     """Extract year and quarter from filename."""
-    # Match patterns like: drgr-h5b-2024-q3.pdf, harvey-2024-q3.pdf
+    # Match patterns like: drgr-h5b-2025-q4.pdf, ike-2025-q3.pdf
     patterns = [
         r'(\d{4})-q([1-4])',
         r'(\d{4})-([1-4])q',
@@ -246,7 +242,8 @@ class FinancialParser:
 
         # Get text content
         cursor.execute('''
-            SELECT page_number, text_content
+            SELECT page_number,
+                   COALESCE(raw_text_content, text_content) as text_content
             FROM document_text
             WHERE document_id = ?
             ORDER BY page_number
@@ -332,19 +329,19 @@ class FinancialParser:
         if match:
             # Either group 1 or group 2 will have the value
             budget_str = match.group(1) or match.group(2)
-            activity['total_budget'] = parse_money(budget_str)
+            activity['total_budget'] = parse_usd(budget_str) or 0.0
 
         match = re.search(PATTERNS['grant_budget_b17'], block)
         if match:
-            activity['budget_b17'] = parse_money(match.group(1))
+            activity['budget_b17'] = parse_usd(match.group(1)) or 0.0
 
         match = re.search(PATTERNS['grant_budget_b18'], block)
         if match:
-            activity['budget_b18'] = parse_money(match.group(1))
+            activity['budget_b18'] = parse_usd(match.group(1)) or 0.0
 
         match = re.search(PATTERNS['proposed_budget'], block)
         if match:
-            activity['proposed_budget'] = parse_money(match.group(1))
+            activity['proposed_budget'] = parse_usd(match.group(1)) or 0.0
 
         # Extract responsible organization
         org_match = re.search(r'(Texas General Land Office|Harris County|City of Houston)', block)

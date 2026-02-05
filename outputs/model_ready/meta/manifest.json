@@ -1,0 +1,37 @@
+{
+  "built_at": "2026-02-05T12:13:19",
+  "db_path": "/Volumes/T9/Texas GLO Action Plan Project/data/glo_reports.db",
+  "outputs": {
+    "panel_document": "outputs/model_ready/panels/panel_document.csv",
+    "panel_disaster_quarter": "outputs/model_ready/panels/panel_disaster_quarter.csv",
+    "activities": "outputs/model_ready/long/activities.csv",
+    "activities_unique": "outputs/model_ready/long/activities_unique.csv",
+    "panel_county_quarter": "outputs/model_ready/panels/panel_county_quarter.csv",
+    "panel_city_quarter": "outputs/model_ready/panels/panel_city_quarter.csv",
+    "panel_state_quarter": "outputs/model_ready/panels/panel_state_quarter.csv",
+    "money_mentions_by_quarter": "outputs/model_ready/long/money_mentions_by_quarter.csv",
+    "topic_trends_by_quarter": "outputs/model_ready/long/topic_trends_by_quarter.csv",
+    "entity_counts_by_quarter": "outputs/model_ready/long/entity_counts_by_quarter.csv",
+    "keyword_pages_by_quarter": "outputs/model_ready/long/keyword_pages_by_quarter.csv",
+    "beneficiary_measures": "outputs/model_ready/long/beneficiary_measures.csv",
+    "severity_proxies_by_quarter": "outputs/model_ready/long/severity_proxies_by_quarter.csv",
+    "fema_declarations_by_quarter": "outputs/model_ready/long/fema_declarations_by_quarter.csv"
+  },
+  "row_counts": {
+    "panel_document": 442,
+    "panel_disaster_quarter": 442,
+    "activities": 71865,
+    "activities_unique": 70059,
+    "panel_county_quarter": 5419,
+    "panel_city_quarter": 35673,
+    "panel_state_quarter": 66,
+    "money_mentions_by_quarter": 1893,
+    "topic_trends_by_quarter": 5139,
+    "entity_counts_by_quarter": 9245,
+    "keyword_pages_by_quarter": 803,
+    "beneficiary_measures": 2823,
+    "severity_proxies_by_quarter": 567,
+    "fema_declarations_by_quarter": 656
+  },
+  "macos_artifacts_removed": 15
+}
