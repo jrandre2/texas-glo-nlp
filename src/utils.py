@@ -91,17 +91,6 @@ def parse_usd(text: str) -> Optional[float]:
     return value
 
 
-# Smoke-check parse_usd on known formats
-assert parse_usd("$1,234.56") == 1234.56
-assert parse_usd("57.8M") == 57_800_000.0
-assert parse_usd("$5.2 billion") == 5_200_000_000.0
-assert parse_usd("$100k") == 100_000.0
-assert parse_usd("1234") == 1234.0
-assert parse_usd("") is None
-assert parse_usd("not a number") is None
-assert parse_usd("$1,234.") == 1234.0  # OCR trailing period
-
-
 def get_category_from_path(filepath: Path) -> str:
     """Extract the category from the file's parent directory name."""
     return filepath.parent.name
@@ -697,15 +686,18 @@ def get_document_text(conn: sqlite3.Connection, document_id: int, use_raw: bool 
 
 def get_documents_by_category(conn: sqlite3.Connection, categories: Iterable[str]) -> List[Dict[str, Any]]:
     """Return documents matching categories."""
+    cats = tuple(categories)
+    if not cats:
+        return []
     cursor = conn.cursor()
-    placeholders = ','.join('?' for _ in categories)
+    placeholders = ','.join('?' for _ in cats)
     query = f'''
         SELECT id, filename, filepath, category, year, quarter
         FROM documents
         WHERE category IN ({placeholders})
         ORDER BY year, quarter, filename
     '''
-    cursor.execute(query, tuple(categories))
+    cursor.execute(query, cats)
     return [dict(zip([col[0] for col in cursor.description], row)) for row in cursor.fetchall()]
 
 

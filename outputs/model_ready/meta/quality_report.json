@@ -1,0 +1,182 @@
+{
+  "built_at": "2026-02-09T13:02:42",
+  "max_quarter_drop_pct": 80.0,
+  "checks": [
+    {
+      "type": "non_empty",
+      "dataset": "panel_document",
+      "min_rows": 1,
+      "row_count": 442,
+      "ok": true
+    },
+    {
+      "type": "non_empty",
+      "dataset": "panel_disaster_quarter",
+      "min_rows": 1,
+      "row_count": 442,
+      "ok": true
+    },
+    {
+      "type": "non_empty",
+      "dataset": "activities",
+      "min_rows": 1,
+      "row_count": 71865,
+      "ok": true
+    },
+    {
+      "type": "non_empty",
+      "dataset": "activities_unique",
+      "min_rows": 1,
+      "row_count": 70059,
+      "ok": true
+    },
+    {
+      "type": "non_empty",
+      "dataset": "money_mentions_by_quarter",
+      "min_rows": 1,
+      "row_count": 1893,
+      "ok": true
+    },
+    {
+      "type": "non_empty",
+      "dataset": "panel_state_quarter",
+      "min_rows": 1,
+      "row_count": 66,
+      "ok": true
+    },
+    {
+      "type": "non_empty",
+      "dataset": "panel_disaster_quarter_sem",
+      "min_rows": 1,
+      "row_count": 442,
+      "ok": true
+    },
+    {
+      "type": "non_empty",
+      "dataset": "panel_county_quarter_sem",
+      "min_rows": 1,
+      "row_count": 5419,
+      "ok": true
+    },
+    {
+      "type": "non_empty",
+      "dataset": "panel_city_quarter_sem",
+      "min_rows": 1,
+      "row_count": 35673,
+      "ok": true
+    },
+    {
+      "type": "non_empty",
+      "dataset": "panel_state_quarter_sem",
+      "min_rows": 1,
+      "row_count": 66,
+      "ok": true
+    },
+    {
+      "type": "non_empty",
+      "dataset": "sem_construct_signals",
+      "min_rows": 1,
+      "row_count": 938,
+      "ok": true
+    },
+    {
+      "type": "non_empty",
+      "dataset": "sem_coverage_report",
+      "min_rows": 1,
+      "row_count": 226,
+      "ok": true
+    },
+    {
+      "type": "non_empty",
+      "dataset": "sem_variable_dictionary",
+      "min_rows": 1,
+      "row_count": 265,
+      "ok": true
+    },
+    {
+      "type": "prior_quarter_delta",
+      "metric": "documents_latest_quarter_count",
+      "latest_quarter": "Q4 2025",
+      "prev_quarter": "Q3 2025",
+      "latest_value": 6.0,
+      "prev_value": 14.0,
+      "drop_pct": 57.14,
+      "max_drop_pct": 80.0,
+      "ok": true
+    },
+    {
+      "type": "prior_quarter_delta",
+      "metric": "panel_disaster_quarter_row_count",
+      "latest_quarter": "Q4 2025",
+      "prev_quarter": "Q3 2025",
+      "latest_value": 6.0,
+      "prev_value": 14.0,
+      "drop_pct": 57.14,
+      "max_drop_pct": 80.0,
+      "ok": true
+    },
+    {
+      "type": "prior_quarter_delta",
+      "metric": "activities_unique_count",
+      "latest_quarter": "Q4 2025",
+      "prev_quarter": "Q3 2025",
+      "latest_value": 1495.0,
+      "prev_value": 2280.0,
+      "drop_pct": 34.43,
+      "max_drop_pct": 80.0,
+      "ok": true
+    },
+    {
+      "type": "prior_quarter_delta",
+      "metric": "money_mentions_by_quarter_row_count",
+      "latest_quarter": "Q4 2025",
+      "prev_quarter": "Q3 2025",
+      "latest_value": 13.0,
+      "prev_value": 55.0,
+      "drop_pct": 76.36,
+      "max_drop_pct": 80.0,
+      "ok": true
+    },
+    {
+      "type": "sem_coverage",
+      "panel": "panel_disaster_quarter_sem",
+      "column": "programs_total",
+      "pct_non_null": 97.74,
+      "min_pct_non_null": 95.0,
+      "ok": true
+    },
+    {
+      "type": "sem_coverage",
+      "panel": "panel_county_quarter_sem",
+      "column": "programs_total",
+      "pct_non_null": 100.0,
+      "min_pct_non_null": 90.0,
+      "ok": true
+    },
+    {
+      "type": "sem_coverage",
+      "panel": "panel_city_quarter_sem",
+      "column": "programs_total",
+      "pct_non_null": 100.0,
+      "min_pct_non_null": 85.0,
+      "ok": true
+    },
+    {
+      "type": "sem_coverage",
+      "panel": "panel_state_quarter_sem",
+      "column": "programs_total",
+      "pct_non_null": 100.0,
+      "min_pct_non_null": 95.0,
+      "ok": true
+    },
+    {
+      "type": "sem_signal_density",
+      "panel": "panel_disaster_quarter_sem",
+      "non_zero_signal_columns": 4,
+      "min_required": 3,
+      "ok": true
+    }
+  ],
+  "failures": [],
+  "ok": true
+}

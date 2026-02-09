@@ -1,0 +1,266 @@
+dataset,column,unit,description,derivation
+panel_city_quarter_sem,admin_activity_budget_usd,usd,Administration activity financial rollup.,Subset where activity_type_group = Administration.
+panel_city_quarter_sem,admin_activity_count,count,Number of administration activities.,Count of activities where activity_type_group = Administration.
+panel_city_quarter_sem,admin_activity_drawdown_usd,usd,Administration activity financial rollup.,Subset where activity_type_group = Administration.
+panel_city_quarter_sem,admin_activity_expended_usd,usd,Administration activity financial rollup.,Subset where activity_type_group = Administration.
+panel_city_quarter_sem,admin_activity_obligated_usd,usd,Administration activity financial rollup.,Subset where activity_type_group = Administration.
+panel_city_quarter_sem,admin_payroll_usd_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_city_quarter_sem,admin_payroll_usd_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_city_quarter_sem,admin_payroll_usd_sum,usd,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_city_quarter_sem,admin_staff_count_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_city_quarter_sem,admin_staff_count_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_city_quarter_sem,admin_staff_count_sum,count,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_city_quarter_sem,affected_population_households_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_city_quarter_sem,affected_population_households_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_city_quarter_sem,affected_population_households_sum,count,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_city_quarter_sem,affected_population_persons_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_city_quarter_sem,affected_population_persons_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_city_quarter_sem,affected_population_persons_sum,count,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_city_quarter_sem,category,id,Panel key used for joins and grouping.,Directly from document/activity metadata.
+panel_city_quarter_sem,city,id,Panel key used for joins and grouping.,Directly from document/activity metadata.
+panel_city_quarter_sem,county_fips3,id,Panel key used for joins and grouping.,Directly from document/activity metadata.
+panel_city_quarter_sem,county_name,id,Panel key used for joins and grouping.,Directly from document/activity metadata.
+panel_city_quarter_sem,disaster_code,id,Panel key used for joins and grouping.,Directly from document/activity metadata.
+panel_city_quarter_sem,outcome_households_total_actual,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_city_quarter_sem,outcome_households_total_expected,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_city_quarter_sem,outcome_housing_units_total_actual,units,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_city_quarter_sem,outcome_housing_units_total_expected,units,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_city_quarter_sem,outcome_jobs_created_total_actual,jobs,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_city_quarter_sem,outcome_jobs_created_total_expected,jobs,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_city_quarter_sem,outcome_jobs_retained_total_actual,jobs,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_city_quarter_sem,outcome_jobs_retained_total_expected,jobs,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_city_quarter_sem,outcome_owner_households_total_actual,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_city_quarter_sem,outcome_owner_households_total_expected,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_city_quarter_sem,outcome_persons_total_actual,persons,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_city_quarter_sem,outcome_persons_total_expected,persons,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_city_quarter_sem,outcome_renter_households_total_actual,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_city_quarter_sem,outcome_renter_households_total_expected,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_city_quarter_sem,program_completion_rate,ratio_0_1,Completed programs divided by total programs.,programs_completed / programs_total.
+panel_city_quarter_sem,program_duration_quarters_mean,quarters,Program duration summary where projected/completed dates exist.,Estimated from projected start to projected/completed end dates in activity text.
+panel_city_quarter_sem,program_duration_quarters_n_obs,count,Program duration summary where projected/completed dates exist.,Estimated from projected start to projected/completed end dates in activity text.
+panel_city_quarter_sem,programs_cancelled,count,Program status/count metric for the panel cell.,Derived from normalized activity status counts.
+panel_city_quarter_sem,programs_completed,count,Program status/count metric for the panel cell.,Derived from normalized activity status counts.
+panel_city_quarter_sem,programs_in_progress,count,Program status/count metric for the panel cell.,Derived from normalized activity status counts.
+panel_city_quarter_sem,programs_total,count,Program status/count metric for the panel cell.,Derived from normalized activity status counts.
+panel_city_quarter_sem,quarter,time,Calendar quarter key.,Parsed from report filenames in the documents table.
+panel_city_quarter_sem,sem_signal_confidence_mean,0_to_1,Summary of extracted SEM signal observations in panel cell.,Aggregated from sem_construct_signals rows.
+panel_city_quarter_sem,sem_signal_count,count,Summary of extracted SEM signal observations in panel cell.,Aggregated from sem_construct_signals rows.
+panel_city_quarter_sem,severity_deaths_count_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_city_quarter_sem,severity_deaths_count_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_city_quarter_sem,severity_deaths_count_sum,count,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_city_quarter_sem,severity_economic_loss_usd_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_city_quarter_sem,severity_economic_loss_usd_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_city_quarter_sem,severity_economic_loss_usd_sum,usd,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_city_quarter_sem,severity_property_damage_usd_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_city_quarter_sem,severity_property_damage_usd_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_city_quarter_sem,severity_property_damage_usd_sum,usd,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_city_quarter_sem,severity_unmet_need_usd_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_city_quarter_sem,severity_unmet_need_usd_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_city_quarter_sem,severity_unmet_need_usd_sum,usd,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_city_quarter_sem,sum_budget_usd,usd,Financial rollup from activity-level money fields.,Summed activity-level max money mentions by panel key.
+panel_city_quarter_sem,sum_drawdown_usd,usd,Financial rollup from activity-level money fields.,Summed activity-level max money mentions by panel key.
+panel_city_quarter_sem,sum_expended_usd,usd,Financial rollup from activity-level money fields.,Summed activity-level max money mentions by panel key.
+panel_city_quarter_sem,sum_obligated_usd,usd,Financial rollup from activity-level money fields.,Summed activity-level max money mentions by panel key.
+panel_city_quarter_sem,year,time,Calendar quarter key.,Parsed from report filenames in the documents table.
+panel_county_quarter_sem,admin_activity_budget_usd,usd,Administration activity financial rollup.,Subset where activity_type_group = Administration.
+panel_county_quarter_sem,admin_activity_count,count,Number of administration activities.,Count of activities where activity_type_group = Administration.
+panel_county_quarter_sem,admin_activity_drawdown_usd,usd,Administration activity financial rollup.,Subset where activity_type_group = Administration.
+panel_county_quarter_sem,admin_activity_expended_usd,usd,Administration activity financial rollup.,Subset where activity_type_group = Administration.
+panel_county_quarter_sem,admin_activity_obligated_usd,usd,Administration activity financial rollup.,Subset where activity_type_group = Administration.
+panel_county_quarter_sem,admin_payroll_usd_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_county_quarter_sem,admin_payroll_usd_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_county_quarter_sem,admin_payroll_usd_sum,usd,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_county_quarter_sem,admin_staff_count_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_county_quarter_sem,admin_staff_count_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_county_quarter_sem,admin_staff_count_sum,count,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_county_quarter_sem,affected_population_households_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_county_quarter_sem,affected_population_households_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_county_quarter_sem,affected_population_households_sum,count,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_county_quarter_sem,affected_population_persons_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_county_quarter_sem,affected_population_persons_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_county_quarter_sem,affected_population_persons_sum,count,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_county_quarter_sem,category,id,Panel key used for joins and grouping.,Directly from document/activity metadata.
+panel_county_quarter_sem,county_fips3,id,Panel key used for joins and grouping.,Directly from document/activity metadata.
+panel_county_quarter_sem,county_name,id,Panel key used for joins and grouping.,Directly from document/activity metadata.
+panel_county_quarter_sem,disaster_code,id,Panel key used for joins and grouping.,Directly from document/activity metadata.
+panel_county_quarter_sem,outcome_households_total_actual,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_county_quarter_sem,outcome_households_total_expected,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_county_quarter_sem,outcome_housing_units_total_actual,units,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_county_quarter_sem,outcome_housing_units_total_expected,units,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_county_quarter_sem,outcome_jobs_created_total_actual,jobs,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_county_quarter_sem,outcome_jobs_created_total_expected,jobs,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_county_quarter_sem,outcome_jobs_retained_total_actual,jobs,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_county_quarter_sem,outcome_jobs_retained_total_expected,jobs,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_county_quarter_sem,outcome_owner_households_total_actual,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_county_quarter_sem,outcome_owner_households_total_expected,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_county_quarter_sem,outcome_persons_total_actual,persons,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_county_quarter_sem,outcome_persons_total_expected,persons,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_county_quarter_sem,outcome_renter_households_total_actual,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_county_quarter_sem,outcome_renter_households_total_expected,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_county_quarter_sem,program_completion_rate,ratio_0_1,Completed programs divided by total programs.,programs_completed / programs_total.
+panel_county_quarter_sem,program_duration_quarters_mean,quarters,Program duration summary where projected/completed dates exist.,Estimated from projected start to projected/completed end dates in activity text.
+panel_county_quarter_sem,program_duration_quarters_n_obs,count,Program duration summary where projected/completed dates exist.,Estimated from projected start to projected/completed end dates in activity text.
+panel_county_quarter_sem,programs_cancelled,count,Program status/count metric for the panel cell.,Derived from normalized activity status counts.
+panel_county_quarter_sem,programs_completed,count,Program status/count metric for the panel cell.,Derived from normalized activity status counts.
+panel_county_quarter_sem,programs_in_progress,count,Program status/count metric for the panel cell.,Derived from normalized activity status counts.
+panel_county_quarter_sem,programs_total,count,Program status/count metric for the panel cell.,Derived from normalized activity status counts.
+panel_county_quarter_sem,quarter,time,Calendar quarter key.,Parsed from report filenames in the documents table.
+panel_county_quarter_sem,sem_signal_confidence_mean,0_to_1,Summary of extracted SEM signal observations in panel cell.,Aggregated from sem_construct_signals rows.
+panel_county_quarter_sem,sem_signal_count,count,Summary of extracted SEM signal observations in panel cell.,Aggregated from sem_construct_signals rows.
+panel_county_quarter_sem,severity_deaths_count_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_county_quarter_sem,severity_deaths_count_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_county_quarter_sem,severity_deaths_count_sum,count,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_county_quarter_sem,severity_economic_loss_usd_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_county_quarter_sem,severity_economic_loss_usd_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_county_quarter_sem,severity_economic_loss_usd_sum,usd,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_county_quarter_sem,severity_property_damage_usd_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_county_quarter_sem,severity_property_damage_usd_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_county_quarter_sem,severity_property_damage_usd_sum,usd,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_county_quarter_sem,severity_unmet_need_usd_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_county_quarter_sem,severity_unmet_need_usd_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_county_quarter_sem,severity_unmet_need_usd_sum,usd,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_county_quarter_sem,sum_budget_usd,usd,Financial rollup from activity-level money fields.,Summed activity-level max money mentions by panel key.
+panel_county_quarter_sem,sum_drawdown_usd,usd,Financial rollup from activity-level money fields.,Summed activity-level max money mentions by panel key.
+panel_county_quarter_sem,sum_expended_usd,usd,Financial rollup from activity-level money fields.,Summed activity-level max money mentions by panel key.
+panel_county_quarter_sem,sum_obligated_usd,usd,Financial rollup from activity-level money fields.,Summed activity-level max money mentions by panel key.
+panel_county_quarter_sem,year,time,Calendar quarter key.,Parsed from report filenames in the documents table.
+panel_disaster_quarter_sem,admin_activity_budget_usd,usd,Administration activity financial rollup.,Subset where activity_type_group = Administration.
+panel_disaster_quarter_sem,admin_activity_count,count,Number of administration activities.,Count of activities where activity_type_group = Administration.
+panel_disaster_quarter_sem,admin_activity_drawdown_usd,usd,Administration activity financial rollup.,Subset where activity_type_group = Administration.
+panel_disaster_quarter_sem,admin_activity_expended_usd,usd,Administration activity financial rollup.,Subset where activity_type_group = Administration.
+panel_disaster_quarter_sem,admin_activity_obligated_usd,usd,Administration activity financial rollup.,Subset where activity_type_group = Administration.
+panel_disaster_quarter_sem,admin_payroll_usd_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_disaster_quarter_sem,admin_payroll_usd_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_disaster_quarter_sem,admin_payroll_usd_sum,usd,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_disaster_quarter_sem,admin_staff_count_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_disaster_quarter_sem,admin_staff_count_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_disaster_quarter_sem,admin_staff_count_sum,count,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_disaster_quarter_sem,affected_population_households_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_disaster_quarter_sem,affected_population_households_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_disaster_quarter_sem,affected_population_households_sum,count,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_disaster_quarter_sem,affected_population_persons_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_disaster_quarter_sem,affected_population_persons_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_disaster_quarter_sem,affected_population_persons_sum,count,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_disaster_quarter_sem,category,id,Panel key used for joins and grouping.,Directly from document/activity metadata.
+panel_disaster_quarter_sem,disaster_code,id,Panel key used for joins and grouping.,Directly from document/activity metadata.
+panel_disaster_quarter_sem,n_documents,count,Number of source reports in the panel cell.,Count distinct documents in panel key.
+panel_disaster_quarter_sem,outcome_households_total_actual,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_disaster_quarter_sem,outcome_households_total_expected,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_disaster_quarter_sem,outcome_housing_units_total_actual,units,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_disaster_quarter_sem,outcome_housing_units_total_expected,units,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_disaster_quarter_sem,outcome_jobs_created_total_actual,jobs,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_disaster_quarter_sem,outcome_jobs_created_total_expected,jobs,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_disaster_quarter_sem,outcome_jobs_retained_total_actual,jobs,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_disaster_quarter_sem,outcome_jobs_retained_total_expected,jobs,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_disaster_quarter_sem,outcome_owner_households_total_actual,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_disaster_quarter_sem,outcome_owner_households_total_expected,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_disaster_quarter_sem,outcome_persons_total_actual,persons,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_disaster_quarter_sem,outcome_persons_total_expected,persons,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_disaster_quarter_sem,outcome_renter_households_total_actual,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_disaster_quarter_sem,outcome_renter_households_total_expected,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_disaster_quarter_sem,program_completion_rate,ratio_0_1,Completed programs divided by total programs.,programs_completed / programs_total.
+panel_disaster_quarter_sem,program_duration_quarters_mean,quarters,Program duration summary where projected/completed dates exist.,Estimated from projected start to projected/completed end dates in activity text.
+panel_disaster_quarter_sem,program_duration_quarters_n_obs,count,Program duration summary where projected/completed dates exist.,Estimated from projected start to projected/completed end dates in activity text.
+panel_disaster_quarter_sem,programs_cancelled,count,Program status/count metric for the panel cell.,Derived from normalized activity status counts.
+panel_disaster_quarter_sem,programs_completed,count,Program status/count metric for the panel cell.,Derived from normalized activity status counts.
+panel_disaster_quarter_sem,programs_in_progress,count,Program status/count metric for the panel cell.,Derived from normalized activity status counts.
+panel_disaster_quarter_sem,programs_total,count,Program status/count metric for the panel cell.,Derived from normalized activity status counts.
+panel_disaster_quarter_sem,quarter,time,Calendar quarter key.,Parsed from report filenames in the documents table.
+panel_disaster_quarter_sem,sem_signal_confidence_mean,0_to_1,Summary of extracted SEM signal observations in panel cell.,Aggregated from sem_construct_signals rows.
+panel_disaster_quarter_sem,sem_signal_count,count,Summary of extracted SEM signal observations in panel cell.,Aggregated from sem_construct_signals rows.
+panel_disaster_quarter_sem,severity_deaths_count_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_disaster_quarter_sem,severity_deaths_count_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_disaster_quarter_sem,severity_deaths_count_sum,count,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_disaster_quarter_sem,severity_economic_loss_usd_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_disaster_quarter_sem,severity_economic_loss_usd_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_disaster_quarter_sem,severity_economic_loss_usd_sum,usd,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_disaster_quarter_sem,severity_property_damage_usd_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_disaster_quarter_sem,severity_property_damage_usd_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_disaster_quarter_sem,severity_property_damage_usd_sum,usd,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_disaster_quarter_sem,severity_rainfall_inches_max,value,Maximum weather severity proxy in panel cell.,From entity-derived rainfall/wind proxies.
+panel_disaster_quarter_sem,severity_unmet_need_usd_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_disaster_quarter_sem,severity_unmet_need_usd_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_disaster_quarter_sem,severity_unmet_need_usd_sum,usd,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_disaster_quarter_sem,severity_wind_speed_mph_max,value,Maximum weather severity proxy in panel cell.,From entity-derived rainfall/wind proxies.
+panel_disaster_quarter_sem,sum_budget_usd,usd,Financial rollup from activity-level money fields.,Summed activity-level max money mentions by panel key.
+panel_disaster_quarter_sem,sum_drawdown_usd,usd,Financial rollup from activity-level money fields.,Summed activity-level max money mentions by panel key.
+panel_disaster_quarter_sem,sum_expended_usd,usd,Financial rollup from activity-level money fields.,Summed activity-level max money mentions by panel key.
+panel_disaster_quarter_sem,sum_obligated_usd,usd,Financial rollup from activity-level money fields.,Summed activity-level max money mentions by panel key.
+panel_disaster_quarter_sem,year,time,Calendar quarter key.,Parsed from report filenames in the documents table.
+panel_state_quarter_sem,admin_activity_budget_usd,usd,Administration activity financial rollup.,Subset where activity_type_group = Administration.
+panel_state_quarter_sem,admin_activity_count,count,Number of administration activities.,Count of activities where activity_type_group = Administration.
+panel_state_quarter_sem,admin_activity_drawdown_usd,usd,Administration activity financial rollup.,Subset where activity_type_group = Administration.
+panel_state_quarter_sem,admin_activity_expended_usd,usd,Administration activity financial rollup.,Subset where activity_type_group = Administration.
+panel_state_quarter_sem,admin_activity_obligated_usd,usd,Administration activity financial rollup.,Subset where activity_type_group = Administration.
+panel_state_quarter_sem,admin_payroll_usd_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_state_quarter_sem,admin_payroll_usd_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_state_quarter_sem,admin_payroll_usd_sum,usd,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_state_quarter_sem,admin_staff_count_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_state_quarter_sem,admin_staff_count_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_state_quarter_sem,admin_staff_count_sum,count,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_state_quarter_sem,affected_population_households_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_state_quarter_sem,affected_population_households_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_state_quarter_sem,affected_population_households_sum,count,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_state_quarter_sem,affected_population_persons_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_state_quarter_sem,affected_population_persons_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_state_quarter_sem,affected_population_persons_sum,count,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_state_quarter_sem,outcome_households_total_actual,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_state_quarter_sem,outcome_households_total_expected,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_state_quarter_sem,outcome_housing_units_total_actual,units,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_state_quarter_sem,outcome_housing_units_total_expected,units,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_state_quarter_sem,outcome_jobs_created_total_actual,jobs,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_state_quarter_sem,outcome_jobs_created_total_expected,jobs,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_state_quarter_sem,outcome_jobs_retained_total_actual,jobs,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_state_quarter_sem,outcome_jobs_retained_total_expected,jobs,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_state_quarter_sem,outcome_owner_households_total_actual,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_state_quarter_sem,outcome_owner_households_total_expected,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_state_quarter_sem,outcome_persons_total_actual,persons,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_state_quarter_sem,outcome_persons_total_expected,persons,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_state_quarter_sem,outcome_renter_households_total_actual,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_state_quarter_sem,outcome_renter_households_total_expected,households,Beneficiary/accomplishment outcome rollup.,Parsed DRGR beneficiary/accomplishment rows aggregated from activities.
+panel_state_quarter_sem,program_completion_rate,ratio_0_1,Completed programs divided by total programs.,programs_completed / programs_total.
+panel_state_quarter_sem,program_duration_quarters_mean,quarters,Program duration summary where projected/completed dates exist.,Estimated from projected start to projected/completed end dates in activity text.
+panel_state_quarter_sem,program_duration_quarters_n_obs,count,Program duration summary where projected/completed dates exist.,Estimated from projected start to projected/completed end dates in activity text.
+panel_state_quarter_sem,programs_cancelled,count,Program status/count metric for the panel cell.,Derived from normalized activity status counts.
+panel_state_quarter_sem,programs_completed,count,Program status/count metric for the panel cell.,Derived from normalized activity status counts.
+panel_state_quarter_sem,programs_in_progress,count,Program status/count metric for the panel cell.,Derived from normalized activity status counts.
+panel_state_quarter_sem,programs_total,count,Program status/count metric for the panel cell.,Derived from normalized activity status counts.
+panel_state_quarter_sem,quarter,time,Calendar quarter key.,Parsed from report filenames in the documents table.
+panel_state_quarter_sem,sem_signal_confidence_mean,0_to_1,Summary of extracted SEM signal observations in panel cell.,Aggregated from sem_construct_signals rows.
+panel_state_quarter_sem,sem_signal_count,count,Summary of extracted SEM signal observations in panel cell.,Aggregated from sem_construct_signals rows.
+panel_state_quarter_sem,severity_deaths_count_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_state_quarter_sem,severity_deaths_count_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_state_quarter_sem,severity_deaths_count_sum,count,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_state_quarter_sem,severity_economic_loss_usd_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_state_quarter_sem,severity_economic_loss_usd_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_state_quarter_sem,severity_economic_loss_usd_sum,usd,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_state_quarter_sem,severity_property_damage_usd_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_state_quarter_sem,severity_property_damage_usd_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_state_quarter_sem,severity_property_damage_usd_sum,usd,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_state_quarter_sem,severity_unmet_need_usd_confidence_mean,0_to_1,Average confidence score for this SEM construct.,Mean confidence across sem_construct_signals rows.
+panel_state_quarter_sem,severity_unmet_need_usd_n_obs,count,Number of extracted observations for this SEM construct.,Count of sem_construct_signals rows in panel cell.
+panel_state_quarter_sem,severity_unmet_need_usd_sum,usd,Aggregated SEM construct signal value.,Summed extracted construct values from sem_construct_signals.
+panel_state_quarter_sem,sum_budget_usd,usd,Financial rollup from activity-level money fields.,Summed activity-level max money mentions by panel key.
+panel_state_quarter_sem,sum_drawdown_usd,usd,Financial rollup from activity-level money fields.,Summed activity-level max money mentions by panel key.
+panel_state_quarter_sem,sum_expended_usd,usd,Financial rollup from activity-level money fields.,Summed activity-level max money mentions by panel key.
+panel_state_quarter_sem,sum_obligated_usd,usd,Financial rollup from activity-level money fields.,Summed activity-level max money mentions by panel key.
+panel_state_quarter_sem,year,time,Calendar quarter key.,Parsed from report filenames in the documents table.
+sem_construct_signals,activity_id,id,Matched activity block identifier if available.,Derived from activity header grouping.
+sem_construct_signals,category,id,Source category.,From documents.category.
+sem_construct_signals,city,text,Inferred city name.,Best-confidence city mention.
+sem_construct_signals,confidence,0_to_1,Heuristic extraction confidence.,Pattern-level confidence with source penalty.
+sem_construct_signals,county_fips3,id,Inferred county FIPS (3-digit).,Activity/page-level location inference.
+sem_construct_signals,county_name,text,Inferred county name.,Lookup from county FIPS mapping.
+sem_construct_signals,disaster_code,id,Parsed disaster code.,From documents.disaster_code.
+sem_construct_signals,document_id,id,Source document identifier.,From documents.id.
+sem_construct_signals,filename,text,Source filename.,From documents.filename.
+sem_construct_signals,method,text,Extractor method tag.,Rule family + source type.
+sem_construct_signals,metric,category,SEM construct metric label.,Regex classification rule.
+sem_construct_signals,page_number,count,Source page number.,From document_text/document_tables page.
+sem_construct_signals,quarter,time,Source quarter.,From parsed filename metadata.
+sem_construct_signals,snippet,text,Source snippet for audit.,Truncated line-level provenance text.
+sem_construct_signals,source_type,category,Signal source layer.,text_page or table_json.
+sem_construct_signals,unit,category,Value unit.,Count or USD based on metric.
+sem_construct_signals,value,count_or_usd,Extracted numeric value.,Numeric parser with currency/count normalization.
+sem_construct_signals,year,time,Source year.,From parsed filename metadata.
+sem_construct_signals,zip,id,Inferred ZIP code.,Best-confidence ZIP mention.

@@ -5,14 +5,17 @@ Uses US Census Geocoding API and updates location_mentions.
 """
 
 import argparse
+from collections import Counter
+from dataclasses import dataclass, field
 import json
+import logging
 import re
 import sqlite3
 import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
-from typing import Dict, Optional, Tuple, List
+from typing import Dict, Optional, Tuple, List, Any
 
 # Handle both package and direct execution imports
 try:
@@ -26,6 +29,43 @@ except ImportError:
 GEOCODE_BASE = "https://geocoding.geo.census.gov/geocoder"
 ARCGIS_BASE = "https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer"
 NOMINATIM_BASE = "https://nominatim.openstreetmap.org/search"
+
+
+@dataclass
+class GeocodeRunStats:
+    address_rows_total: int = 0
+    address_rows_attempted: int = 0
+    address_rows_geocoded: int = 0
+    address_rows_unresolved: int = 0
+    coord_rows_total: int = 0
+    coord_rows_enriched: int = 0
+    cache_hits: int = 0
+    cache_misses: int = 0
+    reverse_requests: int = 0
+    reverse_errors: int = 0
+    provider_requests: Counter[str] = field(default_factory=Counter)
+    provider_errors: Counter[str] = field(default_factory=Counter)
+
+    def provider_error_total(self) -> int:
+        return int(sum(self.provider_errors.values()))
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "address_rows_total": int(self.address_rows_total),
+            "address_rows_attempted": int(self.address_rows_attempted),
+            "address_rows_geocoded": int(self.address_rows_geocoded),
+            "address_rows_unresolved": int(self.address_rows_unresolved),
+            "coord_rows_total": int(self.coord_rows_total),
+            "coord_rows_enriched": int(self.coord_rows_enriched),
+            "cache_hits": int(self.cache_hits),
+            "cache_misses": int(self.cache_misses),
+            "reverse_requests": int(self.reverse_requests),
+            "reverse_errors": int(self.reverse_errors),
+            "provider_requests": dict(self.provider_requests),
+            "provider_errors": dict(self.provider_errors),
+            "provider_errors_total": self.provider_error_total(),
+            "partial_failures_total": int(self.provider_error_total() + self.reverse_errors),
+        }
 
 
 def http_get_json(url: str, headers: Optional[Dict[str, str]] = None) -> dict:
@@ -318,8 +358,16 @@ def load_county_fips_map(path: Path) -> Dict[str, str]:
     return mapping
 
 
-def geocode_addresses(conn: sqlite3.Connection, county_fips_map: Dict[str, str], limit: Optional[int], sleep: float,
-                      providers: List[str], nominatim_agent: str):
+def geocode_addresses(
+    conn: sqlite3.Connection,
+    county_fips_map: Dict[str, str],
+    limit: Optional[int],
+    sleep: float,
+    providers: List[str],
+    nominatim_agent: str,
+    stats: GeocodeRunStats,
+    logger: logging.Logger,
+) -> None:
     cur = conn.cursor()
     cur.execute('''
         SELECT document_id, page_number, address, city, state, zip, GROUP_CONCAT(id)
@@ -335,6 +383,7 @@ def geocode_addresses(conn: sqlite3.Connection, county_fips_map: Dict[str, str],
         rows = rows[:limit]
 
     total = len(rows)
+    stats.address_rows_total = int(total)
     for idx, (document_id, page_number, address, city, state, zip_code, ids) in enumerate(rows, start=1):
         if idx == 1 or idx % 250 == 0:
             print(f"Geocoding addresses: {idx}/{total}")
@@ -346,6 +395,7 @@ def geocode_addresses(conn: sqlite3.Connection, county_fips_map: Dict[str, str],
         addr_str = build_address_string(address, city, state or "TX", zip_code)
         if not addr_str:
             continue
+        stats.address_rows_attempted += 1
         lat = lon = None
         geo_fields = {
             "county_name": None,
@@ -359,7 +409,12 @@ def geocode_addresses(conn: sqlite3.Connection, county_fips_map: Dict[str, str],
             cache_key = f"{provider}::addr::{addr_str}"
             payload = cache_get(conn, cache_key)
             if payload is None:
+                stats.cache_misses += 1
+            else:
+                stats.cache_hits += 1
+            if payload is None:
                 try:
+                    stats.provider_requests[provider] += 1
                     if provider == "census":
                         payload = http_get_json(build_oneline_url(addr_str))
                         time.sleep(sleep)
@@ -372,7 +427,16 @@ def geocode_addresses(conn: sqlite3.Connection, county_fips_map: Dict[str, str],
                     else:
                         continue
                     cache_set(conn, cache_key, payload)
-                except Exception:
+                except Exception as e:
+                    stats.provider_errors[provider] += 1
+                    logger.warning(
+                        "provider_request_failed provider=%s stage=address doc_id=%s page=%s address=%r error=%s",
+                        provider,
+                        document_id,
+                        page_number,
+                        addr_str[:160],
+                        e,
+                    )
                     time.sleep(sleep)
                     continue
 
@@ -387,6 +451,7 @@ def geocode_addresses(conn: sqlite3.Connection, county_fips_map: Dict[str, str],
                 break
 
         if lat is None or lon is None:
+            stats.address_rows_unresolved += 1
             continue
 
         # If geographies missing, reverse geocode with Census
@@ -394,10 +459,24 @@ def geocode_addresses(conn: sqlite3.Connection, county_fips_map: Dict[str, str],
             cache_key = f"coord::{lat},{lon}"
             payload = cache_get(conn, cache_key)
             if payload is None:
+                stats.cache_misses += 1
+            else:
+                stats.cache_hits += 1
+            if payload is None:
                 try:
+                    stats.reverse_requests += 1
                     payload = http_get_json(build_reverse_url(lat, lon))
                     cache_set(conn, cache_key, payload)
-                except Exception:
+                except Exception as e:
+                    stats.reverse_errors += 1
+                    logger.warning(
+                        "reverse_geocode_failed stage=address doc_id=%s page=%s lat=%s lon=%s error=%s",
+                        document_id,
+                        page_number,
+                        lat,
+                        lon,
+                        e,
+                    )
                     payload = None
             if payload:
                 result = payload.get("result", {})
@@ -406,9 +485,17 @@ def geocode_addresses(conn: sqlite3.Connection, county_fips_map: Dict[str, str],
 
         mention_ids = [int(x) for x in ids.split(',') if x]
         update_mentions(conn, mention_ids, lat, lon, geo_fields, county_fips_map)
+        stats.address_rows_geocoded += 1
 
 
-def geocode_coordinates(conn: sqlite3.Connection, county_fips_map: Dict[str, str], limit: Optional[int], sleep: float):
+def geocode_coordinates(
+    conn: sqlite3.Connection,
+    county_fips_map: Dict[str, str],
+    limit: Optional[int],
+    sleep: float,
+    stats: GeocodeRunStats,
+    logger: logging.Logger,
+) -> None:
     cur = conn.cursor()
     cur.execute('''
         SELECT latitude, longitude, GROUP_CONCAT(id)
@@ -423,17 +510,25 @@ def geocode_coordinates(conn: sqlite3.Connection, county_fips_map: Dict[str, str
         rows = rows[:limit]
 
     total = len(rows)
+    stats.coord_rows_total = int(total)
     for idx, (lat, lon, ids) in enumerate(rows, start=1):
         if idx == 1 or idx % 500 == 0:
             print(f"Reverse geocoding coords: {idx}/{total}")
         cache_key = f"coord::{lat},{lon}"
         payload = cache_get(conn, cache_key)
         if payload is None:
+            stats.cache_misses += 1
+        else:
+            stats.cache_hits += 1
+        if payload is None:
             url = build_reverse_url(lat, lon)
             try:
+                stats.reverse_requests += 1
                 payload = http_get_json(url)
                 cache_set(conn, cache_key, payload)
-            except Exception:
+            except Exception as e:
+                stats.reverse_errors += 1
+                logger.warning("reverse_geocode_failed stage=coords lat=%s lon=%s error=%s", lat, lon, e)
                 time.sleep(sleep)
                 continue
             time.sleep(sleep)
@@ -443,6 +538,7 @@ def geocode_coordinates(conn: sqlite3.Connection, county_fips_map: Dict[str, str
         geo_fields = parse_geographies(geos)
         mention_ids = [int(x) for x in ids.split(',') if x]
         update_mentions(conn, mention_ids, lat, lon, geo_fields, county_fips_map)
+        stats.coord_rows_enriched += 1
 
 
 def main():
@@ -455,7 +551,25 @@ def main():
     parser.add_argument('--county-fips', type=str, default=str(config.DATA_DIR / 'reference' / 'tx_county_fips.csv'))
     parser.add_argument('--providers', type=str, default='arcgis,census,nominatim', help='Comma-separated geocoding providers')
     parser.add_argument('--nominatim-agent', type=str, default='glo-action-plan (contact: admin@example.com)', help='User-Agent for Nominatim')
+    parser.add_argument(
+        '--allow-partial',
+        action='store_true',
+        help='Do not fail the run when provider/reverse-geocode request errors occur',
+    )
+    parser.add_argument(
+        '--log-level',
+        type=str,
+        default='INFO',
+        choices=['DEBUG', 'INFO', 'WARNING', 'ERROR'],
+        help='Logging level',
+    )
     args = parser.parse_args()
+
+    logging.basicConfig(
+        level=getattr(logging, str(args.log_level).upper()),
+        format='%(asctime)s %(levelname)s %(name)s %(message)s',
+    )
+    logger = logging.getLogger("geocode_enricher")
 
     conn = utils.init_database(Path(args.db))
     ensure_cache_table(conn)
@@ -463,14 +577,32 @@ def main():
     county_fips_map = load_county_fips_map(Path(args.county_fips))
 
     providers = [p.strip() for p in args.providers.split(',') if p.strip()]
+    stats = GeocodeRunStats()
 
     if args.mode in {'addresses', 'both'}:
-        geocode_addresses(conn, county_fips_map, args.address_limit, args.sleep, providers, args.nominatim_agent)
+        geocode_addresses(
+            conn,
+            county_fips_map,
+            args.address_limit,
+            args.sleep,
+            providers,
+            args.nominatim_agent,
+            stats,
+            logger,
+        )
 
     if args.mode in {'coords', 'both'}:
-        geocode_coordinates(conn, county_fips_map, args.coord_limit, args.sleep)
+        geocode_coordinates(conn, county_fips_map, args.coord_limit, args.sleep, stats, logger)
 
     conn.close()
+
+    summary = stats.to_dict()
+    logger.info("geocode_summary=%s", json.dumps(summary, sort_keys=True))
+    if summary["partial_failures_total"] > 0 and not bool(args.allow_partial):
+        raise SystemExit(
+            "Geocoding completed with request failures. "
+            "Re-run with --allow-partial to accept partial results."
+        )
 
 
 if __name__ == '__main__':

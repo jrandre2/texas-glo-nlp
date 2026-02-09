@@ -9,7 +9,7 @@ Overview of the Texas GLO NLP project architecture, data flow, and component int
 - [Component Diagram](#component-diagram)
 - [Data Flow](#data-flow)
 - [Technology Stack](#technology-stack)
-- [Future Phases](#future-phases)
+- [Planned Enhancements](#planned-enhancements)
 
 ---
 
@@ -153,7 +153,52 @@ The system follows a multi-phase pipeline architecture:
 
 **Output**: `location_*` / `spatial_units` tables + `outputs/exports/spatial/spatial_*`
 
-### Phase 4: Semantic Search (Complete, Local)
+### Phase 3d: Extended Harvey Analysis (Complete)
+
+| Component | Purpose |
+|-----------|---------|
+| Subrecipient Extraction | Identify implementing organizations + classify type |
+| Activity Type Classification | Normalize DRGR activity types (buyout, rehab, etc.) |
+| Beneficiary Tracking | Extract household/unit metrics + tenure breakdown |
+| Geographic Analysis | Parse ZIP codes + location descriptions per activity |
+| Narrative Analysis | Extract progress narratives + embedded metrics |
+
+**Entry point**: `python src/populate_extended_data.py` (runs all 5 extractors in sequence)
+
+**Output**: `harvey_subrecipients`, `harvey_subrecipient_allocations`, `harvey_activity_types`, `harvey_beneficiaries`, `harvey_accomplishments`, `harvey_activity_locations`, `harvey_progress_narratives`
+
+### Phase 4: NLP Analysis Pipeline (Complete)
+
+| Component | Module | Purpose |
+|-----------|--------|---------|
+| Section Segmentation | `section_extractor.py` | Split pages into heading-delimited sections |
+| Section Classification | `section_classifier.py` | Label headings as narrative/finance/form/table/metadata |
+| Topic Clustering | `topic_model.py` | Embedding-based topic discovery (40 topics) |
+| Entity Resolution | `entity_resolution.py` | Canonicalize 32K+ org/program strings into stable forms |
+| Relation Extraction | `relation_extractor.py` | Build entity co-occurrence graph (1.8K+ edges) |
+| Money Context | `money_context_extractor.py` | Label dollar mentions as budget/expended/obligated/drawdown |
+
+**Entry point**: `make analyses` (runs all 6 steps in order)
+
+```
+document_text
+    │
+    ├──▶ section_extractor ──▶ document_sections
+    │                              │
+    │                              ├──▶ section_classifier ──▶ section_heading_families
+    │                              │          │
+    │                              │          └──▶ (narrative filter)
+    │                              │                    │
+    │                              ├──▶ topic_model ────┘──▶ topic_models / topics / topic_assignments
+    │                              │
+    │                              ├──▶ relation_extractor ──▶ entity_relations + evidence
+    │                              │
+    │                              └──▶ money_context_extractor ──▶ money_mentions + money_mention_entities
+    │
+    └──▶ entity_resolution ──▶ entity_canonical / entity_aliases
+```
+
+### Phase 5: Semantic Search (Complete, Local)
 
 | Component | Library | Purpose |
 |-----------|---------|---------|
@@ -161,13 +206,26 @@ The system follows a multi-phase pipeline architecture:
 | Vector Store | ChromaDB | Similarity search |
 | (Optional) LLM Q&A | Claude API | Not required for indexing; optional integration |
 
-### Phase 5: Dashboard (Complete)
+### Phase 6: Dashboard (Complete)
 
 | Component | Library | Purpose |
 |-----------|---------|---------|
 | Web UI | Streamlit | Interactive interface |
 | Visualizations | Plotly | Charts and graphs |
 | Search | Full-text + semantic | Document discovery |
+
+### Phase 7: Model-Ready / SEM Panels (Complete)
+
+| Component | Purpose |
+|-----------|---------|
+| Panel Builder | Aggregate DB tables into quarter-level panels (state/disaster/county/city) |
+| SEM Signal Extraction | Regex-extract numeric indicators for SEM constructs (admin, severity, performance) |
+| Quality Gates | Automated checks: non-empty outputs, quarter-over-quarter stability, SEM coverage |
+| Manifest | JSON metadata with build timestamp, row counts, and quality results |
+
+**Entry point**: `make model-ready` (runs `scripts/build_model_ready_datasets.py`)
+
+**Output**: `outputs/model_ready/panels/*.csv`, `outputs/model_ready/long/*.csv`, `outputs/model_ready/meta/*.{json,csv}`
 
 ---
 
@@ -205,8 +263,13 @@ The system follows a multi-phase pipeline architecture:
 Additional analysis/enrichment entry points:
 
 - Harvey funding flow: `financial_parser.py`, `funding_tracker.py`, `harvey_queries.py`
+- Extended Harvey analysis: `populate_extended_data.py` (orchestrates `subrecipient_extractor.py`, `activity_type_analyzer.py`, `beneficiary_tracker.py`, `geographic_analyzer.py`, `narrative_analyzer.py`)
+- Read-only Harvey analysis: `completion_analyzer.py`
+- NLP analysis chain: `section_extractor.py` → `section_classifier.py` → `topic_model.py`, `entity_resolution.py`, `relation_extractor.py`, `money_context_extractor.py`
 - Spatial extraction + mapping: `location_extractor.py`, `geocode_enricher.py`, `spatial_mapper.py`, `spatial_*_map.py`
+- Model-ready build: `scripts/build_model_ready_datasets.py`
 - Semantic search: `semantic_search.py`
+- Project status: `project_status.py`
 
 ---
 
@@ -266,6 +329,40 @@ documents + extracted_text
                                      └──▶ funding_tracker.py ──▶ outputs/exports/harvey/harvey_sankey_*.json + trends
 ```
 
+### Extended Harvey Analysis Flow
+
+```
+documents + extracted_text (Harvey QPRs)
+        │
+        └──▶ populate_extended_data.py (orchestrator)
+                │
+                ├──▶ subrecipient_extractor ──▶ harvey_subrecipients + allocations
+                ├──▶ activity_type_analyzer ──▶ harvey_activity_types
+                ├──▶ beneficiary_tracker ──▶ harvey_beneficiaries + accomplishments
+                ├──▶ geographic_analyzer ──▶ harvey_activity_locations
+                └──▶ narrative_analyzer ──▶ harvey_progress_narratives
+```
+
+### NLP Analysis Pipeline Flow
+
+```
+document_text + entities
+        │
+        ├──▶ section_extractor ──▶ document_sections
+        │                              │
+        │                              └──▶ section_classifier ──▶ section_heading_families
+        │                                        │
+        │                              ┌─────────┤ (narrative filter)
+        │                              │         │
+        │                              │    topic_model ──▶ topics + assignments
+        │                              │         │
+        │                              │    relation_extractor ──▶ entity_relations + evidence
+        │                              │         │
+        │                              │    money_context_extractor ──▶ money_mentions + entities
+        │                              │
+        └──▶ entity_resolution ──▶ entity_canonical + aliases (used by relations + money)
+```
+
 ### Spatial Extraction Flow
 
 ```
@@ -280,6 +377,18 @@ document_text + document_tables
                                        └──▶ spatial_mapper.py ──▶ outputs/exports/spatial/ exports + choropleth HTML
 ```
 
+### Model-Ready / SEM Panel Build Flow
+
+```
+All DB tables (harvey_*, entities, location_*, money_mentions, ...)
+        │
+        └──▶ build_model_ready_datasets.py
+                │
+                ├──▶ outputs/model_ready/long/          (activities, beneficiary_measures)
+                ├──▶ outputs/model_ready/panels/        (state/disaster/county/city x quarter)
+                └──▶ outputs/model_ready/meta/          (manifest, quality_report, sem_coverage)
+```
+
 ---
 
 ## Technology Stack
@@ -288,52 +397,25 @@ document_text + document_tables
 |-------|------------|---------|
 | **Language** | Python 3.12+ | Core implementation |
 | **PDF** | PyMuPDF, pdfplumber | Document processing |
-| **NLP** | spaCy | Entity recognition |
+| **NLP** | spaCy | Entity recognition + custom patterns |
+| **Clustering** | scikit-learn, sentence-transformers | Topic modeling (KMeans on embeddings) |
 | **Database** | SQLite | Structured storage |
 | **Analysis** | pandas, Jupyter | Data exploration |
 | **Visualization** | matplotlib, plotly, seaborn | Charts + HTML exports |
 | **Spatial** | h3 | Hex aggregation for point data |
 | **Geocoding (Optional)** | US Census Geocoder, ArcGIS, Nominatim | Lat/lon + GEOID enrichment |
-| **Embeddings** | sentence-transformers | Vectorization for semantic search |
+| **Embeddings** | sentence-transformers | Vectorization for search + topics |
 | **Vector DB** | ChromaDB | Local similarity search |
-| **LLM (Optional)** | Claude API | Not required for indexing; optional Q&A integration |
-| **Future: Dashboard** | Streamlit | Web interface |
+| **LLM (Optional)** | Claude API | Not required for pipeline; optional Q&A integration |
+| **Testing** | pytest | Unit/integration tests |
+| **Dashboard** | Streamlit | Web interface |
 
 ---
 
-## Future Phases
+## Planned Enhancements
 
-### Phase 4: Semantic Search
-
-```
-Documents ──▶ Chunking ──▶ Embeddings ──▶ ChromaDB
-                                              │
-User Query ──▶ Embed ──▶ Similarity Search ───┘
-                              │
-                              ▼
-                      (Optional) LLM ──▶ Answer
-```
-
-### Phase 5: Dashboard
-
-```
-┌─────────────────────────────────────────────────┐
-│                 Streamlit Dashboard              │
-├─────────────────────────────────────────────────┤
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────┐ │
-│  │   Search    │  │   Filters   │  │  Export │ │
-│  └─────────────┘  └─────────────┘  └─────────┘ │
-│  ┌─────────────────────────────────────────────┐│
-│  │              Results Grid                    ││
-│  │  • Entity matches                           ││
-│  │  • Document previews                        ││
-│  │  • Financial summaries                      ││
-│  └─────────────────────────────────────────────┘│
-│  ┌─────────────────────────────────────────────┐│
-│  │           Visualizations                     ││
-│  │  • Funding by disaster                      ││
-│  │  • Entity distribution                      ││
-│  │  • Timeline charts                          ││
-│  └─────────────────────────────────────────────┘│
-└─────────────────────────────────────────────────┘
-```
+- **External data joins**: Link ACS/Census socioeconomic indicators to county/tract panels for richer SEM models
+- **Staffing extraction**: Improve regex coverage for administrative staff counts and payroll amounts in QPR narratives
+- **City canonicalization**: Normalize city names across QPR location descriptions for cleaner city-level panels
+- **Temporal alignment**: Align QPR quarter labels with calendar quarters for merging with external time-series data
+- **Interactive dashboard**: Expand Streamlit prototype into production SEM exploration interface

@@ -26,7 +26,9 @@ The database contains core processing tables plus analysis/enrichment tables:
 | Entity Extraction | entities |
 | Data Linking | fema_disaster_mapping, national_grants, linked_entities |
 | Spatial / Locations | location_mentions, spatial_units, location_links, geocode_cache |
-| Harvey Funding Analysis | harvey_activities, harvey_quarterly_totals, harvey_org_allocations, harvey_county_allocations, harvey_funding_changes, … |
+| Harvey Funding Analysis | harvey_activities, harvey_quarterly_totals, harvey_org_allocations, harvey_county_allocations, harvey_funding_changes |
+| Extended Harvey Analysis | harvey_subrecipients, harvey_subrecipient_allocations, harvey_activity_types, harvey_activity_locations, harvey_beneficiaries, harvey_progress_narratives, harvey_accomplishments |
+| NLP Analysis | document_sections, section_heading_families, topic_models, topics, topic_assignments, entity_canonical, entity_aliases, entity_relations, entity_relation_evidence, money_mentions, money_mention_entities |
 
 ---
 
@@ -314,7 +316,7 @@ Quarter-to-quarter deltas for activity budget/status changes.
 
 ## NLP Analysis Tables
 
-These tables persist “higher-level” NLP layers built on top of extracted text/entities.
+These tables persist higher-level NLP layers built on top of extracted text/entities. They form a dependency chain: sections -> heading families -> topics + entity resolution -> relations + money context.
 
 ### document_sections
 
@@ -322,43 +324,424 @@ Heading-based segmentation of extracted page text (one row per section span).
 
 Populated by: `src/section_extractor.py`
 
-Key columns: `document_id`, `section_index`, `heading_text`, `start_page`, `start_line`, `end_page`, `end_line`.
+```sql
+CREATE TABLE IF NOT EXISTS document_sections (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    document_id INTEGER NOT NULL,
+    section_index INTEGER NOT NULL,
+    heading_raw TEXT,
+    heading_text TEXT,
+    heading_method TEXT,
+    start_page INTEGER NOT NULL,
+    start_line INTEGER NOT NULL,
+    end_page INTEGER NOT NULL,
+    end_line INTEGER NOT NULL,
+    n_lines INTEGER,
+    n_chars INTEGER,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (document_id) REFERENCES documents(id),
+    UNIQUE(document_id, section_index)
+);
+```
+
+| Column | Type | Description |
+|--------|------|-------------|
+| id | INTEGER | Auto-increment primary key |
+| document_id | INTEGER | Foreign key to documents table |
+| section_index | INTEGER | Section order within document (0-indexed) |
+| heading_raw | TEXT | Original heading text before normalization |
+| heading_text | TEXT | Normalized heading text |
+| heading_method | TEXT | How the heading was detected |
+| start_page / start_line | INTEGER | Start position (page + line) |
+| end_page / end_line | INTEGER | End position (page + line) |
+| n_lines | INTEGER | Number of text lines in section |
+| n_chars | INTEGER | Character count of section text |
 
 ### section_heading_families
 
-Heading-level taxonomy used to classify section headings into families (e.g., `narrative`, `finance`, `metadata`).
-This enables narrative-only filtering for topic modeling, relations, and money-context extraction.
+Heading-level taxonomy classifying section headings into families (e.g., `narrative`, `finance`, `metadata`). Enables narrative-only filtering for topic modeling, relations, and money-context extraction.
 
 Populated by: `src/section_classifier.py`
 
-Key columns: `heading_text`, `predicted_family`, `override_family`.
+```sql
+CREATE TABLE IF NOT EXISTS section_heading_families (
+    heading_text TEXT PRIMARY KEY,
+    predicted_family TEXT NOT NULL,
+    predicted_confidence REAL,
+    override_family TEXT,
+    override_notes TEXT,
+    method TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
 
-### topic_models / topics / topic_assignments
+| Column | Type | Description |
+|--------|------|-------------|
+| heading_text | TEXT | Primary key -- the normalized heading |
+| predicted_family | TEXT | Predicted family (narrative, finance, metadata, form, table) |
+| predicted_confidence | REAL | Classifier confidence (0-1) |
+| override_family | TEXT | Manual override family (if any) |
+| method | TEXT | Classification method |
 
-Stores topic model metadata and assignments from sections/chunks to topics.
+### topic_models
+
+Stores topic model metadata (one row per fitted model).
 
 Populated by: `src/topic_model.py`
 
-### entity_canonical / entity_aliases
+```sql
+CREATE TABLE IF NOT EXISTS topic_models (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    model_type TEXT NOT NULL,
+    embedding_model TEXT NOT NULL,
+    n_clusters INTEGER NOT NULL,
+    text_unit TEXT NOT NULL,
+    params_json TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(model_type, embedding_model, n_clusters, text_unit)
+);
+```
 
-Canonical registry and alias mappings for high-volume entities (ORG/PROGRAM/GPE/TX_COUNTY).
+### topics
+
+Individual topics within a model, with top terms and representative texts.
+
+```sql
+CREATE TABLE IF NOT EXISTS topics (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    model_id INTEGER NOT NULL,
+    topic_index INTEGER NOT NULL,
+    label TEXT,
+    size INTEGER,
+    top_terms_json TEXT,
+    representative_texts_json TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (model_id) REFERENCES topic_models(id),
+    UNIQUE(model_id, topic_index)
+);
+```
+
+### topic_assignments
+
+Maps sections/chunks to their assigned topic.
+
+```sql
+CREATE TABLE IF NOT EXISTS topic_assignments (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    model_id INTEGER NOT NULL,
+    section_id INTEGER,
+    document_id INTEGER NOT NULL,
+    chunk_index INTEGER DEFAULT 0,
+    topic_index INTEGER NOT NULL,
+    score REAL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (model_id) REFERENCES topic_models(id),
+    FOREIGN KEY (section_id) REFERENCES document_sections(id),
+    FOREIGN KEY (document_id) REFERENCES documents(id),
+    UNIQUE(model_id, section_id, document_id, chunk_index)
+);
+```
+
+### entity_canonical
+
+Canonical registry for high-volume entity types (ORG, PROGRAM, GPE, TX_COUNTY).
 
 Populated by: `src/entity_resolution.py`
 
-### entity_relations / entity_relation_evidence
+```sql
+CREATE TABLE IF NOT EXISTS entity_canonical (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    entity_type TEXT NOT NULL,
+    canonical_text TEXT NOT NULL,
+    method TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(entity_type, canonical_text)
+);
+```
 
-Lightweight co-occurrence graph edges and evidence snippets for drill-down.
+### entity_aliases
+
+Alias-to-canonical mappings. Many raw entity strings map to one canonical form.
+
+```sql
+CREATE TABLE IF NOT EXISTS entity_aliases (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    entity_type TEXT NOT NULL,
+    alias_text TEXT NOT NULL,
+    alias_normalized TEXT,
+    canonical_id INTEGER NOT NULL,
+    method TEXT,
+    confidence REAL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (canonical_id) REFERENCES entity_canonical(id),
+    UNIQUE(entity_type, alias_text)
+);
+```
+
+### entity_relations
+
+Lightweight co-occurrence graph edges connecting entities mentioned in the same sentence.
 
 Populated by: `src/relation_extractor.py`
 
-### money_mentions / money_mention_entities
+```sql
+CREATE TABLE IF NOT EXISTS entity_relations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    subject_type TEXT NOT NULL,
+    subject_text TEXT NOT NULL,
+    object_type TEXT NOT NULL,
+    object_text TEXT NOT NULL,
+    relation TEXT NOT NULL,
+    context_window TEXT NOT NULL,
+    weight INTEGER DEFAULT 1,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(subject_type, subject_text, object_type, object_text, relation, context_window)
+);
+```
 
-Money mentions extracted from narrative spans, labeled by context (budget/expended/obligated/drawdown) and linked to
-co-mentioned entities in the same sentence.
+### entity_relation_evidence
+
+Evidence snippets supporting each relation edge.
+
+```sql
+CREATE TABLE IF NOT EXISTS entity_relation_evidence (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    relation_id INTEGER NOT NULL,
+    document_id INTEGER NOT NULL,
+    page_number INTEGER,
+    snippet TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (relation_id) REFERENCES entity_relations(id),
+    FOREIGN KEY (document_id) REFERENCES documents(id)
+);
+```
+
+### money_mentions
+
+Money mentions extracted from narrative spans, labeled by context (budget/expended/obligated/drawdown).
 
 Populated by: `src/money_context_extractor.py`
 
-> For full DDL, see `src/utils.py` (`init_database`).
+```sql
+CREATE TABLE IF NOT EXISTS money_mentions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    document_id INTEGER NOT NULL,
+    page_number INTEGER,
+    section_id INTEGER,
+    section_heading_text TEXT,
+    section_family TEXT,
+    sentence TEXT,
+    mention_text TEXT NOT NULL,
+    start_char INTEGER,
+    end_char INTEGER,
+    amount_usd REAL,
+    context_label TEXT,
+    context_confidence REAL,
+    method TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (document_id) REFERENCES documents(id),
+    FOREIGN KEY (section_id) REFERENCES document_sections(id),
+    UNIQUE(document_id, page_number, start_char, end_char, mention_text)
+);
+```
+
+| Column | Type | Description |
+|--------|------|-------------|
+| document_id | INTEGER | Source document |
+| page_number | INTEGER | Page within document |
+| section_id | INTEGER | Parent section (if available) |
+| section_family | TEXT | Heading family of the section |
+| sentence | TEXT | Full sentence containing the mention |
+| mention_text | TEXT | The extracted dollar-amount text |
+| amount_usd | REAL | Parsed numeric value in USD |
+| context_label | TEXT | budget, expended, obligated, drawdown, or unknown |
+| context_confidence | REAL | Confidence of context classification |
+
+### money_mention_entities
+
+Entities co-mentioned with a money mention in the same sentence.
+
+```sql
+CREATE TABLE IF NOT EXISTS money_mention_entities (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    money_mention_id INTEGER NOT NULL,
+    entity_type TEXT NOT NULL,
+    entity_text TEXT NOT NULL,
+    method TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (money_mention_id) REFERENCES money_mentions(id),
+    UNIQUE(money_mention_id, entity_type, entity_text)
+);
+```
+
+---
+
+## Extended Harvey Analysis Tables
+
+These tables support deeper Harvey-specific analysis beyond the core `harvey_activities` table. They are populated by `src/populate_extended_data.py` (which orchestrates the individual extractors).
+
+### harvey_subrecipients
+
+Normalized subrecipient/implementing organizations.
+
+Populated by: `src/subrecipient_extractor.py`
+
+```sql
+CREATE TABLE IF NOT EXISTS harvey_subrecipients (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    normalized_name TEXT,
+    org_type TEXT CHECK(org_type IN ('government', 'nonprofit', 'private',
+                                     'quasi-governmental', 'unknown')),
+    parent_org TEXT,
+    first_seen_quarter TEXT,
+    last_seen_quarter TEXT,
+    total_expended REAL DEFAULT 0,
+    activity_count INTEGER DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(normalized_name)
+);
+```
+
+### harvey_subrecipient_allocations
+
+Per-activity funding allocations by subrecipient and quarter.
+
+```sql
+CREATE TABLE IF NOT EXISTS harvey_subrecipient_allocations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    subrecipient_id INTEGER REFERENCES harvey_subrecipients(id),
+    activity_code TEXT,
+    project_number TEXT,
+    quarter TEXT,
+    year INTEGER,
+    quarter_num INTEGER,
+    allocated REAL,
+    expended REAL,
+    drawdown REAL,
+    activity_count INTEGER DEFAULT 1,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(subrecipient_id, activity_code, quarter)
+);
+```
+
+### harvey_activity_types
+
+Normalized activity type classifications and national objectives.
+
+Populated by: `src/activity_type_analyzer.py`
+
+```sql
+CREATE TABLE IF NOT EXISTS harvey_activity_types (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    activity_code TEXT,
+    activity_type_raw TEXT,
+    activity_type_normalized TEXT,
+    is_buyout BOOLEAN DEFAULT FALSE,
+    housing_type TEXT CHECK(housing_type IN ('Single-family', 'Multifamily',
+                                             'Mixed', 'N/A')),
+    benefit_type TEXT,
+    national_objective TEXT,
+    quarter TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(activity_code, quarter)
+);
+```
+
+### harvey_activity_locations
+
+Geographic locations (ZIPs, addresses, counties) per activity.
+
+Populated by: `src/geographic_analyzer.py`
+
+```sql
+CREATE TABLE IF NOT EXISTS harvey_activity_locations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    activity_code TEXT,
+    quarter TEXT,
+    location_type TEXT CHECK(location_type IN ('zip_code', 'address',
+                                                'county', 'region')),
+    location_value TEXT,
+    city TEXT,
+    county TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+### harvey_beneficiaries
+
+Beneficiary performance measures per activity and quarter.
+
+Populated by: `src/beneficiary_tracker.py`
+
+```sql
+CREATE TABLE IF NOT EXISTS harvey_beneficiaries (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    activity_code TEXT,
+    quarter TEXT,
+    year INTEGER,
+    quarter_num INTEGER,
+    households_total INTEGER,
+    households_low INTEGER,
+    households_mod INTEGER,
+    households_lmi_percent REAL,
+    renter_households INTEGER,
+    owner_households INTEGER,
+    housing_units_total INTEGER,
+    sf_units INTEGER,
+    mf_units INTEGER,
+    elevated_structures INTEGER,
+    persons_total INTEGER,
+    persons_low INTEGER,
+    persons_mod INTEGER,
+    jobs_created INTEGER,
+    jobs_retained INTEGER,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(activity_code, quarter)
+);
+```
+
+### harvey_progress_narratives
+
+Activity Progress Narrative text and extracted metrics.
+
+Populated by: `src/narrative_analyzer.py`
+
+```sql
+CREATE TABLE IF NOT EXISTS harvey_progress_narratives (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    activity_code TEXT,
+    quarter TEXT,
+    year INTEGER,
+    quarter_num INTEGER,
+    narrative_text TEXT,
+    projects_completed INTEGER,
+    projects_underway INTEGER,
+    households_served INTEGER,
+    key_metrics TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(activity_code, quarter)
+);
+```
+
+### harvey_accomplishments
+
+Accomplishment performance measures (actual vs. expected) by activity and quarter.
+
+```sql
+CREATE TABLE IF NOT EXISTS harvey_accomplishments (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    activity_code TEXT,
+    quarter TEXT,
+    measure_type TEXT,
+    this_period INTEGER,
+    cumulative_actual INTEGER,
+    cumulative_expected INTEGER,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(activity_code, quarter, measure_type)
+);
+```
 
 ---
 
@@ -380,6 +763,47 @@ CREATE INDEX idx_fema_number ON fema_disaster_mapping(fema_number);
 -- National grants
 CREATE INDEX idx_national_grantee ON national_grants(grantee);
 CREATE INDEX idx_national_disaster ON national_grants(disaster_type);
+
+-- Spatial / Location
+CREATE INDEX idx_location_mentions_doc ON location_mentions(document_id);
+CREATE INDEX idx_location_mentions_geo ON location_mentions(latitude, longitude);
+CREATE INDEX idx_location_mentions_admin ON location_mentions(county, zip, census_tract, block_group);
+CREATE INDEX idx_spatial_units_type ON spatial_units(unit_type);
+CREATE INDEX idx_location_links_mention ON location_links(location_mention_id);
+CREATE INDEX idx_location_links_unit ON location_links(spatial_unit_id);
+
+-- NLP Analysis
+CREATE INDEX idx_doc_sections_doc ON document_sections(document_id);
+CREATE INDEX idx_doc_sections_heading ON document_sections(heading_text);
+CREATE INDEX idx_doc_sections_span ON document_sections(document_id, start_page, end_page);
+CREATE INDEX idx_heading_families_pred ON section_heading_families(predicted_family);
+CREATE INDEX idx_topics_model ON topics(model_id);
+CREATE INDEX idx_topic_assign_model ON topic_assignments(model_id);
+CREATE INDEX idx_topic_assign_doc ON topic_assignments(document_id);
+CREATE INDEX idx_entity_canonical_type ON entity_canonical(entity_type);
+CREATE INDEX idx_entity_aliases_type ON entity_aliases(entity_type);
+CREATE INDEX idx_entity_aliases_canonical ON entity_aliases(canonical_id);
+CREATE INDEX idx_entity_relations_subject ON entity_relations(subject_type, subject_text);
+CREATE INDEX idx_entity_relations_object ON entity_relations(object_type, object_text);
+CREATE INDEX idx_entity_relations_weight ON entity_relations(weight);
+CREATE INDEX idx_entity_rel_evidence_rel ON entity_relation_evidence(relation_id);
+CREATE INDEX idx_money_mentions_doc ON money_mentions(document_id);
+CREATE INDEX idx_money_mentions_context ON money_mentions(context_label);
+CREATE INDEX idx_money_mentions_amount ON money_mentions(amount_usd);
+CREATE INDEX idx_money_mentions_section ON money_mentions(section_id);
+CREATE INDEX idx_money_mention_entities_mid ON money_mention_entities(money_mention_id);
+CREATE INDEX idx_money_mention_entities_type ON money_mention_entities(entity_type);
+
+-- Extended Harvey
+CREATE INDEX idx_subrecipients_name ON harvey_subrecipients(normalized_name);
+CREATE INDEX idx_subrecipients_type ON harvey_subrecipients(org_type);
+CREATE INDEX idx_subrec_alloc_quarter ON harvey_subrecipient_allocations(quarter);
+CREATE INDEX idx_activity_types_normalized ON harvey_activity_types(activity_type_normalized);
+CREATE INDEX idx_activity_types_buyout ON harvey_activity_types(is_buyout);
+CREATE INDEX idx_locations_activity ON harvey_activity_locations(activity_code);
+CREATE INDEX idx_beneficiaries_activity ON harvey_beneficiaries(activity_code);
+CREATE INDEX idx_narratives_activity ON harvey_progress_narratives(activity_code);
+CREATE INDEX idx_accomplishments_activity ON harvey_accomplishments(activity_code);
 ```
 
 ---
@@ -478,6 +902,73 @@ ORDER BY table_count DESC
 LIMIT 20;
 ```
 
+### NLP Analysis Queries
+
+```sql
+-- Money mentions by context label
+SELECT context_label, COUNT(*) as mentions,
+       ROUND(AVG(amount_usd), 2) as avg_amount
+FROM money_mentions
+GROUP BY context_label
+ORDER BY mentions DESC;
+
+-- Top entity co-occurrences (relation edges)
+SELECT subject_type, subject_text, object_type, object_text, weight
+FROM entity_relations
+ORDER BY weight DESC
+LIMIT 20;
+
+-- Topic size distribution
+SELECT t.topic_index, t.label, t.size, t.top_terms_json
+FROM topics t
+JOIN topic_models m ON t.model_id = m.id
+ORDER BY t.size DESC
+LIMIT 10;
+
+-- Entity canonical forms with alias count
+SELECT ec.entity_type, ec.canonical_text,
+       COUNT(ea.id) as n_aliases
+FROM entity_canonical ec
+LEFT JOIN entity_aliases ea ON ec.id = ea.canonical_id
+GROUP BY ec.id
+ORDER BY n_aliases DESC
+LIMIT 20;
+
+-- Money mentions with co-mentioned entities
+SELECT mm.context_label, mm.amount_usd, mm.mention_text,
+       mme.entity_type, mme.entity_text
+FROM money_mentions mm
+JOIN money_mention_entities mme ON mm.id = mme.money_mention_id
+WHERE mm.amount_usd > 1000000
+ORDER BY mm.amount_usd DESC
+LIMIT 20;
+```
+
+### Extended Harvey Queries
+
+```sql
+-- Subrecipient funding by org type
+SELECT org_type, COUNT(*) as orgs,
+       SUM(total_expended) as total_spent
+FROM harvey_subrecipients
+GROUP BY org_type
+ORDER BY total_spent DESC;
+
+-- Activity types distribution
+SELECT activity_type_normalized, COUNT(*) as n,
+       SUM(is_buyout) as n_buyout
+FROM harvey_activity_types
+GROUP BY activity_type_normalized
+ORDER BY n DESC;
+
+-- Beneficiary totals by quarter
+SELECT quarter, SUM(households_total) as hh,
+       SUM(persons_total) as persons
+FROM harvey_beneficiaries
+GROUP BY quarter
+ORDER BY quarter;
+```
+
 ---
 
 ## Data Statistics
@@ -505,7 +996,7 @@ LIMIT 20;
 | location_links | 980,838 |
 | geocode_cache | 30,626 |
 
-### Harvey Analysis Counts (Selected)
+### Harvey Analysis Counts
 
 | Table | Row Count |
 |-------|-----------|
@@ -514,6 +1005,38 @@ LIMIT 20;
 | harvey_org_allocations | 164 |
 | harvey_county_allocations | 1,562 |
 | harvey_funding_changes | 3,078 |
+
+### Extended Harvey Counts
+
+> These tables are populated on demand via `python src/populate_extended_data.py`. Run `make stats` for current values.
+
+| Table | Row Count (approx.) |
+|-------|-----------|
+| harvey_subrecipients | ~50-100 |
+| harvey_subrecipient_allocations | ~5,000 |
+| harvey_activity_types | ~15,000 |
+| harvey_activity_locations | ~20,000 |
+| harvey_beneficiaries | ~15,000 |
+| harvey_progress_narratives | ~15,000 |
+| harvey_accomplishments | ~5,000 |
+
+### NLP Analysis Counts
+
+> Run `make stats` for current values.
+
+| Table | Row Count (approx.) |
+|-------|-----------|
+| document_sections | ~1,000,000 |
+| section_heading_families | ~830 |
+| topic_models | 1 |
+| topics | 40 |
+| topic_assignments | ~150,000 |
+| entity_canonical | ~3,150 |
+| entity_aliases | ~3,540 |
+| entity_relations | ~1,840 |
+| entity_relation_evidence | ~3,690 |
+| money_mentions | ~1,053,000 |
+| money_mention_entities | ~1,315,000 |
 
 ### Entity Distribution (Top Types)
 

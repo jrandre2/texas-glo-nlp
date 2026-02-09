@@ -21,6 +21,8 @@ from __future__ import annotations
 
 import argparse
 import html
+import json
+import logging
 import re
 import sqlite3
 from dataclasses import dataclass
@@ -932,12 +934,18 @@ def build_outputs(
     semantic: bool = True,
     semantic_model: str = SEMANTIC_MODEL_DEFAULT,
     bertopic: bool = True,
-) -> Dict[str, Path]:
+    allow_partial: bool = False,
+    logger: Optional[logging.Logger] = None,
+) -> Dict[str, Any]:
+    if logger is None:
+        logger = logging.getLogger("harvey_fund_switch_report")
+
     _safe_mkdir(EXPORTS_DIR)
     _safe_mkdir(REPORTS_DIR)
     _safe_mkdir(ASSETS_DIR)
 
     con = sqlite3.connect(str(db_path))
+    partial_failures: List[str] = []
 
     docs = _read_sql(
         con,
@@ -1417,6 +1425,14 @@ def build_outputs(
     {''.join(theme_details_html) if theme_details_html else '<div class="muted">No themes available.</div>'}
 """
         except Exception as e:
+            msg = f"Semantic enhancement skipped: {e}"
+            logger.warning(msg)
+            if not allow_partial:
+                con.close()
+                raise RuntimeError(
+                    "Semantic enhancement failed. Re-run with --allow-partial to continue with placeholders."
+                ) from e
+            partial_failures.append(msg)
             # Keep the rest of the heuristic report working even if semantic deps/models aren't available.
             pd.DataFrame(columns=["document_id", "paragraph", "semantic_score"]).to_csv(out_semantic, index=False)
             pd.DataFrame(columns=["semantic_group_id", "n_hits"]).to_csv(out_semantic_groups, index=False)
@@ -1906,6 +1922,14 @@ def build_outputs(
     {timeline_html}
 """
         except Exception as e:
+            msg = f"BERTopic skipped: {e}"
+            logger.warning(msg)
+            if not allow_partial:
+                con.close()
+                raise RuntimeError(
+                    "BERTopic enhancement failed. Re-run with --allow-partial to continue with placeholders."
+                ) from e
+            partial_failures.append(msg)
             pd.DataFrame(columns=["topic_id", "n_paragraphs"]).to_csv(out_ber_topics, index=False)
             pd.DataFrame(columns=["document_id", "paragraph", "bertopic_topic_id"]).to_csv(out_ber_assign, index=False)
             pd.DataFrame(columns=["year", "quarter", "quarter_label", "bertopic_topic_id", "topic_label", "n_paragraphs", "n_unique_paragraphs", "n_pdfs"]).to_csv(
@@ -2153,6 +2177,15 @@ def build_outputs(
 
     con.close()
 
+    summary = {
+        "documents_scanned": int(n_docs),
+        "statement_hits": int(n_hits),
+        "high_confidence_hits": int(n_high),
+        "medium_confidence_hits": int(n_medium),
+        "partial_failures": int(len(partial_failures)),
+    }
+    logger.info("harvey_fund_switch_summary=%s", json.dumps(summary, sort_keys=True))
+
     return {
         "statements_csv": out_statements,
         "doc_summary_csv": out_doc_summary,
@@ -2163,6 +2196,7 @@ def build_outputs(
         "theme_timeline_csv": out_theme_timeline,
         "reloc_timeline_csv": out_reloc_timeline,
         "report_html": report_path,
+        "partial_failures": partial_failures,
     }
 
 
@@ -2172,17 +2206,43 @@ def main() -> None:
     ap.add_argument("--no-semantic", action="store_true", help="Skip transformer-based semantic ranking/clustering")
     ap.add_argument("--no-bertopic", action="store_true", help="Skip BERTopic topic modeling section")
     ap.add_argument("--semantic-model", type=str, default=SEMANTIC_MODEL_DEFAULT, help="SentenceTransformer model name")
+    ap.add_argument(
+        "--allow-partial",
+        action="store_true",
+        help="Do not fail if semantic/BERTopic enhancement steps error; emit placeholder outputs instead",
+    )
+    ap.add_argument(
+        "--log-level",
+        type=str,
+        default="INFO",
+        choices=["DEBUG", "INFO", "WARNING", "ERROR"],
+        help="Logging level",
+    )
     args = ap.parse_args()
+
+    logging.basicConfig(
+        level=getattr(logging, str(args.log_level).upper()),
+        format="%(asctime)s %(levelname)s %(name)s %(message)s",
+    )
+    logger = logging.getLogger("harvey_fund_switch_report")
 
     outputs = build_outputs(
         Path(args.db),
         semantic=not bool(args.no_semantic),
         semantic_model=str(args.semantic_model),
         bertopic=not bool(args.no_bertopic),
+        allow_partial=bool(args.allow_partial),
+        logger=logger,
     )
     print("Wrote:")
     for k, v in outputs.items():
-        print(f"  {k:<18} {v.relative_to(ROOT)}")
+        if isinstance(v, Path):
+            print(f"  {k:<18} {v.relative_to(ROOT)}")
+    partial_failures = outputs.get("partial_failures", [])
+    if partial_failures:
+        print("Partial failures:")
+        for msg in partial_failures:
+            print(f"  - {msg}")
 
 
 if __name__ == "__main__":

@@ -40,3 +40,6 @@ streamlit>=1.32.0
 # Utilities
 tqdm>=4.66.0             # Progress bars
 python-dotenv>=1.0.0     # Environment variables
+
+# Testing
+pytest>=8.2.0

@@ -10,7 +10,7 @@ Regenerate everything with:
 
 - `panels/` — wide tables (one row per unit/time) for modeling
 - `long/` — long-form tables for flexible EDA/visualization
-- `meta/` — build manifest and coverage stats
+- `meta/` — build manifest, quality checks, and SEM coverage/dictionary files
 
 See `docs/MODEL_READY.md` for dataset descriptions and known coverage limits.
-
+See `docs/SEM_DATA.md` for SEM-specific construct derivation and provenance guidance.

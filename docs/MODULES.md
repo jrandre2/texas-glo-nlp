@@ -28,6 +28,14 @@ Documentation for the main pipeline modules and analysis scripts in `src/`.
 - [money_context_extractor.py](#money_context_extractorpy)
 - [ner_evaluate.py](#ner_evaluatepy)
 - [db_maintenance.py](#db_maintenancepy)
+- [subrecipient_extractor.py](#subrecipient_extractorpy)
+- [activity_type_analyzer.py](#activity_type_analyzerpy)
+- [beneficiary_tracker.py](#beneficiary_trackerpy)
+- [completion_analyzer.py](#completion_analyzerpy)
+- [geographic_analyzer.py](#geographic_analyzerpy)
+- [narrative_analyzer.py](#narrative_analyzerpy)
+- [populate_extended_data.py](#populate_extended_datapy)
+- [project_status.py](#project_statuspy)
 
 ---
 
@@ -891,4 +899,427 @@ Generate a tract choropleth for the latest quarter (`outputs/exports/spatial/spa
 
 ```bash
 python src/spatial_tract_quarter_map.py
+```
+
+---
+
+## subrecipient_extractor.py
+
+Extract and normalize subrecipient (implementing organization) data from Harvey QPR files. Classifies organizations by type and tracks per-activity funding allocations.
+
+### SubrecipientExtractor Class
+
+```python
+from src.subrecipient_extractor import SubrecipientExtractor
+
+extractor = SubrecipientExtractor()
+extractor = SubrecipientExtractor(db_path=Path('/custom/db.sqlite'))
+```
+
+### Key Methods
+
+#### normalize_org_name(name: str) -> str
+
+Standardize organization names via built-in alias mappings.
+
+```python
+extractor.normalize_org_name("Harris Cnty")  # "Harris County"
+```
+
+#### classify_org_type(name: str) -> str
+
+Classify organization as `government`, `nonprofit`, `private`, or `quasi-governmental`.
+
+```python
+extractor.classify_org_type("Harris County")  # "government"
+extractor.classify_org_type("BakerRipley")    # "nonprofit"
+```
+
+#### process_all_harvey_qprs()
+
+Batch process all Harvey QPR files, extracting responsible organizations, budgets, and expenditures per activity.
+
+#### get_subrecipient_summary() -> pd.DataFrame
+
+All organizations with total funding amounts.
+
+#### get_funding_by_org_type() -> pd.DataFrame
+
+Funding breakdown aggregated by organization type.
+
+**Primary outputs (tables)**: `harvey_subrecipients`, `harvey_subrecipient_allocations`
+
+### CLI Usage
+
+```bash
+# Extract subrecipients from Harvey QPRs
+python src/subrecipient_extractor.py --process
+
+# Show summary of all organizations
+python src/subrecipient_extractor.py --summary
+
+# Show funding breakdown by org type
+python src/subrecipient_extractor.py --by-type
+```
+
+---
+
+## activity_type_analyzer.py
+
+Classify Harvey activities by normalized type (Acquisition/Buyout, Rehabilitation/Reconstruction, Homeownership Assistance, Infrastructure, etc.) with special tracking of buyout programs.
+
+### ActivityTypeAnalyzer Class
+
+```python
+from src.activity_type_analyzer import ActivityTypeAnalyzer
+
+analyzer = ActivityTypeAnalyzer()
+```
+
+### Key Methods
+
+#### classify_activity_type(raw_type: str) -> str
+
+Map raw DRGR activity type strings to normalized categories.
+
+#### classify_housing_type(text: str) -> str
+
+Determine single-family, multifamily, or mixed housing type from activity text.
+
+#### extract_national_objective(text: str) -> str
+
+Parse the HUD national objective field (LMI, Urgent Need, Slum/Blight).
+
+#### process_all_harvey_qprs()
+
+Batch process all Harvey QPR files, classifying each activity.
+
+#### get_type_distribution() -> pd.DataFrame
+
+Activity type counts by quarter.
+
+#### get_types_by_organization() -> pd.DataFrame
+
+Activity type breakdown by responsible organization.
+
+#### get_buyout_summary() -> pd.DataFrame
+
+Summary statistics for buyout/acquisition activities specifically.
+
+**Primary outputs (tables)**: `harvey_activity_types`
+
+### CLI Usage
+
+```bash
+# Classify activities from Harvey QPRs
+python src/activity_type_analyzer.py --process
+
+# Show activity type distribution
+python src/activity_type_analyzer.py --distribution
+
+# Show types by organization
+python src/activity_type_analyzer.py --by-org
+
+# Show buyout program summary
+python src/activity_type_analyzer.py --buyouts
+```
+
+---
+
+## beneficiary_tracker.py
+
+Extract and track beneficiary performance measures from Harvey QPR files: households served, housing units completed, renter/owner tenure, and single-family/multifamily breakdowns.
+
+### BeneficiaryTracker Class
+
+```python
+from src.beneficiary_tracker import BeneficiaryTracker
+
+tracker = BeneficiaryTracker()
+```
+
+### Key Methods
+
+#### parse_beneficiary_line(line: str) -> Dict
+
+Parse a single beneficiary performance measure line from QPR text.
+
+#### extract_beneficiaries(activity_text: str) -> List[Dict]
+
+Extract household/person/job metrics from an activity block.
+
+#### extract_accomplishments(activity_text: str) -> List[Dict]
+
+Extract housing unit completion metrics (actual vs expected).
+
+#### process_all_harvey_qprs()
+
+Batch process all Harvey QPR files.
+
+#### get_tenure_breakdown() -> pd.DataFrame
+
+Renter vs owner household analysis across activities.
+
+#### get_housing_type_breakdown() -> pd.DataFrame
+
+Single-family vs multifamily unit analysis.
+
+#### get_beneficiaries_by_activity_type() -> pd.DataFrame
+
+Beneficiary counts broken down by activity type (requires `harvey_activity_types`).
+
+**Primary outputs (tables)**: `harvey_beneficiaries`, `harvey_accomplishments`
+
+### CLI Usage
+
+```bash
+# Extract beneficiary data from Harvey QPRs
+python src/beneficiary_tracker.py --process
+
+# Show renter vs owner breakdown
+python src/beneficiary_tracker.py --tenure
+
+# Show housing type breakdown
+python src/beneficiary_tracker.py --housing
+
+# Show beneficiaries by activity type
+python src/beneficiary_tracker.py --by-type
+```
+
+---
+
+## completion_analyzer.py
+
+Analyze activity completion rates and time-to-completion by organization type, activity type, and sector. Read-only analysis module — does not write to the database.
+
+### CompletionAnalyzer Class
+
+```python
+from src.completion_analyzer import CompletionAnalyzer
+
+analyzer = CompletionAnalyzer()
+```
+
+### Key Methods
+
+#### calculate_completion_rates_by_org_type() -> pd.DataFrame
+
+Completion rates grouped by government/nonprofit/private.
+
+#### calculate_completion_rates_by_activity_type() -> pd.DataFrame
+
+Completion rates grouped by normalized activity type.
+
+#### get_sector_comparison() -> pd.DataFrame
+
+Compare sector performance including funding data.
+
+#### get_quarterly_completion_trends() -> pd.DataFrame
+
+Track completion rates across quarters.
+
+#### get_buyout_vs_nonbuyout_completion() -> pd.DataFrame
+
+Compare buyout vs non-buyout activity completion rates.
+
+**Tables read**: `harvey_activities`, `harvey_activity_types`, `harvey_subrecipient_allocations`, `harvey_subrecipients`
+
+### CLI Usage
+
+```bash
+# Show completion rates by organization type
+python src/completion_analyzer.py --by-org
+
+# Show completion rates by activity type
+python src/completion_analyzer.py --by-activity
+
+# Show sector comparison
+python src/completion_analyzer.py --sector
+
+# Show quarterly trends
+python src/completion_analyzer.py --trends
+
+# Compare buyout vs non-buyout
+python src/completion_analyzer.py --buyout
+```
+
+---
+
+## geographic_analyzer.py
+
+Extract and analyze geographic data (ZIP codes, cities, counties) from Harvey QPR location description fields. Supports ZIP range expansion and choropleth data generation.
+
+### GeographicAnalyzer Class
+
+```python
+from src.geographic_analyzer import GeographicAnalyzer
+
+analyzer = GeographicAnalyzer()
+```
+
+### Key Methods
+
+#### expand_zip_range(range_str: str) -> List[str]
+
+Expand ZIP code ranges (e.g., `"77001-77009"`) into individual codes.
+
+#### extract_zip_codes(text: str) -> List[str]
+
+Parse all ZIP codes from location description text.
+
+#### extract_location_description(activity_text: str) -> str
+
+Extract the Location Description field from a QPR activity block.
+
+#### process_all_harvey_qprs()
+
+Batch process all Harvey QPR files, extracting location data per activity.
+
+#### get_zip_coverage() -> pd.DataFrame
+
+ZIP codes with activity counts.
+
+#### get_activities_by_zip(zip_code: str) -> pd.DataFrame
+
+All activities associated with a specific ZIP code.
+
+#### generate_choropleth_data() -> pd.DataFrame
+
+Generate aggregated data suitable for ZIP code choropleth mapping.
+
+**Primary outputs (tables)**: `harvey_activity_locations`
+
+### CLI Usage
+
+```bash
+# Extract geographic data from Harvey QPRs
+python src/geographic_analyzer.py --process
+
+# Show ZIP code coverage
+python src/geographic_analyzer.py --coverage
+
+# Show coverage by program/grant number
+python src/geographic_analyzer.py --by-program
+
+# Look up activities in a specific ZIP
+python src/geographic_analyzer.py --zip 77004
+```
+
+---
+
+## narrative_analyzer.py
+
+Extract and analyze Activity Progress Narrative text from Harvey QPR files. Tracks narrative changes over quarters and parses quantitative metrics embedded in narrative text.
+
+### NarrativeAnalyzer Class
+
+```python
+from src.narrative_analyzer import NarrativeAnalyzer
+
+analyzer = NarrativeAnalyzer()
+```
+
+### Key Methods
+
+#### extract_narrative(activity_text: str) -> str
+
+Extract the Activity Progress Narrative section from a QPR activity block.
+
+#### extract_metrics_from_narrative(text: str) -> Dict
+
+Parse quantitative metrics (dollar amounts, counts, percentages) from narrative text.
+
+#### process_all_harvey_qprs()
+
+Batch process all Harvey QPR files.
+
+#### get_narrative_timeline(activity_code: str) -> pd.DataFrame
+
+Narrative text changes for a specific activity across quarters.
+
+#### get_progress_summary() -> pd.DataFrame
+
+Aggregate progress metrics by quarter.
+
+#### search_narratives(keyword: str) -> pd.DataFrame
+
+Full-text search of narrative text.
+
+**Primary outputs (tables)**: `harvey_progress_narratives`
+
+### CLI Usage
+
+```bash
+# Extract narratives from Harvey QPRs
+python src/narrative_analyzer.py --process
+
+# Show progress summary
+python src/narrative_analyzer.py --summary
+
+# Show quarterly progress trends
+python src/narrative_analyzer.py --trends
+
+# Show narrative timeline for a specific activity
+python src/narrative_analyzer.py --activity "HOA-HC-001"
+
+# Search narratives by keyword
+python src/narrative_analyzer.py --search "environmental review"
+```
+
+---
+
+## populate_extended_data.py
+
+Master orchestration script that runs all extended Harvey extractors in sequence. This is the single entry point for populating all extended Harvey analysis tables.
+
+### Execution Order
+
+1. `SubrecipientExtractor` → `harvey_subrecipients`, `harvey_subrecipient_allocations`
+2. `ActivityTypeAnalyzer` → `harvey_activity_types`
+3. `BeneficiaryTracker` → `harvey_beneficiaries`, `harvey_accomplishments`
+4. `GeographicAnalyzer` → `harvey_activity_locations`
+5. `NarrativeAnalyzer` → `harvey_progress_narratives`
+
+### CLI Usage
+
+```bash
+# Run all extended Harvey extractors
+python src/populate_extended_data.py
+```
+
+No flags — runs the full sequence unconditionally. For selective re-runs, call individual extractors directly.
+
+---
+
+## project_status.py
+
+Project snapshot utility that prints table row counts, latest quarter, entity statistics, and optional directory sizes. Used by `make stats`.
+
+### Functions
+
+#### build_status(db_path: Path = None) -> Dict
+
+Compute a status dictionary from the database and file system.
+
+```python
+from src.project_status import build_status
+
+status = build_status()
+# {'latest_quarter': 'Q4 2025', 'tables': {'documents': 442, ...}, ...}
+```
+
+### CLI Usage
+
+```bash
+# Print project snapshot
+python src/project_status.py
+
+# Include directory sizes (slower — walks file tree)
+python src/project_status.py --sizes
+
+# Output as JSON
+python src/project_status.py --json
+
+# Use a custom database path
+python src/project_status.py --db /path/to/db.sqlite
 ```

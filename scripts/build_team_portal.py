@@ -320,6 +320,30 @@ def _artifacts() -> Dict[str, List[Artifact]]:
                 kind="csv",
             ),
             Artifact(
+                label="SEM panel: disaster × quarter (CSV)",
+                relpath="outputs/model_ready/panels/panel_disaster_quarter_sem.csv",
+                description="SEM-focused disaster-by-quarter panel with program/performance and extracted admin/affected/severity constructs.",
+                kind="csv",
+            ),
+            Artifact(
+                label="SEM panel: county × quarter (CSV)",
+                relpath="outputs/model_ready/panels/panel_county_quarter_sem.csv",
+                description="SEM-focused county-by-quarter panel with stable schema and construct coverage columns.",
+                kind="csv",
+            ),
+            Artifact(
+                label="SEM panel: city × quarter (CSV)",
+                relpath="outputs/model_ready/panels/panel_city_quarter_sem.csv",
+                description="SEM-focused city-by-quarter panel with stable schema and construct coverage columns.",
+                kind="csv",
+            ),
+            Artifact(
+                label="SEM panel: state × quarter (CSV)",
+                relpath="outputs/model_ready/panels/panel_state_quarter_sem.csv",
+                description="SEM-focused statewide quarter panel with stable schema.",
+                kind="csv",
+            ),
+            Artifact(
                 label="Activities (long) (CSV)",
                 relpath="outputs/model_ready/long/activities.csv",
                 description="One row per detected activity-group (header page + continuation pages) with status/type, geo hints, money aggregates, and beneficiary summaries (when present).",
@@ -362,6 +386,12 @@ def _artifacts() -> Dict[str, List[Artifact]]:
                 kind="csv",
             ),
             Artifact(
+                label="SEM construct signals (long) (CSV)",
+                relpath="outputs/model_ready/long/sem_construct_signals.csv",
+                description="Row-level extracted SEM signals with source-page provenance, confidence, and inferred geography.",
+                kind="csv",
+            ),
+            Artifact(
                 label="Severity proxies by quarter (CSV)",
                 relpath="outputs/model_ready/long/severity_proxies_by_quarter.csv",
                 description="Quarterly rainfall/wind-speed proxies parsed from entity text (use as weak signals; prefer external joins).",
@@ -378,6 +408,18 @@ def _artifacts() -> Dict[str, List[Artifact]]:
                 relpath="outputs/model_ready/meta/manifest.json",
                 description="Build timestamp + row counts for each model-ready dataset.",
                 kind="json",
+            ),
+            Artifact(
+                label="SEM coverage report (CSV)",
+                relpath="outputs/model_ready/meta/sem_coverage_report.csv",
+                description="Non-null/non-zero coverage summary for SEM variables by panel.",
+                kind="csv",
+            ),
+            Artifact(
+                label="SEM variable dictionary (CSV)",
+                relpath="outputs/model_ready/meta/sem_variable_dictionary.csv",
+                description="Column-level SEM dictionary and derivation notes.",
+                kind="csv",
             ),
         ],
         "Docs": [
@@ -415,6 +457,12 @@ def _artifacts() -> Dict[str, List[Artifact]]:
                 label="Model-ready datasets",
                 relpath="docs/MODEL_READY.md",
                 description="What model-ready datasets exist + how to build them.",
+                kind="md",
+            ),
+            Artifact(
+                label="SEM data guide",
+                relpath="docs/SEM_DATA.md",
+                description="SEM schema, derivation logic, provenance fields, and quality checks.",
                 kind="md",
             ),
             Artifact(

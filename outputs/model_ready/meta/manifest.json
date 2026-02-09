@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-02-05T13:00:40",
+  "built_at": "2026-02-09T13:02:42",
   "db_path": "/Volumes/T9/Texas GLO Action Plan Project/data/glo_reports.db",
   "outputs": {
     "panel_document": "outputs/model_ready/panels/panel_document.csv",
@@ -9,13 +9,20 @@
     "panel_county_quarter": "outputs/model_ready/panels/panel_county_quarter.csv",
     "panel_city_quarter": "outputs/model_ready/panels/panel_city_quarter.csv",
     "panel_state_quarter": "outputs/model_ready/panels/panel_state_quarter.csv",
+    "panel_disaster_quarter_sem": "outputs/model_ready/panels/panel_disaster_quarter_sem.csv",
+    "panel_county_quarter_sem": "outputs/model_ready/panels/panel_county_quarter_sem.csv",
+    "panel_city_quarter_sem": "outputs/model_ready/panels/panel_city_quarter_sem.csv",
+    "panel_state_quarter_sem": "outputs/model_ready/panels/panel_state_quarter_sem.csv",
     "money_mentions_by_quarter": "outputs/model_ready/long/money_mentions_by_quarter.csv",
     "topic_trends_by_quarter": "outputs/model_ready/long/topic_trends_by_quarter.csv",
     "entity_counts_by_quarter": "outputs/model_ready/long/entity_counts_by_quarter.csv",
     "keyword_pages_by_quarter": "outputs/model_ready/long/keyword_pages_by_quarter.csv",
     "beneficiary_measures": "outputs/model_ready/long/beneficiary_measures.csv",
+    "sem_construct_signals": "outputs/model_ready/long/sem_construct_signals.csv",
     "severity_proxies_by_quarter": "outputs/model_ready/long/severity_proxies_by_quarter.csv",
-    "fema_declarations_by_quarter": "outputs/model_ready/long/fema_declarations_by_quarter.csv"
+    "fema_declarations_by_quarter": "outputs/model_ready/long/fema_declarations_by_quarter.csv",
+    "sem_coverage_report": "outputs/model_ready/meta/sem_coverage_report.csv",
+    "sem_variable_dictionary": "outputs/model_ready/meta/sem_variable_dictionary.csv"
   },
   "row_counts": {
     "panel_document": 442,
@@ -25,12 +32,24 @@
     "panel_county_quarter": 5419,
     "panel_city_quarter": 35673,
     "panel_state_quarter": 66,
+    "panel_disaster_quarter_sem": 442,
+    "panel_county_quarter_sem": 5419,
+    "panel_city_quarter_sem": 35673,
+    "panel_state_quarter_sem": 66,
     "money_mentions_by_quarter": 1893,
     "topic_trends_by_quarter": 5139,
     "entity_counts_by_quarter": 9245,
     "keyword_pages_by_quarter": 803,
-    "beneficiary_measures": 2823,
+    "beneficiary_measures": 2875,
+    "sem_construct_signals": 938,
     "severity_proxies_by_quarter": 567,
-    "fema_declarations_by_quarter": 656
-  }
+    "fema_declarations_by_quarter": 656,
+    "sem_coverage_report": 226,
+    "sem_variable_dictionary": 265
+  },
+  "quality": {
+    "ok": true,
+    "failure_count": 0
+  },
+  "macos_artifacts_removed": 23
 }

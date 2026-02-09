@@ -15,6 +15,9 @@ Step-by-step guides for common processing tasks.
 - [Workflow 9: Harvey Funding Flow Exports](#workflow-9-harvey-funding-flow-exports)
 - [Workflow 10: Spatial Extraction and Choropleth Maps](#workflow-10-spatial-extraction-and-choropleth-maps)
 - [Workflow 11: Run NLP Analyses](#workflow-11-run-nlp-analyses)
+- [Workflow 12: Extended Harvey Analysis](#workflow-12-extended-harvey-analysis)
+- [Workflow 13: Build Model-Ready and SEM Panels](#workflow-13-build-model-ready-and-sem-panels)
+- [Workflow 14: Run Tests](#workflow-14-run-tests)
 
 ---
 
@@ -629,6 +632,17 @@ python src/geocode_enricher.py --mode coords --coord-limit 500
 python src/spatial_mapper.py --join --map
 ```
 
+#### 4. (Optional) Generate single-purpose maps
+
+```bash
+python src/spatial_quarter_map.py
+python src/spatial_tract_quarter_map.py
+python src/spatial_tract_all_map.py
+python src/spatial_tract_harris_map.py
+```
+
+> Note: Plotly HTML exports can be very large. Treat them as generated artifacts.
+
 ---
 
 ## Workflow 11: Run NLP Analyses
@@ -678,16 +692,108 @@ python src/topic_model.py --fit --k 10 --limit-sections 200 --rebuild
 python src/relation_extractor.py --limit-docs 5 --min-weight 1 --rebuild --section-families narrative
 ```
 
-#### 4. (Optional) Generate single-purpose maps
+---
+
+## Workflow 12: Extended Harvey Analysis
+
+Populate extended Harvey analysis tables (subrecipients, activity types, beneficiaries, geography, narratives).
+
+### Prerequisites
+
+- Harvey activity blocks parsed (Workflow 9, step 1)
+
+### Steps
+
+#### 1. Run all extended extractors
 
 ```bash
-python src/spatial_quarter_map.py
-python src/spatial_tract_quarter_map.py
-python src/spatial_tract_all_map.py
-python src/spatial_tract_harris_map.py
+python src/populate_extended_data.py
 ```
 
-> Note: Plotly HTML exports can be very large. Treat them as generated artifacts.
+This orchestrates five extractors in sequence:
+
+1. `SubrecipientExtractor` → `harvey_subrecipients`, `harvey_subrecipient_allocations`
+2. `ActivityTypeAnalyzer` → `harvey_activity_types`
+3. `BeneficiaryTracker` → `harvey_beneficiaries`, `harvey_accomplishments`
+4. `GeographicAnalyzer` → `harvey_activity_locations`
+5. `NarrativeAnalyzer` → `harvey_progress_narratives`
+
+#### 2. Verify results
+
+```bash
+# Check individual extractor outputs
+python src/subrecipient_extractor.py --summary
+python src/activity_type_analyzer.py --distribution
+python src/beneficiary_tracker.py --tenure
+python src/completion_analyzer.py --by-org
+```
+
+#### 3. (Optional) Run individual extractors
+
+```bash
+python src/subrecipient_extractor.py --process
+python src/activity_type_analyzer.py --process
+python src/beneficiary_tracker.py --process
+python src/geographic_analyzer.py --process
+python src/narrative_analyzer.py --process
+```
+
+---
+
+## Workflow 13: Build Model-Ready and SEM Panels
+
+Export quarter-level panel CSVs for statistical modeling and SEM analysis.
+
+### Prerequisites
+
+- All prior pipelines complete (PDFs, NLP, Harvey, spatial, NLP analyses)
+
+### Steps
+
+#### 1. Build all model-ready datasets
+
+```bash
+make model-ready
+```
+
+#### 2. Verify the build
+
+```bash
+# Check manifest for row counts and build timestamp
+cat outputs/model_ready/meta/manifest.json | python -m json.tool
+
+# Check quality gates (all should be "ok": true)
+cat outputs/model_ready/meta/quality_report.json | python -m json.tool
+```
+
+#### 3. Review SEM coverage
+
+Open `outputs/model_ready/meta/sem_coverage_report.csv` in a spreadsheet to see per-variable coverage percentages across panels. See `docs/MODELING_VARIABLES.md` for construct-by-construct triage.
+
+### Output Files
+
+- `outputs/model_ready/panels/panel_{state,disaster,county,city}_quarter.csv` — base panels
+- `outputs/model_ready/panels/panel_{state,disaster,county,city}_quarter_sem.csv` — SEM-enriched panels
+- `outputs/model_ready/long/activities.csv`, `activities_unique.csv`, `beneficiary_measures.csv` — long-format
+- `outputs/model_ready/long/sem_construct_signals.csv` — raw SEM signal extractions with provenance
+- `outputs/model_ready/meta/manifest.json`, `quality_report.json`, `sem_coverage_report.csv`, `sem_variable_dictionary.csv`
+
+---
+
+## Workflow 14: Run Tests
+
+Run the project test suite.
+
+### Steps
+
+```bash
+# Full CI check (compile + pytest)
+make ci
+
+# Or run individually
+python -m compileall src/ scripts/
+pytest
+```
 
 ---
 
@@ -708,9 +814,13 @@ python src/spatial_tract_harris_map.py
 | Build semantic index | `python src/semantic_search.py --build` |
 | Evaluate NER | `python src/ner_evaluate.py --gold data/eval/gold_entities.csv` |
 | Launch dashboard | `streamlit run dashboard/app.py` |
+| Extended Harvey analysis | `python src/populate_extended_data.py` |
+| NLP analyses (all) | `make analyses` |
 | Build model-ready datasets | `make model-ready` |
 | Build Harvey deliverable reports | `make harvey-reports` |
 | Build team portal | `make portal` |
 | Build share bundle | `make share-bundle` |
+| Run tests | `make ci` |
+| Project stats | `make stats` |
 | Remove macOS artifacts | `make clean-macos` |
 | Launch notebooks | `jupyter notebook notebooks/` |

@@ -1,4 +1,4 @@
-.PHONY: help stats pdf-stats nlp-stats link semantic-build harvey harvey-parse harvey-fund-switch harvey-housing-zip harvey-reports spatial sections section-families topics entity-resolve relations money model-ready portal share-bundle clean-macos analyses check
+.PHONY: help stats pdf-stats nlp-stats link semantic-build harvey harvey-parse harvey-fund-switch harvey-housing-zip harvey-reports spatial sections section-families topics entity-resolve relations money model-ready portal share-bundle clean-macos analyses check test ci deps-lock
 
 PY := $(shell if [ -x venv/bin/python ]; then echo venv/bin/python; else echo python; fi)
 
@@ -24,6 +24,9 @@ help:
 	@echo "  make clean-macos    - remove .DS_Store / ._ artifacts"
 	@echo "  make analyses       - run all NLP analyses"
 	@echo "  make check          - compileall on src/"
+	@echo "  make test           - run pytest suite"
+	@echo "  make ci             - run check + tests"
+	@echo "  make deps-lock      - refresh requirements.lock from current venv"
 
 stats:
 	$(PY) src/project_status.py
@@ -99,3 +102,11 @@ analyses: sections section-families topics entity-resolve relations money
 
 check:
 	$(PY) -m compileall -q -x '(^|/)\._' src
+
+test:
+	$(PY) -m pytest -q
+
+ci: check test
+
+deps-lock:
+	venv/bin/python -m pip freeze > requirements.lock

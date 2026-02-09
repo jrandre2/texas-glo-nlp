@@ -14,6 +14,8 @@ This project processes **442 quarterly reports** from the Texas General Land Off
 | A plain-language walkthrough of the project | Read [`docs/START_HERE.md`](docs/START_HERE.md) |
 | Short read-through reports on specific topics | See the **Reports** section in TEAM_PORTAL |
 | Datasets for Excel, Stata, or R | Browse `outputs/model_ready/` or read [`docs/MODEL_READY.md`](docs/MODEL_READY.md) |
+| SEM / statistical modeling | Read [`docs/MODELING_VARIABLES.md`](docs/MODELING_VARIABLES.md) for construct triage |
+| Summary of what the pipeline found | Read [`docs/ANALYSIS_REPORT.md`](docs/ANALYSIS_REPORT.md) |
 | A lightweight zip to share with colleagues | Run `make share-bundle` (creates `outputs/share_bundle.zip`) |
 
 ### Where things live
@@ -58,6 +60,21 @@ The NLP layer extracts dollar amounts from narrative text and classifies each me
 | Entities Extracted | 4,246,325 |
 | Location Mentions | 402,382 |
 
+### Analysis Layers
+
+Beyond extraction, the pipeline builds six NLP analysis layers and SEM-ready panel data:
+
+| Layer | Module | Key Output | Scale |
+|-------|--------|------------|-------|
+| Section Segmentation | `section_extractor` | Heading-delimited document sections | 442 docs |
+| Topic Clustering | `topic_model` | 40 topics via embedding + KMeans | 5,139 assignments |
+| Entity Resolution | `entity_resolution` | Canonical org/program mappings | 32K unique ORGs |
+| Co-occurrence Relations | `relation_extractor` | Entity pair graph (1,800+ edges) | narrative sections |
+| Money Context | `money_context_extractor` | 1.3M mentions labeled budget/expended/obligated/drawdown | all docs |
+| SEM Signals | `build_model_ready_datasets` | Construct indicators with confidence + provenance | 938 signals |
+
+Panel datasets at state, disaster, county, and city x quarter levels are in `outputs/model_ready/`. See [`docs/ANALYSIS_REPORT.md`](docs/ANALYSIS_REPORT.md) for the full narrative.
+
 ### Harvey Funding Flows
 
 #### Harvey 5B Infrastructure Grant ($4.42B)
@@ -86,9 +103,11 @@ Houston Metro Area (City of Houston + Harris County) receives $1.74B (39%). Texa
 
 ### For everyone
 
+- [Analysis Report](docs/ANALYSIS_REPORT.md) &mdash; Narrative summary of pipeline findings with data tables
 - [Start Here (Non-Technical)](docs/START_HERE.md) &mdash; What to open and how to interpret results
 - [Glossary](docs/GLOSSARY.md) &mdash; Terms used across dashboards and tables
 - [Model-Ready Datasets](docs/MODEL_READY.md) &mdash; Datasets for EDA and statistical models
+- [SEM Data Guide](docs/SEM_DATA.md) &mdash; SEM panel schema, construct derivations, and provenance fields
 - [Harvey Funding Analysis](docs/HARVEY_FUNDING_ANALYSIS.md) &mdash; Detailed funding flow analysis
 - [Harvey Fund-Switch Extraction](docs/HARVEY_ACTION_PLAN_FUND_SWITCH.md) &mdash; Fund reallocation statement extraction
 - [Harvey Housing ZIP Progress](docs/HARVEY_HOUSING_ZIP_PROGRESS.md) &mdash; Housing progression by ZIP and quarter
@@ -129,6 +148,8 @@ cd "/Volumes/T9/Texas GLO Action Plan Project"
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+# For reproducible installs, use the lockfile:
+# pip install -r requirements.lock
 
 # Choose one spaCy model:
 python -m spacy download en_core_web_sm   # fast
@@ -153,9 +174,16 @@ python src/spatial_mapper.py --join --map
 
 # Rebuild portal and reports
 make portal
+
+# Run checks
+make ci
 ```
 
 Run `make help` for all available pipeline targets.
+
+`scripts/build_model_ready_datasets.py` now enforces data-quality gates by default
+(non-empty key outputs + prior-quarter delta checks). Use `--allow-partial` to keep
+outputs when a gate fails.
 
 ### Project Structure
 
@@ -171,10 +199,27 @@ Texas GLO Action Plan Project/
 │   ├── financial_parser.py       # Harvey activity/QPR parsing
 │   ├── funding_tracker.py        # Harvey Sankey/trend exports
 │   ├── harvey_queries.py         # Analysis queries over Harvey tables
+│   ├── subrecipient_extractor.py # Subrecipient org extraction + classification
+│   ├── activity_type_analyzer.py # Harvey activity type classification
+│   ├── beneficiary_tracker.py    # Beneficiary/outcome metric extraction
+│   ├── completion_analyzer.py    # Activity completion rate analysis
+│   ├── geographic_analyzer.py    # ZIP/location extraction from QPRs
+│   ├── narrative_analyzer.py     # Progress narrative extraction
+│   ├── populate_extended_data.py # Orchestrator for all Harvey extractors
 │   ├── location_extractor.py     # Location mention extraction
+│   ├── geocode_enricher.py       # Geocoding + GEOID enrichment
 │   ├── spatial_mapper.py         # Boundary joins + choropleth maps
+│   ├── spatial_*_map.py          # Single-purpose choropleth generators
+│   ├── section_extractor.py      # Document section segmentation
+│   ├── section_classifier.py     # Section heading family classification
+│   ├── topic_model.py            # Embedding-based topic clustering
+│   ├── entity_resolution.py      # Entity canonicalization + aliases
+│   ├── relation_extractor.py     # Entity co-occurrence graph
+│   ├── money_context_extractor.py # Money mention context labeling
 │   ├── semantic_search.py        # Embeddings + vector search (Chroma)
-│   └── ner_evaluate.py           # NER evaluation harness
+│   ├── project_status.py         # Project snapshot utility (make stats)
+│   ├── ner_evaluate.py           # NER evaluation harness
+│   └── db_maintenance.py         # Database maintenance helpers
 ├── scripts/                      # Build scripts (portal, reports, datasets)
 ├── data/
 │   ├── glo_reports.db            # SQLite database (~2.5 GB)
@@ -190,7 +235,8 @@ Texas GLO Action Plan Project/
 ├── dashboard/                    # Streamlit analysis explorer
 ├── DRGR_Reports/                 # Source PDF documents (442 files)
 ├── docs/                         # Documentation
-└── requirements.txt              # Python dependencies
+├── requirements.txt              # Python dependencies
+└── requirements.lock             # Locked Python dependency snapshot
 ```
 
 </details>
