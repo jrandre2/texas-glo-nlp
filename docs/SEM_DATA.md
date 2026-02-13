@@ -11,6 +11,8 @@ The SEM layer is designed to provide **quarter-by-quarter panel inputs** at disa
 - disaster severity
 - program performance and outcomes
 - program duration
+- spending volatility (new)
+- program completion percentage (new)
 
 ## Outputs
 
@@ -43,16 +45,22 @@ The SEM layer is designed to provide **quarter-by-quarter panel inputs** at disa
 - Notes:
   - DRGR reports rarely provide explicit staffing counts.
   - Coverage is usually sparse and should be treated as a **partial observed signal**.
+  - Year-like numbers (1900-2099) are filtered to avoid false positives (e.g., "2010 staff").
 
 ## Administrative Payroll
 
 - Primary variable: `admin_payroll_usd_sum`
-- Source: document text + selected table text.
+- Sources:
+  1. Document text + selected table text (NLP regex extraction, confidence ~0.6-0.8)
+  2. XLSX A32 activity progress narratives (`qpr_payroll_allocations` table, confidence 0.95)
 - Method:
-  - Detect payroll/salary/wage/personnel-cost language.
-  - Extract USD-like values (`$`, million/billion suffixes) and normalize to dollars.
+  - NLP path: Detect payroll/salary/wage/personnel-cost language; extract USD-like values and normalize.
+  - XLSX path: Parse structured `$89382.76 - Payroll Allocation` patterns from A32 narrative cells.
+  - XLSX signals use method `xlsx:payroll_allocation` in provenance tracking.
+- Coverage: ~63.6% at state panel, ~86.5% for mitigation disaster panel (after XLSX integration).
 - Notes:
-  - This is mention-derived and not a general ledger.
+  - XLSX payroll signals are higher-confidence (structured source) than NLP-extracted mentions.
+  - Still not audited accounting totals — use for relative comparison, not absolute amounts.
 
 ## Affected Population
 
@@ -94,6 +102,29 @@ The SEM layer is designed to provide **quarter-by-quarter panel inputs** at disa
   - Outcome rollups: `outcome_persons_total_actual`, `outcome_households_total_actual`, `outcome_owner_households_total_actual`, `outcome_renter_households_total_actual`, `outcome_jobs_created_total_actual`, `outcome_jobs_retained_total_actual`, `outcome_housing_units_total_actual`
 - Source: activity-level parsing in `scripts/build_model_ready_datasets.py` from DRGR activity sections.
 
+## Spending Volatility
+
+- Primary variable: `spending_cv`
+- Alias: `Spending_CV` (in SEM estimation inputs)
+- Source: panel-level quarterly expenditure data (`sum_expended_usd`).
+- Method:
+  - CV = std(quarterly_expended) / mean(quarterly_expended) across quarters per unit
+  - Requires minimum 3 quarters of data per unit for meaningful variance
+  - Grouped by unit key (category/disaster_code at disaster level, plus county/city at finer levels)
+- Coverage: ~74% at disaster panel level
+- Notes:
+  - Higher CV indicates more volatile (uneven) spending across quarters
+  - Used in duration-free SEM models as an indicator of government capacity
+
+## Program Completion Percentage
+
+- Primary variable: `completion_pct`
+- Alias: `Completion_Pct` (in SEM estimation inputs)
+- Source: direct alias for `program_completion_rate` from model-ready panels.
+- Coverage: ~94% at disaster panel level
+- Notes:
+  - Used in duration-free SEM models as a recovery outcome indicator alongside `Progress_Rate`
+
 ## Program Duration
 
 - Variables:
@@ -117,7 +148,7 @@ The SEM layer is designed to provide **quarter-by-quarter panel inputs** at disa
 
 `sem_construct_signals.csv` includes:
 
-- `source_type`: `text_page` or `table_json`
+- `source_type`: `text_page`, `table_json`, or `xlsx:payroll_allocation`
 - `method`: extraction rule family
 - `confidence`: heuristic score (0-1)
 - `snippet`: truncated source text for audit
@@ -144,3 +175,39 @@ Then review:
 - `outputs/model_ready/meta/manifest.json`
 - `outputs/model_ready/meta/quality_report.json`
 - `outputs/model_ready/meta/sem_coverage_report.csv`
+
+## SEM Integration Bridge (Phase 1/2/3/4)
+
+After model-ready SEM panels are built, the integration pipeline adds adapter,
+estimation, and comparison outputs:
+
+- `make xlsx-ingest`
+  - ingests XLSX QPR downloads into `qpr_*` DB tables (used by payroll signals and Spending_CV)
+- `make sem-adapter-all`
+  - builds `outputs/sem/texas/panel_*_quarter_sem_estimation_input.csv`
+  - derives `spending_cv` and `completion_pct` columns for duration-free models
+- `make sem-estimate`
+  - runs `scripts/run_sem_estimation.py` (default model: `adapter_progress_rate`)
+  - writes estimates/fit/diagnostics/manifest under `outputs/sem/texas/results/`
+  - supports `--batch` mode for running multiple models with comparison output
+- `make sem-compare`
+  - runs `sem-estimate`, then `scripts/compare_sem_to_legacy.py`
+  - writes side-by-side benchmark tables (`*.csv`, `*.md`) against
+    `outputs/legacy/capacity_sem_migrated/files/`
+
+### Duration-Free Model Family
+
+The recommended models avoid `Duration_of_completion` (1.1% coverage) and instead use
+`Spending_CV` and `Completion_Pct` as indicators:
+
+| Model | DoF | Structure |
+|-------|-----|-----------|
+| `duration_free_3x2` | 4 | gov_capacity(3) -> recovery(2) |
+| `duration_free_cv` | 1 | gov_capacity(2) -> recovery(2) |
+| `duration_free_multiple` | 2 | gov_capacity(2) -> 3 direct paths |
+| `exp_progress_outcome` | 1 | expenditure efficiency -> progress/completion |
+| `milestone_progress_rate` | 1 | spending volatility -> progress/completion |
+
+Run all with: `python scripts/run_sem_estimation.py --batch duration_free_3x2 duration_free_cv duration_free_multiple exp_progress_outcome milestone_progress_rate`
+
+See `docs/PROJECT_INTEGRATION.md` and `outputs/sem/README.md` for file-level details.

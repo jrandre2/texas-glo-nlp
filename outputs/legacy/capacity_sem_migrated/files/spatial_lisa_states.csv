@@ -1,0 +1,32 @@
+moran_local_i,p_sim,quadrant,significant,Grantee,state_name
+-0.10097079643696573,0.356,HL,False,Alabama,Alabama
+0.10374279723403135,0.4,HH,False,Arkansas,Arkansas
+0.39893857373460456,0.136,LL,False,California,California
+0.1243151430347085,0.262,LL,False,Colorado,Colorado
+0.897669361929177,0.048,HH,True,Connecticut - DOH,Connecticut
+-0.06098575571150515,0.285,LH,False,Florida,Florida
+-5.604117077737485e-05,0.459,LH,False,Georgia,Georgia
+-0.03200424247948368,0.177,HL,False,Illinois,Illinois
+-1.1757998910535619,0.024,HL,True,Indiana - OCRA,Indiana
+-0.0041129023144661145,0.46,LH,False,Iowa,Iowa
+-0.1562192066445726,0.46,LH,False,Kentucky,Kentucky
+0.24808267853273408,0.204,HH,False,Louisiana,Louisiana
+0.4917603455075018,0.145,HH,False,Maryland,Maryland
+-1.1296312675734737,0.251,LH,False,Michigan,Michigan
+-0.006217913355200109,0.153,LH,False,Mississippi,Mississippi
+0.027415791933888312,0.328,LL,False,Missouri,Missouri
+0.19995252351917547,0.222,LL,False,Nebraska,Nebraska
+0.20279146084378474,0.17,HH,False,New Jersey,New Jersey
+0.540191323582257,0.032,HH,True,New York,New York
+0.28153145241867783,0.128,LL,False,Ohio,Ohio
+0.023245467968808577,0.5,HH,False,Oklahoma,Oklahoma
+1.6080844505820557,0.023,LL,True,Oregon,Oregon
+0.14552548201793206,0.251,HH,False,Pennsylvania,Pennsylvania
+0.9020559851514448,0.065,HH,False,Rhode Island,Rhode Island
+-0.00010033044730003684,0.405,HL,False,South Carolina,South Carolina
+-0.06493389609217634,0.337,LH,False,Tennessee,Tennessee
+0.27479360302172456,0.134,HH,False,Texas - GLO,Texas
+-0.09490025009405641,0.375,HL,False,Virginia,Virginia
+2.8172303274295065,0.078,LL,False,Washington,Washington
+0.004249037519753747,0.388,HH,False,West Virginia,West Virginia
+-0.9522163418859837,0.067,HL,False,Wisconsin,Wisconsin

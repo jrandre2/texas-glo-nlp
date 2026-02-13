@@ -1,0 +1,38 @@
+Grantee,governor_party,legislature_party,unified_control,govt_capacity_score
+Alabama,R,R,True,0.42
+Alaska,R,R,True,0.51
+American Samoa,D,D,True,0.35
+Arkansas,R,R,True,0.38
+California,D,D,True,0.68
+Colorado,D,D,True,0.62
+Connecticut - DOH,D,D,True,0.71
+Florida,R,R,True,0.55
+Georgia,R,R,True,0.48
+Illinois,D,D,True,0.52
+Indiana - OCRA,R,R,True,0.45
+Iowa,R,R,True,0.58
+Kentucky,D,R,False,0.41
+Louisiana,D,R,False,0.39
+Maryland,R,D,False,0.72
+Michigan,D,R,False,0.54
+Mississippi,R,R,True,0.33
+Missouri,R,R,True,0.47
+Nebraska,R,N,False,0.56
+New Jersey,D,D,True,0.69
+New York,D,D,True,0.75
+North Carolina,D,R,False,0.51
+Northern Mariana Islands,R,R,True,0.32
+Ohio,R,R,True,0.53
+Oklahoma,R,R,True,0.4
+Oregon,D,D,True,0.61
+Pennsylvania,D,R,False,0.57
+Puerto Rico,N,N,True,0.28
+Rhode Island,D,D,True,0.59
+South Carolina,R,R,True,0.44
+Tennessee,R,R,True,0.46
+Texas - GLO,R,R,True,0.49
+Virgin Islands,D,D,True,0.3
+Virginia,D,R,False,0.67
+Washington,D,D,True,0.7
+West Virginia,D,R,False,0.36
+Wisconsin,D,R,False,0.6

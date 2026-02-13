@@ -785,6 +785,9 @@ def _extract_sem_signals_from_text(text: str, source_type: str) -> List[Dict[str
                 count = _parse_number_token(m.group("count"))
                 if count is None or count <= 0:
                     continue
+                # Reject year-like numbers (e.g., "2010 staff" = calendar year, not count)
+                if 1900 <= count <= 2099:
+                    continue
                 label = (m.group("label") or "").lower()
                 conf = 0.92 if ("fte" in label or "headcount" in label) else 0.74
                 row = _sem_metric_row(
@@ -1650,6 +1653,48 @@ def build_outputs(
                             **sig,
                         }
                     )
+
+    # ---- XLSX-sourced payroll signals (high confidence, structured source) ----
+    try:
+        xlsx_payroll = pd.read_sql_query(
+            "SELECT activity_number, quarter_label, payroll_usd, "
+            "       responsible_org, narrative_snippet, source_file "
+            "FROM qpr_payroll_allocations WHERE payroll_usd > 0",
+            con,
+        )
+        _ql_re = re.compile(r"(\d{4})\s*Q(\d)")
+        for _, pr in xlsx_payroll.iterrows():
+            ql = str(pr["quarter_label"] or "")
+            ql_m = _ql_re.search(ql)
+            sig_year = int(ql_m.group(1)) if ql_m else None
+            sig_quarter = int(ql_m.group(2)) if ql_m else None
+            sem_signal_rows.append(
+                {
+                    "document_id": None,
+                    "filename": pr["source_file"],
+                    "category": "Mitigation_ActionPlan",
+                    "disaster_code": "mit",
+                    "year": sig_year,
+                    "quarter": sig_quarter,
+                    "page_number": None,
+                    "source_type": "xlsx_payroll",
+                    "activity_id": pr["activity_number"],
+                    "county_fips3": None,
+                    "county_name": None,
+                    "city": None,
+                    "zip": None,
+                    "metric": "admin_payroll_usd",
+                    "value": float(pr["payroll_usd"]),
+                    "unit": "usd",
+                    "confidence": 0.95,
+                    "method": "xlsx:payroll_allocation",
+                    "snippet": (pr["narrative_snippet"] or "")[:240],
+                }
+            )
+        if len(xlsx_payroll):
+            print(f"  Added {len(xlsx_payroll)} XLSX payroll signals")
+    except Exception as e:
+        print(f"  Note: XLSX payroll signals not loaded ({e})")
 
     activities = pd.DataFrame(activities_rows)
     beneficiary_measures = pd.DataFrame(beneficiary_rows)

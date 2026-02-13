@@ -28,6 +28,7 @@ The database contains core processing tables plus analysis/enrichment tables:
 | Spatial / Locations | location_mentions, spatial_units, location_links, geocode_cache |
 | Harvey Funding Analysis | harvey_activities, harvey_quarterly_totals, harvey_org_allocations, harvey_county_allocations, harvey_funding_changes |
 | Extended Harvey Analysis | harvey_subrecipients, harvey_subrecipient_allocations, harvey_activity_types, harvey_activity_locations, harvey_beneficiaries, harvey_progress_narratives, harvey_accomplishments |
+| QPR XLSX Data | qpr_activity_financials, qpr_payroll_allocations, qpr_accomplishments, qpr_beneficiary_demographics |
 | NLP Analysis | document_sections, section_heading_families, topic_models, topics, topic_assignments, entity_canonical, entity_aliases, entity_relations, entity_relation_evidence, money_mentions, money_mention_entities |
 
 ---
@@ -745,6 +746,146 @@ CREATE TABLE IF NOT EXISTS harvey_accomplishments (
 
 ---
 
+## QPR XLSX Data Tables
+
+These tables store structured data ingested from DRGR Quarterly Performance Report (QPR) XLSX downloads. They are populated by `scripts/ingest_qpr_xlsx.py`.
+
+Source files: F31 (financial by activity/quarter), A32 (activity progress narratives), P31 (accomplishments), P33 (beneficiary demographics).
+
+### qpr_activity_financials
+
+Quarterly financial data per activity from F31 XLSX files. Covers B-17 (mitigation) and B-18 (mitigation planning) grants.
+
+Populated by: `scripts/ingest_qpr_xlsx.py` (F31 sheets)
+
+```sql
+CREATE TABLE IF NOT EXISTS qpr_activity_financials (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    grant_number TEXT NOT NULL,
+    project_number TEXT,
+    project_title TEXT,
+    activity_number TEXT NOT NULL,
+    activity_title TEXT,
+    activity_type TEXT,
+    responsible_org TEXT,
+    begin_date TEXT,
+    quarter_label TEXT NOT NULL,
+    obligated_usd REAL,
+    expended_usd REAL,
+    disbursed_usd REAL,
+    program_income_disbursed_usd REAL,
+    program_income_received_usd REAL,
+    source_file TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(grant_number, activity_number, quarter_label)
+);
+```
+
+| Column | Type | Description |
+|--------|------|-------------|
+| grant_number | TEXT | Grant identifier (e.g., B-17-DM-48-0001) |
+| project_number | TEXT | Project within the grant |
+| activity_number | TEXT | Activity identifier within the project |
+| activity_type | TEXT | Activity classification (e.g., Administration, Housing) |
+| responsible_org | TEXT | Implementing organization |
+| quarter_label | TEXT | Quarter identifier (e.g., "2020 Q2") |
+| obligated_usd | REAL | Funds obligated ($) |
+| expended_usd | REAL | Funds expended ($) |
+| disbursed_usd | REAL | Funds disbursed ($) |
+
+### qpr_payroll_allocations
+
+Payroll dollar amounts extracted from A32 activity progress narratives. Used as a high-confidence admin capacity signal for SEM panels.
+
+Populated by: `scripts/ingest_qpr_xlsx.py` (A32 sheets)
+
+```sql
+CREATE TABLE IF NOT EXISTS qpr_payroll_allocations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    grant_number TEXT NOT NULL,
+    activity_number TEXT NOT NULL,
+    activity_title TEXT,
+    activity_type TEXT,
+    responsible_org TEXT,
+    quarter_label TEXT NOT NULL,
+    payroll_usd REAL NOT NULL,
+    narrative_snippet TEXT,
+    source_file TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(grant_number, activity_number, quarter_label, payroll_usd)
+);
+```
+
+| Column | Type | Description |
+|--------|------|-------------|
+| activity_number | TEXT | Activity identifier |
+| quarter_label | TEXT | Quarter identifier |
+| payroll_usd | REAL | Payroll allocation amount ($) |
+| narrative_snippet | TEXT | Truncated source text for audit |
+
+### qpr_accomplishments
+
+Quarterly accomplishment measures per activity from P31 XLSX files. Tracks counts of buildings, businesses, elevated structures, etc.
+
+Populated by: `scripts/ingest_qpr_xlsx.py` (P31 sheets)
+
+```sql
+CREATE TABLE IF NOT EXISTS qpr_accomplishments (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    grant_number TEXT NOT NULL,
+    activity_number TEXT NOT NULL,
+    activity_title TEXT,
+    activity_type TEXT,
+    responsible_org TEXT,
+    measure_type TEXT NOT NULL,
+    quarter_label TEXT NOT NULL,
+    actual_value REAL,
+    source_file TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(grant_number, activity_number, measure_type, quarter_label)
+);
+```
+
+| Column | Type | Description |
+|--------|------|-------------|
+| activity_number | TEXT | Activity identifier |
+| measure_type | TEXT | Accomplishment metric (e.g., "# of Buildings") |
+| quarter_label | TEXT | Quarter identifier |
+| actual_value | REAL | Reported accomplishment count |
+
+### qpr_beneficiary_demographics
+
+Household demographic breakdowns by race/ethnicity and tenure from P33 XLSX files.
+
+Populated by: `scripts/ingest_qpr_xlsx.py` (P33 sheets)
+
+```sql
+CREATE TABLE IF NOT EXISTS qpr_beneficiary_demographics (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    grant_number TEXT NOT NULL,
+    activity_number TEXT NOT NULL,
+    activity_title TEXT,
+    activity_type TEXT,
+    national_objective TEXT,
+    category TEXT NOT NULL,
+    demographic_group TEXT NOT NULL,
+    value REAL,
+    source_file TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(grant_number, activity_number, national_objective, category, demographic_group)
+);
+```
+
+| Column | Type | Description |
+|--------|------|-------------|
+| activity_number | TEXT | Activity identifier |
+| national_objective | TEXT | HUD national objective (LMI, Urgent Need, etc.) |
+| category | TEXT | Demographic category (e.g., "Owner", "Renter", "Total") |
+| demographic_group | TEXT | Race/ethnicity group |
+| value | REAL | Household count |
+
+---
+
 ## Indexes
 
 ```sql
@@ -804,6 +945,17 @@ CREATE INDEX idx_locations_activity ON harvey_activity_locations(activity_code);
 CREATE INDEX idx_beneficiaries_activity ON harvey_beneficiaries(activity_code);
 CREATE INDEX idx_narratives_activity ON harvey_progress_narratives(activity_code);
 CREATE INDEX idx_accomplishments_activity ON harvey_accomplishments(activity_code);
+
+-- QPR XLSX Data
+CREATE INDEX idx_qpr_fin_grant ON qpr_activity_financials(grant_number);
+CREATE INDEX idx_qpr_fin_activity ON qpr_activity_financials(activity_number);
+CREATE INDEX idx_qpr_fin_quarter ON qpr_activity_financials(quarter_label);
+CREATE INDEX idx_qpr_fin_type ON qpr_activity_financials(activity_type);
+CREATE INDEX idx_qpr_payroll_activity ON qpr_payroll_allocations(activity_number);
+CREATE INDEX idx_qpr_payroll_quarter ON qpr_payroll_allocations(quarter_label);
+CREATE INDEX idx_qpr_accom_activity ON qpr_accomplishments(activity_number);
+CREATE INDEX idx_qpr_accom_quarter ON qpr_accomplishments(quarter_label);
+CREATE INDEX idx_qpr_bene_activity ON qpr_beneficiary_demographics(activity_number);
 ```
 
 ---
@@ -944,6 +1096,42 @@ ORDER BY mm.amount_usd DESC
 LIMIT 20;
 ```
 
+### QPR XLSX Queries
+
+```sql
+-- Quarterly expenditures by grant
+SELECT grant_number, quarter_label,
+       SUM(obligated_usd) as obligated,
+       SUM(expended_usd) as expended,
+       COUNT(DISTINCT activity_number) as n_activities
+FROM qpr_activity_financials
+GROUP BY grant_number, quarter_label
+ORDER BY grant_number, quarter_label;
+
+-- Payroll allocations by organization
+SELECT responsible_org, COUNT(*) as n_quarters,
+       SUM(payroll_usd) as total_payroll
+FROM qpr_payroll_allocations
+GROUP BY responsible_org
+ORDER BY total_payroll DESC;
+
+-- Accomplishment measures by type
+SELECT measure_type, COUNT(*) as n_records,
+       SUM(actual_value) as total_actual
+FROM qpr_accomplishments
+WHERE actual_value > 0
+GROUP BY measure_type
+ORDER BY n_records DESC;
+
+-- Beneficiary demographics by category
+SELECT category, COUNT(DISTINCT demographic_group) as n_groups,
+       SUM(value) as total_households
+FROM qpr_beneficiary_demographics
+WHERE value > 0
+GROUP BY category
+ORDER BY total_households DESC;
+```
+
 ### Extended Harvey Queries
 
 ```sql
@@ -1019,6 +1207,17 @@ ORDER BY quarter;
 | harvey_beneficiaries | ~15,000 |
 | harvey_progress_narratives | ~15,000 |
 | harvey_accomplishments | ~5,000 |
+
+### QPR XLSX Data Counts
+
+> Populated via `make xlsx-ingest` (`scripts/ingest_qpr_xlsx.py --rebuild`).
+
+| Table | Row Count |
+|-------|-----------|
+| qpr_activity_financials | ~6,545 |
+| qpr_payroll_allocations | ~592 |
+| qpr_accomplishments | ~13,248 |
+| qpr_beneficiary_demographics | ~8,096 |
 
 ### NLP Analysis Counts
 

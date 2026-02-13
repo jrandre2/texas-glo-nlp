@@ -1,5 +1,5 @@
 {
-  "built_at": "2026-02-09T13:02:42",
+  "built_at": "2026-02-12T20:45:15",
   "db_path": "/Volumes/T9/Texas GLO Action Plan Project/data/glo_reports.db",
   "outputs": {
     "panel_document": "outputs/model_ready/panels/panel_document.csv",
@@ -41,7 +41,7 @@
     "entity_counts_by_quarter": 9245,
     "keyword_pages_by_quarter": 803,
     "beneficiary_measures": 2875,
-    "sem_construct_signals": 938,
+    "sem_construct_signals": 1529,
     "severity_proxies_by_quarter": 567,
     "fema_declarations_by_quarter": 656,
     "sem_coverage_report": 226,
@@ -51,5 +51,5 @@
     "ok": true,
     "failure_count": 0
   },
-  "macos_artifacts_removed": 23
+  "macos_artifacts_removed": 3
 }

@@ -32,6 +32,7 @@ Complete installation and environment setup for the Texas GLO NLP project.
   ```
 
 - **Anthropic API Key**: Optional (only if you add Claude-based Q&A/summarization; not required for semantic indexing)
+- **semopy**: Required only for SEM estimation/comparison targets (`make sem-estimate`, `make sem-compare`)
 
 ---
 
@@ -54,6 +55,12 @@ source venv/bin/activate
 
 ```bash
 pip install -r requirements.txt
+```
+
+If you plan to run SEM estimation/comparison:
+
+```bash
+pip install semopy
 ```
 
 ### 4. Download spaCy Model
@@ -137,6 +144,12 @@ python src/pdf_processor.py --stats
 #   Processed: 442
 #   Total pages: 153540
 #   Total tables: 175208
+```
+
+### Optional: Verify SEM dependency
+
+```bash
+python -c "import semopy; print('semopy ok')"
 ```
 
 ```bash

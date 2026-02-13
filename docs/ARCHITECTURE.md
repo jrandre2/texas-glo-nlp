@@ -167,6 +167,20 @@ The system follows a multi-phase pipeline architecture:
 
 **Output**: `harvey_subrecipients`, `harvey_subrecipient_allocations`, `harvey_activity_types`, `harvey_beneficiaries`, `harvey_accomplishments`, `harvey_activity_locations`, `harvey_progress_narratives`
 
+### Phase 3e: XLSX QPR Ingestion (Complete)
+
+| Component | Library | Purpose |
+|-----------|---------|---------|
+| XLSX Reader | openpyxl | Read F31/A32/P31/P33 QPR downloads |
+| Financial Ingestion | ingest_qpr_xlsx.py | Write quarterly financials to `qpr_activity_financials` |
+| Payroll Extraction | ingest_qpr_xlsx.py | Extract payroll amounts from A32 narratives to `qpr_payroll_allocations` |
+| Accomplishments | ingest_qpr_xlsx.py | Write accomplishment measures to `qpr_accomplishments` |
+| Demographics | ingest_qpr_xlsx.py | Write beneficiary demographics to `qpr_beneficiary_demographics` |
+
+**Entry point**: `make xlsx-ingest` (`scripts/ingest_qpr_xlsx.py --rebuild`)
+
+**Output**: 4 `qpr_*` tables (~28K total structured records)
+
 ### Phase 4: NLP Analysis Pipeline (Complete)
 
 | Component | Module | Purpose |
@@ -227,6 +241,44 @@ document_text
 
 **Output**: `outputs/model_ready/panels/*.csv`, `outputs/model_ready/long/*.csv`, `outputs/model_ready/meta/*.{json,csv}`
 
+### Phase 8: SEM Integration Bootstrap (Complete)
+
+| Component | Purpose |
+|-----------|---------|
+| Legacy Import + Dedupe | Import and hash-dedupe migrated legacy SEM artifacts |
+| SEM Adapter | Convert model-ready SEM panels into estimation-ready bridge schema |
+| Phase Bootstrap | Single command to run legacy import + adapter generation |
+
+**Entry points**:
+
+- `make legacy-import` (`scripts/import_capacity_sem_legacy.py`)
+- `make sem-adapter` / `make sem-adapter-all` (`scripts/build_sem_estimation_inputs.py`)
+- `make phase1` (bootstrap target)
+
+**Output**:
+
+- `outputs/legacy/capacity_sem_migrated/{files/,manifest.json}`
+- `outputs/sem/texas/panel_*_quarter_sem_estimation_input.csv`
+
+### Phase 9: SEM Estimation + Legacy Benchmark (Complete)
+
+| Component | Purpose |
+|-----------|---------|
+| Estimation Runner | Fit SEM models against adapter outputs |
+| Comparison Runner | Benchmark latest fit stats against migrated legacy result tables |
+| Artifact Manifesting | Persist estimates, fit diagnostics, and comparison tables |
+
+**Entry points**:
+
+- `make sem-estimate` (`scripts/run_sem_estimation.py`)
+- `make sem-compare` (`scripts/compare_sem_to_legacy.py`)
+
+**Output**:
+
+- `outputs/sem/texas/results/*_{estimates,fit_stats,diagnostics,manifest}.csv|json`
+- `outputs/sem/texas/results/*_legacy-comparison_*.csv`
+- `outputs/sem/texas/results/*_legacy-comparison_*.md`
+
 ---
 
 ## Component Diagram
@@ -268,6 +320,8 @@ Additional analysis/enrichment entry points:
 - NLP analysis chain: `section_extractor.py` → `section_classifier.py` → `topic_model.py`, `entity_resolution.py`, `relation_extractor.py`, `money_context_extractor.py`
 - Spatial extraction + mapping: `location_extractor.py`, `geocode_enricher.py`, `spatial_mapper.py`, `spatial_*_map.py`
 - Model-ready build: `scripts/build_model_ready_datasets.py`
+- XLSX QPR ingestion: `scripts/ingest_qpr_xlsx.py`
+- SEM adapter + estimation: `scripts/build_sem_estimation_inputs.py`, `scripts/run_sem_estimation.py`, `src/capacity_sem/`
 - Semantic search: `semantic_search.py`
 - Project status: `project_status.py`
 
@@ -377,12 +431,26 @@ document_text + document_tables
                                        └──▶ spatial_mapper.py ──▶ outputs/exports/spatial/ exports + choropleth HTML
 ```
 
+### XLSX QPR Ingestion Flow
+
+```
+XLSX files (F31, A32, P31, P33) in project root
+        │
+        └──▶ ingest_qpr_xlsx.py
+                │
+                ├──▶ qpr_activity_financials    (quarterly financials by activity)
+                ├──▶ qpr_payroll_allocations    (payroll amounts from A32 narratives)
+                ├──▶ qpr_accomplishments        (accomplishment measures by quarter)
+                └──▶ qpr_beneficiary_demographics (household demographics by race/tenure)
+```
+
 ### Model-Ready / SEM Panel Build Flow
 
 ```
-All DB tables (harvey_*, entities, location_*, money_mentions, ...)
+All DB tables (harvey_*, entities, location_*, money_mentions, qpr_*, ...)
         │
         └──▶ build_model_ready_datasets.py
+                │   (includes XLSX payroll signals from qpr_payroll_allocations)
                 │
                 ├──▶ outputs/model_ready/long/          (activities, beneficiary_measures)
                 ├──▶ outputs/model_ready/panels/        (state/disaster/county/city x quarter)
@@ -407,6 +475,8 @@ All DB tables (harvey_*, entities, location_*, money_mentions, ...)
 | **Embeddings** | sentence-transformers | Vectorization for search + topics |
 | **Vector DB** | ChromaDB | Local similarity search |
 | **LLM (Optional)** | Claude API | Not required for pipeline; optional Q&A integration |
+| **XLSX** | openpyxl | QPR XLSX ingestion |
+| **SEM** | semopy | Structural Equation Modeling |
 | **Testing** | pytest | Unit/integration tests |
 | **Dashboard** | Streamlit | Web interface |
 
@@ -415,7 +485,7 @@ All DB tables (harvey_*, entities, location_*, money_mentions, ...)
 ## Planned Enhancements
 
 - **External data joins**: Link ACS/Census socioeconomic indicators to county/tract panels for richer SEM models
-- **Staffing extraction**: Improve regex coverage for administrative staff counts and payroll amounts in QPR narratives
+- **Staffing extraction**: ~~Improve regex coverage~~ Addressed via XLSX payroll integration (592 structured allocations) and year-filter false-positive fix
 - **City canonicalization**: Normalize city names across QPR location descriptions for cleaner city-level panels
 - **Temporal alignment**: Align QPR quarter labels with calendar quarters for merging with external time-series data
 - **Interactive dashboard**: Expand Streamlit prototype into production SEM exploration interface

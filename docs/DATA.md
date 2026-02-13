@@ -9,6 +9,7 @@ Documentation of all data sources, file formats, and schemas.
 - [National Grants Reference](#national-grants-reference)
 - [CSV Exports](#csv-exports)
 - [Model-Ready Exports](#model-ready-exports)
+- [SEM Integration Outputs](#sem-integration-outputs)
 
 ---
 
@@ -468,3 +469,33 @@ Smaller, tidy CSVs designed for:
 These tables are intentionally scoped to be more GitHub/share friendly than the large `outputs/exports/` artifacts.
 
 See `docs/MODEL_READY.md` for the current dataset list and build instructions (`make model-ready`).
+
+---
+
+## SEM Integration Outputs
+
+### SEM adapter and estimation artifacts
+
+**Location**: `outputs/sem/`
+
+- `outputs/sem/texas/panel_*_quarter_sem_estimation_input.csv`
+  - adapter outputs built from model-ready SEM panels (`make sem-adapter-all`)
+- `outputs/sem/texas/panel_*_quarter_sem_estimation_input.meta.json`
+  - assumptions + source references for each adapter file
+- `outputs/sem/texas/results/*_estimates.csv`
+- `outputs/sem/texas/results/*_fit_stats.csv`
+- `outputs/sem/texas/results/*_diagnostics.json`
+- `outputs/sem/texas/results/*_manifest.json`
+  - SEM estimation artifacts from `make sem-estimate`
+- `outputs/sem/texas/results/*_legacy-comparison_*.csv`
+- `outputs/sem/texas/results/*_legacy-comparison_*.md`
+  - side-by-side benchmark tables from `make sem-compare`
+
+### Legacy migrated imports
+
+**Location**: `outputs/legacy/capacity_sem_migrated/`
+
+- `files/` — deduplicated imported artifacts from `capacity-sem-migrated`
+- `manifest.json` — hash-based provenance and canonical source variants
+
+These legacy files are the benchmark source used by `make sem-compare`.

@@ -1,0 +1,16 @@
+{
+  "built_at_utc": "2026-02-13T02:47:11+00:00",
+  "panel_level": "disaster",
+  "input": "/Volumes/T9/Texas GLO Action Plan Project/outputs/model_ready/panels/panel_disaster_quarter_sem.csv",
+  "output": "/Volumes/T9/Texas GLO Action Plan Project/outputs/sem/texas/panel_disaster_quarter_sem_estimation_input.csv",
+  "rows": 442,
+  "columns": 55,
+  "assumptions": [
+    "ratio_disbursed_to_obligated = sum_drawdown_usd / sum_obligated_usd",
+    "ratio_expended_to_disbursed = sum_expended_usd / sum_drawdown_usd",
+    "timeliness = 1 / program_duration_quarters_mean",
+    "spending_cv = std(sum_expended_usd) / mean(sum_expended_usd) across quarters per unit (min 3 quarters)",
+    "completion_pct = program_completion_rate (direct alias)",
+    "signal flags are true when *_n_obs > 0"
+  ]
+}

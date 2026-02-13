@@ -1,0 +1,6 @@
+model,sample_size,dof,chi2,p_value,cfi,tli,rmsea,aic,bic,status
+duration_free_3x2,234,,,,,,,,,ok
+duration_free_cv,234,,,,,,,,,ok
+duration_free_multiple,234,,,,,,,,,ok
+exp_progress_outcome,234,,,,,,,,,ok
+milestone_progress_rate,234,,,,,,,,,ok

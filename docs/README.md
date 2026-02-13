@@ -1,6 +1,6 @@
 # Documentation Index
 
-> Updated 2026-02-09. Data as of Q4 2025.
+> Updated 2026-02-13. Data as of Q4 2025.
 
 ## For non-technical users
 
@@ -24,15 +24,18 @@
 - `docs/MODELING_VARIABLES.md` — comprehensive SEM construct triage (coverage, quality, recommendations)
 - `docs/SEM_DATA.md` — SEM panel schema, construct derivations, provenance, and quality checks
 - `docs/MODEL_READY.md` — model-ready dataset catalog (panels, long-format, metadata)
+- `docs/PROJECT_INTEGRATION.md` — phase status for legacy import, adapter, estimation, and legacy benchmark
+- `outputs/sem/README.md` — artifact-level guide for SEM adapter/estimation/comparison outputs
 
 ## For developers / maintainers
 
 - `docs/SETUP.md` — environment setup
-- `docs/ARCHITECTURE.md` — system design + data flow (7 phases)
+- `docs/ARCHITECTURE.md` — system design + data flow (9 phases including SEM integration)
 - `docs/DATABASE.md` — SQLite schema + example queries (all tables documented)
 - `docs/MODULES.md` — Python module reference (32 modules)
-- `docs/WORKFLOWS.md` — operational runbooks (14 workflows)
+- `docs/WORKFLOWS.md` — operational runbooks (15 workflows)
 - `docs/GITHUB_SHARING.md` — what to commit vs share externally
+- `docs/PROJECT_INTEGRATION.md` — integration plan/state across GLO + capacity-SEM repos
 
 ## NLP analyses
 

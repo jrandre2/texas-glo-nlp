@@ -1,0 +1,24 @@
+{
+  "evaluation": {
+    "indices": {
+      "CFI": -0.02071044050859694,
+      "RMSEA": Infinity,
+      "chi2": 147.8544756329396
+    },
+    "interpretations": {
+      "CFI": "poor",
+      "RMSEA": "poor"
+    },
+    "overall_fit": "poor"
+  },
+  "artifacts": {
+    "command": "run_sem_estimation.py",
+    "input_path": "/Volumes/T9/Texas GLO Action Plan Project/outputs/sem/texas/panel_disaster_quarter_sem_estimation_input.csv",
+    "panel_level": "disaster",
+    "model_type": "adapter_progress_rate",
+    "subset": "all",
+    "sample_size": 236,
+    "completed_rows": 236,
+    "fit_summary": "Model Fit Summary\n========================================\nCFI: -0.0207 (poor)\nRMSEA: inf (poor)\nchi2: 147.8545 ()\n\nOverall Fit: POOR"
+  }
+}

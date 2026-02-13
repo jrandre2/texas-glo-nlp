@@ -1,0 +1,4 @@
+Sample,N,Variance-Duration r,r p-value,SEM CFI,SEM RMSEA,Variance Loading p
+All (pooled),65,-0.22,0.085,0.64,0.68,0.29
+Local governments,29,-0.4286195692712093,0.02034620360212587,1.008,0.0,0.019
+State governments,36,-0.07869209350536256,0.6482475632278628,0.417,1.256,0.001

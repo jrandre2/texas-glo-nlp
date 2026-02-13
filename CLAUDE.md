@@ -11,8 +11,12 @@ make harvey            # Parse Harvey activities + export Sankey/trends
 make spatial           # Extract locations + generate choropleth maps
 make analyses          # Run all NLP analyses (sections → topics → aliases → relations → money)
 make model-ready       # Export model-ready CSV panels
+make xlsx-ingest       # Ingest QPR XLSX files into DB tables
+make phase1            # Import legacy outputs + ingest XLSX + build SEM adapter inputs
+make sem-estimate      # Run first SEM model on adapter outputs
+make sem-compare       # Benchmark latest SEM run against legacy migrated outputs
 make portal            # Rebuild TEAM_PORTAL.html
-make check             # Quick health check (imports + assertion smoke tests)
+make ci                # Compile + pytest suite
 ```
 
 Individual module CLIs accept `--stats`, `--rebuild`, and `--export` flags. See @docs/MODULES.md.
@@ -35,7 +39,7 @@ Individual module CLIs accept `--stats`, `--rebuild`, and `--export` flags. See 
 
 - IMPORTANT: The database is on an external volume (`/Volumes/T9/`). If the volume is unmounted, all file operations will fail.
 - Large spatial HTML files (100MB+) are generated in `outputs/exports/spatial/`. These are gitignored.
-- No automated test suite exists. Each module has `--stats` for manual verification.
+- Automated tests are available via `make ci` (`compileall` + `pytest`).
 - Money mentions are NLP-extracted approximations, not official accounting totals. Always caveat this in outputs.
 - SQLite does not support concurrent writes. Only run one write pipeline at a time.
 

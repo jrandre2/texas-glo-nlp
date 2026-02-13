@@ -17,7 +17,9 @@ Step-by-step guides for common processing tasks.
 - [Workflow 11: Run NLP Analyses](#workflow-11-run-nlp-analyses)
 - [Workflow 12: Extended Harvey Analysis](#workflow-12-extended-harvey-analysis)
 - [Workflow 13: Build Model-Ready and SEM Panels](#workflow-13-build-model-ready-and-sem-panels)
-- [Workflow 14: Run Tests](#workflow-14-run-tests)
+- [Workflow 13b: Ingest QPR XLSX Data](#workflow-13b-ingest-qpr-xlsx-data)
+- [Workflow 14: Run SEM Estimation and Legacy Comparison](#workflow-14-run-sem-estimation-and-legacy-comparison)
+- [Workflow 15: Run Tests](#workflow-15-run-tests)
 
 ---
 
@@ -780,7 +782,100 @@ Open `outputs/model_ready/meta/sem_coverage_report.csv` in a spreadsheet to see 
 
 ---
 
-## Workflow 14: Run Tests
+## Workflow 13b: Ingest QPR XLSX Data
+
+Ingest structured QPR XLSX downloads into the database for use by SEM panels and admin capacity signals.
+
+### Prerequisites
+
+- XLSX files in project root (F31 financials, A32 narratives, P31 accomplishments, P33 demographics)
+- Database initialized (`data/glo_reports.db`)
+
+### Steps
+
+#### 1. Run XLSX ingestion
+
+```bash
+make xlsx-ingest
+```
+
+This reads 8 unique XLSX files and writes to 4 `qpr_*` tables.
+
+#### 2. Verify counts
+
+```bash
+python scripts/ingest_qpr_xlsx.py --stats
+```
+
+Expected:
+
+- `qpr_activity_financials`: ~6,545 rows
+- `qpr_payroll_allocations`: ~592 rows
+- `qpr_accomplishments`: ~13,248 rows
+- `qpr_beneficiary_demographics`: ~8,096 rows
+
+#### 3. Rebuild downstream outputs
+
+After ingestion, rebuild model-ready datasets to pick up XLSX payroll signals:
+
+```bash
+make model-ready
+make sem-adapter-all
+```
+
+---
+
+## Workflow 14: Run SEM Estimation and Legacy Comparison
+
+Run the SEM integration pipeline from adapter inputs through legacy benchmarking.
+
+### Prerequisites
+
+- Model-ready SEM panels built (Workflow 13)
+- XLSX data ingested (Workflow 13b) — needed for payroll signals and Spending_CV
+- `semopy` installed in the Python interpreter used for SEM scripts
+
+### Steps
+
+#### 1. Build integration prerequisites (legacy artifacts + XLSX + adapter inputs)
+
+```bash
+make phase1
+```
+
+#### 2. Run a single SEM estimation model
+
+```bash
+make sem-estimate
+```
+
+#### 3. (Recommended) Run batch estimation across duration-free models
+
+```bash
+python scripts/run_sem_estimation.py --batch \
+    duration_free_3x2 duration_free_cv duration_free_multiple \
+    exp_progress_outcome milestone_progress_rate \
+    --panel-level disaster
+```
+
+This writes a comparison table to `outputs/sem/texas/results/batch_comparison_{timestamp}.csv`.
+
+#### 4. Compare latest SEM run against legacy migrated outputs
+
+```bash
+make sem-compare
+```
+
+#### 5. Review artifacts
+
+- Current SEM outputs: `outputs/sem/texas/results/*_{estimates,fit_stats,diagnostics,manifest}.csv|json`
+- Batch comparison: `outputs/sem/texas/results/batch_comparison_*.csv`
+- Side-by-side benchmark: `outputs/sem/texas/results/*_legacy-comparison_*.csv` and `*.md`
+- Legacy source artifacts: `outputs/legacy/capacity_sem_migrated/files/`
+
+---
+
+## Workflow 15: Run Tests
 
 Run the project test suite.
 
@@ -817,6 +912,12 @@ pytest
 | Extended Harvey analysis | `python src/populate_extended_data.py` |
 | NLP analyses (all) | `make analyses` |
 | Build model-ready datasets | `make model-ready` |
+| Ingest QPR XLSX files | `make xlsx-ingest` |
+| Build SEM integration prerequisites | `make phase1` |
+| Build SEM adapter inputs (all levels) | `make sem-adapter-all` |
+| Run first SEM estimate | `make sem-estimate` |
+| Run batch SEM estimation | `python scripts/run_sem_estimation.py --batch model1 model2 ...` |
+| Compare SEM vs legacy outputs | `make sem-compare` |
 | Build Harvey deliverable reports | `make harvey-reports` |
 | Build team portal | `make portal` |
 | Build share bundle | `make share-bundle` |

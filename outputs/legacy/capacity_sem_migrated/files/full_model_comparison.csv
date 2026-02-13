@@ -1,0 +1,20 @@
+model,description,gov_cap_indicators,recovery_indicators,timeliness_measure,CFI,RMSEA,struct_beta,p_value,recommendation
+full,Original 6-indicator model,3,3,Duration_of_completion,0.78,0.41,97.95,<0.001,BASELINE
+exp_log_duration,Log-transformed Duration,3,3,Duration_log,0.82,0.35,95.2,<0.001,Improved
+exp_cv_variance,Coefficient of Variation,3,3,Duration_of_completion,0.79,0.40,96.8,<0.001,Marginal
+exp_no_timeliness,Remove Timeliness,2,3,Duration_of_completion,0.74,0.54,98.1,<0.001,Worse
+exp_no_redundant_ratio,Remove Ratio_obligated,3,2,Duration_of_completion,0.76,0.48,97.5,<0.001,Worse
+exp_log_cv,Log Duration + CV,2,3,Duration_log,0.85,0.32,94.3,<0.001,Better
+exp_minimal,2x2 indicators,2,2,Duration_of_completion,0.88,0.28,92.1,<0.001,Good
+exp_optimal_v1,All fixes (2x2),2,2,Duration_log,1.009,0.000,2.30,<0.001,PRIMARY
+exp_optimal_v2,3 outcome indicators,2,3,Duration_log,0.92,0.25,1.61,<0.001,Good
+exp_single_factor,Single latent factor,4,0,N/A,1.014,0.000,N/A,N/A,No structural path
+exp_gini,Gini instead of CV,2,2,Duration_log,0.958,0.270,2.40,<0.001,Viable
+exp_progress_rate,Progress_Rate on gov_cap,3,2,Progress_Rate,0.739,0.393,1.76,<0.001,Poor fit
+exp_progress_outcome,Progress_Rate on outcome,2,2,Progress_Rate,0.976,0.139,0.04,<0.001,ALTERNATIVE
+exp_time_to_milestone,Time to 50% milestone,2,2,Time_to_50pct,0.794,0.572,-0.61,<0.001,Poor fit
+exp_acceleration,Spending Acceleration,2,2,Spending_Acceleration,0.937,0.156,2.25,<0.001,Viable
+exp_velocity,Completion Velocity,2,2,Completion_Velocity,0.963,0.204,0.04,<0.001,Viable
+exp_optimal_progress,Progress replaces Duration,2,2,Progress_Rate,0.751,0.380,1.82,<0.001,Poor fit
+exp_startup_lag,Startup Lag,2,2,Startup_Lag,0.806,0.291,0.02,0.983,Not significant
+exp_alt_timeliness,Full alternative (no Duration),2,2,Mixed,-0.160,1.351,N/A,N/A,Failed

@@ -1,4 +1,4 @@
-.PHONY: help stats pdf-stats nlp-stats link semantic-build harvey harvey-parse harvey-fund-switch harvey-housing-zip harvey-reports spatial sections section-families topics entity-resolve relations money model-ready portal share-bundle clean-macos analyses check test ci deps-lock
+.PHONY: help stats pdf-stats nlp-stats link semantic-build harvey harvey-parse harvey-fund-switch harvey-housing-zip harvey-reports spatial sections section-families topics entity-resolve relations money model-ready xlsx-ingest sem-adapter sem-adapter-all sem-estimate sem-compare legacy-import phase1 portal share-bundle clean-macos analyses check test ci deps-lock
 
 PY := $(shell if [ -x venv/bin/python ]; then echo venv/bin/python; else echo python; fi)
 
@@ -18,6 +18,13 @@ help:
 	@echo "  make relations      - build + export entity relations"
 	@echo "  make money          - extract money mentions + context"
 	@echo "  make model-ready    - export model-ready CSV panels"
+	@echo "  make xlsx-ingest    - ingest QPR XLSX files into DB tables"
+	@echo "  make sem-adapter    - build SEM estimation input (disaster panel)"
+	@echo "  make sem-adapter-all - build SEM estimation inputs for all panel levels"
+	@echo "  make sem-estimate   - run first SEM estimation model on disaster input"
+	@echo "  make sem-compare    - run sem-estimate, then benchmark against legacy outputs"
+	@echo "  make legacy-import  - dedupe/import legacy capacity-sem artifacts"
+	@echo "  make phase1         - run phase-1 integration bootstrap (legacy + SEM adapter)"
 	@echo "  make harvey-reports - build Harvey deliverable reports (HTML + CSV)"
 	@echo "  make portal         - build TEAM_PORTAL.html for sharing"
 	@echo "  make share-bundle   - build a zip-ready share bundle (portal-linked outputs)"
@@ -88,6 +95,30 @@ money: section-families entity-resolve
 
 model-ready:
 	$(PY) scripts/build_model_ready_datasets.py
+
+xlsx-ingest:
+	$(PY) scripts/ingest_qpr_xlsx.py --rebuild
+
+sem-adapter:
+	$(PY) scripts/build_sem_estimation_inputs.py --panel-level disaster --overwrite
+
+sem-adapter-all: 
+	$(PY) scripts/build_sem_estimation_inputs.py --panel-level disaster --overwrite
+	$(PY) scripts/build_sem_estimation_inputs.py --panel-level county --overwrite
+	$(PY) scripts/build_sem_estimation_inputs.py --panel-level city --overwrite
+	$(PY) scripts/build_sem_estimation_inputs.py --panel-level state --overwrite
+
+sem-estimate:
+	python scripts/run_sem_estimation.py --panel-level disaster --model adapter_progress_rate
+
+sem-compare:
+	make sem-estimate
+	python scripts/compare_sem_to_legacy.py --panel-level disaster --model adapter_progress_rate
+
+legacy-import:
+	$(PY) scripts/import_capacity_sem_legacy.py
+
+phase1: legacy-import xlsx-ingest sem-adapter-all
 
 portal: model-ready harvey-reports
 	$(PY) scripts/build_team_portal.py

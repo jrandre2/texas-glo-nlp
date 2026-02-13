@@ -1,0 +1,18 @@
+Model,N,DoF,chi2,p_value,CFI,TLI,RMSEA,AIC,BIC
+texas::adapter_progress_rate [disaster|all],236.0,0.0,147.854476,,-0.02071,,inf,10.746996,31.529987
+legacy.model_comparison::Baseline,,8.0,94.147856,0.0,0.780986,0.589348,0.410192,23.103143,51.370177
+legacy.model_comparison::M1_RemoveRatioOblig,,4.0,298.738823,0.0,-1.58356,-5.458901,1.072997,12.808036,36.726296
+legacy.model_comparison::M2_RemoveTimeliness,,4.0,78.174514,0.0,0.734518,0.336295,0.538279,19.59463,43.51289
+legacy.model_comparison::M3_RemoveBoth,,1.0,30.649675,0.0,0.634763,-1.191425,0.680644,17.056933,36.626419
+legacy.model_comparison::M4_DurationInCapacity,,4.0,79.177878,0.0,0.730927,0.327317,0.541907,19.563758,43.482018
+legacy.model_comparison::M5_SingleFactor,,5.0,79.180971,0.0,0.734495,0.468989,0.481472,17.563662,39.307535
+legacy.model_comparison::M6_RatiosOnly,,1.0,61.744272,0.0,0.741974,-0.548154,0.974233,16.100176,35.669662
+legacy.model_comparison::M7_RemoveQBQVar,,4.0,50.236673,0.0,0.829241,0.573101,0.424985,20.454256,44.372516
+legacy.model_comparison::M8_Minimal4Indicators,,1.0,30.266883,0.0,0.875647,0.253879,0.676236,17.068711,36.638197
+legacy.model_comparison::M9_DirectEffects,,2.0,31.640485,0.0,0.874059,0.622177,0.481213,15.026447,32.421545
+legacy.fit_stats::all_last_observed,,8.0,93.138952,0.0,0.825215,0.672277,0.407783,23.134186,51.401221
+legacy.fit_stats::exp_optimal_v1_censored,,1.0,0.380383,0.537398,1.379278,3.275667,0.0,17.971823,29.634355
+legacy.fit_stats::exp_optimal_v1_last_observed,,1.0,0.19194,0.661307,1.008986,1.053917,0.0,17.994094,37.56358
+legacy.fit_stats::progress_rate_short_series_last_observed,,1.0,5.323974,0.021034,0.934076,0.604457,0.238525,17.861715,38.955964
+legacy.fit_stats::time_to_50pct_last_observed,,1.0,21.96418,3e-06,0.794429,-0.233426,0.572333,17.324179,36.893665
+legacy.fit_stats::with_all_covariates,,27.0,462.674048,0.0,-0.627409,-1.350702,0.803395,0.409689,23.055426

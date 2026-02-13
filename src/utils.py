@@ -609,6 +609,92 @@ def init_database(db_path: Optional[Path] = None) -> sqlite3.Connection:
     cursor.execute('CREATE INDEX IF NOT EXISTS idx_money_mention_entities_mid ON money_mention_entities(money_mention_id)')
     cursor.execute('CREATE INDEX IF NOT EXISTS idx_money_mention_entities_type ON money_mention_entities(entity_type)')
 
+    # === QPR XLSX INGESTION TABLES ===
+
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS qpr_activity_financials (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            grant_number TEXT NOT NULL,
+            project_number TEXT,
+            project_title TEXT,
+            activity_number TEXT NOT NULL,
+            activity_title TEXT,
+            activity_type TEXT,
+            responsible_org TEXT,
+            begin_date TEXT,
+            quarter_label TEXT NOT NULL,
+            obligated_usd REAL,
+            expended_usd REAL,
+            disbursed_usd REAL,
+            program_income_disbursed_usd REAL,
+            program_income_received_usd REAL,
+            source_file TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE(grant_number, activity_number, quarter_label)
+        )
+    ''')
+
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS qpr_payroll_allocations (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            grant_number TEXT NOT NULL,
+            activity_number TEXT NOT NULL,
+            activity_title TEXT,
+            activity_type TEXT,
+            responsible_org TEXT,
+            quarter_label TEXT NOT NULL,
+            payroll_usd REAL NOT NULL,
+            narrative_snippet TEXT,
+            source_file TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE(grant_number, activity_number, quarter_label, payroll_usd)
+        )
+    ''')
+
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS qpr_accomplishments (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            grant_number TEXT NOT NULL,
+            activity_number TEXT NOT NULL,
+            activity_title TEXT,
+            activity_type TEXT,
+            responsible_org TEXT,
+            measure_type TEXT NOT NULL,
+            quarter_label TEXT NOT NULL,
+            actual_value REAL,
+            source_file TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE(grant_number, activity_number, measure_type, quarter_label)
+        )
+    ''')
+
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS qpr_beneficiary_demographics (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            grant_number TEXT NOT NULL,
+            activity_number TEXT NOT NULL,
+            activity_title TEXT,
+            activity_type TEXT,
+            national_objective TEXT,
+            category TEXT NOT NULL,
+            demographic_group TEXT NOT NULL,
+            value REAL,
+            source_file TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            UNIQUE(grant_number, activity_number, national_objective, category, demographic_group)
+        )
+    ''')
+
+    cursor.execute('CREATE INDEX IF NOT EXISTS idx_qpr_fin_grant ON qpr_activity_financials(grant_number)')
+    cursor.execute('CREATE INDEX IF NOT EXISTS idx_qpr_fin_activity ON qpr_activity_financials(activity_number)')
+    cursor.execute('CREATE INDEX IF NOT EXISTS idx_qpr_fin_quarter ON qpr_activity_financials(quarter_label)')
+    cursor.execute('CREATE INDEX IF NOT EXISTS idx_qpr_fin_type ON qpr_activity_financials(activity_type)')
+    cursor.execute('CREATE INDEX IF NOT EXISTS idx_qpr_payroll_activity ON qpr_payroll_allocations(activity_number)')
+    cursor.execute('CREATE INDEX IF NOT EXISTS idx_qpr_payroll_quarter ON qpr_payroll_allocations(quarter_label)')
+    cursor.execute('CREATE INDEX IF NOT EXISTS idx_qpr_accom_activity ON qpr_accomplishments(activity_number)')
+    cursor.execute('CREATE INDEX IF NOT EXISTS idx_qpr_accom_quarter ON qpr_accomplishments(quarter_label)')
+    cursor.execute('CREATE INDEX IF NOT EXISTS idx_qpr_bene_activity ON qpr_beneficiary_demographics(activity_number)')
+
     conn.commit()
     return conn
 

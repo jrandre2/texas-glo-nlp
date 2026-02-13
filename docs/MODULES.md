@@ -36,6 +36,8 @@ Documentation for the main pipeline modules and analysis scripts in `src/`.
 - [narrative_analyzer.py](#narrative_analyzerpy)
 - [populate_extended_data.py](#populate_extended_datapy)
 - [project_status.py](#project_statuspy)
+- [ingest_qpr_xlsx.py (script)](#ingest_qpr_xlsxpy)
+- [capacity_sem subpackage](#capacity_sem-subpackage)
 
 ---
 
@@ -1322,4 +1324,109 @@ python src/project_status.py --json
 
 # Use a custom database path
 python src/project_status.py --db /path/to/db.sqlite
+```
+
+---
+
+## ingest_qpr_xlsx.py
+
+Ingest structured DRGR Quarterly Performance Report (QPR) XLSX downloads into the SQLite database. Reads 8 unique XLSX files (F31 financials, A32 narratives, P31 accomplishments, P33 demographics) and writes to 4 database tables.
+
+Located in: `scripts/ingest_qpr_xlsx.py`
+
+### Source Files
+
+| File Prefix | Report Type | Table Written |
+|-------------|-------------|---------------|
+| B-17-DM / B-18-DP `_F31` | Financial data by activity/quarter | `qpr_activity_financials` |
+| P-17-TX-48-HIM1 `_A32` | Activity progress narratives | `qpr_payroll_allocations` |
+| P-17-TX-48-HIM1 `_P31` | Actual accomplishments by quarter | `qpr_accomplishments` |
+| P-17-TX-48-HIM1 `_P33` | Household demographics by tenure/ethnicity | `qpr_beneficiary_demographics` |
+
+### CLI Usage
+
+```bash
+# Ingest all XLSX files (clear + re-insert)
+python scripts/ingest_qpr_xlsx.py --rebuild
+
+# Show current table counts
+python scripts/ingest_qpr_xlsx.py --stats
+
+# Override input directory and database path
+python scripts/ingest_qpr_xlsx.py --rebuild --input-root /path/to/xlsx/files --db /path/to/db.sqlite
+```
+
+### Make Target
+
+```bash
+make xlsx-ingest    # equivalent to: python scripts/ingest_qpr_xlsx.py --rebuild
+```
+
+### Key Details
+
+- Uses `openpyxl` (`read_only=True, data_only=True`) for efficient XLSX reading
+- Skips duplicate `[NN]` files (prefers unnumbered originals)
+- Payroll extraction uses regex on A32 narrative text: `$89382.76 - Payroll Allocation` pattern
+- F31 data starts at row 9; P31 headers at rows 8/9, data at row 10; P33 headers at rows 8/9, data at row 11
+- Expected row counts: ~6,545 financials, ~592 payroll, ~13,248 accomplishments, ~8,096 demographics
+
+---
+
+## capacity_sem subpackage
+
+SEM (Structural Equation Modeling) model definitions, fitting, and diagnostics. Located in `src/capacity_sem/models/`.
+
+### sem_specifications.py
+
+Model registry containing lavaan-style SEM specification strings.
+
+```python
+from capacity_sem.models.sem_specifications import (
+    MODEL_REGISTRY,
+    get_model_spec,
+    get_model_description,
+)
+
+# List available models
+for name, desc in MODEL_REGISTRY.items():
+    print(f"{name}: {desc}")
+
+# Get a model specification string
+spec = get_model_spec("duration_free_3x2")
+```
+
+Key model families:
+
+| Model | DoF | Description |
+|-------|-----|-------------|
+| `adapter_progress_rate` | 0 | Baseline 3-variable model (saturated) |
+| `duration_free_3x2` | 4 | gov_capacity(3 indicators) -> recovery(2 indicators) |
+| `duration_free_cv` | 1 | gov_capacity(2) -> recovery(2) with Spending_CV |
+| `duration_free_multiple` | 2 | gov_capacity(2) -> 3 direct paths |
+| `exp_progress_outcome` | 1 | Expenditure efficiency -> progress/completion |
+| `milestone_progress_rate` | 1 | Spending volatility -> progress/completion |
+
+### sem_fitting.py
+
+Wrapper around `semopy` for model fitting and result extraction.
+
+```python
+from capacity_sem.models.sem_fitting import fit_and_summarize
+
+results = fit_and_summarize(df, model_type="duration_free_3x2", subset="all")
+# Returns dict with keys: estimates (DataFrame), fit_stats, sample_size
+```
+
+### sem_diagnostics.py
+
+Model fit evaluation and summary reporting.
+
+```python
+from capacity_sem.models.sem_diagnostics import evaluate_model_fit, summarize_fit
+
+evaluation = evaluate_model_fit(fit_stats)
+# Returns dict with: dof, chi2, p_value, cfi, tli, rmsea, aic, bic
+
+summary = summarize_fit(evaluation)
+# Returns human-readable fit summary string
 ```

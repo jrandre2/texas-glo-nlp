@@ -1,0 +1,2 @@
+parameter,original_estimate,original_se,original_pvalue,bootstrap_mean,bootstrap_se,bootstrap_bias,ci_lower_95,ci_upper_95,n_bootstrap,n_successful
+gov_cap → recovery_outcome,-0.6848331451436365,0.7004465898517738,0.3282181207340362,-0.6166792261724704,0.7223735104562173,0.06815391897116607,-2.122187134508231,0.49242029363547746,1000,1000

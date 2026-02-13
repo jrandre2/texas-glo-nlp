@@ -16,6 +16,21 @@ From the repo root:
 
 This reads from `data/glo_reports.db` and writes CSVs + a build manifest under `outputs/model_ready/`.
 
+## Downstream SEM Integration
+
+Model-ready SEM panels are the upstream inputs for integration phases:
+
+- `make sem-adapter-all`
+  - converts `panel_*_quarter_sem.csv` files into SEM estimation inputs under
+    `outputs/sem/texas/`
+- `make sem-estimate`
+  - runs the first runnable SEM model against adapter outputs
+- `make sem-compare`
+  - benchmarks current SEM fit metrics against migrated legacy results in
+    `outputs/legacy/capacity_sem_migrated/files/`
+
+Use `make phase1` to run legacy import + SEM adapter as a single bootstrap step.
+
 ## What we can extract (today)
 
 Across **all disaster report categories** (all PDFs loaded into the DB), we can reliably extract:
@@ -31,8 +46,8 @@ Across **all disaster report categories** (all PDFs loaded into the DB), we can 
 
 ## What is *not* reliably available in DRGR (or not yet extracted)
 
-- **Administrative staff headcount**: now available only as sparse extracted mentions (`admin_staff_count_sum`) plus admin activity proxies; still not a complete staffing ledger.
-- **Payroll**: now available as extracted payroll-like dollar mentions (`admin_payroll_usd_sum`), not audited accounting totals.
+- **Administrative staff headcount**: sparse extracted mentions (`admin_staff_count_sum`) with year-like false positives now filtered (1900-2099 range excluded); still not a complete staffing ledger.
+- **Payroll**: available as NLP-extracted mentions plus structured XLSX payroll allocations from A32 narratives (~592 records at confidence 0.95, method `xlsx:payroll_allocation`). Not audited accounting totals.
 - **Disaster severity (deaths, economic/property loss)**: extracted as narrative signals where present, but external FEMA/NOAA joins remain recommended.
 - **Complete beneficiary / outcome series**: beneficiary parsing coverage varies by report format; expect missingness.
 
@@ -98,8 +113,17 @@ All files live under `outputs/model_ready/`:
 - `docs/SEM_DATA.md`
   - Full SEM schema, construct derivation logic, provenance fields, and quality-gate definitions.
 
+## SEM Estimation Inputs
+
+The SEM adapter (`scripts/build_sem_estimation_inputs.py`) derives additional columns
+used by the duration-free model family:
+
+- `spending_cv` — coefficient of variation of quarterly expenditures per unit (min 3 quarters)
+- `completion_pct` — direct alias for `program_completion_rate`
+
+These are written to `outputs/sem/texas/panel_*_quarter_sem_estimation_input.csv`.
+
 ## Next improvements (planned)
 
-- Improve staffing/payroll extraction recall for table-heavy legacy documents.
 - Improve city-level canonicalization (and optionally join to a reference city list for stable IDs).
 - Join external severity/population data (FEMA/NOAA/Census) using FEMA mappings for stronger causal identification.

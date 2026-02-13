@@ -1,0 +1,628 @@
+{
+  "built_at_utc": "2026-02-13T01:14:47+00:00",
+  "source_root": "/Volumes/T9/Projects/capacity-sem-migrated/figures",
+  "output_root": "/Volumes/T9/Texas GLO Action Plan Project/outputs/legacy/capacity_sem_migrated",
+  "dry_run": false,
+  "source_file_count": 165,
+  "unique_file_count": 50,
+  "duplicate_group_count": 50,
+  "redundant_source_file_count": 115,
+  "entries": [
+    {
+      "sha256": "06bf0a3ad57bae12b0c47c94339231f1098f61e677c6a607b598889eb3785ec7",
+      "size_bytes": 2016,
+      "destination": "files/model_summary_by_variant.csv",
+      "canonical_source": "model_summary_by_variant.csv",
+      "source_variants": [
+        "model_summary_by_variant.csv",
+        "results/model_summary_by_variant.csv",
+        "tables/results/model_summary_by_variant.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "0bec00f5ca4a7c781a4acfaf589c28655ad44be1c0ac5fe1c28710be80ae2a28",
+      "size_bytes": 343,
+      "destination": "files/bootstrap_confidence_intervals_censored.csv",
+      "canonical_source": "bootstrap_confidence_intervals_censored.csv",
+      "source_variants": [
+        "bootstrap_confidence_intervals_censored.csv",
+        "results/bootstrap_confidence_intervals_censored.csv",
+        "tables/results/bootstrap_confidence_intervals_censored.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "0efddfbd3156b4d4bde9274e3b18882de334f1af90a3fe789910883b5f98d037",
+      "size_bytes": 7594,
+      "destination": "files/transformation_experiment_results_20251218_213643.csv",
+      "canonical_source": "transformation_experiment_results_20251218_213643.csv",
+      "source_variants": [
+        "results/transformation_experiment_results_20251218_213643.csv",
+        "tables/results/transformation_experiment_results_20251218_213643.csv",
+        "transformation_experiment_results_20251218_213643.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "1679966fcd2a6b63830e5958d4e24900bc6be38d629f9016713aef768b566783",
+      "size_bytes": 705,
+      "destination": "files/clpm_4wave_cross_lagged_paths.csv",
+      "canonical_source": "clpm_4wave_cross_lagged_paths.csv",
+      "source_variants": [
+        "clpm_4wave_cross_lagged_paths.csv",
+        "results/clpm_4wave_cross_lagged_paths.csv",
+        "tables/results/clpm_4wave_cross_lagged_paths.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "18a94e1afce13a5bf6d8490a9cad1a4740350d11efbf46292128a598257cd8b0",
+      "size_bytes": 328,
+      "destination": "files/fit_statistics_time_to_50pct_last_observed.csv",
+      "canonical_source": "fit_statistics_time_to_50pct_last_observed.csv",
+      "source_variants": [
+        "fit_statistics_time_to_50pct_last_observed.csv",
+        "results/fit_statistics_time_to_50pct_last_observed.csv",
+        "tables/results/fit_statistics_time_to_50pct_last_observed.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "1a1524cdc5fac0cb29c2fa769c8d9f05968f65a7e32190edd8aac537f75aa5a9",
+      "size_bytes": 2013,
+      "destination": "files/model_comparison.csv",
+      "canonical_source": "model_comparison.csv",
+      "source_variants": [
+        "model_comparison.csv",
+        "results/model_comparison.csv",
+        "tables/results/model_comparison.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "1c1da9c7de71d462c77503aeefe72ef9e4315fe6a622957ee49479ed1d413972",
+      "size_bytes": 1203,
+      "destination": "files/sem_estimates_progress_rate_short_series_last_observed.csv",
+      "canonical_source": "sem_estimates_progress_rate_short_series_last_observed.csv",
+      "source_variants": [
+        "results/sem_estimates_progress_rate_short_series_last_observed.csv",
+        "sem_estimates_progress_rate_short_series_last_observed.csv",
+        "tables/results/sem_estimates_progress_rate_short_series_last_observed.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "206fa339508d4ceb2194266ce260244b8bb451f4540cf22fa669a33b3e2b885b",
+      "size_bytes": 2049,
+      "destination": "files/riclpm_estimates.csv",
+      "canonical_source": "riclpm_estimates.csv",
+      "source_variants": [
+        "results/riclpm_estimates.csv",
+        "riclpm_estimates.csv",
+        "tables/results/riclpm_estimates.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "28f4b118bdbfc137fa497ebd15b74371b8a3b1ac95dc437d502462fd7bf2d13c",
+      "size_bytes": 270,
+      "destination": "files/longitudinal_models_comparison.csv",
+      "canonical_source": "longitudinal_models_comparison.csv",
+      "source_variants": [
+        "longitudinal_models_comparison.csv",
+        "longitudinal_models_comparison_censored.csv",
+        "longitudinal_models_comparison_last_observed.csv",
+        "results/longitudinal_models_comparison.csv",
+        "results/longitudinal_models_comparison_censored.csv",
+        "results/longitudinal_models_comparison_last_observed.csv",
+        "tables/results/longitudinal_models_comparison.csv",
+        "tables/results/longitudinal_models_comparison_censored.csv",
+        "tables/results/longitudinal_models_comparison_last_observed.csv"
+      ],
+      "variant_count": 9
+    },
+    {
+      "sha256": "3115ab57b0ca22e33d046441be5369bf7753888bdd6f8d193d8e88bbb4740166",
+      "size_bytes": 53758,
+      "destination": "files/grant_vs_grantee_comparison.png",
+      "canonical_source": "grant_vs_grantee_comparison.png",
+      "source_variants": [
+        "exploration/grant_vs_grantee_comparison.png",
+        "figures/exploration/grant_vs_grantee_comparison.png",
+        "grant_vs_grantee_comparison.png"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "345166449c9fb51ed369612ceac5bc254ada9cb7d9e623b370094fff2985755d",
+      "size_bytes": 15256,
+      "destination": "files/indicators_housing.csv",
+      "canonical_source": "indicators_housing.csv",
+      "source_variants": [
+        "descriptive/indicators_housing.csv",
+        "indicators_housing.csv",
+        "tables/descriptive/indicators_housing.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "3554fa145fc8d2c89cd898691d9cb839f25fa90a1d810195aaf6e2da526f62d9",
+      "size_bytes": 1661,
+      "destination": "files/spatial_lisa_locals.csv",
+      "canonical_source": "spatial_lisa_locals.csv",
+      "source_variants": [
+        "results/spatial_lisa_locals.csv",
+        "spatial_lisa_locals.csv",
+        "tables/results/spatial_lisa_locals.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "3ae483b5ef1437876a0fca72e0001db349b608dbec8d324dad9762d11c4286cb",
+      "size_bytes": 56251,
+      "destination": "files/maturity_effects.png",
+      "canonical_source": "maturity_effects.png",
+      "source_variants": [
+        "exploration/maturity_effects.png",
+        "figures/exploration/maturity_effects.png",
+        "maturity_effects.png"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "3e3f938aa54ec299194cf81d9a9a8d05b834778cc42c7572600696e55b3cc282",
+      "size_bytes": 469,
+      "destination": "files/clpm_3wave_cross_lagged_paths.csv",
+      "canonical_source": "clpm_3wave_cross_lagged_paths.csv",
+      "source_variants": [
+        "clpm_3wave_cross_lagged_paths.csv",
+        "results/clpm_3wave_cross_lagged_paths.csv",
+        "tables/results/clpm_3wave_cross_lagged_paths.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "44a55ac8c1e4d66ec84778389852b19783e3d6f09df72279deef081cbde0f25e",
+      "size_bytes": 596,
+      "destination": "files/program_type_distribution.csv",
+      "canonical_source": "program_type_distribution.csv",
+      "source_variants": [
+        "descriptive/program_type_distribution.csv",
+        "program_type_distribution.csv",
+        "tables/descriptive/program_type_distribution.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "472641345bd4f748dd338bbc4f84e8ff9b4d6618fd599486119ae4fbdd2f451d",
+      "size_bytes": 1818,
+      "destination": "files/sem_estimates_all_last_observed.csv",
+      "canonical_source": "sem_estimates_all_last_observed.csv",
+      "source_variants": [
+        "results/sem_estimates_all_last_observed.csv",
+        "sem_estimates_all_last_observed.csv",
+        "tables/results/sem_estimates_all_last_observed.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "4957763efece0d2eb79c298c433660ffd03d788345f3311b1b6fac102197ca8a",
+      "size_bytes": 1815,
+      "destination": "files/full_model_comparison.csv",
+      "canonical_source": "full_model_comparison.csv",
+      "source_variants": [
+        "full_model_comparison.csv",
+        "results/full_model_comparison.csv",
+        "tables/results/full_model_comparison.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "553deea3c9e0f0554b4f76903c54fa47ea183fc6005f24a4176ea67b2630a9ce",
+      "size_bytes": 322,
+      "destination": "files/fit_statistics_progress_rate_short_series_last_observed.csv",
+      "canonical_source": "fit_statistics_progress_rate_short_series_last_observed.csv",
+      "source_variants": [
+        "fit_statistics_progress_rate_short_series_last_observed.csv",
+        "results/fit_statistics_progress_rate_short_series_last_observed.csv",
+        "tables/results/fit_statistics_progress_rate_short_series_last_observed.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "5548e37124e20bba81b11cfc30921e6ecd1d4dea95ddc7fca07cf66c7023e7aa",
+      "size_bytes": 305,
+      "destination": "files/fit_statistics_exp_optimal_v1_censored.csv",
+      "canonical_source": "fit_statistics_exp_optimal_v1_censored.csv",
+      "source_variants": [
+        "fit_statistics_exp_optimal_v1_censored.csv",
+        "results/fit_statistics_exp_optimal_v1_censored.csv",
+        "tables/results/fit_statistics_exp_optimal_v1_censored.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "5d00c14242c66041cff3688f1543a81f9393f6f42d5b8515dc3734eb5edc0432",
+      "size_bytes": 325,
+      "destination": "files/fit_statistics_all_last_observed.csv",
+      "canonical_source": "fit_statistics_all_last_observed.csv",
+      "source_variants": [
+        "fit_statistics_all_last_observed.csv",
+        "results/fit_statistics_all_last_observed.csv",
+        "tables/results/fit_statistics_all_last_observed.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "635071ffb8dc0733fbf1ae5808d02407c3dde38bdf479dc001f886cacf92c94e",
+      "size_bytes": 2333,
+      "destination": "files/sem_estimates_with_all_covariates_last_observed.csv",
+      "canonical_source": "sem_estimates_with_all_covariates_last_observed.csv",
+      "source_variants": [
+        "results/sem_estimates_with_all_covariates_last_observed.csv",
+        "sem_estimates_with_all_covariates_last_observed.csv",
+        "tables/results/sem_estimates_with_all_covariates_last_observed.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "6b3d1d4619451012aeec76b1e13959755f79dab6ac175cc3d7e2c6a341a1fcd2",
+      "size_bytes": 6170,
+      "destination": "files/population_data.csv",
+      "canonical_source": "population_data.csv",
+      "source_variants": [
+        "covariates/population_data.csv",
+        "population_data.csv",
+        "tables/covariates/population_data.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "6fc714896a01ebe90492f8332bf31d775e8faa05cdbdf3553f97e567f9b72cce",
+      "size_bytes": 922,
+      "destination": "files/cross_validation_results_last_observed.csv",
+      "canonical_source": "cross_validation_results_last_observed.csv",
+      "source_variants": [
+        "cross_validation_results_last_observed.csv",
+        "results/cross_validation_results_last_observed.csv",
+        "tables/results/cross_validation_results_last_observed.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "7137e2025d0a0005b370765381ba14fc63815fa96e4ed927e09014e288492503",
+      "size_bytes": 22061,
+      "destination": "files/latent_indicators.csv",
+      "canonical_source": "latent_indicators.csv",
+      "source_variants": [
+        "descriptive/latent_indicators.csv",
+        "descriptive/latent_indicators_censored.csv",
+        "latent_indicators.csv",
+        "latent_indicators_censored.csv",
+        "tables/descriptive/latent_indicators.csv",
+        "tables/descriptive/latent_indicators_censored.csv"
+      ],
+      "variant_count": 6
+    },
+    {
+      "sha256": "77cb3ce1f50d57ef604d490b7bff5990af921427359bf26f6f82e22d2dd1b6c6",
+      "size_bytes": 1756,
+      "destination": "files/spatial_lisa_states.csv",
+      "canonical_source": "spatial_lisa_states.csv",
+      "source_variants": [
+        "results/spatial_lisa_states.csv",
+        "spatial_lisa_states.csv",
+        "tables/results/spatial_lisa_states.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "7f9c34997e8a7fb18df9c1b35d3d97bc5c131f5417b66f5f9c2369710c38d92b",
+      "size_bytes": 24131,
+      "destination": "files/latent_indicators_last_observed.csv",
+      "canonical_source": "latent_indicators_last_observed.csv",
+      "source_variants": [
+        "descriptive/latent_indicators_last_observed.csv",
+        "latent_indicators_last_observed.csv",
+        "tables/descriptive/latent_indicators_last_observed.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "8225ed544c1dcec8e1bd96c83976a9a256baf392cc7a84f7bd0005c405f7b824",
+      "size_bytes": 4503,
+      "destination": "files/transformation_experiment_results.csv",
+      "canonical_source": "transformation_experiment_results.csv",
+      "source_variants": [
+        "results/transformation_experiment_results.csv",
+        "tables/results/transformation_experiment_results.csv",
+        "transformation_experiment_results.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "8c4e4067d4e24f797695179590fe7e02df95ae7a61a6e474b9d1cb0df13d808c",
+      "size_bytes": 1205,
+      "destination": "files/sem_estimates_time_to_50pct_last_observed.csv",
+      "canonical_source": "sem_estimates_time_to_50pct_last_observed.csv",
+      "source_variants": [
+        "results/sem_estimates_time_to_50pct_last_observed.csv",
+        "sem_estimates_time_to_50pct_last_observed.csv",
+        "tables/results/sem_estimates_time_to_50pct_last_observed.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "90cd6f037a2efd9f6e25d3a7198aeff6a0dba4b7f258d3f956ef74141a06d974",
+      "size_bytes": 17331,
+      "destination": "files/indicators_infrastructure.csv",
+      "canonical_source": "indicators_infrastructure.csv",
+      "source_variants": [
+        "descriptive/indicators_infrastructure.csv",
+        "indicators_infrastructure.csv",
+        "tables/descriptive/indicators_infrastructure.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "919449760fa5fa2c52eea8aaf9857488a045f300ffc935e9c84a085d5ad68622",
+      "size_bytes": 1339,
+      "destination": "files/disaster_mapping.csv",
+      "canonical_source": "disaster_mapping.csv",
+      "source_variants": [
+        "covariates/disaster_mapping.csv",
+        "disaster_mapping.csv",
+        "tables/covariates/disaster_mapping.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "9be4277cabed8cbaada6285e6f0fefdf03162e4a2a7de0cef44ab5fdf8057837",
+      "size_bytes": 2384,
+      "destination": "files/sem_estimates_with_all_covariates.csv",
+      "canonical_source": "sem_estimates_with_all_covariates.csv",
+      "source_variants": [
+        "results/sem_estimates_with_all_covariates.csv",
+        "sem_estimates_with_all_covariates.csv",
+        "tables/results/sem_estimates_with_all_covariates.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "9f84df64be09205b82ee71be5200533b6bf14c3df633d3046e4472d5055dd6e9",
+      "size_bytes": 1005,
+      "destination": "files/political_variables.csv",
+      "canonical_source": "political_variables.csv",
+      "source_variants": [
+        "covariates/political_variables.csv",
+        "political_variables.csv",
+        "tables/covariates/political_variables.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "a24c28e340c7b212efad6bb6236ac23ae726c1076bbaad50e36208a509c65fac",
+      "size_bytes": 344,
+      "destination": "files/bootstrap_confidence_intervals.csv",
+      "canonical_source": "bootstrap_confidence_intervals.csv",
+      "source_variants": [
+        "bootstrap_confidence_intervals.csv",
+        "results/bootstrap_confidence_intervals.csv",
+        "tables/results/bootstrap_confidence_intervals.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "ba8d9f02b05815e4d7de2ec9ca8efccf54829cba70817a706beac11f2f9a058d",
+      "size_bytes": 1005,
+      "destination": "files/infrastructure_indicators.csv",
+      "canonical_source": "infrastructure_indicators.csv",
+      "source_variants": [
+        "covariates/infrastructure_indicators.csv",
+        "infrastructure_indicators.csv",
+        "tables/covariates/infrastructure_indicators.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "bab27703e13018857173c85a109a275a0f86df523241b4a7ec94b715bb00c25a",
+      "size_bytes": 334,
+      "destination": "files/additional_covariates_sem.csv",
+      "canonical_source": "additional_covariates_sem.csv",
+      "source_variants": [
+        "additional_covariates_sem.csv",
+        "results/additional_covariates_sem.csv",
+        "tables/results/additional_covariates_sem.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "be80f51d8c4d0cee176d1cec1e55f596b184ba2821e0e19c70f4cd92953b0e33",
+      "size_bytes": 20762,
+      "destination": "files/latent_indicators_short_series_last_observed.csv",
+      "canonical_source": "latent_indicators_short_series_last_observed.csv",
+      "source_variants": [
+        "descriptive/latent_indicators_short_series_last_observed.csv",
+        "latent_indicators_short_series_last_observed.csv",
+        "tables/descriptive/latent_indicators_short_series_last_observed.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "bee529a5a70847a6e23d16d0fe92cae37636bd19ae5821bda9cdf1bb3f65fdf4",
+      "size_bytes": 1129,
+      "destination": "files/sem_estimates_exp_optimal_v1_censored.csv",
+      "canonical_source": "sem_estimates_exp_optimal_v1_censored.csv",
+      "source_variants": [
+        "results/sem_estimates_exp_optimal_v1_censored.csv",
+        "sem_estimates_exp_optimal_v1_censored.csv",
+        "tables/results/sem_estimates_exp_optimal_v1_censored.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "c2f139eed27818a44f10c8d28a168528e0f339414fd77c0713750d9ea53292ec",
+      "size_bytes": 313,
+      "destination": "files/fit_statistics_with_all_covariates.csv",
+      "canonical_source": "fit_statistics_with_all_covariates.csv",
+      "source_variants": [
+        "fit_statistics_with_all_covariates.csv",
+        "fit_statistics_with_all_covariates_censored.csv",
+        "results/fit_statistics_with_all_covariates.csv",
+        "results/fit_statistics_with_all_covariates_censored.csv",
+        "tables/results/fit_statistics_with_all_covariates.csv",
+        "tables/results/fit_statistics_with_all_covariates_censored.csv"
+      ],
+      "variant_count": 6
+    },
+    {
+      "sha256": "c3ba25f3c20fd92d75c4f6247825d49a793ebf72877a425b2af3295c72b31a16",
+      "size_bytes": 372072,
+      "destination": "files/local_ratios.png",
+      "canonical_source": "local_ratios.png",
+      "source_variants": [
+        "figures/publication/local_ratios.png",
+        "figures/publication/local_ratios_censored.png",
+        "local_ratios.png",
+        "local_ratios_censored.png",
+        "publication/local_ratios.png",
+        "publication/local_ratios_censored.png"
+      ],
+      "variant_count": 6
+    },
+    {
+      "sha256": "cf420c8142dcb4b8128c3c150e056eb0fa50571d982cb9a742cf7221816c6aca",
+      "size_bytes": 1440,
+      "destination": "files/sensitivity_analysis_last_observed.csv",
+      "canonical_source": "sensitivity_analysis_last_observed.csv",
+      "source_variants": [
+        "results/sensitivity_analysis_last_observed.csv",
+        "sensitivity_analysis_last_observed.csv",
+        "tables/results/sensitivity_analysis_last_observed.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "d1b0628d725291d4b4d19bdf9c3c95cdfb911eefa9d03fac548e97d2535e6b66",
+      "size_bytes": 120572,
+      "destination": "files/variance_duration_moderation.png",
+      "canonical_source": "variance_duration_moderation.png",
+      "source_variants": [
+        "exploration/variance_duration_moderation.png",
+        "figures/exploration/variance_duration_moderation.png",
+        "variance_duration_moderation.png"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "d680e074f73402fadd7c5a4d4661284b9f72317ea9d59612126d1c4a51816af7",
+      "size_bytes": 420649,
+      "destination": "files/state_ratios_last_observed.png",
+      "canonical_source": "state_ratios_last_observed.png",
+      "source_variants": [
+        "figures/publication/state_ratios_last_observed.png",
+        "publication/state_ratios_last_observed.png",
+        "state_ratios_last_observed.png"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "e2f40bebc25a23774e0c891cf656ee1ed26069ca31b1f1a317d8fd0cffcdf8da",
+      "size_bytes": 303326,
+      "destination": "files/figure10_pooled_sem.png",
+      "canonical_source": "figure10_pooled_sem.png",
+      "source_variants": [
+        "figure10_pooled_sem.png",
+        "figures/publication/figure10_pooled_sem.png",
+        "publication/figure10_pooled_sem.png"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "e67636cb4d07e6e5b8a7ccf11e3c438386c8d8208c1adf09ef68ff3e93095214",
+      "size_bytes": 85,
+      "destination": "files/short_series_ratio_caps.csv",
+      "canonical_source": "short_series_ratio_caps.csv",
+      "source_variants": [
+        "descriptive/short_series_ratio_caps.csv",
+        "short_series_ratio_caps.csv",
+        "tables/descriptive/short_series_ratio_caps.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "e73a348196571d1be514dbd86afad8e5014d0fee691417ac2f797790770e4d99",
+      "size_bytes": 307,
+      "destination": "files/fit_statistics_exp_optimal_v1_last_observed.csv",
+      "canonical_source": "fit_statistics_exp_optimal_v1_last_observed.csv",
+      "source_variants": [
+        "fit_statistics_exp_optimal_v1_last_observed.csv",
+        "results/fit_statistics_exp_optimal_v1_last_observed.csv",
+        "tables/results/fit_statistics_exp_optimal_v1_last_observed.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "e81114c2a2e51cc315eaca4443157d918c2b44c20810342eadc71ae58fa20048",
+      "size_bytes": 244,
+      "destination": "files/multigroup_sem_results_last_observed.csv",
+      "canonical_source": "multigroup_sem_results_last_observed.csv",
+      "source_variants": [
+        "multigroup_sem_results_last_observed.csv",
+        "results/multigroup_sem_results_last_observed.csv",
+        "tables/results/multigroup_sem_results_last_observed.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "ecc0a6644310d733dc9584fe9066b357e454d562bbc12700599b6d2f22066e88",
+      "size_bytes": 342,
+      "destination": "files/bootstrap_confidence_intervals_last_observed.csv",
+      "canonical_source": "bootstrap_confidence_intervals_last_observed.csv",
+      "source_variants": [
+        "bootstrap_confidence_intervals_last_observed.csv",
+        "results/bootstrap_confidence_intervals_last_observed.csv",
+        "tables/results/bootstrap_confidence_intervals_last_observed.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "ed1e62aa2b7483f9d3f5dcb8a3dc3d848e6527d168cbc56ca0d0d6f489820682",
+      "size_bytes": 275,
+      "destination": "files/moderation_analysis.csv",
+      "canonical_source": "moderation_analysis.csv",
+      "source_variants": [
+        "moderation_analysis.csv",
+        "results/moderation_analysis.csv",
+        "tables/results/moderation_analysis.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "eee82aafe32158178b581b90a277bd5c47e79684c8dfb7ba0a477443bf533eb9",
+      "size_bytes": 1484,
+      "destination": "files/sensitivity_analysis.csv",
+      "canonical_source": "sensitivity_analysis.csv",
+      "source_variants": [
+        "results/sensitivity_analysis.csv",
+        "sensitivity_analysis.csv",
+        "tables/results/sensitivity_analysis.csv"
+      ],
+      "variant_count": 3
+    },
+    {
+      "sha256": "f77fd5a528ee8e1d7f2acde091af110ab7764761e0f2f2a6ff929135f157429c",
+      "size_bytes": 1189,
+      "destination": "files/sem_estimates_progress_rate_censored.csv",
+      "canonical_source": "sem_estimates_progress_rate_censored.csv",
+      "source_variants": [
+        "results/sem_estimates_progress_rate_censored.csv",
+        "sem_estimates_progress_rate_censored.csv",
+        "tables/results/sem_estimates_progress_rate_censored.csv"
+      ],
+      "variant_count": 3
+    }
+  ],
+  "macos_sidecars_removed": 1
+}

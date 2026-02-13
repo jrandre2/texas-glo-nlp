@@ -1,0 +1,14 @@
+{
+  "built_at_utc": "2026-02-13T01:14:49+00:00",
+  "panel_level": "state",
+  "input": "/Volumes/T9/Texas GLO Action Plan Project/outputs/model_ready/panels/panel_state_quarter_sem.csv",
+  "output": "/Volumes/T9/Texas GLO Action Plan Project/outputs/sem/texas/panel_state_quarter_sem_estimation_input.csv",
+  "rows": 66,
+  "columns": 51,
+  "assumptions": [
+    "ratio_disbursed_to_obligated = sum_drawdown_usd / sum_obligated_usd",
+    "ratio_expended_to_disbursed = sum_expended_usd / sum_drawdown_usd",
+    "timeliness = 1 / program_duration_quarters_mean",
+    "signal flags are true when *_n_obs > 0"
+  ]
+}

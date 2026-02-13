@@ -15,6 +15,7 @@ This project processes **442 quarterly reports** from the Texas General Land Off
 | Short read-through reports on specific topics | See the **Reports** section in TEAM_PORTAL |
 | Datasets for Excel, Stata, or R | Browse `outputs/model_ready/` or read [`docs/MODEL_READY.md`](docs/MODEL_READY.md) |
 | SEM / statistical modeling | Read [`docs/MODELING_VARIABLES.md`](docs/MODELING_VARIABLES.md) for construct triage |
+| SEM integration + legacy benchmark | Read [`docs/PROJECT_INTEGRATION.md`](docs/PROJECT_INTEGRATION.md) and run `make sem-compare` |
 | Summary of what the pipeline found | Read [`docs/ANALYSIS_REPORT.md`](docs/ANALYSIS_REPORT.md) |
 | A lightweight zip to share with colleagues | Run `make share-bundle` (creates `outputs/share_bundle.zip`) |
 
@@ -27,6 +28,8 @@ This project processes **442 quarterly reports** from the Texas General Land Off
 | `outputs/exports/nlp/` | NLP analysis exports: money mentions, topics, entity resolution, section summaries |
 | `outputs/exports/spatial/` | Spatial maps (HTML) and aggregation tables by county, ZIP, tract, and H3 hex |
 | `outputs/model_ready/` | Analysis-ready panel CSVs (by quarter, county, city, document) for EDA and modeling |
+| `outputs/sem/` | SEM adapter, estimation, and comparison artifacts |
+| `outputs/legacy/` | Deduplicated imported outputs from `capacity-sem-migrated` |
 | `outputs/visualizations/` | Sankey diagrams and the standalone Harvey dashboard |
 | `outputs/reports/` | Self-contained HTML reports on Harvey fund switching and housing progress |
 
@@ -108,6 +111,7 @@ Houston Metro Area (City of Houston + Harris County) receives $1.74B (39%). Texa
 - [Glossary](docs/GLOSSARY.md) &mdash; Terms used across dashboards and tables
 - [Model-Ready Datasets](docs/MODEL_READY.md) &mdash; Datasets for EDA and statistical models
 - [SEM Data Guide](docs/SEM_DATA.md) &mdash; SEM panel schema, construct derivations, and provenance fields
+- [Project Integration](docs/PROJECT_INTEGRATION.md) &mdash; phase status across model-ready, SEM estimation, and legacy comparison
 - [Harvey Funding Analysis](docs/HARVEY_FUNDING_ANALYSIS.md) &mdash; Detailed funding flow analysis
 - [Harvey Fund-Switch Extraction](docs/HARVEY_ACTION_PLAN_FUND_SWITCH.md) &mdash; Fund reallocation statement extraction
 - [Harvey Housing ZIP Progress](docs/HARVEY_HOUSING_ZIP_PROGRESS.md) &mdash; Housing progression by ZIP and quarter
@@ -175,11 +179,19 @@ python src/spatial_mapper.py --join --map
 # Rebuild portal and reports
 make portal
 
+# SEM integration (adapter -> estimate -> legacy comparison)
+make phase1
+make sem-estimate
+make sem-compare
+
 # Run checks
 make ci
 ```
 
 Run `make help` for all available pipeline targets.
+
+`make sem-estimate` and `make sem-compare` require `semopy` in the active
+Python interpreter. If missing, install with `pip install semopy`.
 
 `scripts/build_model_ready_datasets.py` now enforces data-quality gates by default
 (non-empty key outputs + prior-quarter delta checks). Use `--allow-partial` to keep

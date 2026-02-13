@@ -76,6 +76,8 @@ The NLP layer extracts dollar amounts that appear in narrative text and labels e
   - `nlp/` — NLP analysis exports (money mentions, topics, entities, sections)
   - `spatial/` — spatial HTML maps, aggregation CSVs, GeoJSONs
 - `outputs/model_ready/` — model-ready panels (shareable CSVs)
+- `outputs/sem/` — SEM adapter/estimation/comparison artifacts
+- `outputs/legacy/` — imported legacy SEM artifacts used for benchmarking
 - `data/glo_reports.db` — the master SQLite database
 - `docs/` — project documentation (technical + analysis notes)
 
