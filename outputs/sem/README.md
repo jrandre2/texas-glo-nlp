@@ -35,3 +35,21 @@ Phase-2 comparison outputs:
 
 `make sem-compare` runs `sem-estimate`, then benchmarks the latest run against
 `outputs/legacy/capacity_sem_migrated/files/*` and writes a side-by-side table.
+
+Topic/SEM exploratory analysis outputs:
+
+- `results/panel-disaster_topicmodel-5_topic-sem-corr_<timestamp>.csv`
+- `results/panel-disaster_topicmodel-5_topic-sem-corr_<timestamp>.md`
+- `results/panel-disaster_topicmodel-5_topic-sem-corr_<timestamp>_heatmap.png`
+
+`make topic-sem-corr` computes correlations between topic shares
+(`n_chunks / total_chunks` per disaster-quarter) and selected SEM adapter variables.
+
+Extended options:
+
+- `--sem-lead-quarters 1` to correlate topic share at quarter `t` with SEM variable at `t+1`.
+- `--activity-stratum {housing,infrastructure,mixed,neither}` to slice by activity mix from `outputs/model_ready/long/activities.csv`.
+
+Forward-facing narrative report:
+
+- `docs/analyses/TOPIC_SEM_EDA.md`

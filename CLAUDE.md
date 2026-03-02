@@ -5,7 +5,7 @@ NLP + data engineering pipeline that extracts structured financial, geographic, 
 ## Key Commands
 
 ```bash
-make help              # List all targets
+make help              # List all targets (run this for the full 32-target reference)
 make stats             # Database snapshot counts
 make harvey            # Parse Harvey activities + export Sankey/trends
 make spatial           # Extract locations + generate choropleth maps
@@ -17,6 +17,14 @@ make sem-estimate      # Run first SEM model on adapter outputs
 make sem-compare       # Benchmark latest SEM run against legacy migrated outputs
 make portal            # Rebuild TEAM_PORTAL.html
 make ci                # Compile + pytest suite
+```
+
+Activity-level analytic workbook (run in order, after `make xlsx-ingest`):
+
+```bash
+python scripts/build_qpr_master_workbook.py              # Merge 8 XLSX into Master_QPR_Linked.xlsx
+python scripts/build_activity_level_analytic_workbook.py # Restructure to 1-row-per-activity wide format
+python scripts/run_activity_level_test_suite.py          # Run all 6 QA check categories (80+ assertions)
 ```
 
 Individual module CLIs accept `--stats`, `--rebuild`, and `--export` flags. See @docs/MODULES.md.
@@ -38,10 +46,12 @@ Individual module CLIs accept `--stats`, `--rebuild`, and `--export` flags. See 
 ## Gotchas
 
 - IMPORTANT: The database is on an external volume (`/Volumes/T9/`). If the volume is unmounted, all file operations will fail.
+- Activity-level analytic outputs write to `output/spreadsheet/` (project root), separate from `outputs/` (NLP pipeline outputs). Both directories coexist.
 - Large spatial HTML files (100MB+) are generated in `outputs/exports/spatial/`. These are gitignored.
 - Automated tests are available via `make ci` (`compileall` + `pytest`).
 - Money mentions are NLP-extracted approximations, not official accounting totals. Always caveat this in outputs.
 - SQLite does not support concurrent writes. Only run one write pipeline at a time.
+- Manuscript render integrity: in `external/research_project_management_software/manuscript_quarto`, single-format renders can overwrite `_output` contents. Use `./render_all.sh` (or `quarto render index.qmd`) when both PDF and DOCX are needed, then verify both files exist with `ls -la _output/*.pdf _output/*.docx`.
 
 ## Documentation
 
@@ -49,3 +59,4 @@ Individual module CLIs accept `--stats`, `--rebuild`, and `--export` flags. See 
 - Full API reference: @docs/MODULES.md
 - Workflows: @docs/WORKFLOWS.md
 - Architecture: @docs/ARCHITECTURE.md
+- Consolidated manuscript/agent policy for the embedded research project: `external/research_project_management_software/doc/AI_GUIDANCE.md`

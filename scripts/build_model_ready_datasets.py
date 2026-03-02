@@ -471,6 +471,8 @@ _BENEFICIARY_PROPOSED_RE = re.compile(
 )
 
 
+# NOTE: Parses generic numeric tokens (counts, beneficiary measures, accomplishments),
+# NOT USD amounts. Use utils.parse_usd() for monetary string-to-float conversion.
 def _parse_number_token(token: Optional[str]) -> Optional[float]:
     if not token:
         return None
@@ -689,6 +691,10 @@ def _iter_sem_chunks(text: str) -> Iterable[str]:
                 yield p
 
 
+# NOTE: Context-sensitive USD parser for SEM signal extraction from narrative text.
+# This intentionally extends utils.parse_usd() with a "currency hint" requirement:
+# bare numbers are rejected unless the surrounding context mentions "dollar" or "usd",
+# preventing false positives from non-monetary counts embedded in narrative sentences.
 def _parse_sem_usd_token(token: str, context_line: str) -> Optional[float]:
     t = token.strip().replace(",", "")
     t = t.replace("US$", "$").replace(" ", "")

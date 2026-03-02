@@ -808,18 +808,36 @@ def build_portal(db_path: Path) -> str:
 """
 
 
-def main() -> None:
-    db_path = DEFAULT_DB_PATH
-    html_text = build_portal(db_path)
-    OUTPUT_HTML.write_text(html_text, encoding="utf-8")
+def main(argv=None) -> None:
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description="Build a single-file HTML portal for non-technical users."
+    )
+    parser.add_argument(
+        "--db",
+        type=Path,
+        default=DEFAULT_DB_PATH,
+        help=f"Path to the SQLite database (default: {DEFAULT_DB_PATH}).",
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=OUTPUT_HTML,
+        help=f"Output HTML path (default: {OUTPUT_HTML}).",
+    )
+    args = parser.parse_args(argv)
+
+    html_text = build_portal(args.db)
+    args.output.write_text(html_text, encoding="utf-8")
     # Remove macOS AppleDouble artifacts that confuse non-technical users
     try:
-        apple_double = OUTPUT_HTML.parent / f"._{OUTPUT_HTML.name}"
+        apple_double = args.output.parent / f"._{args.output.name}"
         if apple_double.exists():
             apple_double.unlink()
     except OSError:
         pass
-    print(f"Wrote {OUTPUT_HTML}")
+    print(f"Wrote {args.output}")
 
 
 if __name__ == "__main__":

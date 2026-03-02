@@ -5,6 +5,8 @@ This module provides functions to evaluate model fit and
 compare alternative model specifications.
 """
 
+import warnings
+
 import pandas as pd
 import numpy as np
 from typing import Dict, List, Any, Optional
@@ -425,7 +427,12 @@ def get_modification_indices(model: Any) -> pd.DataFrame:
         Modification indices (if available).
     """
     # semopy doesn't have built-in modification indices
-    # Return empty DataFrame with expected structure
+    warnings.warn(
+        "get_modification_indices() is not implemented: semopy does not provide "
+        "modification indices. Returning empty DataFrame.",
+        NotImplementedError,
+        stacklevel=2,
+    )
     return pd.DataFrame(columns=['lval', 'op', 'rval', 'mi', 'epc'])
 
 
@@ -677,9 +684,9 @@ def _compute_r_squared(model: Any, data: pd.DataFrame) -> Dict[str, float]:
                 # Get variance of the variable
                 var_variance = data[var].var()
                 if var_variance > 0:
-                    # Estimate R² from model implied variance
-                    # This is approximate; true R² needs predicted values
-                    r2[var] = np.nan  # Placeholder
+                    # R² computation requires predicted values from the model.
+                    # Not yet implemented; omit entry rather than emit np.nan.
+                    pass
 
         # Try to get R² from model's implied covariance
         if hasattr(model, 'sigma') and model.sigma is not None:

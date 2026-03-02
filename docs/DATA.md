@@ -490,6 +490,10 @@ See `docs/MODEL_READY.md` for the current dataset list and build instructions (`
 - `outputs/sem/texas/results/*_legacy-comparison_*.csv`
 - `outputs/sem/texas/results/*_legacy-comparison_*.md`
   - side-by-side benchmark tables from `make sem-compare`
+- `outputs/sem/texas/results/*_topic-sem-corr_*.csv`
+- `outputs/sem/texas/results/*_topic-sem-corr_*.md`
+- `outputs/sem/texas/results/*_topic-sem-corr_*_heatmap.png`
+  - exploratory correlations between topic shares and SEM adapter variables (`make topic-sem-corr`)
 
 ### Legacy migrated imports
 

@@ -29,6 +29,13 @@ from openpyxl import load_workbook
 
 ROOT = Path(__file__).resolve().parents[1]
 
+import sys as _sys
+_sys.path.insert(0, str(ROOT / "src"))
+try:
+    from utils import parse_usd as _parse_usd
+except ImportError:
+    _parse_usd = None
+
 # ---------------------------------------------------------------------------
 # File map: logical key -> expected filename in ROOT
 # ---------------------------------------------------------------------------
@@ -108,13 +115,12 @@ def _clean_float(value: Any) -> Optional[float]:
         return None
     if isinstance(value, (int, float)):
         return float(value) if value == value else None  # NaN check
+    # Delegate string parsing to project-wide helper (CLAUDE.md convention)
+    if _parse_usd is not None:
+        return _parse_usd(str(value).strip())
+    # Fallback (should not occur in normal use):
     s = str(value).strip().replace(",", "").replace("$", "")
-    if not s:
-        return None
-    try:
-        return float(s)
-    except ValueError:
-        return None
+    return float(s) if s else None
 
 
 def _quarter_label(value: Any) -> Optional[str]:

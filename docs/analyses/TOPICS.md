@@ -48,3 +48,4 @@ python src/topic_model.py --export
 
 - Coherence spot-check: top examples per topic should be semantically consistent.
 - Trend sanity: major topics should track with known program phases (e.g., early needs assessment vs later closeout).
+- For exploratory linkage to SEM adapter outcomes (including lagged and stratified checks), see `docs/analyses/TOPIC_SEM_EDA.md`.

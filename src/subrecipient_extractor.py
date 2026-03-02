@@ -511,22 +511,36 @@ class SubrecipientExtractor:
         conn = self.connect()
         cursor = conn.cursor()
 
-        query = '''
-            SELECT
-                s.org_type,
-                COUNT(DISTINCT s.id) as org_count,
-                SUM(a.allocated) as total_allocated,
-                SUM(a.expended) as total_expended,
-                COUNT(DISTINCT a.activity_code) as activity_count
-            FROM harvey_subrecipients s
-            LEFT JOIN harvey_subrecipient_allocations a ON s.id = a.subrecipient_id
-        '''
-
         if quarter:
-            query += ' WHERE a.quarter = ?'
-            cursor.execute(query + ' GROUP BY s.org_type', (quarter,))
+            cursor.execute(
+                '''
+                SELECT
+                    s.org_type,
+                    COUNT(DISTINCT s.id) as org_count,
+                    SUM(a.allocated) as total_allocated,
+                    SUM(a.expended) as total_expended,
+                    COUNT(DISTINCT a.activity_code) as activity_count
+                FROM harvey_subrecipients s
+                LEFT JOIN harvey_subrecipient_allocations a ON s.id = a.subrecipient_id
+                WHERE a.quarter = ?
+                GROUP BY s.org_type
+                ''',
+                (quarter,),
+            )
         else:
-            cursor.execute(query + ' GROUP BY s.org_type')
+            cursor.execute(
+                '''
+                SELECT
+                    s.org_type,
+                    COUNT(DISTINCT s.id) as org_count,
+                    SUM(a.allocated) as total_allocated,
+                    SUM(a.expended) as total_expended,
+                    COUNT(DISTINCT a.activity_code) as activity_count
+                FROM harvey_subrecipients s
+                LEFT JOIN harvey_subrecipient_allocations a ON s.id = a.subrecipient_id
+                GROUP BY s.org_type
+                '''
+            )
 
         return {row['org_type']: dict(row) for row in cursor.fetchall()}
 

@@ -1,4 +1,4 @@
-.PHONY: help stats pdf-stats nlp-stats link semantic-build harvey harvey-parse harvey-fund-switch harvey-housing-zip harvey-reports spatial sections section-families topics entity-resolve relations money model-ready xlsx-ingest sem-adapter sem-adapter-all sem-estimate sem-compare legacy-import phase1 portal share-bundle clean-macos analyses check test ci deps-lock
+.PHONY: help stats pdf-stats nlp-stats link semantic-build harvey harvey-parse harvey-fund-switch harvey-housing-zip harvey-reports spatial sections section-families topics entity-resolve relations money model-ready xlsx-ingest sem-adapter sem-adapter-all sem-estimate sem-compare topic-sem-corr legacy-import phase1 portal share-bundle clean-macos analyses check test ci deps-lock
 
 PY := $(shell if [ -x venv/bin/python ]; then echo venv/bin/python; else echo python; fi)
 
@@ -21,8 +21,9 @@ help:
 	@echo "  make xlsx-ingest    - ingest QPR XLSX files into DB tables"
 	@echo "  make sem-adapter    - build SEM estimation input (disaster panel)"
 	@echo "  make sem-adapter-all - build SEM estimation inputs for all panel levels"
-	@echo "  make sem-estimate   - run first SEM estimation model on disaster input"
+	@echo "  make sem-estimate   - run first SEM estimation model on disaster input (use scripts/run_sem_estimation.py --batch for multi-model runs)"
 	@echo "  make sem-compare    - run sem-estimate, then benchmark against legacy outputs"
+	@echo "  make topic-sem-corr - exploratory: correlate topic shares with SEM adapter variables"
 	@echo "  make legacy-import  - dedupe/import legacy capacity-sem artifacts"
 	@echo "  make phase1         - run phase-1 integration bootstrap (legacy + SEM adapter)"
 	@echo "  make harvey-reports - build Harvey deliverable reports (HTML + CSV)"
@@ -109,11 +110,14 @@ sem-adapter-all:
 	$(PY) scripts/build_sem_estimation_inputs.py --panel-level state --overwrite
 
 sem-estimate:
-	python scripts/run_sem_estimation.py --panel-level disaster --model adapter_progress_rate
+	$(PY) scripts/run_sem_estimation.py --panel-level disaster --model adapter_progress_rate
 
 sem-compare:
-	make sem-estimate
-	python scripts/compare_sem_to_legacy.py --panel-level disaster --model adapter_progress_rate
+	$(PY) scripts/run_sem_estimation.py --panel-level disaster --model adapter_progress_rate
+	$(PY) scripts/compare_sem_to_legacy.py --panel-level disaster --model adapter_progress_rate
+
+topic-sem-corr:
+	$(PY) scripts/run_topic_sem_correlations.py --panel-level disaster --topic-model-id 5
 
 legacy-import:
 	$(PY) scripts/import_capacity_sem_legacy.py

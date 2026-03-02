@@ -181,6 +181,21 @@ The system follows a multi-phase pipeline architecture:
 
 **Output**: 4 `qpr_*` tables (~28K total structured records)
 
+### Phase 3f: Activity-Level Analytic Workbook (Complete)
+
+| Component | Purpose |
+|-----------|---------|
+| Master Workbook Builder | Merge 8 source XLSX files into normalized linked master workbook |
+| Activity-Level Builder | Restructure F31/P31 into wide one-row-per-activity format |
+| Transform Validator | 27+ deterministic QA checks on output integrity |
+| Lineage Auditor | Independent source-level rebuild and cell-by-cell verification |
+| Schema Lock | Governance: detect column drift across rebuilds |
+| Test Suite Orchestrator | Run all 6 check categories in single command (80+ assertions) |
+
+**Entry points**: `scripts/build_qpr_master_workbook.py` → `scripts/build_activity_level_analytic_workbook.py` → `scripts/run_activity_level_test_suite.py`
+
+**Output**: `output/spreadsheet/*.xlsx|csv` (separate from NLP pipeline `outputs/`)
+
 ### Phase 4: NLP Analysis Pipeline (Complete)
 
 | Component | Module | Purpose |
@@ -442,6 +457,22 @@ XLSX files (F31, A32, P31, P33) in project root
                 ├──▶ qpr_payroll_allocations    (payroll amounts from A32 narratives)
                 ├──▶ qpr_accomplishments        (accomplishment measures by quarter)
                 └──▶ qpr_beneficiary_demographics (household demographics by race/tenure)
+```
+
+### Activity-Level Analytic Workbook Flow
+
+```
+XLSX files (8 source files in project root)
+        │
+        └──▶ build_qpr_master_workbook.py ──▶ output/spreadsheet/Master_QPR_Linked.xlsx
+                        │
+                        └──▶ build_activity_level_analytic_workbook.py
+                                    └──▶ output/spreadsheet/Activity_Level_Analytic_Dataset.xlsx
+                                                  │
+                                                  ├──▶ validate_activity_level_analytic_workbook.py
+                                                  ├──▶ audit_lineage_to_original_xlsx.py
+                                                  ├──▶ schema_lock_activity_level_analytic.py
+                                                  └──▶ run_activity_level_test_suite.py (orchestrator)
 ```
 
 ### Model-Ready / SEM Panel Build Flow

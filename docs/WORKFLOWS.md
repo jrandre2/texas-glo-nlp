@@ -873,6 +873,46 @@ make sem-compare
 - Side-by-side benchmark: `outputs/sem/texas/results/*_legacy-comparison_*.csv` and `*.md`
 - Legacy source artifacts: `outputs/legacy/capacity_sem_migrated/files/`
 
+### Optional: Explore topic/SEM correlations (EDA)
+
+```bash
+make topic-sem-corr
+```
+
+Artifacts are written under `outputs/sem/texas/results/` and include a correlation
+table (`*.csv`), a brief markdown summary (`*.md`), and a heatmap (`*.png`).
+
+Lagged and stratified variants:
+
+```bash
+# Topic share at quarter t vs ratio_expended_to_disbursed at quarter t+1
+python scripts/run_topic_sem_correlations.py \
+    --topic-model-id 5 \
+    --sem-vars ratio_expended_to_disbursed \
+    --sem-lead-quarters 1
+
+# Program-mix slices
+python scripts/run_topic_sem_correlations.py \
+    --topic-model-id 5 \
+    --sem-vars ratio_expended_to_disbursed \
+    --activity-stratum housing
+
+python scripts/run_topic_sem_correlations.py \
+    --topic-model-id 5 \
+    --sem-vars ratio_expended_to_disbursed \
+    --activity-stratum mixed
+
+python scripts/run_topic_sem_correlations.py \
+    --topic-model-id 5 \
+    --sem-vars ratio_expended_to_disbursed \
+    --activity-stratum infrastructure \
+    --min-pairs 10
+```
+
+Narrative report:
+
+- `docs/analyses/TOPIC_SEM_EDA.md`
+
 ---
 
 ## Workflow 15: Run Tests
@@ -889,6 +929,79 @@ make ci
 python -m compileall src/ scripts/
 pytest
 ```
+
+---
+
+## Workflow 16: Build Activity-Level Analytic Workbook
+
+Transform the 8 raw QPR XLSX source files into a wide one-row-per-activity analytic dataset with multi-layer QA validation.
+
+**Prerequisites**: XLSX files present in project root (F31, F33, A31, A32, P31, P33 variants for B-17, B-18, P-17); `make xlsx-ingest` complete; `output/` directory present (created automatically on first run).
+
+### Steps
+
+#### 1. Build Master Workbook
+
+```bash
+python scripts/build_qpr_master_workbook.py
+```
+
+Merges all 8 XLSX source files into a normalized linked master workbook.
+
+**Output**: `output/spreadsheet/Master_QPR_Linked.xlsx`, `Master_QPR_Link_Coverage.csv`
+
+#### 2. Build Activity-Level Analytic Dataset
+
+```bash
+python scripts/build_activity_level_analytic_workbook.py
+```
+
+Restructures F31 (financials) and P31 (accomplishments) into wide one-row-per-activity format with composite column names. Produces a merged sheet with outer join and merge indicator.
+
+**Output**: `output/spreadsheet/Activity_Level_Analytic_Dataset.xlsx`
+Sheets: P31_Restructured, F31_Restructured, Merged_Activity_1to1, Merge_QA
+
+#### 3. Run QA Suite
+
+```bash
+python scripts/run_activity_level_test_suite.py
+```
+
+Orchestrates all 6 QA check categories (transform validation, lineage audit, deterministic rebuild, composite-name collision detection, spot traceback sampling, schema lock) in a single command.
+
+- Exit 0: all 80+ checks pass
+- Exit 1: failures detected — see `output/spreadsheet/Activity_Test_Suite_Summary.xlsx`
+
+#### 4. (Optional) Lock or Validate Schema
+
+Write the schema lock after a clean build:
+
+```bash
+python scripts/schema_lock_activity_level_analytic.py --write-lock
+```
+
+Validate schema has not drifted in a subsequent build:
+
+```bash
+python scripts/schema_lock_activity_level_analytic.py
+```
+
+Lock file is stored at `docs/qa/activity_level_schema_lock.json`.
+
+**Output files:**
+
+| File | Description |
+| ---- | ----------- |
+| `output/spreadsheet/Master_QPR_Linked.xlsx` | Normalized master workbook linking all 8 source files |
+| `output/spreadsheet/Master_QPR_Link_Coverage.csv` | Coverage audit for master workbook links |
+| `output/spreadsheet/Activity_Level_Analytic_Dataset.xlsx` | Wide one-row-per-activity analytic dataset (P31, F31, merged) |
+| `output/spreadsheet/Activity_Level_Analytic_QA.csv/.xlsx` | 27+ deterministic QA check results |
+| `output/spreadsheet/Activity_Lineage_Audit.csv/.xlsx` | Independent cell-by-cell source lineage audit |
+| `output/spreadsheet/Activity_Test_Suite_Summary.csv/.xlsx` | Master QA suite pass/fail summary |
+| `output/spreadsheet/Activity_Test_Suite_Tracebacks.csv` | Traceback samples for failing checks |
+| `docs/qa/activity_level_schema_lock.json` | Schema lock file (column counts + order per sheet) |
+
+> Note: `output/spreadsheet/` is separate from `outputs/` (the NLP pipeline output directory). Both coexist in the project root.
 
 ---
 
@@ -913,6 +1026,8 @@ pytest
 | NLP analyses (all) | `make analyses` |
 | Build model-ready datasets | `make model-ready` |
 | Ingest QPR XLSX files | `make xlsx-ingest` |
+| Build activity-level analytic workbook | `python scripts/build_activity_level_analytic_workbook.py` |
+| Run activity-level QA suite | `python scripts/run_activity_level_test_suite.py` |
 | Build SEM integration prerequisites | `make phase1` |
 | Build SEM adapter inputs (all levels) | `make sem-adapter-all` |
 | Run first SEM estimate | `make sem-estimate` |

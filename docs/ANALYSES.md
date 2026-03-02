@@ -15,6 +15,7 @@ Each analysis should have:
 
 - [Document Sections](analyses/SECTIONS.md) *(implemented v1)* — heading/section segmentation + heading-family taxonomy for narrative filtering.
 - [Topic Clustering](analyses/TOPICS.md) *(implemented v1)* — embedding-based topics over sections/chunks for cross-quarter trend analysis.
+- [Topic-to-SEM EDA](analyses/TOPIC_SEM_EDA.md) *(implemented v1)* — exploratory bridge from topic prevalence to SEM adapter outcomes, including lagged and activity-stratified checks.
 - [Entity Resolution](analyses/ENTITY_RESOLUTION.md) *(implemented v1)* — canonicalize high-volume entities (ORG/PROGRAM/GPE) for stable aggregation.
 - [Relations / Co-occurrence Graph](analyses/RELATIONS.md) *(implemented v1)* — connect entities ↔ places using sentence-level co-occurrence (see Money Context for amount labeling).
 - [Money Context](analyses/MONEY_CONTEXT.md) *(implemented v1)* — label money mentions as budget/expended/obligated/drawdown and link to co-mentioned entities.

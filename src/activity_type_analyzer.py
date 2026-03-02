@@ -406,19 +406,32 @@ class ActivityTypeAnalyzer:
         conn = self.connect()
         cursor = conn.cursor()
 
-        query = '''
-            SELECT
-                activity_type_normalized,
-                COUNT(*) as count,
-                SUM(CASE WHEN is_buyout THEN 1 ELSE 0 END) as buyout_count
-            FROM harvey_activity_types
-        '''
-
         if quarter:
-            query += ' WHERE quarter = ?'
-            cursor.execute(query + ' GROUP BY activity_type_normalized ORDER BY count DESC', (quarter,))
+            cursor.execute(
+                '''
+                SELECT
+                    activity_type_normalized,
+                    COUNT(*) as count,
+                    SUM(CASE WHEN is_buyout THEN 1 ELSE 0 END) as buyout_count
+                FROM harvey_activity_types
+                WHERE quarter = ?
+                GROUP BY activity_type_normalized
+                ORDER BY count DESC
+                ''',
+                (quarter,),
+            )
         else:
-            cursor.execute(query + ' GROUP BY activity_type_normalized ORDER BY count DESC')
+            cursor.execute(
+                '''
+                SELECT
+                    activity_type_normalized,
+                    COUNT(*) as count,
+                    SUM(CASE WHEN is_buyout THEN 1 ELSE 0 END) as buyout_count
+                FROM harvey_activity_types
+                GROUP BY activity_type_normalized
+                ORDER BY count DESC
+                '''
+            )
 
         return {row['activity_type_normalized']: {
             'count': row['count'],
@@ -430,26 +443,42 @@ class ActivityTypeAnalyzer:
         conn = self.connect()
         cursor = conn.cursor()
 
-        query = '''
-            SELECT
-                s.normalized_name as org_name,
-                s.org_type,
-                at.activity_type_normalized,
-                COUNT(*) as activity_count,
-                SUM(CASE WHEN at.is_buyout THEN 1 ELSE 0 END) as buyout_count
-            FROM harvey_activity_types at
-            JOIN harvey_subrecipient_allocations sa ON at.activity_code = sa.activity_code
-                AND at.quarter = sa.quarter
-            JOIN harvey_subrecipients s ON sa.subrecipient_id = s.id
-        '''
-
         if quarter:
-            query += ' WHERE at.quarter = ?'
-            query += ' GROUP BY s.normalized_name, at.activity_type_normalized ORDER BY s.normalized_name, activity_count DESC'
-            cursor.execute(query, (quarter,))
+            cursor.execute(
+                '''
+                SELECT
+                    s.normalized_name as org_name,
+                    s.org_type,
+                    at.activity_type_normalized,
+                    COUNT(*) as activity_count,
+                    SUM(CASE WHEN at.is_buyout THEN 1 ELSE 0 END) as buyout_count
+                FROM harvey_activity_types at
+                JOIN harvey_subrecipient_allocations sa ON at.activity_code = sa.activity_code
+                    AND at.quarter = sa.quarter
+                JOIN harvey_subrecipients s ON sa.subrecipient_id = s.id
+                WHERE at.quarter = ?
+                GROUP BY s.normalized_name, at.activity_type_normalized
+                ORDER BY s.normalized_name, activity_count DESC
+                ''',
+                (quarter,),
+            )
         else:
-            query += ' GROUP BY s.normalized_name, at.activity_type_normalized ORDER BY s.normalized_name, activity_count DESC'
-            cursor.execute(query)
+            cursor.execute(
+                '''
+                SELECT
+                    s.normalized_name as org_name,
+                    s.org_type,
+                    at.activity_type_normalized,
+                    COUNT(*) as activity_count,
+                    SUM(CASE WHEN at.is_buyout THEN 1 ELSE 0 END) as buyout_count
+                FROM harvey_activity_types at
+                JOIN harvey_subrecipient_allocations sa ON at.activity_code = sa.activity_code
+                    AND at.quarter = sa.quarter
+                JOIN harvey_subrecipients s ON sa.subrecipient_id = s.id
+                GROUP BY s.normalized_name, at.activity_type_normalized
+                ORDER BY s.normalized_name, activity_count DESC
+                '''
+            )
 
         return [dict(row) for row in cursor.fetchall()]
 

@@ -1372,6 +1372,165 @@ make xlsx-ingest    # equivalent to: python scripts/ingest_qpr_xlsx.py --rebuild
 
 ---
 
+## Activity-Level Analytic Workbook Scripts
+
+Pipeline that transforms raw XLSX QPR source files into a wide one-row-per-activity analytic dataset with multi-layer QA validation. Outputs go to `output/spreadsheet/` (separate from the NLP pipeline's `outputs/` directory).
+
+**Pipeline overview:**
+
+```text
+8 XLSX files (project root)
+    │
+    └──▶ build_qpr_master_workbook.py ──▶ output/spreadsheet/Master_QPR_Linked.xlsx
+              │
+              └──▶ build_activity_level_analytic_workbook.py
+                        └──▶ output/spreadsheet/Activity_Level_Analytic_Dataset.xlsx
+                                  │
+                                  ├──▶ validate_activity_level_analytic_workbook.py
+                                  ├──▶ audit_lineage_to_original_xlsx.py
+                                  ├──▶ schema_lock_activity_level_analytic.py
+                                  └──▶ run_activity_level_test_suite.py (orchestrator)
+```
+
+### build_qpr_master_workbook.py
+
+Reads all 8 XLSX QPR source files (F31, F33, A31, A32, P31, P33 for grants B-17, B-18, P-17) and consolidates them into a single linked master workbook with normalized sheets and link/audit tables.
+
+**Outputs**: `output/spreadsheet/Master_QPR_Linked.xlsx`, `Master_QPR_Link_Coverage.csv`
+
+**CLI**:
+
+```bash
+python scripts/build_qpr_master_workbook.py
+# No flags. Resolves XLSX files from project root automatically,
+# tolerating bracket-suffixed download duplicates (e.g., file[96].xlsx).
+```
+
+---
+
+### build_activity_level_analytic_workbook.py
+
+Transforms F31 (financials) and P31 (accomplishments) from the master workbook into wide one-row-per-activity format. P31 columns use composite names (`ActivityType_Measure_Metric_Year`); F31 columns use `Year_ActivityType_FinancialMeasure`. Produces a merged sheet with outer join + `_merge` indicator.
+
+**Output sheets**: `P31_Restructured`, `F31_Restructured`, `Merged_Activity_1to1`, `Merge_QA`
+
+**CLI**:
+
+```bash
+python scripts/build_activity_level_analytic_workbook.py
+python scripts/build_activity_level_analytic_workbook.py --output-xlsx PATH --years 2020 2021 2022 2023 2024 2025
+```
+
+---
+
+### validate_activity_level_analytic_workbook.py
+
+Runs 27+ deterministic QA checks: row uniqueness per sheet, source-aggregate reconciliation, year totals, financial measure totals (obligated, expended, disbursed), merge integrity, and composite column naming pattern validation.
+
+**Output**: `output/spreadsheet/Activity_Level_Analytic_QA.csv` + `.xlsx`
+
+**CLI**:
+
+```bash
+python scripts/validate_activity_level_analytic_workbook.py
+python scripts/validate_activity_level_analytic_workbook.py \
+  --workbook PATH --years 2020 2021 2022 --output-csv PATH --output-xlsx PATH
+```
+
+Returns exit 0 (all pass) or 1 (failures — see output XLSX).
+
+---
+
+### audit_lineage_to_original_xlsx.py
+
+Independent lineage audit. Reads source XLSX files directly (no shared parser helpers) and rebuilds P31/F31 wide structures from scratch, then compares cell-by-cell against `Activity_Level_Analytic_Dataset.xlsx`. Provides source-level end-to-end data integrity proof, independent of the build pipeline.
+
+**Output**: `output/spreadsheet/Activity_Lineage_Audit.csv` + `.xlsx`
+
+**CLI**:
+
+```bash
+python scripts/audit_lineage_to_original_xlsx.py
+python scripts/audit_lineage_to_original_xlsx.py \
+  --workbook PATH --output-csv PATH --output-xlsx PATH
+```
+
+Returns exit 0 (pass) or 1 (failures).
+
+---
+
+### schema_lock_activity_level_analytic.py
+
+Manages the column-level schema lock for `Activity_Level_Analytic_Dataset.xlsx`. In write mode, captures column counts and order per sheet into `docs/qa/activity_level_schema_lock.json`. In validate mode, detects schema drift (missing, extra, or reordered columns) against the lock baseline.
+
+**Output** (write mode): `docs/qa/activity_level_schema_lock.json`
+
+**CLI**:
+
+```bash
+# Write a new lock from a known-good workbook:
+python scripts/schema_lock_activity_level_analytic.py --write-lock
+
+# Validate current workbook against existing lock:
+python scripts/schema_lock_activity_level_analytic.py
+
+# Override paths:
+python scripts/schema_lock_activity_level_analytic.py --workbook PATH --lock PATH [--write-lock]
+```
+
+---
+
+### run_activity_level_test_suite.py
+
+Master QA orchestrator. Runs all 6 check categories in one command:
+
+1. Transform validation (via `validate_activity_level_analytic_workbook.py`)
+2. Lineage audit (via `audit_lineage_to_original_xlsx.py`)
+3. Deterministic rebuild (re-runs builder in temp dir, compares cell-by-cell)
+4. Composite-name collision detection (verifies distinct raw tuples don't collide after sanitization)
+5. Spot traceback sampling (samples N activities, verifies random cells against independent rebuild)
+6. Schema lock validation (via `schema_lock_activity_level_analytic.py`)
+
+**Output**: `output/spreadsheet/Activity_Test_Suite_Summary.csv|xlsx`, `Activity_Test_Suite_Tracebacks.csv`
+
+**CLI**:
+
+```bash
+python scripts/run_activity_level_test_suite.py
+python scripts/run_activity_level_test_suite.py \
+  --workbook PATH --summary-csv PATH --summary-xlsx PATH \
+  --trace-csv PATH --lock PATH --sample-size 30 --seed 42
+```
+
+Returns exit 0 (all 80+ checks pass) or 1 (any failure — see `Activity_Test_Suite_Summary.xlsx`).
+
+---
+
+## Other Scripts Reference
+
+Quick reference for the remaining scripts in `scripts/`. Detailed usage is covered in @docs/WORKFLOWS.md.
+
+| Script | Purpose | Make Target |
+| ------ | ------- | ----------- |
+| `build_model_ready_datasets.py` | Build quarter-level panel CSVs for SEM/statistical modeling | `make model-ready` |
+| `build_sem_estimation_inputs.py` | Convert model-ready panels to SEM estimation bridge schema | `make sem-adapter` / `make sem-adapter-all` |
+| `run_sem_estimation.py` | Fit SEM models; `--batch` flag runs multi-model comparison | `make sem-estimate` |
+| `compare_sem_to_legacy.py` | Benchmark SEM fit stats against migrated legacy outputs | `make sem-compare` |
+| `import_capacity_sem_legacy.py` | Import and hash-dedupe legacy SEM artifacts | `make legacy-import` |
+| `run_topic_sem_correlations.py` | Correlate topic shares with SEM adapter variables (EDA) | `make topic-sem-corr` |
+| `build_team_portal.py` | Build `TEAM_PORTAL.html`; accepts `--db` and `--output` | `make portal` |
+| `build_share_bundle.py` | Build zip-ready share bundle of portal-linked outputs | `make share-bundle` |
+| `build_harvey_action_plan_fund_switch_report.py` | Harvey fund-switch HTML + CSV report | `make harvey-fund-switch` |
+| `build_harvey_housing_zip_progress_report.py` | Harvey housing progress by ZIP HTML report | `make harvey-housing-zip` |
+| `build_him1_qpr_activity_crosswalk.py` | HIM1-specific QPR activity crosswalk utility | (none) |
+| `generate_sankey_matplotlib.py` | Static matplotlib Sankey diagram for Harvey funding flows | (none) |
+| `generate_sankey_pdf.py` | PDF-only Sankey export | (none) |
+| `generate_sankey_plotly_pdf.py` | Interactive Plotly Sankey with PDF export | (none) |
+| `generate_sankey_recipients.py` | Subrecipient-focused Sankey variant | (none) |
+| `clean_macos_artifacts.py` | Remove `.DS_Store` and `._*` macOS resource forks recursively | `make clean-macos` |
+
+---
+
 ## capacity_sem subpackage
 
 SEM (Structural Equation Modeling) model definitions, fitting, and diagnostics. Located in `src/capacity_sem/models/`.

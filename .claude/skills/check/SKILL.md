@@ -18,4 +18,8 @@ Run a quick verification that the project is in a healthy state.
    python -c "import sqlite3; conn = sqlite3.connect('data/glo_reports.db'); print(f'DB tables: {len(conn.execute(\"SELECT name FROM sqlite_master WHERE type=\\'table\\'\").fetchall())}'); conn.close()"
    ```
 4. Run `make check` if available
-5. Report results: which checks passed, which failed, and any recommended actions
+5. If manuscript files were modified, verify both render outputs exist (to avoid `_output` overwrite issues):
+   ```
+   cd external/research_project_management_software/manuscript_quarto && ./render_all.sh && ls -la _output/*.pdf _output/*.docx
+   ```
+6. Report results: which checks passed, which failed, and any recommended actions
