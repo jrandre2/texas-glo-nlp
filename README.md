@@ -1,277 +1,149 @@
-# Texas GLO Disaster Recovery NLP Project
+# Narrative Signals as Leading Indicators of Disaster Recovery Program Execution
 
-This project processes **442 quarterly reports** from the Texas General Land Office (GLO) Disaster Recovery Grant Reporting system and turns them into structured data, interactive dashboards, and analysis-ready tables. It tracks approximately **$10.5 billion** in federal CDBG-DR disaster recovery funding across Hurricane Harvey, Hurricane Ike, flood events, and mitigation programs.
+This repository contains the data, analysis code, and manuscripts for an NLP study of how quarterly narrative reports from the Texas General Land Office (GLO) — the state agency administering federal CDBG-DR disaster recovery grants — predict and reflect actual program execution. We apply natural language processing to 442 quarterly progress reports spanning approximately $10.5 billion in federal disaster recovery funding across Hurricane Harvey, Hurricane Ike, 2015–2019 flood events, and mitigation programs. The core finding: textual signals in agency narratives systematically lead observable program outcomes by one to two quarters, offering a practical early-warning mechanism for recovery program management.
 
----
-
-## Manuscript
-
-The working paper produced by this project is available at the repository root:
-
-| File | Description |
-|---|---|
-| [`Narrative-Signals-as-Leading-Indicators-of-Disaster-Recovery-Program-Execution_2026-03-02.docx`](Narrative-Signals-as-Leading-Indicators-of-Disaster-Recovery-Program-Execution_2026-03-02.docx) | Canonical manuscript (Word, March 3 2026) |
-| [`Narrative-Signals-as-Leading-Indicators-of-Disaster-Recovery-Program-Execution_2026-03-02.pdf`](Narrative-Signals-as-Leading-Indicators-of-Disaster-Recovery-Program-Execution_2026-03-02.pdf) | Canonical manuscript (PDF, March 2 2026) |
-| [`From-Narrative-Signals-to-Recovery-Execution_2026-03-02.docx`](From-Narrative-Signals-to-Recovery-Execution_2026-03-02.docx) | Companion/condensed version (Word, March 2 2026) |
-| [`From-Narrative-Signals-to-Recovery-Execution_2026-03-02.pdf`](From-Narrative-Signals-to-Recovery-Execution_2026-03-02.pdf) | Companion/condensed version (PDF, March 2 2026) |
+**GLO** = Texas General Land Office. **CDBG-DR** = Community Development Block Grant – Disaster Recovery, the federal program administered by HUD through which Texas received this funding.
 
 ---
 
-## Getting Started
+## Manuscripts
 
-**Start here** &mdash; no code or technical setup required:
+The primary output of this project is a peer-review-ready working paper. Both files are in the repository root.
 
-| What you want | Where to go |
-|---|---|
-| Latest manuscript | See **Manuscript** section above |
-| Dashboards, maps, and key tables in one place | Open [`TEAM_PORTAL.html`](TEAM_PORTAL.html) in your browser |
-| A plain-language walkthrough of the project | Read [`docs/START_HERE.md`](docs/START_HERE.md) |
-| Short read-through reports on specific topics | See the **Reports** section in TEAM_PORTAL |
-| Datasets for Excel, Stata, or R | Browse `outputs/model_ready/` or read [`docs/MODEL_READY.md`](docs/MODEL_READY.md) |
-| SEM / statistical modeling | Read [`docs/MODELING_VARIABLES.md`](docs/MODELING_VARIABLES.md) for construct triage |
-| SEM integration + legacy benchmark | Read [`docs/PROJECT_INTEGRATION.md`](docs/PROJECT_INTEGRATION.md) and run `make sem-compare` |
-| Summary of what the pipeline found | Read [`docs/ANALYSIS_REPORT.md`](docs/ANALYSIS_REPORT.md) |
-| A lightweight zip to share with colleagues | Run `make share-bundle` (creates `outputs/share_bundle.zip`) |
+**Canonical manuscript:**
 
-### Where things live
+- [Narrative-Signals-as-Leading-Indicators-of-Disaster-Recovery-Program-Execution_2026-03-02.pdf](Narrative-Signals-as-Leading-Indicators-of-Disaster-Recovery-Program-Execution_2026-03-02.pdf) — PDF (recommended for reading)
+- [Narrative-Signals-as-Leading-Indicators-of-Disaster-Recovery-Program-Execution_2026-03-02.docx](Narrative-Signals-as-Leading-Indicators-of-Disaster-Recovery-Program-Execution_2026-03-02.docx) — Word source
 
-| Folder | What's in it |
-|---|---|
-| `outputs/exports/harvey/` | Harvey-specific CSVs: county allocations, org allocations, Sankey data, housing ZIP progress, fund-switch analysis |
-| `outputs/exports/general/` | Cross-cutting summaries: disaster financial totals, entity linkages, FEMA mappings |
-| `outputs/exports/nlp/` | NLP analysis exports: money mentions, topics, entity resolution, section summaries |
-| `outputs/exports/spatial/` | Spatial maps (HTML) and aggregation tables by county, ZIP, tract, and H3 hex |
-| `outputs/model_ready/` | Analysis-ready panel CSVs (by quarter, county, city, document) for EDA and modeling |
-| `outputs/sem/` | SEM adapter, estimation, and comparison artifacts |
-| `outputs/legacy/` | Deduplicated imported outputs from `capacity-sem-migrated` |
-| `outputs/visualizations/` | Sankey diagrams and the standalone Harvey dashboard |
-| `outputs/reports/` | Self-contained HTML reports on Harvey fund switching and housing progress |
+**Companion / condensed version:**
 
-### Important note on money data
-
-The NLP layer extracts dollar amounts from narrative text and classifies each mention as budget, expended, obligated, or drawdown based on surrounding keywords. These are **text mentions**, not validated ledger entries. Use them for trend analysis and to locate where amounts are discussed. For official totals, use the financial summary tables and national grants linkage.
+- [From-Narrative-Signals-to-Recovery-Execution_2026-03-02.pdf](From-Narrative-Signals-to-Recovery-Execution_2026-03-02.pdf) — shorter companion paper (PDF)
+- [From-Narrative-Signals-to-Recovery-Execution_2026-03-02.docx](From-Narrative-Signals-to-Recovery-Execution_2026-03-02.docx) — Word source
 
 ---
 
-## What the Project Has Found
+## What This Study Does
 
-> Data as of **Q4 2025**. Run `python src/project_status.py` to regenerate.
+Texas GLO submits quarterly Disaster Recovery Grant Reporting (DRGR) reports to HUD. Each report contains structured financial data and free-text progress narratives describing program activity, obstacles, and planned actions. We ask: **do the words agencies use predict what their programs will do next?**
 
-### Texas Disaster Funding Tracked
+
+To answer this we:
+
+1. Extract and structure text from all 442 DRGR reports (153,540 pages; 175,208 tables)
+2. Apply six NLP analysis layers: section segmentation, topic clustering (40 topics), entity resolution, co-occurrence relation extraction, money-mention classification, and SEM construct signal derivation
+3. Build quarterly panel datasets at state, disaster, county, and city levels
+4. Estimate structural equation models (SEM) linking narrative signals (topics, sentiment, entity density) to financial execution outcomes one and two quarters forward
+
+The project tracks $10.46B total across all covered disasters, with $7.59B (73%) expended as of Q4 2025.
+
+---
+
+## Funding Scope
 
 | Disaster | Obligated | Expended | Completion |
 |---|---|---|---|
 | Hurricane Harvey (2017) | $4.63B | $3.85B | 83% |
 | Hurricane Ike (2008) | $2.82B | $2.75B | 98% |
-| 2015-2018 Mitigation | $2.49B | $588M | 24% |
+| 2015–2018 Mitigation | $2.49B | $588M | 24% |
 | Other Disasters | $526M | $356M | 68% |
 | **Total** | **$10.46B** | **$7.59B** | **73%** |
 
-### Pipeline Statistics
+---
 
-| Metric | Value |
-|---|---|
-| PDF Documents Processed | 442 |
-| Pages Extracted | 153,540 |
-| Tables Extracted | 175,208 |
-| Entities Extracted | 4,246,325 |
-| Location Mentions | 402,382 |
-
-### Analysis Layers
-
-Beyond extraction, the pipeline builds six NLP analysis layers and SEM-ready panel data:
-
-| Layer | Module | Key Output | Scale |
-|-------|--------|------------|-------|
-| Section Segmentation | `section_extractor` | Heading-delimited document sections | 442 docs |
-| Topic Clustering | `topic_model` | 40 topics via embedding + KMeans | 5,139 assignments |
-| Entity Resolution | `entity_resolution` | Canonical org/program mappings | 32K unique ORGs |
-| Co-occurrence Relations | `relation_extractor` | Entity pair graph (1,800+ edges) | narrative sections |
-| Money Context | `money_context_extractor` | 1.3M mentions labeled budget/expended/obligated/drawdown | all docs |
-| SEM Signals | `build_model_ready_datasets` | Construct indicators with confidence + provenance | 938 signals |
-
-Panel datasets at state, disaster, county, and city x quarter levels are in `outputs/model_ready/`. See [`docs/ANALYSIS_REPORT.md`](docs/ANALYSIS_REPORT.md) for the full narrative.
-
-### Harvey Funding Flows
+## Funding Flows (Harvey)
 
 #### Harvey 5B Infrastructure Grant ($4.42B)
 
 ![Harvey 5B Infrastructure Grant Funding Flow](outputs/visualizations/harvey_sankey_5b.png)
 
-Q4 2025 budget allocations for the $4.42B Harvey Infrastructure grant. The largest allocations are Homeowner Assistance ($1.93B, 43.6%), Affordable Rental ($1.09B, 24.6%), and Infrastructure Projects ($289M, 6.5%).
+Largest allocations: Homeowner Assistance ($1.93B, 43.6%), Affordable Rental ($1.09B, 24.6%), Infrastructure Projects ($289M, 6.5%).
 
 #### Harvey 57M Housing Grant ($57.8M)
 
 ![Harvey 57M Housing Grant Funding Flow](outputs/visualizations/harvey_sankey_57m.png)
 
-The smaller Housing grant focuses on Affordable Rental ($27.6M) and Local Buyout/Acquisition ($27.3M).
+Focuses on Affordable Rental ($27.6M) and Local Buyout/Acquisition ($27.3M).
 
 #### Funding by Recipient Organization
 
 ![Harvey Funding by Recipient](outputs/visualizations/harvey_sankey_recipients.png)
 
-Houston Metro Area (City of Houston + Harris County) receives $1.74B (39%). Texas GLO administers the remaining $2.73B (61%) directly across 62 counties, with the largest shares going to Aransas ($28.8M), Refugio ($11.7M), and Liberty ($11.2M).
+Houston Metro Area (City of Houston + Harris County) receives $1.74B (39%). Texas GLO administers the remaining $2.73B (61%) directly across 62 counties.
 
-> These values represent budget allocations as of Q4 2025, not actual expenditures.
+> All values are budget allocations as of Q4 2025, not actual expenditures.
+
+
+---
+
+## Repository Map
+
+| Path | Contents |
+|---|---|
+| `Narrative-Signals-as-Leading-Indicators-*.docx/.pdf` | Canonical manuscript (root) |
+| `From-Narrative-Signals-to-Recovery-Execution_*.docx/.pdf` | Companion paper (root) |
+| `src/` | Core NLP and analysis modules (32 Python modules) |
+| `scripts/` | Build scripts: model-ready datasets, SEM inputs, portal, reports |
+| `outputs/model_ready/` | Analysis-ready panel CSVs (state/disaster/county/city × quarter) |
+| `outputs/exports/` | Organized CSV/JSON exports: Harvey, spatial, NLP, general |
+| `outputs/visualizations/` | Sankey diagrams and standalone Harvey dashboard |
+| `outputs/reports/` | Self-contained HTML reports on Harvey fund switching and housing progress |
+| `outputs/sem/` | SEM estimation inputs, results, and legacy comparison artifacts |
+| `data/national_grants/` | HUD CDBG-DR national grants reference data (committed) |
+| `data/reference/` | County FIPS lookups and boundary references |
+| `notebooks/` | Jupyter exploration notebooks |
+| `docs/` | Full documentation (see [docs/README.md](docs/README.md)) |
+| `TEAM_PORTAL.html` | Click-to-open team hub: dashboards, maps, key tables |
+
+### Data not committed to this repository
+
+- `DRGR_Reports/` — 442 source PDF reports (~large); download separately (see [docs/SETUP.md](docs/SETUP.md))
+- `data/*.db` — SQLite database (~2.5 GB); rebuilt from source PDFs
+- `data/extracted_text/`, `data/extracted_tables/` — pipeline-generated; rebuildable
+- `external/` — external subproject (~360 MB); managed separately
+- `outputs/sem/`, `output/`, `tmp/` — generated outputs; rebuildable
+
+---
+
+## Note on Data
+
+The NLP layer extracts dollar amounts from narrative text and classifies each mention as budget, expended, obligated, or drawdown based on surrounding keywords. These are **text mentions**, not validated ledger entries — use them for trend analysis and to identify where amounts are discussed. For official financial totals, use `outputs/exports/general/texas_disaster_financial_summary.csv` and the national grants tables in `data/national_grants/`.
+
+
+---
+
+## Reproducibility
+
+The analysis pipeline requires Python 3.12+ and the source PDFs (not committed). Full environment setup and pipeline instructions are in [docs/SETUP.md](docs/SETUP.md). Step-by-step operational workflows are in [docs/WORKFLOWS.md](docs/WORKFLOWS.md). The analysis-ready datasets in `outputs/model_ready/` and exports in `outputs/exports/` are committed and can be used directly for statistical replication without re-running the full NLP pipeline.
 
 ---
 
 ## Documentation
 
-### For everyone
+### For readers and researchers
 
-- [Analysis Report](docs/ANALYSIS_REPORT.md) &mdash; Narrative summary of pipeline findings with data tables
-- [Start Here (Non-Technical)](docs/START_HERE.md) &mdash; What to open and how to interpret results
-- [Glossary](docs/GLOSSARY.md) &mdash; Terms used across dashboards and tables
-- [Model-Ready Datasets](docs/MODEL_READY.md) &mdash; Datasets for EDA and statistical models
-- [SEM Data Guide](docs/SEM_DATA.md) &mdash; SEM panel schema, construct derivations, and provenance fields
-- [Project Integration](docs/PROJECT_INTEGRATION.md) &mdash; phase status across model-ready, SEM estimation, and legacy comparison
-- [Harvey Funding Analysis](docs/HARVEY_FUNDING_ANALYSIS.md) &mdash; Detailed funding flow analysis
-- [Harvey Fund-Switch Extraction](docs/HARVEY_ACTION_PLAN_FUND_SWITCH.md) &mdash; Fund reallocation statement extraction
-- [Harvey Housing ZIP Progress](docs/HARVEY_HOUSING_ZIP_PROGRESS.md) &mdash; Housing progression by ZIP and quarter
-- [Spatial Mapping](docs/SPATIAL.md) &mdash; Location extraction and choropleth map exports
-- [NLP Analyses](docs/ANALYSES.md) &mdash; Topics, sections, relations, money context layers
+- [Start Here (Non-Technical)](docs/START_HERE.md) — plain-language project walkthrough
+- [Analysis Report](docs/ANALYSIS_REPORT.md) — narrative summary of pipeline findings
+- [Glossary](docs/GLOSSARY.md) — terms used across outputs and tables
+- [Model-Ready Datasets](docs/MODEL_READY.md) — dataset catalog for EDA and statistical modeling
+- [SEM Data Guide](docs/SEM_DATA.md) — SEM panel schema, construct derivations, and provenance
+- [Modeling Variables](docs/MODELING_VARIABLES.md) — SEM construct triage and coverage
 
-### For developers
+### For developers and contributors
 
-- [Docs Index](docs/README.md) &mdash; Recommended reading order by audience
-- [Setup Guide](docs/SETUP.md) &mdash; Installation and configuration
-- [Architecture](docs/ARCHITECTURE.md) &mdash; System design and data flow
-- [Database Schema](docs/DATABASE.md) &mdash; Table structures and queries
-- [Module Reference](docs/MODULES.md) &mdash; Python module documentation
-- [Data Formats](docs/DATA.md) &mdash; File formats and schemas
-- [Entity Reference](docs/ENTITIES.md) &mdash; NLP entity documentation
-- [Workflows](docs/WORKFLOWS.md) &mdash; Step-by-step pipeline guides
-- [GitHub Sharing Guide](docs/GITHUB_SHARING.md) &mdash; What to commit vs share externally
-- [Sankey Diagram Guide](docs/SANKEY_DIAGRAM_GUIDE.md) &mdash; Visualization best practices
-
----
-
-## Developer Setup
-
-<details>
-<summary>Click to expand setup instructions</summary>
-
-### Prerequisites
-
-- Python 3.12+
-- ~8-12 GB free disk (database + extracted text/tables + spatial outputs; vector store adds ~2 GB)
-- Optional: Tesseract OCR for scanned documents
-- Optional: `ANTHROPIC_API_KEY` for Claude integration
-
-### Quick Start
-
-```bash
-cd "/Volumes/T9/Texas GLO Action Plan Project"
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-# For reproducible installs, use the lockfile:
-# pip install -r requirements.lock
-
-# Choose one spaCy model:
-python -m spacy download en_core_web_sm   # fast
-# python -m spacy download en_core_web_trf  # best accuracy (slower)
-
-# Process PDFs (already complete - 442 documents)
-python src/pdf_processor.py --stats
-
-# Extract entities (already complete - 4.2M entities)
-python src/nlp_processor.py --stats
-
-# Link to national grants
-python src/data_linker.py
-
-# Build Harvey activity tables + Sankey exports
-python src/financial_parser.py --stats
-python src/funding_tracker.py --export
-
-# Spatial pipeline: extract locations + generate maps
-python src/location_extractor.py --rebuild
-python src/spatial_mapper.py --join --map
-
-# Rebuild portal and reports
-make portal
-
-# SEM integration (adapter -> estimate -> legacy comparison)
-make phase1
-make sem-estimate
-make sem-compare
-
-# Run checks
-make ci
-```
-
-Run `make help` for all available pipeline targets.
-
-`make sem-estimate` and `make sem-compare` require `semopy` in the active
-Python interpreter. If missing, install with `pip install semopy`.
-
-`scripts/build_model_ready_datasets.py` now enforces data-quality gates by default
-(non-empty key outputs + prior-quarter delta checks). Use `--allow-partial` to keep
-outputs when a gate fails.
-
-### Project Structure
-
-```text
-Texas GLO Action Plan Project/
-├── TEAM_PORTAL.html              # Click-to-view hub for the team
-├── src/                          # Core Python modules
-│   ├── config.py                 # Configuration and paths
-│   ├── utils.py                  # Shared utilities (parse_usd, DB helpers)
-│   ├── pdf_processor.py          # PDF text/table extraction
-│   ├── nlp_processor.py          # NLP entity extraction
-│   ├── data_linker.py            # Link entities to national grants
-│   ├── financial_parser.py       # Harvey activity/QPR parsing
-│   ├── funding_tracker.py        # Harvey Sankey/trend exports
-│   ├── harvey_queries.py         # Analysis queries over Harvey tables
-│   ├── subrecipient_extractor.py # Subrecipient org extraction + classification
-│   ├── activity_type_analyzer.py # Harvey activity type classification
-│   ├── beneficiary_tracker.py    # Beneficiary/outcome metric extraction
-│   ├── completion_analyzer.py    # Activity completion rate analysis
-│   ├── geographic_analyzer.py    # ZIP/location extraction from QPRs
-│   ├── narrative_analyzer.py     # Progress narrative extraction
-│   ├── populate_extended_data.py # Orchestrator for all Harvey extractors
-│   ├── location_extractor.py     # Location mention extraction
-│   ├── geocode_enricher.py       # Geocoding + GEOID enrichment
-│   ├── spatial_mapper.py         # Boundary joins + choropleth maps
-│   ├── spatial_*_map.py          # Single-purpose choropleth generators
-│   ├── section_extractor.py      # Document section segmentation
-│   ├── section_classifier.py     # Section heading family classification
-│   ├── topic_model.py            # Embedding-based topic clustering
-│   ├── entity_resolution.py      # Entity canonicalization + aliases
-│   ├── relation_extractor.py     # Entity co-occurrence graph
-│   ├── money_context_extractor.py # Money mention context labeling
-│   ├── semantic_search.py        # Embeddings + vector search (Chroma)
-│   ├── project_status.py         # Project snapshot utility (make stats)
-│   ├── ner_evaluate.py           # NER evaluation harness
-│   └── db_maintenance.py         # Database maintenance helpers
-├── scripts/                      # Build scripts (portal, reports, datasets)
-├── data/
-│   ├── glo_reports.db            # SQLite database (~2.5 GB)
-│   ├── extracted_text/           # Text files per PDF
-│   ├── boundaries/               # Texas boundary GeoJSONs
-│   └── reference/                # Lookup tables
-├── outputs/
-│   ├── exports/{harvey,spatial,nlp,general}/  # Organized CSV/JSON exports
-│   ├── model_ready/              # Analysis-ready panel CSVs
-│   ├── visualizations/           # Sankey diagrams + dashboards
-│   └── reports/                  # Self-contained HTML reports
-├── notebooks/                    # Jupyter exploration notebooks
-├── dashboard/                    # Streamlit analysis explorer
-├── DRGR_Reports/                 # Source PDF documents (442 files)
-├── docs/                         # Documentation
-├── requirements.txt              # Python dependencies
-└── requirements.lock             # Locked Python dependency snapshot
-```
-
-</details>
+- [Docs Index](docs/README.md) — recommended reading order by audience
+- [Setup Guide](docs/SETUP.md) — installation, configuration, and first run
+- [Architecture](docs/ARCHITECTURE.md) — system design and data flow (9 phases)
+- [Database Schema](docs/DATABASE.md) — SQLite table structures and example queries
+- [Module Reference](docs/MODULES.md) — Python module documentation (32 modules)
+- [Workflows](docs/WORKFLOWS.md) — step-by-step pipeline and operational runbooks
+- [NLP Analyses](docs/ANALYSES.md) — topics, sections, relations, money-context layers
+- [Spatial Mapping](docs/SPATIAL.md) — location extraction and choropleth map exports
+- [Data Formats](docs/DATA.md) — exported file formats and schemas
+- [GitHub Sharing Guide](docs/GITHUB_SHARING.md) — what is committed vs. shared externally
 
 ---
 
 ## Data Sources
 
-- **DRGR Reports**: [Texas GLO CDBG-DR Reports](https://www.glo.texas.gov)
-- **National Grants**: Derived from HUD CDBG-DR program data
-
-This project processes public government documents from the Texas General Land Office.
+- **DRGR Reports**: [Texas GLO CDBG-DR Reports](https://www.glo.texas.gov) — public government documents
+- **National Grants**: Derived from HUD CDBG-DR program data (see `data/national_grants/`)
