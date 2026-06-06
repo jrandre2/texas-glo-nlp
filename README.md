@@ -4,12 +4,26 @@ This project processes **442 quarterly reports** from the Texas General Land Off
 
 ---
 
+## Manuscript
+
+The working paper produced by this project is available at the repository root:
+
+| File | Description |
+|---|---|
+| [`Narrative-Signals-as-Leading-Indicators-of-Disaster-Recovery-Program-Execution_2026-03-02.docx`](Narrative-Signals-as-Leading-Indicators-of-Disaster-Recovery-Program-Execution_2026-03-02.docx) | Canonical manuscript (Word, March 3 2026) |
+| [`Narrative-Signals-as-Leading-Indicators-of-Disaster-Recovery-Program-Execution_2026-03-02.pdf`](Narrative-Signals-as-Leading-Indicators-of-Disaster-Recovery-Program-Execution_2026-03-02.pdf) | Canonical manuscript (PDF, March 2 2026) |
+| [`From-Narrative-Signals-to-Recovery-Execution_2026-03-02.docx`](From-Narrative-Signals-to-Recovery-Execution_2026-03-02.docx) | Companion/condensed version (Word, March 2 2026) |
+| [`From-Narrative-Signals-to-Recovery-Execution_2026-03-02.pdf`](From-Narrative-Signals-to-Recovery-Execution_2026-03-02.pdf) | Companion/condensed version (PDF, March 2 2026) |
+
+---
+
 ## Getting Started
 
 **Start here** &mdash; no code or technical setup required:
 
 | What you want | Where to go |
 |---|---|
+| Latest manuscript | See **Manuscript** section above |
 | Dashboards, maps, and key tables in one place | Open [`TEAM_PORTAL.html`](TEAM_PORTAL.html) in your browser |
 | A plain-language walkthrough of the project | Read [`docs/START_HERE.md`](docs/START_HERE.md) |
 | Short read-through reports on specific topics | See the **Reports** section in TEAM_PORTAL |

@@ -59,3 +59,19 @@ htmlcov/
 dist/
 build/
 *.egg-info/
+
+# NLP pipeline outputs and generated data (rebuildable)
+output/
+outputs/sem/
+tmp/
+
+# Google Drive conflict copies (bracketed-number duplicates)
+*\[*\].xlsx
+*\[*\].docx
+*\[*\].pdf
+
+# External subproject (managed separately, too large for this repo)
+external/
+
+# Deprecated scripts folder
+scripts/dpericated/
